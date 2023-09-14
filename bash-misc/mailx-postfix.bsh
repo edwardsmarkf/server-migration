@@ -42,8 +42,8 @@
 #
 #
 #
-cryptedPassword='NEW_PASSWORD_HERE'                      ;
-emailAddress='noreply@comptonpeslonline.com'             ;
+cryptedPassword='NEW_PASSWORD_HERE'                   ;
+emailAddress='info@comptonpeslonline.com'             ;   //   carefully double-check this!
 
    ## for testing only
 testReceivingEmailAddress='mark@edwardsmark.com'         ;
