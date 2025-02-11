@@ -10,9 +10,9 @@ steps to compensate:
    comment out line 496 of "global" ScriptAlias:  (this may need more testing!)
         ScriptAlias /cgi-bin/ "/var/www/cgi-bin/"
 
-3) change httpd.conf as follows:  (change for both 80 & 443 VM)
+3) change httpd.conf as follows:  (change for both 80 & 443 VM)   ### 2025-02-11  -- NOTICE NOT /home/ its /var/www/   !!
 
-    ScriptAlias /cgi-bin/ /var/www/edwardsmark.com/cgi-bin/
+    ScriptAlias /cgi-bin/ /var/www/edwardsmark.com/cgi-bin/        
 
             <Directory /var/www/edwardsmark.com/cgi-bin>
                     #allow from all
