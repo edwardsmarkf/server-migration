@@ -9,6 +9,7 @@
 ##  2019-02-23 -- added openssl and openssl-devel
 ##  2021-05-01 -- added python38 for RockyLinux
 ##  2025-02-12 --  changed python38 to python3  (maybe it does not need 3.8 anymore??)
+##  2025-02-12 --  added nasm (whatever that is)
 
 # run these from either the command line or this entire script.
 ###  .   export.bsh  ##  notice the DOT at the beginning of the line, not ‘bash’
@@ -31,6 +32,8 @@ dnf  --assumeyes  install   \
     python3                 \
     xz                      \
     ;
+
+dnf --assumeyes  --enablerepo=devel install nasm ;  ## 2025-02-12
 
 ###########################
 #                         #
