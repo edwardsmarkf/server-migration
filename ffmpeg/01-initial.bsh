@@ -28,7 +28,7 @@ dnf  --assumeyes  install   \
     make                    \
     openssl                 \
     openssl-devel           \
-    python38                \
+    python3                 \
     xz                      \
     ;
 
