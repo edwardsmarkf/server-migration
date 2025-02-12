@@ -10,7 +10,7 @@
 ## 2021-04-28 - bumped opus from 0.11 to 0.12 and changed audio sample download.
 ## 2021-07-17 - bumped libogg from 1.3.4 to 1.3.5
 ## 2025-02-07 - bumped flac from 1.3.3 to 1.4.3  
-## 2025-02-12 - got lame from different source  (YET AGAIN)
+## 2025-02-12 - got lame from a different source  (YET AGAIN)
 
 ###############################
 #                             #
@@ -21,14 +21,9 @@
 curl  https://sourceware.org/pub/bzip2/bzip2-latest.tar.gz         \
       >           ~/INSTALL_FFmpeg/INSTALL_bzip/bzip2-latest.tar.gz;
 
-##curl https://managedway.dl.sourceforge.net/project/bzip2/bzip2-1.0.6.tar.gz    \
-##        >                       ~/INSTALL_FFmpeg/INSTALL_bzip/bzip2-1.0.6.tar.gz;
-
 git clone https://github.com/yasm/yasm.git   \
     ~/INSTALL_FFmpeg/INSTALL_yasm/yasm ;  
 
-##curl https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.3.3.tar.xz  \
-##      >           ~/INSTALL_FFmpeg/INSTALL_flac/flac-1.3.3.tar.xz ;
 curl https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.4.3.tar.xz  \
       >           ~/INSTALL_FFmpeg/INSTALL_flac/flac-1.4.3.tar.xz ;
 
@@ -52,10 +47,7 @@ curl         https://archive.mozilla.org/pub/opus/opus-tools-0.2.tar.gz   \
 
 curl   https://cytranet-dal.dl.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz?viasf=1   \
     > ~/INSTALL_FFmpeg/INSTALL_lame/lame-latest.tar.gz       ;
-
-curl   https://sourceforge.net/projects/lame/files/latest/download  \
-    > ~/INSTALL_FFmpeg/INSTALL_lame/lame-latestALTERNATIVE.tar.gz       ;
-
+ 
 git clone https://code.videolan.org/videolan/x264.git  ~/INSTALL_FFmpeg/INSTALL_x264/ ;  ## 2020-01-07
 
 curl              https://www.ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2      \
@@ -63,10 +55,13 @@ curl              https://www.ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2      \
 
 curl  https://opus-codec.org/static/examples/samples/speech_12kbps_mb.wav \
     >    ~/INSTALL_FFmpeg/test/bat-guano.wav ; 
+
 curl  https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg \
    >     ~/INSTALL_FFmpeg/test/example.ogg  ;
+
 curl  https://opus-codec.org/static/examples/ehren-paper_lights-96.opus   \
    > ~/INSTALL_FFmpeg/test/detodos.opus ;
+
 curl  https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.opus   \
    > ~/INSTALL_FFmpeg/test/detodos2.opus ;
 
@@ -76,3 +71,16 @@ curl  https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.opus   \
 # END:  G e t   F i l e s     #
 #                             #
 ###############################
+
+
+        ##curl https://managedway.dl.sourceforge.net/project/bzip2/bzip2-1.0.6.tar.gz    \
+        ##        >                       ~/INSTALL_FFmpeg/INSTALL_bzip/bzip2-1.0.6.tar.gz;
+
+        ##curl https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.3.3.tar.xz  \
+        ##      >           ~/INSTALL_FFmpeg/INSTALL_flac/flac-1.3.3.tar.xz ;
+
+   ###   this may not be necessary if the above step can work properly
+    ##curl   https://sourceforge.net/projects/lame/files/latest/download  \
+    ###    > ~/INSTALL_FFmpeg/INSTALL_lame/lame-latestALTERNATIVE.tar.gz       ;
+
+
