@@ -8,6 +8,7 @@
 
 ##  2019-02-23 -- added openssl and openssl-devel
 ##  2021-05-01 -- added python38 for RockyLinux
+##  2025-02-12 --  changed python38 to python3  (maybe it does not need 3.8 anymore??)
 
 # run these from either the command line or this entire script.
 ###  .   export.bsh  ##  notice the DOT at the beginning of the line, not ‘bash’
