@@ -1,5 +1,7 @@
 #! /bin/bash -w
 
+##  2025-02-12  -- look for lame version
+
 #############################
 #                           #
 # FOURTEEN:     l a m e     #
@@ -15,6 +17,7 @@ cd          ./lame-*/            ;
 ./configure;
 make  && make check && make install ;
 
+/usr/local/bin/lame   --version ;   ## 2025-02-12
 
 #######################
 #                     #
