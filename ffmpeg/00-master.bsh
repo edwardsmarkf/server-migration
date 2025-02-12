@@ -5,6 +5,10 @@
 #   2025-02-12 - added spaces after prompt  ;-)
 
         # https://stackoverflow.com/questions/226703/how-do-i-prompt-for-yes-no-cancel-input-in-a-linux-shell-script
+##   to run in batch mode:  
+##   nohup echo 'y' | bash -vx 00-master.bsh y > 00-master.bsh.log 2>&1 &
+
+
 while true; do
     read -p "Is everything working properly?   " yn
     case $yn in
