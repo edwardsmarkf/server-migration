@@ -5,6 +5,8 @@
 #                     #
 #######################
 
+###     this is named (dot)txt instead of (dot)bsh since it prompts for a "yes" i think (???)  -- 2025-02-13
+
 ###     installs CPAN 2.18 as of 2020-01-13
 
 ###     2020-01-13  -- extracted from perl.bsh into its own module
