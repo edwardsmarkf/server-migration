@@ -7,6 +7,7 @@
 #################################
 
 ##  2020-01-10 -- moved away from the original perl.bsh
+##  2025-02-13  -- removed references to SendMail
 
 useradd fakeperluser ;
 
@@ -66,8 +67,8 @@ su fakeperluser --command "perl  -W  -e  'use File::Basename ; ' ;  "        ;
 
 ###  https://rt.cpan.org/Public/Bug/Display.html?id=125457
 ###  add  127.0.0.1  mail.alma.ch     to /etc/hosts if this fails!
-/usr/bin/cpan -i     Mail::Sendmail                 ;   ## time consuming.....    
-su fakeperluser --command "perl  -W  -e  'use Mail::Sendmail; ' ;  "        ;
+###    /usr/bin/cpan -i     Mail::Sendmail                 ;   ## time consuming.....    2025-02-13
+###    su fakeperluser --command "perl  -W  -e  'use Mail::Sendmail; ' ;  "        ;     2025-02-13
 
 userdel fakeperluser ;
 
