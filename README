@@ -4,8 +4,8 @@
 
 00)  ffmpeg (can probably be done anytime but TEST first before starting!)
 
-01)  bash -vx  ./bash-misc/root-init.bsh
-02)  bash -vx  ./bash-misc/dnf-yum.bsh 
+01)  bash -vx  ./bash-misc/root-init.bsh   ;
+02)  bash -vx  ./bash-misc/dnf-yum.bsh     ;
 
 03)  perl/CPAN
 
