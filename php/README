@@ -12,6 +12,8 @@
     dnf install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 
 2021-08-07 -- DO NOT forget to tar/copy over /usr/lib/local/php ! ! ! ! !
+
+2025-02-14 - running against RL 9.5
     
 
 
