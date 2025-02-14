@@ -12,6 +12,7 @@
 #   2020-08-24 - re-rewrote for centos 8  php 7.4.9
 #   2020-09-09 - backed off to php7.2 to keep webmin/virtualmin happy
 #   2021-06-26  - ***** ! ! ! ! let webmin install php  ! ! ! !   **********
+#   2025-02-14 - to upgrade PHP (trying this:   https://www.ezeelogin.com/kb/article/upgrade-php-from-7-x-to-8-x-in-rhel8-612.html  )
 
 ##   DONT EVER USE WEBTATIC!  use remi/epel instead   ! ! ! 
 echo 'DONT EVER USE WEBTATIC!  use remi/epel instead   ! ! ! '  ;
