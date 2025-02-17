@@ -1,5 +1,6 @@
 <?php
     // 2025-02-17 this was moved from the imageMagick install since we dont really know which directory its going into!
+    //  ##  https://www.php.net/manual/en/imagick.examples-1.php
 
             /* Create a new imagick object */
       $im = new Imagick();
