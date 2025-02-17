@@ -26,7 +26,7 @@ export LD_LIBRARY_PATH=/usr/local/lib/  ;
 # we might need to remove the existing installation:  (2015-05-09)
 dnf  --assumeyes remove ImageMagick   ImageMagick-devel  ;
 
-yum --assumeyes update; ## start with everything up-2-date
+dnf --assumeyes update; ## start with everything up-2-date
 
 dnf  --assumeyes  install     \
                autoconf       \
