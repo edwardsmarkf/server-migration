@@ -1,0 +1,11 @@
+
+dnf --assumeyes  install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm  ;
+  
+dnf --assumeyes  install https://rpms.remirepo.net/enterprise/remi-release-9.rpm  ;
+
+dnf  --assumeyes   update  ;
+dnf module reset php
+dnf  module  enable  php:remi-8.4  ;
+php -v ;
+
+dnf  --assumeyes   install php-cli  php-fpm  php-mbstring  php-xml  ;
