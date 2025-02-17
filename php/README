@@ -14,6 +14,8 @@
 2021-08-07 -- DO NOT forget to tar/copy over /usr/lib/local/php ! ! ! ! !
 
 2025-02-14 - running against RL 9.5
+
+2025-02-17 - moved imageMagickTest into its own PHP script.
     
 
 
