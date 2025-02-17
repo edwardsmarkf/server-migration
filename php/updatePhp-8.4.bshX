@@ -3,6 +3,8 @@
 ## written from:   https://blog.remirepo.net/post/2024/12/18/Install-PHP-8.4-on-Fedora-RHEL-CentOS-Alma-Rocky-or-other-clone
 ##  SKIP   crb install  - not sure what this is supposed to do ??
 
+##   maybe this too ???  https://www.ezeelogin.com/kb/article/upgrade-php-from-7-x-to-8-x-in-rhel8-612.html
+
 dnf --assumeyes  install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm  ;
   
 dnf --assumeyes  install https://rpms.remirepo.net/enterprise/remi-release-9.rpm  ;
