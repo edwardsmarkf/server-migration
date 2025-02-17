@@ -54,10 +54,10 @@ print '</html>';
 END_OF_PERL_SCRIPT
 
 chmod  --verbose  755                                          perlCgiTestScript.pl  ;
-chown  --verbose  comptonpeslonline.com:comptonpeslonline.com  perlCgiTestScript.pl  ;
+chown  --verbose  DOMAIN:DOMAIN    perlCgiTestScript.pl  ;
 
 
-## to create a simple image:
+## to create a simple image:  (THE IMAGE DOES  **NOT** DISPLAY...!)
 perl <(cat <<'EOF'
 #!/usr/bin/perl -w
 #
@@ -75,7 +75,7 @@ $img->rectangle(10, 10, 50, 50); # (top_left_x, top_left_y, bottom_right_x, bott
                                  # ($x1, $y1, $x2, $y2)
 
 # convert into png data
-open my $out, '>', 'img.png' or die;
+open my $out, '>', '/tmp/img.png' or die;
 binmode $out;
 print $out $img->png;
 
