@@ -8,6 +8,8 @@
 #                       Magic-Wand is now "orphaned" as per:
 #                       https://github.com/ImageMagick/MagickWandForPHP/issues/2
 #                       dnf -y  install ghostscript     freetype   
+#
+#     2025-02-17  -- powertools became 'crb' and pecl might not work, replaced
 
 
 ## MAKE SURE CORRECT PHP VERSION IS INSTALLED   F-I-R-S-T ! ! ! ! !
@@ -64,7 +66,7 @@ echo '<?php phpinfo(); ?>' > /var/www/html/phpinfo.php ;
 echo 'please try  http://127.0.0.1/phpinfo.php   in your browser!';
 
 ##  https://www.php.net/manual/en/imagick.examples-1.php
-cat > /var/www/html/helloImageMagick.php  <<END ;
+cat > /HOME/DOMAIN/helloImageMagick.php  <<END ;
 <?php
             /* Create a new imagick object */
       \$im = new Imagick();
@@ -130,7 +132,11 @@ echo ‘##################################’
 
 ###  2021-06-24 https://itzgeek.com/post/how-to-install-imagemagick-and-php-imagick-on-centos-8-rhel-8/
 
-pecl install imagick ;
+
+dnf  --assumeyes  config-manager --enable crb  ;    ## 2025-02-17
+dnf  --assumeyes  install  php-imagick         ;    ## 2025-02-17
+###  2025-02-17 - may not work anymore.....   pecl install imagick ;
+convert --version  ;                                ## 2025-02-17  check imagemagick version  at time of writing  ImageMagick 6.9.13-17
 
 echo "extension=imagick.so" >> /etc/php.d/20-imagick.ini  ;  ## 2021-06-24 - added from 
                                                              ##    https://itzgeek.com/post/how-to-install-imagemagick-and-php-imagick-on-centos-8-rhel-8/
