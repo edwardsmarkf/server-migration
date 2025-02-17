@@ -1,27 +1,6 @@
-Note that in Centos-8, the suexec is no longer really working.  
 
-steps to compensate:
+2024-02-17 UPDATE:   this crap binding /home to /var/www is NO LONGER NECESSARY....!  
 
-1)  mount  --verbose --bind /home /var/www ;
-
-2) comment out line 122 of httpd.conf:
-####DocumentRoot "/var/www/html"        2021-03-23 per Joe Cooper
-   (optional)
-   comment out line 496 of "global" ScriptAlias:  (this may need more testing!)
-        ScriptAlias /cgi-bin/ "/var/www/cgi-bin/"
-
-3) change httpd.conf as follows:  (change for both 80 & 443 VM)   ### 2025-02-11  -- NOTICE NOT /home/ its /var/www/   !!
-
-    ScriptAlias /cgi-bin/ /var/www/edwardsmark.com/cgi-bin/        
-
-            <Directory /var/www/edwardsmark.com/cgi-bin>
-                    #allow from all
-                    AllowOverride All Options=ExecCGI,Includes,IncludesNOEXEC,Indexes,MultiViews,SymLinksIfOwnerMatch
-                    AddHandler cgi-script .cgi .pl  .sh
-                    Require all granted
-            </Directory>
-            
-4) test with:  
 
 ## be sure to set owner correctly!  
 ## chown  --verbose comptonpeslonline.com:comptonpeslonline.com   /home/comptonpeslonline.com/cgi-bin/*.pl;  
@@ -82,6 +61,35 @@ print $out $img->png;
 1;
 EOF
 );
+
+
+
+
+OBSOLETE OBSOLETE OBSOLETE  OBSOLETE OBSOLETE!!
+
+Note that in Centos-8, the suexec is no longer really working.  
+steps to compensate:
+
+1)  mount  --verbose --bind /home /var/www ;
+
+2) comment out line 122 of httpd.conf:
+####DocumentRoot "/var/www/html"        2021-03-23 per Joe Cooper
+   (optional)
+   comment out line 496 of "global" ScriptAlias:  (this may need more testing!)
+        ScriptAlias /cgi-bin/ "/var/www/cgi-bin/"
+
+3) change httpd.conf as follows:  (change for both 80 & 443 VM)   ### 2025-02-11  -- NOTICE NOT /home/ its /var/www/   !!
+
+    ScriptAlias /cgi-bin/ /var/www/edwardsmark.com/cgi-bin/        
+
+            <Directory /var/www/edwardsmark.com/cgi-bin>
+                    #allow from all
+                    AllowOverride All Options=ExecCGI,Includes,IncludesNOEXEC,Indexes,MultiViews,SymLinksIfOwnerMatch
+                    AddHandler cgi-script .cgi .pl  .sh
+                    Require all granted
+            </Directory>
+            
+4) test with:  
 
 
 
