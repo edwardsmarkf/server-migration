@@ -1,4 +1,23 @@
 
+2025-02-18 - hopefully just run these commands (RL 9.4)
+
+bash -vx  00_update_php.bsh    ;
+
+bash  -vx  01_php_install_RL.bsh   ;
+
+bash  -vx  02_phpImageMagick.bsh    ;
+
+bash  -vx  03_php_composer.bsh    ;
+
+mv   --verbose   ./imageMagickTest.php  /home/DOMAIN/public_html/   ;
+
+test  at:   https://DOMAIN/imageMagickTest.php
+
+
+
+README
+Update README
+yesterday
 ##  do ALL this ONLY AFTER webmin since webmin seems to be very "picky" as to what version it is willing to accept.
 ## or php upgrade to 7.4 AFTER webmin install??  (could be dangerous)
 
