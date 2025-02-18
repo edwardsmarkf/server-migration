@@ -1,11 +1,11 @@
 #! /bin/bash 
 #
 #
-#   #####################################################
-#   #                                                   #
-#   #   p h p - i n s t a l l - R o c k y - 8 . b s h   #
-#   #                                                   #
-#   #####################################################
+#   ########################################################
+#   #                                                      #
+#   #   01 p h p - i n s t a l l - R o c k y - 8 . b s h   #
+#   #                                                      #
+#   ########################################################
 
 #   2019-04-01  migrated from googledocs
 #   2019-11-14 - rewrote for centos 8 php 7.4.1
@@ -14,6 +14,7 @@
 #   2021-06-26  - ***** ! ! ! ! let webmin install php  ! ! ! !   **********
 #   2025-02-14 - to upgrade PHP (trying this:   https://www.ezeelogin.com/kb/article/upgrade-php-from-7-x-to-8-x-in-rhel8-612.html  )
 #   2025-02-14 - fixed typo first line
+#   2025-02-18 - renamed to 01_
 
 ##   DONT EVER USE WEBTATIC!  use remi/epel instead   ! ! ! 
 echo 'DONT EVER USE WEBTATIC!  use remi/epel instead   ! ! ! '  ;
@@ -40,8 +41,7 @@ dnf config-manager --set-enabled powertools ;    ##  https://serverfault.com/que
 dnf  --assumeyes  install dnf-utils ;            ## these are repeated from dnf-yum.bsh
 
 
-for installName in          \
-              php            \
+for installName in           \
               php-cli        \
               php-common     \
               php-curl       \
@@ -58,7 +58,7 @@ for installName in          \
               php-xml        \
               php-xmlrpc     \
               php-zip        \
-              
+
 do
     echo "Installing ${installName}" ;
     dnf  --assumeyes  install ${installName} ;
@@ -78,13 +78,17 @@ END_OF_PHP_DOT_INI
 
 php --version ;
 
-    #  https://stackoverflow.com/questions/20163746/problems-with-imagick-and-php
-echo "if this mentions some crap about imagic.so, try the following:"   ;
-echo "pecl   uninstall  imagick; " ;
-echo "pecl     install  imagick; " ;
-
 exit 1 ;
 
+
+#    imagemagick is now installed elsewhere....
+    #  https://stackoverflow.com/questions/20163746/problems-with-imagick-and-php
+##  echo "if this mentions some crap about imagic.so, try the following:"   ;
+##  echo "pecl   uninstall  imagick; " ;
+##  echo "pecl     install  imagick; " ;
+
+
+##   dnd install php does nothing!          php            \
 
         ########  dnf  --assumeyes  install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm ;
         ########  rpm --query --all | grep epel ;
