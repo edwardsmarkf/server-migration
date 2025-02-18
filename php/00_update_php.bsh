@@ -2,8 +2,8 @@
 
 ##  2025-02-18 - script to convert/upgrade (install?) to the latest php 8.4 at the time of this writing
 
-## written from:   https://blog.remirepo.net/post/2024/12/18/Install-PHP-8.4-on-Fedora-RHEL-CentOS-Alma-Rocky-or-other-clone
-##  SKIP   crb install  - not sure what this is supposed to do ??
+##  written from:   https://blog.remirepo.net/post/2024/12/18/Install-PHP-8.4-on-Fedora-RHEL-CentOS-Alma-Rocky-or-other-clone
+##  SKIP STEP  crb install  - not sure what this is supposed to do ??
 
 ##   maybe this too ???  https://www.ezeelogin.com/kb/article/upgrade-php-from-7-x-to-8-x-in-rhel8-612.html
 
