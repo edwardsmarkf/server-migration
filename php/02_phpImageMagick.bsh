@@ -99,9 +99,7 @@ dnf  --assumeyes  install  php-imagick         ;    ## 2025-02-17
 ###  2025-02-17 - may not work anymore.....   pecl install imagick ;
 convert --version  ;                                ## 2025-02-17  check imagemagick version  at time of writing  ImageMagick 6.9.13-17
 
-echo "extension=imagick.so" >> /etc/php.d/20-imagick.ini  ;  ## 2021-06-24 - added from 
-                                                             ##    https://itzgeek.com/post/how-to-install-imagemagick-and-php-imagick-on-centos-8-rhel-8/
-                                                             ##    this step MAY cause problems!
+
                                                              ##    to test do the following::                                              
 php --modules | grep imagick   ;     ## if this causes errors, remove "/etc/php.d/20-imagick.ini"  above!
 
@@ -120,7 +118,10 @@ exit 1;
 
 
 
-
+### 2025-02-18 - this line may not be necessary anymore....
+###      echo "extension=imagick.so" >> /etc/php.d/20-imagick.ini  ;  ## 2021-06-24 - added from 
+                                                             ##    https://itzgeek.com/post/how-to-install-imagemagick-and-php-imagick-on-centos-8-rhel-8/
+                                                             ##    this step MAY cause problems!
 
 
 
