@@ -1,6 +1,6 @@
 #!  /bin/bash
 #
-#           phpImageMagick.bsh
+#           02_phpImageMagick.bsh
 #
 #  http://forum.directadmin.com/showthread.php?t=44449
 #
@@ -62,10 +62,6 @@ systemctl  status  httpd   ;
 systemctl restart  php-fpm.service  ;  ## 2021-07-19
 
 
-echo '<?php phpinfo(); ?>' > /var/www/html/phpinfo.php ;
-echo 'please try  http://127.0.0.1/phpinfo.php   in your browser!';
-
-
 
 echo ‘###################’
 echo ‘#                 #’
@@ -113,9 +109,9 @@ php --modules | grep imagick   ;     ## if this causes errors, remove "/etc/php.
 systemctl   restart  httpd.service  ;     ## turn on the php-magick interface into apache
 systemctl   restart php-fpm.service ;      ## 2025-02-17
 
-echo 'please try  http://127.0.0.1/phpinfo.php   in your browser once again!';
+echo 'please try  http://DOMAIN/phpinfo.php   in your browser once again!';
 echo 'be sure to look for both the magick section AND the magicwand section near the bottom!!';
-echo 'and please try  http://127.0.0.1/helloImageMagick.php too.';
+echo 'and please try  http://DOMAIN/helloImageMagick.php too.';
 
 exit 1;
 
@@ -124,6 +120,12 @@ exit 1;
 
 
 
+
+
+
+
+### echo '<?php phpinfo(); ?>' > /var/www/html/phpinfo.php ;
+### echo 'please try  http://127.0.0.1/phpinfo.php   in your browser!';
 
 
                    ####cat >> /etc/php.d/imagick.ini  <<END ;
