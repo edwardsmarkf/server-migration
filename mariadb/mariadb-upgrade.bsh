@@ -5,6 +5,8 @@
 ###  2021-05-28:   https://mariadb.com/kb/en/no-rocky-linux-support-yet/+comments/5249
 ##  2021-08-15 - since we are now letting virtualmin install mariadb, there are "missing" installs!
 
+MARIADB_VERSION=11.8;   ## added version variable
+
 systemctl stop mariadb.service ;
  
 dnf  --assumeyes remove "mariadb-*"   ;
@@ -17,9 +19,9 @@ wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup  ;
   
 chmod +x mariadb_repo_setup  ;
  
- ###  When running the mariadb_repo_setup script, you can tell it what OS and version to use and then it will skip trying to detect the OS you are running:
-./mariadb_repo_setup --os-type=rhel --os-version=8      --mariadb-server-version="mariadb-10.5"  ;   ## 2021-06-23
-                             ## --os-type is only until MariaDB starts to support RockyLinux
+
+./mariadb_repo_setup    --mariadb-server-version="${MARIADB_VERSION"  ;   ## 2025-02-18 - added variable  
+
  
 dnf --assumeyes  install   mariadb-server    mariadb-backup  ;
  
@@ -31,6 +33,10 @@ dnf  --assumeyes  install MariaDB-devel                ;  ## 2021-08-15
 dnf  --assumeyes  install  mariadb-connector-c-devel   ;  ## 2021-08-15
  
 exit ;
+
+ ###  When running the mariadb_repo_setup script, you can tell it what OS and version to use and then it will skip trying to detect the OS you are running:
+###  ./mariadb_repo_setup --os-type=rhel --os-version=8      --mariadb-server-version="mariadb-10.5"  ;   ## 2021-06-23
+###                             ## --os-type is only until MariaDB starts to support RockyLinux
 
 
 
