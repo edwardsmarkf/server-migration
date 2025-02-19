@@ -27,9 +27,9 @@ chmod 755    ./mariadb_repo_setup                                      ;   ## 20
  
 dnf --assumeyes  install   mariadb-server    mariadb-backup  ;
  
-systemctl enable mariadb.service ;  ## not sure if this is really necessary?
+systemctl enable  --now mariadb.service ;      ##  2025-02-19 -  added    --now switch
 
-systemctl start mariadb.service ;
+                                            ###   systemctl start mariadb.service ;
 
 dnf  --assumeyes  install MariaDB-devel                ;  ## 2021-08-15
 dnf  --assumeyes  install  mariadb-connector-c-devel   ;  ## 2021-08-15
