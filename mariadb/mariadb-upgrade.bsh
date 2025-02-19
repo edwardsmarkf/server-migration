@@ -26,6 +26,8 @@ dnf --assumeyes  install   mariadb-server    mariadb-backup   MariaDB-devel     
 
 systemctl enable  --now mariadb.service ;      ##  2025-02-19 -  added    --now switch
 systemctl status     mariadb.service ;      ##  2025-02-19 
+
+/usr/bin/mariadb-upgrade   ;   ## 2025-02-19
  
 exit ;
 
