@@ -14,7 +14,7 @@ dnf  --assumeyes remove "mariadb-*"   ;
  
 
  
-rpm --query --all | grep -i -E "mariadb|galera"  ;  ## double-check to make sure all has been removed.
+rpm --query --all | grep -i -E "mariadb"  ;  ## double-check to make sure all has been removed.
  
 wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup  ;
   
@@ -36,6 +36,8 @@ dnf  --assumeyes  install  mariadb-connector-c-devel   ;  ## 2021-08-15
 exit ;
 
 ####   2025-02-19  - no matches    dnf  --assumeyes remove galera-4  galera ;
+
+#####  2025-02-19 -  no more galera    rpm --query --all | grep -i -E "mariadb|galera"  ;  ## double-check to make sure all has been removed.
 
  ###  When running the mariadb_repo_setup script, you can tell it what OS and version to use and then it will skip trying to detect the OS you are running:
 ###  ./mariadb_repo_setup --os-type=rhel --os-version=8      --mariadb-server-version="mariadb-10.5"  ;   ## 2021-06-23
