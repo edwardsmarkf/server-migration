@@ -1,0 +1,46 @@
+
+
+DROP USER IF EXISTS 'testUser'@'localhost'                              ;
+CREATE USER 'testUser'@'localhost' IDENTIFIED BY 'password';
+
+FLUSH PRIVILEGES  ;
+
+GRANT ALL ON `testDb`.* TO 'testUser'@'localhost'       \
+IDENTIFIED BY 'password'                                                        \
+WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0    ;
+
+# DROP DATABASE `testDb`                                        ;
+CREATE DATABASE IF NOT EXISTS `testDb`                  ;
+
+GRANT ALL PRIVILEGES ON `testDb`.* TO 'testUser'@'localhost'    ;
+
+
+
+
+<?php
+
+$hostname = 'localhost' ;
+$username = 'testUser'  ;
+$password = 'password'  ;
+$database = 'testDb'    ;
+
+try {
+        $dbh = new PDO ("mysql:host=$hostname;dbname=$database", $username, $password);
+        echo 'Successfully connected to database' . "\n" ;
+
+        /*** set the error reporting attribute ***/
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        /*** prepare the SQL statement ***/
+        $stmt = $dbh->prepare("SELECT VERSION();");
+
+        $stmt->execute();
+        echo  implode(' ', $stmt->fetch()) . "\n"       ;
+        
+        /*** close the database connection ***/
+        $dbh = null;
+
+} catch(PDOException $e) {
+        echo $e->getMessage() . "\\n"   ;
+}
+?>
