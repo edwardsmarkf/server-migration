@@ -20,7 +20,8 @@ wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup  ;
   
 chmod +x mariadb_repo_setup  ;
  
-
+wget https://r.mariadb.com/downloads/mariadb_repo_setup                ;   ## 2025-02-19
+chmod 755    ./mariadb_repo_setup                                      ;   ## 2025-02-19
 ./mariadb_repo_setup    --mariadb-server-version="${MARIADB_VERSION}"  ;   ## 2025-02-18 - added variable  
 
  
