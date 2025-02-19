@@ -8,6 +8,7 @@
 #  2020-08-27  -- this also installs MariaDB.
 #  2021-05-27  -- ONLY install virtualmin: (let virtualmin install webmin)   https://www.virtualmin.com/download.html
 #  2025-02-17  -- added command line to switch the longname domain short-name default to the LONG name
+#  2025-02-19  -- added command line to change default new virtual servers to ONLY include dns service and apache website
 
 wget http://software.virtualmin.com/gpl/scripts/install.sh  ;
 
@@ -25,7 +26,8 @@ systemctl  start    webmin.service ;
 
 systemctl  status --no-pager --full  webmin.service  ;
 
-/usr/bin/sed  --in-place  --expression='s/^longname=0$/longname=1/;'  /etc/webmin/virtual-server/config   ;   ## 2025-02-17
+/usr/bin/sed  --in-place  --expression='s/^longname=0$/longname=1/;'                  /etc/webmin/virtual-server/config    ;   ## 2025-02-17
+/usr/bin/sed  --in-place  --expression='s/^featurelimits=$/featurelimits=dns web/;'   /etc/webmin/virtual-server/plans/0   ;   ## 2025-02-19
 
 exit;
 
