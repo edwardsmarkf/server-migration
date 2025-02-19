@@ -27,8 +27,8 @@ systemctl enable mariadb.service ;  ## not sure if this is really necessary?
 
 systemctl start mariadb.service ;
 
-dnf  -y  install MariaDB-devel                ;  ## 2021-08-15
-dnf  -y  install  mariadb-connector-c-devel   ;  ## 2021-08-15
+dnf  --assumeyes  install MariaDB-devel                ;  ## 2021-08-15
+dnf  --assumeyes  install  mariadb-connector-c-devel   ;  ## 2021-08-15
  
 exit ;
 
