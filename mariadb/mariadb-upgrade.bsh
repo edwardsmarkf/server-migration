@@ -12,8 +12,6 @@ systemctl stop mariadb.service ;
  
 dnf  --assumeyes remove "mariadb-*"   ;
  
-
- 
 rpm --query --all | grep -i -E "mariadb"  ;  ## double-check to make sure all has been removed.
  
 wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup  ;
