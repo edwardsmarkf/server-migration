@@ -4,8 +4,9 @@
 
 ###  2021-05-28:   https://mariadb.com/kb/en/no-rocky-linux-support-yet/+comments/5249
 ##  2021-08-15 - since we are now letting virtualmin install mariadb, there are "missing" installs!
+## 2025-02-19 -- added variable to indicate which version we are trying to install.
 
-MARIADB_VERSION=11.8;   ## added version variable
+MARIADB_VERSION=11.8;   ## 2025-02-19 added version variable
 
 systemctl stop mariadb.service ;
  
