@@ -39,15 +39,17 @@ sed  --in-place                                                                 
                 --expression='s/TESTING = "1"/TESTING = "0"/'                                                                                                   \
         /etc/csf/csf.conf ;
 
-systemctl  enable    csf.service ;
-systemctl  enable    lfd.service ;   ## Login Failure Daemon
+systemctl  enable  --now   csf.service ;   ##  2025-02-20 enable AND start 
+systemctl  enable  --now   lfd.service ;   ## Login Failure Daemon
 
-systemctl start csf.service   lfd.service ;            ##    lfd.service is the 'Login Failure Daemon'
+
 
 systemctl  status --no-pager --full  csf.service ;
-systemctl  status --no-pager --full  lfd.service ;  ## Login Failure Daemon
-        
-csf --version ;  csf --version ;
+systemctl  status --no-pager --full  lfd.service ;  ## Login Failure Daemo
+
+echo 'CSF version:';
+csf --version      ;
+
 
 cat <<END_OF_DISPLAY;
 To get csf to appear in the webmin menu.
@@ -66,3 +68,5 @@ END_OF_DISPLAY
 exit 1;
 
 #
+
+###### 2025-02-20  ####################systemctl start csf.service   lfd.service ;            ##    lfd.service is the 'Login Failure Daemon'
