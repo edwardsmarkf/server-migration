@@ -1,6 +1,6 @@
 
 2021-05-01 -- first test for RockyLinux
-        needed to include  `dnf -y  install  python38 ;` for 06-yasm.bsh step
+                                               ####  now included in 01-initial.bsh  needed to include  `dnf -y  install  python38 ;` for 06-yasm.bsh step
         also created 00-master.bsh 
 
-2025-02-12  -- installed on RL 9
+2025-02-12  -- installed on RL 9.x
