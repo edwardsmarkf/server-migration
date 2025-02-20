@@ -1,4 +1,9 @@
-   
+
+1)   bash -vx   virtualmin.bsh
+     ##  will ask "Continue (y/n) about your OS
+     ##  it will also ask about Apache
+
+
 
 ## manually restart ldf.service if the "failed" indicator comes on in the webmin website console.
 
@@ -16,7 +21,7 @@ Include domain name in usernames:	Always
 2021-06-24  - be sure to comment out the following in /etc/httpd/conf/httpd.conf to get perl to work properly:
         ####DocumentRoot "/var/www/html"        2021-03-23 per Joe Cooper
 
-2021-06-23  - be sure to stop webmin
+2021-06-23  - be sure to stop webmin  -- THIS IS NOW PART OF  virtualmin.bsh
   /etc/init.d/webmin  stop;
    ps -ef  | grep  perl ; ## manually kill any remaining webmin jobs
   systemctl  enable   webmin.service;
