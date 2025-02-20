@@ -1,4 +1,11 @@
 
+2025-02-20  -- created php and perl tests
+
+##########################
+#                        #
+#   prepare database     #
+#                        #
+##########################
 
 DROP USER IF EXISTS 'testUser'@'localhost'                              ;
 CREATE USER 'testUser'@'localhost' IDENTIFIED BY 'password';
@@ -15,10 +22,13 @@ CREATE DATABASE IF NOT EXISTS `testDb`                  ;
 GRANT ALL PRIVILEGES ON `testDb`.* TO 'testUser'@'localhost'    ;
 
 
-
+##########################
+#                        #
+#   P H P                #
+#                        #
+##########################
 
 <?php
-
 $hostname = 'localhost' ;
 $username = 'testUser'  ;
 $password = 'password'  ;
@@ -44,3 +54,28 @@ try {
         echo $e->getMessage() . "\\n"   ;
 }
 ?>
+
+##########################
+#                        #
+#  perl                  #
+#                        #
+##########################
+
+use DBI;
+
+my $hostname = 'localhost' ;
+my $username = 'testUser'  ;
+my $password = 'password'  ;
+my $database = 'testDb'    ;
+
+my  $dbh = DBI->connect('DBI:mysql:' . $database . ':' . $hostname, $username, $password)
+      or die 'could not connect!';
+
+my $query = $dbh->prepare('SELECT VERSION();') or die 'could not prepare';
+
+$query->execute();
+
+my @resultArray =  $query->fetch()      ;
+print $resultArray[0][0] . "\n"         ;
+
+$query->finish();
