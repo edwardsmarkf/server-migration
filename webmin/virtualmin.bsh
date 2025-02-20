@@ -29,6 +29,12 @@ systemctl  status --no-pager --full  webmin.service  ;
 /usr/bin/sed  --in-place  --expression='s/^longname=0$/longname=1/;'                  /etc/webmin/virtual-server/config    ;   ## 2025-02-17
 /usr/bin/sed  --in-place  --expression='s/^featurelimits=$/featurelimits=dns web/;'   /etc/webmin/virtual-server/plans/0   ;   ## 2025-02-19
 
+cat <<END_OF_DISPLAY;
+
+DONT FORGET to go into  localhost:10000 and  **FINISH** the installation by answering a few questions!
+
+END_OF_DISPLAY
+
 exit;
 
 
