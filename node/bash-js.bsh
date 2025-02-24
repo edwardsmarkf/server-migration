@@ -9,25 +9,34 @@
 #   2019-04-04  -- migrated from googledocs
 #   2019-08-28  -- upgraded to version 10.x
 #   2019-12-10  -- migrated to centos-8
-#   2021-06-30  -- migrated to Rocky-Linux!
+#   2021-06-30  -- migrated to Rocky-Linux
+#   2025-02-24  -- install using just dnf
 
-#   https://tecadmin.net/install-latest-nodejs-on-centos-8/
+##  https://nodejs.org/en/download/package-manager/all#centos-fedora-and-red-hat-enterprise-linux
 
-curl -sL https://rpm.nodesource.com/setup_14.x | sudo -E bash - ;
-
-dnf  --assumeyes  install nodejs            ;  ## 2021-07-22 - how did we possibly forget this??
-
-npm install -g npm@latest ;
+dnf  module  list  nodejs             ;   #  get list of available nodes
+dnf  module  install nodejs:22/common ;   #  install node version 22
 
 which node;
-node --version ;
-npm  --version ;   ## not sure where this is installed, except at root
-node -v  ;
+/usr/bin/node --version ;
+
+which npm;
+/usr/local/bin/npm  --version ;   
+
 
 exit;
 
 
- 
+
+
+
+#   https://tecadmin.net/install-latest-nodejs-on-centos-8/
+
+## 2024-02-24 - removed  ##  curl -sL https://rpm.nodesource.com/setup_14.x | sudo -E bash - ;
+## 2024-02-24 - removed  ##dnf  --assumeyes  install nodejs            ;  ## 2021-07-22 - how did we possibly forget this??
+## 2024-02-24 - removed  ##npm install -g npm@latest ;
+
+
 
 #######   https://linuxconfig.org/how-to-install-node-js-on-redhat-8-linux
 
