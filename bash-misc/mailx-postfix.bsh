@@ -42,15 +42,16 @@
 #
 #
 #
-
+echo 'fix the next several lines!!!  '  ;
 exit ;  ## add cryped password
 cryptedPassword='NEW_PASSWORD_HERE'                   ;
 emailAddress='info @ comptonpeslonline . com'             ;   //   carefully double-check this!
 
+
    ## for testing only
-testReceivingEmailAddress='mark@edwardsmark.com'         ;
+testReceivingEmailAddress='mark  [at]    edwardsmark  <dot>  com'         ;   ## fix this!
 testReceivingName='Marky Boy'                            ;
-testReceivingCcEmailAddress='edwardsmarkf@gmail.com'     ;
+testReceivingCcEmailAddress='edwardsmarkf   [at]   gmail  [dot]   com'     ;  ## fix this !
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
