@@ -42,8 +42,10 @@
 #
 #
 #
+
+exit ;  ## add cryped password
 cryptedPassword='NEW_PASSWORD_HERE'                   ;
-emailAddress='info@comptonpeslonline.com'             ;   //   carefully double-check this!
+emailAddress='info @ comptonpeslonline . com'             ;   //   carefully double-check this!
 
    ## for testing only
 testReceivingEmailAddress='mark@edwardsmark.com'         ;
