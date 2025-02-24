@@ -8,7 +8,20 @@
 curl  https://www.idrivedownloads.com/downloads/linux/download-for-linux/linux-desktop/IDriveForLinux.rpm?ctag=012220253 \
                >  idrive360_deployment_code.rpm  ;
 
-rpm  --install  --verbose  --hash   ./idrive360_deployment_code.rpm  ;
+wget   https://www.idrivedownloads.com/downloads/linux/download-for-linux/linux-bin/idriveforlinux.bin  ;
+
+chmod  700  ./idriveforlinux.bin ;
+
+./idriveforlinux.bin  --install   ;   ## 
+
+
 
 
 exit;
+
+
+
+
+##  rpm  --install  --verbose  --hash   ./idrive360_deployment_code.rpm  ;
+
+
