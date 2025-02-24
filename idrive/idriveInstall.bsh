@@ -16,6 +16,9 @@ chmod  700  ./idriveforlinux.bin ;
 
 ./idriveforlinux.bin  --install   ;   ## 
 
+##  initial login !  (dont skip this)
+
+ /opt/IDriveForLinux/bin/idrive   --login  ;   ## create a symbolic link in  /usr/bin/local/  ??
 
 
 
