@@ -1,0 +1,14 @@
+#!  /bin/bash  -w
+#
+#
+#         idriveInstall.bsh
+#
+#  2025-02-24  -- initial writing
+
+curl  https://www.idrivedownloads.com/downloads/linux/download-for-linux/linux-desktop/IDriveForLinux.rpm?ctag=012220253 \
+               >  idrive360_deployment_code.rpm  ;
+
+rpm  --install  --verbose  --hash   ./idrive360_deployment_code.rpm  ;
+
+
+exit;
