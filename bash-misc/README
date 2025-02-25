@@ -1,2 +1,9 @@
 
-read   mailx-postfix.bsh   one first before running!
+
+
+0)    root-init.bsh
+
+1)    dnf-yum.bsh
+
+2)    read   mailx-postfix.bsh   one first before running!
+       get password from   https://security.google.com/settings/security/apppasswords
