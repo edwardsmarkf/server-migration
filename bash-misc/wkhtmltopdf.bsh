@@ -20,7 +20,8 @@ wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtm
 
 dnf  --assumeyes localinstall  ./wkhtmltox-0.12.6.1-2.almalinux9.x86_64.rpm  ;   ##   'localinstall' deprecated
 
-wkhtmltopdf --version ;   ## check version!!
+which  wkhtmltopdf                       ;   ##  2025-02-25
+/usr/local/bin/wkhtmltopdf --version     ;   ## check version!!
 
 rm  -f   ./wkhtmltox-0.12.6.1-2.almalinux9.x86_64.rpm  ;
 
