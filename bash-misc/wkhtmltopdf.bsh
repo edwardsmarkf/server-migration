@@ -16,7 +16,7 @@
 dnf  --assumeyes  install libpng15          ;   ## 2021-07-30
 #####  necessary  ??   dnf  --assumeyes  install compat-openssl11  ;   ## 2025-02-25 - changed 110 to 111 2021-07-30
 
-wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox-0.12.6.1-2.almalinux9.x86_64.rpm
+wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox-0.12.6.1-2.almalinux9.x86_64.rpm  ;
 
 dnf  --assumeyes localinstall  ./wkhtmltox-0.12.6.1-2.almalinux9.x86_64.rpm  ;   ##   'localinstall' deprecated
 
