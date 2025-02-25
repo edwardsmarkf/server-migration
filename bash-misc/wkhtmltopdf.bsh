@@ -21,7 +21,7 @@ dnf  --assumeyes localinstall  ./wkhtmltox-0.12.6.1-2.almalinux9.x86_64.rpm  ;  
 
 wkhtmltopdf --version ;   ## check version!!
 
-rm  -f   ./wkhtmltox-0.12.6-1.centos7.x86_64.rpm  ;
+rm  -f   ./wkhtmltox-0.12.6.1-2.almalinux9.x86_64.rpm  ;
 
 exit ;
 
