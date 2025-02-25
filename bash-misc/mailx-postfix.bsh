@@ -42,27 +42,30 @@
 #
 #
 #
-echo 'fix the next several lines!!!  '  ;
-exit ;  ## add cryped password
-cryptedPassword='NEW_PASSWORD_HERE'                   ;
-emailAddress='info @ comptonpeslonline . com'             ;   //   carefully double-check this!
 
+
+read  -p 'Please enter main email address:  "  emailAddress   ;   //   carefully double-check this!
+
+read -p "Please enter crypted password: "  cryptedPassword         ;
 
    ## for testing only
-testReceivingEmailAddress='mark  [at]    edwardsmark  <dot>  com'         ;   ## fix this!
+
+read  -p 'Please enter TESTING email address:  "  testReceivingEmailAddress   ;   //   
+read  -p 'Please enter TESTING cc     address:  "  testReceivingCcEmailAddress   ;   //   
+
 testReceivingName='Marky Boy'                            ;
-testReceivingCcEmailAddress='edwardsmarkf   [at]   gmail  [dot]   com'     ;  ## fix this !
+
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
 #
 
-if [[ $cryptedPassword = "NEW_PASSWORD_HERE" ]]
+if [[  -v  $cryptedPassword  ]]
 then
+    echo "Password properly set, continuing.....!";
+else
     echo "fill in the password!";
     exit;
-else
-    echo "Password propertly set, continuing.....!";
 fi
 
 
