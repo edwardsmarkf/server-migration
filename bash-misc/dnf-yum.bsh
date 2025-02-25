@@ -14,7 +14,7 @@
 ##  2020-01-08  - added a few new dnf commands
 ##  2020-08-27  - removed yum-complete-transaction
 ##  2020-08-28  - added vim (really??)
-
+##  2025-02-25  - replaced dnf  'maix' with 's-nail' as per  https://forums.rockylinux.org/t/not-able-to-install-mailx/12773
 
 yum clean all ;  ## 2016-12-31 - required for MariaDB
 
@@ -66,7 +66,6 @@ for installName in    \
      libtiff-devel    \
      libtool          \
      lsof             \
-     mailx            \
      make             \
      openssl          \
      openssl-devel    \
@@ -74,6 +73,7 @@ for installName in    \
      python3          \
      sendmail         \
      sendmail-cf      \
+     s-nail           \
      sshpass          \
      vim              \
      wget             \
