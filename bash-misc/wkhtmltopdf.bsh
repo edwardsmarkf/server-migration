@@ -4,8 +4,9 @@
 ##      
 ##      2021-04-13
 ##      
-##    written entirely from:
-##        https://computingforgeeks.com/install-wkhtmltopdf-wkhtmltoimage-on-centos/
+##    written entirely from:  (replaced 2025-02-25)
+##
+##        https://centlinux.com/how-to-install-wkhtmltopdf-on-linux/
 ##
 ##    2021-07-30 - had to add two new dnf calls, maybe because of the use of "dnf localinstall" ???
 ##    2025-02-25 - changed to using almalinux from:  https://centlinux.com/how-to-install-wkhtmltopdf-on-linux/
@@ -28,7 +29,7 @@ rm  --verbose  --force   ./wkhtmltox-0.12.6.1-2.almalinux9.x86_64.rpm  ;
 exit ;
 
 
-
+###  OLD:         https://computingforgeeks.com/install-wkhtmltopdf-wkhtmltoimage-on-centos/
 ###  wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox-0.12.6-1.centos7.x86_64.rpm  ;
 
 ##  dnf  --assumeyes localinstall  ./wkhtmltox-0.12.6-1.centos7.x86_64.rpm  ;   ##   'localinstall' deprecated
