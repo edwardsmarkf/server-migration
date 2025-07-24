@@ -1,7 +1,7 @@
 
 1)   bash -vx   virtualmin.bsh
      ##  will ask "Continue (y/n) about your OS
-     ##  it will also ask about Apache
+     ##  it will also ask about qualified webhost name and Apache
 
 2)  log into localhost:10000  and FINISH the installation!
 
