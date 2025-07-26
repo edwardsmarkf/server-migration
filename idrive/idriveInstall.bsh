@@ -18,6 +18,8 @@ chmod  700  ./idriveforlinux.bin ;
 ##  initial login !  (dont skip this)
 ./idriveforlinux.bin  --login   ;   ## 
 
+## occasionally run:    idrive  --check-update  ;
+
 exit;
 
 
