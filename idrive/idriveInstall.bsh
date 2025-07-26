@@ -4,8 +4,26 @@
 #         idriveInstall.bsh
 #
 #  2025-02-24  -- initial writing
+#  2025-07-25  -- updated....
 
 #  https://www.idrive.com/linux-scripts
+
+curl  https://www.idrivedownloads.com/downloads/linux/linux-bin/idriveforlinux.bin  \
+               >  idriveforlinux.bin   ;
+
+chmod  700  ./idriveforlinux.bin ;
+
+./idriveforlinux.bin  --install   ;   ## 
+
+##  initial login !  (dont skip this)
+./idriveforlinux.bin  --login   ;   ## 
+
+exit;
+
+
+
+
+
 
 curl  https://www.idrivedownloads.com/downloads/linux/download-for-linux/linux-desktop/IDriveForLinux.rpm?ctag=012220253 \
                >  idrive360_deployment_code.rpm  ;
