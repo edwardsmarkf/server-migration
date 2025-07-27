@@ -11,7 +11,7 @@
 #  2025-02-19  -- added CUSTOMIZATION command line to change default new virtual servers to ONLY include dns service and apache website
 
 
-sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --bundle LAMP
+## from virtualmin....  ?  sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --bundle LAMP
 
 wget http://software.virtualmin.com/gpl/scripts/install.sh  ;
 
