@@ -7,8 +7,11 @@
 
 #  2020-08-27  -- this also installs MariaDB.
 #  2021-05-27  -- ONLY install virtualmin: (let virtualmin install webmin)   https://www.virtualmin.com/download.html
-#  2025-02-17  -- added command line to switch the longname domain short-name default to the LONG name
-#  2025-02-19  -- added command line to change default new virtual servers to ONLY include dns service and apache website
+#  2025-02-17  -- added CUSTOMIZATION command line to switch the longname domain short-name default to the LONG name
+#  2025-02-19  -- added CUSTOMIZATION command line to change default new virtual servers to ONLY include dns service and apache website
+
+
+sudo sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/virtualmin-install.sh)" -- --bundle LAMP
 
 wget http://software.virtualmin.com/gpl/scripts/install.sh  ;
 
