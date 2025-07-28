@@ -7,9 +7,14 @@
 
 ## make sure webmin is installed first!
 
-/sbin/webmin  --version ;
+if  [ -x /sbin/webmin  ];  then
+    /sbin/webmin  --version;
+else
+    echo 'webmin NOT installed!';
+    exit ;
+fi
 
-echo   $?
+        ##echo   $?
 
 
 curl --insecure  https://rpms.remirepo.net/enterprise/remi-release-10.rpm  \
@@ -22,3 +27,8 @@ dnf  --assumeyes  install  remi-release-10.rpm  ;
 dnf module reset php     ;
 dnf module enable php:remi-8.4      ;
 dnf install php-cli php-fpm php-mbstring php-xml   ;
+#
+which php   ;
+ /usr/bin/php  --version ;
+
+exit;
