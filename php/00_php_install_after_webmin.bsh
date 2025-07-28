@@ -41,4 +41,9 @@ which php   ;
 
 /usr/bin/php  --version ;
 
+echo '<?php phpinfo(); ?>' > /var/www/html/phpinfo.php ;
+
+echo 'please try  http://DOMAIN/phpinfo.php   in your browser once again!';
+echo 'NOTE:  you may need to create a virtualmin virtual-server first and MOVE the phpinfo.php into the new directory!';
+
 exit;
