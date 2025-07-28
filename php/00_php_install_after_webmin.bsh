@@ -16,7 +16,7 @@ fi
 
         ##echo   $?
 
-
+    ##   "--insecure" primarly used when installing on virtualbox
 curl --insecure  https://rpms.remirepo.net/enterprise/remi-release-10.rpm  \
         > remi-release-10.rpm ;
 
