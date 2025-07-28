@@ -122,6 +122,7 @@ END_OF_SCRIPT
 echo 'please try  http://DOMAIN/phpinfo.php   in your browser once again!';
 echo 'be sure to look for both the magick section AND the magicwand section near the bottom!!';
 echo 'and please try  http://DOMAIN/imageMagickTest.php too.';
+echo 'NOTE:  you may need to create a virtualmin virtual-server first and MOVE the phpinfo.php into the new directory!';
 
 exit 1;
 
