@@ -28,7 +28,10 @@ dnf module reset php     ;
 dnf module enable php:remi-8.4      ;
 dnf install php-cli php-fpm php-mbstring php-xml   ;
 #
+#
+#
 which php   ;
- /usr/bin/php  --version ;
+
+/usr/bin/php  --version ;
 
 exit;
