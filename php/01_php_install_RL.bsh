@@ -15,6 +15,7 @@
 #   2025-02-14 - to upgrade PHP (trying this:   https://www.ezeelogin.com/kb/article/upgrade-php-from-7-x-to-8-x-in-rhel8-612.html  )
 #   2025-02-14 - fixed typo first line
 #   2025-02-18 - renamed to 01_
+#   2025-07-28 - powertools no longer seems to be required.....(??)
 
 ##   DONT EVER USE WEBTATIC!  use remi/epel instead   ! ! ! 
 echo 'DONT EVER USE WEBTATIC!  use remi/epel instead   ! ! ! '  ;
