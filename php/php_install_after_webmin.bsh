@@ -1,0 +1,24 @@
+#!  /bin/bash -w
+#
+#  php_install_after_webmin.bsh  -- 2025-07-27
+#
+#
+#
+
+## make sure webmin is installed first!
+
+/sbin/webmin  --version ;
+
+echo   $?
+
+
+curl --insecure  https://rpms.remirepo.net/enterprise/remi-release-10.rpm  \
+        > remi-release-10.rpm ;
+
+dnf  --assumeyes  install  remi-release-10.rpm  ;
+
+##  https://blog.remirepo.net/post/2024/12/18/Install-PHP-8.4-on-Fedora-RHEL-CentOS-Alma-Rocky-or-other-clone
+
+dnf module reset php     ;
+dnf module enable php:remi-8.4      ;
+dnf install php-cli php-fpm php-mbstring php-xml   ;
