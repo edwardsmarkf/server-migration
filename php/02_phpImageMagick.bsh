@@ -109,9 +109,19 @@ systemctl   restart php-fpm.service ;      ## 2025-02-17
 
 echo '<?php phpinfo(); ?>' > /var/www/html/phpinfo.php ;
 
+cat <<<END_OF_SCRIPT > /var/www/html/imageMagickTest.php ;
+<?php
+    \$image = new Imagick();
+    \$image->newImage(100, 100, new ImagickPixel('red'));
+    \$image->setImageFormat('png');
+    header('Content-type: image/png');
+    echo \$image;
+?>
+END_OF_SCRIPT
+
 echo 'please try  http://DOMAIN/phpinfo.php   in your browser once again!';
 echo 'be sure to look for both the magick section AND the magicwand section near the bottom!!';
-echo 'and please try  http://DOMAIN/helloImageMagick.php too.';
+echo 'and please try  http://DOMAIN/imageMagickTest.php too.';
 
 exit 1;
 
