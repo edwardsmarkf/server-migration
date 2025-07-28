@@ -77,9 +77,16 @@ s/memory_limit = 128M/memory_limit = 512M            ;  2019-04-03 from github p
 s?;include_path = ".:/php/includes"?include_path = "/usr/local/lib/php" ; 2019-04-03 from github php.txt       ?;
 END_OF_PHP_DOT_INI
 
+which php;
 php --version ;
 
 exit 1 ;
+
+
+
+
+
+
 
 
 #    imagemagick is now installed elsewhere....
