@@ -31,9 +31,9 @@ dnf  --assumeyes  install  ./remi-release-10.rpm  ;
 
 ##  https://blog.remirepo.net/post/2024/12/18/Install-PHP-8.4-on-Fedora-RHEL-CentOS-Alma-Rocky-or-other-clone
 
-dnf module reset php     ;
-dnf module enable php:remi-8.4      ;
-dnf install php-cli php-fpm php-mbstring php-xml   ;
+dnf --asssumeyes  module reset php     ;
+dnf --asssumeyes  module enable php:remi-8.4      ;
+dnf --asssumeyes  install php-cli php-fpm php-mbstring php-xml   ;
 #
 #
 #
