@@ -1,4 +1,8 @@
 
+#
+##   05_test_perl_connection.pl   -- 2025-07-29
+#
+#
 ###   partially written from:  https://www.a2hosting.com/kb/developer-corner/mysql/connect-to-mysql-using-perl/
 use DBI;
 
