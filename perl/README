@@ -62,6 +62,7 @@ print $out $img->png;
 EOF
 );
 
+ls -l  /tmp/img.png  ;   ## get the results of the image creation test.
 
 
 
