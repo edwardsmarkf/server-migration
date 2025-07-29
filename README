@@ -2,26 +2,23 @@
 
 ## 2019-11-13 - ran on centos-7/8 successfully.
 
-00)  sed --in-place  --expression='s/enabled=1/enabled=0/;' /etc/yum/pluginconf.d/product-id.conf ;  ## 2025-07-29 for RL-10
+1)  sed --in-place  --expression='s/enabled=1/enabled=0/;' /etc/yum/pluginconf.d/product-id.conf ;  ## 2025-07-29 for RL-10
 
-00a)  ffmpeg (can probably be done anytime but TEST first before starting!)
-
-
-01)  bash -vx  ./bash-misc/root-init.bsh   ;
-02)  bash -vx  ./bash-misc/dnf-yum.bsh     ;
-
-04)  webmin/virtualmin/csf
-
-05)  Mariadb UPGRADE (LET VIRTUALMIN INSTALL PHP, let github install PERL  ## do before perl and php)
-
-03)  perl/CPAN
+2)  ffmpeg (can probably be done anytime but TEST first before starting!)
 
 
+3)  bash -vx  ./bash-misc/root-init.bsh   ;
+4)  bash -vx  ./bash-misc/dnf-yum.bsh     ;
+
+5)  webmin/virtualmin/csf
+
+6)  Mariadb UPGRADE (LET VIRTUALMIN INSTALL PHP, let github install PERL  ## do before perl and php)
+
+7)  php and  /php/phpImageMagick.bsh
+
+8)  perl/CPAN
 
 
-
-06)  php - may be problematic now that webmin "insists" on installing its own favorite php.
-07)  /php/phpImageMagick.bsh
 
 09)  clamav
 
