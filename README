@@ -6,14 +6,19 @@
 
 00a)  ffmpeg (can probably be done anytime but TEST first before starting!)
 
+
 01)  bash -vx  ./bash-misc/root-init.bsh   ;
 02)  bash -vx  ./bash-misc/dnf-yum.bsh     ;
-
-03)  perl/CPAN
 
 04)  webmin/virtualmin/csf
 
 05)  Mariadb UPGRADE (LET VIRTUALMIN INSTALL PHP, let github install PERL  ## do before perl and php)
+
+03)  perl/CPAN
+
+
+
+
 
 06)  php - may be problematic now that webmin "insists" on installing its own favorite php.
 07)  /php/phpImageMagick.bsh
