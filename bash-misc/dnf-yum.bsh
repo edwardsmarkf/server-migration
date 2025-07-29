@@ -18,7 +18,7 @@
 ## 2025-07-29   - added  "--disableplugin subscription-manager"  to get around the error message
 
 
-dnf clean all ;  ## 2016-12-31 - required for MariaDB
+dnf --disableplugin subscription-manager     clean all ;  ## 2016-12-31 - required for MariaDB
 
 dnf   --assumeyes  --disableplugin subscription-manager    update              ;
 dnf   --assumeyes  --disableplugin subscription-manager    install  yum-utils  ;    ## 2013-05-15
@@ -26,19 +26,11 @@ dnf   --assumeyes  --disableplugin subscription-manager    install  dnf-utils  ;
 dnf   --assumeyes  --disableplugin subscription-manager    install  epel-release ;  ## 2020-01-18
 dnf   --assumeyes  --disableplugin subscription-manager    install  iptables-services   net-tools  ;   ## 2015-07-01
 
-dnf clean all   ;    ## 2013-05-15
+dnf --disableplugin subscription-manager    clean all   ;    ## 2013-05-15
 
 ###########################/usr/sbin/yum-complete-transaction --cleanup-only   ;    ## 2013-05-15
 
 dnf config-manager  --disableplugin subscription-manager   --set-enabled PowerTools ;  ## 2020-01-08
-
-
-                        ## required for php 8+  ## moved from php module 2020-01-22
-                        
-####dnf  --assumeyes  --disableplugin subscription-manager install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm ;
-####rpm --query --all | grep epel ;
-####dnf  --assumeyes  install https://rpms.remirepo.net/enterprise/remi-release-8.rpm ;
-####rpm --query --all  | grep remi ;
 
 
 
@@ -100,6 +92,15 @@ systemctl start postfix                 ; ## 2019-12-11
 exit 1 ;    ## DONT GO ANY FARTHER IN THIS SCRIPT!
 
 
+
+
+## now do this back in the php section....
+                        ## required for php 8+  ## moved from php module 2020-01-22
+                        
+####dnf  --assumeyes  --disableplugin subscription-manager install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm ;
+####rpm --query --all | grep epel ;
+####dnf  --assumeyes  install https://rpms.remirepo.net/enterprise/remi-release-8.rpm ;
+####rpm --query --all  | grep remi ;
 
 
 
