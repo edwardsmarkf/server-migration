@@ -5,6 +5,19 @@
 ###  2021-05-28:   https://mariadb.com/kb/en/no-rocky-linux-support-yet/+comments/5249
 ##  2021-08-15 - since we are now letting virtualmin install mariadb, there are "missing" installs!
 ## 2025-02-19 -- added variable to indicate which version we are trying to install.
+## 2025-07-29 -- on Rocky Linux, its unwise to install from repo, better to let dnf package manager take care of things.
+##                so this script is being shortened.
+
+/usr/bin/mariadb-upgrade   ;   ## 2025-02-19
+ 
+exit ;
+
+
+
+
+
+
+
 
 MARIADB_VERSION=11.8;   ## 2025-02-19 added version variable & reworked some of this, shorting it.
                         ## get values from:   https://mariadb.org/mariadb/all-releases/
