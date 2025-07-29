@@ -23,6 +23,8 @@ exit ;
 
 
 
+
+
 MARIADB_VERSION=11.8;   ## 2025-02-19 added version variable & reworked some of this, shorting it.
                         ## get values from:   https://mariadb.org/mariadb/all-releases/
 
