@@ -13,10 +13,10 @@ printf "content-type: text/plain\n\n" ;
 date
 END_OF_SHELL
 
-chmod  --verbose  755                                          cgiBinTest.sh  ;
-chown  --verbose  comptonpeslonline.com:comptonpeslonline.com  cgiBinTest.sh  ;
+chmod  --verbose  755                                          ../cgi-bin/cgiBinTest.sh  ;
+chown  --verbose  comptonpeslonline.com:comptonpeslonline.com  ../cgi-bin/cgiBinTest.sh  ;
 
-cat <<END_OF_PERL_SCRIPT > perlCgiTestScript.pl ;
+cat <<END_OF_PERL_SCRIPT > ../cgi-bin/perlCgiTestScript.pl ;
 #!/usr/bin/perl -w
 use Template::Stash::XS ;   ## a simple test to see if a 'use' statement is working.
 print "Content-type:text/html\r\n\r\n";
@@ -32,7 +32,7 @@ print '</html>';
 1;
 END_OF_PERL_SCRIPT
 
-chmod  --verbose  755                                          perlCgiTestScript.pl  ;
+chmod  --verbose  755                                          ../cgi-bin/perlCgiTestScript.pl  ;
 chown  --verbose  DOMAIN:DOMAIN    perlCgiTestScript.pl  ;
 
 
@@ -63,6 +63,9 @@ EOF
 );
 
 ls -l  /tmp/img.png  ;   ## get the results of the image creation test.
+
+
+
 
 
 
