@@ -15,8 +15,10 @@
 ##  2020-08-27  - removed yum-complete-transaction
 ##  2020-08-28  - added vim (really??)
 ##  2025-02-25  - replaced dnf  'maix' with 's-nail' as per  https://forums.rockylinux.org/t/not-able-to-install-mailx/12773
+## 2025-07-29   - added  "--disableplugin subscription-manager"  to get around the error message
 
-yum clean all ;  ## 2016-12-31 - required for MariaDB
+
+dnf clean all ;  ## 2016-12-31 - required for MariaDB
 
 dnf   --assumeyes  update   ;
 dnf   --assumeyes  install  yum-utils  ;    ## 2013-05-15
@@ -24,7 +26,7 @@ dnf   --assumeyes  install  dnf-utils  ;    ## 2020-01-08
 dnf   --assumeyes  install  epel-release ;  ## 2020-01-18
 dnf   --assumeyes  install  iptables-services   net-tools  ;   ## 2015-07-01
 
-yum clean all   ;    ## 2013-05-15
+dnf clean all   ;    ## 2013-05-15
 
 ###########################/usr/sbin/yum-complete-transaction --cleanup-only   ;    ## 2013-05-15
 
@@ -33,7 +35,7 @@ dnf config-manager --set-enabled PowerTools ;  ## 2020-01-08
 
                         ## required for php 8+  ## moved from php module 2020-01-22
                         
-dnf  --assumeyes  install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm ;
+dnf  --assumeyes  --disableplugin subscription-manager install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm ;
 rpm --query --all | grep epel ;
 
 dnf  --assumeyes  install https://rpms.remirepo.net/enterprise/remi-release-8.rpm ;
@@ -84,7 +86,7 @@ do
     echo '####################################';
     echo "Now installing ${installName} !!" ;
     echo '####################################';
-    dnf  --assumeyes  install ${installName} ;
+    dnf  --assumeyes  --disableplugin subscription-manager  install ${installName} ;
 done;
 
 ###dnf  --assumeyes  install    logcheck
@@ -97,6 +99,9 @@ systemctl start postfix                 ; ## 2019-12-11
  dnf --assumeyes groupinstall 'Development Tools'  ; ## 2021-06-30
 
 exit 1 ;    ## DONT GO ANY FARTHER IN THIS SCRIPT!
+
+
+
 
 
 
