@@ -20,7 +20,7 @@
 
 dnf clean all ;  ## 2016-12-31 - required for MariaDB
 
-dnf   --assumeyes  update   ;
+dnf   --assumeyes  --disableplugin subscription-manager    update              ;
 dnf   --assumeyes  --disableplugin subscription-manager    install  yum-utils  ;    ## 2013-05-15
 dnf   --assumeyes  --disableplugin subscription-manager    install  dnf-utils  ;    ## 2020-01-08
 dnf   --assumeyes  --disableplugin subscription-manager    install  epel-release ;  ## 2020-01-18
