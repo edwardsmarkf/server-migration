@@ -15,22 +15,22 @@
 ##  2020-08-27  - removed yum-complete-transaction
 ##  2020-08-28  - added vim (really??)
 ##  2025-02-25  - replaced dnf  'maix' with 's-nail' as per  https://forums.rockylinux.org/t/not-able-to-install-mailx/12773
-##  2025-07-29   - added  "--disableplugin subscription-manager"  to get around the error message
+
 
 
 dnf --disableplugin subscription-manager     clean all ;  ## 2016-12-31 - required for MariaDB
 
-dnf   --assumeyes  --disableplugin subscription-manager    update              ;
-dnf   --assumeyes  --disableplugin subscription-manager    install  yum-utils  ;    ## 2013-05-15
-dnf   --assumeyes  --disableplugin subscription-manager    install  dnf-utils  ;    ## 2020-01-08
-dnf   --assumeyes  --disableplugin subscription-manager    install  epel-release ;  ## 2020-01-18
-dnf   --assumeyes  --disableplugin subscription-manager    install  iptables-services   net-tools  ;   ## 2015-07-01
+dnf   --assumeyes  update              ;
+dnf   --assumeyes  install  yum-utils  ;    ## 2013-05-15
+dnf   --assumeyes  install  dnf-utils  ;    ## 2020-01-08
+dnf   --assumeyes  install  epel-release ;  ## 2020-01-18
+dnf   --assumeyes  install  iptables-services   net-tools  ;   ## 2015-07-01
 
 dnf --disableplugin subscription-manager    clean all   ;    ## 2013-05-15
 
 ###########################/usr/sbin/yum-complete-transaction --cleanup-only   ;    ## 2013-05-15
 
-dnf config-manager  --disableplugin subscription-manager   --set-enabled PowerTools ;  ## 2020-01-08
+dnf config-manager  --set-enabled PowerTools ;  ## 2020-01-08
 
 
 
@@ -77,7 +77,7 @@ do
     echo '####################################';
     echo "Now installing ${installName} !!" ;
     echo '####################################';
-    dnf  --assumeyes  --disableplugin subscription-manager  install ${installName} ;
+    dnf  --assumeyes  install ${installName} ;
 done;
 
 ###dnf  --assumeyes  install    logcheck
@@ -87,9 +87,11 @@ dnf --assumeyes  install postfix mailx  ; ## 2019-12-11
 systemctl enable postfix                ; ## 2019-12-11
 systemctl start postfix                 ; ## 2019-12-11
 
-dnf --assumeyes --disableplugin subscription-manager      groupinstall 'Development Tools'  ; ## 2021-06-30
+dnf --assumeyes groupinstall 'Development Tools'  ; ## 2021-06-30
 
 exit 1 ;    ## DONT GO ANY FARTHER IN THIS SCRIPT!
+
+
 
 
 
