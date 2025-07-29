@@ -2,6 +2,8 @@
 
 ## 2019-11-13 - ran on centos-7/8 successfully.
 
+0)  bash -vx   ./bash-misc/dnf-yum.bsh  > ./bash-misc/dnf-yum.bsh.log  2>&1  ;
+
 1)  sed --in-place  --expression='s/enabled=1/enabled=0/;' /etc/yum/pluginconf.d/product-id.conf ;  ## 2025-07-29 for RL-10
 
 2)  ffmpeg (can probably be done anytime but TEST first before starting!)
