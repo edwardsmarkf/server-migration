@@ -10,6 +10,7 @@
 ##  2021-05-01 -- added python38 for RockyLinux
 ##  2025-02-12 --  changed python38 to python3  (maybe it does not need 3.8 anymore??)
 ##  2025-02-12 --  added nasm (whatever that is)
+##  2025-07-29 --  added "--disableplugin subscription-manager" to  dnf
 
 # run these from either the command line or this entire script.
 ###  .   export.bsh  ##  notice the DOT at the beginning of the line, not ‘bash’
@@ -17,9 +18,9 @@ export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/  ;
 export LIBPATH=/usr/local/lib/   ;
 export LD_LIBRARY_PATH=/usr/local/lib/  ;
 
-dnf  --assumeyes  update ;
+dnf  --assumeyes  --disableplugin subscription-managerupdate ;
 
-dnf  --assumeyes  install   \
+dnf  --assumeyes  --disableplugin subscription-manager  install   \
     gcc                     \
     gcc-c++                 \
     git                     \
@@ -33,7 +34,7 @@ dnf  --assumeyes  install   \
     xz                      \
     ;
 
-dnf --assumeyes  --enablerepo=devel install nasm ;  ## 2025-02-12
+dnf --assumeyes   --disableplugin subscription-manager --enablerepo=devel install nasm ;  ## 2025-02-12
 
 ###########################
 #                         #
