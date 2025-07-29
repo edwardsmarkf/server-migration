@@ -15,7 +15,7 @@
 ##  2020-08-27  - removed yum-complete-transaction
 ##  2020-08-28  - added vim (really??)
 ##  2025-02-25  - replaced dnf  'maix' with 's-nail' as per  https://forums.rockylinux.org/t/not-able-to-install-mailx/12773
-## 2025-07-29   - added  "--disableplugin subscription-manager"  to get around the error message
+##  2025-07-29   - added  "--disableplugin subscription-manager"  to get around the error message
 
 
 dnf --disableplugin subscription-manager     clean all ;  ## 2016-12-31 - required for MariaDB
