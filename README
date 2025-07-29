@@ -6,11 +6,11 @@
 
 2)  ffmpeg (can probably be done anytime but TEST first before starting!)
 
-
 3)  bash -vx  ./bash-misc/root-init.bsh   ;
 4)  bash -vx  ./bash-misc/dnf-yum.bsh     ;
 
-5)  webmin/virtualmin/csf
+5)  webmin/virtualmin/csf   probably need to extract the install file from the website login-area rather than trying to grab it 
+                            inside the script
 
 6)  Mariadb UPGRADE (LET VIRTUALMIN INSTALL PHP, let github install PERL  ## do before perl and php)
 
