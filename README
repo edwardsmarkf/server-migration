@@ -2,23 +2,22 @@
 
 ## 2019-11-13 - ran on centos-7/8 successfully.
 
-0)  bash -vx   ./bash-misc/dnf-yum.bsh  > ./bash-misc/dnf-yum.bsh.log  2>&1  ;
+1)  bash -vx   ./bash-misc/dnf-yum.bsh     > ./bash-misc/dnf-yum.bsh.log     2>&1   ;
+2)  bash -vx   ./bash-misc/root-init.bsh   > ./bash-misc/root-init.bsh       2>&1   ;
 
-1)  sed --in-place  --expression='s/enabled=1/enabled=0/;' /etc/yum/pluginconf.d/product-id.conf ;  ## 2025-07-29 for RL-10
+3)  ### ????  sed --in-place  --expression='s/enabled=1/enabled=0/;' /etc/yum/pluginconf.d/product-id.conf ;  ## 2025-07-29 for RL-10
 
-2)  ffmpeg (can probably be done anytime but TEST first before starting!)
+3)  ffmpeg (can probably be done anytime but TEST first before starting!)
 
-3)  bash -vx  ./bash-misc/root-init.bsh   ;
-4)  bash -vx  ./bash-misc/dnf-yum.bsh     ;
 
-5)  webmin/virtualmin/csf   probably need to extract the install file from the website login-area rather than trying to grab it 
+4)  webmin/virtualmin/csf   probably need to extract the install file from the website login-area rather than trying to grab it 
                             inside the script
 
-6)  Mariadb UPGRADE (LET VIRTUALMIN INSTALL PHP, let github install PERL  ## do before perl and php)
+5)  Mariadb UPGRADE (LET VIRTUALMIN INSTALL PHP, let github install PERL  ## do before perl and php)
 
-7)  php and  /php/phpImageMagick.bsh
+6)  php and  /php/phpImageMagick.bsh
 
-8)  perl/CPAN
+6)  perl/CPAN
 
 
 
