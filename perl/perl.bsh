@@ -20,6 +20,7 @@
 #                       dnf --assumeyes install postfix mailx ;
 #           2020-01-10  -- added perl-Module-Load-Conditional per: https://github.com/openssl/openssl/issues/4417
 #           2025-07-29  -- added change to suppress "consumer identity warning" which blocks installs.
+#                             also had to add perl-GD (perhaps  because its no longer in CPAN??)
 
 
 ###  maybe need MariaDB installed first to properly test DBD::mysql?
@@ -34,6 +35,7 @@ for installName in                       \
             perl-CPAN                    \
             perl-DBD-mysql               \
             perl-devel                   \
+            perl-GD                      \
             perl-libxml-perl             \
             perl-Module-Load-Conditional \
             perl-Time-HiRes              \
