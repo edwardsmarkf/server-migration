@@ -2,6 +2,9 @@
 
 ## 2019-11-13 - ran on centos-7/8 successfully.
 
+0)  dnf  --assumeyes  install git    ;
+00)  git clone  https://github.com/edwardsmarkf/server-migration  ;
+
 1)  bash -vx   ./bash-misc/dnf-yum.bsh     > ./bash-misc/dnf-yum.bsh.log     2>&1   ;
 2)  bash -vx   ./bash-misc/root-init.bsh   > ./bash-misc/root-init.bsh       2>&1   ;
 
