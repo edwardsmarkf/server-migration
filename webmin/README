@@ -7,10 +7,10 @@
 3)  chmod  700  install.sh ;
 
 4)  ./install.sh ;
-
-5)   bash -vx   virtualmin.bsh
      ##  will ask "Continue (y/n) about your OS
      ##  it will also ask about qualified webhost name and Apache
+
+5)   bash -vx   virtualmin.bsh
 
 6)  log into localhost:10000  and FINISH the installation!
 
