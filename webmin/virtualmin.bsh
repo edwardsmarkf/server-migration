@@ -9,7 +9,7 @@
 #  2021-05-27  -- ONLY install virtualmin: (let virtualmin install webmin)   https://www.virtualmin.com/download.html
 #  2025-02-17  -- added CUSTOMIZATION command line to switch the longname domain short-name default to the LONG name
 #  2025-02-19  -- added CUSTOMIZATION command line to change default new virtual servers to ONLY include dns service and apache website
-#  2025-07-29  -- grab the ftp script from the virtualmin website login page and manually place it.
+#  2025-07-30  -- remove the install.sh, instead grab the ftp script from the virtualmin website login page and manually place it.
 
 
 
