@@ -2,25 +2,24 @@
 
 ## 2019-11-13 - ran on centos-7/8 successfully.
 
-0)  dnf  --assumeyes  install git    ;
-00)  git clone  https://github.com/edwardsmarkf/server-migration  ;
+1)  dnf  --assumeyes  install git    ;
+2)  git clone  https://github.com/edwardsmarkf/server-migration  ;
 
-1)  bash -vx   ./bash-misc/dnf-yum.bsh     > ./bash-misc/dnf-yum.bsh.log     2>&1   ;
-2)  bash -vx   ./bash-misc/root-init.bsh   > ./bash-misc/root-init.bsh       2>&1   ;
-
-3)  ### ????  sed --in-place  --expression='s/enabled=1/enabled=0/;' /etc/yum/pluginconf.d/product-id.conf ;  ## 2025-07-29 for RL-10
-
-3)  ffmpeg (can probably be done anytime but TEST first before starting!)
-
-
-4)  webmin/virtualmin/csf   probably need to extract the install file from the website login-area rather than trying to grab it 
+3)  webmin/virtualmin/csf   probably need to extract the install file from the website login-area rather than trying to grab it 
                             inside the script
 
-5)  Mariadb UPGRADE (LET VIRTUALMIN INSTALL PHP, let github install PERL  ## do before perl and php)
+4)  bash -vx   ./bash-misc/dnf-yum.bsh     > ./bash-misc/dnf-yum.bsh.log     2>&1   ;
+5)  bash -vx   ./bash-misc/root-init.bsh   > ./bash-misc/root-init.bsh       2>&1   ;
 
-6)  php and  /php/phpImageMagick.bsh
+6)  ### ????  sed --in-place  --expression='s/enabled=1/enabled=0/;' /etc/yum/pluginconf.d/product-id.conf ;  ## 2025-07-29 for RL-10
 
-6)  perl/CPAN
+7)  ffmpeg (can probably be done anytime but TEST first before starting!)
+
+#)  SKIP SKIP  Mariadb UPGRADE (LET VIRTUALMIN INSTALL PHP, let github install PERL  ## do before perl and php)
+
+8)  php and  /php/phpImageMagick.bsh
+
+9)  perl/CPAN
 
 
 
