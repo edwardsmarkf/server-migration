@@ -1,13 +1,13 @@
 
 2025-02-18 - hopefully just run these commands (RL 9.4)
 
-bash -vx  00_update_php.bsh    ;
+bash -vx  00_php_install_after_webmin.bsh    >  00_php_install_after_webmin.bsh.log    2&>1   ;
 
-bash  -vx  01_php_install_RL.bsh   ;
+bash  -vx  01_php_install_RL.bsh             >  01_php_install_RL.bsh.log              2>&1   ;
 
-bash  -vx  02_phpImageMagick.bsh    ;
+bash  -vx  02_phpImageMagick.bsh             >  02_phpImageMagick.bsh.log              2>&1   ;
 
-bash  -vx  03_php_composer.bsh    ;
+bash  -vx  03_php_composer.bsh               >  03_php_composer.bsh.log                2>&1   ;
 
 mv   --verbose   ./imageMagickTest.php  /home/DOMAIN/public_html/   ;
 
