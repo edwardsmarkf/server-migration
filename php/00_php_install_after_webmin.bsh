@@ -4,7 +4,10 @@
 #
 #
 #
-
+RL_EPEL=9                ;   ##    elel release ##
+PHP_RELEASE_NBR=8.4      ;
+#
+#
 ## make sure webmin is installed first!
 
 webmin  --version;
@@ -18,22 +21,22 @@ fi
         ##echo   $?
 
 ## the curl can be eliminated if the "cert" is installed:
-##      dnf --assumeyes --disableplugin subscription-manager   install https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm  ; 
+##      dnf --assumeyes --disableplugin subscription-manager   install https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
 
-curl  https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm \
+curl  https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm \
    >  ./epel-release-latest-10.noarch.rpm  ;
-dnf  --assumeyes --disableplugin subscription-manager   install  ./epel-release-latest-10.noarch.rpm  ; 
+dnf  --assumeyes --disableplugin subscription-manager   install  ./epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
 
 ##   "--insecure" primarly used when installing on virtualbox
-curl --insecure  https://rpms.remirepo.net/enterprise/remi-release-10.rpm  \
+curl --insecure  https://rpms.remirepo.net/enterprise/remi-release-${RL_EPEL}.rpm  \
         > ./remi-release-10.rpm ;
 
-dnf  --assumeyes --disableplugin subscription-manager   install  ./remi-release-10.rpm  ;
+dnf  --assumeyes --disableplugin subscription-manager   install  ./remi-release-${RL_EPEL}.rpm  ;
 
 ##  https://blog.remirepo.net/post/2024/12/18/Install-PHP-8.4-on-Fedora-RHEL-CentOS-Alma-Rocky-or-other-clone
 
 dnf --asssumeyes   --disableplugin subscription-manager   module reset php     ;
-dnf --asssumeyes  --disableplugin subscription-manager    module enable php:remi-8.4      ;
+dnf --asssumeyes  --disableplugin subscription-manager    module enable php:remi-${PHP_RELEASE_NBR}      ;
 dnf --asssumeyes  --disableplugin subscription-manager    install php-cli php-fpm php-mbstring php-xml   ;
 #
 #
