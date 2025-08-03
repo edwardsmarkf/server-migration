@@ -29,7 +29,7 @@ dnf  --assumeyes --disableplugin subscription-manager   install  ./epel-release-
 
 ##   "--insecure" primarly used when installing on virtualbox
 curl --insecure  https://rpms.remirepo.net/enterprise/remi-release-${RL_EPEL}.rpm  \
-        > ./remi-release-10.rpm ;
+        > ./remi-release-${RL_EPEL}.rpm ;
 
 dnf  --assumeyes --disableplugin subscription-manager   install  ./remi-release-${RL_EPEL}.rpm  ;
 
