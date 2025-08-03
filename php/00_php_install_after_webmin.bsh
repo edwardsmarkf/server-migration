@@ -7,8 +7,9 @@
 
 ## make sure webmin is installed first!
 
-if  [ -x /sbin/webmin  ];  then
-    /sbin/webmin  --version;
+webmin  --version;
+if  [[ $? == 0 ]];  then
+    webmin  --version;
 else
     echo 'webmin NOT installed!  please install webmin first.';
     exit ;
