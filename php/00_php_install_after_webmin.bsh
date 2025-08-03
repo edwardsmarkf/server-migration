@@ -13,6 +13,8 @@ PHP_RELEASE_NBR=8.4      ;   ##   2025-08-03
 webmin  --version;
 if  [[ $? == 0 ]];  then
     webmin  --version;
+    which webmin;
+    echo 'found webmin installed, continue';
 else
     echo 'webmin NOT installed!  please install webmin first.';
     exit ;
