@@ -24,7 +24,7 @@ fi
 ##      dnf --assumeyes --disableplugin subscription-manager   install https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
 
 curl  https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm \
-   >  ./epel-release-latest-10.noarch.rpm  ;
+   >  ./epel-release-latest-${RL_EPEL}.noarch.rpm  ;
 dnf  --assumeyes --disableplugin subscription-manager   install  ./epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
 
 ##   "--insecure" primarly used when installing on virtualbox
