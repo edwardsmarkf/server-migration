@@ -2,7 +2,7 @@
 #
 #  php_install_after_webmin.bsh  -- 2025-07-27
 #
-#
+#  2025-08-03  --  added version number variables
 #
 RL_EPEL=9                ;   ##    elel release ##
 PHP_RELEASE_NBR=8.4      ;
