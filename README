@@ -5,8 +5,8 @@
 1)  dnf  --assumeyes  install git    ;
 2)  git clone  https://github.com/edwardsmarkf/server-migration  ;
 
-3)  webmin/virtualmin/csf   probably need to extract the install file from the website login-area rather than trying to grab it 
-                            inside the script
+3)  webmin/virtualmin/csf 
+      now need to download and ftp the install file from the website login-area rather than trying to curl it from inside the script
 
 4)  bash -vx   ./bash-misc/dnf-yum.bsh     > ./bash-misc/dnf-yum.bsh.log     2>&1   ;
 5)  bash -vx   ./bash-misc/root-init.bsh   > ./bash-misc/root-init.bsh       2>&1   ;
