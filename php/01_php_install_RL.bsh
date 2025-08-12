@@ -18,18 +18,8 @@
 #   2025-07-28 - powertools no longer seems to be required.....(??)
 
 ##   DONT EVER USE WEBTATIC!  use remi/epel instead   ! ! ! 
-echo 'DONT EVER USE WEBTATIC!  use remi/epel instead   ! ! ! '  ;
-echo 'DONT EVER USE WEBTATIC!  use remi/epel instead   ! ! ! '  ;
+
 echo 'make SURE that Webmin installs php first ! ! ! ! '  ;
-
-## https://www.linuxtechi.com/install-php-on-centos-8-rhel-8/
-
-####  2021-06-26    dnf  --assumeyes  install epel-release   ;
-####  2021-06-26    dnf  --assumeyes  install https://rpms.remirepo.net/enterprise/remi-release-8.rpm ;
-
-####  2021-06-26    dnf module list php  ;
-
-####  2021-06-26    dnf --assumeyes  module enable php:remi-7.2  ;   ## 2020-09-09 - changed from 7.4 back to 7.2  ;-(
 
 
 
@@ -83,6 +73,16 @@ php --version ;
 exit 1 ;
 
 
+
+
+## https://www.linuxtechi.com/install-php-on-centos-8-rhel-8/
+
+####  2021-06-26    dnf  --assumeyes  install epel-release   ;
+####  2021-06-26    dnf  --assumeyes  install https://rpms.remirepo.net/enterprise/remi-release-8.rpm ;
+
+####  2021-06-26    dnf module list php  ;
+
+####  2021-06-26    dnf --assumeyes  module enable php:remi-7.2  ;   ## 2020-09-09 - changed from 7.4 back to 7.2  ;-(
 
 
 
