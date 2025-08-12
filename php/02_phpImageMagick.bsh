@@ -10,6 +10,7 @@
 #                       dnf -y  install ghostscript     freetype   
 #
 #     2025-02-17  -- powertools became 'crb' and pecl might not work, replaced
+#     2025-08-12  -- ran in RL-10
 
 
 ## MAKE SURE CORRECT PHP VERSION IS INSTALLED   F-I-R-S-T ! ! ! ! !
@@ -97,7 +98,8 @@ echo ‘##################################’
 dnf  --assumeyes  config-manager --enable crb  ;    ## 2025-02-17
 dnf  --assumeyes  install  php-imagick         ;    ## 2025-02-17
 ###  2025-02-17 - may not work anymore.....   pecl install imagick ;
-convert --version  ;                                ## 2025-02-17  check imagemagick version  at time of writing  ImageMagick 6.9.13-17
+magick  convert --version  ;         ## 2025-02-17  check imagemagick version  at time of writing  ImageMagick 6.9.13-17
+                                 ## 2025-08-12 -- ImageMagick 7.1.1-43
 
 
                                                              ##    to test do the following::                                              
@@ -125,6 +127,10 @@ echo 'and please try  http://DOMAIN/imageMagickTest.php too.';
 echo 'NOTE:  you may need to create a virtualmin virtual-server first and MOVE the phpinfo.php into the new directory!';
 
 exit 1;
+
+
+
+
 
 
 
