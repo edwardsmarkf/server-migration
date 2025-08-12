@@ -22,7 +22,7 @@
       $draw->annotation(20, 50, "Hello ImageMagick!");
             /* Create a new canvas object and a white image */
       $canvas = new Imagick();
-      $canvas->newImage(350, 70, "white");
+      $canvas->newImage(500, 70, "white");
            /* Draw the ImagickDraw on to the canvas */
       $canvas->drawImage($draw);
             /* 1px black border around the image */
