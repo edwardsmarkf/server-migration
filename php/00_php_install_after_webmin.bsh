@@ -47,9 +47,15 @@ which php   ;
 
 /usr/bin/php  --version ;
 
-echo '<?php phpinfo(); ?>' > /var/www/html/phpinfo.php ;
+systemctl  restart  httpd.service  ;   ##  not sure if these are actually required...??
+systemctl  restart  php-fpm.service ;  ##  2025-08-12
 
+echo '<?php phpinfo(); ?>' > ./phpinfo.php ;
+
+echo 'mv  --verbose   ./phpinfo.php  http://DOMAIN/phpinfo.php  ;'
 echo 'please try  http://DOMAIN/phpinfo.php   in your browser once again!';
-echo 'NOTE:  you may need to create a virtualmin virtual-server first and MOVE the phpinfo.php into the new directory!';
+echo 'NOTE:  you will need to create a virtualmin virtual-server first and MOVE the phpinfo.php into the new directory!';
+
+
 
 exit;
