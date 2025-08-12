@@ -3,6 +3,10 @@
 1)  ## GET `install.sh` script from website!   https://www.virtualmin.com/account/  2025-07-29
       virtualmin-install.sh is the "generic" one while install.sh from the login area contains our secret keys.
 
+## alternatively,  
+##    sudo sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh)" -- --bundle LEMP --branch unstable
+## for a pre-release
+
 2)  ## FTP IT INTO PLACE FIRST.
 
 3)  chmod  700  install.sh ;
