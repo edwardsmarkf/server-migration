@@ -1,7 +1,7 @@
 
 2025-02-18 - hopefully just run these commands (RL 9.4)
 
-bash -vx  00_php_install_after_webmin.bsh    >  00_php_install_after_webmin.bsh.log    2&>1   ;
+bash -vx  00_php_install_after_webmin.bsh    >  00_php_install_after_webmin.bsh.log    2>&1   ;
 
 bash  -vx  01_php_install_RL.bsh             >  01_php_install_RL.bsh.log              2>&1   ;
 
