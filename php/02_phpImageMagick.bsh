@@ -112,7 +112,7 @@ systemctl   restart  httpd.service  ;     ## turn on the php-magick interface in
 systemctl   restart php-fpm.service ;      ## 2025-02-17
 
 
-cat <<<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTest.php ;
+cat <<<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTest.php ;   ##2025-08-13 - new location!
 <?php
     \$image = new Imagick();
     \$image->newImage(100, 100, new ImagickPixel('red'));
@@ -122,8 +122,8 @@ cat <<<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTest.php ;
 ?>
 END_OF_SCRIPT
 
-chown  ${DOMAIN}:${DOMAIN}   /home/${DOMAIN}/public_html/imageMagickTest.php ;  ## 2025-08-13
-chmod  755                   /home/${DOMAIN}/public_html/imageMagickTest.php ;  ## 2025-08-13
+chown  --verbose ${DOMAIN}:${DOMAIN}   /home/${DOMAIN}/public_html/imageMagickTest.php ;  ## 2025-08-13
+chmod  --verbose 755                   /home/${DOMAIN}/public_html/imageMagickTest.php ;  ## 2025-08-13
 
 echo 'please try  http://${DOMAIN}/phpinfo.php   in your browser once again!';
 echo 'be sure to look for both the magick section AND the magicwand section near the bottom!!';
