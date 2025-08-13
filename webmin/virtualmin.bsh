@@ -10,8 +10,9 @@
 #  2025-02-17  -- added CUSTOMIZATION command line to switch the longname domain short-name default to the LONG name
 #  2025-02-19  -- added CUSTOMIZATION command line to change default new virtual servers to ONLY include dns service and apache website
 #  2025-07-30  -- remove the install.sh, instead grab the ftp script from the virtualmin website login page and manually place it.
-#  2025-08-13  -- added a new created domain zzyzxzzyzx.com for testing
+#  2025-08-13  -- added a new created domain DOMAIN for testing
 
+DOMAIN='zzyzxzzyzx.com'  ;  ## 2025-08-13
 
 #####  this is REQUIRED because webmin might go ahead and run OUTSIDE of the sysctmctl command:
 /etc/webmin/stop ;  # this might not do anything?
@@ -26,8 +27,8 @@ systemctl  status --no-pager --full  webmin.service  ;
 /usr/bin/sed  --in-place  --expression='s/^longname=0$/longname=1/;'                  /etc/webmin/virtual-server/config    ;   ## 2025-02-17
 /usr/bin/sed  --in-place  --expression='s/^featurelimits=$/featurelimits=dns web/;'   /etc/webmin/virtual-server/plans/0   ;   ## 2025-02-19
 
-virtualmin  create-domain  --domain  zzyzxzzyzx.com  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13  
-                                                                                                       ##  --dns and --web are the ONLY two options requested
+virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13  
+                                                                                                  ##  --dns and --web are the ONLY two options requested
 
 cat <<END_OF_DISPLAY;
 
