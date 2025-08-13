@@ -26,7 +26,7 @@ maybe do 'sed' here ?????
      ##  will ask "Continue (y/n) about your OS
      ##  it will also ask about qualified webhost name and Apache
 
-5)   bash -vx   virtualmin.bsh
+5)   bash -vx   ./virtualmin.bsh   2>&1  ;
 
 6)  log into localhost:10000  and FINISH the installation!
 
