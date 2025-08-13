@@ -4,10 +4,11 @@
 #
 #  2025-08-03  --  added version number variables
 #
-RL_EPEL=9                                                    ;   ##   2025-08-03 epel release ##
-PHP_RELEASE_NBR=8.4                                          ;   ##   2025-08-03 
-DOMAIN=zzyzxzzyzx.com                                        ;   ##   2025-08-13
-SUBSCRIPTION_MANAGER='--disableplugin subscription-manager'  ;   ##   2025-08-13
+RL_EPEL=9                                                     ;   ##   2025-08-03 epel release ##
+PHP_RELEASE_NBR=8.4                                           ;   ##   2025-08-03 
+DOMAIN=zzyzxzzyzx.com                                         ;   ##   2025-08-13
+SUBSCRIPTION_MANAGER=''                                       ;   ##   2025-08-13
+   #SUBSCRIPTION_MANAGER='--disableplugin subscription-manager'  ;   ##   2025-08-13  this MAY be needed...??
 #
 #
 ## make sure webmin is installed first!
