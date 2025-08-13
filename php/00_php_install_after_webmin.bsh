@@ -6,9 +6,11 @@
 #
 RL_EPEL=9                ;   ##   2025-08-03 epel release ##
 PHP_RELEASE_NBR=8.4      ;   ##   2025-08-03 
+DOMAIN=zzyzxzzyzx.com    ;   ##   2025-08-13
 #
 #
 ## make sure webmin is installed first!
+
 
 webmin  --version;
 if  [[ $? == 0 ]];  then
@@ -20,7 +22,6 @@ else
     exit ;
 fi
 
-        ##echo   $?
 
 ## the curl can be eliminated if the "cert" is installed:
 ##      dnf --assumeyes --disableplugin subscription-manager   install https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
@@ -50,11 +51,11 @@ which php   ;
 systemctl  restart  httpd.service  ;   ##  not sure if these are actually required...??
 systemctl  restart  php-fpm.service ;  ##  2025-08-12
 
-echo '<?php phpinfo(); ?>' > ./phpinfo.php ;
+echo  '<?php phpinfo(); ?>' >    /home/${DOMAIN}/public_html/phpinfo.php    ;
+chown  ${DOMAIN}:${DOMAIN}       /home/${DOMAIN}/public_html/phpinfo.php    ;  ## 2025-08-13
+chmod  755                       /home/${DOMAIN}/public_html/phpinfo.php    ;  ## 2025-08-13
 
-echo 'mv  --verbose   ./phpinfo.php  http://DOMAIN/phpinfo.php  ;'
-echo 'please try  http://DOMAIN/phpinfo.php   in your browser once again!';
-echo 'NOTE:  you will need to create a virtualmin virtual-server first and MOVE the phpinfo.php into the new directory!';
+echo 'please try  http://${DOMAIN}/phpinfo.php   in your browser once again!';
 
 
 
