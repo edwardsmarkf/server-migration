@@ -4,9 +4,10 @@
 #
 #  2025-08-03  --  added version number variables
 #
-RL_EPEL=9                ;   ##   2025-08-03 epel release ##
-PHP_RELEASE_NBR=8.4      ;   ##   2025-08-03 
-DOMAIN=zzyzxzzyzx.com    ;   ##   2025-08-13
+RL_EPEL=9                                                    ;   ##   2025-08-03 epel release ##
+PHP_RELEASE_NBR=8.4                                          ;   ##   2025-08-03 
+DOMAIN=zzyzxzzyzx.com                                        ;   ##   2025-08-13
+SUBSCRIPTION_MANAGER='--disableplugin subscription-manager'  ;   ##   2025-08-13
 #
 #
 ## make sure webmin is installed first!
@@ -24,23 +25,23 @@ fi
 
 
 ## the curl can be eliminated if the "cert" is installed:
-##      dnf --assumeyes --disableplugin subscription-manager   install https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
+##      dnf --assumeyes ${SUBSCRIPTION_MANAGER}   install https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
 
 curl  https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm \
    >  ./epel-release-latest-${RL_EPEL}.noarch.rpm  ;
-dnf  --assumeyes --disableplugin subscription-manager   install  ./epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
+dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install  ./epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
 
 ##   "--insecure" primarly used when installing on virtualbox
 curl --insecure  https://rpms.remirepo.net/enterprise/remi-release-${RL_EPEL}.rpm  \
         > ./remi-release-${RL_EPEL}.rpm ;
 
-dnf  --assumeyes --disableplugin subscription-manager   install  ./remi-release-${RL_EPEL}.rpm  ;
+dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install  ./remi-release-${RL_EPEL}.rpm  ;
 
 ##  https://blog.remirepo.net/post/2024/12/18/Install-PHP-8.4-on-Fedora-RHEL-CentOS-Alma-Rocky-or-other-clone
 
-dnf --assumeyes   --disableplugin subscription-manager   module reset php     ;
-dnf --assumeyes  --disableplugin subscription-manager    module enable php:remi-${PHP_RELEASE_NBR}      ;
-dnf --assumeyes  --disableplugin subscription-manager    install php-cli php-fpm php-mbstring php-xml   ;
+dnf --assumeyes  ${SUBSCRIPTION_MANAGER}    module reset php     ;
+dnf --assumeyes  ${SUBSCRIPTION_MANAGER}    module enable php:remi-${PHP_RELEASE_NBR}      ;
+dnf --assumeyes  ${SUBSCRIPTION_MANAGER}    install php-cli php-fpm php-mbstring php-xml   ;
 #
 #
 #
