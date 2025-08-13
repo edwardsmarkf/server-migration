@@ -10,7 +10,9 @@
 #                       dnf -y  install ghostscript     freetype   
 #
 #     2025-02-17  -- powertools became 'crb' and pecl might not work, replaced
-#     2025-08-12  -- ran in RL-10
+#     2025-08-13  -- added new variable and ran in RL-10
+
+DOMAIN=zzyzxzzyzx.com ;  ## 2025-08-13
 
 
 ## MAKE SURE CORRECT PHP VERSION IS INSTALLED   F-I-R-S-T ! ! ! ! !
@@ -109,9 +111,8 @@ php --modules | grep imagick   ;     ## if this causes errors, remove "/etc/php.
 systemctl   restart  httpd.service  ;     ## turn on the php-magick interface into apache
 systemctl   restart php-fpm.service ;      ## 2025-02-17
 
-echo '<?php phpinfo(); ?>' > /var/www/html/phpinfo.php ;
 
-cat <<<END_OF_SCRIPT > /var/www/html/imageMagickTest.php ;
+cat <<<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTest.php ;
 <?php
     \$image = new Imagick();
     \$image->newImage(100, 100, new ImagickPixel('red'));
@@ -121,12 +122,15 @@ cat <<<END_OF_SCRIPT > /var/www/html/imageMagickTest.php ;
 ?>
 END_OF_SCRIPT
 
-echo 'please try  http://DOMAIN/phpinfo.php   in your browser once again!';
+chown  ${DOMAIN}:${DOMAIN}   /home/${DOMAIN}/public_html/imageMagickTest.php ;  ## 2025-08-13
+chmod  755                   /home/${DOMAIN}/public_html/imageMagickTest.php ;  ## 2025-08-13
+
+echo 'please try  http://${DOMAIN}/phpinfo.php   in your browser once again!';
 echo 'be sure to look for both the magick section AND the magicwand section near the bottom!!';
-echo 'and please try  http://DOMAIN/imageMagickTest.php too.';
-echo 'NOTE:  you may need to create a virtualmin virtual-server first and MOVE the phpinfo.php into the new directory!';
+echo 'and please try  http://${DOMAIN}/imageMagickTest.php too.';
 
 exit 1;
+
 
 
 
