@@ -4,8 +4,19 @@
       virtualmin-install.sh is the "generic" one while install.sh from the login area contains our secret keys.
 
 ## alternatively,  
-##  sudo sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh)" -- --bundle LAMP --branch unstable ;
-## for a pre-release
+
+##  sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh)"  \
+                                             --                                  \
+                                             --bundle LAMP                       \
+                                             --branch unstable                   \
+                                             --hostname host.edwardsmark.info    \
+                                             --yes                               \
+                                                                                 ;
+## for a pre-release  (--yes assumes yes for all prompts)
+
+maybe do 'sed' here ?????
+   SERIAL=GPL
+   KEY=GPL
 
 2)  ## FTP IT INTO PLACE FIRST.
 
