@@ -9,10 +9,9 @@ bash  -vx  02_phpImageMagick.bsh             >  02_phpImageMagick.bsh.log       
 
 bash  -vx  03_php_composer.bsh               >  03_php_composer.bsh.log                2>&1   ;
 
-mv   --verbose   ./imageMagickTest.php  /home/zzyzxzzyzx.com/public_html/   ;
-chown   --verbose    zzyzxzzyzx.com:zzyzxzzyzx.com   /home/zzyzxzzyzx.com/public_html/imageMagickTest.php  ;  ## 2025-08-13
 
-test  at:              https://zzyzxzzyzx.com/imageMagickTest.php
+test  at:              https://zzyzxzzyzx.com/phpinfo.php?#
+                       https://zzyzxzzyzx.com/imageMagickTest.php
 
 
 
