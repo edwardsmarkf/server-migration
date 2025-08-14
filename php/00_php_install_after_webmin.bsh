@@ -51,7 +51,9 @@ curl --verbose   ${RL_EPEL_URL}                     >  ./${RL_EPEL_FILENAME}  ; 
 ls  -l                                                 ./${RL_EPEL_FILENAME}  ;   ## 2025-08-13
 dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install     ./${RL_EPEL_FILENAME}  ;   ## 2025-08-13
 
-if  [ $? ]; then                                                                  
+if  [[ $? == 0 ]];  then
+    echo  'EPEL succeeded or already installed, continuing';                      ## 2025-08-14
+else
     echo  'EPEL failed, stopping script';                                         ## 2025-08-14
     exit;                                                                         ## 2025-08-14
 fi
@@ -68,7 +70,9 @@ curl --verbose --insecure  ${RL_REMI_URL}                      >  ./${RL_REMI_FI
 ls -l                                                             ./${RL_REMI_FILENAME}  ;  ## 2025-08-13
 dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install                ./${RL_REMI_FILENAME}  ;  ## 2025-08-13
 
-if  [ $? ]; then                                                                  
+if  [[ $? == 0 ]];  then
+    echo  'REMI succeeded, or already installed, continuing';                     ## 2025-08-14
+else
     echo  'REMI failed, stopping script';                                         ## 2025-08-14
     exit;                                                                         ## 2025-08-14
 fi
