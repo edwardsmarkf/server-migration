@@ -21,7 +21,7 @@ OS_VERSION=$(cut  -d ' ' -f 4 /etc/rocky-release | sed --expression='s/\..*//;';
 RL_EPEL_FILENAME="epel-release-latest-${OS_VERSION}.noarch.rpm"                               ;   ## 2025-08-13  
 RL_EPEL_URL="https://dl.fedoraproject.org/pub/epel/${RL_EPEL_FILENAME}"                       ;   ## 2025-08-13
 RL_REMI_FILENAME="remi-release-${OS_VERSION}.rpm"                                             ;   ## 2025-08-13
-RL_REMI_URL="https://rpms.remirepo.net/enterprise/${RL_REMI_FILENAME"                         ;   ## 2025-08-13
+RL_REMI_URL="https://rpms.remirepo.net/enterprise/${RL_REMI_FILENAME}"                        ;   ## 2025-08-13
 
 #
 
