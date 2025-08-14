@@ -5,15 +5,18 @@
 #  2025-08-03  --  added version number variables
 #
 
-############RL_EPEL=9                                                     ;   ##   2025-08-03 epel release ##
-sudo dnf install https://rpms.remirepo.net/fedora/remi-release-$(cut -d ' ' -f 3 /etc/fedora-release).rpm
 PHP_RELEASE_NBR=8.4                                           ;   ##   2025-08-03 
 DOMAIN=zzyzxzzyzx.com                                         ;   ##   2025-08-13
 SUBSCRIPTION_MANAGER=''                                       ;   ##   2025-08-13
    #SUBSCRIPTION_MANAGER='--disableplugin subscription-manager'  ;   ##   2025-08-13  this MAY be needed...??
 #
 #
+       ############RL_EPEL=9                                                     ;   ##   2025-08-03 epel release ##
+
+RL_EPEL=$(cut -d ' ' -f 4 /etc/rocky-release;); 
+#
 ## make sure webmin is installed first!
+
 
 
 webmin  --version;
@@ -30,6 +33,8 @@ fi
 ## the curl can be eliminated if the "cert" is installed:
 ##      dnf --assumeyes ${SUBSCRIPTION_MANAGER}   install https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
 
+??????    curl  https://dl.fedoraproject.org/pub/epel
+curl  https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
 curl  https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm \
    >  ./epel-release-latest-${RL_EPEL}.noarch.rpm  ;
 dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install  ./epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
