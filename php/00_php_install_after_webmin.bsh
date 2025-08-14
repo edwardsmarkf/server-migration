@@ -51,12 +51,12 @@ curl --verbose   ${RL_EPEL_URL}                     >  ./${RL_EPEL_FILENAME}  ; 
 ls  -l                                                 ./${RL_EPEL_FILENAME}  ;   ## 2025-08-13
 dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install     ./${RL_EPEL_FILENAME}  ;   ## 2025-08-13
 
-if  [[ $? == 0 ]];  then
+if  [[ $? == 0 ]];  then                                                          ## 2025-08-14
     echo  'EPEL succeeded or already installed, continuing';                      ## 2025-08-14
-else
+else                                                                              ## 2025-08-14
     echo  'EPEL failed, stopping script';                                         ## 2025-08-14
     exit;                                                                         ## 2025-08-14
-fi
+fi                                                                                ## 2025-08-14
 
 
    ###############################
@@ -70,17 +70,31 @@ curl --verbose --insecure  ${RL_REMI_URL}                      >  ./${RL_REMI_FI
 ls -l                                                             ./${RL_REMI_FILENAME}  ;  ## 2025-08-13
 dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install                ./${RL_REMI_FILENAME}  ;  ## 2025-08-13
 
-if  [[ $? == 0 ]];  then
+if  [[ $? == 0 ]];  then                                                          ## 2025-08-14
     echo  'REMI succeeded, or already installed, continuing';                     ## 2025-08-14
-else
+else                                                                              ## 2025-08-14
     echo  'REMI failed, stopping script';                                         ## 2025-08-14
     exit;                                                                         ## 2025-08-14
-fi
+fi                                                                                ## 2025-08-14
 
 
 
+   ###############################
+   #                             #
+   #      module reset php       #
+   #                             #
+   ###############################
 
 dnf --assumeyes  ${SUBSCRIPTION_MANAGER}    module reset php     ;
+
+if  [[ $? == 0 ]];  then                                                          ## 2025-08-14
+    echo  'php module reset succeeded or already installed, continuing';          ## 2025-08-14
+else                                                                              ## 2025-08-14
+    echo  'php module reset failed, stopping script';                             ## 2025-08-14
+    exit;                                                                         ## 2025-08-14
+fi                                                                                ## 2025-08-14
+
+
 dnf --assumeyes  ${SUBSCRIPTION_MANAGER}    module enable php:remi-${PHP_RELEASE_NBR}      ;
 dnf --assumeyes  ${SUBSCRIPTION_MANAGER}    install php-cli php-fpm php-mbstring php-xml   ;
 #
