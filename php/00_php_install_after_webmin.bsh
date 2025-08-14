@@ -4,7 +4,9 @@
 #
 #  2025-08-03  --  added version number variables
 #
-RL_EPEL=9                                                     ;   ##   2025-08-03 epel release ##
+
+############RL_EPEL=9                                                     ;   ##   2025-08-03 epel release ##
+sudo dnf install https://rpms.remirepo.net/fedora/remi-release-$(cut -d ' ' -f 3 /etc/fedora-release).rpm
 PHP_RELEASE_NBR=8.4                                           ;   ##   2025-08-03 
 DOMAIN=zzyzxzzyzx.com                                         ;   ##   2025-08-13
 SUBSCRIPTION_MANAGER=''                                       ;   ##   2025-08-13
