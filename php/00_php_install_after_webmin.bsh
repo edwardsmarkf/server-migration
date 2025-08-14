@@ -63,7 +63,6 @@ curl --verbose --insecure  ${RL_REMI_URL}                      >  ./${RL_REMI_FI
 ls -l                                                             ./${RL_REMI_FILENAME}  ;  ## 2025-08-13
 dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install                ./${RL_REMI_FILENAME}  ;  ## 2025-08-13
 
-##  https://blog.remirepo.net/post/2024/12/18/Install-PHP-8.4-on-Fedora-RHEL-CentOS-Alma-Rocky-or-other-clone
 
 dnf --assumeyes  ${SUBSCRIPTION_MANAGER}    module reset php     ;
 dnf --assumeyes  ${SUBSCRIPTION_MANAGER}    module enable php:remi-${PHP_RELEASE_NBR}      ;
@@ -89,6 +88,8 @@ echo 'please try  http://${DOMAIN}/phpinfo.php   in your browser once again!';
 exit;
 
 
+
+##  https://blog.remirepo.net/post/2024/12/18/Install-PHP-8.4-on-Fedora-RHEL-CentOS-Alma-Rocky-or-other-clone
 
 
 
