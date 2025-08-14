@@ -3,7 +3,7 @@
 #  php_install_after_webmin.bsh  -- 2025-07-27
 #
 #  2025-08-03  --  added version number variables
-#  2025-08-13  --  made the remi & epel variables
+#  2025-08-13  --  made the remi & epel url & filenames variables
 
 PHP_RELEASE_NBR=8.4                                           ;   ##   2025-08-03 
 DOMAIN=zzyzxzzyzx.com                                         ;   ##   2025-08-13
@@ -47,8 +47,8 @@ fi
    #                             #
    ###############################
 
-curl  ${RL_EPEL_URL}                                >  ./${RL_EPEL_FILENAME}  ;
-dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install     ./${RL_EPEL_FILENAME}  ; 
+curl --verbose   ${RL_EPEL_URL}                     >  ./${RL_EPEL_FILENAME}  ;   ## 2025-08-13
+dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install     ./${RL_EPEL_FILENAME}  ;   ## 2025-08-13
 
 
    ###############################
@@ -58,8 +58,8 @@ dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install     ./${RL_EPEL_FILENAME}  ;
    ###############################
 
         ##   "--insecure" primarly used when installing on virtualbox
-curl --insecure  ${RL_REMI_URL}                      >  ./${RL_REMI_FILENAME}  ;
-dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install      ./${RL_REMI_FILENAME}  ;
+curl --verbose --insecure  ${RL_REMI_URL}                      >  ./${RL_REMI_FILENAME}  ;  ## 2025-08-13
+dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install                ./${RL_REMI_FILENAME}  ;  ## 2025-08-13
 
 ##  https://blog.remirepo.net/post/2024/12/18/Install-PHP-8.4-on-Fedora-RHEL-CentOS-Alma-Rocky-or-other-clone
 
