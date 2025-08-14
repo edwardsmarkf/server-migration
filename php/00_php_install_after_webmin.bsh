@@ -3,7 +3,7 @@
 #  php_install_after_webmin.bsh  -- 2025-07-27
 #
 #  2025-08-03  --  added version number variables
-#
+#  2025-08-13  --  made the remi & epel variables
 
 PHP_RELEASE_NBR=8.4                                           ;   ##   2025-08-03 
 DOMAIN=zzyzxzzyzx.com                                         ;   ##   2025-08-13
@@ -11,13 +11,23 @@ SUBSCRIPTION_MANAGER=''                                       ;   ##   2025-08-1
    #SUBSCRIPTION_MANAGER='--disableplugin subscription-manager'  ;   ##   2025-08-13  this MAY be needed...??
 #
 #
-       ############RL_EPEL=9                                                     ;   ##   2025-08-03 epel release ##
 
-RL_EPEL=$(cut -d ' ' -f 4 /etc/rocky-release;); 
+
+##  
+##   
+
+OS_VERSION=$(cut  -d ' ' -f 4 /etc/rocky-release | sed --expression='s/\..*//;';  )           ;   ## 2025-08-13  hopefully 9,10,11,etc
+
+RL_EPEL_FILENAME="epel-release-latest-${OS_VERSION}.noarch.rpm"                               ;   ## 2025-08-13  
+RL_EPEL_URL="https://dl.fedoraproject.org/pub/epel/${RL_EPEL_FILENAME}"                       ;   ## 2025-08-13
+RL_REMI_FILENAME="remi-release-${OS_VERSION}.rpm"                                             ;   ## 2025-08-13
+RL_REMI_URL="https://rpms.remirepo.net/enterprise/${RL_REMI_FILENAME"                         ;   ## 2025-08-13
+
 #
+
+
+
 ## make sure webmin is installed first!
-
-
 
 webmin  --version;
 if  [[ $? == 0 ]];  then
@@ -30,20 +40,26 @@ else
 fi
 
 
-## the curl can be eliminated if the "cert" is installed:
-##      dnf --assumeyes ${SUBSCRIPTION_MANAGER}   install https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
 
-??????    curl  https://dl.fedoraproject.org/pub/epel
-curl  https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
-curl  https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm \
-   >  ./epel-release-latest-${RL_EPEL}.noarch.rpm  ;
-dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install  ./epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
+   ###############################
+   #                             #
+   #          E P E L            #
+   #                             #
+   ###############################
 
-##   "--insecure" primarly used when installing on virtualbox
-curl --insecure  https://rpms.remirepo.net/enterprise/remi-release-${RL_EPEL}.rpm  \
-        > ./remi-release-${RL_EPEL}.rpm ;
+curl  ${RL_EPEL_URL}                                >  ./${RL_EPEL_FILENAME}  ;
+dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install     ./${RL_EPEL_FILENAME}  ; 
 
-dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install  ./remi-release-${RL_EPEL}.rpm  ;
+
+   ###############################
+   #                             #
+   #          R E M I            #
+   #                             #
+   ###############################
+
+        ##   "--insecure" primarly used when installing on virtualbox
+curl --insecure  ${RL_REMI_URL}                      >  ./${RL_REMI_FILENAME}  ;
+dnf  --assumeyes ${SUBSCRIPTION_MANAGER}   install      ./${RL_REMI_FILENAME}  ;
 
 ##  https://blog.remirepo.net/post/2024/12/18/Install-PHP-8.4-on-Fedora-RHEL-CentOS-Alma-Rocky-or-other-clone
 
@@ -69,3 +85,18 @@ echo 'please try  http://${DOMAIN}/phpinfo.php   in your browser once again!';
 
 
 exit;
+
+
+
+
+
+
+## the curl can be eliminated if the "cert" is installed:
+##      dnf --assumeyes ${SUBSCRIPTION_MANAGER}   install https://dl.fedoraproject.org/pub/epel/epel-release-latest-${RL_EPEL}.noarch.rpm  ; 
+
+
+        ###############  curl  https://dl.fedoraproject.org/pub/epel/epel-release-latest-10.noarch.rpm
+
+
+
+
