@@ -25,7 +25,7 @@ systemctl  start    webmin.service ;
 systemctl  status --no-pager --full  webmin.service  ;
 
 /usr/bin/sed  --in-place  --expression='s/^longname=0$/longname=1/;'                  /etc/webmin/virtual-server/config    ;   ## 2025-02-17
-/usr/bin/sed  --in-place  --expression='s/^auto_letsencrypt=1$/auto_letsencrypt=0/;'  /etc/webmin/virtual-server/config    ;   ## 2025-08-15  ?????
+########/usr/bin/sed  --in-place  --expression='s/^auto_letsencrypt=1$/auto_letsencrypt=0/;'  /etc/webmin/virtual-server/config    ;   ## 2025-08-15  ?????
 
 /usr/bin/sed  --in-place  --expression='s/^featurelimits=$/featurelimits=dns web/;'   /etc/webmin/virtual-server/plans/0   ;   ## 2025-02-19
 
