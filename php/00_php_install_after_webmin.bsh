@@ -5,7 +5,7 @@
 #  2025-08-03  --  added version number variables
 #  2025-08-13  --  made the remi & epel url & filenames variables
 
-PHP_RELEASE_NBR=8.5                                           ;   ##   2025-08-03 
+PHP_RELEASE_NBR=8.4                                           ;   ##   2025-08-03   -- supposedly 8.5 is available Nov-2025!
 DOMAIN=zzyzxzzyzx.com                                         ;   ##   2025-08-13
 SUBSCRIPTION_MANAGER=''                                       ;   ##   2025-08-13
    #SUBSCRIPTION_MANAGER='--disableplugin subscription-manager'  ;   ##   2025-08-13  this MAY be needed...??
