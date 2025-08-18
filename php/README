@@ -10,6 +10,8 @@ more                                            01_php_install_RL.bsh.log       
 bash  -vx  02_phpImageMagick.bsh             >  02_phpImageMagick.bsh.log              2>&1   ;
 more                                            02_phpImageMagick.bsh.log                     ;
 
+mv --verbose  ./imageMagickTest.php   /home/DOMAIN/public_html/imageMagicTest.php  ;
+
 bash  -vx  03_php_composer.bsh               >  03_php_composer.bsh.log                2>&1   ;
 more                                            03_php_composer.bsh.log                       ;
 
