@@ -36,7 +36,7 @@ if  [[ $? == 0 ]];  then
     echo 'found webmin installed, continue';
 else
     echo 'webmin NOT installed!  please install webmin first!';
-    exit ;
+    exit 1;
 fi
 
 
@@ -62,7 +62,7 @@ else                                                                            
     echo  '*****************************************************'  ;              ## 2025-08-18
     echo   -e  "\n\n\n\n\n\n"                                            ;        ## 2025-08-18
 
-    exit;                                                                         ## 2025-08-14
+    exit 1;                                                                       ## 2025-08-14
 fi                                                                                ## 2025-08-14
 
 
@@ -88,7 +88,7 @@ else                                                                            
     echo  '*****************************************************'  ;              ## 2025-08-18
     echo  -e  "\n\n\n\n\n\n"                                            ;         ## 2025-08-18
 
-    exit;                                                                         ## 2025-08-14
+    exit 1;                                                                       ## 2025-08-14
 fi                                                                                ## 2025-08-14
 
 
@@ -104,8 +104,14 @@ dnf --assumeyes  ${SUBSCRIPTION_MANAGER}    module reset php     ;
 if  [[ $? == 0 ]];  then                                                          ## 2025-08-14
     echo  'php module reset succeeded or already installed, continuing';          ## 2025-08-14
 else                                                                              ## 2025-08-14
-    echo  'php module reset failed, stopping script!';                            ## 2025-08-14
-    exit;                                                                         ## 2025-08-14
+    echo -e  "\n\n\n\n\n\n"                                        ;              ## 2025-08-18
+    echo  '*****************************************************'  ;              ## 2025-08-18
+    echo  '*                                                   *'  ;              ## 2025-08-18
+    echo  '*   php module reset failed, stopping script!       *'  ;              ## 2025-08-14
+    echo  '*                                                   *'  ;              ## 2025-08-18
+    echo  '*****************************************************'  ;              ## 2025-08-18
+    echo  -e  "\n\n\n\n\n\n"                                            ;         ## 2025-08-18
+    exit 1;                                                                       ## 2025-08-18
 fi                                                                                ## 2025-08-14
 
 
@@ -120,8 +126,14 @@ dnf --assumeyes  ${SUBSCRIPTION_MANAGER}    module enable php:remi-${PHP_RELEASE
 if  [[ $? == 0 ]];  then                                                          ## 2025-08-14
     echo  'php module enable succeeded or already installed, continuing';         ## 2025-08-14
 else                                                                              ## 2025-08-14
-    echo  'php module enable failed, stopping script!';                           ## 2025-08-14
-    exit;                                                                         ## 2025-08-14
+    echo -e  "\n\n\n\n\n\n"                                        ;              ## 2025-08-18
+    echo  '*****************************************************'  ;              ## 2025-08-18
+    echo  '*                                                   *'  ;              ## 2025-08-18
+    echo  '*   php module enable failed, stopping script!      *'  ;              ## 2025-08-14
+    echo  '*                                                   *'  ;              ## 2025-08-18
+    echo  '*****************************************************'  ;              ## 2025-08-18
+    echo  -e  "\n\n\n\n\n\n"                                            ;         ## 2025-08-18
+    exit 1;                                                                       ## 2025-08-18
 fi  
 
 dnf --assumeyes  ${SUBSCRIPTION_MANAGER}    install php-cli php-fpm php-mbstring php-xml   ;
