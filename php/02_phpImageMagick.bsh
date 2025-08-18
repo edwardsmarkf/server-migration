@@ -112,7 +112,7 @@ systemctl   restart  httpd.service  ;     ## turn on the php-magick interface in
 systemctl   restart php-fpm.service ;      ## 2025-02-17
 
 
-cat <<<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTest.php ;   ##2025-08-13 - new location!
+cat <<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTest.php ;   ##2025-08-13 - new location!
 <?php
     \$image = new Imagick();
     \$image->newImage(100, 100, new ImagickPixel('red'));
