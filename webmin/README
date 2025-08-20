@@ -12,7 +12,8 @@
                                              --hostname host.edwardsmark.info    \
                                              --yes                               \
                                                                                  ;
-## for a pre-release  (--yes assumes yes for all prompts)
+##  "--branch unstable" for a pre-release
+##  "--yes" assumes yes for all prompts
 
 maybe do 'sed' here ?????
    SERIAL=GPL
