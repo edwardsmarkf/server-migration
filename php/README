@@ -1,19 +1,19 @@
 
-2025-02-18 - hopefully just run these commands (RL 9.4)
+### 2025-08-20 -- made release ## a parm.  
 
-bash -vx  00_php_install_after_webmin.bsh    >  00_php_install_after_webmin.bsh.log    2>&1   ;
-more                                            00_php_install_after_webmin.bsh.log           ;
+bash -vx  00_php_install_after_webmin.bsh 8.4   >  00_php_install_after_webmin.bsh.log    2>&1   ;
+more                                               00_php_install_after_webmin.bsh.log           ;
 
-bash  -vx  01_php_install_RL.bsh             >  01_php_install_RL.bsh.log              2>&1   ;
-more                                            01_php_install_RL.bsh.log                     ;
+bash  -vx  01_php_install_RL.bsh                >  01_php_install_RL.bsh.log              2>&1   ;
+more                                               01_php_install_RL.bsh.log                     ;
 
-bash  -vx  02_phpImageMagick.bsh             >  02_phpImageMagick.bsh.log              2>&1   ;
-more                                            02_phpImageMagick.bsh.log                     ;
+bash  -vx  02_phpImageMagick.bsh                >  02_phpImageMagick.bsh.log              2>&1   ;
+more                                               02_phpImageMagick.bsh.log                     ;
 
 mv --verbose  ./imageMagickTest.php   /home/DOMAIN/public_html/imageMagicTest.php  ;
 
-bash  -vx  03_php_composer.bsh               >  03_php_composer.bsh.log                2>&1   ;
-more                                            03_php_composer.bsh.log                       ;
+bash  -vx  03_php_composer.bsh                  >  03_php_composer.bsh.log                2>&1   ;
+more                                               03_php_composer.bsh.log                       ;
 
 
 test  at:              https://zzyzxzzyzx.com/phpinfo.php?#
@@ -23,7 +23,7 @@ test  at:              https://zzyzxzzyzx.com/phpinfo.php?#
 
 README
 Update README
-yesterday
+###   2025-02-18 - hopefully just run these commands (RL 9.4)
 ##  do ALL this ONLY AFTER webmin since webmin seems to be very "picky" as to what version it is willing to accept.
 ## or php upgrade to 7.4 AFTER webmin install??  (could be dangerous)
 
