@@ -1,6 +1,7 @@
 #### initial setup
 
-## 2019-11-13 - ran on centos-7/8 successfully.
+
+2025-08-20 - holdups!    1)  webmin waiting for next release    2 php 8.5 not ready for RL-10
 
 1)  dnf  --assumeyes  install git    ;
 2)  git clone  https://github.com/edwardsmarkf/server-migration  ;
@@ -86,7 +87,7 @@ sftp mark@127.0.0.1 ; ## 2016-02-09- notice sftp since regular ftp may not be an
 
 
 
-
+## 2019-11-13 - ran on centos-7/8 successfully.
 
 
 
