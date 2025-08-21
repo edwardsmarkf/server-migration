@@ -4,16 +4,21 @@
 #
 #  2025-08-03  --  added version number variables
 #  2025-08-13  --  made the remi & epel url & filenames variables
-#  2025-08-20  --  release ## now a CLI parm!
+#  2025-08-21  --  release ## now a CLI parm!
 
 PHP_RELEASE_NBR=$1                                            ;   ##   2025-08-20 - now a PARM...!
-
 DOMAIN=zzyzxzzyzx.com                                         ;   ##   2025-08-13
 SUBSCRIPTION_MANAGER=''                                       ;   ##   2025-08-13
    #SUBSCRIPTION_MANAGER='--disableplugin subscription-manager'  ;   ##   2025-08-13  this MAY be needed...??
 #
 #
 
+if [ -z "${PHP_RELEASE_NBR}" ]; then                                     ## 2025-08-21
+    echo 'please include php version nbr in command line ie 8.4' ;       ## 2025-08-21
+    exit                                                         ;       ## 2025-08-21
+else                                                                     ## 2025-08-21
+    echo "read ${PHP_RELEASE_NBR} from command line!" ;                  ## 2025-08-21
+fi                                                                       ## 2025-08-21
 
 ##  
 ##   
