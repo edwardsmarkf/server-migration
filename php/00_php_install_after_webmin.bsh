@@ -4,8 +4,10 @@
 #
 #  2025-08-03  --  added version number variables
 #  2025-08-13  --  made the remi & epel url & filenames variables
+#  2025-08-20  --  release ## now a CLI parm!
 
-PHP_RELEASE_NBR=8.4                                           ;   ##   2025-08-03   -- supposedly 8.5 is available Nov-2025!
+PHP_RELEASE_NBR=$1                                            ;   ##   2025-08-20 - now a PARM...!
+
 DOMAIN=zzyzxzzyzx.com                                         ;   ##   2025-08-13
 SUBSCRIPTION_MANAGER=''                                       ;   ##   2025-08-13
    #SUBSCRIPTION_MANAGER='--disableplugin subscription-manager'  ;   ##   2025-08-13  this MAY be needed...??
@@ -156,6 +158,8 @@ echo 'please try  http://${DOMAIN}/phpinfo.php   in your browser once again!';
 
 
 exit;
+
+####PHP_RELEASE_NBR=8.4                                           ;   ##   2025-08-03   -- supposedly 8.5 is available Nov-2025!
 
 
 
