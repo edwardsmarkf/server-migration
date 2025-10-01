@@ -13,6 +13,7 @@
                                              --yes                               \
                                                                                  ;
 ##  "--branch unstable" for a pre-release
+##  "--branch rc"   an alternative (??)
 ##  "--yes" assumes yes for all prompts
 
 maybe do 'sed' here ?????
