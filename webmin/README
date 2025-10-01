@@ -13,7 +13,7 @@
                                              --yes                               \
                                                                                  ;
 ##  "--branch unstable" for a pre-release
-##  "--branch rc"   an alternative (??)
+##  "--branch rc"   an alternative (??)  2025-10-01  https://forum.virtualmin.com/t/install-issue-on-rl-10/135352/3
 ##  "--yes" assumes yes for all prompts
 
 maybe do 'sed' here ?????
