@@ -16,7 +16,10 @@
 ##    2025-10-24 - this MAY need to be rewritten:   https://github.com/Aetherinox/csf-firewall
 
 mkdir  ~/csf  && cd   ~/csf  ;
-wget   https://download.configserver.com/csf.tgz  ;
+
+##2025-10-24 ###############wget   https://download.configserver.com/csf.tgz  ;
+wget https://raw.githubusercontent.com/waytotheweb/scripts/refs/heads/main/csf.tgz   ## 2025-10-24
+
 tar -xzf csf.tgz  ;
 cd  csf  ;
 sh  install.sh ;   ## 2021-05-28 - dont skip this one~!
