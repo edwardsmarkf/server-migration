@@ -13,9 +13,9 @@
 ##                 to get working on webmin:   https://bobcares.com/blog/csf-firewall-webmin/#comment-75375
 ##    2021-07-11    - included the 'missing steps' in the documentation
 ##    2021-07-13    - included necessary /etc/csf/csf.conf changes and minor editing changes.
-##    2025-10-24    - get csf tarball from another source as per:   https://github.com/Aetherinox/csf-firewall
+##    2025-10-25    - get csf tarball from another source as per:   https://github.com/Aetherinox/csf-firewall
 ##                                                                  https://linuxblog.io/configserver-firewall-csf-after-shutdown/
-
+##                     and changed sed to only add  ",10000" to the END of the TCP_IN list rather than try to match all the port ##'s
 mkdir  ~/csf  && cd   ~/csf  ;
 
                           ##    2025-10-24 changed from:   wget   https://download.configserver.com/csf.tgz  ;
@@ -38,10 +38,10 @@ systemctl  disable  firewalld.service ;
 ##  https://globedrill.com/warning-testing-mode-is-enabled-not-forget-disable-configuration/
 
 sed  --in-place                                                                                                                                                 \
-                --expression='s/TCP_IN = "20,21,22,25,53,853,80,110,143,443,465,587,993,995"/TCP_IN = "20,21,22,25,53,853,80,110,143,443,465,587,993,995,10000"/'       \
-                --expression='s/RESTRICT_SYSLOG = "0"/RESTRICT_SYSLOG = "3"/'                                                                                   \
-                --expression='s/TESTING = "1"/TESTING = "0"/'                                                                                                   \
-        /etc/csf/csf.conf ;
+                --expression='s/TCP_IN = "\([,0-9]\+\)"/TCP_IN = "\1,10000"/'   \
+                --expression='s/RESTRICT_SYSLOG = "0"/RESTRICT_SYSLOG = "3"/'   \
+                --expression='s/TESTING = "1"/TESTING = "0"/'                   \
+        /etc/csf/csf.conf                                                       ;
 
 systemctl  enable  --now   csf.service ;   ##  2025-02-20 enable AND start 
 systemctl  enable  --now   lfd.service ;   ## Login Failure Daemon
