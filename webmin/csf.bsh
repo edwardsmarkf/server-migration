@@ -19,7 +19,7 @@
 mkdir  ~/csf  && cd   ~/csf  ;
 
                           ##    2025-10-24 changed from:   wget   https://download.configserver.com/csf.tgz  ;
-wget https://raw.githubusercontent.com/waytotheweb/scripts/refs/heads/main/csf.tgz   ## 2025-10-24
+/usr/bin/wget    --verbose   https://raw.githubusercontent.com/waytotheweb/scripts/refs/heads/main/csf.tgz   ## 2025-10-24
 
 tar   --verbose  --extract --gzip --file csf.tgz  ;
 cd  csf  ;
