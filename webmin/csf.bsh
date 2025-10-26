@@ -40,7 +40,7 @@ systemctl  disable  firewalld.service ;
 sed  --in-place                                                                                                                                                 \
                 --expression='s/TCP_IN = "\([,0-9]\+\)"/TCP_IN = "\1,10000"/'   \
                 --expression='s/RESTRICT_SYSLOG = "0"/RESTRICT_SYSLOG = "3"/'   \
-                --expression='s/TESTING = "1"/TESTING = "0"/'                   \
+                --expression='s/AUTO_UPDATES = "1"/AUTO_UPDATES = "0"/'         \
         /etc/csf/csf.conf                                                       ;
 
 systemctl  enable  --now   csf.service ;   ##  2025-02-20 enable AND start 
