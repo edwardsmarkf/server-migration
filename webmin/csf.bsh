@@ -16,6 +16,7 @@
 ##    2025-10-25    - get csf tarball from another source as per:   https://github.com/Aetherinox/csf-firewall
 ##                                                                  https://linuxblog.io/configserver-firewall-csf-after-shutdown/
 ##                     and changed sed to only add  ",10000" to the END of the TCP_IN list rather than try to match all the port ##'s
+##                     and suppressed AUTO_UPDATE as per:  https://linuxblog.io/configserver-firewall-csf-after-shutdown/ 
 mkdir  ~/csf  && cd   ~/csf  ;
 
                           ##    2025-10-24 changed from:   wget   https://download.configserver.com/csf.tgz  ;
