@@ -1,4 +1,4 @@
-look for LATEST releases of the following:
+look for LATEST releases of the following & modify 03-get-files.bsh accordingly:
 
 # maybe osuosl and mozilla archive can be used interchangeably?
 https://ftp.osuosl.org/pub/xiph/releases/flac                   ##  flac              1.4.3
