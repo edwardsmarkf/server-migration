@@ -32,7 +32,7 @@ maybe do 'sed' here ?????
 
 6)  log into localhost:10000  and FINISH the installation!
 
-7)  bash  -vx  csf.bsh
+7)  bash  -vx  csf.bsh   >  csf.bsh.log   2>&1  ;
 
 
 
