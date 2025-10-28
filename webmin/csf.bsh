@@ -44,6 +44,10 @@ sed  --in-place                                                                 
                 --expression='s/AUTO_UPDATES = "1"/AUTO_UPDATES = "0"/'         \
         /etc/csf/csf.conf                                                       ;
 
+grep  "^TCP_IN = "              /etc/csf/csf.conf    ;  ## 2025-10-27
+grep  "^RESTRICT_SYSLOG = "     /etc/csf/csf.conf    ;  ## 2025-10-27
+grep  "^AUTO_UPDATES = "        /etc/csf/csf.conf    ;  ## 2025-10-27
+
 sed  --in-place  --expression='s/^/## COMMENTED OUT  ##  /'    /etc/cron.d/csf_update   ;  ##  2025-10-24  stop auto updates
 sed  --in-place  --expression='s/^/## COMMENTED OUT  ##  /'    /etc/cron.daily/csget    ;  ##  2025-10-24  stop auto updates
                                                                                    ###  https://linuxblog.io/configserver-firewall-csf-after-shutdown/
