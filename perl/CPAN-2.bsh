@@ -71,5 +71,6 @@ su fakeperluser --command "perl  -W  -e  'use File::Basename ; ' ;  "        ;
 ###    su fakeperluser --command "perl  -W  -e  'use Mail::Sendmail; ' ;  "        ;     2025-02-13
 
 userdel fakeperluser ;
+rm -Rf  /home/fakeperluser/ ;
 
 exit 1; 
