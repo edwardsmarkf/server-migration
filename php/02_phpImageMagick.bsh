@@ -122,6 +122,7 @@ cat <<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTest.php ;   ##2025
 ?>
 END_OF_SCRIPT
 
+cp --verbose  ./imageMagickTest.php    /home/${DOMAIN}/public_html/imageMagicTest.php  ;  ## 2025-10-31
 chown  --verbose ${DOMAIN}:${DOMAIN}   /home/${DOMAIN}/public_html/imageMagickTest.php ;  ## 2025-08-13
 chmod  --verbose 755                   /home/${DOMAIN}/public_html/imageMagickTest.php ;  ## 2025-08-13
 
