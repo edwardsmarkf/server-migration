@@ -11,6 +11,7 @@
 #
 #     2025-02-17  -- powertools became 'crb' and pecl might not work, replaced
 #     2025-08-13  -- added new variable and ran in RL-10
+#     2025-10-31  -- testing to imageMagicK scripts
 
 DOMAIN=zzyzxzzyzx.com ;  ## 2025-08-13
 
@@ -125,7 +126,7 @@ END_OF_SCRIPT
 chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/imageMagickTestOne.php ;  ## 2025-08-13
 chmod  --verbose 755                      /home/${DOMAIN}/public_html/imageMagickTestOne.php ;  ## 2025-08-13
 
-cp --verbose  ./imageMagickTestTwo.php    /home/${DOMAIN}/public_html/imageMagicTestTwo.php  ;  ## 2025-10-31
+cp --verbose  ./imageMagickTestTwo.php    /home/${DOMAIN}/public_html/imageMagickTestTwo.php  ;  ## 2025-10-31
 chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/imageMagickTestTwo.php ;  ## 2025-08-13
 chmod  --verbose 755                      /home/${DOMAIN}/public_html/imageMagickTestTwo.php ;  ## 2025-08-13
 
