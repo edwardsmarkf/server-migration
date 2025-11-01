@@ -11,16 +11,39 @@
 #   2019-12-10  -- migrated to centos-8
 #   2021-06-30  -- migrated to Rocky-Linux
 #   2025-02-24  -- install using just dnf
+#   2025-11-01  -- rewritten as per    https://nodejs.org/en/download/current
+#   2025-11-01a -- rewritten as per    https://www.atlantic.net/dedicated-server-hosting/how-to-install-node-js-and-npm-on-rocky-linux-10/
+
+LATEST_VERSION=25;  ## added 2025-10-31
+
+curl --silent --location https://rpm.nodesource.com/setup_${LATEST_VERSION}.x | bash - ;
+dnf --assumeyes install nodejs ;
+
+which node;
+/usr/bin/node --version  ;
+
+which npm.;
+/usr/bin/npm  --version   ;
+
+
+exit ;
+
+
 
 
 # Download and install nvm:
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+/usr/bin/curl --output  - https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash  ;
+
+##  If you use -o - (a hyphen after the -o), it explicitly forces curl to output to stdout, which is the default behavior. 
+##  This can be useful for clarity or in specific scripting scenarios where you want to ensure output to stdout even if 
+##  other options might otherwise suppress it.
+
 
 # in lieu of restarting the shell
 \. "$HOME/.nvm/nvm.sh"
 
 # Download and install Node.js:
-nvm install 25
+nvm install ${LATEST_VERSION}  ;
 
 # Verify the Node.js version:
 node -v # Should print "v25.1.0".
