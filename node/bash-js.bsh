@@ -12,6 +12,31 @@
 #   2021-06-30  -- migrated to Rocky-Linux
 #   2025-02-24  -- install using just dnf
 
+
+# Download and install nvm:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+
+# in lieu of restarting the shell
+\. "$HOME/.nvm/nvm.sh"
+
+# Download and install Node.js:
+nvm install 25
+
+# Verify the Node.js version:
+node -v # Should print "v25.1.0".
+
+# Verify npm version:
+npm -v # Should print "11.6.2".
+
+
+
+
+
+exit ;
+
+
+
+
 LATEST_VERSION=25;  ## added 2025-10-31
 
 ##  https://nodejs.org/en/download/package-manager/all#centos-fedora-and-red-hat-enterprise-linux
