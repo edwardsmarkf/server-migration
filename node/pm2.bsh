@@ -9,13 +9,14 @@
 #   2020-01-15  -- initial writing
 ##  2025-02-24 - minor changes
        #  https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-rocky-linux-9
+##  2025-11-01 -- pm2 now installed in a different (normal?) location
 
 ##  ===== pm2 === ==  2019-02-19
 npm  remove  pm2@latest  --global;   ## just in case
 npm  install pm2@latest --global ;
 
 which pm2                       ;   ## 2024-02-24
-/usr/local/bin/pm2   --version  ;   ## 2024-02-24
+/usr/bin/pm2   --version  ;   ## 2024-02-24
 
 /usr/local/bin/pm2  completion install  ;
 
