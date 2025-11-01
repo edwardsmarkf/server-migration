@@ -12,10 +12,12 @@
 #   2021-06-30  -- migrated to Rocky-Linux
 #   2025-02-24  -- install using just dnf
 
+LATEST_VERSION=25;  ## added 2025-10-31
+
 ##  https://nodejs.org/en/download/package-manager/all#centos-fedora-and-red-hat-enterprise-linux
 
-dnf  module  list  nodejs             ;   #  get list of available nodes
-dnf  module  install nodejs:22/common ;   #  install node version 22
+dnf  module  list  nodejs                            ;   #  get list of available nodes
+dnf  module  install nodejs:${LATEST_VERSION}/common ;   #  install node version using variable  2025-10-31
 
 which node;
 /usr/bin/node --version ;
