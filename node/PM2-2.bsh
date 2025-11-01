@@ -1,0 +1,18 @@
+#!  /bin/bash
+
+#   PM2-2.bsh
+
+#  2025-11-01  -- initial writing
+
+
+/usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                    --name  'NodeWaveForm'          -- --port 20001 --proxy proxyPort20001  ;
+#
+/usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   --name  'VoiceSpiceServer'      -- --port 20002 --proxy proxyPort20002  ;
+#
+/usr/bin/pm2  start   ./  --cwd  /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer        --name  'HomeworkAssignment'    -- --port 20003 --proxy proxyPort20003  ;
+#
+
+
+exit 1;
+
+#
