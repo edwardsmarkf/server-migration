@@ -1,16 +1,16 @@
 #! /bin/bash -w
 
-###############################
-#                             #
-#      p m 2 - 1 . b s h      #
-#                             #
-###############################
+#####################################################
+#                                                   #
+#      p m 2 - i n s t a l l a t i o n . b s h      #
+#                                                   #
+#####################################################
 
 #   2020-01-15  -- initial writing
 ##  2025-02-24 - minor changes
        #  https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-rocky-linux-9
 ##  2025-11-01 -- pm2 now installed in a different (normal?) location
-##  2025-11-01 -- broke this up into two separate files
+##  2025-11-01 -- renamed and broke this up into two separate files
 
 ##  ===== pm2 === ==  2019-02-19
 npm  remove  pm2@latest  --global;   ## just in case
