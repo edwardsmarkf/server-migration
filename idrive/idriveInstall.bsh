@@ -19,7 +19,7 @@ chmod  700  ./idriveforlinux.bin ;
 ./idriveforlinux.bin  --install   ;   ## 
 
 ##  initial login !  (dont skip this)
-./idriveforlinux.bin  --login   ;   ## 
+./idriveforlinux.bin  --login   ;   ##    this MIGHT not be needed anymore since the login happens during installation!
 
 echo " occasionally run:    idrive  --check-update  ;  to get latest version"  ;
 
