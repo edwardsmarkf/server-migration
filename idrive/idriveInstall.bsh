@@ -5,6 +5,7 @@
 #
 #  2025-02-24  -- initial writing
 #  2025-07-25  -- updated....
+#  2025-11-03  -- added version test
 
 #  https://www.idrive.com/linux-scripts
 
@@ -12,6 +13,8 @@ curl  https://www.idrivedownloads.com/downloads/linux/linux-bin/idriveforlinux.b
                >  idriveforlinux.bin   ;
 
 chmod  700  ./idriveforlinux.bin ;
+
+./idriveforlinux.bin  --version   ;   ## 2025-11-03  version 3.11.0
 
 ./idriveforlinux.bin  --install   ;   ## 
 
