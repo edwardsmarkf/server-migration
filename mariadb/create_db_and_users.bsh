@@ -4,9 +4,9 @@
 #
 #  this creates all the existing databases and users (hopefully) 
 #
-## what about slrhDirectory  ??    mariadb  --verbose  --host=localhost --user=slrhUser  --password=slrhPassword    slrhDirectory    ;
-##
-##          2020-09-14 - removed 'drop user' and changed add user to 'if exists'
+#
+#          2020-09-14 - removed 'drop user' and changed add user to 'if exists'
+#          2025-11-04 - reordered list, labeled and removed db's no longer in use
 #
 #
 #  used this as a guide:
@@ -90,6 +90,11 @@ process_db  U2FsdGVkX1/MM+NMgNBWh77MdCOmA6iZ+Ykzo3hN9evfLz9nwu0RumLu5JNpBWvW  \
 process_db  U2FsdGVkX1+4H4ViXUDOxcjhg/MVFKFhkfUbWbky8aM=                      \
             U2FsdGVkX1/Cy+sdjotAs5bukPTTf+sE+rg6ZCk55tY=                      \
             U2FsdGVkX1+BWaTvWONbBUbPgQXQVwtBkbR7CLR/xNM=                      ;
+
+## slrh directory
+processDB   U2FsdGVkX1+/DNlRl3OqWtr2w88W1Tf9/v8apDygn28=                      \
+            U2FsdGVkX19sL+bMyaZWyVMQaGqnoG6RELySS62ZikQ=                      \
+            U2FsdGVkX18n3jCBt3mxwkI3UDgvme1C5K8/KR/3o3A=                      ;
 
 ## textpattern
 process_db  U2FsdGVkX18mUJmL2MaReD3DfDkwm12oJAxD0OSh/lA=                      \
