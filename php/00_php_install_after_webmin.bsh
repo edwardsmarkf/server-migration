@@ -6,6 +6,9 @@
 #  2025-08-13  --  made the remi & epel url & filenames variables
 #  2025-08-21  --  release ## now a CLI parm!
 
+##2025-11-05 - WARNING!  modules go away soon, probably with epel-11.  so research will be necessary to determine
+##                         what to replace 'module enable'  and  'module reset'  with 
+
 PHP_RELEASE_NBR=$1                                            ;   ##   2025-08-20 - now a PARM...!
 DOMAIN=zzyzxzzyzx.com                                         ;   ##   2025-08-13
 SUBSCRIPTION_MANAGER=''                                       ;   ##   2025-08-13
