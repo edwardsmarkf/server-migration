@@ -1,4 +1,8 @@
 
+2025-11-05 - WARNING!  modules go away soon, probably with epel-11.  so research will be necessary to determine
+                         what to replace 'module enable'  and  'module reset'  with 
+                         in 00_php_install_after_webmin.bsh!
+
 ### 2025-08-20 -- made release ## a parm.  
 
 bash -vx  00_php_install_after_webmin.bsh 8.4   >  00_php_install_after_webmin.bsh.log    2>&1   ;
