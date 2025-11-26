@@ -1,4 +1,5 @@
 
+THIS WAS USED FOR A PROBLEM WITH EPEL NOW OBSOLETE
 
 dnf  -y   install  epel-release;
 
