@@ -1,12 +1,16 @@
 
 
-dnf  -y  --releasever=10.0  install  epel-release;
+dnf  -y   install  epel-release;
 
 dnf  repolist epel  -v  ;
 
 
                                  ####  dnf -y  install --releasever=10.0 clamav clamd clamav-update    ;
-EDIT epel.repo....
+EDIT   /etc/yum.repos.d/epel.repo
+
+    $releasever_major => 10
+    ${releasever_minor:±z} => -z
+    $releasever => 10.0
 
 dnf  -y install   cyrus-sasl  cyrus-sasl-devel  ;   ##  --releasever=10.0 
 
@@ -14,4 +18,4 @@ dnf  clean packages ;
 
                            ### dnf config-manager --set-releasever 10.0
 
-
+      ##  dnf  -y  --releasever=10.0  install  epel-release;
