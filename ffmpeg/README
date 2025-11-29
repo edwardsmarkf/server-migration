@@ -8,3 +8,8 @@
 2025-07-24  -- installing on RL-10
 
 2025-10-28  --  check for latest releases (now in list form)
+
+
+##   to run in batch mode:  
+##   nohup echo 'y' | bash -vx 00-master.bsh y > 00-master.bsh.log 2>&1 &
+
