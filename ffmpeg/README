@@ -8,6 +8,8 @@
 2025-07-24  -- installing on RL-10
 
 2025-10-28  --  check for latest releases (now in list form)
+2025-11-29  --  had some difficulty on virtualbox, probably either disk size or ## of processors  or even memory.  not a problem with the servers but
+                minor inconvenience with virtualbox.
 
 
 ##   to run in batch mode:  
