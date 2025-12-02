@@ -67,6 +67,15 @@ sed  --in-place  --expression='s/^/## COMMENTED OUT  ##  /'    /etc/cron.daily/c
 systemctl  enable  --now   csf.service ;   ##  2025-02-20 enable AND start 
 systemctl  enable  --now   lfd.service ;   ## Login Failure Daemon
 
+cat <<END_OF_CSF_ALLOW   >>  /etc/csf/csf.allow   ;       ## 2025-12-02
+tcp|in|d=22|s=99.169.172.33             ##  Oceanside     ## 2025-12-02
+tcp|out|s=22|d=99.169.172.33            ##  Oceanside     ## 2025-12-02
+tcp|in|d=3306|s=99.169.172.33           ##  Oceanside     ## 2025-12-02
+tcp|out|s=3306|d=99.169.172.33          ##  Oceanside     ## 2025-12-02
+tcp|in|d=10000|s=99.169.172.33          ##  Oceanside     ## 2025-12-02
+tcp|out|s=10000|d=99.169.172.33         ##  Oceanside     ## 2025-12-02
+END_OF_CSF_ALLOW
+
 
 
 systemctl  status --no-pager --full  csf.service ;
@@ -80,7 +89,7 @@ cat <<END_OF_DISPLAY;
 To get csf to appear in the webmin menu.
 
 1) install module in webmin:
- ## https://doxfer.webmin.com/Webmin/ConfigServer_Security_%26_Firewall  (file is already in place, dont download)
+ ## https://doxfer.webmin.com/Webmin/ConfigServer_Security_%26_Firewall  (file is already in place, dont download!)
  Webmin > Webmin Configuration > Webmin Modules >From local file > /usr/local/csf/csfwebmin.tgz > Install Module
 
 2) refresh module page:
@@ -88,6 +97,10 @@ To get csf to appear in the webmin menu.
   Modules-Configuration >> "Refresh Modules" (blue button on bottom of page)
   
 3) do this multiple times:     systemctl start csf.service   lfd.service ; 
+
+dont forget to run      bash  /usr/local/bash/allowIpAddress.bsh     185.242.5.90   Torguard-90 ;      ## 2025-12-02
+and'or run              bash  /usr/local/bash/allowIpAddress.bsh     185.242.5.91   Torguard-91 ;      ## 2025-12-02
+
 END_OF_DISPLAY
 
 exit 1;
