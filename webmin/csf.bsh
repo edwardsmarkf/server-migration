@@ -17,7 +17,12 @@
 ##                                                                  https://linuxblog.io/configserver-firewall-csf-after-shutdown/
 ##                     and changed sed to only add  ",10000" to the END of the TCP_IN list rather than try to match all the port ##'s
 ##                     and suppressed AUTO_UPDATE as per:  https://linuxblog.io/configserver-firewall-csf-after-shutdown/ 
+##    2025-12-02    -  added dnf  wget install
+
+
 mkdir  ~/csf  && cd   ~/csf  ;
+
+dnf  --assumeyes  install wget  ;   ## 2025-12-02 - not sure where this was supposed to have been already installed??
 
                           ##    2025-10-24 changed from:   wget   https://download.configserver.com/csf.tgz  ;
 /usr/bin/wget    --verbose   https://raw.githubusercontent.com/waytotheweb/scripts/refs/heads/main/csf.tgz   ## 2025-10-24
