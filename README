@@ -3,7 +3,7 @@
 
 2025-10-24 - holdups!    1) php 8.5 not ready for RL-10  - nov 20th-ish
 
-0)  dnf   clean all  ;   ## 2025-12-02
+0)  dnf  --assumeyes upgrade  ;   dnf   clean all  ;   ## 2025-12-02
 1)  dnf  --assumeyes  install git    ;
 2)  git clone  https://github.com/edwardsmarkf/server-migration  ;
 
