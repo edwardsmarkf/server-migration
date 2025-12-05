@@ -19,10 +19,10 @@ to backup a virtualmin (domain) server:
 virtualmin backup-domain --domain englishwithoutaccent.com --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin --exclude *.al ;
 
 virtualmin backup-domain --domain  comptonpeslonline.com --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin --exclude *.opus  ;   ## 2025-12-04  created 3.5 gig directory!
-virtualmin backup-domain --all-domains  --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin --exclude *.opus  ;                    ## 2025.12.04  created 5.2 gig
+virtualmin backup-domain --all-domains  --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin --exclude *.opus  ;                    ## 2025-12-04  created 5.2 gig
 virtualmin backup-domain --domain  comptonpeslonline.com --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin  \
     --exclude  public_html/voicefiles/  \
-    --exclude public_html/comptonPractice/user-recorded-audio-files/teacher/  ;
+    --exclude public_html/comptonPractice/user-recorded-audio-files/teacher/  ;   ## 2025-12-05
 
 
 
