@@ -20,9 +20,7 @@ virtualmin backup-domain --domain englishwithoutaccent.com --dest /tmp/virtualmi
 
 virtualmin backup-domain --domain  comptonpeslonline.com --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin --exclude *.opus  ;   ## 2025-12-04  created 3.5 gig directory!
 virtualmin backup-domain --all-domains  --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin --exclude *.opus  ;                    ## 2025-12-04  created 5.2 gig
- virtualmin backup-domain --domain  comptonpeslonline.com --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin  \
-               --exclude  public_html/voicefiles/*.opus  \
-               --exclude public_html/comptonPractice/user-recorded-audio-files/teacher/*.opus    ; ## 2025-12-05  notice RELATIVE path names
+
 
 
 
@@ -45,4 +43,14 @@ back to new format   --new-format:   (notice no file name in --dest, only direct
 RESTORE:
 
 virtualmin  restore-domain  --test  --source /tmp/virtualmin  --all-virtualmin --all-features  --all-domains ;
+
+
+
+DOES NOT WORK:
+
+## virtualmin backup-domain --domain  comptonpeslonline.com --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin  \
+##               --exclude  public_html/voicefiles/*.opus  \
+##               --exclude public_html/comptonPractice/user-recorded-audio-files/teacher/*.opus    ; ## 2025-12-05  notice RELATIVE path names
+##
+
 
