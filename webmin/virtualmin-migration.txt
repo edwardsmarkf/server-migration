@@ -22,7 +22,7 @@ virtualmin backup-domain --domain  comptonpeslonline.com --dest /tmp/virtualmin/
 virtualmin backup-domain --all-domains  --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin --exclude *.opus  ;                    ## 2025-12-04  created 5.2 gig
 virtualmin backup-domain --domain  comptonpeslonline.com --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin  \
     --exclude  public_html/voicefiles/  \
-    --exclude public_html/comptonPractice/user-recorded-audio-files/teacher/  ;   ## 2025-12-05
+    --exclude public_html/comptonPractice/user-recorded-audio-files/teacher/  ;   ## 2025-12-05  notice RELATIVE path names
 
 
 
