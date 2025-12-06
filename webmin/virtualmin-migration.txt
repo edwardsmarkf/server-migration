@@ -23,9 +23,9 @@ virtualmin backup-domain --all-domains  --dest /tmp/virtualmin/   --newformat   
 
 virtualmin backup-domain --domain  comptonpeslonline.com --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin \
       --exclude public_html/comptonPractice/user-recorded-audio-files/teacher/*.opus    \
-      --exclude  public_html/voicefiles/*.opus                                \
-      --exclude  public_html/php/comptonCommunicate/voicefiles/*.opus         \
-      \--exclude  public_html/php/comptonCommunicate/voicefiles/*.opus     ;
+      --exclude  public_html/voicefiles/*.opus                                          \
+      --exclude  public_html/php/comptonCommunicate/voicefiles/*.opus                   \
+      --exclude  public_html/php/comptonCommunicate/voicefiles/*.opus                   ;
 
 
 
