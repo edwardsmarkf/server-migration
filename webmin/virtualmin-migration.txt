@@ -25,8 +25,16 @@ virtualmin backup-domain --domain  comptonpeslonline.com --dest /tmp/virtualmin/
       --exclude public_html/comptonPractice/user-recorded-audio-files/teacher/*.opus    \
       --exclude  public_html/voicefiles/*.opus                                          \
       --exclude  public_html/php/comptonCommunicate/voicefiles/*.opus                   \
-      --exclude  public_html/php/comptonCommunicate/voicefiles/*.opus                   ;
+      --exclude  *.mp4                                                                  \
+      --exclude  *.wmv                                                                  ;
 
+   /home/englishwithoutaccent.com/public_html/video/r_video.mp4video.mp4
+   /home/englishwithoutaccent.com/public_html/video/r_video.mp4
+   /home/englishwithoutaccent.com/public_html/video/final_consonant_ts.mp4video.mp4
+   /home/comptonpeslonline.com/public_html/SelfStudy/Website/WebsiteContent/Tutorial/PrimarySelfStudyTutorial.mp4
+   /home/comptonpeslonline.com/public_html/SelfStudy/Website/Documentation/Website/Tutorial/PrimarySelfStudyTutorial.mp4
+   /home/englishwithoutaccent.com/public_html/downloads/diphthongs_2.mp4video.mp4
+   /home/comptonpeslonline.com/public_html/images/video/comptonVideo.wmv
 
 
 
