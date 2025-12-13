@@ -41,6 +41,15 @@ virtualmin backup-domain --domain  comptonpeslonline.com --dest /tmp/virtualmin/
       --exclude  public_html/wp-content/uploads/2017/01/Self-Study-Demo-Final.mp4                            \
       --exclude  public_html/wp-content/uploads/2017/01/Self-Study-Demo-1.mp4                                \
       --exclude  public_html/zenphoto/albums/travels/petersburg-confederates-2013/100_0465.png               \
+      --exclude  public_html/tribute/homeGroanMp3/DarcyFarrow.mp3                                            \
+      --exclude  public_html/zenphoto/zenphoto-1.5.2.tar.gz                                                  \
+      --exclude  public_html/zenphoto/zenphoto-1.5.1.tar.gz                                                  \
+      --exclude  public_html/websounds/rivertourweb2.mov                                                     \
+      --exclude  backup/java_permission_on_communication_page.avi.gz                                         \
+      --exclude  public_html/tribute/homeGroanMp3/TheWanderer.mp3                                            \
+      --exclude  public_html/DebugLogs/evalAuth0.log                                                         \
+      --exclude  public_html/tribute/homeGroanOgg/DarcyFarrow.ogg                                            \
+      --exclude  public_html/images/video/comptonVideoOriginal.wmv                                           \
   ;
   
 
