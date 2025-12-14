@@ -21,13 +21,26 @@ virtualmin backup-domain --domain englishwithoutaccent.com --dest /tmp/virtualmi
 virtualmin backup-domain --domain  comptonpeslonline.com --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin --exclude *.opus  ;   ## 2025-12-04  created 3.5 gig directory!
 virtualmin backup-domain --all-domains  --dest /tmp/virtualmin/   --newformat   --all-features --all-virtualmin --exclude *.opus  ;                    ## 2025-12-04  created 5.2 gig
 
-virtualmin backup-domain --all-domains                                                                       \
-      --dest        /tmp/virtualmin/                                                                         \
-      --newformat   --all-features --all-virtualmin                                                          \
-      --exclude  public_html/comptonPractice/user-recorded-audio-files/teacher/*.opus                        \
-      --exclude  public_html/voicefiles/*.opus                                                               \
-      --exclude  public_html/php/comptonCommunicate/voicefiles/*.opus                                        \
-      --exclude  public_html/DebugLogs/*.log                                                                 \
+virtualmin backup-domain --all-domains                                                    \
+      --dest        /tmp/virtualmin/                                                      \
+      --newformat   --all-features --all-virtualmin                                       \
+      --exclude  public_html/comptonPractice/user-recorded-audio-files/teacher/*.opus     \
+      --exclude  public_html/voicefiles/*.opus                                            \
+      --exclude  public_html/php/comptonCommunicate/voicefiles/*.opus                     \
+      --exclude  public_html/DebugLogs/*.log                                              \
+                                                                                          \
+      --exclude  *.avi                                                                    \
+      --exclude  *.gz                                                                     \
+      --exclude  *.mov                                                                    \
+      --exclude  *.mp3                                                                    \
+      --exclude  *.mp4                                                                    \
+      --exclude  *.ogg                                                                    \
+      --exclude  *.wmv                                                                    \
+      --exclude  *.zip                                                                    \
+  ;
+  
+
+
       --exclude  public_html/video/r_video.mp4video.mp4                                                      \
       --exclude  public_html/video/r_video.mp4                                                               \
       --exclude  public_html/video/final_consonant_ts.mp4video.mp4                                           \
@@ -49,10 +62,8 @@ virtualmin backup-domain --all-domains                                          
       --exclude  backup/java_permission_on_communication_page.avi.gz                                         \
       --exclude  public_html/tribute/homeGroanMp3/TheWanderer.mp3                                            \
       --exclude  public_html/DebugLogs/evalAuth0.log                                                         \
-      --exclude  public_html/tribute/homeGroanOgg/DarcyFarrow.ogg                                            \
+      --exclude  public_html/tribute/homeGroanOgg/DarcyFarrow.ogg                                          
       --exclude  public_html/images/video/comptonVideoOriginal.wmv                                           \
-  ;
-  
 
 
 backup only virtualmin files:
