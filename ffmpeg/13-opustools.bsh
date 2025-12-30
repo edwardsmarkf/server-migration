@@ -8,6 +8,7 @@
 
 # upgraded from 0.1.10 to 0.2  2019-02-20
 # 2020-08-24 - needed to add path for some bizarre reason
+# 2025-12-30 - added an 'ls' test to check file location
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/  ;
 export LIBPATH=/usr/local/lib/   ;
@@ -20,6 +21,9 @@ tar -xvf   ./opus*.tar   ;
 cd          ./opus*/       ;
 ./configure ;
 make     &&     make check   ;  make install ;
+
+ls -l  /usr/local/bin/opusenc  ;  2025-12-30
+ls -l  /usr/local/bin/opusdec  ;  2025-12-30
 
 /usr/local/bin/opusenc  --version ;  ## 2015-05-07
 
