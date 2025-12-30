@@ -13,6 +13,7 @@
 ## 2025-02-12 - got lame from a different source  (YET AGAIN)
 ## 2025-07-24 - updated flac, libogg
 ## 2025-12-30 - updated opus to 1.6...!
+## 2025-12-30 - old wav file gone, found new one
 
 ###############################
 #                             #
@@ -63,7 +64,9 @@ git clone https://code.videolan.org/videolan/x264.git  ~/INSTALL_FFmpeg/INSTALL_
 curl              https://www.ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2      \
       > ~/INSTALL_FFmpeg/INSTALL_FFmpeg/ffmpeg-snapshot.tar.bz2  ;
 
-curl  https://opus-codec.org/static/examples/samples/speech_12kbps_mb.wav \
+      #######  2025-12-30
+      #######   this file disappeared...??  curl  https://opus-codec.org/static/examples/samples/speech_12kbps_mb.wav 
+curl  https://file-examples.com/wp-content/storage/2017/11/file_example_WAV_10MG.wav \
     >    ~/INSTALL_FFmpeg/test/bat-guano.wav ; 
 
 curl  https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg \
