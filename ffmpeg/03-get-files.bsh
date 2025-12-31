@@ -66,7 +66,7 @@ curl              https://www.ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2      \
 
       #######  2025-12-30
       #######   this file disappeared...??  curl  https://opus-codec.org/static/examples/samples/speech_12kbps_mb.wav 
-curl  https://file-examples.com/wp-content/storage/2017/11/file_example_WAV_10MG.wav \
+curl  https://www.mmsp.ece.mcgill.ca/Documents/AudioFormats/WAVE/Samples/AFsp/M1F1-int24-AFsp.wav \
     >    ~/INSTALL_FFmpeg/test/bat-guano.wav ; 
 
 curl  https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg \
