@@ -29,17 +29,22 @@ sed --in-place                                                                  
     /usr/local/include/opus/opusenc.h   ;
 
 cd          ./opus*/       ;
+
 ./configure ;
 
 make     &&     make check   ;  make install ;
 
-ls -l  /usr/local/bin/opusenc  ;  2025-12-30
-ls -l  /usr/local/bin/opusdec  ;  2025-12-30
+ls -l  /usr/local/bin/opusenc  \
+       /usr/local/bin/opusdec  \
+       /usr/local/bin/opusinfo ;  2025-12-30
 
 /usr/local/bin/opusenc  --version ;  ## 2015-05-07
 
 /usr/local/bin/opusdec  --version ;  ## 2015-05-07
 
+/usr/local/bin/opusinfo  -V  ;  ## 2025-12-30
+
+###   this curl command should be moved to the 03- which gets all the files!!!!
 curl  https://people.xiph.org/~giles/2012/opus/detodos.opus > detodos.opus ;   
 
 ##  opus example
