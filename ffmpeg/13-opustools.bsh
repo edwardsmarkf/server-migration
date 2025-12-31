@@ -23,6 +23,11 @@ exit;
 ###  gotta change:
 ####  sed  __opus_check_int  to   opus_check_int  (without two leading underscores)   /usr/local/include/opus/opusenc.h
 
+#####   2025-12-30 - temporary (!) workaround
+sed --in-place                                                                                                         \
+    --expression='s/, __opus_check_int_ptr(x)/, opus_check_int_ptr(x)/; s/, __opus_check_int(x)/, opus_check_int(x)/;' \
+    /usr/local/include/opus/opusenc.h   ;
+
 cd          ./opus*/       ;
 ./configure ;
 
