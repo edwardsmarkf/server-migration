@@ -17,13 +17,14 @@ export LD_LIBRARY_PATH=/usr/local/lib/  ;
 
 cd   ~/INSTALL_FFmpeg/INSTALL_opustool/  ;
 
-gzip -d  ./opus*.gz    ;
+gzip --decompress   --verbose  ./opus*.gz    ;
 tar -xvf   ./opus*.tar   ; 
-cd          ./opus*/       ;
-./configure ;
-
+exit;
 ###  gotta change:
 ####  sed  __opus_check_int  to   opus_check_int  (without two leading underscores)   /usr/local/include/opus/opusenc.h
+
+cd          ./opus*/       ;
+./configure ;
 
 make     &&     make check   ;  make install ;
 
