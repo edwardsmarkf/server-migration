@@ -21,6 +21,10 @@ gzip -d  ./opus*.gz    ;
 tar -xvf   ./opus*.tar   ; 
 cd          ./opus*/       ;
 ./configure ;
+
+###  gotta change:
+####  sed  __opus_check_int  to   opus_check_int  (without two leading underscores)   /usr/local/include/opus/opusenc.h
+
 make     &&     make check   ;  make install ;
 
 ls -l  /usr/local/bin/opusenc  ;  2025-12-30
