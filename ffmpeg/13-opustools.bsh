@@ -39,7 +39,7 @@ make     &&     make check   ;  make install ;
 
 ls -l  /usr/local/bin/opusenc  \
        /usr/local/bin/opusdec  \
-       /usr/local/bin/opusinfo ;  2025-12-30
+       /usr/local/bin/opusinfo ;      ##  2025-12-30
 
 /usr/local/bin/opusenc  --version ;  ## 2015-05-07
 
