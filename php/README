@@ -3,6 +3,14 @@
                          what to replace 'module enable'  and  'module reset'  with 
                          in 00_php_install_after_webmin.bsh!
 
+UPDATE
+UPDATE 
+UPDATE  --  create a new final step that does something like
+             find  /home/ -type f  -name  '*.php' -exec php -l  {}  \;   ;
+UPDATE
+
+
+
 ### 2025-08-20 -- made release ## a parm.  
 
 bash -vx  00_php_install_after_webmin.bsh 8.4   >  00_php_install_after_webmin.bsh.log    2>&1   ;
