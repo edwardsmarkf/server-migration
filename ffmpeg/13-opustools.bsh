@@ -19,10 +19,9 @@ cd   ~/INSTALL_FFmpeg/INSTALL_opustool/  ;
 
 gzip --decompress   --verbose  ./opus*.gz    ;
 tar -xvf   ./opus*.tar   ; 
-;
+
 ###  gotta change:
 ####  sed  __opus_check_int  to   opus_check_int  (without two leading underscores)   /usr/local/include/opus/opusenc.h
-
 #####   2025-12-30 - temporary (!) workaround
 
 cp       /usr/local/include/opus/opusenc.h     ./opusenc.h-SAVED  ;
