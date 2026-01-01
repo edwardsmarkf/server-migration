@@ -4,6 +4,7 @@ UPDATE
 UPDATE   --   https://stackoverflow.com/questions/23679935/display-mysql-query-results-from-perl-script
 UPDATE   --   http://stackoverflow.com/questions/1687261/how-can-i-print-the-sql-query-executed-after-perls-dbi-fills-in-the-placeholder
 UPDATE   --    try out:   $ DBI_TRACE=2 perl your-script-here
+UPDATE      https://github.com/edwardsmarkf/server-migration/blob/master/mariadb/05_test_perl_connection.pl
 UPDATE
 
 
