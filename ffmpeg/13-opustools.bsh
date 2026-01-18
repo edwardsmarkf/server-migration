@@ -20,16 +20,16 @@ cd   ~/INSTALL_FFmpeg/INSTALL_opustool/  ;
 gzip --decompress   --verbose  ./opus*.gz    ;
 tar -xvf   ./opus*.tar   ; 
 
-###  gotta change:
-####  sed  __opus_check_int  to   opus_check_int  (without two leading underscores)   /usr/local/include/opus/opusenc.h
-#####   2025-12-30 - temporary (!) workaround
+    ###  gotta change:
+    ####  sed  __opus_check_int  to   opus_check_int  (without two leading underscores)   /usr/local/include/opus/opusenc.h
+    #####   2025-12-30 - temporary (!) workaround
 
-cp       /usr/local/include/opus/opusenc.h     ./opusenc.h-SAVED  ;
-sed --in-place                                                                                                         \
-    --expression='s/, __opus_check_int_ptr(x)/, opus_check_int_ptr(x)/; s/, __opus_check_int(x)/, opus_check_int(x)/;' \
-    /usr/local/include/opus/opusenc.h   ;
-
-diff       /usr/local/include/opus/opusenc.h     ./opusenc.h-SAVED  ;
+    ### cp       /usr/local/include/opus/opusenc.h     ./opusenc.h-SAVED  ;
+    ####sed --in-place                                                                                                         \
+    ####    --expression='s/, __opus_check_int_ptr(x)/, opus_check_int_ptr(x)/; s/, __opus_check_int(x)/, opus_check_int(x)/;' \
+    ####    /usr/local/include/opus/opusenc.h   ;
+    ####
+    #### diff       /usr/local/include/opus/opusenc.h     ./opusenc.h-SAVED  ;
 
 cd          ./opus*/       ;
 
