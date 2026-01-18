@@ -4,6 +4,9 @@
 #                         #
 ###########################
 
+### 2026-01-18 - added 'ls -l' to results
+
+
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/  ;
 export LIBPATH=/usr/local/lib/   ;
 export LD_LIBRARY_PATH=/usr/local/lib/  ;
@@ -11,13 +14,19 @@ export LD_LIBRARY_PATH=/usr/local/lib/  ;
 cd           ~/INSTALL_FFmpeg/test/  ;
 
 /usr/local/bin/ffmpeg -i ./bat-guano.wav -c:a libopus -b:a 64k -ar 48000 -ac 2 ./bat-guano.opus   ;
+ls -l   ./bat-guano.opus   ;
 
 /usr/local/bin/ffmpeg -i ./bat-guano.wav -acodec libopus -ab 64k -ar 48000 -ac 2 ./bat-guano2.opus  ;
+ls -l   ./bat-guano2.opus   ;
 
 /usr/local/bin/ffmpeg -i  ./example.ogg   ./example.wav ;
+ls -l    ./example.wav ;  
 
-/usr/local/bin/opusdec  detodos.opus   detodos.wav ;
+/usr/local/bin/opusdec  ./detodos.opus   ./detodos.wav ;
+ls -l    ./detodos.wav   ;
+
 /usr/local/bin/opusenc  detodos.wav  detodos2.opus ;
+ls -l    detodos.opus   ;
 
 
 #########################
