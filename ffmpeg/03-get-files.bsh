@@ -14,6 +14,7 @@
 ## 2025-07-24 - updated flac, libogg
 ## 2025-12-30 - updated opus to 1.6...!
 ## 2025-12-30 - old wav file gone, found new one
+## 2026-01-18 - moved away from mozilla since it does not seem to keep current
 
 ###############################
 #                             #
@@ -21,62 +22,54 @@
 #                             #
 ###############################
 
-curl  https://sourceware.org/pub/bzip2/bzip2-latest.tar.gz         \
-      >           ~/INSTALL_FFmpeg/INSTALL_bzip/bzip2-latest.tar.gz;
+curl  https://sourceware.org/pub/bzip2/bzip2-latest.tar.gz                         \
+      >           ~/INSTALL_FFmpeg/INSTALL_bzip/bzip2-latest.tar.gz                ;
 
-git clone https://github.com/yasm/yasm.git   \
-    ~/INSTALL_FFmpeg/INSTALL_yasm/yasm ;  
+git clone https://github.com/yasm/yasm.git                                         \
+    ~/INSTALL_FFmpeg/INSTALL_yasm/yasm                                             ;  
 
-        ##curl https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.4.3.tar.xz  \  ## 2025-07-24
-        ##      >           ~/INSTALL_FFmpeg/INSTALL_flac/flac-1.4.3.tar.xz ;      ## 2025-07-24
-curl  https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.5.0.tar.xz  \
-        >           ~/INSTALL_FFmpeg/INSTALL_flac/flac-1.5.0.tar.xz ;
-        
 
-        ## curl https://ftp.osuosl.org/pub/xiph/releases/ogg/libogg-1.3.5.tar.gz \  ## 2025-07-24
-        ##    >         ~/INSTALL_FFmpeg/INSTALL_libogg/libogg-1.3.5.tar.gz ;       ## 2025-07-24
-curl  https://ftp.osuosl.org/pub/xiph/releases/ogg/libogg-1.3.6.tar.gz     \
-        >         ~/INSTALL_FFmpeg/INSTALL_libogg/libogg-1.3.6.tar.gz  ;
+curl  https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.5.0.tar.xz              \
+        >           ~/INSTALL_FFmpeg/INSTALL_flac/flac-1.5.0.tar.xz                ;
 
-curl  https://ftp.osuosl.org/pub/xiph/releases/vorbis/libvorbis-1.3.7.tar.xz  \
-    >              ~/INSTALL_FFmpeg/INSTALL_vorbis/libvorbis-1.3.7.tar.xz ;
 
-curl  https://ftp.osuosl.org/pub/xiph/releases/opus/opus-1.6.tar.gz  \
-     > ~/INSTALL_FFmpeg/INSTALL_opus/opus-1.6.tar.gz   ;
+curl  https://ftp.osuosl.org/pub/xiph/releases/ogg/libogg-1.3.6.tar.gz             \
+        >         ~/INSTALL_FFmpeg/INSTALL_libogg/libogg-1.3.6.tar.gz              ;
 
-####  curl https://archive.mozilla.org/pub/opus/opus-1.3.1.tar.gz  \
-####   > ~/INSTALL_FFmpeg/INSTALL_opus/opus-1.3.1.tar.gz   ;
+curl  https://ftp.osuosl.org/pub/xiph/releases/vorbis/libvorbis-1.3.7.tar.xz       \
+    >              ~/INSTALL_FFmpeg/INSTALL_vorbis/libvorbis-1.3.7.tar.xz          ;
 
-curl   https://archive.mozilla.org/pub/opus/libopusenc-0.2.1.tar.gz \
-   >  ~/INSTALL_FFmpeg/INSTALL_libopusenc/libopusenc-0.2.1.tar.gz   ;
+curl  https://ftp.osuosl.org/pub/xiph/releases/opus/opus-1.6.tar.gz                \
+     > ~/INSTALL_FFmpeg/INSTALL_opus/opus-1.6.tar.gz                               ;
 
-curl  https://ftp.osuosl.org/pub/xiph/releases/opus/opusfile-0.12.tar.gz  \
-        > ~/INSTALL_FFmpeg/INSTALL_opusfile/opusfile-0.12.tar.gz;
+curl   https://ftp.osuosl.org/pub/xiph/releases/opus/libopusenc-0.3.tar.gz         \
+   >  ~/INSTALL_FFmpeg/INSTALL_libopusenc/libopusenc-0.3.tar.gz                    ;
 
-curl         https://archive.mozilla.org/pub/opus/opus-tools-0.2.tar.gz   \
-    >  ~/INSTALL_FFmpeg/INSTALL_opustool/opus-tools-0.2.tar.gz  ;
+curl  https://ftp.osuosl.org/pub/xiph/releases/opus/opusfile-0.12.tar.gz           \
+        > ~/INSTALL_FFmpeg/INSTALL_opusfile/opusfile-0.12.tar.gz                   ;
+
+curl   https://ftp.osuosl.org/pub/xiph/releases/opus/opus-tools-0.2.tar.gz         \
+    >  ~/INSTALL_FFmpeg/INSTALL_opustool/opus-tools-0.2.tar.gz                     ;
 
 curl   https://cytranet-dal.dl.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz?viasf=1   \
-    > ~/INSTALL_FFmpeg/INSTALL_lame/lame-latest.tar.gz       ;
+    > ~/INSTALL_FFmpeg/INSTALL_lame/lame-latest.tar.gz                                             ;
  
 git clone https://code.videolan.org/videolan/x264.git  ~/INSTALL_FFmpeg/INSTALL_x264/ ;  ## 2020-01-07
 
-curl              https://www.ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2      \
-      > ~/INSTALL_FFmpeg/INSTALL_FFmpeg/ffmpeg-snapshot.tar.bz2  ;
+curl  https://www.ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2                       \
+      > ~/INSTALL_FFmpeg/INSTALL_FFmpeg/ffmpeg-snapshot.tar.bz2                     ;
 
-      #######  2025-12-30
-      #######   this file disappeared...??  curl  https://opus-codec.org/static/examples/samples/speech_12kbps_mb.wav 
-curl  https://dl.espressif.com/dl/audio/ff-16b-2c-44100hz.wav \
-    >    ~/INSTALL_FFmpeg/test/bat-guano.wav ; 
+curl  https://dl.espressif.com/dl/audio/ff-16b-2c-44100hz.wav                       \
+    >    ~/INSTALL_FFmpeg/test/bat-guano.wav                                        ;
 
-curl  https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg \
-   >     ~/INSTALL_FFmpeg/test/example.ogg  ;
+curl  https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg               \
+   >     ~/INSTALL_FFmpeg/test/example.ogg                                          ;
 
-curl  https://opus-codec.org/static/examples/ehren-paper_lights-96.opus   \
-   > ~/INSTALL_FFmpeg/test/detodos.opus ;
+curl  https://opus-codec.org/static/examples/ehren-paper_lights-96.opus             \
+   > ~/INSTALL_FFmpeg/test/detodos.opus                                             ;
 
-curl  https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.opus   \
-   > ~/INSTALL_FFmpeg/test/detodos2.opus ;
+curl  https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.opus                      \
+   > ~/INSTALL_FFmpeg/test/detodos2.opus                                            ;
 
 
 ###############################
@@ -84,6 +77,26 @@ curl  https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.opus   \
 # END:  G e t   F i l e s     #
 #                             #
 ###############################
+
+exit;
+
+
+
+
+        ##curl https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.4.3.tar.xz  \  ## 2025-07-24
+        ##      >           ~/INSTALL_FFmpeg/INSTALL_flac/flac-1.4.3.tar.xz ;      ## 2025-07-24
+        ## curl https://ftp.osuosl.org/pub/xiph/releases/ogg/libogg-1.3.5.tar.gz \  ## 2025-07-24
+        ##    >         ~/INSTALL_FFmpeg/INSTALL_libogg/libogg-1.3.5.tar.gz ;       ## 2025-07-24
+####   curl         https://archive.mozilla.org/pub/opus/opus-tools-0.2.tar.gz   \
+
+
+      #######  2025-12-30
+      #######   this file disappeared...??  curl  https://opus-codec.org/static/examples/samples/speech_12kbps_mb.wav 
+
+####  curl https://archive.mozilla.org/pub/opus/opus-1.3.1.tar.gz  \
+####   > ~/INSTALL_FFmpeg/INSTALL_opus/opus-1.3.1.tar.gz   ;
+####  curl   https://archive.mozilla.org/pub/opus/libopusenc-0.2.1.tar.gz \
+
 
 
         ##curl https://managedway.dl.sourceforge.net/project/bzip2/bzip2-1.0.6.tar.gz    \
