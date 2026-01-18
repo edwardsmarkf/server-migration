@@ -8,12 +8,13 @@
 ##  sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh)"  \
                                              --                                  \
                                              --bundle LAMP                       \
-                                             --branch   rc                       \
+                                             --branch   stable                   \
                                              --hostname host.edwardsmark.info    \
                                              --yes                               \
                                                                                  ;
 ##  "--branch rc"   for release candidates  2025-10-01  https://forum.virtualmin.com/t/install-issue-on-rl-10/135352/3
 ##  "--branch unstable" for a pre-release, may have a lot of UNTESTED options
+##  "--branch stable"   2026-01-18
 ##  "--yes" assumes yes for all prompts
 
 maybe do 'sed' here ?????
