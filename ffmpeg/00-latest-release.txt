@@ -16,7 +16,7 @@ https://ftp.osuosl.org/pub/xiph/releases/opus/                  ##  libopusenc  
 
 https://ftp.osuosl.org/pub/xiph/releases/opus/                  ##  opus              1.6
 
-https://ftp.osuosl.org/pub/xiph/releases/opus/                  ##  opus-tools        0.3
+https://ftp.osuosl.org/pub/xiph/releases/opus/                  ##  opus-tools        0.2
 
 
 
