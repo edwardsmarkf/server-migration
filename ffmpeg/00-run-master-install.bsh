@@ -2,6 +2,6 @@
 
 ##    2025-12-30   copied right out of README!
 
- nohup echo 'y' | bash -vx 00-master.bsh y > 00-master.bsh.log 2>&1 &
+ nohup echo 'y' | bash -vx   ./00-master.bsh y >   ./00-master.bsh.log 2>&1 &
 
  exit;
