@@ -14,4 +14,4 @@
 
 ##   to run in batch mode:  
 ##   nohup echo 'y' | bash -vx 00-master.bsh y > 00-master.bsh.log 2>&1 &
-
+bash -vx    00-run-master-install.bsh  ;  ## will do the same as above!  2026-01-18
