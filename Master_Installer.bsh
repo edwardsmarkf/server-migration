@@ -1,21 +1,43 @@
 #!  /bin/bash  -w
 
-##	2026-01-29		--  master_installer.bsh
+##	2026-01-29		--  Master_Installer.bsh
 
 ##	this just might work....!
 
 
 dnf  --assumeyes   update ;
-
 dnf  --assumeyes   install  git  ;
 
-git clone  https://github.com/edwardsmarkf/server-migration ;
+####  git clone  https://github.com/edwardsmarkf/server-migration ;
+
+
+     ###################
+     #                 #
+     #   f f m p e g   #
+     #                 #
+     ###################
 
 bash -vx     ~/server-migration/ffmpeg/00-run-master-install.bsh  ;
 
+
+
+     ###################
+     #                 #
+     #     m i s c     #
+     #                 #
+     ###################
+
+
 bash -vx   ~/server-migration/bash-misc/dnf-yum.bsh     > ~/server-migration/bash-misc/dnf-yum.bsh.log     2>&1   ;
 bash -vx   ~/server-migration/bash-misc/root-init.bsh   > ~/server-migration/bash-misc/root-init.bsh.log   2>&1   ;
-  
+
+
+     ###################
+     #                 #
+     #   w e b m i n   #
+     #                 #
+     ###################
+
 sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh)"  \
                                          --                                  \
                                          --bundle LAMP                       \
@@ -28,7 +50,13 @@ bash -vx   ~/server-migration/webmin/virtualmin.bsh  >  ~/server-migration/webmi
 
 bash  -vx  ~/server-migration/webmin/csf.bsh   >  ~/server-migration/webmin/csf.bsh.log   2>&1  ;
 
- 
+
+
+     ###################
+     #                 #
+     #     p h p       #
+     #                 #
+     ################### 
 
 bash -vx  ~/server-migration/php/00_php_install_after_webmin.bsh 8.5   >  ~/server-migration/php/00_php_install_after_webmin.bsh.log    2>&1   ;
 more                                               ~/server-migration/php/00_php_install_after_webmin.bsh.log           ;
@@ -44,4 +72,4 @@ bash  -vx  ~/server-migration/php/03_php_composer.bsh                  >  ~/serv
 more                                               ~/server-migration/php/03_php_composer.bsh.log                       ;
 
 
-
+exit;
