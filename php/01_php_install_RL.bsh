@@ -16,6 +16,7 @@
 #   2025-02-14 - fixed typo first line
 #   2025-02-18 - renamed to 01_
 #   2025-07-28 - powertools no longer seems to be required.....(??)
+#   2026-01-29 - removed PowerTools replaced with crb  -- https://forums.rockylinux.org/t/how-do-i-install-powertools-on-rocky-linux-9/7427
 
 ##   DONT EVER USE WEBTATIC!  use remi/epel instead   ! ! ! 
 
@@ -24,11 +25,12 @@ echo 'make SURE that Webmin installs php first ! ! ! ! '  ;
 
 
         ############################  rewritten from https://www.cloudbooklet.com/install-php-7-4-on-centos-8-or-rhel-8/
-        #  rewritten from https://www.tecmint.com/install-php-on-centos-8/
 
-dnf config-manager --set-enabled PowerTools ;    ## these are repeated from dnf-yum.bsh
-dnf install dnf-plugins-core ;                   ##  https://serverfault.com/questions/997896/how-to-enable-powertools-repository-in-centos-8
-dnf config-manager --set-enabled powertools ;    ##  https://serverfault.com/questions/997896/how-to-enable-powertools-repository-in-centos-8
+                ########  2026-01-29        dnf install dnf-plugins-core ;                   ##  https://serverfault.com/questions/997896/how-to-enable-powertools-repository-in-centos-8
+                ########  2026-01-29        dnf config-manager --set-enabled PowerTools ;    ## these are repeated from dnf-yum.bsh
+                ########  2026-01-29        dnf config-manager --set-enabled powertools ;    ##  https://serverfault.com/questions/997896/how-to-enable-powertools-repository-in-centos-8
+dnf config-manager --enable crb ;   ##  2026-01-19 -- replaces PowerTools
+
 dnf  --assumeyes  install dnf-utils ;            ## these are repeated from dnf-yum.bsh
 
 
