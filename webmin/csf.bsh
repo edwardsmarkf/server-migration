@@ -19,14 +19,17 @@
 ##                     and suppressed AUTO_UPDATE as per:  https://linuxblog.io/configserver-firewall-csf-after-shutdown/ 
 ##    2025-12-02    -  added dnf  wget install
 ##                     redo the ports to match old server
+##    2026-01-29    -  csf moved to new "home"  configserver.dev
 
 
 mkdir  ~/csf  && cd   ~/csf  ;
 
-dnf  --assumeyes  install wget  ;   ## 2025-12-02 - not sure where this was supposed to have been already installed??
-
+                          ##   2026-01-29      dnf  --assumeyes  install wget  ;   ## 2025-12-02 - not sure where this was supposed to have been already installed??
                           ##    2025-10-24 changed from:   wget   https://download.configserver.com/csf.tgz  ;
-/usr/bin/wget    --verbose   https://raw.githubusercontent.com/waytotheweb/scripts/refs/heads/main/csf.tgz   ## 2025-10-24
+
+                          ##    2026-01-29  /usr/bin/wget    --verbose   https://raw.githubusercontent.com/waytotheweb/scripts/refs/heads/main/csf.tgz   ## 2025-10-24
+
+curl --remote-name  https://download.configserver.dev/csf.tgz  ;   ## 2026-01-29
 
 tar   --verbose  --extract --gzip --file csf.tgz  ;
 cd  csf  ;
