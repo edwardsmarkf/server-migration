@@ -1,0 +1,47 @@
+#!  /bin/bash  -w
+
+##	2026-01-29		--  master_installer.bsh
+
+##	this just might work....!
+
+
+dnf  --assumeyes   update ;
+
+dnf  --assumeyes   install  git  ;
+
+git clone  https://github.com/edwardsmarkf/server-migration ;
+
+bash -vx     ~/server-migration/ffmpeg/00-run-master-install.bsh  ;
+
+bash -vx   ~/server-migration/bash-misc/dnf-yum.bsh     > ~/server-migration/bash-misc/dnf-yum.bsh.log     2>&1   ;
+bash -vx   ~/server-migration/bash-misc/root-init.bsh   > ~/server-migration/bash-misc/root-init.bsh.log   2>&1   ;
+  
+sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh)"  \
+                                         --                                  \
+                                         --bundle LAMP                       \
+                                         --branch   stable                   \
+                                         --hostname host.edwardsmark.info    \
+                                         --yes                               \
+                                                                             ;
+
+bash -vx   ~/server-migration/webmin/virtualmin.bsh  >  ~/server-migration/webmin/virtualmin.bsh.log  2>&1  ;
+
+bash  -vx  ~/server-migration/webmin/csf.bsh   >  ~/server-migration/webmin/csf.bsh.log   2>&1  ;
+
+ 
+
+bash -vx  ~/server-migration/php/00_php_install_after_webmin.bsh 8.5   >  ~/server-migration/php/00_php_install_after_webmin.bsh.log    2>&1   ;
+more                                               ~/server-migration/php/00_php_install_after_webmin.bsh.log           ;
+
+bash  -vx  ~/server-migration/php/01_php_install_RL.bsh                >  ~/server-migration/php/01_php_install_RL.bsh.log              2>&1   ;
+more                                               ~/server-migration/php/01_php_install_RL.bsh.log                     ;
+
+bash  -vx  ~/server-migration/php/02_phpImageMagick.bsh                >  ~/server-migration/php/02_phpImageMagick.bsh.log              2>&1   ;
+more                                               ~/server-migration/php/02_phpImageMagick.bsh.log                     ;
+
+
+bash  -vx  ~/server-migration/php/03_php_composer.bsh                  >  ~/server-migration/php/03_php_composer.bsh.log                2>&1   ;
+more                                               ~/server-migration/php/03_php_composer.bsh.log                       ;
+
+
+
