@@ -31,6 +31,8 @@ mkdir  ~/csf  && cd   ~/csf  ;
 
 curl --remote-name  https://download.configserver.dev/csf.tgz  ;   ## 2026-01-29
 
+ls -l   csf.tgz ;                  ##  2026-01-29
+
 tar   --verbose  --extract --gzip --file csf.tgz  ;
 cd  csf  ;
 sh  install.sh ;   ## 2021-05-28 - dont skip this one~!
