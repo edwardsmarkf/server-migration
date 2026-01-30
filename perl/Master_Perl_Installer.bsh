@@ -36,3 +36,5 @@ END_OF_CPAN
 
 
 bash -vx  ~/server-migration/perl/CPAN-2.bsh  >   ~/server-migration/perl/CPAN-2.bsh.log  2>&1 ;
+
+exit;
