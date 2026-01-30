@@ -20,20 +20,22 @@ done
 
 mkdir  --verbose   ~/ffmpeg-install-logs/       ;
 
-bash -vx   ./01-initial.bsh	        >	~/ffmpeg-install-logs/01-initial.bsh.log      2>&1    ;
-bash -vx   ./02-directories.bsh	        >       ~/ffmpeg-install-logs/02-directories.bsh.log  2>&1    ;
-bash -vx   ./03-get-files.bsh	        >	~/ffmpeg-install-logs/03-get-files.bsh.log    2>&1    ;
-bash -vx   ./04-file-sizes.bsh	        >       ~/ffmpeg-install-logs/04-file-sizes.bsh.log   2>&1    ;
-bash -vx   ./05-bzip2.bsh		>       ~/ffmpeg-install-logs/05-bzip2.bsh.log        2>&1    ;
-bash -vx   ./06-yasm.bsh		>       ~/ffmpeg-install-logs/06-yasm.bsh.log         2>&1    ;
-bash -vx   ./07-flac.bsh		>       ~/ffmpeg-install-logs/07-flac.bsh.log         2>&1    ;
-bash -vx   ./08-libogg.bsh	        >	~/ffmpeg-install-logs/08-libogg.bsh.log       2>&1    ;
-bash -vx   ./09-libvorbis.bsh	        >	~/ffmpeg-install-logs/09-libvorbis.bsh.log    2>&1    ;
-bash -vx   ./10-opus.bsh		>       ~/ffmpeg-install-logs/10-opus.bsh.log         2>&1    ;
-bash -vx   ./11-libopus.bsh	        >	~/ffmpeg-install-logs/11-libopus.bsh.log      2>&1    ;
-bash -vx   ./12-opusfile.bsh	        >	~/ffmpeg-install-logs/12-opusfile.bsh.log     2>&1    ;
-bash -vx   ./13-opustools.bsh	        >	~/ffmpeg-install-logs/13-opustools.bsh.log    2>&1    ;
-bash -vx   ./14-lame.bsh		>       ~/ffmpeg-install-logs/14-lame.bsh.log         2>&1    ;
-bash -vx   ./15-x264.bsh		>       ~/ffmpeg-install-logs/15-x264.bsh.log         2>&1    ;
-bash -vx   ./16-ffmpeg.bsh	        >	~/ffmpeg-install-logs/16-ffmpeg.bsh.log       2>&1    ;
-bash -vx   ./99-test.bsh		>       ~/ffmpeg-install-logs/99-test.bsh.log         2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/01-initial.bsh	   >  ~/ffmpeg-install-logs/01-initial.bsh.log      2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/02-directories.bsh	   >  ~/ffmpeg-install-logs/02-directories.bsh.log  2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/03-get-files.bsh	   >  ~/ffmpeg-install-logs/03-get-files.bsh.log    2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/04-file-sizes.bsh	   >  ~/ffmpeg-install-logs/04-file-sizes.bsh.log   2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/05-bzip2.bsh	   >  ~/ffmpeg-install-logs/05-bzip2.bsh.log        2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/06-yasm.bsh	   >  ~/ffmpeg-install-logs/06-yasm.bsh.log         2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/07-flac.bsh	   >  ~/ffmpeg-install-logs/07-flac.bsh.log         2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/08-libogg.bsh	   >  ~/ffmpeg-install-logs/08-libogg.bsh.log       2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/09-libvorbis.bsh	   >  ~/ffmpeg-install-logs/09-libvorbis.bsh.log    2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/10-opus.bsh	   >  ~/ffmpeg-install-logs/10-opus.bsh.log         2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/11-libopus.bsh	   >  ~/ffmpeg-install-logs/11-libopus.bsh.log      2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/12-opusfile.bsh	   >  ~/ffmpeg-install-logs/12-opusfile.bsh.log     2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/13-opustools.bsh	   >  ~/ffmpeg-install-logs/13-opustools.bsh.log    2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/14-lame.bsh	   >  ~/ffmpeg-install-logs/14-lame.bsh.log         2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/15-x264.bsh	   >  ~/ffmpeg-install-logs/15-x264.bsh.log         2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/16-ffmpeg.bsh	   >  ~/ffmpeg-install-logs/16-ffmpeg.bsh.log       2>&1    ;
+bash -vx   ~/server-migration/ffmpeg/99-test.bsh	   >  ~/ffmpeg-install-logs/99-test.bsh.log         2>&1    ;
+
+exit;
