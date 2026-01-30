@@ -8,32 +8,7 @@
 
 bash -vx  ~/server-migration/perl/perl.bsh  >   ~/server-migration/perl/perl.bsh.log  2>&1 ;
 
-expect <(cat <<'END_OF_CPAN'
-
-	##	creates a service:	messages  (all the defaults)
-
-	##	written from:	https://docs.feathersjs.com/guides/chat/service.html
-	 
-	set timeout -1
-	
-	set UPARROW	\x1B\[A;
-	set DOWNARROW	\x1B\[B;
-	set SPACE       \x20;
-	set RETURN      \x0d;
-	 
-	spawn	perl -MCPAN -e shell ;;
-	 
-	expect	-re "cpan[1]>"
-	send	-- "${RETURN}"
-	 
-	expect	-re ".*What is the name of the service\?.*"
-	send	-- "messages${RETURN}"
-			## messages
-	 
-	expect eof
-END_OF_CPAN
-)	## end of feathers genereate service
-
+bash -vx  ~/server-migration/perl/CPAN-1.bsh  >   ~/server-migration/perl/CPAN-1.bsh.log  2>&1 ;
 
 bash -vx  ~/server-migration/perl/CPAN-2.bsh  >   ~/server-migration/perl/CPAN-2.bsh.log  2>&1 ;
 
