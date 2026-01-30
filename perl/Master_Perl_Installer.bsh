@@ -6,7 +6,7 @@
 #
 
 
-bash -vx  ~/server-migration/perl/perl.bsh  >   ~/server-migration/perl/perl.bsh.log  2>&1 ;
+bash -vx  ~/server-migration/perl/perl.bsh    >   ~/server-migration/perl/perl.bsh.log    2>&1 ;
 
 bash -vx  ~/server-migration/perl/CPAN-1.bsh  >   ~/server-migration/perl/CPAN-1.bsh.log  2>&1 ;
 
