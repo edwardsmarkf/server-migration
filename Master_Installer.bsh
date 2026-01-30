@@ -74,9 +74,30 @@ more                                               ~/server-migration/php/03_php
 
 
 
+     ##########################
+     #                        #
+     #     p o s t f i x      #
+     #                        #
+     ##########################
+
+bash -vx  ~/server-migration/bash-misc/mailx-postfix.bsh
+
+
+
 
      ##########################
      #                        #
+     #     n o d e j s        #
+     #                        #
+     ##########################
+
+bash -vx  ~/server-migration/node/bash-js.bsh ;
+
+
+
+
+     ##########################
+     #                        #~
      #     t e s t i n g      #
      #                        #
      ##########################
