@@ -6,6 +6,8 @@
 #
 
 
+bash -vx  ~/server-migration/perl/perl.bsh  >   ~/server-migration/perl/perl.bsh.log  2>&1 ;
+
 expect <(cat <<'END_OF_CPAN'
 
 	##	creates a service:	messages  (all the defaults)
