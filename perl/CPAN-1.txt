@@ -18,8 +18,8 @@ perl -MCPAN -e shell ;     ## click several times, twice at first, then ONCE aga
 cpan ;   ## run once for initialize and testing, hit return over and over
 
 perl -MCPAN -e shell ;   #run once for initialization and testing 
-perl -MCPAN -e shell  ' install Term::ReadLine::Perl  ;
-perl -MCPAN -e shell  'o conf prerequisites_policy follow;  '   ;
+perl -MCPAN -e shell  ' install Term::ReadLine::Perl ' ;
+perl -MCPAN -e shell  'o conf prerequisites_policy follow  '   ;
 perl -MCPAN -e shell  'o conf commit'      ;
 
 /usr/bin/cpan   ;  ## 2021-06-25
