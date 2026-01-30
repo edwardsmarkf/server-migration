@@ -96,5 +96,7 @@ which ffprobe;   ##  /usr/local/bin/ffprobe
 
  php  --version ;
 
+ perl -v ;
+ perl -e  'use Template::Stash::XS ; '   ;      ## TEST TEST TEST TEST TEST TEST TEST ! ! 
 
 exit;
