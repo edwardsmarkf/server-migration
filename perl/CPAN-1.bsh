@@ -1,0 +1,59 @@
+#!  /bin/bash  -w
+#
+#       CPAN-1.bsh      2026-01-30
+#
+#
+expect <(cat <<'END_OF_CPAN'
+
+        set timeout -1
+        
+        set UPARROW     \x1B\[A;
+        set DOWNARROW   \x1B\[B;
+        set SPACE       \x20;
+        set CTRL_D      \x04;
+        set RETURN      \x0d;
+         
+        spawn   perl -MCPAN -e shell ;
+        expect  -re ".*cpan\\\[\\d+\\\]>.*"
+        send    -- "${CTRL_D}"
+        expect eof
+
+        spawn   perl -MCPAN -e shell ;
+        expect  -re ".*cpan\\\[\\d+\\\]>.*"
+        send    -- "${CTRL_D}"
+        expect eof
+
+        spawn   perl -MCPAN -e shell  'install Term::ReadLine::Perl             ' ;
+        expect  -re ".*cpan\\\[\\d+\\\]>.*"
+        send    -- "${CTRL_D}"
+        expect eof
+
+        spawn   perl -MCPAN -e shell  'o conf prerequisites_policy follow       ' ;
+        expect  -re ".*cpan\\\[\\d+\\\]>.*"
+        send    -- "${CTRL_D}"
+        expect eof
+         
+        spawn   perl -MCPAN -e shell  'o conf commit                            ' ;
+        expect  -re ".*cpan\\\[\\d+\\\]>.*"
+        send    -- "${CTRL_D}"
+        expect eof
+
+        spawn   perl -MCPAN -e shell ;
+        expect  -re ".*cpan\\\[\\d+\\\]>.*"
+        send    -- "install CPAN${RETURN}"
+        expect  -re ".*cpan\\\[\\d+\\\]>.*"
+        send    -- "reload cpan${RETURN}"
+        expect  -re ".*cpan\\\[\\d+\\\]>.*"
+        send    -- "${CTRL_D}"
+        expect eof
+
+END_OF_CPAN
+)
+
+
+/usr/bin/cpan    -i   -f  Template::Stash::XS      ;
+
+perl -e  'use Template::Stash::XS ; '   ;      ## TEST TEST TEST TEST TEST TEST TEST ! ! 
+
+
+exit;
