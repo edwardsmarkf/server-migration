@@ -14,5 +14,7 @@ bash -vx  ~/server-migration/perl/CPAN-2.bsh  >   ~/server-migration/perl/CPAN-2
 
 su fakeperluser --command "perl  -W  -e  'use File::Basename ; ' ;  "        ;
 
+perl -e  'use Template::Stash::XS ; '   ; 
+
 
 exit;
