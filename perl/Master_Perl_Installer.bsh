@@ -12,4 +12,7 @@ bash -vx  ~/server-migration/perl/CPAN-1.bsh  >   ~/server-migration/perl/CPAN-1
 
 bash -vx  ~/server-migration/perl/CPAN-2.bsh  >   ~/server-migration/perl/CPAN-2.bsh.log  2>&1 ;
 
+su fakeperluser --command "perl  -W  -e  'use File::Basename ; ' ;  "        ;
+
+
 exit;
