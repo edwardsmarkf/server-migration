@@ -17,7 +17,8 @@ dnf  --assumeyes   install  git  ;
      #                 #
      ###################
 
-bash -vx     ~/server-migration/ffmpeg/00-run-master-install.bsh  ;
+bash -vx     ~/server-migration/ffmpeg/00-run-master-install.bsh                   \
+      >       ~/server-migration/ffmpeg/00-run-master-install.bsh.log     2>&1     ;
 
 
 
