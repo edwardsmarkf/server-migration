@@ -73,4 +73,28 @@ bash  -vx  ~/server-migration/php/03_php_composer.bsh                  >  ~/serv
 more                                               ~/server-migration/php/03_php_composer.bsh.log                       ;
 
 
+
+
+     ##########################
+     #                        #
+     #     t e s t i n g      #
+     #                        #
+     ##########################
+
+
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/  ;
+export LIBPATH=/usr/local/lib/                    ;
+export LD_LIBRARY_PATH=/usr/local/lib/            ;
+
+which ffmpeg;   ##  /usr/local/bin/ffmpeg
+which ffprobe;   ##  /usr/local/bin/ffprobe
+
+/usr/local/bin/ffmpeg  -version ;
+/usr/local/bin/ffprobe  -version ;  
+
+ webmin   -version ;
+
+ php  --version ;
+
+
 exit;
