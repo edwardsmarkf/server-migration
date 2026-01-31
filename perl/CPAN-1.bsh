@@ -14,6 +14,8 @@ expect <(cat <<'END_OF_CPAN'
         set RETURN      \x0d;
          
         spawn   perl -MCPAN -e shell ;
+        expect  -re 'Would you like to configure as much as possible automatically'
+        send    -- "${RETURN}"
         expect  -re ".*cpan\\\[\\d+\\\]>.*"
         send    -- "${CTRL_D}"
         expect eof
