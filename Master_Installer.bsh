@@ -59,7 +59,7 @@ bash  -vx  ~/server-migration/webmin/csf.bsh   >  ~/server-migration/webmin/csf.
      #                 #
      ################### 
 
-
+bash  -vx  ~/server-migration/php/Master_Installer.bsh       >  ~/server-migration/php/Master_Installer.bsh.log ;
 
 
      ####################
@@ -68,7 +68,7 @@ bash  -vx  ~/server-migration/webmin/csf.bsh   >  ~/server-migration/webmin/csf.
      #                  #
      #################### 
 
-bash  -vx  ~/server-migration.perl/Master_Perl_Installer.bsh       >  ~/server-migration.perl/Master_Perl_Installer.bsh.log ;
+bash  -vx  ~/server-migration/perl/Master_Installer.bsh       >  ~/server-migration/perl/Master_Installer.bsh.log ;
 
 
      ##########################
