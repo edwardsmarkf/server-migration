@@ -3,6 +3,9 @@
 ##	2026-01-29		--  Master_Installer.bsh
 
 ##	this just might work....!
+#
+#    nohup  bash -vx   ~/server-migration.Master_Installer.bsh   >   ~/server-migration.Master_Installer.bsh.log  2>&1  &
+#
 
 
 dnf  --assumeyes   update ;
