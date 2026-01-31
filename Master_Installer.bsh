@@ -59,19 +59,16 @@ bash  -vx  ~/server-migration/webmin/csf.bsh   >  ~/server-migration/webmin/csf.
      #                 #
      ################### 
 
-bash -vx  ~/server-migration/php/00_php_install_after_webmin.bsh 8.5   >  ~/server-migration/php/00_php_install_after_webmin.bsh.log    2>&1   ;
-more                                               ~/server-migration/php/00_php_install_after_webmin.bsh.log           ;
-
-bash  -vx  ~/server-migration/php/01_php_install_RL.bsh                >  ~/server-migration/php/01_php_install_RL.bsh.log              2>&1   ;
-more                                               ~/server-migration/php/01_php_install_RL.bsh.log                     ;
-
-bash  -vx  ~/server-migration/php/02_phpImageMagick.bsh                >  ~/server-migration/php/02_phpImageMagick.bsh.log              2>&1   ;
-more                                               ~/server-migration/php/02_phpImageMagick.bsh.log                     ;
 
 
-bash  -vx  ~/server-migration/php/03_php_composer.bsh                  >  ~/server-migration/php/03_php_composer.bsh.log                2>&1   ;
-more                                               ~/server-migration/php/03_php_composer.bsh.log                       ;
 
+     ####################
+     #                  #
+     #     p e r l      #
+     #                  #
+     #################### 
+
+bash  -vx  ~/server-migration.perl/Master_Perl_Installer.bsh       >  ~/server-migration.perl/Master_Perl_Installer.bsh.log ;
 
 
      ##########################
