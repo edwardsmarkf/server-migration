@@ -4,7 +4,7 @@
 
 ##	this just might work....!
 #
-#    nohup  bash -vx   ~/server-migration.Master_Installer.bsh   >   ~/server-migration.Master_Installer.bsh.log  2>&1  &
+#    nohup  bash -vx   ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log  2>&1  &
 #
 
 
