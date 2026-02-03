@@ -1,0 +1,13 @@
+#!  /bin/bash  -w
+#
+#
+
+cd  ~/phpTest/  ;
+rm -Rf  ~/phpTest/home/ ;
+tar -xf  *.tar  ;
+find  .  -type d  -name  '*UNUSED-PLEASE-DELETE-SOON' -exec  rm -Rf  {}  \;
+find  .  -type f  -name  "*.php" -exec sed  --in-place  -f  /home/mark/sed.sed  {}  \;   ;
+find  .  -type f  -name  "*.php" -exec php -l   {}  \;    >  ~/phpTest/phpLintTest.txt  2>&1  ;
+
+cat ~/phpTest/phpLintTest.txt  | grep  -v  'No syntax errors detected in'  | grep -v  'PHP Warning:'  >  ~/phpTest/phpLintTestShortened.txt  ;
+
