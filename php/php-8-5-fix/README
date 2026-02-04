@@ -1,0 +1,9 @@
+
+
+manually changed line 648 of   /home/accentreduction.online/public_html/wp-content/plugins/js_composer/include/classes/editors/class-vc-frontend-editor.php
+
+               $host = $s['HTTP_HOST'] ; //  2026-02-03 php 8.5 fix    isset( $s['HTTP_X_FORWARDED_HOST'] ) ? $s['HTTP_X_FORWARDED_HOST'] : isset( $s['HTTP_HOST'] ) ? $s['HTTP_HOST'] : $s['SERVER_NAME'];
+
+manually changed line 2980 of  /home/comptonpeslonline.com/public_html/phpGrid/phpGrid_v7.4.6/server/PHPExcel/Reader/Excel5.php
+
+                            $retstr .= $recordData[$pos + $j] . chr(0);  // changed {}  to []
