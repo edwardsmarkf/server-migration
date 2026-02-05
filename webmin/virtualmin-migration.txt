@@ -10,7 +10,7 @@ https://www.virtualmin.com/documentation/developer/cli/restore_domain
 
 ###   2026-02-05:
 nohup nice   virtualmin backup-domain   --dest /tmp/virtualmin/xx.tgz        --all-virtualmin --all-features --all-domains &
-             virtualmin restore-domain  --source /home/mark/virtualmin.tgz   --all-virtualmin --all-features  --all-domains ;
+nohup        virtualmin restore-domain  --source /home/mark/virtualmin.tgz   --all-virtualmin --all-features  --all-domains &    ## use nohup otherwise you have to worry about being disconnected!
 
 ###  newformat has been eliminated virtualmin backup-domain   [--test] [--newformat]  --dest /tmp/virtualmin/xx.tgz     --all-domains    --all-features  --except-feature dir    --all-virtualmin ;
 ###          --test may also be eliminated  ??
