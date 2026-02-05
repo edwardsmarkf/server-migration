@@ -1,0 +1,13 @@
+#! /bin/bash -w
+
+##  install-webalizer.bsh    -- 2026-02-05
+
+
+
+wget https://rpmfind.net/linux/fedora/linux/development/rawhide/Everything/x86_64/os/Packages/w/webalizer-2.23_08-30.fc44.x86_64.rpm ;
+
+dnf  -y  install   webalizer-2.23_08-30.fc44.x86_64.rpm  ;
+
+webalizer  -V ;
+
+exit  ;
