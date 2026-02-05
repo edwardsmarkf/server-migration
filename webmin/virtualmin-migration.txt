@@ -8,8 +8,12 @@ https://www.virtualmin.com/documentation/developer/cli/backup_domain
 https://www.virtualmin.com/documentation/developer/cli/restore_domain
 
 
-virtualmin backup-domain   [--test] [--newformat]  --dest /tmp/virtualmin/xx.tgz     --all-domains    --all-features  --except-feature dir    --all-virtualmin ;
-virtualmin restore-domain  [--test] [--newformat]  --source /tmp/virtualmin/xx.tgz   --all-virtualmin --all-features  --all-domains ;
+
+nohup nice virtualmin backup-domain --dest /tmp/virtualmin/xx.tgz --all-virtualmin --all-features --all-domains &
+
+###  newformat has been eliminated virtualmin backup-domain   [--test] [--newformat]  --dest /tmp/virtualmin/xx.tgz     --all-domains    --all-features  --except-feature dir    --all-virtualmin ;
+###          --test may also be eliminated  ??
+###  newformat has been eliminated  virtualmin restore-domain  [--test] [--newformat]  --source /tmp/virtualmin/xx.tgz   --all-virtualmin --all-features  --all-domains ;
 
 
 *BACKUP*
