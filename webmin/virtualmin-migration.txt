@@ -9,7 +9,37 @@ https://www.virtualmin.com/documentation/developer/cli/restore_domain
 
 virtualmin list-features;   ## 2026-02-06 VERY handy way to get all the features
 
-nohup  nice  virtualmin backup-domain  --dest  /home/mark/virtualmin/virtualmin.tgz   --feature dns --feature web --feature ssl  --feature  dir    --all-domains   --all-virtualmin &
+
+virtualmin    list-domains  | cut  -f1  -d ' ' | grep -v  Domain  | grep -v "\-\-\-" | grep -v  comptonpeslonline.info  | sed -e 's/\(^.*\)/  --domain  \1/' 
+
+#! /bin/bash  -w
+#
+#       virtualmin-backup-domains.bsh           2026-02-06
+#
+#
+        virtualmin backup-domain                                        \
+                --dest          /home/mark/virtualmin/virtualmin.tgz    \
+                --feature       dns                                     \
+                --feature       web                                     \
+                --feature       ssl                                     \
+                --feature       dir                                     \
+                --all-virtualmin                                        \
+                --domain        accentreduction.online                  \
+                --domain        ajcomptonpesl.com                       \
+                --domain        carouselhouse.com                       \
+                --domain        comptonpeslonline.com                   \
+                --domain        edwardsmark.com                         \
+                --domain        englishwithoutaccent.com                \
+                --domain        gordonredwards.com                      \
+                --domain        slrh.org                                \
+                --domain        virtualaska.com                         \
+                --domain        000-first.com                           \
+                ;
+
+exit;
+
+
+
 
 ## use nohup otherwise you have to worry about being disconnected!
 nohup        virtualmin restore-domain  --test  --source /home/mark/virtualmin.tgz     --feature dns --feature web --feature ssl  --feature  dir    --all-virtualmin --all-domains   &
