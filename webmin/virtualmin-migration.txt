@@ -43,6 +43,7 @@ exit;
 
 ## use nohup otherwise you have to worry about being disconnected!
 nohup        virtualmin restore-domain  --test  --source /home/mark/virtualmin.tgz     --feature dns --feature web --feature ssl  --feature  dir    --all-virtualmin --all-domains   &
+nohup    virtualmin restore-domain              --source /home/mark/virtualmin.tgz   --all-virtualmin --all-domains   --feature dns --feature web --feature ssl  --feature  dir   &
 
 
 ###  newformat has been eliminated virtualmin backup-domain   [--test] [--newformat]  --dest /tmp/virtualmin/xx.tgz     --all-domains    --all-features  --except-feature dir    --all-virtualmin ;
