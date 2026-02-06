@@ -9,6 +9,7 @@ https://www.virtualmin.com/documentation/developer/cli/restore_domain
 
 
 ###   2026-02-05:  -- notice  "--except-feature webalizer" 
+nohup  nice  virtualmin backup-domain  --dest  /home/mark/virtualmin/virtualmin.tgz   --feature dns --feature web --feature ssl --all-domains   --all-virtualmin &
 nohup nice   virtualmin backup-domain   --dest /tmp/virtualmin/xx.tgz        --all-virtualmin --all-features --except-feature webalizer  --all-domains &
 nohup        virtualmin restore-domain  --source /home/mark/virtualmin.tgz   --all-virtualmin --all-features --except-feature webalizer  --all-domains &    ## use nohup otherwise you have to worry about being disconnected!
 
