@@ -28,7 +28,7 @@ systemctl  status --no-pager --full  webmin.service  ;
 /usr/bin/sed  --in-place  --expression='s/^longname=0$/longname=1/;'                  /etc/webmin/virtual-server/config    ;   ## 2025-02-17
 /usr/bin/sed  --in-place  --expression='s/^ssl=3$/ssl=2/;'                            /etc/webmin/virtual-server/config    ;   ## 2025-08-15 
 
-/usr/bin/sed  --in-place  --expression='s/^backup_feature_webalizer=1$/backup_feature_webalizer=1=0/;'  \
+/usr/bin/sed  --in-place  --expression='s/^backup_feature_webalizer=1$/backup_feature_webalizer=0/;'  \
                                                                                         /etc/webmin/virtual-server/config  ;   ## 2026-02-05
 /usr/bin/sed  --in-place  --expression='s/^webalizer=1$/webalizer=0/;'                  /etc/webmin/virtual-server/config  ;   ## 2026-02-05
 
