@@ -3,14 +3,16 @@ to migrate virtualmin without data:
 virtualmin  backup-domain                  \
     --domain  edwardsmark.com          \
     --dest   /tmp/x.tgz                            \
-    --all-features --except-feature  dir   ;
+    --all-features --except-feature  dir   ;    ### --all-features gets webalizer which no longer appears to work.
 https://www.virtualmin.com/documentation/developer/cli/backup_domain
 https://www.virtualmin.com/documentation/developer/cli/restore_domain
 
 virtualmin list-features;   ## 2026-02-06 VERY handy way to get all the features
 
 nohup  nice  virtualmin backup-domain  --dest  /home/mark/virtualmin/virtualmin.tgz   --feature dns --feature web --feature ssl  --feature  dir    --all-domains   --all-virtualmin &
-nohup        virtualmin restore-domain  --source /home/mark/virtualmin.tgz   --all-virtualmin --all-features --except-feature webalizer  --all-domains &    ## use nohup otherwise you have to worry about being disconnected!
+
+### do we really need --all-domains and  --all-virtualmin ????
+nohup        virtualmin restore-domain  --source /home/mark/virtualmin.tgz   --all-virtualmin   --all-domains &    ## use nohup otherwise you have to worry about being disconnected!
 
 ###  newformat has been eliminated virtualmin backup-domain   [--test] [--newformat]  --dest /tmp/virtualmin/xx.tgz     --all-domains    --all-features  --except-feature dir    --all-virtualmin ;
 ###          --test may also be eliminated  ??
