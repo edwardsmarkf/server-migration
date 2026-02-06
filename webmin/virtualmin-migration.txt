@@ -11,8 +11,9 @@ virtualmin list-features;   ## 2026-02-06 VERY handy way to get all the features
 
 nohup  nice  virtualmin backup-domain  --dest  /home/mark/virtualmin/virtualmin.tgz   --feature dns --feature web --feature ssl  --feature  dir    --all-domains   --all-virtualmin &
 
-### do we really need --all-domains and  --all-virtualmin ????
-nohup        virtualmin restore-domain  --source /home/mark/virtualmin.tgz   --all-virtualmin   --all-domains &    ## use nohup otherwise you have to worry about being disconnected!
+## use nohup otherwise you have to worry about being disconnected!
+nohup        virtualmin restore-domain  --test  --source /home/mark/virtualmin.tgz     --feature dns --feature web --feature ssl  --feature  dir    --all-virtualmin --all-domains   &
+
 
 ###  newformat has been eliminated virtualmin backup-domain   [--test] [--newformat]  --dest /tmp/virtualmin/xx.tgz     --all-domains    --all-features  --except-feature dir    --all-virtualmin ;
 ###          --test may also be eliminated  ??
