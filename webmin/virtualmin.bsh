@@ -27,6 +27,9 @@ systemctl  status --no-pager --full  webmin.service  ;
 /usr/bin/sed  --in-place  --expression='s/^longname=0$/longname=1/;'                  /etc/webmin/virtual-server/config    ;   ## 2025-02-17
 /usr/bin/sed  --in-place  --expression='s/^ssl=3$/ssl=2/;'                            /etc/webmin/virtual-server/config    ;   ## 2025-08-15 
 
+##   ???????????  backup_feature_webalizer=1
+##   ?????????????????  webalizer=1
+
 /usr/bin/sed  --in-place  --expression='s/^featurelimits=$/featurelimits=dns web/;'   /etc/webmin/virtual-server/plans/0   ;   ## 2025-02-19
 
 virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13  
