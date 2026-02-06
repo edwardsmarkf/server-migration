@@ -7,10 +7,9 @@ virtualmin  backup-domain                  \
 https://www.virtualmin.com/documentation/developer/cli/backup_domain
 https://www.virtualmin.com/documentation/developer/cli/restore_domain
 
+virtualmin list-features;   ## 2026-02-06 VERY handy way to get all the features
 
-###   2026-02-05:  -- notice  "--except-feature webalizer" 
-nohup  nice  virtualmin backup-domain  --dest  /home/mark/virtualmin/virtualmin.tgz   --feature dns --feature web --feature ssl --all-domains   --all-virtualmin &
-nohup nice   virtualmin backup-domain   --dest /tmp/virtualmin/xx.tgz        --all-virtualmin --all-features --except-feature webalizer  --all-domains &
+nohup  nice  virtualmin backup-domain  --dest  /home/mark/virtualmin/virtualmin.tgz   --feature dns --feature web --feature ssl  --feature  dir    --all-domains   --all-virtualmin &
 nohup        virtualmin restore-domain  --source /home/mark/virtualmin.tgz   --all-virtualmin --all-features --except-feature webalizer  --all-domains &    ## use nohup otherwise you have to worry about being disconnected!
 
 ###  newformat has been eliminated virtualmin backup-domain   [--test] [--newformat]  --dest /tmp/virtualmin/xx.tgz     --all-domains    --all-features  --except-feature dir    --all-virtualmin ;
