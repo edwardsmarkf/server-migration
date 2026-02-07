@@ -1,4 +1,9 @@
 ## 2015-05-09:  (see domain n
+
+
+
+virtualmin  create-domain  --domain  commptonpeslonline.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+
 to migrate virtualmin without data:
 virtualmin  backup-domain                  \
     --domain  edwardsmark.com          \
