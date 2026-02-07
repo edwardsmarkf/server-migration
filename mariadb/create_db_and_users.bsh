@@ -32,7 +32,7 @@ process_db () {
         unencrypted=$(  echo $2 | openssl enc -aes-256-cbc -md sha512 -pbkdf2  -a -d -salt -pass pass:${password} ; ) ;
         database=$(     echo $3 | openssl enc -aes-256-cbc -md sha512 -pbkdf2  -a -d -salt -pass pass:${password} ; ) ;
 
-        printf "\n\n### Creating a new database named ${database} for user ${username} with password ${unencrypted}!\n"       ;
+        printf "\n\n### Creating a new database named ${database} for user ${username} with password ${unencrypted}\n"       ;
 
         cat << EOF ;
 
