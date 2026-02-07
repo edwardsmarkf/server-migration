@@ -84,8 +84,6 @@ process_db  U2FsdGVkX1/MM+NMgNBWh77MdCOmA6iZ+Ykzo3hN9evfLz9nwu0RumLu5JNpBWvW  \
             U2FsdGVkX1+IaxtDw6KnkcHOKWCenkb6NsmP2nG3aPw=                      \
             U2FsdGVkX193HoUMZI00qYu9cm8cxvtu3j5sEWgvBM3q7TEY0c8H7B9wqsoQSgR+  ;
 
-
-
 ## ewaWp2018
 process_db  U2FsdGVkX1+4H4ViXUDOxcjhg/MVFKFhkfUbWbky8aM=                      \
             U2FsdGVkX1/Cy+sdjotAs5bukPTTf+sE+rg6ZCk55tY=                      \
@@ -102,10 +100,6 @@ process_db  U2FsdGVkX18mUJmL2MaReD3DfDkwm12oJAxD0OSh/lA=                      \
             U2FsdGVkX18FBdnNy0dlan9DLi2PmYNaTpd9LHHWa+Y=                      ;
 
 
-## zenphoto2
-process_db  U2FsdGVkX19tIkXKi/xeOV5WpJdL5kImlY44QEWey54=                      \
-            U2FsdGVkX1+KAdDpnmQ8ZhD8/ELgUn56BYeATIuJeLg=                      \
-            U2FsdGVkX1/ClZidUY9gwQwPTwnR56YJM7QwmD0AZ+4=                      ;
 
 echo  'SHOW DATABASES;              '  ;
 echo  'SELECT User FROM mysql.user; '  ;
@@ -118,6 +112,10 @@ exit;
 
 
 
+## zenphoto2
+##process_db  U2FsdGVkX19tIkXKi/xeOV5WpJdL5kImlY44QEWey54=                      \
+##            U2FsdGVkX1+KAdDpnmQ8ZhD8/ELgUn56BYeATIuJeLg=                      \
+##            U2FsdGVkX1/ClZidUY9gwQwPTwnR56YJM7QwmD0AZ+4=                      ;
 
 ######## ## ccsCares
 ########  process_db  U2FsdGVkX1+RkIqiQEhYPUqcqxxqlSc5Jqc5Io0E/QU=                      \
