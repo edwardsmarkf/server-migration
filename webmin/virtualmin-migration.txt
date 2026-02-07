@@ -2,17 +2,32 @@
 
 
 
-virtualmin  create-domain  --domain  commptonpeslonline.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
-/home/accentreduction.online
-/home/ajcomptonpesl.com
-    ###  manually create!   /home/ajcomptonpesl.com/domains/carouselhouse.com
-/home/comptonpeslonline.com
-/home/comptonpeslonline.info
-/home/edwardsmark.com
-/home/englishwithoutaccent.com
-/home/gordonredwards.com
-/home/slrh.org
-/home/virtualaska.com
+
+virtualmin  create-domain  --domain  accentreduction.online  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+
+virtualmin  create-domain  --domain  ajcomptonpesl.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+
+virtualmin  create-domain  --domain  carouselhouse.com  --parent ajcomptonpesl.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+    
+virtualmin  create-domain  --domain  comptonpeslonline.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+
+virtualmin  create-domain  --domain  commptonpeslonline.info  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+
+virtualmin  create-domain  --domain  edwardsmark.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+
+virtualmin  create-domain  --domain  englishwithoutaccent.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+
+virtualmin  create-domain  --domain  gordonredwards.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+
+virtualmin  create-domain  --domain  slrh.org  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+
+virtualmin  create-domain  --domain  virtualaska.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+
+
+
+
+###  manually create!   /home//domains/
+virtualmin  create-domain  --domain  carouselhouse.com  --parent ajcomptonpesl.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
 
 
 to migrate virtualmin without data:
