@@ -3,6 +3,17 @@
 
 
 virtualmin  create-domain  --domain  commptonpeslonline.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+/home/accentreduction.online
+/home/ajcomptonpesl.com
+    ###  manually create!   /home/ajcomptonpesl.com/domains/carouselhouse.com
+/home/comptonpeslonline.com
+/home/comptonpeslonline.info
+/home/edwardsmark.com
+/home/englishwithoutaccent.com
+/home/gordonredwards.com
+/home/slrh.org
+/home/virtualaska.com
+
 
 to migrate virtualmin without data:
 virtualmin  backup-domain                  \
