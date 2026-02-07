@@ -57,20 +57,15 @@ EOF
 }
 
 
-## accentreductionOnline
+## accentreduction online
 process_db  U2FsdGVkX19CcMPYmd4jL0FcGPgJwphTv1OPCgb29QwrHdjhOLvf7Pntzc0fGaAf  \
             U2FsdGVkX1+ouTfMA8FwO/wABC6vsuOHWpBYcOQBXxY=                      \
             U2FsdGVkX18zzgtaUkxtLlHohc6JhOTGUUZi6egVVokWZh+VW9vWKw/6xCTZQG+9  ;
 
-## ajCompton-2025-04-19
+## ajCompton  April 4, 2025
 process_db  U2FsdGVkX1+m5sz7riNGLuBmzj30Vi2ncx09c6knuxk=                      \
             U2FsdGVkX1/lwq+zICm2FAq2yIO4D+wRByFQBE9R5wU=                      \
             U2FsdGVkX18bsWH5W8TEFyGl5OLU27TDsr9WEkiLSGXex5uHKeycfOWL5hcR+tmG  ;
-
-## comptonTrainer
-process_db  U2FsdGVkX1/FoYLAlRVUozJsPHzXFoL1rlph+jbsP/hxtFXFNTfzvuTVOnY3CgeV  \
-            U2FsdGVkX18ksi+rFGFT7e4J651Z0gF4TtUYzhjLdK0=                      \
-            U2FsdGVkX187BlNyFtqU9Dy+lXixzxJbVhGlm2duFK4=                      ;
 
 
 ## comptonPractice
@@ -79,22 +74,22 @@ process_db  U2FsdGVkX18+R+mmOw0zEmTN3N9sYGWHVPDp/XIQkENLUITX8RH1tTzc8hlgsIhD  \
             U2FsdGVkX1+8GcR0fq7m8t5263uw9ona9vVNN4xMlI9t0Xhw4nSxASJX9bQFuB1E  ;
 
 
-## comptonTransAnlys
+## compton transactional analysis 
 process_db  U2FsdGVkX1/MM+NMgNBWh77MdCOmA6iZ+Ykzo3hN9evfLz9nwu0RumLu5JNpBWvW  \
             U2FsdGVkX1+IaxtDw6KnkcHOKWCenkb6NsmP2nG3aPw=                      \
             U2FsdGVkX193HoUMZI00qYu9cm8cxvtu3j5sEWgvBM3q7TEY0c8H7B9wqsoQSgR+  ;
 
-## ewaWp2018
+## ewa  wp  2018
 process_db  U2FsdGVkX1+4H4ViXUDOxcjhg/MVFKFhkfUbWbky8aM=                      \
             U2FsdGVkX1/Cy+sdjotAs5bukPTTf+sE+rg6ZCk55tY=                      \
             U2FsdGVkX1+BWaTvWONbBUbPgQXQVwtBkbR7CLR/xNM=                      ;
 
-## slrh directory
+## slrh directoroes
 process_db  U2FsdGVkX1+/DNlRl3OqWtr2w88W1Tf9/v8apDygn28=                      \
             U2FsdGVkX19sL+bMyaZWyVMQaGqnoG6RELySS62ZikQ=                      \
             U2FsdGVkX18n3jCBt3mxwkI3UDgvme1C5K8/KR/3o3A=                      ;
 
-## textpattern
+## text patterns
 process_db  U2FsdGVkX18mUJmL2MaReD3DfDkwm12oJAxD0OSh/lA=                      \
             U2FsdGVkX18wPSdnGQHrgB50b2A7siuCwy1slwCJFYM=                      \
             U2FsdGVkX18FBdnNy0dlan9DLi2PmYNaTpd9LHHWa+Y=                      ;
@@ -112,12 +107,18 @@ exit;
 
 
 
-## zenphoto2
+## zenphoto two
 ##process_db  U2FsdGVkX19tIkXKi/xeOV5WpJdL5kImlY44QEWey54=                      \
 ##            U2FsdGVkX1+KAdDpnmQ8ZhD8/ELgUn56BYeATIuJeLg=                      \
 ##            U2FsdGVkX1/ClZidUY9gwQwPTwnR56YJM7QwmD0AZ+4=                      ;
 
-######## ## ccsCares
+
+## compton  trainer
+### process_db  U2FsdGVkX1/FoYLAlRVUozJsPHzXFoL1rlph+jbsP/hxtFXFNTfzvuTVOnY3CgeV  \
+###            U2FsdGVkX18ksi+rFGFT7e4J651Z0gF4TtUYzhjLdK0=                      \
+###            U2FsdGVkX187BlNyFtqU9Dy+lXixzxJbVhGlm2duFK4=                      ;
+
+######## ## ccs  cares  ares
 ########  process_db  U2FsdGVkX1+RkIqiQEhYPUqcqxxqlSc5Jqc5Io0E/QU=                      \
 ########              U2FsdGVkX1/3wFHSdex+hqEIMj1p7cgHno5eEB9nZ50=                      \
 ########            U2FsdGVkX19vt0jE/lESDBsUGUQRg4pw4vb2GpSVVK8=                      ;
@@ -128,27 +129,23 @@ exit;
 ########              U2FsdGVkX1/OkqWhgZxS73oVIel0Iw9Fjj1S6bIu/VrncYEzbZsPP9X/A0TEhcV0  ;
 
 
-########  ## comptonProducts
+########  ## compt products
 ########  process_db  U2FsdGVkX19DfmY4lu+N9o3yLwDBEiL2S1pNLL9r1C/G8YHxFkFfuK7sqRLVEf2B  \
 ########              U2FsdGVkX1+xoVGZvhiTFvWjavkgiIMb9G0nrvsj2u4=                      \
 ########              U2FsdGVkX18x7B5LekeuMP+uDf7w0FUerHCvERn4kbIKV1rmxXr3z13HTy9IP9Ay  ;
 
 
-########  ## comptonUser
+########  ## compton   user
 ########  process_db  U2FsdGVkX1/zrjI68zE1ehg2kfK1IFr+970rx+7Tzoo=                      \
 ########              U2FsdGVkX19t9zcFwlyM3dDxLK7VE7vIOXVanMsrqSg=                      \
 ########              U2FsdGVkX19f+FviXAwIRFw1Vkb6yiTgenip0jowbGk4GC9GaORHefXOaRE30LjE  ;
 
 
-########  ## ajcomptonPESL
+########  ## ajcompton  p e s l 
 ########  process_db  U2FsdGVkX19ghboqibJMwQOlKHDI4YlZwITfafKWXZg=                      \
 ########              U2FsdGVkX18NfBZOp68b0UA4u1kdpGx8BvtbbbCQ8+Y=                      \
 ########              U2FsdGVkX196dBixo2kE5oL6Qx/CQogFb4Uelu4TccI=                      ;
 
-######## vitalChurch
-######  process_db  U2FsdGVkX19oyaPg+jIGSkSse3U2Wb8DdCRp+WYZbf0=                      \
-######              U2FsdGVkX1/iCcGwvnHKOsYio+oKtzFhf0AJ/0aH62Q=                      \
-######              U2FsdGVkX1/ov0AoQ2UssL8VYm+rLhFBk4ZliapIogM=                      ;
 
 
 
