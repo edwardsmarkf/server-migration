@@ -3,25 +3,25 @@
 
 
 
-virtualmin  create-domain  --domain  accentreduction.online                             --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssh ;
+virtualmin  create-domain  --domain  accentreduction.online                             --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssl ;
 
-virtualmin  create-domain  --domain  ajcomptonpesl.com                                  --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssh ;
+virtualmin  create-domain  --domain  ajcomptonpesl.com                                  --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssl ;
 
-virtualmin  create-domain  --domain  carouselhouse.com  --parent ajcomptonpesl.com      --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssh ;
+virtualmin  create-domain  --domain  carouselhouse.com  --parent ajcomptonpesl.com      --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssl ;
     
-virtualmin  create-domain  --domain  comptonpeslonline.com                              --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssh ;
+virtualmin  create-domain  --domain  comptonpeslonline.com                              --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssl ;
 
-virtualmin  create-domain  --domain  comptonpeslonline.info                             --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssh ;
+virtualmin  create-domain  --domain  comptonpeslonline.info                             --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssl ;
 
-virtualmin  create-domain  --domain  edwardsmark.com                                    --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssh ;
+virtualmin  create-domain  --domain  edwardsmark.com                                    --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssl ;
 
-virtualmin  create-domain  --domain  englishwithoutaccent.com                           --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssh ;
+virtualmin  create-domain  --domain  englishwithoutaccent.com                           --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssl ;
 
-virtualmin  create-domain  --domain  gordonredwards.com                                 --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssh ;
+virtualmin  create-domain  --domain  gordonredwards.com                                 --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssl ;
 
-virtualmin  create-domain  --domain  slrh.org                                           --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssh ;
+virtualmin  create-domain  --domain  slrh.org                                           --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssl ;
 
-virtualmin  create-domain  --domain  virtualaska.com                                    --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssh ;
+virtualmin  create-domain  --domain  virtualaska.com                                    --pass  ${openssl rand -hex 12;} --dir  --unix  --dns  --web --ssl ;
 
 
 
