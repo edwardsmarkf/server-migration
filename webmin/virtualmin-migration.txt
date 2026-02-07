@@ -15,6 +15,7 @@ https://www.virtualmin.com/documentation/developer/cli/restore_domain
 virtualmin list-features;   ## 2026-02-06 VERY handy way to get all the features
 
 
+ virtualmin  list-domains   --home-only  ;   
 virtualmin    list-domains  | cut  -f1  -d ' ' | grep -v  Domain  | grep -v "\-\-\-" | grep -v  comptonpeslonline.info  | sed -e 's/\(^.*\)/  --domain  \1/' 
 
 #! /bin/bash  -w
