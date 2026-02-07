@@ -73,11 +73,15 @@ process_db  U2FsdGVkX18+R+mmOw0zEmTN3N9sYGWHVPDp/XIQkENLUITX8RH1tTzc8hlgsIhD  \
             U2FsdGVkX1+aPPia5Z3hDDSWDDS3QSHRQzp7t/Q/z18=                      \
             U2FsdGVkX1+8GcR0fq7m8t5263uw9ona9vVNN4xMlI9t0Xhw4nSxASJX9bQFuB1E  ;
 
+## comptonpeslonline  wordpress db
+process_db  U2FsdGVkX184CDwCBz4hOmBf/JRSWtOsoz26FHBiz3qo00VYC5xH+PT/5P/zUmXs  \
+            U2FsdGVkX1+BcyKCa+Q2qARBKVL8AtQN4RW/s7byPrI=                      \
+            U2FsdGVkX1+8GcR0fq7m8t5263uw9ona9vVNN4xMlI9t0Xhw4nSxASJX9bQFuB1E  ;
 
-## compton transactional analysis 
+## compton transactional analysis   2026-02-07
 process_db  U2FsdGVkX1/MM+NMgNBWh77MdCOmA6iZ+Ykzo3hN9evfLz9nwu0RumLu5JNpBWvW  \
             U2FsdGVkX1+IaxtDw6KnkcHOKWCenkb6NsmP2nG3aPw=                      \
-            U2FsdGVkX193HoUMZI00qYu9cm8cxvtu3j5sEWgvBM3q7TEY0c8H7B9wqsoQSgR+  ;
+            U2FsdGVkX18OYkz3XQUzN1Fuim2qw0XoeLZ/DEtHSIs3ImQ1Hefcu5ZA7A5objFl  ;
 
 ## ewa  wp  2018
 process_db  U2FsdGVkX1+4H4ViXUDOxcjhg/MVFKFhkfUbWbky8aM=                      \
