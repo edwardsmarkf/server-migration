@@ -11,7 +11,7 @@ virtualmin  create-domain  --domain  carouselhouse.com  --parent ajcomptonpesl.c
     
 virtualmin  create-domain  --domain  comptonpeslonline.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
 
-virtualmin  create-domain  --domain  commptonpeslonline.info  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
+virtualmin  create-domain  --domain  comptonpeslonline.info  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
 
 virtualmin  create-domain  --domain  edwardsmark.com  --pass  abcdefg --dir  --unix  --dns  --web --ssh ;
 
