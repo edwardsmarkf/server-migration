@@ -1,0 +1,16 @@
+
+
+
+
+// to migrate all the mariadb db files:
+
+// first make SURE all the db's & users are created.
+
+source:       /usr/local/bash/mariadbDumpAllDatabases.bsh
+
+destination:
+
+ for SQL_FILE_NAME in $(ls -1  *.sql.gz; ); do
+    gzip -d  ${SQL_FILE_NAME}  ;
+    echo  "mariadb  ${SQL_FILE_NAME%.sql}  <  ${SQL_FILE_NAME} ;";   ##  --verbose ???
+ done
