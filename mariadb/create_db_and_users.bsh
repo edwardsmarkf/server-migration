@@ -12,11 +12,11 @@
 #  used this as a guide:
 #  https://askubuntu.com/questions/1093591/how-should-i-change-encryption-according-to-warning-deprecated-key-derivat
 
-echo Hi | openssl enc -aes-256-cbc -md sha512 -pbkdf2  -a -salt -pass pass:wtf      ;
-#####   U2FsdGVkX1/unoGIGeEzOB+iGM8uLLH0rQzQ3r748es=
+#####   echo Hi | openssl enc -aes-256-cbc -md sha512 -pbkdf2  -a -salt -pass pass:wtf      ;
+#####   will produce:  U2FsdGVkX1/unoGIGeEzOB+iGM8uLLH0rQzQ3r748es=
 
-echo U2FsdGVkX1/unoGIGeEzOB+iGM8uLLH0rQzQ3r748es= | openssl enc -aes-256-cbc -md sha512 -pbkdf2  -a -d -salt -pass pass:wtf ;
-###     Hi
+####    echo U2FsdGVkX1/unoGIGeEzOB+iGM8uLLH0rQzQ3r748es= | openssl enc -aes-256-cbc -md sha512 -pbkdf2  -a -d -salt -pass pass:wtf ;
+###     will produce:  Hi
 
 password=''   ;  ## the rabbit last name (lowercase) and the first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 
