@@ -3,10 +3,6 @@
 #       pm2-apache-initialize.bsh               2026-02-10
 #
 #
-
-
-
-
 /usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT  ;
 
 /SSLCertificateFile \/home\/comptonpeslonline.com\/ssl.cert/i                                                   \\
@@ -49,6 +45,6 @@
 
 SED_SCRIPT
 
-sudo apachectl restart;
+apachectl restart;
 
 exit;
