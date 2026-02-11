@@ -1,14 +1,14 @@
 
 pm2-initialize.bsh will need to be ran AFTER the scripts have been copied over.
 
+
     ## initialize apache for pm2 usage
 bash  -vx  pm2-apache-initialize.bsh   >  pm2-apache-initialize.bsh.log   2>&1  ;
 
    ##  dnf install node
-bash -vx  bash-js.bsh    >  bash-js.bsh.log  2>&1  ;
+bash  -vx  bash-js.bsh                 >  bash-js.bsh.log                 2>&1  ;
 
-bash -vx   pm2-install.bsh   >  pm2-install.bsh.log  2>&1  ;
+bash -vx   pm2-install.bsh             >  pm2-install.bsh.log             2>&1  ;
 
-## run this LAST
-
-bash -vx   pm2-initialize.bsh   >  pm2-initialize.bsh.log  2>&1 ;
+## run this LAST to create pm2 jobs and get them to start after reboot
+bash -vx   pm2-initialize.bsh          >  pm2-initialize.bsh.log          2>&1 ;
