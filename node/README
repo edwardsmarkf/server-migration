@@ -4,3 +4,7 @@ pm2-initialize.bsh will need to be ran AFTER the scripts have been copied over.
 
 
 bash -vx  bash-js.bsh    >  bash-js.bsh.log  2>&1  ;
+
+## run this LAST
+
+bsh -vx   pm2-initialize.bsh   >  pm2-initialize.bsh.log  2>&1 ;
