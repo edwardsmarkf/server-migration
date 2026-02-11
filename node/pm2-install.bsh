@@ -18,9 +18,9 @@ npm  remove  pm2@latest  --global;   ## just in case
 npm  install pm2@latest --global ;
 
 which pm2                       ;   ## 2024-02-24
-/bin/pm2   --version  ;   ## 2024-02-24
+/usr/bin/pm2   --version  ;   ## 2024-02-24
 
-/bin/pm2  completion install  ;
+/usr/bin/pm2  completion install  ;
 
 
 
