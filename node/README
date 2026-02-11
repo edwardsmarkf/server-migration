@@ -1,8 +1,10 @@
 
 pm2-initialize.bsh will need to be ran AFTER the scripts have been copied over.
 
+    ## initialize apache for pm2 usage
+bash  -vx  pm2-apache-initialize.bsh   >  pm2-apache-initialize.bsh.log   2>&1  ;
 
-
+   ##
 bash -vx  bash-js.bsh    >  bash-js.bsh.log  2>&1  ;
 
 bash -vx   pm2-install.bsh   >  pm2-install.bsh.log  2>&1  ;
