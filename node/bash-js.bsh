@@ -20,10 +20,10 @@ curl --silent --location https://rpm.nodesource.com/setup_${LATEST_VERSION}.x | 
 dnf --assumeyes install nodejs ;
 
 which node;
-/usr/bin/node --version  ;
+/bin/node --version  ;
 
 which npm.;
-/usr/bin/npm  --version   ;
+/bin/npm  --version   ;
 
 
 exit ;
