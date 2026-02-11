@@ -7,7 +7,7 @@
 #####################################################
 
 #  2025-11-01  -- initial writing
-
+#  2026-02-11  -- moved reboot stuff to this script
 
 /usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                    --name  'NodeWaveForm'          -- --port 20001 --proxy proxyPort20001  ;
 #
@@ -15,6 +15,8 @@
 #
 /usr/bin/pm2  start   ./  --cwd  /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer        --name  'HomeworkAssignment'    -- --port 20003 --proxy proxyPort20003  ;
 #
+
+/bin/pm2  startup  systemd ;   ## 2026-02-11  reboot stuff
 
 
 exit 1;
