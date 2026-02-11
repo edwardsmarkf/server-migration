@@ -22,7 +22,7 @@ which pm2                       ;   ## 2024-02-24
 
 /bin/pm2  completion install  ;
 
-/bin/pm2  startup  systemd ;   ## reboot stuff
+
 
 
 exit  1;
