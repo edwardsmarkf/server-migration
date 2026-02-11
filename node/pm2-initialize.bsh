@@ -10,16 +10,16 @@
 #  2026-02-11  -- moved reboot stuff to this script  and added MISSING parm to voiceSpiceNodeServer!
 
 
-/bin/pm2   delete  all   ;   ## just in case....
+/usr/bin/pm2   delete  all   ;   ## just in case....
 
-/bin/pm2  start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                    --name  'NodeWaveForm'          --   --port 20001 --proxy proxyPort20001                                  ;
+/usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                    --name  'NodeWaveForm'          --   --port 20001 --proxy proxyPort20001                                  ;
 #
-/bin/pm2  start    /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   --name  'VoiceSpiceServer'      --   --port 20002 --proxy proxyPort20002  --voiceSpiceURL voicespice.com  ;
+/usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   --name  'VoiceSpiceServer'      --   --port 20002 --proxy proxyPort20002  --voiceSpiceURL voicespice.com  ;
 #
-/bin/pm2  start   ./  --cwd  /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer        --name  'HomeworkAssignment'    --   --port 20003 --proxy proxyPort20003  ;
+/usr/bin/pm2  start   ./  --cwd  /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer        --name  'HomeworkAssignment'    --   --port 20003 --proxy proxyPort20003  ;
 #
 
-/bin/pm2  startup  systemd ;   ## 2026-02-11  reboot stuff
+/usr/bin/pm2  startup  systemd ;   ## 2026-02-11  reboot stuff
 
 
 exit 1;
