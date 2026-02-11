@@ -11,17 +11,18 @@
        #  https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-rocky-linux-9
 ##  2025-11-01 -- pm2 now installed in a different (normal?) location
 ##  2025-11-01 -- renamed and broke this up into two separate files
+##  2025-02-11 -- pm2 binary was moved....!
 
 ##  ===== pm2 === ==  2019-02-19
 npm  remove  pm2@latest  --global;   ## just in case
 npm  install pm2@latest --global ;
 
 which pm2                       ;   ## 2024-02-24
-/usr/bin/pm2   --version  ;   ## 2024-02-24
+/bin/pm2   --version  ;   ## 2024-02-24
 
-/usr/local/bin/pm2  completion install  ;
+/bin/pm2  completion install  ;
 
-/usr/local/bin/pm2  startup  systemd ;   ## reboot stuff
+/bin/pm2  startup  systemd ;   ## reboot stuff
 
 
 exit  1;
