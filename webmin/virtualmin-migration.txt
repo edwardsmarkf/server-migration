@@ -3,25 +3,25 @@
 
 
 
-openssl rand -hex 12 | xargs  virtualmin  create-domain  --domain  accentreduction.online                             --dir --unix  --dns  --web --ssl --pass  {} ;
+openssl rand -hex 12 | xargs  echo virtualmin  create-domain  --domain  accentreduction.online                             --dir --unix  --dns  --web --ssl --pass 
 
-openssl rand -hex 12 | xargs  virtualmin  create-domain  --domain  ajcomptonpesl.com                                  --dir --unix  --dns  --web --ssl --pass  {} ;
+openssl rand -hex 12 | xargs  echo virtualmin  create-domain  --domain  ajcomptonpesl.com                                  --dir --unix  --dns  --web --ssl --pass  
 
-openssl rand -hex 12 | xargs  virtualmin  create-domain  --domain  carouselhouse.com  --parent ajcomptonpesl.com      --dir --unix  --dns  --web --ssl --pass  {} ;
+openssl rand -hex 12 | xargs  echo virtualmin  create-domain  --domain  carouselhouse.com  --parent ajcomptonpesl.com      --dir --unix  --dns  --web --ssl --pass  
     
-openssl rand -hex 12 | xargs  virtualmin  create-domain  --domain  comptonpeslonline.com                              --dir --unix  --dns  --web --ssl --pass  {} ;
+openssl rand -hex 12 | xargs  echo virtualmin  create-domain  --domain  comptonpeslonline.com                              --dir --unix  --dns  --web --ssl --pass  
 
-openssl rand -hex 12 | xargs  virtualmin  create-domain  --domain  comptonpeslonline.info                             --dir --unix  --dns  --web --ssl --pass  {} ;
+openssl rand -hex 12 | xargs  echo virtualmin  create-domain  --domain  comptonpeslonline.info                             --dir --unix  --dns  --web --ssl --pass  
 
-openssl rand -hex 12 | xargs  virtualmin  create-domain  --domain  edwardsmark.com                                    --dir --unix  --dns  --web --ssl --pass  {} ;
+openssl rand -hex 12 | xargs  echo virtualmin  create-domain  --domain  edwardsmark.com                                    --dir --unix  --dns  --web --ssl --pass  
 
-openssl rand -hex 12 | xargs  virtualmin  create-domain  --domain  englishwithoutaccent.com                           --dir --unix  --dns  --web --ssl --pass  {} ;
+openssl rand -hex 12 | xargs  echo virtualmin  create-domain  --domain  englishwithoutaccent.com                           --dir --unix  --dns  --web --ssl --pass  
 
-openssl rand -hex 12 | xargs  virtualmin  create-domain  --domain  gordonredwards.com                                 --dir --unix  --dns  --web --ssl --pass  {} ;
+openssl rand -hex 12 | xargs  echo virtualmin  create-domain  --domain  gordonredwards.com                                 --dir --unix  --dns  --web --ssl --pass  
 
-openssl rand -hex 12 | xargs  virtualmin  create-domain  --domain  slrh.org                                           --dir --unix  --dns  --web --ssl --pass  {} ;
+openssl rand -hex 12 | xargs  echo virtualmin  create-domain  --domain  slrh.org                                           --dir --unix  --dns  --web --ssl --pass  
 
-openssl rand -hex 12 | xargs  virtualmin  create-domain  --domain  virtualaska.com                                    --dir --unix  --dns  --web --ssl --pass  {} ;
+openssl rand -hex 12 | xargs  echo virtualmin  create-domain  --domain  virtualaska.com                                    --dir --unix  --dns  --web --ssl --pass  
 
 
 
