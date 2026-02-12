@@ -7,8 +7,6 @@ openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  accent
 
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  ajcomptonpesl.com                                  --dir --unix  --dns  --web --ssl --pass {} '  ;
 
-openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  carouselhouse.com  --parent ajcomptonpesl.com      --dir --unix  --dns  --web --ssl --pass {} '  ;
-    
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  comptonpeslonline.com                              --dir --unix  --dns  --web --ssl --pass {} '  ; 
 
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  comptonpeslonline.info                             --dir --unix  --dns  --web --ssl --pass {} '  ; 
