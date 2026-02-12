@@ -1,0 +1,27 @@
+#!/bin/bash -wv
+#
+#       mariadbDumpAllDatabases.bsh     --      2026-02-08
+#
+
+printf "\n\n\nBeginning run of $(readlink -f "${BASH_SOURCE[0]}") !!\n\n";
+
+TMP_LOGFILE=/tmp/mysqlbackup-log-error.log                      ;
+
+
+MYSQLPASSWORD='city between ontario and las vegas....!'                          ;
+
+# empty file and start out with date
+
+for DATABASES in $(/usr/bin/mysql --skip-column-names   --batch   --host=localhost  --user=root --password=${MYSQLPASSWORD} -e "show databases;"); do \
+        if [ "${DATABASES}" != "information_schema" -a "${DATABASES}" != "mysql" -a "${DATABASES}" != "performance_schema" ]; then
+                echo $DATABASES ;
+
+                /usr/bin/mariadb-dump --extended-insert=FALSE --log-error=${TMP_LOGFILE} --skip-lock-tables --host=localhost --port=3306 --user=root  --password=${MYSQLPASSWORD}   $DATAB
+ASES  \
+                |       /bin/gzip       -       > /tmp/${DATABASES}.sql.gz                    ;
+
+                ls -l   /tmp/${DATABASES}.sql.gz                    ;
+        fi;
+done
+
+exit;
