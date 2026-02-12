@@ -10,12 +10,9 @@
 ##
 ##    2021-07-30 - had to add two new dnf calls, maybe because of the use of "dnf localinstall" ???
 ##    2025-02-25 - changed to using almalinux from:  https://centlinux.com/how-to-install-wkhtmltopdf-on-linux/
-##
+##    2026-02-12  - no longer needed libpng15
 ##
 
-
-dnf  --assumeyes  install libpng15          ;   ## 2021-07-30
-#####  necessary  ??   dnf  --assumeyes  install compat-openssl11  ;   ## 2025-02-25 - changed 110 to 111 2021-07-30
 
 wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-2/wkhtmltox-0.12.6.1-2.almalinux9.x86_64.rpm  ;
 
@@ -27,6 +24,12 @@ which  wkhtmltopdf                       ;   ##  2025-02-25
 rm  --verbose  --force   ./wkhtmltox-0.12.6.1-2.almalinux9.x86_64.rpm  ;
 
 exit ;
+
+
+
+
+######   dnf  --assumeyes  install libpng15          ;   ## 2021-07-30
+#####  necessary  ??   dnf  --assumeyes  install compat-openssl11  ;   ## 2025-02-25 - changed 110 to 111 2021-07-30
 
 
 ###  OLD:         https://computingforgeeks.com/install-wkhtmltopdf-wkhtmltoimage-on-centos/
