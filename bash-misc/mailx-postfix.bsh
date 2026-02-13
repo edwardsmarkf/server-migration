@@ -47,21 +47,17 @@
 read -p 'Please enter main email address:    '  emailAddress   ; 
 read -p 'Please reenter main email address:  '  emailAddressTMP   ; 
 
-if [ "${emailAddress}" == "${emailAddressTMP}" ]; then
-   continue
-else
+if [ "${emailAddress}" != "${emailAddressTMP}" ]; then
    echo 'main email address does not match!';
-   exit
+   exit;
 fi
 
 read -p 'Please enter crypted password: '       appPassword         ;
 read -p 'Please reenter crypted password: '     appPasswordTMP      ;
 
-if [ "${appPassword}" == "${appPasswordTMP}" ]; then
-   continue
-else
+if [ "${appPassword}" != "${appPasswordTMP}" ]; then
    echo 'crypted password does not match!';
-   exit
+   exit;
 fi
 
 
