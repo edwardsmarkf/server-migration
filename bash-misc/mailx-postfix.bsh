@@ -44,14 +44,14 @@
 #
 
 
-read  -p 'Please enter main email address:  "  emailAddress   ;   //   carefully double-check this!
+read -p 'Please enter main email address:  '  emailAddress   ;   ##  carefully double-check this!
 
-read -p "Please enter crypted password: "  cryptedPassword         ;
+read -p 'Please enter crypted password: '     cryptedPassword         ;
 
    ## for testing only
 
-read  -p 'Please enter email address to send email to as a test:     "  testReceivingEmailAddress     ;   //   
-read  -p 'Please enter cc email address to send email to as a test:  "  testReceivingCcEmailAddress   ;   //  
+read  -p 'Please enter email address to send email to as a test:     '  testReceivingEmailAddress     ;   ##
+read  -p 'Please enter cc email address to send email to as a test:  '  testReceivingCcEmailAddress   ;   ##
 
 testReceivingName='Marky Boy'                            ;
 
