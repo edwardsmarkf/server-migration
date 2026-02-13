@@ -44,19 +44,19 @@
 #
 
 
-read  -p 'Please enter main email address:  "  emailAddress   ;   //   carefully double-check this!
+read  -p 'Please enter main email address:  "  emailAddress   ;   ##   carefully double-check this!
 
 read -p "Please enter crypted password: "  cryptedPassword         ;
 
    ## for testing only
 
-read  -p 'Please enter TESTING email address:  "  testReceivingEmailAddress   ;   //   
-read  -p 'Please enter TESTING cc     address:  "  testReceivingCcEmailAddress   ;   //   
+read  -p 'Please enter TESTING email address:  "  testReceivingEmailAddress   ;   ##   
+read  -p 'Please enter TESTING cc     address:  "  testReceivingCcEmailAddress   ;   ##   
 
 testReceivingName='Marky Boy'                            ;
 
 
-thisScript=$(readlink -f "${BASH_SOURCE[0]}");
+thisScript=$(readlink -f "${BASH_SOURCE[0]}";  );
 
 #
 
@@ -69,8 +69,7 @@ else
 fi
 
 
-thisScript=$(readlink -f "${BASH_SOURCE[0]}");
-
+                    
 dnf  --assumeyes   install      \
           mailx                 \
           postfix               \
@@ -167,6 +166,11 @@ echo 'test using -A gmailSMTP-noreply'                                          
 END_OF_SCRIPT
 
 exit 1;
+
+
+
+ ##  thisScript=$(readlink -f "${BASH_SOURCE[0]}");
+
 #
 #
 #  honorable mention:  (and maybe IDEA for having multiple email SMTP accounts?)
