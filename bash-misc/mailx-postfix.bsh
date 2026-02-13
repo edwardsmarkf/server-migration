@@ -89,6 +89,8 @@ dnf  --assumeyes   install      \
           ;
 
 
+touch    /root/.mailrc  ;   ## 2026-02-13 -- not sure if this is actually necessary or not.
+
 sed --in-place  --file=-      /etc/postfix/main.cf   <<END_OF_SED ;
 s?smtp_tls_CAfile = /etc/pki/tls/certs/ca-bundle.crt?###  smtp_tls_CAfile = /etc/pki/tls/certs/ca-bundle.crt - removed by ${thisScript}?
 \$a\
