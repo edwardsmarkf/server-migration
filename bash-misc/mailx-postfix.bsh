@@ -44,14 +44,31 @@
 #
 
 
-read -p 'Please enter main email address:  '  emailAddress   ;   ##  carefully double-check this!
+read -p 'Please enter main email address:    '  emailAddress   ; 
+read -p 'Please reenter main email address:  '  emailAddressTMP   ; 
 
-read -p 'Please enter crypted password: '     cryptedPassword         ;
+if [ "${emailAddress}" == "${emailAddressTMP}" ]; then
+   continue
+else
+   echo 'main email address does not match!';
+   exit
+fi
 
-   ## for testing only
+read -p 'Please enter crypted password: '       appPassword         ;
+read -p 'Please reenter crypted password: '     appPasswordTMP      ;
 
-read  -p 'Please enter email address to send email to as a test:     '  testReceivingEmailAddress     ;   ##
-read  -p 'Please enter cc email address to send email to as a test:  '  testReceivingCcEmailAddress   ;   ##
+if [ "${appPassword}" == "${appPasswordTMP}" ]; then
+   continue
+else
+   echo 'crypted password does not match!';
+   exit
+fi
+
+
+   ## for sending email testing only:
+
+read  -p 'Please enter   email address to send email to as a test:   '    testReceivingEmailAddress        ;   ##
+read  -p 'Please enter cc email address to send email to as a test:  '    testReceivingCcEmailAddress   ;   ##
 
 testReceivingName='Marky Boy'                            ;
 
@@ -60,7 +77,7 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}";  );
 
 #
 
-if [[  -v  $cryptedPassword  ]] ;then
+if [[  -n  ${appPassword}  ]] ;then
     echo "Password properly set, continuing.....!";
 else
     echo "fill in the password!";
@@ -99,7 +116,7 @@ cat <<END_OF_SASL_PASSWORD  >  /etc/postfix/sasl/sasl_passwd  ;  ## notice only 
 #####  passwords also go in  /usr/local/lib/php/SMTPMailer.php
 #####  passwords also go in  /usr/local/lib/php/PhpMailerSecurity.php  (?????????????????????????????????)
 
-[smtp.gmail.com]:587 ${emailAddress}:${cryptedPassword}
+[smtp.gmail.com]:587 ${emailAddress}:${appPassword}
 ####  $(date;) --   end added by ${thisScript}
 
 END_OF_SASL_PASSWORD
@@ -122,7 +139,7 @@ account gmailSMTP-noreply {
         set smtp-auth-user=${emailAddress}
                 ## unencrypted password also used at:   /usr/local/lib/php/SMTPMailerSecurity.php
                 ## unencrypted password created at https://myaccount.google.com/u/2/apppasswords?rapt=AEjHLxxxxxxxxxxxxxxxxxxxxx
-        set smtp-auth-password=${cryptedPassword}
+        set smtp-auth-password=${appPassword}
         set ssl-verify=ignore
         #############   ??   set nss-config-dir=/home/comptonpeslonline.com/gmailCerts/
 }
@@ -181,7 +198,7 @@ exit 1;
 #          set smtp=smtp://smtp.gmail.com:587
 #          set from="${emailAddress}"
 #          set smtp-auth-user=${emailAddress}
-#          set smtp-auth-password=${cryptedPassword}
+#          set smtp-auth-password=${appPassword}
 #          set ssl-verify=ignore
 #      }
 # END_OF_MAIL_RC
