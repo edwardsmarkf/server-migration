@@ -80,9 +80,11 @@ else
     exit;
 fi
 
+
 dnf  --assumeyes   install      \
           mailx                 \
           postfix               \
+          s-nail                \
           cyrus-sasl-plain      \
           ;
 
