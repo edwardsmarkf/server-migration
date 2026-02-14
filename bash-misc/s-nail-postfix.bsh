@@ -85,7 +85,7 @@ cat  <<END_OF_DOT_MAILRC >  /root/.mailrc  ;
 
     ####   $(date;) --  added by ${thisScript}
     set v15-compat
-    set mta=smtps://${emailAddress/@/%40/}:${appPassword}@smtp.gmail.com:465
+    set mta=smtps://${emailAddress/@/%40}:${appPassword}@smtp.gmail.com:465
     set smtp-auth=login
     set from="NoReply <${emailAddress}>"
     set tls-verify=ignore
@@ -93,7 +93,7 @@ cat  <<END_OF_DOT_MAILRC >  /root/.mailrc  ;
 
     account gmailSMTP-noreply {
             set v15-compat
-            set mta=smtps://${emailAddress/@/%40/}:${appPassword}@smtp.gmail.com:465
+            set mta=smtps://${emailAddress/@/%40}:${appPassword}@smtp.gmail.com:465
             set smtp-auth=login
             set from="NoReply <${emailAddress}>"
             set tls-verify=ignore
