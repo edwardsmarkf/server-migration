@@ -78,6 +78,7 @@ fi
 dnf  --assumeyes   install      \
           postfix               \
           s-nail                \
+          telnet                \
           ;
 
 cat  <<END_OF_DOT_MAILRC >  /root/.mailrc  ;
@@ -234,6 +235,7 @@ echo 'test using -A gmailSMTP-noreply'                                          
                 ${testReceivingEmailAddress}                                                                \\
     ;
 
+if any problems, try:    telnet  smtp.gmail.com    465  ;   ## make sure we can connect in case of firewall issue.
 END_OF_SCRIPT
 
 exit 1;
