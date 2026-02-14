@@ -103,9 +103,11 @@ cat  <<END_OF_DOT_MAILRC >  /root/.mailrc  ;
 END_OF_DOT_MAILRC
 
 systemctl enable  postfix.service       ;
-systemctl reload  postfix.service       ;
-systemctl restart postfix.service       ;
+systemctl start   postfix.service       ;
+
 systemctl status  postfix.service       ;
+systemctl reload  postfix.service       ;
+###  systemctl restart postfix.service       ;
 
 postfix reload                          ;
 
