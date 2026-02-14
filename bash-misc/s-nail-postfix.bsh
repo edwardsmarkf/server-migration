@@ -1,0 +1,276 @@
+#! /bin/bash
+
+##############################
+#                            #
+#      s-nail-postfix.bsh    #
+#                            #
+##############################
+
+#       2026-02-14  -- this replaces mailx-postfix.bsh
+#
+#  first step is to 'obtain' the 'two-factor-authorization Generated app password' value.  normally this is just a matter
+#  of authorizating two-factor sign-in in 'security',  but with the google g-suite accounts, the following is necessary:
+#
+#     
+#     1 - click here:  https://myaccount.google.com/security   (be sure to be in the correct email acccount NOREPLY@COMPTONPESLONLINE.COM)
+#          or click the google-apps button (nine dots, three rows of three, upper right side ) scroll down, and select 
+#         "Admin" with the green gear   IF ITS AVAILABLE, it was NOT available 2021-01-10)
+#                                               
+#     2 - select "Security - Configure security settings".  
+#                       ######https://security.google.com/settings/security/apppasswords
+#             !!          https://myaccount.google.com/u/4/apppasswords  (noreply@comptonpeslonline.com 2021-08-31)
+#
+#     3 - authorize two-factor authentication
+#    
+#     4 - create a new login "app" - follow this:
+#           https://www.linode.com/docs/email/postfix/configure-postfix-to-send-mail-using-gmail-and-google-apps-on-debian-or-ubuntu/
+#
+#         or follow this if available:  (it was NOT available 2021-01-10 )
+#         -- tiny-gear-symbol (top right corner) -->> settings -->> account (tab)
+#                 or just click HERE:   https://security.google.com/settings/security/apppasswords
+#         -- 'Google account settings'
+#         -- Security (left side)
+#         -- the top of form should say "App passwords"
+#         -- "Select app" (left side dropdown) --->> select "mail" or "other"
+#         -- "Select device"  --> "Other (custom name)" --> pick a nice name! 
+#         -- "GENERATE" button
+#
+#
+#
+
+
+read -p 'Please enter main email address:    '  emailAddress   ; 
+read -p 'Please reenter main email address:  '  emailAddressTMP   ; 
+
+if [ "${emailAddress}" != "${emailAddressTMP}" ]; then
+   echo 'main email address does not match!';
+   exit;
+fi
+
+read -p 'Please enter crypted password: '       appPassword         ;
+read -p 'Please reenter crypted password: '     appPasswordTMP      ;
+
+if [ "${appPassword}" != "${appPasswordTMP}" ]; then
+   echo 'crypted password does not match!';
+   exit;
+fi
+
+
+   ## for sending email testing only:
+
+read  -p 'Please enter   email address to send email to as a test:   '    testReceivingEmailAddress        ;   ##
+read  -p 'Please enter cc email address to send email to as a test:  '    testReceivingCcEmailAddress   ;   ##
+
+testReceivingName='Marky Boy'                            ;
+
+
+thisScript=$(readlink -f "${BASH_SOURCE[0]}";  );
+
+#
+
+if [[  -n  ${appPassword}  ]] ;then
+    echo "Password properly set, continuing.....!";
+else
+    echo "fill in the password!";
+    exit;
+fi
+
+dnf  --assumeyes   install      \
+          postfix               \
+          s-nail                \
+          ;
+
+cat  <<END_OF_DOT_MAILRC >  /root/.mailrc  ;
+
+    ####   $(date;) --  added by ${thisScript}
+    set v15-compat
+    set mta=smtps://${emailAddress/@/%40/}:${appPassword}@smtp.gmail.com:465
+    set smtp-auth=login
+    set from="NoReply <${emailAddress}>"
+    set tls-verify=ignore
+    set nss-config-dir=/etc/pki/nssdb/
+
+    account gmailSMTP-noreply {
+            set v15-compat
+            set mta=smtps://${emailAddress/@/%40/}:${appPassword}@smtp.gmail.com:465
+            set smtp-auth=login
+            set from="NoReply <${emailAddress}>"
+            set tls-verify=ignore
+            # Or warn to check certs
+            set nss-config-dir=/etc/pki/nssdb/
+    }
+END_OF_DOT_MAILRC
+
+systemctl enable  postfix.service       ;
+systemctl reload  postfix.service       ;
+systemctl restart postfix.service       ;
+systemctl status  postfix.service       ;
+
+postfix reload                          ;
+
+cat << END_OF_SCRIPT ;
+
+## please try these:
+
+echo "This is a test from ${thisScript} -- $(date;)."                                                      \\
+  \| mailx  -v  -s "test message"                                                                          \\
+         ${testReceivingEmailAddress}                                                                      \\
+  ;
+
+echo 'please work and include the sendor name! This is a test from ${thisScript}-- $(date;).'              \\
+  \| mailx -v -s 'This Subject' -r '${testReceivingName}<${emailAddress}>'                                 \\
+          ${testReceivingEmailAddress}                                                                     \\
+  ;
+        
+echo 'test using -A gmailSMTP-noreply'                                                                     \\
+ \|  /usr/bin/mailx                                                                                        \\
+    -v                                                                                                     \\
+    -A  gmailSMTP-noreply                                                                                  \\
+    -s "sent directly from mail command\$(echo -e "\\r\\nContent-type: text/html")"                        \\
+    -c ${testReceivingCcEmailAddress}                                                                      \\
+                ${testReceivingEmailAddress}                                                               \\
+    ;
+
+END_OF_SCRIPT
+
+exit 1;
+
+
+
+
+
+
+
+
+
+
+
+
+##   is this postfix step even necessary anymore  ??????
+##                                    ?????????????????????????????
+sed --in-place  --file=-      /etc/postfix/main.cf   <<END_OF_SED ;  
+s?smtp_tls_CAfile = /etc/pki/tls/certs/ca-bundle.crt?###  smtp_tls_CAfile = /etc/pki/tls/certs/ca-bundle.crt - removed by ${thisScript}?
+\$a\
+                                                                   \\
+    ##  $(date;) --  added by ${thisScript}                        \\
+relayhost = [smtp.gmail.com]:587                                   \\
+smtp_use_tls = yes                                                 \\
+smtp_sasl_auth_enable = yes                                        \\
+smtp_sasl_password_maps = hash:/etc/postfix/sasl/sasl_passwd       \\
+smtp_tls_CAfile = /etc/ssl/certs/ca-bundle.crt                     \\
+smtp_sasl_security_options = noanonymous                           \\
+smtp_sasl_tls_security_options = noanonymous                       \\
+   ##  $(date;) --  end added by ${thisScript}                     \\
+
+END_OF_SED
+
+
+mkdir --verbose /etc/postfix/sasl/ ;
+
+cat <<END_OF_SASL_PASSWORD  >  /etc/postfix/sasl/sasl_passwd  ;  ## notice only ONE arrow
+
+####   $(date;) --  added by ${thisScript}
+#####  passwords also go in  /usr/local/lib/php/SMTPMailer.php
+#####  passwords also go in  /usr/local/lib/php/PhpMailerSecurity.php  (?????????????????????????????????)
+
+[smtp.gmail.com]:587 ${emailAddress}:${appPassword}
+####  $(date;) --   end added by ${thisScript}
+
+END_OF_SASL_PASSWORD
+
+
+### https://www.ringingliberty.com/2015/12/28/postfix-rcpt-to-temporary-lookup-failure/
+postmap    -v  /etc/postfix/sasl/sasl_passwd                 ;  ##  2021-01-10
+
+chown --verbose root:postfix /etc/postfix/sasl/sasl_passwd*  ;
+chmod --verbose 600 /etc/postfix/sasl/sasl_passwd*           ;
+
+
+cat <<END_OF_MAIL_RC  >>  /etc/mail.rc ;    ## 2020-01-11
+####   $(date;) --  added by ${thisScript}
+account gmailSMTP-noreply {
+        set smtp-use-starttls
+        set ssl-verify=ignore
+        set smtp-auth=login
+        set smtp=smtp://smtp.gmail.com:587
+        set smtp-auth-user=${emailAddress}
+                ## unencrypted password also used at:   /usr/local/lib/php/SMTPMailerSecurity.php
+                ## unencrypted password created at https://myaccount.google.com/u/2/apppasswords?rapt=AEjHLxxxxxxxxxxxxxxxxxxxxx
+        set smtp-auth-password=${appPassword}
+        set ssl-verify=ignore
+        #############   ??   set nss-config-dir=/home/comptonpeslonline.com/gmailCerts/
+}
+####  $(date;) --  end of added by ${thisScript}
+END_OF_MAIL_RC
+
+      ##   https://www.linode.com/community/questions/11614/unable-to-sendmail-via-postfix-on-ubuntu-server
+mkfifo /var/spool/postfix/public/pickup                      ;
+
+systemctl reload  postfix                                     ;
+systemctl restart postfix                                     ;
+systemctl status  postfix                                     ;
+
+
+cat << END_OF_SCRIPT ;
+
+## please try these:
+
+echo "This is a test from ${thisScript} -- $(date;)."                                                       \\
+  \| mailx  -v  -s "test message"                                                                            \\
+         ${testReceivingEmailAddress}                                                                       \\
+  ;
+
+echo 'please work and include the sendor name! This is a test from ${thisScript}-- $(date;).'               \\
+  \| mailx -v -s 'This Subject' -r '${testReceivingName}<${emailAddress}>'                                   \\
+          ${testReceivingEmailAddress}                                                                      \\
+  ;
+        
+echo 'test using -A gmailSMTP-noreply'                                                                      \\
+ \|  /usr/bin/mailx                                                                                          \\
+    -v                                                                                                      \\
+    -A  gmailSMTP-noreply                                                                                   \\
+    -s "sent directly from mail command\$(echo -e "\\r\\nContent-type: text/html")"                         \\
+    -c ${testReceivingCcEmailAddress}                                                                       \\
+                ${testReceivingEmailAddress}                                                                \\
+    ;
+
+END_OF_SCRIPT
+
+exit 1;
+
+
+
+ ##  thisScript=$(readlink -f "${BASH_SOURCE[0]}");
+
+#
+#
+#  honorable mention:  (and maybe IDEA for having multiple email SMTP accounts?)
+#  https://obrienlabs.net/mailx-send-linux-email-gmail/
+#
+#    cat <<END_OF_MAIL_RC  >>  /etc/mail.rc ;
+#      account marksGmail {
+#          set smtp-use-starttls
+#          set ssl-verify=ignore
+#          set smtp-auth=login
+#          set smtp=smtp://smtp.gmail.com:587
+#          set from="${emailAddress}"
+#          set smtp-auth-user=${emailAddress}
+#          set smtp-auth-password=${appPassword}
+#          set ssl-verify=ignore
+#      }
+# END_OF_MAIL_RC
+#                    ## notice  -A marksGmail  - uses account name
+#  echo -e "Mail body text" | mailx -A marksGmail -s "Mail subject"  mark@edwardsmark.com ;
+#
+#  mail -A gmail  mark@edwardsmark.com ;
+#
+#
+#
+#
+## from john q @ interserver  2020-01-20:
+## sendmail in the past was bloated and had security issues. I actually have not used it in a long time 
+## because there are so many replacements (exim , postfix for example)
+##
+## Postfix is good
+##
+## mailx - I really only use it for calling mail in shell scripts or sending tests.
