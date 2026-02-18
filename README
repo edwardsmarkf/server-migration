@@ -34,7 +34,7 @@
 
 40)  bash -vx  ./node/bash-js.bsh ;
 
-41)  /etc/httpd/conf/httpd.conf  - find all  "SSLEngine on"  and add "SSLProxyEngine on" right below
+41)  httpd.conf/apache.bsh  -- not quite ready to run manually do it
 
 42)  contact STRIPE.COM  and let them know the new IP ## on the callback hook for ajcomptonpesl.com
 
