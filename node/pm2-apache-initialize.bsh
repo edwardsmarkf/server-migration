@@ -38,8 +38,6 @@
         ProxyPassReverse        http://localhost:20005/                                                         \\
     \</Location>                                                                                                \\
                                                                                                                 \\
-    SetEnv  AUDIOFILES  voicefiles                                                                              \\
-    SetEnv  AUDIOPRACTICE comptonPractice/user-recorded-audio-files                                             \\
 
 SED_SCRIPT
 
