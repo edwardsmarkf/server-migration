@@ -3,10 +3,15 @@
 #       apache-initialize.bsh               2026-02-18
 #
 #
+
+thisScript=$(readlink -f "${BASH_SOURCE[0]}");
+
+
 /usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_1  ;
 
 /SSLCertificateFile \/home\/comptonpeslonline.com\/ssl.cert/i                                                   \\
                                                                                                                 \\
+    ##  $(date;) --  added by ${thisScript}                                                                     \\
     SetEnv  AUDIOFILES  voicefiles                                                                              \\
     SetEnv  AUDIOPRACTICE comptonPractice/user-recorded-audio-files                                             \\
 
@@ -16,6 +21,7 @@ SED_SCRIPT_1
 
 /SSLCertificateFile \/home\/ajcomptonpesl.com\/ssl.cert/i                                                   \\
                                                                                                             \\
+    ##  $(date;) --  added by ${thisScript}                                                                 \\
 ##  PRACTICE_PROGRAM_PRODUCT_ID  -- does this also need to be defined in the :80 ?????                      \\
     SetEnv  PRACTICE_PROGRAM_PRODUCT_ID   "4545V"                                                           \\
 
@@ -24,9 +30,13 @@ SED_SCRIPT_2
 ## just for compton ONLY, add SSLProxyEngine:
 ##    SSLEngine on
 ##    SSLProxyEngine on
-sed  --in-place --expression='/ScriptAlias \/cgi-bin\/ \/home\/comptonpeslonline.com\/cgi-bin\//{N;N;N;/SSLEngine on/a\\
-    SSLProxyEngine on                                                                                                 \
-}'  ./httpd.conf                                                                                                      ;
+sed  --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_3    ;
+'/ScriptAlias \/cgi-bin\/ \/home\/comptonpeslonline.com\/cgi-bin\//{N;N;N;/SSLEngine on/a   \\
+    SSLProxyEngine on                                                                       \\
+    ##  $(date;) --  added by ${thisScript}                                                 \\
+
+SED_SCRIPT_3
+
 
 apachectl configtest;
 
