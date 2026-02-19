@@ -26,6 +26,8 @@ sed  --in-place --expression='/ScriptAlias \/cgi-bin\/ \/home\/comptonpeslonline
     SSLProxyEngine on                                                                                                 \
 }'  ./httpd.conf                                                                                                      ;
 
+apachectl configtest;
+
 apachectl restart;
 
 exit;
