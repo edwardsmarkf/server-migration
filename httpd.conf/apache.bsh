@@ -6,6 +6,7 @@
 /usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_1  ;
 
 /SSLCertificateFile \/home\/comptonpeslonline.com\/ssl.cert/i                                                   \\
+                                                                                                                \\
     SetEnv  AUDIOFILES  voicefiles                                                                              \\
     SetEnv  AUDIOPRACTICE comptonPractice/user-recorded-audio-files                                             \\
 
@@ -14,6 +15,7 @@ SED_SCRIPT_1
 /usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_2  ;
 
 /SSLCertificateFile \/home\/ajcomptonpesl.com\/ssl.cert/i                                                   \\
+                                                                                                            \\
 ##  PRACTICE_PROGRAM_PRODUCT_ID  -- does this also need to be defined in the :80 ?????                      \\
     SetEnv  PRACTICE_PROGRAM_PRODUCT_ID   "4545V"                                                           \\
 
