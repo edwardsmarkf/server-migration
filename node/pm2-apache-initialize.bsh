@@ -3,10 +3,14 @@
 #       pm2-apache-initialize.bsh               2026-02-10
 #
 #
+
+thisScript=$(readlink -f "${BASH_SOURCE[0]}");
+
 /usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT  ;
 
 /SSLCertificateFile \/home\/comptonpeslonline.com\/ssl.cert/i                                                   \\
                                                                                                                 \\
+       ##  $(date;) --  added by ${thisScript}                                                                  \\
     ## messagePlayback player (port ## cross-referenced in pm2)                                                 \\
     <Location /proxyPort20001/>                                                                                 \\
         ProxyPass               http://localhost:20001/ Keepalive=On retry=5 timeout=600                        \\
