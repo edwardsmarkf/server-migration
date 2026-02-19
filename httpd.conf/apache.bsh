@@ -19,10 +19,12 @@ SED_SCRIPT_1
 
 SED_SCRIPT_2
 
-for compton ONLY, add SSLProxyEngine:
-    SSLEngine on
-    SSLProxyEngine on
-
+## just for compton ONLY, add SSLProxyEngine:
+##    SSLEngine on
+##    SSLProxyEngine on
+sed  --in-place --expression='/ScriptAlias \/cgi-bin\/ \/home\/comptonpeslonline.com\/cgi-bin\//{N;N;N;/SSLEngine on/a\\
+    SSLProxyEngine on                                                                                                 \
+}'  ./httpd.conf                                                                                                      ;
 
 apachectl restart;
 
