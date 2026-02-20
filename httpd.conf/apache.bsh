@@ -4,6 +4,9 @@
 #
 #
 
+
+##  ProxyPreserveHost on   ????  does comptonpeslonline.com  need this??
+
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
 
