@@ -37,7 +37,7 @@
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
 
-/usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_1  ;
+/usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_COMPTONPESLONLINE  ;
 
 /SSLCertificateFile \/home\/comptonpeslonline.com\/ssl.cert/i                                                   \\
                                                                                                                 \\
@@ -45,9 +45,9 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
     SetEnv  AUDIOFILES  voicefiles                                                                              \\
     SetEnv  AUDIOPRACTICE comptonPractice/user-recorded-audio-files                                             \\
 
-SED_SCRIPT_1
+SED_SCRIPT_COMPTONPESLONLINE
 
-/usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_2  ;
+/usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_AJCOMPTONPESL  ;
 
 /SSLCertificateFile \/home\/ajcomptonpesl.com\/ssl.cert/i                                                   \\
                                                                                                             \\
@@ -55,17 +55,7 @@ SED_SCRIPT_1
 ##  PRACTICE_PROGRAM_PRODUCT_ID  -- does this also need to be defined in the :80 ?????                      \\
     SetEnv  PRACTICE_PROGRAM_PRODUCT_ID   "4545V"                                                           \\
 
-SED_SCRIPT_2
-
-## just for compton ONLY, add SSLProxyEngine:
-##    SSLEngine on
-##    SSLProxyEngine on
-sed  --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_3    ;
-'/ScriptAlias \/cgi-bin\/ \/home\/comptonpeslonline.com\/cgi-bin\//{N;N;N;/SSLEngine on/a   \\
-    SSLProxyEngine on                                                                       \\
-    ##  $(date;) --  added by ${thisScript}                                                 \\
-
-SED_SCRIPT_3
+SED_SCRIPT_AJCOMPTONPESL
 
 
 apachectl configtest;
@@ -73,3 +63,17 @@ apachectl configtest;
 apachectl restart;
 
 exit;
+
+
+
+
+#####    ## just for compton ONLY, add SSLProxyEngine:
+#####    ##    SSLEngine on
+#####    ##    SSLProxyEngine on
+#####    #####    sed  --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_3    ;
+#####    '/ScriptAlias \/cgi-bin\/ \/home\/comptonpeslonline.com\/cgi-bin\//{N;N;N;/SSLEngine on/a   \\
+#####        SSLProxyEngine on                                                                       \\
+#####        ##  $(date;) --  added by ${thisScript}                                                 \\
+#####
+#####    SED_SCRIPT_3
+
