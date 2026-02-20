@@ -1,4 +1,6 @@
 
+NOTE:  apache httpd.conf  section now covers the httpd.conf modifications.  -- 2026-02-20
+
 pm2-initialize.bsh will need to be ran AFTER the scripts have been copied over.
 
 
