@@ -4,7 +4,7 @@
 #
 #
 #       2021-01-17      - added server name and used gmailSMTP instead
-#       2026-02-21      - confirmed this is still required for interserver
+
 #
 #
 SCAN_DIR="/home/"                                               ;
