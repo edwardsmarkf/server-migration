@@ -1,6 +1,8 @@
 
 NOTE:  apache httpd.conf  section now covers the httpd.conf modifications.  -- 2026-02-20
 
+FIRST do visudo and authorize the comptonpeslonline to get system information -- 2026-02-21
+
 pm2-initialize.bsh will need to be ran AFTER the scripts have been copied over.
 
 
