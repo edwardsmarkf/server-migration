@@ -13,9 +13,8 @@ clamscan --version ;
 mkdir   --verbose   /var/log/clamav/    ;   ### need this to start the log directory !
 
 mv  --verbose   ./manual_clamscan/     /etc/cron.daily/manual_clamscan  ;
-
-chmod  755    /etc/cron.daily/manual_clamscan ;
-cat    /etc/cron.daily/manual_clamscan ;  # display the results
+chmod  755                             /etc/cron.daily/manual_clamscan  ;
+cat                                    /etc/cron.daily/manual_clamscan  ;  # display the results
 
 #       2026-02-21      - confirmed this is still required for interserver
 cat   >>  /etc/freshclam.conf  <<END_OF_FRESHCLAM  ;  ###  2019-06-19 - add theses:
