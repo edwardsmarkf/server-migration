@@ -64,9 +64,15 @@ chown  comptonpeslonline.com:comptonpeslonline.com  /home/comptonpeslonline.com/
 
 
 
-sudo  -u  comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh                                                                                                \
-                                    comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/         \
-                                    /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/                                               ;
+#  rsync  SOURCE     DESTINATION
+sudo  -u  comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh                                                                                            \
+                                    comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/     \
+                                    /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/                                           ;
+
+sudo  -u  comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh                                                                                            \
+                                    comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                    \
+                                    /home/comptonpeslonline.com/public_html/comptonPractice/voicefiles/                                                          ;
+
 
 ## important misc php archive files:
  rsync --verbose --archive  --rsh=ssh  /usr/local/lib/php/   root@199.231.184.26:/usr/local/lib/php/
