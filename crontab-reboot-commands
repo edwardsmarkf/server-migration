@@ -1,28 +1,41 @@
 
 ##        2021-07-18  - commands to put into 'crontab -e' 
 
-## 2025-08-13  -- removed the mounting of the /home/ directory
 
+
+                                                #################################
+                                                #                               #
+                                                #       reboot stuff            #
+                                                #                               #
+                                                #################################
 
 @reboot ( echo -e "\n\nCrontab reboot on: $(date;)"                                                             >> /var/log/crontabReboot.log 2>&1      ;       )
 
-## 2021-05-13 - suppress the firewall messages on the interserver tignt-VNC
-##             https://forum.configserver.com/viewtopic.php?t=7147
+                                                ## 2021-05-13 - suppress the firewall messages on the interserver tignt-VNC
+                                                ##   https://forum.configserver.com/viewtopic.php?t=7147
 @reboot ( sleep 2 && /usr/bin/dmesg --console-level 1 && echo "Console-level: $(cat /proc/sys/kernel/printk;)"  >> /var/log/crontabReboot.log 2>&1      ;       )
 
 
+                                                ##  from interserver:  way to get perl to run properly 2021-03-23 per Joe Cooper
+                                                ##                      also referenced in ./perl/README
+@reboot ( sleep 3 && /usr/bin/mount --verbose --bind    /home   /var/www                                        >> /var/log/crontabReboot.log 2>&1      ;       )
 
-###    the directory  /var/lock keeps getting 'clobbered' after every boot (wondering if we even need the subdirectory??)
-@reboot ( sleep 5 && /usr/bin/mkdir  --verbose /var/lock/bash/                          >> /var/log/crontabReboot.log 2>&1      ;       )
+                                                ##    the directory  /var/lock keeps getting 'clobbered' after every boot (wondering if we even need the subdirectory??)
+@reboot ( sleep 5 && /usr/bin/mkdir  --verbose /var/lock/bash/                                                  >> /var/log/crontabReboot.log 2>&1      ;       )
 
 
-###  unable to get port 10000 to STAY open after a boot:
+                                                ##  unable to get port 10000 to STAY open after a boot:
 @reboot ( sleep 7 && /usr/sbin/iptables --verbose -I INPUT 1 -p tcp --dport 10000 -j ACCEPT                     >> /var/log/crontabReboot.log 2>&1      ;       )
 
+@reboot ( sleep 9 && /usr/bin/perl /etc/idrivecron.pl                                                           >> /var/log/crontabReboot.log 2>&1      ;       )
+
+        ## 2021-01-22 reboot
+        ## 2021-04-10 reboot added mount --bind (and hope it works)
+        ## 2021-07-17 added sleep 30; because the mkdir /var/lock/bash/ command seems to require a bit of a delay
 
 
-## per john q @ interserver:
-@reboot /admin/firstbootkvm yes
+
+
 
 
 
