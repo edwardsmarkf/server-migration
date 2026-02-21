@@ -1,0 +1,38 @@
+
+                                                #########################
+                                                #                       #
+                                                #       idrive BACKUPS  #
+                                                #                       #
+                                                #########################
+
+
+0  1 * * *      /bin/nice       /bin/bash       /usr/local/bash/iDriveBackup/mariadbBackup.bsh                  >       /var/log/mark/mariadBackup.bsh.log              2>&1
+30 1 * * *      /bin/nice       /bin/bash       /usr/local/bash/iDriveBackup/incrBackup.bsh                     >       /var/log/mark/incrBackup.bsh.log                2>&1
+0  2 * * 0-5    /bin/nice       /bin/bash       /usr/local/bash/iDriveBackup/masterBackup.bsh           daily   >       /var/log/mark/masterBackupDaily.bsh.log         2>&1
+15 2 * * 6      /bin/nice       /bin/bash       /usr/local/bash/iDriveBackup/masterBackup.bsh           weekly  >       /var/log/mark/masterBackupWeekly.bsh.log        2>&1
+
+                                        ## daily
+0  3 * * *      /bin/nice       /bin/bash       /usr/local/bash/iDriveBackup/opusBackupDaily.bsh        1       >       /var/log/mark/opusBackupDaily.bsh.log   2>&1
+                                        ## weekly
+10 3 * * 6      /bin/nice       /bin/bash       /usr/local/bash/iDriveBackup/opusBackupDaily.bsh        7       >       /var/log/mark/opusBackupWeekly.bsh.log  2>&1
+
+                                        ## monthly, first Saturday of every month
+15 3 * * 7      [ $(date +\%d) -le 7 ] && /bin/nice     /bin/bash       /usr/local/bash/iDriveBackup/opusBackupMonthly.bsh      1       >       /var/log/mark/opusBackupMonthly.bsh.log 2>&1
+
+
+###############15 1 * * *       /bin/nice       /bin/bash       /usr/local/bash/iDriveBackup/peslTrainersBackup.bsh             >       /var/log/mark/peslTrainerBack.bsh.log           2>&1
+
+                                                                ## run yearly  but manually for each year !!
+##  nohup nice  bash -vx  /usr/local/bash/iDriveBackup/fullOpusTarBackup.bsh 2020   >      /var/log/mark/fullOpusTarBackup.bsh.log   2>&1       &
+
+                                                                ## now finally all this shit to idrive
+0  5 * * *      /bin/nice       /bin/bash       /usr/local/bash/iDriveBackup/idrivePython.bsh                           >       /var/log/mark/idrivePython.bsh.log              2>&1
+##0  5 * * *    /bin/nice       /bin/bash       /usr/local/bash/iDriveBackup/idrivePerl.bsh                             >       /var/log/mark/idrivePerl.bsh.log                2>&1
+
+
+                                                #################################
+                                                #                               #
+                                                #       end of idrive BACKUPS   #
+                                                #                               #
+                                                #################################
+
