@@ -63,6 +63,17 @@ chmod  755   --verbose                              /home/comptonpeslonline.com/
 chown  comptonpeslonline.com:comptonpeslonline.com  /home/comptonpeslonline.com/tmpVoiceSpiceFile/   ;
 
 
+
+## important misc php archive files:
+ rsync --verbose --archive  --rsh=ssh  /usr/local/lib/php/   root@199.231.184.26:/usr/local/lib/php/
+
+## dont forget jQuery ! (?)
+ rsync --verbose --archive  --rsh=ssh  /usr/local/jquery/   root@edwardsmarkf.info:/usr/local/jquery/
+
+
+
+
+
 ## ddos-deflate installation  2016-04-20
 wget http://www.inetbase.com/scripts/ddos/install.sh
 chmod 0700 install.sh
@@ -171,15 +182,6 @@ else
         please see  /var/log/boot.log file for more details
 END
 fi;
-
-
-## important misc php archive files:
- rsync --verbose --archive  --rsh=ssh  /usr/local/lib/php/   root@199.231.184.26:/usr/local/lib/php/
-
-## dont forget jQuery ! (?)
- rsync --verbose --archive  --rsh=ssh  /usr/local/jquery/   root@edwardsmarkf.info:/usr/local/jquery/
-
-
 
 
 
