@@ -69,12 +69,6 @@ chmod 0700 install.sh
 ./install.sh
 
 
-
-## wordpress:
-1) dont forget to update the wordpress network IP number ! ! 
-2)  chmod  -R  777      /home/comptonpesltrainers.com/public_html/wp-content/blogs.dir
-
-
 ######### ftp   -  START OUT WITH A WORKING DOMAIN NAME   (2013-07-03)
 #####################https://www.digitalocean.com/community/articles/how-to-set-up-proftpd-on-centos-6
 moved to  sftp.bsh  February 2019
@@ -177,12 +171,6 @@ else
         please see  /var/log/boot.log file for more details
 END
 fi;
-
-
-====   comptonpesltrainers.com mu-wordpress:
-
-change dashboard--->settings--->DomainMapping IP number (not sure if this is totally necessary)
-
 
 
 ## important misc php archive files:
