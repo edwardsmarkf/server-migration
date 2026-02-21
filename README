@@ -74,12 +74,6 @@ chown  comptonpeslonline.com:comptonpeslonline.com  /home/comptonpeslonline.com/
 
 
 
-## ddos-deflate installation  2016-04-20
-wget http://www.inetbase.com/scripts/ddos/install.sh
-chmod 0700 install.sh
-./install.sh
-
-
 ######### ftp   -  START OUT WITH A WORKING DOMAIN NAME   (2013-07-03)
 #####################https://www.digitalocean.com/community/articles/how-to-set-up-proftpd-on-centos-6
 moved to  sftp.bsh  February 2019
@@ -227,3 +221,12 @@ rsync --verbose --archive  --rsh=ssh  /usr/share/red5/webapps/   root@199.231.18
 
 mount -a ;                      ##   2013-05-14 mounts up the stuff in the fstab file
 /etc/init.d/red5  start   >/usr/share/red5/red5.log  2>&1       
+
+
+
+
+
+####  ## ddos-deflate installation  2016-04-20
+####  wget http://www.inetbase.com/scripts/ddos/install.sh
+####  chmod 0700 install.sh
+####  ./install.sh
