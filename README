@@ -72,6 +72,11 @@ sudo  -u  comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh           
 sudo  -u  comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh                                                                                            \
                                     comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                    \
                                     /home/comptonpeslonline.com/public_html/comptonPractice/voicefiles/                                                          ;
+## one line no passord prompting:
+sshpass -p  'PASSWORD'                                                                                                                                           \
+            sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh                                                                             \
+                        comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                                \
+                        /home/comptonpeslonline.com/public_html/voicefiles/                                                                                      ;
 
 
 ## important misc php archive files:
