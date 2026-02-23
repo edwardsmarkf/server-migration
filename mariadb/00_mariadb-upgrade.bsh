@@ -9,16 +9,17 @@
 ##                so this script is being shortened. 
 
 
-dnf --disableplugin subscription-manager     clean all ;  ## 2016-12-31 - required for MariaDB  (???)
+                                 ###################dnf --disableplugin subscription-manager     clean all ;  ## 2016-12-31 - required for MariaDB  (???)
 
 ## running this in case any are missing:
 
-dnf --assumeyes   --disableplugin subscription-manager install               \
-                                                  mariadb-server             \
-                                                  mariadb-backup             \
-                                                  mariadb-devel              \
-                                                  mariadb-connector-c-devel  \
-                                                                             ;
+  ##  2026-02-23 removed   " --disableplugin subscription-manager"
+dnf --assumeyes   install               \
+             mariadb-server             \
+             mariadb-backup             \
+             mariadb-devel              \
+             mariadb-connector-c-devel  \
+                                        ;
 
 /usr/bin/mariadb-upgrade   ;   ## 2025-02-19
  
