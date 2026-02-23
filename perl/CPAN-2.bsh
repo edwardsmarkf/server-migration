@@ -8,7 +8,7 @@
 
 ##  2020-01-10 -- moved away from the original perl.bsh
 ##  2025-02-13  -- removed references to SendMail
-##  2025-10-29  -- added --remove flag to 'userdel' command
+                                                         ##  2025-10-29  -- added --remove flag to 'userdel' command
 
 useradd fakeperluser ;
 
@@ -71,7 +71,7 @@ su fakeperluser --command "perl  -W  -e  'use File::Basename ; ' ;  "        ;
 ###    /usr/bin/cpan -i     Mail::Sendmail                 ;   ## time consuming.....    2025-02-13
 ###    su fakeperluser --command "perl  -W  -e  'use Mail::Sendmail; ' ;  "        ;     2025-02-13
 
-userdel  --remove  fakeperluser ;   ## added  --remove flag to remove user directory and mailbox
+                                                   ### userdel  --remove  fakeperluser ;   ## added  --remove flag to remove user directory and mailbox
                                                   ### rm -Rf  /home/fakeperluser/ ;
 
 exit 1; 
