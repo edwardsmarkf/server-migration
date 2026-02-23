@@ -7,6 +7,10 @@
 
 2021-02-12  this step is CRITICAL to getting the node.js voiceSpiceNodeServerProxy program to work properly!
 
+
+###   https://unix.stackexchange.com/questions/499729/how-can-i-add-lines-into-my-sudoers-file
+echo 'comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /usr/sbin/csf' | sudo EDITOR='tee --append' visudo ;
+
 using the command "visudo" just add the following:
 
 ## 2016-02-28 Defaults    requiretty   COMMENT THIS OUT ! ! ! 
