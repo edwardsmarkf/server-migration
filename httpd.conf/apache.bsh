@@ -5,35 +5,6 @@
 #
 
 
-##  ProxyPreserveHost on   ????  does comptonpeslonline.com  need this??
-
-##    ## the following was added from KVM276 on 2021-08-02
-##    ProxyVia On
-##    ProxyRequests Off
-##    ## changed from Off to On  2019-12-04
-##    ProxyPreserveHost on
-
-
-##       required  ???
-##    <Directory /var/www/cgi-bin/comptonpeslonline.com/cgi-bin>
-##        ###  2021-07-23         allow from all
-##        AllowOverride All Options=ExecCGI,Includes,IncludesNOEXEC,Indexes,MultiViews,SymLinksIfOwnerMatch
-##        ## 2021-07-23 - added
-##        AddHandler cgi-script .cgi .pl  .sh
-##        Require all granted
-##    </Directory>
-
-
-## REQUIRED!
-##    ## 2021-09-20  https://tecadmin.net/disable-directory-listing-apache/
-##    <Directory /home/comptonpeslonline.com/public_html/voicefiles>
-##        Options -Indexes
-##    </Directory>
-##    <Directory /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/>
-##        Options -Indexes
-##    </Directory>
-##    ## 2021-09-20
-
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
 
@@ -77,3 +48,33 @@ exit;
 #####
 #####    SED_SCRIPT_3
 
+
+
+##  ProxyPreserveHost on   ????  does comptonpeslonline.com  need this??
+
+##    ## the following was added from KVM276 on 2021-08-02
+##    ProxyVia On
+##    ProxyRequests Off
+##    ## changed from Off to On  2019-12-04
+##    ProxyPreserveHost on
+
+
+##       required  ???
+##    <Directory /var/www/cgi-bin/comptonpeslonline.com/cgi-bin>
+##        ###  2021-07-23         allow from all
+##        AllowOverride All Options=ExecCGI,Includes,IncludesNOEXEC,Indexes,MultiViews,SymLinksIfOwnerMatch
+##        ## 2021-07-23 - added
+##        AddHandler cgi-script .cgi .pl  .sh
+##        Require all granted
+##    </Directory>
+
+
+## REQUIRED!
+##    ## 2021-09-20  https://tecadmin.net/disable-directory-listing-apache/
+##    <Directory /home/comptonpeslonline.com/public_html/voicefiles>
+##        Options -Indexes
+##    </Directory>
+##    <Directory /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/>
+##        Options -Indexes
+##    </Directory>
+##    ## 2021-09-20
