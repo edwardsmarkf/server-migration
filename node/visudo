@@ -9,7 +9,13 @@
 
 
 ###   https://unix.stackexchange.com/questions/499729/how-can-i-add-lines-into-my-sudoers-file
-echo 'comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /usr/sbin/csf' | sudo EDITOR='tee --append' visudo ;
+cat  <<END  | sudo EDITOR='tee --append' visudo ;
+comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /usr/sbin/csf
+comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/sh
+END
+
+
+
 
 using the command "visudo" just add the following:
 
