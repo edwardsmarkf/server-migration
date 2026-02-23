@@ -5,9 +5,7 @@
 
 00)    echo "export KVM_NAME=kvm301" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
 
-0)  dnf  --assumeyes upgrade  ;   dnf   clean all  ;   ## 2025-12-02
-1)  dnf  --assumeyes  install git    ;
-2)  git clone  https://github.com/edwardsmarkf/server-migration  ;
+1)  dnf --assumeyes update ;  dnf  --assumeyes upgrade  ;   dnf   clean all  ;   dnf  --assumeyes  install git  && git clone  https://github.com/edwardsmarkf/server-migration  ;
 
 3)  virtualmin
             #######################3)  webmin/virtualmin/csf 
