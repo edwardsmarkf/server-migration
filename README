@@ -3,8 +3,12 @@
 
 2025-10-24 - holdups!    1) php 8.5 not ready for RL-10  - nov 20th-ish
 
-00)    echo "export KVM_NAME=THIS-SERVER-NAME-CHANGE-THIS-PLEASE-TO-NEW-SERVER-NAME" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
 
+
+tar --create --gunzip --verbose  --file=bash.tar.gz      /usr/local/bash/  ;   ## on OLD server! 
+tar --create --gunzip --verbose  --file=home.tar.gz      /home/            ;   ## on OLD server!
+
+00)    echo "export KVM_NAME=THIS-SERVER-NAME-CHANGE-THIS-PLEASE-TO-NEW-SERVER-NAME" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
 
 1)  cd ; dnf --assumeyes update ;  dnf  --assumeyes upgrade  ;   dnf   clean all  ;   dnf  --assumeyes  install git  && git clone  https://github.com/edwardsmarkf/server-migration  ;
 
