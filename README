@@ -19,7 +19,8 @@ tar --create --gunzip --verbose  --file=/home/mark/usr_local_lib_php.tar.gz   /u
 tar --create --gunzip --verbose  --file=/home/mark/home.tar.gz                /home/                  ;   ## on OLD server!
 
 dnf  --assumeyes  install sshpass  ;   sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp   mark@162.220.165.228  ;   ## grab stuff from OLD server!
-
+mkdir  --verbose  /usr/local/bash/      ;
+mkdir  --verbose  /usr/local/lib/php/   ;
 
 
 
