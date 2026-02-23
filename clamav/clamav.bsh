@@ -6,10 +6,9 @@
 dnf install --assumeyes  clamav clamd clamav-update ;
 
 ## make SURE clamav is installed:
-                                           ################### clamscan --version ;  trouble with the 'path'...!
+                                         
 /usr/bin/clamscan --version ;
 
-## dont forget to change 'SERVER-NAME-HERE' ...!
 mkdir   --verbose   /var/log/clamav/    ;   ### need this to start the log directory !
 
 mv  --verbose   ~/server-migration/clamav/manual_clamscan/     /etc/cron.daily/manual_clamscan  ;  
@@ -30,3 +29,7 @@ tail -10   /etc/freshclam.conf ;
 
 exit;
 
+
+
+
+  ################### clamscan --version ;  trouble with the 'path'...!
