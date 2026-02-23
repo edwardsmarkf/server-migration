@@ -46,9 +46,9 @@ bash -vx   ~/server-migration/bash-misc/root-init.bsh   > ~/server-migration/bas
 
 sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh)"  \
                                          --                                  \
-                                         --bundle LAMP                       \
-                                         --branch   stable                   \
-                                         --hostname host.edwardsmark.info    \
+                                         --bundle    LAMP                    \
+                                         --branch    stable                  \
+                                         --hostname  host.edwardsmark.info   \
                                          --yes                               \
                                                                              ;
 
