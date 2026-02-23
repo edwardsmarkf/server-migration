@@ -117,7 +117,18 @@ bash -vx  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.bsh       
      #                        #
      ##########################
 
-bash -vx  ~/server-migration/clamav/clamav.bsh                     >  ~/server-migration/clamav/clamav.bsh     2>&1 ;
+bash -vx  ~/server-migration/clamav/clamav.bsh                     >  ~/server-migration/clamav/clamav.bsh.log     2>&1 ;
+
+
+     ##########################
+     #                        #
+     #    m a r i a d b       #
+     #                        #
+     ##########################
+
+bash -vx  ~/server-migration/mariadb/00_mariadb-upgrade.bsh                 >  ~/server-migration/clamav/00_mariadb-upgrade.bsh.log     2>&1 ;
+mariadb  --verbose     <    ~/server-migration/mariadb/05_create_db_test.sql  ;
+
 
 
      ##########################
