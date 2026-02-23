@@ -16,3 +16,5 @@ WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MA
 CREATE DATABASE IF NOT EXISTS `testDb`                  ;
 
 GRANT ALL PRIVILEGES ON `testDb`.* TO 'testUser'@'localhost'    ;
+
+SELECT `User`, `Host` FROM `mysql`.`user`;
