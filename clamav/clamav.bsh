@@ -24,6 +24,7 @@ DatabaseCustomURL http://sigs.interserver.net/shell.ldb
 DatabaseCustomURL http://sigs.interserver.net/whitelist.fp
 END_OF_FRESHCLAM
 
+tail -10   /etc/freshclam.conf ;
 
 #####end clamav ###############
 
