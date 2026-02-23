@@ -64,7 +64,7 @@ bash  -vx  ~/server-migration/webmin/csf.bsh   >  ~/server-migration/webmin/csf.
      #                 #
      ################### 
 
-bash  -vx  ~/server-migration/php/Master_Installer.bsh       >  ~/server-migration/php/Master_Installer.bsh.log ;
+bash  -vx  ~/server-migration/php/Master_Installer.bsh       >  ~/server-migration/php/Master_Installer.bsh.log   2>&1 ;
 
 
      ####################
@@ -73,7 +73,7 @@ bash  -vx  ~/server-migration/php/Master_Installer.bsh       >  ~/server-migrati
      #                  #
      #################### 
 
-bash  -vx  ~/server-migration/perl/Master_Installer.bsh       >  ~/server-migration/perl/Master_Installer.bsh.log ;
+bash  -vx  ~/server-migration/perl/Master_Installer.bsh       >  ~/server-migration/perl/Master_Installer.bsh.log   2>&1 ;
 
 
      ##########################
@@ -82,7 +82,7 @@ bash  -vx  ~/server-migration/perl/Master_Installer.bsh       >  ~/server-migrat
      #                        #
      ##########################
 
-bash -vx  ~/server-migration/bash-misc/mailx-postfix.bsh
+bash -vx  ~/server-migration/bash-misc/mailx-postfix.bsh      >  ~/server-migration/bash-misc/mailx-postfix.bsh.log  2>&1 ;
 
 
 
@@ -93,9 +93,17 @@ bash -vx  ~/server-migration/bash-misc/mailx-postfix.bsh
      #                        #
      ##########################
 
-bash -vx  ~/server-migration/node/bash-js.bsh ;
+bash -vx  ~/server-migration/node/bash-js.bsh                     >  ~/server-migration/node/bash-js.bsh.log   2>&1  ;
 
 
+
+     ##########################
+     #                        #
+     #     c l a m a v        #
+     #                        #
+     ##########################
+
+bash -vx  ~/server-migration/clamav/clamav.bsh                     >  ~/server-migration/clamav/clamav.bsh     2>&1 ;
 
 
      ##########################
