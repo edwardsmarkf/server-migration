@@ -12,6 +12,8 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
 ###   https://unix.stackexchange.com/questions/499729/how-can-i-add-lines-into-my-sudoers-file
 cat  <<END  | sudo EDITOR='tee --append' visudo ;
+
+
 ##  $(date;) --  added by ${thisScript}                          
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /usr/sbin/csf
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/sh
