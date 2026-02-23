@@ -11,14 +11,17 @@
 
 1)  cd ; dnf --assumeyes update ;  dnf  --assumeyes upgrade  ;   dnf   clean all  ;   dnf  --assumeyes  install git  && git clone  https://github.com/edwardsmarkf/server-migration  ;
 
-2)  cd  ~/server-migration  ; bash -vx    ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log   2>&1  &
+2)  cd  ~/server-migration  ; bash -vx    ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log   2>&1  ;  this has to run in the FOREGROUND because of webmin!
 
 3) 
 tar --create --gunzip --verbose  --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/        ;   ## on OLD server! 
 tar --create --gunzip --verbose  --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/     ;   ## on OLD server!
 tar --create --gunzip            --file=/home/mark/home.tar.gz                /home/                  ;   ## on OLD server!
 
+
 dnf  --assumeyes  install sshpass  ;   sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp   mark@162.220.165.228  ;   ## grab stuff from OLD server!
+rm -Rf  /home/mark/usr_local_bash.tar.gz   /home/mark/usr_local_lib_php.tar.gz     /home/mark/home.tar.gz  ;  ## on OLD server!
+
 mkdir  --verbose  /usr/local/bash/      ;
 mkdir  --verbose  /usr/local/lib/php/   ;
 
