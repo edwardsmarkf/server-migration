@@ -10,6 +10,11 @@
 
 2)  cd  ~/server-migration  ; bash -vx    ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log   2>&1  &
 
+3)  dnf  --assumeyes  install sshpass  ;   sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp        mark@162.220.165.228  ;
+
+
+
+
 
 3)  virtualmin
             #######################3)  webmin/virtualmin/csf 
