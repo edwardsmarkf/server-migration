@@ -6,7 +6,7 @@
 dnf install --assumeyes  clamav clamd clamav-update ;
 
 ## make SURE clamav is installed:
-clamscan --version ;
+                                           ################### clamscan --version ;  trouble with the 'path'...!
 /usr/bin/clamscan --version ;
 
 ## dont forget to change 'SERVER-NAME-HERE' ...!
