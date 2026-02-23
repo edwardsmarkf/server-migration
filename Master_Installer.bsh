@@ -129,6 +129,10 @@ bash -vx  ~/server-migration/clamav/clamav.bsh                     >  ~/server-m
 bash -vx  ~/server-migration/mariadb/00_mariadb-upgrade.bsh                 >  ~/server-migration/clamav/00_mariadb-upgrade.bsh.log     2>&1 ;
 mariadb  --verbose     <    ~/server-migration/mariadb/05_create_db_test.sql  ;
 
+perl  ~/server-migration/mariadb/05_test_perl_connection.pl  ;
+
+php   ~/server-migration/mariadb/05_test_php_connection.php  ;
+
 
 
      ##########################
