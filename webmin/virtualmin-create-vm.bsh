@@ -1,7 +1,6 @@
-## 2015-05-09:  (see domain n
-
-
-
+#! /bin/bash  -w
+#
+#    virtualmin-create-vm.bsh        2026-02-23
 
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  accentreduction.online    --dir --unix  --dns  --web --ssl --pass {} '  ;
 
@@ -21,6 +20,7 @@ openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  slrh.o
 
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  virtualaska.com           --dir --unix  --dns  --web --ssl --pass {} '  ; 
 
+exit;
 
 
 
