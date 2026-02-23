@@ -52,9 +52,12 @@ sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh)"  \
                                          --yes                               \
                                                                              ;
 
-bash -vx   ~/server-migration/webmin/virtualmin.bsh  >  ~/server-migration/webmin/virtualmin.bsh.log  2>&1  ;
+bash -vx   ~/server-migration/webmin/virtualmin.bsh             >  ~/server-migration/webmin/virtualmin.bsh.log            2>&1  ;
 
-bash  -vx  ~/server-migration/webmin/csf.bsh   >  ~/server-migration/webmin/csf.bsh.log   2>&1  ;
+bash  -vx  ~/server-migration/webmin/csf.bsh                    >  ~/server-migration/webmin/csf.bsh.log                   2>&1  ;
+
+bash  -vx  ~/server-migration/webmin/virtualmin-create-vm.bsh   >  ~/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
+
 
 
 
