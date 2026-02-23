@@ -1,6 +1,6 @@
 #!  /bin/bash
 #
-#   webmin-mariadb.bsh    2020-08-23
+#   virtualmin.bsh    2020-08-23
 #   
 #   unfortunatly, webmin-virtualmin appears to "insist" on installing MariaDB 10.3 - so the easiest
 #   workaround is to just let it install 10.3, then remove it and install 10.5
