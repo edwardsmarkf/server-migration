@@ -14,8 +14,8 @@
 2)  cd  ~/server-migration  ; bash -vx    ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log   2>&1  &
 
 3) 
-tar --create --gunzip --verbose  --file=bash.tar.gz      /usr/local/bash/  ;   ## on OLD server! 
-tar --create --gunzip --verbose  --file=home.tar.gz      /home/            ;   ## on OLD server!
+tar --create --gunzip --verbose  --file=/home/mark/bash.tar.gz      /usr/local/bash/  ;   ## on OLD server! 
+tar --create --gunzip --verbose  --file=/home/mark/home.tar.gz      /home/            ;   ## on OLD server!
 dnf  --assumeyes  install sshpass  ;   sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp   mark@162.220.165.228  ;   ## grab stuff from OLD server!
 
 
