@@ -20,7 +20,7 @@ chmod  --verbose +x /usr/local/bin/composer ;
 
 useradd fakephpuser ;
 su fakephpuser --command "/usr/local/bin/composer --version ; "    ;
-userdel fakephpuser ;
+                       #####   userdel fakephpuser ;
 
 exit 1;
 
