@@ -17,7 +17,7 @@ comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /usr/sbin/csf
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/sh
 END
 
-exit.
+exit;
 
 
 
