@@ -79,13 +79,13 @@ bash  -vx  ~/server-migration/php/Master_Installer.bsh       >  ~/server-migrati
 bash  -vx  ~/server-migration/perl/Master_Installer.bsh       >  ~/server-migration/perl/Master_Installer.bsh.log   2>&1 ;
 
 
-     ##########################
-     #                        #
-     #     p o s t f i x      #
-     #                        #
-     ##########################
+     ########################################
+     #                                      #
+     #    s - n a i l - p o s t f i x       #
+     #                                      #
+     ########################################
 
-bash -vx  ~/server-migration/bash-misc/mailx-postfix.bsh      >  ~/server-migration/bash-misc/mailx-postfix.bsh.log  2>&1 ;
+bash -vx  ~/server-migration/bash-misc/s-nail-postfix.bsh      >  ~/server-migration/bash-misc/s-nail-postfix.bsh.log  2>&1 ;
 
 
 
@@ -100,11 +100,11 @@ bash -vx  ~/server-migration/node/bash-js.bsh                     >  ~/server-mi
 
 
 
-     ##########################
-     #                        #
-     #    h t t p c o n f     #
-     #                        #
-     ##########################
+     ############################
+     #                          #
+     #    h t t p . c o n f     #
+     #                          #
+     ############################
 
 bash -vx  ~/server-migration/httpd.conf/apache.bsh                          >  ~/server-migration/httpd.conf/apache.bsh.log                          2>&1  ;
 bash -vx  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh       >  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log   2>&1  ;
