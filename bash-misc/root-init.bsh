@@ -7,9 +7,12 @@
 ####################################
 
 #   2020-01-15 - initial writing, moved from README
+#   2026-002-24 -- created /etc/bashrc appends and added better script documentation
 
-thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
+
+
+thisScript=$(readlink -f "${BASH_SOURCE[0]}")  ;  ## this will be included in comments in every edited script
 
 
 
