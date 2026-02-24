@@ -36,7 +36,7 @@ cat ~/.vimrc ;
 #   . b a s h r c      #
 #                      #
 ########################
-/
+
 cat  <<END_OF_BASHRC >>  ~/.bashrc  ;
 
 ### added by /server-migration/root-init.bsh
@@ -68,6 +68,17 @@ END_OF_BASHRC
 cat  ~/.bashrc ;
 
 
+################################
+#                              #
+#   / e t c / b a s h r c      #
+#                              #
+################################
+
+cat  <<END_OF_ETC_BASHRC >>  /etc/bashrc  ;
+
+export PATH=$PATH:/usr/local/bin/    ;   ## 
+
+END_OF_ETC_BASHRC
 
 ####################################
 #                                  #
