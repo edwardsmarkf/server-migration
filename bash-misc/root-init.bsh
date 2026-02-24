@@ -11,6 +11,8 @@
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
 
+
+
 ###################
 #                 #
 #  . v i m r c    #
@@ -26,7 +28,7 @@ set tabstop=8           "   2016-02-19 from ‘initial setup’
 set shiftwidth=8        "   2016-02-19 from ‘initial setup’
 set history=10000       "   2016-02-19 from ‘initial setup’
 syntax enable;          "   2016-02-19 from ‘initial setup’
-" end added by /server-migration/root-init.bsh
+"  ##  $(date;) --  end added by ${thisScript} 
 
 END_OF_VIMRC
 cat ~/.vimrc ;
@@ -46,14 +48,7 @@ cat  <<END_OF_BASHRC >>  ~/.bashrc  ;
 echo ‘Welcome to NEW-SERVER-NAME-GOES-HERE -- setting vi as your default editor’;
 echo -e "\nSetting custom values in .bashrc\n\n" ## 2018-02-21
 
-
-
 export LD_LIBRARY_PATH="/usr/local/lib/"                       ;      ## 2016-04-24
-##export PERL_LOCAL_LIB_ROOT="$PERL_LOCAL_LIB_ROOT:/root/perl5"  ;   ## comment out until AFTER perl install!
-##export PERL_MB_OPT="--install_base /root/perl5"                ;   ## 2020-01-21
-##export PERL_MM_OPT="INSTALL_BASE=/root/perl5"                  ;
-##export PERL5LIB="/root/perl5/lib/perl5:$PERL5LIB"              ;
-##export PATH="/root/perl5/bin:$PATH"                            ;
 
 set  -o  vi;  ## may not do anything since this is running as a shell and wont affect the parent
 alias vi='/usr/bin/vim';  ## 2016-02-19
@@ -108,6 +103,14 @@ END_OF_BASH_PROFILE
 
 cat  ~/.bash_profile ;
 
+exit;
 
+
+## removed from .bashrc   2026-02-24
+##export PERL_LOCAL_LIB_ROOT="$PERL_LOCAL_LIB_ROOT:/root/perl5"  ;   ## comment out until AFTER perl install!
+##export PERL_MB_OPT="--install_base /root/perl5"                ;   ## 2020-01-21
+##export PERL_MM_OPT="INSTALL_BASE=/root/perl5"                  ;
+##export PERL5LIB="/root/perl5/lib/perl5:$PERL5LIB"              ;
+##export PATH="/root/perl5/bin:$PATH"                            ;
 #
 #
