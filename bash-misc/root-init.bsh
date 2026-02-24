@@ -45,7 +45,7 @@ cat  <<END_OF_BASHRC >>  ~/.bashrc  ;
 
 ##  $(date;) --  added by ${thisScript}     
 
-echo ‘Welcome to \\${KVM_NAME} -- setting vi as your default editor’;
+echo 'Welcome to \${KVM_NAME} -- setting vi as your default editor'  ;
 echo -e "\nSetting custom values in .bashrc\n\n" ## 2018-02-21
 
 export LD_LIBRARY_PATH="/usr/local/lib/"                       ;      ## 2016-04-24
