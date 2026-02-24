@@ -8,10 +8,10 @@
 
 ##  ? not needed ???dnf --assumeyes --disableplugin subscription-manager  install epel-release  ;
 
-dnf --assumeyes --disableplugin subscription-manager  install                 \
-                                                       certbot                \
-                                                       python3-certbot-apache \
-                                                                              ;
+dnf --assumeyes   install                 \
+                  certbot                 \
+                  python3-certbot-apache  \
+                                          ;
 
 which certbot ;
 /usr/bin/certbot --version ;
