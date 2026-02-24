@@ -17,7 +17,7 @@
 tar --create --gunzip --verbose  --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/        ;   ## on OLD server! 
 tar --create --gunzip --verbose  --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/     ;   ## on OLD server!
 tar --create --gunzip            --file=/home/mark/home.tar.gz                /home/                  ;   ## on OLD server!
-
+bash -vx    ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;  mv  --verbose  /tmp/*.sql.gz   /home/mark/    ;  ## on OLD server!
 
 dnf  --assumeyes  install sshpass  ;   sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp   mark@162.220.165.228  ;   ## grab stuff from OLD server!
 rm -Rf  /home/mark/usr_local_bash.tar.gz   /home/mark/usr_local_lib_php.tar.gz     /home/mark/home.tar.gz  ;  ## on OLD server!
