@@ -8,6 +8,8 @@
 
 #   2020-01-15 - initial writing, moved from README
 
+thisScript=$(readlink -f "${BASH_SOURCE[0]}");
+
 
 ###################
 #                 #
@@ -17,7 +19,7 @@
 
 
 cat  <<END_OF_VIMRC   >~/.vimrc  ;
-" added by /server-migration/root-init.bsh
+"  ##  $(date;) --  added by ${thisScript} 
 set showmode            "   2016-02-19 from ‘initial setup’
 set showmatch           "   2016-02-19 from ‘initial setup’
 set tabstop=8           "   2016-02-19 from ‘initial setup’
@@ -39,9 +41,9 @@ cat ~/.vimrc ;
 
 cat  <<END_OF_BASHRC >>  ~/.bashrc  ;
 
-### added by /server-migration/root-init.bsh
+##  $(date;) --  added by ${thisScript}     
 
-echo ‘Welcome to KVM276 -- setting vi as your default editor’;
+echo ‘Welcome to NEW-SERVER-NAME-GOES-HERE -- setting vi as your default editor’;
 echo -e "\nSetting custom values in .bashrc\n\n" ## 2018-02-21
 
 
@@ -62,10 +64,13 @@ export PATH
 HISTFILESIZE=250000     ## added by mark 2018-02-21
 HISTSIZE=200000         ## added by mark 2018-02-21
 
-### end added by /server-migration/root-init.bsh
+### $(date;) --  end added by ${thisScript}     
 
 END_OF_BASHRC
 cat  ~/.bashrc ;
+
+
+
 
 
 ################################
@@ -75,10 +80,14 @@ cat  ~/.bashrc ;
 ################################
 
 cat  <<END_OF_ETC_BASHRC >>  /etc/bashrc  ;
-
+##  $(date;) --  added by ${thisScript}
 export PATH=$PATH:/usr/local/bin/    ;   ## 
 
 END_OF_ETC_BASHRC
+
+
+
+
 
 ####################################
 #                                  #
@@ -88,12 +97,12 @@ END_OF_ETC_BASHRC
 
 cat  <<END_OF_BASH_PROFILE   >> ~/.bash_profile ;
 
-### added by /server-migration/root-init.bsh
+##  $(date;) --  added by ${thisScript} 
 PATH=$PATH:$HOME/bin
 export PATH
 HISTFILESIZE=250000     ## added by mark 2013-01-06
 HISTSIZE=200000         ## added by mark 2012-01-10
-### end added by /server-migration/root-init.bsh
+##  $(date;) --  end added by ${thisScript} 
 
 END_OF_BASH_PROFILE
 
