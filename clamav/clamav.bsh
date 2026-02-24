@@ -11,9 +11,9 @@ dnf install --assumeyes  clamav clamd clamav-update ;
 
 mkdir   --verbose   /var/log/clamav/    ;   ### need this to start the log directory !
 
-mv  --verbose   ~/server-migration/clamav/manual_clamscan/     /etc/cron.daily/manual_clamscan  ;  
-chmod  755                                                     /etc/cron.daily/manual_clamscan  ;
-cat                                                            /etc/cron.daily/manual_clamscan  ;  # display the results
+mv  --parents --verbose   ~/server-migration/clamav/manual_clamscan/     /etc/cron.daily/manual_clamscan  ;  
+chmod  755                                                               /etc/cron.daily/manual_clamscan  ;
+cat                                                                      /etc/cron.daily/manual_clamscan  ;  # display the results
 
 #       2026-02-21      - confirmed this is still required for interserver
 cat   >>  /etc/freshclam.conf  <<END_OF_FRESHCLAM  ;  ###  2019-06-19 - add theses:
