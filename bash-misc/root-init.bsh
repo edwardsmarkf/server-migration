@@ -56,11 +56,11 @@ export LD_LIBRARY_PATH="/usr/local/lib/"                       ;      ## 2016-04
 set  -o  vi;  ## may not do anything since this is running as a shell and wont affect the parent
 alias vi='/usr/bin/vim';  ## 2016-02-19
 
-PATH=$PATH:$HOME/bin:/usr/local/bin    ## added by mark 2018-02-21  -- added /usr/local/bin 2026-02-25
+PATH=$PATH:$HOME/bin:/usr/local/bin;    ## added by mark 2018-02-21  -- added /usr/local/bin 2026-02-25
 
-export PATH
-HISTFILESIZE=250000     ## added by mark 2018-02-21
-HISTSIZE=200000         ## added by mark 2018-02-21
+export PATH         ;
+HISTFILESIZE=250000 ;    ## added by mark 2018-02-21
+HISTSIZE=200000     ;    ## added by mark 2018-02-21
 
 ### $(date;) --  end added by ${thisScript}     
 
