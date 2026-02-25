@@ -19,6 +19,6 @@ my $query = $dbh->prepare('SELECT VERSION();') or die 'could not prepare';
 $query->execute();
 
 my @resultArray =  $query->fetch()      ;
-print $resultArray[0][0] . "\n"         ;
+print 'perl mariadb version: ' . $resultArray[0][0] . "\n"         ;
 
 $query->finish();
