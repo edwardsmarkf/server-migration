@@ -47,10 +47,10 @@ if [ "${emailAddress}" != "${emailAddressTMP}" ]; then
    exit;
 fi
 
-read -p 'Please enter crypted password: '       appPassword         ;
+read -p 'Please enter crypted password: '       appPasswordInput    ;
 read -p 'Please reenter crypted password: '     appPasswordTMP      ;
 
-if [ "${appPassword}" != "${appPasswordTMP}" ]; then
+if [ "${appPasswordInput}" != "${appPasswordTMP}" ]; then
    echo 'crypted password does not match!';
    exit;
 fi
@@ -68,12 +68,7 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}";  );
 
 #
 
-if [[  -n  ${appPassword}  ]] ;then
-    echo "Password properly set, continuing.....!";
-else
-    echo "fill in the password!";
-    exit;
-fi
+applicationPassword=$(echo $appPasswordInput | sed -e 's/ //g';)
 
 dnf  --assumeyes   install      \
           postfix               \
@@ -85,7 +80,7 @@ cat  <<END_OF_DOT_MAILRC >  /root/.mailrc  ;
 
     ####   $(date;) --  added by ${thisScript}
     set v15-compat
-    set mta=smtps://${emailAddress/@/%40}:${appPassword}@smtp.gmail.com:465
+    set mta=smtps://${emailAddress/@/%40}:${applicationPassword}@smtp.gmail.com:465
     set smtp-auth=login
     set from="NoReply <${emailAddress}>"
     set tls-verify=ignore
@@ -93,7 +88,7 @@ cat  <<END_OF_DOT_MAILRC >  /root/.mailrc  ;
 
     account gmailSMTP-noreply {
             set v15-compat
-            set mta=smtps://${emailAddress/@/%40}:${appPassword}@smtp.gmail.com:465
+            set mta=smtps://${emailAddress/@/%40}:${applicationPassword}@smtp.gmail.com:465
             set smtp-auth=login
             set from="NoReply <${emailAddress}>"
             set tls-verify=ignore
