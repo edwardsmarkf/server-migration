@@ -19,7 +19,7 @@ try {
         $stmt = $dbh->prepare("SELECT VERSION();");
 
         $stmt->execute();
-        echo  implode(' ', $stmt->fetch()) . "\n"       ;
+        echo  'php mariadb version: ' . implode(' ', $stmt->fetch()) . "\n"       ;
         
         /*** close the database connection ***/
         $dbh = null;
