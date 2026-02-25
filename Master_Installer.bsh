@@ -81,14 +81,6 @@ bash  -vx  ~/server-migration/php/Master_Installer.bsh       >  ~/server-migrati
 bash  -vx  ~/server-migration/perl/Master_Installer.bsh       >  ~/server-migration/perl/Master_Installer.bsh.log   2>&1 ;
 
 
-     ########################################
-     #                                      #
-     #    s - n a i l - p o s t f i x       #
-     #                                      #
-     ########################################
-
-bash -vx  ~/server-migration/bash-misc/s-nail-postfix.bsh      >  ~/server-migration/bash-misc/s-nail-postfix.bsh.log  2>&1 ;
-
 
 
 
@@ -163,6 +155,19 @@ which ffprobe;   ##  /usr/local/bin/ffprobe
 
  su fakeperluser --command "perl  -W  -e  'use File::Basename ; ' ;  "        ;
 
-
+echo 'be sure to run   bash   -vx  ~/server-migration/bash-misc/s-nail-postfix.bsh;  '
 
 exit;
+
+
+
+
+     ########################################
+     #                                      #
+     #    s - n a i l - p o s t f i x       #
+     #                                      #
+     ########################################
+
+        ########        bash -vx  ~/server-migration/bash-misc/s-nail-postfix.bsh      >  ~/server-migration/bash-misc/s-nail-postfix.bsh.log  2>&1 ;
+
+
