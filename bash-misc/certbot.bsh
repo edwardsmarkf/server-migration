@@ -3,6 +3,7 @@
 #         2021-07-20
 #
 #  2025-07-29 -- added  "--disableplugin subscription-manager"
+#  2026-02-25 -- added  start certbot-renew.timer
 #
 ## to install certbot:
 
@@ -15,6 +16,8 @@ dnf --assumeyes   install                 \
 
 which certbot ;
 /usr/bin/certbot --version ;
+
+systemctl start certbot-renew.timer  ;   ## 2026-02-25
 
 cat << EOF ;
 ## certbot use examples:
