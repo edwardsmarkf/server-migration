@@ -10,21 +10,27 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
 /usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_COMPTONPESLONLINE  ;
 
-/SSLCertificateFile \/home\/comptonpeslonline.com\/ssl.cert/i                                                   \\
+/RewriteRule .* https:\/\/comptonpeslonline.com:10000\//{N;N;N;/SSLEngine on/a                                  \\
                                                                                                                 \\
-    ##  $(date;) --  added by ${thisScript}                                                                     \\
+    ##  $(date;) --  begin add by ${thisScript}                                                                 \\
     SetEnv  AUDIOFILES  voicefiles                                                                              \\
     SetEnv  AUDIOPRACTICE comptonPractice/user-recorded-audio-files                                             \\
+    ##  $(date;) --  end add by ${thisScript}                                                                   \\
+
+}
 
 SED_SCRIPT_COMPTONPESLONLINE
 
 /usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_AJCOMPTONPESL  ;
 
-/SSLCertificateFile \/home\/ajcomptonpesl.com\/ssl.cert/i                                                   \\
+/RewriteRule .* https:\/\/ajcomptonpesl.com:10000\//{N;N;N;/SSLEngine on/a                                  \\
                                                                                                             \\
-    ##  $(date;) --  added by ${thisScript}                                                                 \\
+    ##  $(date;) --  begin add by ${thisScript}                                                             \\
 ##  PRACTICE_PROGRAM_PRODUCT_ID  -- does this also need to be defined in the :80 ?????                      \\
     SetEnv  PRACTICE_PROGRAM_PRODUCT_ID   "4545V"                                                           \\
+    ##  $(date;) --  end add by ${thisScript}                                                               \\
+
+}
 
 SED_SCRIPT_AJCOMPTONPESL
 
