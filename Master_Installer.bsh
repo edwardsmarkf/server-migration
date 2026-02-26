@@ -100,8 +100,8 @@ bash -vx  ~/server-migration/node/bash-js.bsh                     >  ~/server-mi
      #                          #
      ############################
 
-bash -vx  ~/server-migration/httpd.conf/apache.bsh                          >  ~/server-migration/httpd.conf/apache.bsh.log                          2>&1  ;
 bash -vx  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh       >  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log   2>&1  ;
+bash -vx  ~/server-migration/httpd.conf/apache.bsh                          >  ~/server-migration/httpd.conf/apache.bsh.log                      2>&1  ;
 
 
 
