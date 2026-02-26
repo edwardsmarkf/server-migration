@@ -12,7 +12,6 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
                                                                                                                 \\
        ##  $(date;) --  begin add by ${thisScript}                                                              \\
                                                                                                                 \\
-## the following was added from KVM276 on 2021-08-02                                                            \\
     ProxyVia On                                                                                                 \\
     ProxyRequests Off                                                                                           \\
     ## changed from Off to On  2019-12-04                                                                       \\
@@ -59,6 +58,8 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
     \</Location>                                                                                                \\
                                                                                                                 \\
        ##  $(date;) --  end add by ${thisScript}                                                                \\
+
+}
 
 SED_SCRIPT
 
