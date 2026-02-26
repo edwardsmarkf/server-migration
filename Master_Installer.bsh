@@ -158,9 +158,14 @@ bash -vx  ~/server-migration/mariadb/05_test_php_connection.bsh  ;
 
 echo <<END
 be sure to run or look at the following:
+
   1)    get new gmail-password and run:   bash   -vx  ~/server-migration/bash-misc/s-nail-postfix.bsh;  '
-  2)    get from interserver:  ~/server-migration/webmin/etc_resolv.conf
-  3)    include new IP ## with stripe:   https://www.edwardsmark.com/textpattern/articles/265/associate-stripe-api-key-with-specific-ip-number
+
+  2)    include new IP ## with stripe:   https://www.edwardsmark.com/textpattern/articles/265/associate-stripe-api-key-with-specific-ip-number
+
+END
+
+
 exit;
 
 
