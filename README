@@ -21,11 +21,11 @@ nohup   bash -vx  ~/do-all-the-work.bsh >  ~/do-all-the-work.bsh.log  2>&1  &
     ####  ????this has to run in the FOREGROUND because of webmin!
 
 2) 
-tar --create --gunzip --verbose  --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/        ;   ## on OLD server! 
-tar --create --gunzip --verbose  --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/     ;   ## on OLD server!
-tar --create --gunzip --verbose  --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt        ;   ## on OLD server!
-tar --create --gunzip            --file=/home/mark/home.tar.gz                /home/                  ;   ## on OLD server!
-bash -vx    ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;  mv  --verbose  /tmp/*.sql.gz   /home/mark/    ;  ## on OLD server!
+tar --create --gunzip --verbose  --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;   ## on OLD server! 
+tar --create --gunzip --verbose  --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;   ## on OLD server!
+tar --create --gunzip --verbose  --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;   ## on OLD server!
+tar --create --gunzip            --file=/home/mark/home.tar.gz                /home/                     ;   ## on OLD server!
+bash -vx   /usr/local/bash/mariadbDumpAllDatabases.bsh  ;  mv  --verbose  /tmp/*.sql.gz   /home/mark/    ;  ## on OLD server!
 
 ##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
 
