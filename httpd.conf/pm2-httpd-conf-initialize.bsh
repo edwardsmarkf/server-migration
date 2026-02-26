@@ -64,6 +64,8 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
 SED_SCRIPT
 
+apachectl configtest;
+
 apachectl restart;
 
 exit;
