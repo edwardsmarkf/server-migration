@@ -1,0 +1,19 @@
+#!  /bin/bash
+
+  ##
+
+##   etc_resolv_conf.bsh      2026-02-26
+
+cat  <<END  >>  /etc/resolv.conf ;
+#
+#
+#    2026-02-26 as per  interserver Ticket: RLA-904-97126
+#
+64.20.34.50
+nameserver 8.8.8.8
+END
+
+cat   /etc/resolv.conf ;
+
+
+exit;
