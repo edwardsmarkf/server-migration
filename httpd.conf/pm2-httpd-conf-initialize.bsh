@@ -41,7 +41,7 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
                                                                                                                 \\
     ## assignments -  (port ## cross-referenced in pm2)                                                         \\
     \<Location /assignments/>                                                                                   \\
-        ProxyPass               http://localhost:20002/  retry=5  disablereuse=on  timeout=600  Keepalive=On    \\
+        ProxyPass               http://localhost:20003/  retry=5  disablereuse=on  timeout=600  Keepalive=On    \\
         ProxyPassReverse        http://localhost:20003/                                                         \\
     \</Location>                                                                                                \\
                                                                                                                 \\
