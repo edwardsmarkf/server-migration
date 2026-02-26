@@ -155,6 +155,9 @@ which ffprobe;   ##  /usr/local/bin/ffprobe
 
  su fakeperluser --command "perl  -W  -e  'use File::Basename ; ' ;  "        ;
 
+bash -vx  ~/server-migration/mariadb/05_test_perl_connection.bsh  ;
+bash -vx  ~/server-migration/mariadb/05_test_php_connection.bsh  ;
+
 echo 'be sure to run   bash   -vx  ~/server-migration/bash-misc/s-nail-postfix.bsh;  '
 
 exit;
