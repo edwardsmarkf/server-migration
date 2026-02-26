@@ -147,7 +147,7 @@ which ffprobe;   ##  /usr/local/bin/ffprobe
 /usr/local/bin/ffprobe  -version ;  
 
  webmin   -version ;
-
+ fail2ban-client  --version ;
  php  --version ;
 
  perl -v ;
