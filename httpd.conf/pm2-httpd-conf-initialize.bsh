@@ -10,8 +10,9 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
 /RewriteRule .* https:\/\/comptonpeslonline.com:10000\//{N;N;N;/SSLEngine on/a                                  \\
                                                                                                                 \\
-       ##  $(date;) --  begin add by ${thisScript}                                                              \\
+    ##  $(date;) --  begin add by ${thisScript}                                                                 \\
                                                                                                                 \\
+    SSLProxyEngine on                                                                                           \\
     ProxyVia On                                                                                                 \\
     ProxyRequests Off                                                                                           \\
     ## changed from Off to On  2019-12-04                                                                       \\
