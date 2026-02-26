@@ -158,7 +158,10 @@ which ffprobe;   ##  /usr/local/bin/ffprobe
 bash -vx  ~/server-migration/mariadb/05_test_perl_connection.bsh  ;
 bash -vx  ~/server-migration/mariadb/05_test_php_connection.bsh  ;
 
-echo 'be sure to run   bash   -vx  ~/server-migration/bash-misc/s-nail-postfix.bsh;  '
+echo <<END
+be sure to run or look at the following:
+    bash   -vx  ~/server-migration/bash-misc/s-nail-postfix.bsh;  '
+    get from interserver:  ~/server-migration/webmin/etc_resolv.conf
 
 exit;
 
