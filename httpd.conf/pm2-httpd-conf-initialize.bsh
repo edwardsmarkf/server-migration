@@ -8,9 +8,9 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
 /usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT  ;
 
-/SSLCertificateFile \/home\/comptonpeslonline.com\/ssl.cert/i                                                   \\
+/RewriteRule .* https:\/\/comptonpeslonline.com:10000\//{N;N;N;/SSLEngine on/a                                  \\
                                                                                                                 \\
-       ##  $(date;) --  added by ${thisScript}                                                                  \\
+       ##  $(date;) --  begin add by ${thisScript}                                                              \\
                                                                                                                 \\
 ## the following was added from KVM276 on 2021-08-02                                                            \\
     ProxyVia On                                                                                                 \\
@@ -58,6 +58,7 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
         ProxyPassReverse        http://localhost:20005/                                                         \\
     \</Location>                                                                                                \\
                                                                                                                 \\
+       ##  $(date;) --  end add by ${thisScript}                                                                \\
 
 SED_SCRIPT
 
