@@ -32,7 +32,7 @@ bash -vx   /usr/local/bash/mariadbDumpAllDatabases.bsh  ;  mv  --verbose  /tmp/*
 dnf  --assumeyes  install sshpass  ;   
 sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp   mark@162.220.165.228  ;   ## grab stuff from OLD server!
 
-rm -Rf  /home/mark/usr_local_bash.tar.gz   /home/mark/usr_local_lib_php.tar.gz     /home/mark/home.tar.gz   /home/mark/home.tar.gz ;  ## on OLD server!
+rm -Rf  /home/mark/usr_local_bash.tar.gz   /home/mark/usr_local_lib_php.tar.gz     /home/mark/home.tar.gz   /home/mark/home.tar.gz /home/mark/*.sql.gz  ;  ## on OLD server!
 
 mkdir  --verbose  /usr/local/bash/      ;
 mkdir  --verbose  /usr/local/lib/php/   ;
