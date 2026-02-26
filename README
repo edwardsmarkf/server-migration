@@ -27,6 +27,8 @@ tar --create --gunzip --verbose  --file=/home/mark/letsencrypt.tar.gz         /e
 tar --create --gunzip            --file=/home/mark/home.tar.gz                /home/                  ;   ## on OLD server!
 bash -vx    ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;  mv  --verbose  /tmp/*.sql.gz   /home/mark/    ;  ## on OLD server!
 
+##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
+
 dnf  --assumeyes  install sshpass  ;   
 sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp   mark@162.220.165.228  ;   ## grab stuff from OLD server!
 
