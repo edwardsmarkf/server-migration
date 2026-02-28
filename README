@@ -53,6 +53,8 @@ mv  --verbose  ./home/                        /home/                 ;
 
 cat ./crontab.txt  |  crontab   -   ;   #
 
+./server_migration/mariadb/migration/Update create_db_and_users.bsh  PASSWORD  ;
+
 
 
 
