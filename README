@@ -60,7 +60,7 @@ mv  --verbose  ./home/                        /home/                 ;
 cat ./crontab.txt  |  crontab   -   ;   #
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
-~/server_migration/mariadb/migration/Update create_db_and_users.bsh  PASSWORD  ;
+~/server-migration/mariadb/migration/create_db_and_users.bsh  PASSWORD  ;
 
 
 
