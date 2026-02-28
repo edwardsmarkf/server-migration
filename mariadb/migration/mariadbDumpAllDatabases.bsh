@@ -16,6 +16,7 @@ printf "\n\n\nBeginning run of $(readlink -f "${BASH_SOURCE[0]}") !!\n\n";
 
 TMP_WORKFILE=/tmp/mariadb-tmp/                                  ;
 TMP_LOGFILE=/tmp/mysqlbackup-log-error.log                      ;
+TMP_GZIPFILE=/home/mark/mariadb-databases.tar.gz                ;
 
 mkdir  --verbose  ${TMP_WORKFILE} ;
 
@@ -33,9 +34,9 @@ for DATABASE in $(/usr/bin/mysql --skip-column-names   --batch   --host=localhos
         fi;
 done
 
-tar -czvf  /home/mark/mariadb-databases.tar.gz   ${TMP_WORKFILE}/*.sql  ;
+tar -czvf ${TMP_GZIPFILE}   ${TMP_WORKFILE}/*.sql  ;
 
-ls -l  /home/mark/mariadb-databases.tar,gz  ;
+ls -l   ${TMP_GZIPFILE}  ;
 
 rm --verbose  -Rf    ${TMP_WORKFILE} ;
 
