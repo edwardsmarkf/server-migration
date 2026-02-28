@@ -7,7 +7,7 @@
 MARIADB_PASSWORD='BE-SURE-TO-CHANGE-THIS'                          ;
 
 if [ "${MARIADB_PASSWORD}" == 'BE-SURE-TO-CHANGE-THIS' ]; then
-   echo 'main email address does not match!';
+   echo 'change the password!';
    exit;
 fi
 
@@ -40,3 +40,5 @@ rm --verbose  -Rf    ${TMP_WORKFILE} ;
 printf "\n\n\nEnding run of $(readlink -f "${BASH_SOURCE[0]}") !!\n\n";
 
 exit;
+#
+#
