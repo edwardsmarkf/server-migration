@@ -4,7 +4,12 @@
 #       mariadbDumpAllDatabases.bsh     --      2026-02-08
 #
 
-MYSQLPASSWORD='city between ontario and las vegas....!   BE SURE TO CHANGE THIS ! ! ! ! ! ! ! ! !'                          ;
+MARIADB_PASSWORD='BE-SURE-TO-CHANGE-THIS'                          ;
+
+if [ "${MARIADB_PASSWORD}" == 'BE-SURE-TO-CHANGE-THIS' ]; then
+   echo 'main email address does not match!';
+   exit;
+fi
 
 
 printf "\n\n\nBeginning run of $(readlink -f "${BASH_SOURCE[0]}") !!\n\n";
@@ -17,11 +22,11 @@ mkdir  --verbose  ${TMP_WORKFILE} ;
 
 # empty file and start out with date
 
-for DATABASE in $(/usr/bin/mysql --skip-column-names   --batch   --host=localhost  --user=root --password=${MYSQLPASSWORD} -e "show databases;"); do \
+for DATABASE in $(/usr/bin/mysql --skip-column-names   --batch   --host=localhost  --user=root --password=${MARIADB_PASSWORD} -e "show databases;"); do \
         if [ "${DATABASE}" != "information_schema" -a "${DATABASE}" != "mysql" -a "${DATABASE}" != "performance_schema" ]; then
                 echo $DATABASE ;
 
-                /usr/bin/mariadb-dump --extended-insert=FALSE --log-error=${TMP_LOGFILE} --skip-lock-tables --host=localhost --port=3306 --user=root  --password=${MYSQLPASSWORD}   $DATABASE  \
+                /usr/bin/mariadb-dump --extended-insert=FALSE --log-error=${TMP_LOGFILE} --skip-lock-tables --host=localhost --port=3306 --user=root  --password=${MARIADB_PASSWORD}   $DATABASE  \
                  > ${TMP_WORKFILE}/${DATABASE}.sql                    ;
 
                 ls -l  ${TMP_WORKFILE}/${DATABASE}.sql                    ;
