@@ -34,11 +34,13 @@ for DATABASE in $(/usr/bin/mysql --skip-column-names   --batch   --host=localhos
         fi;
 done
 
+ls -l   ${TMP_WORKFILE}/*.sql                      ;
+
 tar -czvf ${TMP_GZIPFILE}   ${TMP_WORKFILE}/*.sql  ;
 
-ls -l   ${TMP_GZIPFILE}  ;
+ls -l   ${TMP_GZIPFILE}                            ;
 
-rm --verbose  -Rf    ${TMP_WORKFILE} ;
+rm --verbose  -Rf    ${TMP_WORKFILE}               ;
 
 printf "\n\n\nEnding run of $(readlink -f "${BASH_SOURCE[0]}") !!\n\n";
 
