@@ -47,7 +47,7 @@ mv  --verbose  ./usr/local/bash/    /usr/local ;
 
 mv  --verbose  ./usr/local/lib/php/   /usr/local/lib ;
 
-cat crontab.txt  |  crontab  -e  -   ;   #
+cat crontab.txt  |  crontab   -   ;   #
 
 
 3)  virtualmin
