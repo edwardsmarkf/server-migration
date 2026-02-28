@@ -26,13 +26,16 @@ crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt  
 tar --create --gunzip --verbose  --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;   ## on OLD server! 
 tar --create --gunzip --verbose  --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;   ## on OLD server!
 tar --create --gunzip --verbose  --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;   ## on OLD server!
-tar --create --gunzip            --file=/home/mark/home.tar.gz                /home/                     ;   ## 18,185,977,856 on OLD server!
+tar --create --gunzip            --file=/home/mark/home.tar.gz                /home/                     ;   ##  on OLD server!
 bash -vx   /usr/local/bash/mariadbDumpAllDatabases.bsh  ;  mv  --verbose  /tmp/*.sql.gz   /home/mark/    ;   ## on OLD server!
 
 ##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
 
-###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
+
 dnf  --assumeyes  install sshpass  ;   
+
+mkdir  /tmp/old_server_data && cd  $_  ;
+                                                ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
 sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
    ##  ls -lh  ;  human readable file size
 
