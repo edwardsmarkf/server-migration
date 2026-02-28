@@ -23,6 +23,8 @@ nohup   bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
 2) 
 
+cat  >  ./mariadbDumpAllDatabases.bsh  ;   ## get from  server-migration/mariadb/mariadbDumpAllDatabases.bsh
+
 crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                           ;   ## on OLD server!
 tar --create --gunzip --verbose  --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;   ## on OLD server! 
 tar --create --gunzip --verbose  --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;   ## on OLD server!
