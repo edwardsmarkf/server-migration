@@ -46,11 +46,16 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
                                                    ## mkdir  --verbose  /usr/local/lib/php/   ;
 gzip --decompress  *.gz  ;
 
-mv  --verbose  ./usr/local/bash/    /usr/local ;
+mv  --verbose  ./usr/local/bash/              /usr/local             ;
+mv  --verbose  ./usr/local/lib/php/           /usr/local/lib         ;
+mv  --verbose  /home/                         /home-RENAMED/         ;
+mv  --verbose  ./home/                        /home/                 ;
 
-mv  --verbose  ./usr/local/lib/php/   /usr/local/lib ;
+cat ./crontab.txt  |  crontab   -   ;   #
 
-cat crontab.txt  |  crontab   -   ;   #
+
+
+
 
 
 3)  virtualmin
