@@ -32,7 +32,7 @@ bash -vx   /usr/local/bash/mariadbDumpAllDatabases.bsh  ;  mv  --verbose  /tmp/*
 ##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
 
 dnf  --assumeyes  install sshpass  ;   
-sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp   mark@162.220.165.228  ;   ## grab stuff from OLD server!
+sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp  StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
 
 rm -Rf  /home/mark/crontab.txt  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ;  ## on OLD server!
 
