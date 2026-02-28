@@ -49,7 +49,7 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 on new server!
                                                    ## mkdir  --verbose  /usr/local/bash/      ;
                                                    ## mkdir  --verbose  /usr/local/lib/php/   ;
-gzip --decompress  *.gz  ;
+gzip --decompress  *.gz  ;     ### you MAY run into space issues on the new server!
 
 mv  --verbose  ./usr/local/bash/              /usr/local             ;
 mv  --verbose  ./usr/local/lib/php/           /usr/local/lib         ;
