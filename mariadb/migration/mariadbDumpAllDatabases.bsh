@@ -38,7 +38,7 @@ ls -l  --human-readable ${TMP_WORKFILE}                            ;
 
 tar -czvf ${TMP_GZIPFILE}   ${TMP_WORKFILE}/*.sql                  ;
 
-ls -l --human-readaboe   ${TMP_GZIPFILE}                           ;
+ls -l --human-readable   ${TMP_GZIPFILE}                           ;
 
 rm --verbose  -Rf    ${TMP_WORKFILE}                               ;
 
