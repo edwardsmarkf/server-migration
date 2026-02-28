@@ -4,8 +4,15 @@
 
 ##   etc_resolv_conf.bsh      2026-02-26
 
+
+
+thisScript=$(readlink -f "${BASH_SOURCE[0]}")  ;  ## this will be included in comments in every edited script
+
+
+
 cat  <<END  >>  /etc/resolv.conf ;
 #
+#  ##  $(date;) --  added by ${thisScript} 
 #
 #    2026-02-26 as per  interserver Ticket: RLA-904-97126
 #
