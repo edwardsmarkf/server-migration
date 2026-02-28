@@ -50,6 +50,7 @@ on new server!
                                                    ## mkdir  --verbose  /usr/local/bash/      ;
                                                    ## mkdir  --verbose  /usr/local/lib/php/   ;
 gzip --decompress  *.gz  ;     ### you MAY run into space issues on the new server!
+tar -xf  *.tar           ;
 
 mv  --verbose  ./usr/local/bash/              /usr/local             ;
 mv  --verbose  ./usr/local/lib/php/           /usr/local/lib         ;
