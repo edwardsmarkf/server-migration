@@ -34,7 +34,7 @@ for DATABASE in $(/usr/bin/mysql --skip-column-names   --batch   --host=localhos
         fi;
 done
 
-ls -l   ${TMP_WORKFILE}/*.sql                      ;
+ls -l   ${TMP_WORKFILE}                            ;
 
 tar -czvf ${TMP_GZIPFILE}   ${TMP_WORKFILE}/*.sql  ;
 
