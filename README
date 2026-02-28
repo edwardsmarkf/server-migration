@@ -39,7 +39,7 @@ mkdir  /tmp/old_server_data && cd  $_  ;
 sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
    ##  ls -lh  ;  human readable file size
 
-rm -Rf  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ;  ## on OLD server!
+rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ;  ## on OLD server!
 
 
                                                    ## mkdir  --verbose  /usr/local/bash/      ;
