@@ -32,19 +32,21 @@ tar --create --gunzip --verbose  --file=/home/mark/letsencrypt.tar.gz         /e
 tar --create --gunzip            --file=/home/mark/home.tar.gz                /home/                     ;   ##  33.7 gig!  on OLD server!
 bash -vx           ./mariadbDumpAllDatabases.bsh  ;  mv  --verbose  /tmp/*.sql.gz   /home/mark/    ;   ## on OLD server!
 
-##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
 
+on new server:
 
 dnf  --assumeyes  install sshpass  ;   
 
 mkdir  /tmp/old_server_data && cd  $_  ;
+##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
                                                 ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
 sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
    ##  ls -lh  ;  human readable file size
 
+## on old server!
 rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ;  ## on OLD server!
 
-
+on new server!
                                                    ## mkdir  --verbose  /usr/local/bash/      ;
                                                    ## mkdir  --verbose  /usr/local/lib/php/   ;
 gzip --decompress  *.gz  ;
