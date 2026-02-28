@@ -4,7 +4,7 @@
 #       mariadbDumpAllDatabases.bsh     --      2026-02-08
 #
 
-MARIADB_PASSWORD='BE-SURE-TO-CHANGE-THIS'                          ;
+MARIADB_PASSWORD='BE-SURE-TO-CHANGE-THIS'                          ;  ##  city between Ontario and Las Vegas....!!
 
 if [ "${MARIADB_PASSWORD}" == 'BE-SURE-TO-CHANGE-THIS' ]; then
    echo 'change the password!';
