@@ -34,12 +34,17 @@ bash -vx   /usr/local/bash/mariadbDumpAllDatabases.bsh  ;  mv  --verbose  /tmp/*
 ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
 dnf  --assumeyes  install sshpass  ;   
 sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
+   ##  ls -lh  ;  human readable file size
 
 rm -Rf  /home/mark/crontab.txt  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ;  ## on OLD server!
 
-## mkdir  --verbose  /usr/local/bash/      ;
+
+                                                   ## mkdir  --verbose  /usr/local/bash/      ;
+                                                   ## mkdir  --verbose  /usr/local/lib/php/   ;
+gzip --decompress  *.gz  ;
+
 mv  --verbose  ./usr/local/bash/    /usr/local ;
-## mkdir  --verbose  /usr/local/lib/php/   ;
+
 mv  --verbose  ./usr/local/lib/php/   /usr/local/lib ;
 
 
