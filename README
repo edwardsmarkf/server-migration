@@ -50,18 +50,25 @@ on new server!
 gzip --decompress  *.gz  ;     ### you MAY run into space issues on the new server!
 tar -xf  *.tar           ;
 
-mv  --verbose  ./usr/local/bash/              /usr/local             ;
-mv  --verbose  ./usr/local/lib/php/           /usr/local/lib         ;
-mv  --verbose  /home/                         /home-RENAMED/         ;
-mv  --verbose  ./home/                        /home/                 ;
+mv  --verbose  ./usr/local/bash/              /usr/local                ;
+mv  --verbose  ./usr/local/lib/php/           /usr/local/lib            ;
+mv  --verbose  /home/                         /home-RENAMED/            ;
+mv  --verbose  ./home/                        /home/                    ;
 
-mv  --verbose  ./etc/letsencrypt/live         /etc/letsencrypt/live/ ;
+    ##  letsencrypt stuff
+mv  --verbose  ./etc/letsencrypt/live        /etc/letsencrypt/live/     ;
+mv  --verbose  ./etc/letsencrypt/archive/    /etc/letsencrypt/archive/  ;
+mv  --verbose  ./etc/letsencrypt/csr/        /etc/letsencrypt/csr/      ;
+mv  --verbose  ./etc/letsencrypt/keys/       /etc/letsencrypt/keys/     ;
+mv  --verbose  ./etc/letsencrypt/renewal/*   /etc/letsencrypt/renewal/  ;
 
 
 cat ./crontab.txt  |  crontab   -   ;   #
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 bash -vx  ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;  ## edit and add password!
+
+
 
 
 
