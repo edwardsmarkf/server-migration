@@ -45,6 +45,10 @@ sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp  -o StrictHostKeyChecking=no   ma
 rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ;  ## on OLD server!
 
 on new server!
+
+      ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
+bash -vx  ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;  ## edit and add password!
+
                                                    ## mkdir  --verbose  /usr/local/bash/      ;
                                                    ## mkdir  --verbose  /usr/local/lib/php/   ;
 gzip --decompress  *.gz  ;     ### you MAY run into space issues on the new server!
@@ -65,8 +69,47 @@ mv  --verbose  /tmp/old_server_data/etc/letsencrypt/renewal/*   /etc/letsencrypt
 
 cat ./crontab.txt  |  crontab   -   ;   #
 
-      ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
-bash -vx  ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;  ## edit and add password!
+
+
+manually add these to  /etc/httpd/conf/httpd.conf:
+    SSLCertificateFile /home/comptonpeslonline.com/ssl.cert
+    SSLCertificateKeyFile /home/comptonpeslonline.com/ssl.key
+    SSLCertificateChainFile /home/comptonpeslonline.com/ssl.ca
+
+    SSLCertificateFile /home/englishwithoutaccent.com/ssl.cert
+    SSLCertificateKeyFile /home/englishwithoutaccent.com/ssl.key
+    SSLCertificateChainFile /home/englishwithoutaccent.com/ssl.ca
+
+    SSLCertificateFile /home/gordonredwards.com/ssl.cert
+    SSLCertificateKeyFile /home/gordonredwards.com/ssl.key
+    SSLCertificateChainFile /home/gordonredwards.com/ssl.ca
+
+    SSLCertificateFile /home/accentreduction.online/ssl.cert
+    SSLCertificateKeyFile /home/accentreduction.online/ssl.key
+    SSLCertificateChainFile /home/accentreduction.online/ssl.ca
+
+    SSLCertificateFile /home/edwardsmark.com/ssl.cert
+    SSLCertificateKeyFile /home/edwardsmark.com/ssl.key
+    SSLCertificateChainFile /home/edwardsmark.com/ssl.ca
+
+    SSLCertificateFile /home/ajcomptonpesl.com/ssl.cert
+    SSLCertificateKeyFile /home/ajcomptonpesl.com/ssl.key
+    SSLCertificateChainFile /home/ajcomptonpesl.com/ssl.ca
+
+    SSLCertificateFile /etc/letsencrypt/live/carouselhouse.com/cert.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/carouselhouse.com/privkey.pem
+    SSLCertificateChainFile /etc/letsencrypt/live/carouselhouse.com/fullchain.pem
+
+    SSLCertificateFile /home/comptonpeslonline.info/ssl.cert
+    SSLCertificateKeyFile /home/comptonpeslonline.info/ssl.key
+    SSLCertificateChainFile /home/comptonpeslonline.info/ssl.ca
+
+    SSLCertificateFile /home/slrh.org/ssl.cert
+    SSLCertificateKeyFile /home/slrh.org/ssl.key
+
+
+
+
 
 
 
