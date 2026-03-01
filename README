@@ -1,8 +1,5 @@
 #### initial setup
 
-WHAT ABOUT     /home/comptonpeslonline.com/public_html/lib/perl5/  ? ? ? ? ? ? ? 
-
-
 
 00)    echo "export KVM_NAME=THIS-SERVER-NAME-CHANGE-THIS-PLEASE-TO-NEW-SERVER-NAME" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
 
