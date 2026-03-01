@@ -50,17 +50,17 @@ on new server!
 gzip --decompress  *.gz  ;     ### you MAY run into space issues on the new server!
 tar -xf  *.tar           ;
 
-mv  --verbose  ./usr/local/bash/              /usr/local                ;
-mv  --verbose  ./usr/local/lib/php/           /usr/local/lib            ;
-mv  --verbose  /home/                         /home-RENAMED/            ;
-mv  --verbose  ./home/                        /home/                    ;
+mv  --verbose  /tmp/old_server_data/usr/local/bash/              /usr/local/               ;
+mv  --verbose  /tmp/old_server_data/usr/local/lib/php/           /usr/local/lib/           ;
+mv  --verbose  /home/                                            /home-RENAMED/            ;
+mv  --verbose  /tmp/old_server_data/home/                        /home/                    ;
 
     ##  letsencrypt stuff
-mv  --verbose  ./etc/letsencrypt/live        /etc/letsencrypt/live/     ;
-mv  --verbose  ./etc/letsencrypt/archive/    /etc/letsencrypt/archive/  ;
-mv  --verbose  ./etc/letsencrypt/csr/        /etc/letsencrypt/csr/      ;
-mv  --verbose  ./etc/letsencrypt/keys/       /etc/letsencrypt/keys/     ;
-mv  --verbose  ./etc/letsencrypt/renewal/*   /etc/letsencrypt/renewal/  ;
+mv  --verbose  /tmp/old_server_data/etc/letsencrypt/live/       /etc/letsencrypt/live/     ;
+mv  --verbose  /tmp/old_server_data/etc/letsencrypt/archive/    /etc/letsencrypt/archive/  ;
+mv  --verbose  /tmp/old_server_data/etc/letsencrypt/csr/        /etc/letsencrypt/csr/      ;
+mv  --verbose  /tmp/old_server_data/etc/letsencrypt/keys/       /etc/letsencrypt/keys/     ;
+mv  --verbose  /tmp/old_server_data/etc/letsencrypt/renewal/*   /etc/letsencrypt/renewal/  ;
 
 
 cat ./crontab.txt  |  crontab   -   ;   #
