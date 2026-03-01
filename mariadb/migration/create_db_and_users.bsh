@@ -210,3 +210,8 @@ process_db  U2FsdGVkX1+Iaja/I28Mzn8WGiwqaLHYHnbFMDM8JEw=            U2FsdGVkX1/g
 echo  'SHOW DATABASES;              '        ;
 echo  'SELECT User, Host FROM mysql.user; '  ;   ###  all of these should be localhost or 127.0.0.1
 
+exit;
+#
+#
+
+
