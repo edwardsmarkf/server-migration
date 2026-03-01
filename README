@@ -66,6 +66,8 @@ mv  --verbose  /tmp/old_server_data/etc/letsencrypt/csr/        /etc/letsencrypt
 mv  --verbose  /tmp/old_server_data/etc/letsencrypt/keys/       /etc/letsencrypt/keys/     ;
 mv  --verbose  /tmp/old_server_data/etc/letsencrypt/renewal/*   /etc/letsencrypt/renewal/  ;
 
+bash -vx  ~/server-migration/node/pm2-install.bsh                 >  ~/server-migration/node/pm2-install.bsh.log   2>&1  ;
+
 
 cat ./crontab.txt  |  crontab   -   ;   #
 
