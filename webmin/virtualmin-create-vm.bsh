@@ -2,6 +2,8 @@
 #
 #    virtualmin-create-vm.bsh        2026-02-23
 
+openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  000-first.com             --dir --unix  --dns  --web       --pass {} '  ;
+
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  accentreduction.online    --dir --unix  --dns  --web --ssl --pass {} '  ;
 
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  ajcomptonpesl.com         --dir --unix  --dns  --web --ssl --pass {} '  ;
