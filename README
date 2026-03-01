@@ -87,6 +87,10 @@ manually add/edit these to  /etc/httpd/conf/httpd.conf:
     SSLCertificateKeyFile /home/comptonpeslonline.com/ssl.key
     SSLCertificateChainFile /home/comptonpeslonline.com/ssl.ca
 
+    SSLCertificateFile /home/comptonpeslonline.info/ssl.cert
+    SSLCertificateKeyFile /home/comptonpeslonline.info/ssl.key
+    SSLCertificateChainFile /home/comptonpeslonline.info/ssl.ca
+
     SSLCertificateFile /home/edwardsmark.com/ssl.cert
     SSLCertificateKeyFile /home/edwardsmark.com/ssl.key
     SSLCertificateChainFile /home/edwardsmark.com/ssl.ca
