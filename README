@@ -75,9 +75,21 @@ cat ./crontab.txt  |  crontab   -   ;   #
 
 manually add/edit these to  /etc/httpd/conf/httpd.conf:
 
+    SSLCertificateFile /home/accentreduction.online/ssl.cert
+    SSLCertificateKeyFile /home/accentreduction.online/ssl.key
+    SSLCertificateChainFile /home/accentreduction.online/ssl.ca
+
+    SSLCertificateFile /home/ajcomptonpesl.com/ssl.cert
+    SSLCertificateKeyFile /home/ajcomptonpesl.com/ssl.key
+    SSLCertificateChainFile /home/ajcomptonpesl.com/ssl.ca
+
     SSLCertificateFile /home/comptonpeslonline.com/ssl.cert
     SSLCertificateKeyFile /home/comptonpeslonline.com/ssl.key
     SSLCertificateChainFile /home/comptonpeslonline.com/ssl.ca
+
+    SSLCertificateFile /home/edwardsmark.com/ssl.cert
+    SSLCertificateKeyFile /home/edwardsmark.com/ssl.key
+    SSLCertificateChainFile /home/edwardsmark.com/ssl.ca
 
     SSLCertificateFile /home/englishwithoutaccent.com/ssl.cert
     SSLCertificateKeyFile /home/englishwithoutaccent.com/ssl.key
@@ -87,17 +99,10 @@ manually add/edit these to  /etc/httpd/conf/httpd.conf:
     SSLCertificateKeyFile /home/gordonredwards.com/ssl.key
     SSLCertificateChainFile /home/gordonredwards.com/ssl.ca
 
-    SSLCertificateFile /home/accentreduction.online/ssl.cert
-    SSLCertificateKeyFile /home/accentreduction.online/ssl.key
-    SSLCertificateChainFile /home/accentreduction.online/ssl.ca
-
-    SSLCertificateFile /home/edwardsmark.com/ssl.cert
-    SSLCertificateKeyFile /home/edwardsmark.com/ssl.key
-    SSLCertificateChainFile /home/edwardsmark.com/ssl.ca
-
-    SSLCertificateFile /home/ajcomptonpesl.com/ssl.cert
-    SSLCertificateKeyFile /home/ajcomptonpesl.com/ssl.key
-    SSLCertificateChainFile /home/ajcomptonpesl.com/ssl.ca
+    SSLCertificateFile /home/slrh.org/ssl.cert
+    SSLCertificateKeyFile /home/slrh.org/ssl.key
+    
+   ????????????????  below ?????
 
     SSLCertificateFile /etc/letsencrypt/live/carouselhouse.com/cert.pem
     SSLCertificateKeyFile /etc/letsencrypt/live/carouselhouse.com/privkey.pem
@@ -107,8 +112,7 @@ manually add/edit these to  /etc/httpd/conf/httpd.conf:
     SSLCertificateKeyFile /home/comptonpeslonline.info/ssl.key
     SSLCertificateChainFile /home/comptonpeslonline.info/ssl.ca
 
-    SSLCertificateFile /home/slrh.org/ssl.cert
-    SSLCertificateKeyFile /home/slrh.org/ssl.key
+    
 
 
 
