@@ -71,7 +71,8 @@ cat ./crontab.txt  |  crontab   -   ;   #
 
 
 
-manually add these to  /etc/httpd/conf/httpd.conf:
+manually add/edit these to  /etc/httpd/conf/httpd.conf:
+
     SSLCertificateFile /home/comptonpeslonline.com/ssl.cert
     SSLCertificateKeyFile /home/comptonpeslonline.com/ssl.key
     SSLCertificateChainFile /home/comptonpeslonline.com/ssl.ca
