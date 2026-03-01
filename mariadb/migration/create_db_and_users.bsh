@@ -18,7 +18,7 @@
 ####    echo U2FsdGVkX1/unoGIGeEzOB+iGM8uLLH0rQzQ3r748es= | openssl enc -aes-256-cbc -md sha512 -pbkdf2  -a -d -salt -pass pass:wtf ;
 ###     will produce:  Hi
 
-password='bunnyHoneyMarbles'   ;  ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
+password=''   ;  ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 
 if [ -z "$password" ]
 then
