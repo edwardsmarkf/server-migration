@@ -68,15 +68,16 @@ process_db  U2FsdGVkX1+m5sz7riNGLuBmzj30Vi2ncx09c6knuxk=                      \
             U2FsdGVkX18bsWH5W8TEFyGl5OLU27TDsr9WEkiLSGXex5uHKeycfOWL5hcR+tmG  ;
 
 
-## comptonPractice
+## comptonPractice     
+process_db   U2FsdGVkX18dx9CAC1b6a9LTrKAc2AHRNfANGDb3C7fqtd9z2sjK98bjqsycq4p5 \
+             U2FsdGVkX1/9gZ/2yI0CoyyJQNPsIl9S+wh655ZStnI=                     \
+             U2FsdGVkX18dx9CAC1b6a9LTrKAc2AHRNfANGDb3C7fqtd9z2sjK98bjqsycq4p5 ;
+
+## comptonpeslonline
 process_db  U2FsdGVkX18tD2RjcGHeW4eASIkC60StndDn+3bkzhydsj+12RgOQWDePkmzOX8G  \
             U2FsdGVkX19NKLUwACNz8bIcY2p+qvge6x5wV1pSMF0=                      \
             U2FsdGVkX185mYMVpmMrUQDrkitwon3qbiM1H/WSb5HdmxmqZ4Bd3Rc/Bs8psKiS  ;
 
-## comptonpeslonline  wordpress db
-process_db  U2FsdGVkX1+HVzaKUrFFb8fIG+9DL0F8EOmpjILEPmXSVXip85cFXAJ1/mmPwJY8  \
-            U2FsdGVkX1++NhfHUhl4LTN+y9k4vCRSxOQu1DrQoio=                      \
-            U2FsdGVkX19Uoai2Opq0WTDUO1/YPeNdM0lMkQzYl7ikFZkv0t0BfP2VI2fyGWbO  ;
 
 ## compton transactional analysis   2026-02-07
 process_db  U2FsdGVkX18NWUv+oTv5pH0thYenYLPvbeQTvkJ6ABlDo6ixh2S+BAIS3vLoSyw2   \
