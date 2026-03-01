@@ -55,6 +55,9 @@ mv  --verbose  ./usr/local/lib/php/           /usr/local/lib         ;
 mv  --verbose  /home/                         /home-RENAMED/         ;
 mv  --verbose  ./home/                        /home/                 ;
 
+mv  --verbose  ./etc/letsencrypt/live         /etc/letsencrypt/live/ ;
+
+
 cat ./crontab.txt  |  crontab   -   ;   #
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
