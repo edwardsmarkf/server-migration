@@ -88,9 +88,10 @@ bash  -vx  ~/server-migration/perl/Master_Installer.bsh       >  ~/server-migrat
      #                        #
      ##########################
 
-bash -vx  ~/server-migration/node/bash-js.bsh                     >  ~/server-migration/node/bash-js.bsh.log   2>&1  ;
+bash -vx  ~/server-migration/node/bash-js.bsh                     >  ~/server-migration/node/bash-js.bsh.log       2>&1  ;
+bash -vx  ~/server-migration/node/pm2-install.bsh                 >  ~/server-migration/node/pm2-install.bsh.log   2>&1  ;
 
-
+node/
 
      ############################
      #                          #
