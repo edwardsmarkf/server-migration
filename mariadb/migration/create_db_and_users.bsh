@@ -52,7 +52,7 @@ process_db () {
 
                 GRANT ALL PRIVILEGES ON \`${database}\`.* TO '${username}'@'localhost'          ;
 
-                ### mysql  --host=localhost --user=${username}  --password=${unencrypted}    ${database}  ##  <  /home/mark/${database}.sql        ;
+                ### mysql  --host=localhost --user=${username}  --password=${unencrypted}    ${database}  ##  <  /\${TEMP_SQL_LOCATION}${database}.sql        ;
 EOF
 }
 
