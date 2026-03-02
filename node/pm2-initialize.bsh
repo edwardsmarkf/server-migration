@@ -10,6 +10,10 @@
 #  2026-02-11  -- moved reboot stuff to this script  and added MISSING parm to voiceSpiceNodeServer!
 
 
+cd  /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer/  ;
+
+npm  update  ;
+
 /usr/bin/pm2   delete  all   ;   ## just in case....
 
 /usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                    --name  'NodeWaveForm'          --   --port 20001 --proxy proxyPort20001                                  ;
