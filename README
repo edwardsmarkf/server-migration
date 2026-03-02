@@ -62,10 +62,10 @@ tar -xf     ./usr_local_bash.tar     ;
 tar -xf     ./usr_local_lib_php.tar  ;
 
 
-mv  --verbose  /tmp/old_server_data/usr/local/bash/              /usr/local/               ;
-mv  --verbose  /tmp/old_server_data/usr/local/lib/php/           /usr/local/lib/           ;
-mv  --verbose  /home/                                            /home-RENAMED/            ;
-mv  --verbose  /tmp/old_server_data/home/                        /home/                    ;
+mv  --verbose  /LOCATION/usr/local/bash/              /usr/local/               ;
+mv  --verbose  /LOCATION/usr/local/lib/php/           /usr/local/lib/           ;
+mv  --verbose  /home/                                 /home-RENAMED/            ;
+mv  --verbose  /LOCATION/home/                        /home/                    ;
 
     ##  letsencrypt stuff
 mv  --verbose  /tmp/old_server_data/etc/letsencrypt/live/       /etc/letsencrypt/live/     ;
