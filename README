@@ -78,7 +78,7 @@ cat ./crontab.txt  |  crontab   -   ;   #
 
 
 
-manually add/edit these to  /etc/httpd/conf/httpd.conf:
+manually add/edit these to  /etc/httpd/conf/httpd.conf:  (carouselhouse.com still shows in the OLD httpd.conf, so we ignore it)
 
     SSLCertificateFile /home/accentreduction.online/ssl.cert
     SSLCertificateKeyFile /home/accentreduction.online/ssl.key
