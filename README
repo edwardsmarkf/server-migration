@@ -72,7 +72,7 @@ cat ./crontab.txt  |  crontab   -   ;   #
 rsync  --verbose  ./LOCATION/etc/letsencrypt/          /etc/letsencrypt/         ;
 
 
-bash -vx  ~/server-migration/node/pm2-install.bsh                 >  ~/server-migration/node/pm2-install.bsh.log   2>&1  ;
+bash -vx  ~/server-migration/node/pm2-initialize.bsh                 >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
 
 
 
