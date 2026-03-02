@@ -22,6 +22,7 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
 2) 
 
+                         ## CHANGE THE HARDCODED  PASSWORD !
 cat  >  ./mariadbDumpAllDatabases.bsh  ;   ## get from  server-migration/mariadb/mariadbDumpAllDatabases.bsh
 
 crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                           ;   ## on OLD server!
