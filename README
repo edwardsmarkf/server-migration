@@ -55,23 +55,21 @@ bash -vx  ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;  ## 
                                                    ## mkdir  --verbose  /usr/local/lib/php/   ;
 gzip --decompress  *.gz  ;     ### you MAY run into space issues on the new server!
 
-tar -xf     ./home.tar               ;
+tar -xf     ./home.tar               ;   ## why these have to be done individually is a mystery.
 tar -xf     ./letsencrypt.tar        ;
 tar -xf     ./mariadb-databases.tar  ;
 tar -xf     ./usr_local_bash.tar     ;
 tar -xf     ./usr_local_lib_php.tar  ;
 
-mv  --verbose  /home/                                 /home-RENAMED/            ;
-mv  --verbose  /LOCATION/home/                        /home/                    ;
-mv  --verbose  /LOCATION/usr/local/bash/              /usr/local/               ;
-mv  --verbose  /LOCATION/usr/local/lib/php/           /usr/local/lib/           ;
+mv  --verbose  /home/                                  /home-RENAMED/            ;
+mv  --verbose  ./LOCATION/home/                        /home/                    ;
+mv  --verbose  ./LOCATION/usr/local/bash/              /usr/local/               ;
+mv  --verbose  ./LOCATION/usr/local/lib/php/           /usr/local/lib/           ;
 
     ##  letsencrypt stuff
-mv  --verbose  /tmp/old_server_data/etc/letsencrypt/live/       /etc/letsencrypt/live/     ;
-mv  --verbose  /tmp/old_server_data/etc/letsencrypt/archive/    /etc/letsencrypt/archive/  ;
-mv  --verbose  /tmp/old_server_data/etc/letsencrypt/csr/        /etc/letsencrypt/csr/      ;
-mv  --verbose  /tmp/old_server_data/etc/letsencrypt/keys/       /etc/letsencrypt/keys/     ;
-mv  --verbose  /tmp/old_server_data/etc/letsencrypt/renewal/*   /etc/letsencrypt/renewal/  ;
+rsync  --verbose  ./LOCATION/letsencrypt/              /etc/letsencrypt/         ;
+
+
 
 bash -vx  ~/server-migration/node/pm2-install.bsh                 >  ~/server-migration/node/pm2-install.bsh.log   2>&1  ;
 
@@ -374,3 +372,4 @@ mount -a ;                      ##   2013-05-14 mounts up the stuff in the fstab
 ####     rsync --verbose --archive  --rsh=ssh  /usr/local/jquery/   root@edwardsmarkf.info:/usr/local/jquery/
 
 
+    ##  letsencrypt stuff
