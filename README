@@ -5,7 +5,7 @@
 
 1)  
                             ######cat  <<END    >  ~/do-all-the-work.bsh   ;
-   cat  <<END   |
+cat  <<END   |
    cd                                                                                                                    ; 
    dnf --assumeyes update                                                                                                ; 
    dnf  --assumeyes upgrade                                                                                              ;
