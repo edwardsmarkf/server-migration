@@ -110,6 +110,7 @@ manually add/edit these to  /etc/httpd/conf/httpd.conf:  (carouselhouse.com stil
 
     SSLCertificateFile /home/slrh.org/ssl.cert
     SSLCertificateKeyFile /home/slrh.org/ssl.key
+    SSLCertificateChainFile /home/slrh.org/ssl.ca
     
    ????????????????  below ?????
 
