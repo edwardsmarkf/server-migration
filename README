@@ -54,7 +54,13 @@ bash -vx  ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;  ## 
                                                    ## mkdir  --verbose  /usr/local/bash/      ;
                                                    ## mkdir  --verbose  /usr/local/lib/php/   ;
 gzip --decompress  *.gz  ;     ### you MAY run into space issues on the new server!
-tar -xf  *.tar           ;
+
+tar -xf     ./home.tar               ;
+tar -xf     ./letsencrypt.tar        ;
+tar -xf     ./mariadb-databases.tar  ;
+tar -xf     ./usr_local_bash.tar     ;
+tar -xf     ./usr_local_lib_php.tar  ;
+
 
 mv  --verbose  /tmp/old_server_data/usr/local/bash/              /usr/local/               ;
 mv  --verbose  /tmp/old_server_data/usr/local/lib/php/           /usr/local/lib/           ;
