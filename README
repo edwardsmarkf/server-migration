@@ -111,7 +111,11 @@ manually add/edit these to  /etc/httpd/conf/httpd.conf:  (carouselhouse.com stil
     SSLCertificateFile /home/slrh.org/ssl.cert
     SSLCertificateKeyFile /home/slrh.org/ssl.key
     SSLCertificateChainFile /home/slrh.org/ssl.ca
-    
+
+apachectl  configtest  ;
+
+apachectl  restart  ;
+
    ????????????????  below ?????
 
     SSLCertificateFile /etc/letsencrypt/live/carouselhouse.com/cert.pem
