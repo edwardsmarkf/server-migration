@@ -7,6 +7,7 @@
 #    nohup  bash -vx   ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log  2>&1  &
 #
 
+echo "Start date/time is $(date;)" ;
 
 dnf  --assumeyes   update ;
 dnf  --assumeyes   install  git  ;
@@ -166,6 +167,7 @@ be sure to run or look at the following:
 
 END
 
+echo "End date/time is $(date;)" ;
 
 exit;
 
