@@ -12,7 +12,7 @@
    dnf   clean all                                                                                                       ;
    dnf  --assumeyes  install git  && git clone  https://github.com/edwardsmarkf/server-migration                         ;
    cd  ~/server-migration                                                                                                ;
-   bash -vx    ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log   2>&1          ;
+   time bash -vx    ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log   2>&1     ;
 END
 nohup   bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
