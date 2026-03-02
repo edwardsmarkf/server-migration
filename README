@@ -72,6 +72,12 @@ cat ./crontab.txt  |  crontab   -   ;   #
 rsync  --verbose  ./LOCATION/etc/letsencrypt/          /etc/letsencrypt/         ;
 
 
+
+cd   /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer/  ;
+sed  --in-place   -e 's?"node": "^8.0.0",?"node": ">= 20"?'   ./package.json  ;
+npm   update  ;
+cd    -    ;
+
 bash -vx  ~/server-migration/node/pm2-initialize.bsh                 >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
 
 
