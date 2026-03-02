@@ -14,7 +14,7 @@
    cd  ~/server-migration                                                                                                ;
    time bash -vx    ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log   2>&1     ;
 END
-nohup   bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
+nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
 
     ####  ????this has to run in the FOREGROUND because of webmin!
