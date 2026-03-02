@@ -66,15 +66,13 @@ mv  --verbose  ./LOCATION/home/                        /home/                   
 mv  --verbose  ./LOCATION/usr/local/bash/              /usr/local/               ;
 mv  --verbose  ./LOCATION/usr/local/lib/php/           /usr/local/lib/           ;
 
+cat ./crontab.txt  |  crontab   -   ;   #
+
     ##  letsencrypt stuff
 rsync  --verbose  ./LOCATION/letsencrypt/              /etc/letsencrypt/         ;
 
 
-
 bash -vx  ~/server-migration/node/pm2-install.bsh                 >  ~/server-migration/node/pm2-install.bsh.log   2>&1  ;
-
-
-cat ./crontab.txt  |  crontab   -   ;   #
 
 
 
