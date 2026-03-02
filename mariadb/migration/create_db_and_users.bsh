@@ -101,7 +101,7 @@ process_db  U2FsdGVkX18mUJmL2MaReD3DfDkwm12oJAxD0OSh/lA=                      \
 
 
 echo  'SHOW DATABASES;              '  ;
-echo  'SELECT User FROM mysql.user; '  ;
+echo  'SELECT User, Host FROM mysql.user; '  ;
 
 exit;
 #
