@@ -12,6 +12,7 @@ s?/(comptonpeslonline)/?/\1.com/?
 s?/(edwardsmark)/?/\1.com/?
 s?/(englishwithoutaccent)/?/\1.com/?
 s?/(gordonredwards)/?/\1.com/?
+s?/(slrh)/?/\1.org/?
 s?/(virtualaska)/?/\1.com/?
 SED_SCRIPT
 
