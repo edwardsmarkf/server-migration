@@ -3,18 +3,7 @@
 #    virtualmin-create-vm.bsh        2026-02-23
 
 
-## STILL NEED COMPTONPESL.INFO....
 
-/usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT  ;
-s?/(accentreduction)/?/\1.online/?
-s?/(ajcomptonpesl)/?/\1.com/?
-s?/(comptonpeslonline)/?/\1.com/?
-s?/(edwardsmark)/?/\1.com/?
-s?/(englishwithoutaccent)/?/\1.com/?
-s?/(gordonredwards)/?/\1.com/?
-s?/(slrh)/?/\1.org/?
-s?/(virtualaska)/?/\1.com/?
-SED_SCRIPT
 
 
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  000-first.com             --dir --unix  --dns  --web       --pass {} '  ;
@@ -36,6 +25,20 @@ openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  gordon
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  slrh.org                  --dir --unix  --dns  --web --ssl --pass {} '  ;
 
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  virtualaska.com           --dir --unix  --dns  --web --ssl --pass {} '  ; 
+
+
+##  we dont need comptonpeslonline.info fixed...
+
+/usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT  ;
+s?/(accentreduction)/?/\1.online/?
+s?/(ajcomptonpesl)/?/\1.com/?
+s?/(comptonpeslonline)/?/\1.com/?
+s?/(edwardsmark)/?/\1.com/?
+s?/(englishwithoutaccent)/?/\1.com/?
+s?/(gordonredwards)/?/\1.com/?
+s?/(slrh)/?/\1.org/?
+s?/(virtualaska)/?/\1.com/?
+SED_SCRIPT
 
 exit;
 
