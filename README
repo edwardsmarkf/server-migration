@@ -4,7 +4,7 @@
 00)    echo "export KVM_NAME=THIS-SERVER-NAME-CHANGE-THIS-PLEASE-TO-NEW-SERVER-NAME" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
 
 1)  
-                            ######cat  <<END    >  ~/do-all-the-work.bsh   ;
+dnf  --assumeyes  install  time                                                                                          ;
 cat  <<END   |
    cd                                                                                                                    ; 
    dnf --assumeyes update                                                                                                ; 
