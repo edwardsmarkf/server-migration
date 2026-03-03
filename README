@@ -48,11 +48,8 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 
 on new server!
 
-      ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
-bash -vx  ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;  ## edit and add password!
 
-                                                   ## mkdir  --verbose  /usr/local/bash/      ;
-                                                   ## mkdir  --verbose  /usr/local/lib/php/   ;
+
 gzip --decompress  *.gz  ;     ### you MAY run into space issues on the new server!
 
 tar -xf     ./home.tar               ;   ## why these have to be done individually is a mystery.
@@ -72,10 +69,12 @@ cat ./crontab.txt  |  crontab   -   ;   #
 rsync  --verbose  ./LOCATION/etc/letsencrypt/          /etc/letsencrypt/         ;
 
 
-
-
 bash -vx  ~/server-migration/node/pm2-initialize.bsh                 >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
 
+
+      ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
+bash -vx  ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;  ## edit and add password!
+bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh    | grep  TEMP_SQL_LOCATION | sed -e 's/.* ### //; s/ ## //'   > load_sql_tables.bsh ; ## create the 'load' script!
 
 
 manually add/edit these to  /etc/httpd/conf/httpd.conf:  (carouselhouse.com still shows in the OLD httpd.conf, so we ignore it)
@@ -376,5 +375,7 @@ mount -a ;                      ##   2013-05-14 mounts up the stuff in the fstab
 ####    ## dont forget jQuery ! (?)
 ####     rsync --verbose --archive  --rsh=ssh  /usr/local/jquery/   root@edwardsmarkf.info:/usr/local/jquery/
 
+                                                   ## mkdir  --verbose  /usr/local/bash/      ;
+                                                   ## mkdir  --verbose  /usr/local/lib/php/   ;
 
     ##  letsencrypt stuff
