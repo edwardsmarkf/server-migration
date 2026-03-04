@@ -12,7 +12,7 @@
 
 
 cd   /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer/  ;  ## 2026-03-02
-sed  --in-place   --expression='s?"node": "^8.0.0",?"node": ">= 20,"?'   ./package.json          ;  ## 2026-03-02
+sed  --in-place   --expression='s?"node": "^8.0.0",?"node": ">= 20",?'   ./package.json          ;  ## 2026-03-02
 npm   update                                                                                     ;  ## 2026-03-02
 cd    -                                                                                          ;  ## 2026-03-02
 
