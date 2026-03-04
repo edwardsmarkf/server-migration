@@ -77,7 +77,7 @@ mv  --verbose  .//usr/local/lib/php/           /usr/local/lib/           ;
 cat ./crontab.txt  |  crontab   -   ;   #
 
     ##  letsencrypt stuff
-rsync  --verbose  ./LOCATION/etc/letsencrypt/          /etc/letsencrypt/         ;
+rsync  --archive --verbose  ./etc/letsencrypt/          /etc/letsencrypt/         ;
 
 
 bash -vx  ~/server-migration/node/pm2-initialize.bsh                 >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
