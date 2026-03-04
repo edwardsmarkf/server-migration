@@ -9,8 +9,10 @@
 
 echo "Start date/time is $(date;)" ;
 
-dnf  --assumeyes   update ;
-dnf  --assumeyes   install  git  ;
+dnf  --assumeyes   update        ;
+dnf  --assumeyes   upgrade       ;
+dnf  --assumeyes   clean-all     ;
+dnf  --assumeyes   install  git  ;    ## this has probably already been done!
 
 ####  git clone  https://github.com/edwardsmarkf/server-migration ;
 
