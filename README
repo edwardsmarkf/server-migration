@@ -69,9 +69,7 @@ rsync   --verbose  /home-RENAMED/                  /home/         ;     ## Now d
 rsync  --archive --verbose  ./etc/letsencrypt/          /etc/letsencrypt/         ;
 mv  --verbose  .//usr/local/bash/              /usr/local/               ;
 mv  --verbose  .//usr/local/lib/php/           /usr/local/lib/           ;
-
 cat ./crontab.txt  |  crontab   -   ;   #
-
 
 
 
