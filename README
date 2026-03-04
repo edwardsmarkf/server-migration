@@ -61,8 +61,11 @@ tar -xf     ./usr_local_lib_php.tar  ;
 
 rm   ./home.tar  ;   # we MAY need this for space!
 
-rsync      --verbose  ./home/                /home/         ;     ## Now deal with the file owners .....!!!!!! ! ! ! 
-    ##  letsencrypt stuff
+mv      --verbose  /home/                          /home-RENAMED/            ;
+mv      --verbose  .//home/                        /home/                    ;
+rsync   --verbose  /home-RENAMED/                  /home/         ;     ## Now deal with the file owners ....??????????
+
+##  letsencrypt stuff
 rsync  --archive --verbose  ./etc/letsencrypt/          /etc/letsencrypt/         ;
 mv  --verbose  .//usr/local/bash/              /usr/local/               ;
 mv  --verbose  .//usr/local/lib/php/           /usr/local/lib/           ;
@@ -383,8 +386,6 @@ mount -a ;                      ##   2013-05-14 mounts up the stuff in the fstab
 
     ##  letsencrypt stuff
 
-###########################   mv  --verbose  /home/                          /home-RENAMED/            ;
-###########################   mv  --verbose  .//home/                        /home/                    ;
 
 ##  mv  --force --verbose   ./home/accentreduction.online/       /home/                  ;#
 ##  mv  --force --verbose   ./home/ajcomptonpesl.com/            /home/                  ;
