@@ -72,13 +72,13 @@ mv  --verbose  .//usr/local/lib/php/           /usr/local/lib/           ;
 cat ./crontab.txt  |  crontab   -   ;   #
 
 
-
-bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
-
-
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 bash -vx  ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;  ## edit and add password!
 bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh    | grep  TEMP_SQL_LOCATION | sed -e 's/.* ### //; s/ ## //'   > load_sql_tables.bsh ; ## create the 'load' script!
+
+
+
+bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
 
 
 manually add/edit these to  /etc/httpd/conf/httpd.conf:  (carouselhouse.com still shows in the OLD httpd.conf, so we ignore it)
