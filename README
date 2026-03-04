@@ -43,9 +43,9 @@ mkdir  /tmp/old_server_data && cd  $_  ;
 ##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
                                                 ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
 sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
-   ##  ls -lh  ;  human readable file size
-
-rm  *.gz    ## can be done in the sftp session!  or.....
+sftp>   ls -lh      ;  ## human readable file size
+sftp>   mget  *.gz  ;  ## fetch the gzips
+sftp>   rm  *.gz    ;  ## can be done in the sftp session!  or.....
 rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ;  ## on OLD server!
 
 
