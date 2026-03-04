@@ -60,15 +60,17 @@ tar -xf     ./usr_local_lib_php.tar  ;
 
 ###########################   mv  --verbose  /home/                          /home-RENAMED/            ;
 ###########################   mv  --verbose  .//home/                        /home/                    ;
-mv  -verbose   ./home/accentreduction.online/   /home/                  ;
-mv  -verbose   ./home/ajcomptonpesl.com/        /home/                  ;
-mv  -verbose   ./home/comptonpeslonline.com/        /home/                  ;
-mv  -verbose   ./home/comptonpeslonline.info/        /home/                  ;
-mv  -verbose   ./home/englishwithoutaccent.com/        /home/                  ;
-mv  -verbose   ./home/gordonredwards.com/        /home/                  ;
 
-mv  -verbose   ./home/slrh.org/        /home/                  ;
-mv  -verbose   ./home/virtualaska.com/        /home/                  ;
+mv  --force --verbose   ./home/accentreduction.online/       /home/                  ;
+mv  --force --verbose   ./home/ajcomptonpesl.com/            /home/                  ;
+mv  --force --verbose   ./home/comptonpeslonline.com/        /home/                  ;
+mv  --force --verbose   ./home/comptonpeslonline.info/       /home/                  ;
+mv  --force --verbose   ./home/edwardsmark.com/              /home/                  ;
+mv  --force --verbose   ./home/englishwithoutaccent.com/     /home/                  ;
+mv  --force --verbose   ./home/gordonredwards.com/           /home/                  ;
+mv  --force --verbose   ./home/slrh.org/                     /home/                  ;
+mv  --force--verbose    ./home/virtualaska.com/              /home/                  ;
+
 mv  --verbose  .//usr/local/bash/              /usr/local/               ;
 mv  --verbose  .//usr/local/lib/php/           /usr/local/lib/           ;
 
