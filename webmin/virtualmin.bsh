@@ -13,6 +13,7 @@
 #  2025-08-13  -- added a new created domain DOMAIN for testing
 #  2026-02-05  -- disabled webalizer
 #  2026-03-03  -- added 'home_format=$DOM' to get around possible bug of ignoring 'longname=1'
+#  2026-03-05  -- added 'unixname=1' to have the unix name contain the domain-name suffix (hopefully)
 
 DOMAIN='zzyzxzzyzx.com'  ;  ## 2025-08-13
 
@@ -27,6 +28,7 @@ systemctl  start    webmin.service ;
 systemctl  status --no-pager --full  webmin.service  ;
 
 
+/usr/bin/sed  --in-place  --expression='s/^unixname=0$/unixname=1/;'                  /etc/webmin/virtual-server/config    ;   ## 2026-03-05
 /usr/bin/sed  --in-place  --expression='s/^longname=0$/longname=1/;'                  /etc/webmin/virtual-server/config    ;   ## 2025-02-17
 echo  'home_format=$DOM'                                                         >>   /etc/webmin/virtual-server/config    ;   ## 2026-03-03
 /usr/bin/sed  --in-place  --expression='s/^ssl=3$/ssl=2/;'                            /etc/webmin/virtual-server/config    ;   ## 2025-08-15 
