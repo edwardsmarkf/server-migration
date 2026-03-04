@@ -58,18 +58,9 @@ tar -xf     ./mariadb-databases.tar  ;
 tar -xf     ./usr_local_bash.tar     ;
 tar -xf     ./usr_local_lib_php.tar  ;
 
-###########################   mv  --verbose  /home/                          /home-RENAMED/            ;
-###########################   mv  --verbose  .//home/                        /home/                    ;
 
-mv  --force --verbose   ./home/accentreduction.online/       /home/                  ;
-mv  --force --verbose   ./home/ajcomptonpesl.com/            /home/                  ;
-mv  --force --verbose   ./home/comptonpeslonline.com/        /home/                  ;
-mv  --force --verbose   ./home/comptonpeslonline.info/       /home/                  ;
-mv  --force --verbose   ./home/edwardsmark.com/              /home/                  ;
-mv  --force --verbose   ./home/englishwithoutaccent.com/     /home/                  ;
-mv  --force --verbose   ./home/gordonredwards.com/           /home/                  ;
-mv  --force --verbose   ./home/slrh.org/                     /home/                  ;
-mv  --force--verbose    ./home/virtualaska.com/              /home/                  ;
+rsync  --archive --verbose  ./home/                /home/         ;
+   ## Now deal with the file owners .....!!!!!! ! ! ! 
 
 mv  --verbose  .//usr/local/bash/              /usr/local/               ;
 mv  --verbose  .//usr/local/lib/php/           /usr/local/lib/           ;
@@ -390,3 +381,17 @@ mount -a ;                      ##   2013-05-14 mounts up the stuff in the fstab
                                                    ## mkdir  --verbose  /usr/local/lib/php/   ;
 
     ##  letsencrypt stuff
+
+###########################   mv  --verbose  /home/                          /home-RENAMED/            ;
+###########################   mv  --verbose  .//home/                        /home/                    ;
+
+##  mv  --force --verbose   ./home/accentreduction.online/       /home/                  ;#
+##  mv  --force --verbose   ./home/ajcomptonpesl.com/            /home/                  ;
+##  mv  --force --verbose   ./home/comptonpeslonline.com/        /home/                  ;
+##  mv  --force --verbose   ./home/comptonpeslonline.info/       /home/                  ;
+##  mv  --force --verbose   ./home/edwardsmark.com/              /home/                  ;
+##  mv  --force --verbose   ./home/englishwithoutaccent.com/     /home/                  ;
+##  mv  --force --verbose   ./home/gordonredwards.com/           /home/                  ;
+##  mv  --force --verbose   ./home/slrh.org/                     /home/                  ;
+##  mv  --force--verbose    ./home/virtualaska.com/              /home/                  ;
+
