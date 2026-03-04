@@ -26,10 +26,10 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 cat  >  ./mariadbDumpAllDatabases.bsh  ;   ## get from  server-migration/mariadb/mariadbDumpAllDatabases.bsh
 
 crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                           ;   ## on OLD server!
-tar --create --gunzip --verbose  --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;   ## on OLD server! 
-tar --create --gunzip --verbose  --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;   ## on OLD server!
-tar --create --gunzip --verbose  --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;   ## on OLD server!
-tar --create --gunzip            --file=/home/mark/home.tar.gz                /home/                     ;   ##  33.7 gig!  on OLD server!
+tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;   ## on OLD server! 
+tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;   ## on OLD server!
+tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;   ## on OLD server!
+tar --create --gunzip   --file=/home/mark/home.tar.gz                /home/                     ;   ##  33.7 gig!  on OLD server!
 bash -vx           ./mariadbDumpAllDatabases.bsh                                                         ;   ## on OLD server!
 
 
