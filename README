@@ -60,16 +60,15 @@ tar -xf     ./usr_local_bash.tar     ;
 tar -xf     ./usr_local_lib_php.tar  ;
 
 
-rsync  --archive --verbose  ./home/                /home/         ;
-   ## Now deal with the file owners .....!!!!!! ! ! ! 
-
+rsync      --verbose  ./home/                /home/         ;     ## Now deal with the file owners .....!!!!!! ! ! ! 
+    ##  letsencrypt stuff
+rsync  --archive --verbose  ./etc/letsencrypt/          /etc/letsencrypt/         ;
 mv  --verbose  .//usr/local/bash/              /usr/local/               ;
 mv  --verbose  .//usr/local/lib/php/           /usr/local/lib/           ;
 
 cat ./crontab.txt  |  crontab   -   ;   #
 
-    ##  letsencrypt stuff
-rsync  --archive --verbose  ./etc/letsencrypt/          /etc/letsencrypt/         ;
+
 
 
 bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
