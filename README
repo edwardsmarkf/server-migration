@@ -80,7 +80,7 @@ cat ./crontab.txt  |  crontab   -   ;   #
 rsync  --archive --verbose  ./etc/letsencrypt/          /etc/letsencrypt/         ;
 
 
-bash -vx  ~/server-migration/node/pm2-initialize.bsh                 >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
+bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
 
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
