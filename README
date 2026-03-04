@@ -20,17 +20,19 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
     ####  ????this has to run in the FOREGROUND because of webmin!
 
-2) 
+2)  on CURRENT server:
 
+ git clone  https://github.com/edwardsmarkf/server-migration
+
+bash -vx   ~/server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
                          ## CHANGE THE HARDCODED  PASSWORD !
-cat  >  ./mariadbDumpAllDatabases.bsh  ;   ## get from  server-migration/mariadb/mariadbDumpAllDatabases.bsh
 
 crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                  ;   ## on OLD server!
 tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;   ## on OLD server! 
 tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;   ## on OLD server!
 tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;   ## on OLD server!
 tar --create --gunzip   --file=/home/mark/home.tar.gz                /home/                     ;   ##  34 gig!  on OLD server!
-bash -vx           ./mariadbDumpAllDatabases.bsh                                                ;   ## on OLD server!
+
 
 
 on new server:
