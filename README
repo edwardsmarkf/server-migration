@@ -58,8 +58,17 @@ tar -xf     ./mariadb-databases.tar  ;
 tar -xf     ./usr_local_bash.tar     ;
 tar -xf     ./usr_local_lib_php.tar  ;
 
-mv  --verbose  /home/                          /home-RENAMED/            ;
-mv  --verbose  .//home/                        /home/                    ;
+###########################   mv  --verbose  /home/                          /home-RENAMED/            ;
+###########################   mv  --verbose  .//home/                        /home/                    ;
+mv  -verbose   ./home/accentreduction.online/   /home/                  ;
+mv  -verbose   ./home/ajcomptonpesl.com/        /home/                  ;
+mv  -verbose   ./home/comptonpeslonline.com/        /home/                  ;
+mv  -verbose   ./home/comptonpeslonline.info/        /home/                  ;
+mv  -verbose   ./home/englishwithoutaccent.com/        /home/                  ;
+mv  -verbose   ./home/gordonredwards.com/        /home/                  ;
+
+mv  -verbose   ./home/slrh.org/        /home/                  ;
+mv  -verbose   ./home/virtualaska.com/        /home/                  ;
 mv  --verbose  .//usr/local/bash/              /usr/local/               ;
 mv  --verbose  .//usr/local/lib/php/           /usr/local/lib/           ;
 
