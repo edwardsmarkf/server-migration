@@ -19,6 +19,7 @@
 ###     will produce:  Hi
 
 password=''   ;  ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
+              ###  NOT THE DB PASSWORD...! ! ! ! !
 
 if [ -z "$password" ]
 then
