@@ -51,6 +51,7 @@ mkdir  /tmp/old_server_data && cd  $_  ;
 sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
 sftp>   ls -lh        ## human readable file size
 sftp>   mget  *.gz    ## fetch the gzips
+sftp>   !ls -lh       ## file sizes on NEW server (notice bang character)
 sftp>   rm  *.gz      ## can be done in the sftp session!  or.....
 rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ;  ## on OLD server!
 
