@@ -24,9 +24,11 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 2)  on CURRENT server:
 
  git clone  https://github.com/edwardsmarkf/server-migration           ;
- find  .  -name   mariadbDumpAllDatabases.bsh                          ;
+ find  .  -name   mariadbDumpAllDatabases.bsh                          ;   ## optional
  vi  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;  ## change password  (or use sed)  
-                         ## CHANGE THE HARDCODED  PASSWORD !
+               ## --or--   ## CHANGE THE HARDCODED  PASSWORD !
+ sed --in-place --script='s/CHANGE-THIS/password/;'  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
+                        
 
 bash -vx   ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
 ls  -lh  /home/mark ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
