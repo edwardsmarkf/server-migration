@@ -138,9 +138,9 @@ apachectl  restart  ;
     SSLCertificateKeyFile /etc/letsencrypt/live/carouselhouse.com/privkey.pem
     SSLCertificateChainFile /etc/letsencrypt/live/carouselhouse.com/fullchain.pem
 
-sed --file=-  ./httpd.conf  <<END_OF_SED ;
+sed --file=-  ./httpd.conf  <<END_OF_SED > x.x ;
 /RewriteRule .*well-known).* https:\/\/slrh.org:10000\//,/VirtualHost/{/SSLEngine on/a   \
-    SSLCertificateFile /home/slrh.org/ssl.cert\
+        SSLCertificateFile /home/slrh.org/ssl.cert\n\
     SSLCertificateKeyFile /home/slrh.org/ssl.key
 }
 END_OF_SED
