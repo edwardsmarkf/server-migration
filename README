@@ -69,6 +69,8 @@ tar -xf     ./usr_local_lib_php.tar  ;
 
 rm   ./home.tar  ;   # we MAY need this for space!
 
+     #####  NEW CLONE MADE !  so start here...
+
 mv      --verbose  /home/                          /home-RENAMED/      ;
 mv      --verbose  .//home/                        /home/              ;
 rsync   --verbose  /home-RENAMED/                  /home/              ;     ## Now deal with the file owners ....??????????
