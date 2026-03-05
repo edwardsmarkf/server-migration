@@ -73,13 +73,13 @@ rm   ./home.tar  ;   # we MAY need this for space!
 
 mv      --verbose  /home/                          /home-RENAMED/      ;
 mv      --verbose  .//home/                        /home/              ;
-rsync   --verbose  --archive /home-RENAMED/                  /home/              ;     ## Now deal with the file owners ....??????????
+rsync   --verbose  --archive /home-RENAMED/        /home/              ;     ## Now deal with the file owners ....??????????
 
 ##  letsencrypt stuff
-rsync   --verbose  --archive   ./etc/letsencrypt/          /etc/letsencrypt/         ;
-mv      --verbose  .//usr/local/bash/              /usr/local/               ;
-mv      --verbose  .//usr/local/lib/php/           /usr/local/lib/           ;
-cat ./crontab.txt  |  crontab   -   ;   #
+rsync   --verbose  --archive   ./etc/letsencrypt/      /etc/letsencrypt/     ;
+mv      --verbose  .//usr/local/bash/                  /usr/local/           ;
+mv      --verbose  .//usr/local/lib/php/               /usr/local/lib/       ;
+cat ./crontab.txt         |  crontab   -                                     ;   #  quick way to load crontab from old server!
 
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
