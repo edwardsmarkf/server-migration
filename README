@@ -23,8 +23,7 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
 2)  on CURRENT server:
 
- git clone  https://github.com/edwardsmarkf/server-migration
-
+ git clone  https://github.com/edwardsmarkf/server-migration  ;
 
                          ## CHANGE THE HARDCODED  PASSWORD !
 bash -vx   ~/server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
