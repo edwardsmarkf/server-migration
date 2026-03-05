@@ -73,12 +73,12 @@ rm   ./home.tar  ;   # we MAY need this for space!
 
 mv      --verbose  /home/                          /home-RENAMED/      ;
 mv      --verbose  .//home/                        /home/              ;
-rsync   --verbose  /home-RENAMED/                  /home/              ;     ## Now deal with the file owners ....??????????
+rsync   --verbose  --archive /home-RENAMED/                  /home/              ;     ## Now deal with the file owners ....??????????
 
 ##  letsencrypt stuff
-rsync  --archive --verbose  ./etc/letsencrypt/          /etc/letsencrypt/         ;
-mv  --verbose  .//usr/local/bash/              /usr/local/               ;
-mv  --verbose  .//usr/local/lib/php/           /usr/local/lib/           ;
+rsync   --verbose  --archive   ./etc/letsencrypt/          /etc/letsencrypt/         ;
+mv      --verbose  .//usr/local/bash/              /usr/local/               ;
+mv      --verbose  .//usr/local/lib/php/           /usr/local/lib/           ;
 cat ./crontab.txt  |  crontab   -   ;   #
 
 
