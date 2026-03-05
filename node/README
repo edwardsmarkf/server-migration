@@ -20,5 +20,8 @@ bash -vx   pm2-initialize.bsh          >  pm2-initialize.bsh.log          2>&1 ;
 which pm2 ; 
 /bin/pm2  --version  ;
 
-cd   /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer ;
-npm  update    ;   ##   for the feathers server
+exit ;
+
+
+###  cd   /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer ;
+###  npm  update    ;   ##   for the feathers server
