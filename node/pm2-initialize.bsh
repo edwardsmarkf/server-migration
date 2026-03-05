@@ -9,6 +9,7 @@
 #  2025-11-01  -- initial writing
 #  2026-02-11  -- moved reboot stuff to this script  and added MISSING parm to voiceSpiceNodeServer!
 #  2026-03-02  -- added the package.json change and npm update
+#  2026-03-05  -- added --user comptonpeslonline.com  to VoiceSpiceServer to get around the sudo problem (weird considering its running as root)
 
 
 cd   /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer/  ;  ## 2026-03-02
@@ -19,13 +20,14 @@ cd    -                                                                         
 
 /usr/bin/pm2   delete  all   ;   ## just in case....
 
-/usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                    --name  'NodeWaveForm'          --   --port 20001 --proxy proxyPort20001                                  ;
+/usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                    --name  'NodeWaveForm'          --   --port 20001 --proxy proxyPort20001                  ;
 #
-/usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   --name  'VoiceSpiceServer'      --   --port 20002 --proxy proxyPort20002                  \
+/usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   --name  'VoiceSpiceServer'  --user comptonpeslonline.com                                  \
+                                                                                                                                                                  --   --port 20002 --proxy proxyPort20002                  \
                                                                                                                                                                                     --voiceSpiceURL  voicespice.com         \
                                                                                                                                                                                     --domainURL      comptonpeslonline.com  ;
 #
-/usr/bin/pm2  start   ./  --cwd  /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer        --name  'HomeworkAssignment'    --   --port 20003 --proxy proxyPort20003  ;
+/usr/bin/pm2  start   ./  --cwd  /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer        --name  'HomeworkAssignment'    --   --port 20003 --proxy proxyPort20003                  ;
 #
 
 /usr/bin/pm2  save   ;
