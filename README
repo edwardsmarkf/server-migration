@@ -143,6 +143,7 @@ sed --file=-  ./httpd.conf  <<END_OF_SED > x.x ;
         SSLCertificateFile /home/slrh.org/ssl.cert\n\
     SSLCertificateKeyFile /home/slrh.org/ssl.key
 }
+s/^SSLCertificate/    &/;
 END_OF_SED
 
 
