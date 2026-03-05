@@ -140,7 +140,7 @@ apachectl  restart  ;
 
 sed --file=-  ./httpd.conf  <<END_OF_SED > x.x ;
 /RewriteRule .*well-known).* https:\/\/slrh.org:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
-    \
+####\
     SSLCertificateFile /home/slrh.org/ssl.cert\n\
     SSLCertificateKeyFile /home/slrh.org/ssl.key
 }
