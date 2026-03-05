@@ -83,9 +83,11 @@ cat ./crontab.txt         |  crontab   -                                     ;  
 
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
-bash -vx  ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;  ## edit and add password!
-bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh    | grep  TEMP_SQL_LOCATION | sed -e 's/.* ### //; s/ ## //'   > load_sql_tables.bsh ; ## create the 'load' script!
-
+bash -vx  ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;       ## edit and add password!
+bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh    | grep  TEMP_SQL_LOCATION | sed -e 's/.* ### //; s/ ## //'   > load_sql_tables.bsh ; 
+                                                                                  ## create the 'load' script!
+find  .  -name  *.sql  ;                                                          ## get directory name for new  `load_sql_tables.bsh` and manually add it!
+bash  -vx  load_sql_tables.bsh    >  load_sql_tables.bsh.log  2>&1  ;             ## run the newly created bash script
 
 
 bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
