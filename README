@@ -90,6 +90,7 @@ find  .  -name  *.sql  ;                                                        
 bash  -vx  load_sql_tables.bsh    >  load_sql_tables.bsh.log  2>&1  ;             ## run the newly created bash script
 
 
+###  npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
 bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
 
 
