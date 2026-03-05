@@ -135,8 +135,8 @@ apachectl  restart  ;
 
 
 sed  --in-place  --file=-   ./httpd.conf  <<END_OF_GENERIC_SED    ;
-s/^    SSLCertificateFile \//    ####  &/;
-s/^    SSLCertificateKeyFile \//    #### &/;
+s?^    SSLCertificateFile /?    ####  &?;
+s?^    SSLCertificateKeyFile /?    #### &?;
 END_OF_GENERIC_SED
 
 sed --file=-  ./httpd.conf    <<END_OF_SLRH_SED > x.x ;
