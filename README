@@ -134,12 +134,12 @@ apachectl  restart  ;
 
 
 
-sed  --in-place  --file=-   <<END_OF_GENERIC_SED    ;
+sed  --in-place  --file=-   ./httpd.conf  <<END_OF_GENERIC_SED    ;
 s/^    SSLCertificateFile \/home\//    ####  &/;
 s/^    SSLCertificateKeyFile \home\//    #### &/;
 END_OF_GENERIC_SED
 
-sed --file=-  ./httpd.conf  <<END_OF_SLRH_SED > x.x ;
+sed --file=-  ./httpd.conf    <<END_OF_SLRH_SED > x.x ;
 /RewriteRule .*well-known).* https:\/\/slrh.org:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
 ####\n\
     SSLCertificateFile /home/slrh.org/ssl.cert\n\
