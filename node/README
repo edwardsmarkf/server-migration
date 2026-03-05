@@ -17,7 +17,8 @@ bash -vx   pm2-install.bsh             >  pm2-install.bsh.log             2>&1  
 ## run this LAST to create pm2 jobs and get them to start after reboot
 bash -vx   pm2-initialize.bsh          >  pm2-initialize.bsh.log          2>&1 ;
 
-/usr/bin/pm2  --version  ;
+which pm2 ; 
+/bin/pm2  --version  ;
 
 cd   /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer ;
 npm  update    ;   ##   for the feathers server
