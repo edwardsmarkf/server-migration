@@ -21,7 +21,7 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
    
 
-2)  on CURRENT server:
+2)  on CURRENT server:  (NOTE LENGHT OF TIME!!)
 
  git clone  https://github.com/edwardsmarkf/server-migration           ;
  find  .  -name   mariadbDumpAllDatabases.bsh                          ;   ## optional
@@ -42,7 +42,7 @@ END_OF_CURRENT_SERVER
 time bash -vx  -   >   ./current-server-tar-gz-create.gz   2>&1  ;
 
 
-on new server:
+on new server:  (30 minutes)
 
 dnf  --assumeyes  install sshpass  ;   
 
