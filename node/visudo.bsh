@@ -16,6 +16,7 @@ cat  <<END  | sudo EDITOR='tee --append' visudo ;
 
 ##  $(date;) --  added by ${thisScript}                          
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /usr/sbin/csf
+comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /sbin/csf
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/sh
 END
 
