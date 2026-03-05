@@ -19,7 +19,7 @@ END
 nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
 
-    ####  ????this has to run in the FOREGROUND because of webmin!
+   
 
 2)  on CURRENT server:
 
