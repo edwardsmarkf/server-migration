@@ -16,7 +16,7 @@ cat  <<END  | sudo EDITOR='tee --append' visudo ;
 
 ##  $(date;) --  added by ${thisScript}
 
-##  2026-03-04 - added  new location for csf  new file and mv  (why do we need tehse two??_
+##  2026-03-04 - added  new location for csf  new file chown and mv  (why do we need these two??_
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/chown
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /sbin/csf
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/file
