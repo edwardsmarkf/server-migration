@@ -132,11 +132,12 @@ apachectl  configtest  ;
 
 apachectl  restart  ;
 
-   ????????????????  below ?????
 
-    SSLCertificateFile /etc/letsencrypt/live/carouselhouse.com/cert.pem
-    SSLCertificateKeyFile /etc/letsencrypt/live/carouselhouse.com/privkey.pem
-    SSLCertificateChainFile /etc/letsencrypt/live/carouselhouse.com/fullchain.pem
+
+sed  --in-place  --file=-   <<END_OF_GENERIC_SED    ;
+s/^    SSLCertificateFile \/home\//    ####  &/;
+s/^    SSLCertificateKeyFile \home\//    #### &/;
+END_OF_GENERIC_SED
 
 sed --file=-  ./httpd.conf  <<END_OF_SLRH_SED > x.x ;
 /RewriteRule .*well-known).* https:\/\/slrh.org:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
