@@ -14,9 +14,14 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 cat  <<END  | sudo EDITOR='tee --append' visudo ;
 
 
-##  $(date;) --  added by ${thisScript}                          
+##  $(date;) --  added by ${thisScript}
+
+##  2026-03-04 - added  new location for csf  new file and mv  (why do we need tehse two??_
+comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/chown
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /usr/sbin/csf
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /sbin/csf
+comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/file
+comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/mv
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/sh
 END
 
