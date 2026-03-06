@@ -141,6 +141,30 @@ s?^    SSLCertificateKeyFile /?    #### &?;
 END_OF_GENERIC_SED
 
 
+sed --file=-  ./httpd.conf    <<END_OF_ACCENTREDUCTION_ONLINE_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/accentreduction.online:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/accentreduction.online/ssl.cert\n\
+    SSLCertificateKeyFile /home/accentreduction.online/ssl.key
+}
+END_OF_ACCENTREDUCTION_ONLINE_SED
+
+sed --file=-  ./httpd.conf    <<END_OF_AJCOMPTONPESL_COM_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/ajcomptonpesl.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/ajcomptonpesl.com/ssl.cert\n\
+    SSLCertificateKeyFile /home/ajcomptonpesl.com/ssl.key
+}
+END_OF_AJCOMPTONPESL_COM_SED
+
+sed --file=-  ./httpd.conf    <<END_OF_COMPTONPESLONLINE_COM_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/comptonpeslonline.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/comptonpeslonline.com/ssl.cert\n\
+    SSLCertificateKeyFile /home/comptonpeslonline.com/ssl.key
+}
+END_OF_COMPTONPESLONLINE_COM_SED
+
 sed --file=-  ./httpd.conf    <<END_OF_COMPTONPESLONLINE_INFO_SED > x.x ;
 /RewriteRule .*well-known).* https:\/\/comptonpeslonline.info:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
 ####\n\
