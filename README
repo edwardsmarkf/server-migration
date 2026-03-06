@@ -133,6 +133,7 @@ apachectl  configtest  ;
 apachectl  restart  ;
 
 
+cp  --verbose  /etc/httpd/conf/httpd.conf    ./httpd.conf    ;
 
 sed  --in-place  --file=-   ./httpd.conf  <<END_OF_GENERIC_SED    ;
 s?^    SSLCertificateFile /?    ####  &?;
