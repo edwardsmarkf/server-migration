@@ -200,7 +200,7 @@ END_OF_GORDONREDWARDS_COM_SED
 
 sed --file=-  ./httpd.conf    <<END_OF_SLRH_ORG_SED > x.x ;
 /RewriteRule .*well-known).* https:\/\/slrh.org:10000\//,/VirtualHost/{
-?SSLCertificateKeyFile ?a   \
+/SSLCertificateKeyFile /a   \
 ####\n\
     SSLCertificateFile /home/slrh.org/ssl.cert\n\
     SSLCertificateKeyFile /home/slrh.org/ssl.key
