@@ -21,7 +21,7 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
    
 
-2)  on CURRENT server:  (NOTE LENGHT OF TIME!!)
+2)  on CURRENT server:  (NOTE LENGTH OF TIME!!)
 
  git clone  https://github.com/edwardsmarkf/server-migration           ;
  find  .  -name   mariadbDumpAllDatabases.bsh                          ;   ## optional
@@ -39,7 +39,8 @@ cat  <<END_OF_CURRENT_SERVER |
   tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;   ## on OLD server!
   tar --create --gunzip   --file=/home/mark/home.tar.gz                /home/                     ;   ##  34 gig!  on OLD server!
 END_OF_CURRENT_SERVER
-time bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  ;
+time bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach  (nohup too??)
+
 
 
 on new server:  (30 minutes)
