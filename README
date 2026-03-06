@@ -73,7 +73,7 @@ rm   ./home.tar  ;   # we MAY need this for space!
 
 mv      --verbose  /home/                          /home-RENAMED/      ;
 mv      --verbose  .//home/                        /home/              ;
-rsync   --verbose  --archive /home-RENAMED/        /home/              ;     ## Now deal with the file owners ....??????????
+rsync   --verbose  --archive /home-RENAMED/        /home/              ;     ## check file owners
 
 ##  letsencrypt stuff
 rsync   --verbose  --archive   ./etc/letsencrypt/      /etc/letsencrypt/     ;
