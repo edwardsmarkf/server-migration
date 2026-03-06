@@ -137,15 +137,24 @@ apachectl  restart  ;
 sed  --in-place  --file=-   ./httpd.conf  <<END_OF_GENERIC_SED    ;
 s?^    SSLCertificateFile /?    ####  &?;
 s?^    SSLCertificateKeyFile /?    #### &?;
+END_OF_GENERIC_SED
+
+sed --file=-  ./httpd.conf    <<END_OF_ENGLISHWITHOUTACCENT_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/englishwithoutaccent.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/englishwithoutaccent.com/ssl.cert\n\
+    SSLCertificateKeyFile /home/englishwithoutaccent.com/ssl.key
+}
 END_OF_GORDONREDWARDS_SED
 
-sed --file=-  ./httpd.conf    <<END_OF_SLRH_SED > x.x ;
+sed --file=-  ./httpd.conf    <<END_OF_GORDONREDWARDS_SED > x.x ;
 /RewriteRule .*well-known).* https:\/\/gordonredwards.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
 ####\n\
     SSLCertificateFile /home/gordonredwards.com/ssl.cert\n\
     SSLCertificateKeyFile /home/gordonredwards.com/ssl.key
 }
 END_OF_GORDONREDWARDS_SED
+
 sed --file=-  ./httpd.conf    <<END_OF_SLRH_SED > x.x ;
 /RewriteRule .*well-known).* https:\/\/slrh.org:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
 ####\n\
