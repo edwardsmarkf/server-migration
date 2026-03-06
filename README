@@ -93,7 +93,7 @@ du  --summarize  --human-readable  /var/lib/mysql/                  ;           
 
               ###  ? ? ? ? npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
 bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
-
+bash -vx  ./server-migration/node/visudo.bsh             >  ~/server-migration/node/visudo.bsh.log                 ;  ## DOES this really need to be ran a second time???  double-check
 
 
 
