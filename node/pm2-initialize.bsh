@@ -29,7 +29,7 @@ sed   --in-place   --expression='s?/usr/bin/sudo?/bin/sudo?; s?/usr/bin/file?/bi
                                                                                                                                                                   --   --port 20002 --proxy proxyPort20002                  \
                                                                                                                                                                                     --voiceSpiceURL  voicespice.com         \
                                                                                                                                                                                     --domainURL      comptonpeslonline.com  ;
-#
+#        sudo  --user=comptonpeslonline.com   
 /usr/bin/pm2  start   ./  --cwd  /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer        --name  'HomeworkAssignment'    --   --port 20003 --proxy proxyPort20003                  ;
 #
 
