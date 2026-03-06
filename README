@@ -87,7 +87,7 @@ bash -vx  ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;     
 bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh    | grep  TEMP_SQL_LOCATION | sed -e 's/.* ### //; s/ ## //'   > load_sql_tables.bsh ; 
                                                                                   ## create the 'load' script!
 find  .  -name  '*.sql'  ;                                                        ## get directory name for new  `load_sql_tables.bsh` and manually add it!
-bash  -vx  load_sql_tables.bsh    >  load_sql_tables.bsh.log  2>&1  ;             ## run the newly created bash script
+bash  -vx  load_sql_tables.bsh    >  load_sql_tables.bsh.log  2>&1  ;             ## run the newly created bash script   approx 30 minutes run time
 
 
 ###  npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
