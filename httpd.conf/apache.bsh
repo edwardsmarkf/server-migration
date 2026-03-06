@@ -100,9 +100,6 @@ s?^    SSLCertificateKeyFile /?    #### &?;
 END_OF_SED
 
 
-exit;
-
-
 apachectl configtest;
 
 apachectl restart;
