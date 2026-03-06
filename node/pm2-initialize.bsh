@@ -25,6 +25,7 @@ sed   --in-place   --expression='s?/usr/bin/sudo?/bin/sudo?; s?/usr/bin/file?/bi
 
 /usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                    --name  'NodeWaveForm'          --   --port 20001 --proxy proxyPort20001                  ;
 #       sudo  --user=comptonpeslonline.com    ? ? ? ? ? ? ? ? 
+##        if this works, remove all the extra visudo commands
 /usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   --name  'VoiceSpiceServer'  --user comptonpeslonline.com                                  \
                                                                                                                                                                   --   --port 20002 --proxy proxyPort20002                  \
                                                                                                                                                                                     --voiceSpiceURL  voicespice.com         \
