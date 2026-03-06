@@ -139,13 +139,22 @@ s?^    SSLCertificateFile /?    ####  &?;
 s?^    SSLCertificateKeyFile /?    #### &?;
 END_OF_GENERIC_SED
 
+
+sed --file=-  ./httpd.conf    <<END_OF_EDWARDSMARK_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/edwardsmark.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/edwardsmark.com/ssl.cert\n\
+    SSLCertificateKeyFile /home/edwardsmark.com/ssl.key
+}
+END_OF_EDWARDSMARK_SED
+
 sed --file=-  ./httpd.conf    <<END_OF_ENGLISHWITHOUTACCENT_SED > x.x ;
 /RewriteRule .*well-known).* https:\/\/englishwithoutaccent.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
 ####\n\
     SSLCertificateFile /home/englishwithoutaccent.com/ssl.cert\n\
     SSLCertificateKeyFile /home/englishwithoutaccent.com/ssl.key
 }
-END_OF_GORDONREDWARDS_SED
+END_OF_ENGLISHWITHOUTACCENT_SED
 
 sed --file=-  ./httpd.conf    <<END_OF_GORDONREDWARDS_SED > x.x ;
 /RewriteRule .*well-known).* https:\/\/gordonredwards.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
