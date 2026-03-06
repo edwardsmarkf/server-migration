@@ -39,7 +39,7 @@ cat  <<END_OF_CURRENT_SERVER |
   tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;   ## on OLD server!
   tar --create --gunzip   --file=/home/mark/home.tar.gz                /home/                     ;   ##  34 gig!  on OLD server!
 END_OF_CURRENT_SERVER
-time bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach  (nohup too??)
+nohup time bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach 
 
 
 
