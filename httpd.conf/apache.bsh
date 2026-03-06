@@ -43,43 +43,44 @@ s?^    SSLCertificateKeyFile /?    #### &?;
 /SSLCertificateKeyFile \/etc\//a\
 ####\n\
     SSLCertificateFile /home/accentreduction.online/ssl.cert\n\
-    SSLCertificateKeyFile /home/accentreduction.online/ssl.key\n\
-
+    SSLCertificateKeyFile /home/accentreduction.online/ssl.key
 };
 
 /RewriteRule .*well-known).* https:\/\/ajcomptonpesl.com:10000\//,/VirtualHost/{        \
 /SSLCertificateKeyFile \/etc\//a\
 ####\n\
     SSLCertificateFile /home/ajcomptonpesl.com/ssl.cert\n\
-    SSLCertificateKeyFile /home/ajcomptonpesl.com/ssl.key\n\
+    SSLCertificateKeyFile /home/ajcomptonpesl.com/ssl.key
 };
 
 /RewriteRule .*well-known).* https:\/\/comptonpeslonline.com:10000\//,/VirtualHost/{    \
 /SSLCertificateKeyFile \/etc\//a\
 ####\n\
     SSLCertificateFile /home/comptonpeslonline.com/ssl.cert\n\
-    SSLCertificateKeyFile /home/comptonpeslonline.com/ssl.key\n\
+    SSLCertificateKeyFile /home/comptonpeslonline.com/ssl.key
+
 };
 
 /RewriteRule .*well-known).* https:\/\/comptonpeslonline.info:10000\//,/VirtualHost/{   \
 /SSLCertificateKeyFile \/etc\//a\
 ####\n\
     SSLCertificateFile /home/comptonpeslonline.info/ssl.cert\n\
-    SSLCertificateKeyFile /home/comptonpeslonline.info/ssl.key\n\
+    SSLCertificateKeyFile /home/comptonpeslonline.info/ssl.key
+
 };
 
 /RewriteRule .*well-known).* https:\/\/edwardsmark.com:10000\//,/VirtualHost/{  \
 /SSLCertificateKeyFile \/etc\//a\
 ####\n\
     SSLCertificateFile /home/edwardsmark.com/ssl.cert\n\
-    SSLCertificateKeyFile /home/edwardsmark.com/ssl.key\n\
+    SSLCertificateKeyFile /home/edwardsmark.com/ssl.key
 };
 
 /RewriteRule .*well-known).* https:\/\/englishwithoutaccent.com:10000\//,/VirtualHost/{ \
 /SSLCertificateKeyFile \/etc\//a\
 ####\n\
     SSLCertificateFile /home/englishwithoutaccent.com/ssl.cert\n\
-    SSLCertificateKeyFile /home/englishwithoutaccent.com/ssl.key\n\
+    SSLCertificateKeyFile /home/englishwithoutaccent.com/ssl.key
 };
 
 
@@ -87,17 +88,17 @@ s?^    SSLCertificateKeyFile /?    #### &?;
 /SSLCertificateKeyFile \/etc\//a\
 ####\n\
     SSLCertificateFile /home/gordonredwards.com/ssl.cert\n\
-    SSLCertificateKeyFile /home/gordonredwards.com/ssl.key\n\
+    SSLCertificateKeyFile /home/gordonredwards.com/ssl.key
 };
 
 /RewriteRule .*well-known).* https:\/\/slrh.org:10000\//,/VirtualHost/{ \
 /SSLCertificateKeyFile \/etc\//a\
 ####\n\
     SSLCertificateFile /home/slrh.org/ssl.cert\n\
-    SSLCertificateKeyFile /home/slrh.org/ssl.key\n\
+    SSLCertificateKeyFile /home/slrh.org/ssl.key
 };
 
-}
+
 
 END_OF_SED
 
