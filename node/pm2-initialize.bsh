@@ -19,7 +19,7 @@ npm   update                                                                    
 cd    -                                                                                          ;  ## 2026-03-02
 
   ##   2026-03-05 once again, the location has changed....  ;-(  
-sed   --in-place   --expression=s?/usr/bin/sudo?/bin/sudo; ?/usr/bin/file?/bin/file?;'   /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   ;
+sed   --in-place   --expression='s?/usr/bin/sudo?/bin/sudo; ?/usr/bin/file?/bin/file?;'   /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   ;
 
 /usr/bin/pm2   delete  all   ;   ## just in case....
 
