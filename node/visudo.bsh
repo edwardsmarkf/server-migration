@@ -5,14 +5,13 @@
 #                   #
 ##################### 
 
-2021-02-12  this step is CRITICAL to getting the node.js voiceSpiceNodeServerProxy program to work properly!
-2026-03-05 -- change /usr/sbin/csf  to just csf  (note to do  "which csf" in the future..!)
+##  2021-02-12  this step is CRITICAL to getting the node.js voiceSpiceNodeServerProxy program to work properly!
+##  2026-03-05 -- change /usr/sbin/csf  to just csf  (note to do  "which csf" in the future..!)
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");      
 
 ###   https://unix.stackexchange.com/questions/499729/how-can-i-add-lines-into-my-sudoers-file
 cat  <<END  | sudo EDITOR='tee --append' visudo ;
-
 
 ##  $(date;) --  Begin add by ${thisScript}
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /sbin/csf
