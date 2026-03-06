@@ -10,6 +10,7 @@
 #  2026-02-11  -- moved reboot stuff to this script  and added MISSING parm to voiceSpiceNodeServer!
 #  2026-03-02  -- added the package.json change and npm update
 #  2026-03-05  -- added --user comptonpeslonline.com  to VoiceSpiceServer to get around the sudo problem (weird considering its running as root)
+#                 also changed /usr/bin/sudo to just /bin/sudo  and  /usr/bin/file to just  /bin/file
 
 
 cd   /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer/  ;  ## 2026-03-02
@@ -17,6 +18,8 @@ sed  --in-place   --expression='s?"node": "^8.0.0",?"node": ">= 20",?'   ./packa
 npm   update                                                                                     ;  ## 2026-03-02
 cd    -                                                                                          ;  ## 2026-03-02
 
+  ##   2026-03-05 once again, the location has changed....  ;-(  
+sed   --in-place   --expression=s?/usr/bin/sudo?/bin/sudo; ?/usr/bin/file?/bin/file?;'   /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   ;
 
 /usr/bin/pm2   delete  all   ;   ## just in case....
 
