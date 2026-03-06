@@ -93,7 +93,7 @@ du  --summarize  --human-readable  /var/lib/mysql/                  ;           
 
 ###  npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
 bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
-
+bash -vx  ~/server-migration/node/visudo.bsh             >  ~/server-migration/node/visudo.bsh.log           2>&1  ;
 
 manually add/edit these to  /etc/httpd/conf/httpd.conf:  (carouselhouse.com still shows in the OLD httpd.conf, so we ignore it)
 
