@@ -140,6 +140,14 @@ s?^    SSLCertificateKeyFile /?    #### &?;
 END_OF_GENERIC_SED
 
 
+sed --file=-  ./httpd.conf    <<END_OF_COMPTONPESLONLINE_INFO_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/comptonpeslonline.info:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/comptonpeslonline.info/ssl.cert\n\
+    SSLCertificateKeyFile /home/comptonpeslonline.info/ssl.key
+}
+END_OF_COMPTONPESLONLINE_INFO_SED
+
 sed --file=-  ./httpd.conf    <<END_OF_EDWARDSMARK_SED > x.x ;
 /RewriteRule .*well-known).* https:\/\/edwardsmark.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
 ####\n\
