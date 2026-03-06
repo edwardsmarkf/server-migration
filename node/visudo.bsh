@@ -27,6 +27,8 @@ exit;
 
 
 
+
+
 using the command "visudo" just add the following:
 
 ## 2016-02-28 Defaults    requiretty   COMMENT THIS OUT ! ! ! 
