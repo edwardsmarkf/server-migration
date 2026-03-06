@@ -95,129 +95,6 @@ du  --summarize  --human-readable  /var/lib/mysql/                  ;           
 bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
 
 
-manually add/edit these to  /etc/httpd/conf/httpd.conf:  (carouselhouse.com still shows in the OLD httpd.conf, so we ignore it)
-
-    SSLCertificateFile /home/accentreduction.online/ssl.cert
-    SSLCertificateKeyFile /home/accentreduction.online/ssl.key
-    SSLCertificateChainFile /home/accentreduction.online/ssl.ca
-
-    SSLCertificateFile /home/ajcomptonpesl.com/ssl.cert
-    SSLCertificateKeyFile /home/ajcomptonpesl.com/ssl.key
-    SSLCertificateChainFile /home/ajcomptonpesl.com/ssl.ca
-
-    SSLCertificateFile /home/comptonpeslonline.com/ssl.cert
-    SSLCertificateKeyFile /home/comptonpeslonline.com/ssl.key
-    SSLCertificateChainFile /home/comptonpeslonline.com/ssl.ca
-
-    SSLCertificateFile /home/comptonpeslonline.info/ssl.cert
-    SSLCertificateKeyFile /home/comptonpeslonline.info/ssl.key
-    SSLCertificateChainFile /home/comptonpeslonline.info/ssl.ca
-
-    SSLCertificateFile /home/edwardsmark.com/ssl.cert
-    SSLCertificateKeyFile /home/edwardsmark.com/ssl.key
-    SSLCertificateChainFile /home/edwardsmark.com/ssl.ca
-
-    SSLCertificateFile /home/englishwithoutaccent.com/ssl.cert
-    SSLCertificateKeyFile /home/englishwithoutaccent.com/ssl.key
-    SSLCertificateChainFile /home/englishwithoutaccent.com/ssl.ca
-
-    SSLCertificateFile /home/gordonredwards.com/ssl.cert
-    SSLCertificateKeyFile /home/gordonredwards.com/ssl.key
-    SSLCertificateChainFile /home/gordonredwards.com/ssl.ca
-
-    SSLCertificateFile /home/slrh.org/ssl.cert
-    SSLCertificateKeyFile /home/slrh.org/ssl.key
-
-
-apachectl  configtest  ;
-
-apachectl  restart  ;
-
-
-cp  --verbose  /etc/httpd/conf/httpd.conf    ./httpd.conf    ;
-
-sed  --in-place  --file=-   ./httpd.conf  <<END_OF_GENERIC_SED    ;
-s?^    SSLCertificateFile /?    ####  &?;
-s?^    SSLCertificateKeyFile /?    #### &?;
-END_OF_GENERIC_SED
-
-
-sed --file=-  ./httpd.conf    <<END_OF_ACCENTREDUCTION_ONLINE_SED > x.x ;
-/RewriteRule .*well-known).* https:\/\/accentreduction.online:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
-####\n\
-    SSLCertificateFile /home/accentreduction.online/ssl.cert\n\
-    SSLCertificateKeyFile /home/accentreduction.online/ssl.key
-}
-END_OF_ACCENTREDUCTION_ONLINE_SED
-
-sed --file=-  ./httpd.conf    <<END_OF_AJCOMPTONPESL_COM_SED > x.x ;
-/RewriteRule .*well-known).* https:\/\/ajcomptonpesl.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
-####\n\
-    SSLCertificateFile /home/ajcomptonpesl.com/ssl.cert\n\
-    SSLCertificateKeyFile /home/ajcomptonpesl.com/ssl.key
-}
-END_OF_AJCOMPTONPESL_COM_SED
-
-sed --file=-  ./httpd.conf    <<END_OF_COMPTONPESLONLINE_COM_SED > x.x ;
-/RewriteRule .*well-known).* https:\/\/comptonpeslonline.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
-####\n\
-    SSLCertificateFile /home/comptonpeslonline.com/ssl.cert\n\
-    SSLCertificateKeyFile /home/comptonpeslonline.com/ssl.key
-}
-END_OF_COMPTONPESLONLINE_COM_SED
-
-sed --file=-  ./httpd.conf    <<END_OF_COMPTONPESLONLINE_INFO_SED > x.x ;
-/RewriteRule .*well-known).* https:\/\/comptonpeslonline.info:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
-####\n\
-    SSLCertificateFile /home/comptonpeslonline.info/ssl.cert\n\
-    SSLCertificateKeyFile /home/comptonpeslonline.info/ssl.key
-}
-END_OF_COMPTONPESLONLINE_INFO_SED
-
-sed --file=-  ./httpd.conf    <<END_OF_EDWARDSMARK_COM_SED > x.x ;
-/RewriteRule .*well-known).* https:\/\/edwardsmark.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
-####\n\
-    SSLCertificateFile /home/edwardsmark.com/ssl.cert\n\
-    SSLCertificateKeyFile /home/edwardsmark.com/ssl.key
-}
-END_OF_EDWARDSMARK_COM_SED
-
-sed --file=-  ./httpd.conf    <<END_OF_ENGLISHWITHOUTACCENT_COM_SED > x.x ;
-/RewriteRule .*well-known).* https:\/\/englishwithoutaccent.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
-####\n\
-    SSLCertificateFile /home/englishwithoutaccent.com/ssl.cert\n\
-    SSLCertificateKeyFile /home/englishwithoutaccent.com/ssl.key
-}
-END_OF_ENGLISHWITHOUTACCENT_COM_SED
-
-sed --file=-  ./httpd.conf    <<END_OF_GORDONREDWARDS_COM_SED > x.x ;
-/RewriteRule .*well-known).* https:\/\/gordonredwards.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
-####\n\
-    SSLCertificateFile /home/gordonredwards.com/ssl.cert\n\
-    SSLCertificateKeyFile /home/gordonredwards.com/ssl.key
-}
-END_OF_GORDONREDWARDS_COM_SED
-
-sed --file=-  ./httpd.conf    <<END_OF_SLRH_ORG_SED > x.x ;
-/RewriteRule .*well-known).* https:\/\/slrh.org:10000\//,/VirtualHost/{
-/SSLCertificateKeyFile \/etc\/ssl\/virtualmin\//a   \
-####\n\
-    SSLCertificateFile /home/slrh.org/ssl.cert\n\
-    SSLCertificateKeyFile /home/slrh.org/ssl.key
-}
-END_OF_SLRH_ORG_SED
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -461,16 +338,117 @@ mount -a ;                      ##   2013-05-14 mounts up the stuff in the fstab
                                                    ## mkdir  --verbose  /usr/local/bash/      ;
                                                    ## mkdir  --verbose  /usr/local/lib/php/   ;
 
-    ##  letsencrypt stuff
+manually add/edit these to  /etc/httpd/conf/httpd.conf:  (carouselhouse.com still shows in the OLD httpd.conf, so we ignore it)
+
+    SSLCertificateFile /home/accentreduction.online/ssl.cert
+    SSLCertificateKeyFile /home/accentreduction.online/ssl.key
+    SSLCertificateChainFile /home/accentreduction.online/ssl.ca
+
+    SSLCertificateFile /home/ajcomptonpesl.com/ssl.cert
+    SSLCertificateKeyFile /home/ajcomptonpesl.com/ssl.key
+    SSLCertificateChainFile /home/ajcomptonpesl.com/ssl.ca
+
+    SSLCertificateFile /home/comptonpeslonline.com/ssl.cert
+    SSLCertificateKeyFile /home/comptonpeslonline.com/ssl.key
+    SSLCertificateChainFile /home/comptonpeslonline.com/ssl.ca
+
+    SSLCertificateFile /home/comptonpeslonline.info/ssl.cert
+    SSLCertificateKeyFile /home/comptonpeslonline.info/ssl.key
+    SSLCertificateChainFile /home/comptonpeslonline.info/ssl.ca
+
+    SSLCertificateFile /home/edwardsmark.com/ssl.cert
+    SSLCertificateKeyFile /home/edwardsmark.com/ssl.key
+    SSLCertificateChainFile /home/edwardsmark.com/ssl.ca
+
+    SSLCertificateFile /home/englishwithoutaccent.com/ssl.cert
+    SSLCertificateKeyFile /home/englishwithoutaccent.com/ssl.key
+    SSLCertificateChainFile /home/englishwithoutaccent.com/ssl.ca
+
+    SSLCertificateFile /home/gordonredwards.com/ssl.cert
+    SSLCertificateKeyFile /home/gordonredwards.com/ssl.key
+    SSLCertificateChainFile /home/gordonredwards.com/ssl.ca
+
+    SSLCertificateFile /home/slrh.org/ssl.cert
+    SSLCertificateKeyFile /home/slrh.org/ssl.key
 
 
-##  mv  --force --verbose   ./home/accentreduction.online/       /home/                  ;#
-##  mv  --force --verbose   ./home/ajcomptonpesl.com/            /home/                  ;
-##  mv  --force --verbose   ./home/comptonpeslonline.com/        /home/                  ;
-##  mv  --force --verbose   ./home/comptonpeslonline.info/       /home/                  ;
-##  mv  --force --verbose   ./home/edwardsmark.com/              /home/                  ;
-##  mv  --force --verbose   ./home/englishwithoutaccent.com/     /home/                  ;
-##  mv  --force --verbose   ./home/gordonredwards.com/           /home/                  ;
-##  mv  --force --verbose   ./home/slrh.org/                     /home/                  ;
-##  mv  --force--verbose    ./home/virtualaska.com/              /home/                  ;
+apachectl  configtest  ;
+
+apachectl  restart  ;
+
+
+cp  --verbose  /etc/httpd/conf/httpd.conf    ./httpd.conf    ;
+
+sed  --in-place  --file=-   ./httpd.conf  <<END_OF_GENERIC_SED    ;
+s?^    SSLCertificateFile /?    ####  &?;
+s?^    SSLCertificateKeyFile /?    #### &?;
+END_OF_GENERIC_SED
+
+
+sed --file=-  ./httpd.conf    <<END_OF_ACCENTREDUCTION_ONLINE_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/accentreduction.online:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/accentreduction.online/ssl.cert\n\
+    SSLCertificateKeyFile /home/accentreduction.online/ssl.key
+}
+END_OF_ACCENTREDUCTION_ONLINE_SED
+
+sed --file=-  ./httpd.conf    <<END_OF_AJCOMPTONPESL_COM_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/ajcomptonpesl.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/ajcomptonpesl.com/ssl.cert\n\
+    SSLCertificateKeyFile /home/ajcomptonpesl.com/ssl.key
+}
+END_OF_AJCOMPTONPESL_COM_SED
+
+sed --file=-  ./httpd.conf    <<END_OF_COMPTONPESLONLINE_COM_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/comptonpeslonline.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/comptonpeslonline.com/ssl.cert\n\
+    SSLCertificateKeyFile /home/comptonpeslonline.com/ssl.key
+}
+END_OF_COMPTONPESLONLINE_COM_SED
+
+sed --file=-  ./httpd.conf    <<END_OF_COMPTONPESLONLINE_INFO_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/comptonpeslonline.info:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/comptonpeslonline.info/ssl.cert\n\
+    SSLCertificateKeyFile /home/comptonpeslonline.info/ssl.key
+}
+END_OF_COMPTONPESLONLINE_INFO_SED
+
+sed --file=-  ./httpd.conf    <<END_OF_EDWARDSMARK_COM_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/edwardsmark.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/edwardsmark.com/ssl.cert\n\
+    SSLCertificateKeyFile /home/edwardsmark.com/ssl.key
+}
+END_OF_EDWARDSMARK_COM_SED
+
+sed --file=-  ./httpd.conf    <<END_OF_ENGLISHWITHOUTACCENT_COM_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/englishwithoutaccent.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/englishwithoutaccent.com/ssl.cert\n\
+    SSLCertificateKeyFile /home/englishwithoutaccent.com/ssl.key
+}
+END_OF_ENGLISHWITHOUTACCENT_COM_SED
+
+sed --file=-  ./httpd.conf    <<END_OF_GORDONREDWARDS_COM_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/gordonredwards.com:10000\//,/VirtualHost/{/#SSLCertificateKeyFile/a   \
+####\n\
+    SSLCertificateFile /home/gordonredwards.com/ssl.cert\n\
+    SSLCertificateKeyFile /home/gordonredwards.com/ssl.key
+}
+END_OF_GORDONREDWARDS_COM_SED
+
+sed --file=-  ./httpd.conf    <<END_OF_SLRH_ORG_SED > x.x ;
+/RewriteRule .*well-known).* https:\/\/slrh.org:10000\//,/VirtualHost/{
+/SSLCertificateKeyFile \/etc\/ssl\/virtualmin\//a   \
+####\n\
+    SSLCertificateFile /home/slrh.org/ssl.cert\n\
+    SSLCertificateKeyFile /home/slrh.org/ssl.key
+}
+END_OF_SLRH_ORG_SED
+
+
 
