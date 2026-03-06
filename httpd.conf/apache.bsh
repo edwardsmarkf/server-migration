@@ -97,6 +97,8 @@ s?^    SSLCertificateKeyFile /?    #### &?;
     SSLCertificateKeyFile /home/slrh.org/ssl.key\n\
 };
 
+}
+
 END_OF_SED
 
 
