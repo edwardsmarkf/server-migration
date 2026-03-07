@@ -37,10 +37,11 @@ bash -vx     ~/server-migration/ffmpeg/00-run-master-install.bsh                
      ###################
 
 
-bash -vx   ~/server-migration/bash-misc/dnf-yum.bsh     > ~/server-migration/bash-misc/dnf-yum.bsh.log      2>&1   ;
-bash -vx   ~/server-migration/bash-misc/root-init.bsh   > ~/server-migration/bash-misc/root-init.bsh.log    2>&1   ;
-bash -vx   ~/server-migration/bash-misc/certbot.bsh     > ~/server-migration/bash-misc/certbot.bsh.log      2>&1   ;
-bash -vx   ~/server-migration/bash-misc/wkhtmltopdf.bsh > ~/server-migration/bash-misc/wkhtmltopdf.bsh.log  2>&1   ;
+bash -vx   ~/server-migration/bash-misc/dnf-yum.bsh               > ~/server-migration/bash-misc/dnf-yum.bsh.log               2>&1   ;
+bash -vx   ~/server-migration/bash-misc/root-init.bsh             > ~/server-migration/bash-misc/root-init.bsh.log             2>&1   ;
+bash -vx   ~/server-migration/bash-misc/certbot.bsh               > ~/server-migration/bash-misc/certbot.bsh.log               2>&1   ;
+bash -vx   ~/server-migration/bash-misc/create-log-directory.bsh  > ~/server-migration/bash-misc/create-log-directory.bsh.log  2>&1   ;
+bash -vx   ~/server-migration/bash-misc/wkhtmltopdf.bsh           > ~/server-migration/bash-misc/wkhtmltopdf.bsh.log           2>&1   ;
 
 
      ###################
