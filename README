@@ -84,7 +84,7 @@ cat ./crontab.txt         |  crontab   -                                     ;  
 
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
-sed --in-place --expression='/^password=''/password='CHANGE-THIS'/'   ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
+sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
 bash -vx  ~/server-migration/mariadb/migration/create_db_and_users.bsh  >  ./create_db_and_users.sql    ;      
 bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh    | grep  TEMP_SQL_LOCATION | sed -e 's/.* ### //; s/ ## //;1i TEMP_SQL_LOCATION=/tmp/old_server_data/tmpmariadb-tmp/;'   > load_sql_tables.bsh ; 
                                                                                   ## create the 'load' script!
