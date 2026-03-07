@@ -102,7 +102,31 @@ du  --summarize  --human-readable  /var/lib/mysql/                  ;           
 
               ###  ? ? ? ? npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
 bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
-bash -vx  ./server-migration/node/visudo.bsh             >  ~/server-migration/node/visudo.bsh.log                 ;  ## DOES this really need to be ran a second time???  double-check
+
+
+#  rsync  SOURCE     DESTINATION
+sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh                                                                                         \
+                                    comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/     \
+                                    /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/                                           ;
+
+sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh                                                                                         \
+                                    comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                    \
+                                    /home/comptonpeslonline.com/public_html/comptonPractice/voicefiles/                                                          ;
+## one line no passord prompting:
+sshpass -p  'PASSWORD'                                                                                                                                           \
+    sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh                                                                                     \
+                                    comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                    \
+                                    /home/comptonpeslonline.com/public_html/voicefiles/                                                                          ;
+
+## important misc php archive files:
+ rsync --verbose --archive  --rsh=ssh  /usr/local/lib/php/   root@199.231.184.26:/usr/local/lib/php/
+
+
+
+
+
+
+
 
 
 
