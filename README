@@ -103,24 +103,34 @@ du  --summarize  --human-readable  /var/lib/mysql/                  ;           
               ###  ? ? ? ? npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
 bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
 
+##########################
+#                        #
+#         r s y n c      #
+#                        #
+##########################
+
 ## TEST rsync  FIRST  !!
-sshpass -p  'PASSWORD'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## g
+sshpass -p  'PASSWORD'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## test to make sure this works!
 
-#  rsync  SOURCE     DESTINATION
-sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh                                                                                         \
-                                    comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/     \
-                                    /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/                                           ;
+#  format: rsync  SOURCE     DESTINATION
 
-sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh                                                                                         \
-                                    comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                    \
-                                    /home/comptonpeslonline.com/public_html/comptonPractice/voicefiles/                                                          ;
-## one line no passord prompting:
-sshpass -p  'PASSWORD'                                                                                                                                           \
-    sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh                                                                                     \
-                                    comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                    \
-                                    /home/comptonpeslonline.com/public_html/voicefiles/                                                                          ;
+sshpass -p   'PASSWoRd'                                                                                                                \
+      sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh='ssh -o StrictHostKeyChecking=no'                           \
+            /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/                                         \
+            comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   ;
 
-## important misc php archive files:
+sshpass -p   'PASSWoRd'                                                                                                                \
+      sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh='ssh -o StrictHostKeyChecking=no'                           \
+            comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
+            /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/                                         ;
+
+sshpass -p   'PASSWoRd'                                                                                                                \
+      sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh='ssh -o StrictHostKeyChecking=no'                           \
+            comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                  \
+            /home/comptonpeslonline.com/public_html/comptonPractice/voicefiles/                                                        ;
+
+
+##  misc php archive files:
  rsync --verbose --archive  --rsh=ssh  /usr/local/lib/php/   root@199.231.184.26:/usr/local/lib/php/
 
 
