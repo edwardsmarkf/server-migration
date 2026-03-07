@@ -1,4 +1,10 @@
-#### initial setup
+
+
+############################################################
+#                                                          #
+#    n e w   s e r v e r    i n i t i a l i z a t i o n    #
+#                                                          #
+############################################################
 
 
 00)    echo "export KVM_NAME=THIS-SERVER-NAME-CHANGE-THIS-PLEASE-TO-NEW-SERVER-NAME" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
@@ -19,8 +25,13 @@ END
 nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
 
-   
 
+#####################################################################
+#                                                                   #
+#   c u r r e n t    s e r v e r   d a t a   e x t r a c t i o n    #
+#                                                                   #
+#####################################################################
+   
 2)  on CURRENT server:  (NOTE LENGTH OF TIME!!)
 
  git clone  https://github.com/edwardsmarkf/server-migration           ;
@@ -43,6 +54,12 @@ nohup time bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## 
 
 
 
+########################################################
+#                                                      #
+#    f e t c h   d a t a  t o   n e w   s e r v e r    #
+#                                                      #
+########################################################
+
 on new server:  (30 minutes)
 
 dnf  --assumeyes  install sshpass  ;   
@@ -59,7 +76,14 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 
 
 
-on the new server:
+
+######################################################################
+#                                                                    #
+#   m o v e   d a t a   t o   p r o p e r   l o c a t i o n s        #
+#                                                                    #
+######################################################################
+
+# also on the new server:
 
 gzip --decompress  *.gz  ;     ### you MAY run into space issues on the new server!
 tar -xf     ./home.tar               ; 
@@ -83,6 +107,13 @@ mv      --verbose  .//usr/local/lib/php/               /usr/local/lib/       ;
 cat ./crontab.txt         |  crontab   -                                     ;   #  quick way to load crontab from old server!
 
 
+
+###################################################
+#                                                 # 
+#   m a r i a d b     d a t a    i n s t a l l    #
+#                                                 #
+###################################################
+
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
 
@@ -100,8 +131,21 @@ bash  -vx  load_sql_tables.bsh    >  load_sql_tables.bsh.log  2>&1  ;           
 du  --summarize  --human-readable  /var/lib/mysql/                  ;             ## check for total size   
 
 
+
+
               ###  ? ? ? ? npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
 bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
+
+#######################################################
+#                                                     #
+#         s - n a i l - p o s t f i x . b s h         #
+#                                                     #
+#######################################################
+
+## get password from google!
+bash -vx   ~/server-migration/bash-misc/s-nail-postfix.bsh         ~/server-migration/bash-misc/s-nail-postfix.bsh.log   2>&1  ;
+
+
 
 ##########################
 #                        #
@@ -133,9 +177,18 @@ sshpass -p   'PASSWoRd'                                                         
 ##  misc php archive files:
  rsync --verbose --archive  --rsh=ssh  /usr/local/lib/php/   root@199.231.184.26:/usr/local/lib/php/
 
+
+
+##################################
+#                                #
+#   f i n a l    t e s t i n g   #
+#                                #
+##################################
+
 find  /home/ -type f  -name  '*.php' -exec php -l  {}  \;   >  php-lint-test.txt    2>  php-lint-test-errors.txt  ;    ## php lint test
 
 ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:comptonpeslonline.com"                  ;    ## double-check correct ownership!
+
 
 
 
