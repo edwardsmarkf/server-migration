@@ -133,9 +133,9 @@ sshpass -p   'PASSWoRd'                                                         
 ##  misc php archive files:
  rsync --verbose --archive  --rsh=ssh  /usr/local/lib/php/   root@199.231.184.26:/usr/local/lib/php/
 
+find  /home/ -type f  -name  '*.php' -exec php -l  {}  \;   >  php-lint-test.txt    2>  php-lint-test-errors.txt  ;    ## php lint test
 
-
-
+ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:comptonpeslonline.com"                  ;    ## double-check correct ownership!
 
 
 
