@@ -103,6 +103,8 @@ du  --summarize  --human-readable  /var/lib/mysql/                  ;           
               ###  ? ? ? ? npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
 bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
 
+## TEST rsync  FIRST  !!
+sshpass -p  'PASSWORD'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## g
 
 #  rsync  SOURCE     DESTINATION
 sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh=ssh                                                                                         \
