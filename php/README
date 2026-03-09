@@ -6,7 +6,8 @@
 UPDATE
 UPDATE 
 UPDATE  --  create a new final step that does something like
-             find  /home/ -type f  -name  '*.php' -exec php -l  {}  \;   ;
+             find  /home/                 -type f  -name  '*.php' -exec php -l  {}  \;   ;
+             find  /usr/local/lib/php/    -type f  -name  '*.php' -exec php -l  {}  \;   ;
 UPDATE
 
 
