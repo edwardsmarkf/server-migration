@@ -1,9 +1,4 @@
 
-ini
-; For example, on many Linux systems the path will be:
-sendmail_path = "/usr/bin/s-nail -t -i"  -- 
-NOT!   postfix/sasl seem to be required for WP & sendmail.   fix in the s-nail section!
-
 
 ############################################################
 #                                                          #
