@@ -1,6 +1,11 @@
 
 
 
+/usr/local/lib/php/PHPMailer/PHPMailer/PHPMailerAutoload.php  line  45:
+
+    function spl_autoload_register($classname)     ##   2026-03-08      __autoload($classname)
+
+
 /usr/local/bash/serverUtilization.bsh line 108:   (notice addition of   -M "text/html"   and REMOVAL of Content-type: text/html
 
         echo -e ${BODY} | /usr/bin/s-nail -v -A gmailSMTP-noreply  -M "text/html" -r 'Marky Edwards <mark@edwardsmark.com>'  -s "$SUBJECT" mark@edwardsmark.com  >> /tmp/cron   ;
