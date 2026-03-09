@@ -62,10 +62,11 @@ dnf --assumeyes update ;     ## required to eliminate   PHP Warning:  PHP Startu
 
 
 sed    --in-place  --file=-  /etc/php.ini  <<END_OF_PHP_DOT_INI ;
-s?;date.timezone =?date.timezone ='America/New_York' ;  2019-04-04 from github php.txt -- added time-zone      ?;
-s/upload_max_filesize = 2M/upload_max_filesize = 64M ;  2019-04-03 from github php.txt -- changed from 2M      /;
-s/short_open_tag = Off/short_open_tag = On           ;  2019-04-03 from github php.txt -- now allows  <?   ?>  /;
-s/memory_limit = 128M/memory_limit = 512M            ;  2019-04-03 from github php.txt -- changed from 128<    /;
+s?;date.timezone =?date.timezone ='America/New_York'           ;  2019-04-04 from github php.txt -- added time-zone      ?;
+s/upload_max_filesize = 2M/upload_max_filesize = 64M           ;  2019-04-03 from github php.txt -- changed from 2M      /;
+s/short_open_tag = Off/short_open_tag = On                     ;  2019-04-03 from github php.txt -- now allows  <?   ?>  /;
+s/memory_limit = 128M/memory_limit = 512M                      ;  2019-04-03 from github php.txt -- changed from 128     /;
+s?/usr/sbin/sendmail?/"usr/bin/s-nail -A gmailSMTP-noreply "   ;  2026-03-09 changed from sendmail to s-nail             ?;
 s?;include_path = ".:/php/includes"?include_path = "/usr/local/lib/php" ; 2019-04-03 from github php.txt       ?;
 END_OF_PHP_DOT_INI
 
