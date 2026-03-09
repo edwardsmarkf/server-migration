@@ -10,3 +10,11 @@
 
         echo -e ${BODY} | /usr/bin/s-nail -v -A gmailSMTP-noreply  -M "text/html" -r 'Marky Edwards <mark@edwardsmark.com>'  -s "$SUBJECT" mark@edwardsmark.com  >> /tmp/cron   ;
         #####echo -e \${BODY} | /usr/bin/mailx -v -A gmailSMTP-noreply  -r 'Marky Edwards <mark@edwardsmark.com>'  -s "\$SUBJECT $(echo -e "\nContent-type: text/html")" mark@edwardsmark.com  >> /tmp/cron     ;
+
+
+/home/comptonpeslonline.com/cgi-bin/mailx.pl
+/home/comptonpeslonline.com/cgi-bin/email_link.pl
+   -   include   ' -M "text/html" '
+   -   remove     $(echo -e "\nContent-type: text/html")
+   -  change /usr/bin/mailx/ to just /bin/s-nail
+/home/comptonpeslonline.com/cgi-bin/emailLinkAuth0.pl    ## just change '/usr/bin/mailx'  to  '/bin/s-nail'
