@@ -142,7 +142,7 @@ bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/n
 #                                                     #
 #######################################################
 
-## get password from google and fix /usr/local/bash/serverUtilitzation...!
+## get password from google and alter  /usr/local/bash/serverUtilitzation because serverUtilization.bsh uses 'Content-type: type/html'
 bash -vx   ~/server-migration/s-nail/s-nail-postfix.bsh         ~/server-migration/s-nail/s-nail-postfix.bsh.log   2>&1  ;
 
 
