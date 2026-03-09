@@ -142,8 +142,8 @@ bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/n
 #                                                     #
 #######################################################
 
-## get password from google!
-bash -vx   ~/server-migration/bash-misc/s-nail-postfix.bsh         ~/server-migration/bash-misc/s-nail-postfix.bsh.log   2>&1  ;
+## get password from google and fix /usr/local/bash/serverUtilitzation...!
+bash -vx   ~/server-migration/s-nail/s-nail-postfix.bsh         ~/server-migration/s-nail/s-nail-postfix.bsh.log   2>&1  ;
 
 
 
