@@ -131,6 +131,7 @@ find  .  -name  '*.sql'  ;                                                      
 bash  -vx  load_sql_tables.bsh    >  load_sql_tables.bsh.log  2>&1  ;             ## run the newly created bash script   approx 30 minutes run time
 du  --summarize  --human-readable  /var/lib/mysql/                  ;             ## check for total size   
 
+mariadb-secure-installation;   ## IMPORTANT!
 
 
 
