@@ -1,4 +1,5 @@
 
+postfix/sasl seem to be required for WP & sendmail.   fix in the s-nail section!
 
 
 ############################################################
