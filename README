@@ -1,12 +1,5 @@
 
-these files need to be altered on the new server:
 
-/home/comptonpeslonline.com/cgi-bin/mailx.pl
-/home/comptonpeslonline.com/cgi-bin/email_link.pl
-   -   include   ' -M "text/html" '
-   -   remove     $(echo -e "\nContent-type: text/html")
-   -  change /usr/bin/mailx/ to just /bin/s-nail
-/home/comptonpeslonline.com/cgi-bin/emailLinkAuth0.pl    ## just change '/usr/bin/mailx'  to  '/bin/s-nail'
 
 ############################################################
 #                                                          #
