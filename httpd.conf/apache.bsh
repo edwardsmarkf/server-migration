@@ -36,6 +36,9 @@ SED_SCRIPT_AJCOMPTONPESL
 
 
 sed  --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<END_OF_SED    ;
+
+##  $(date;) --  start add by ${thisScript}                                                               \\
+
 s?^    SSLCertificateFile /?    #### &?;
 s?^    SSLCertificateKeyFile /?    #### &?;
 
@@ -98,7 +101,7 @@ s?^    SSLCertificateKeyFile /?    #### &?;
     SSLCertificateKeyFile /home/slrh.org/ssl.key
 };
 
-
+##  $(date;) --  end add by ${thisScript}                                                               \\
 
 END_OF_SED
 
