@@ -8,7 +8,7 @@
 ############################################################
 
 
-00)    echo "export KVM_NAME=THIS-SERVER-NAME-CHANGE-THIS-PLEASE-TO-NEW-SERVER-NAME" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
+00)    echo "export KVM_NAME=THIS-SERVER-NAME-CHANGE-THIS-PLEASE-TO-NEW-SERVER-NAME;" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
 
 1)    (this step takes about 3.5 hours or 210 minutes!)
 
