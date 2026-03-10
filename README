@@ -14,8 +14,8 @@
 
 dnf  --assumeyes  install  time                                                                                          ;
 cat  <<END                                                                                                               |
-   cd                                                                                                                    ; 
-   dnf --assumeyes update                                                                                                ; 
+   cd                                                                                                                    ;
+   dnf --assumeyes update                                                                                                ;
    dnf  --assumeyes upgrade                                                                                              ;
    dnf   clean all                                                                                                       ;
    dnf  --assumeyes  install  time                                                                                       ;
