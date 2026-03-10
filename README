@@ -1,5 +1,5 @@
 
-dnf  --assumeyes   install  git  &&  git clone  https://github.com/edwardsmarkf/server-migration ;
+
 
 ############################################################
 #                                                          #
