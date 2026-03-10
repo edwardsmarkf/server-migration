@@ -68,7 +68,6 @@ s?;date.timezone =?date.timezone ='America/New_York'                    ;    $(d
 s/upload_max_filesize = 2M/upload_max_filesize = 64M                    ;    $(date;) --  added by ${thisScript}  -- changed from 2M                            /;
 s/short_open_tag = Off/short_open_tag = On                              ;    $(date;) --  added by ${thisScript}  -- now allows  <?   ?>                        /;
 s/memory_limit = 128M/memory_limit = 512M                               ;    $(date;) --  added by ${thisScript}  -- changed from 128                           /;
-s?/usr/sbin/sendmail -t -i?"/bin/s-nail -A gmailSMTP-noreply -t -i"     ;    $(date;) --  added by ${thisScript}  -- 2026-03-09 changed from sendmail to s-nail ?;
 s?;include_path = ".:/php/includes"?include_path = "/usr/local/lib/php" ;   $(date;) --  added by ${thisScript}  2019-04-03 from github php.txt        ?;
 END_OF_PHP_DOT_INI
 
@@ -76,6 +75,9 @@ which php;
 php --version ;
 
 exit 1 ;
+
+
+#  s?/usr/sbin/sendmail -t -i?"/bin/s-nail -A gmailSMTP-noreply -t -i"     ;    $(date;) --  added by ${thisScript}  -- 2026-03-09 changed from sendmail to s-nail ?;
 
 
 
