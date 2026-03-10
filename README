@@ -13,7 +13,7 @@
 1)    (this step takes about 3.5 hours or 210 minutes!)
 
 dnf  --assumeyes  install  time                                                                                          ;
-cat  <<END   |
+cat  <<END                                                                                                               |
    cd                                                                                                                    ; 
    dnf --assumeyes update                                                                                                ; 
    dnf  --assumeyes upgrade                                                                                              ;
