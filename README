@@ -39,7 +39,8 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
  find  .  -name   mariadbDumpAllDatabases.bsh                          ;   ## optional
  vi  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;  ## change password  (or use sed)  
                ## --or--   ## CHANGE THE HARDCODED  PASSWORD !
- sed --in-place --expression='s/CHANGE-THIS/password/;'  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
+ sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/NewPassWord/;'  \
+                  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
                         
 cat  <<END_OF_CURRENT_SERVER |
   bash -vx   ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
