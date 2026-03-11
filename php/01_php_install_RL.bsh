@@ -64,11 +64,11 @@ dnf --assumeyes update ;     ## required to eliminate   PHP Warning:  PHP Startu
 
 
 sed    --in-place  --file=-  /etc/php.ini  <<END_OF_PHP_DOT_INI         ;
-s?;date.timezone =?date.timezone ='America/New_York'                    ;    added time-zone                          ?;
-s/upload_max_filesize = 2M/upload_max_filesize = 64M                    ;    changed from 2M                          /;
-s/short_open_tag = Off/short_open_tag = On                              ;    now allows  <?   ?>                      /;
-s/memory_limit = 128M/memory_limit = 512M                               ;    changed from 128                         /;
-s?;include_path = ".:/php/includes"?include_path = "/usr/local/lib/php" ;    2019-04-03 from github php.txt           ?;
+s?;date.timezone =?date.timezone ='America/New_York'                    ;    $(date;) --  added time-zone                          ?;
+s/upload_max_filesize = 2M/upload_max_filesize = 64M                    ;    $(date;) --  changed from 2M                          /;
+s/short_open_tag = Off/short_open_tag = On                              ;    $(date;) --  now allows  <?   ?>                      /;
+s/memory_limit = 128M/memory_limit = 512M                               ;    $(date;) --  changed from 128                         /;
+s?;include_path = ".:/php/includes"?include_path = "/usr/local/lib/php" ;    $(date;) --  2019-04-03 from github php.txt           ?;
 END_OF_PHP_DOT_INI
 
 which php;
