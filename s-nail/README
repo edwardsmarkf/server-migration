@@ -1,9 +1,6 @@
 
 
 
-/usr/local/lib/php/PHPMailer/PHPMailer/PHPMailerAutoload.php  line  45:
-
-    function spl_autoload_register($classname)     ##   2026-03-08      __autoload($classname)
 
 
 /usr/local/bash/serverUtilization.bsh line 108:   (notice addition of   -M "text/html"   and REMOVAL of Content-type: text/html
@@ -18,3 +15,16 @@
    -   remove     $(echo -e "\nContent-type: text/html")
    -  change /usr/bin/mailx/ to just /bin/s-nail
 /home/comptonpeslonline.com/cgi-bin/emailLinkAuth0.pl    ## just change '/usr/bin/mailx'  to  '/bin/s-nail'
+
+
+
+
+
+
+
+
+
+completed/changed/fixed on OLD server 2028-03-11:
+/usr/local/lib/php/PHPMailer/PHPMailer/PHPMailerAutoload.php  line  45:
+
+    function spl_autoload_register($classname)     ##   2026-03-08      __autoload($classname)
