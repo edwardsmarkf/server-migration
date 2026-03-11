@@ -43,6 +43,7 @@ if [ "${emailAddress}" != "${emailAddressTMP}" ]; then
    exit;
 fi
 
+echo 'Google secret password is ALSO contained in:  /usr/local/lib/php/SMTPMailer.php ';
 read -p 'Please enter crypted password: '       appPasswordInput    ;
 read -p 'Please reenter crypted password: '     appPasswordTMP      ;
 
@@ -76,6 +77,7 @@ cat  <<END_OF_DOT_MAILRC >  /root/.mailrc  ;
 
     ####   $(date;) --  added by ${thisScript}
     set v15-compat
+                      ###  password is also contained in:  /usr/local/lib/php/SMTPMailer.php
     set mta=smtps://${emailAddress/@/%40}:${applicationPassword}@smtp.gmail.com:465
     set smtp-auth=login
     set from="NoReply <${emailAddress}>"
@@ -84,6 +86,7 @@ cat  <<END_OF_DOT_MAILRC >  /root/.mailrc  ;
 
     account gmailSMTP-noreply {
             set v15-compat
+                      ###  password is also contained in:  /usr/local/lib/php/SMTPMailer.php
             set mta=smtps://${emailAddress/@/%40}:${applicationPassword}@smtp.gmail.com:465
             set smtp-auth=login
             set from="NoReply <${emailAddress}>"
