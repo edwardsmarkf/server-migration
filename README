@@ -35,6 +35,8 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
    
 2)  on CURRENT server:  (NOTE LENGTH OF TIME!!)
 
+ mkdir  /tmp/old_server_data && cd  $_  ; 
+
  git clone  https://github.com/edwardsmarkf/server-migration           ;
  find  .  -name   mariadbDumpAllDatabases.bsh                          ;   ## optional
  vi  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;  ## change password  (or use sed)  
