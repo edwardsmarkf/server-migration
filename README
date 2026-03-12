@@ -152,6 +152,7 @@ mariadb-secure-installation;   ## IMPORTANT!
 bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  ;
 
 
+
 #######################################################
 #                                                     #
 #         s - n a i l - p o s t f i x . b s h         #
@@ -159,8 +160,12 @@ bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/n
 #######################################################
 
 ## first get password from Google:   https://myaccount.google.com/apppasswords
+           --or-------
+ grep   DEFAULT_SMTP_PASSWD   /usr/local/lib/php/SMTPMailer.php   | grep  define  ;
+
 bash -vx   ~/server-migration/s-nail/s-nail-postfix.bsh      >   ~/server-migration/s-nail/s-nail-postfix.bsh.log   2>&1  ;
 ### Alter  /usr/local/bash/serverUtilitzation because serverUtilization.bsh uses 'Content-type: type/html'
+
 
 
 ##########################
