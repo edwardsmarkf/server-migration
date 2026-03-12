@@ -165,7 +165,7 @@ bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/n
 
 bash    ~/server-migration/s-nail/s-nail-postfix.bsh      2>   ~/server-migration/s-nail/s-nail-postfix.bsh.log   ;
 ### Alter  /usr/local/bash/serverUtilitzation because serverUtilization.bsh uses 'Content-type: type/html'
-
+php   /usr/local/lib/php/SMTPMailer-tester.php  ;   ## test the php mail sender
 
 
 ##########################
