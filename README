@@ -35,7 +35,7 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
    
 2)  on CURRENT server:  (NOTE LENGTH OF TIME!!)
 
- mkdir  /tmp/old_server_data && cd  $_  ; 
+ rm -Rf  /tmp/old_server_data  ;  mkdir  /tmp/old_server_data && cd  $_  ; 
 
  git clone  https://github.com/edwardsmarkf/server-migration           ;
  find  .  -name   mariadbDumpAllDatabases.bsh                          ;   ## optional
@@ -68,7 +68,8 @@ on new server:  (30 minutes)
 
 dnf  --assumeyes  install sshpass  ;   
 
-mkdir  /tmp/old_server_data && cd  $_  ;
+rm -Rf  /tmp/old_server_data   ;  mkdir  /tmp/old_server_data && cd  $_  ;
+
 ##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
                                                 ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
 sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
