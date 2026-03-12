@@ -75,7 +75,8 @@ sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp  -o StrictHostKeyChecking=no   ma
 sftp>   ls -lh        ## human readable file size
 sftp>   mget  *.gz    ## fetch the gzips
 sftp>   !ls -lh       ## file sizes on NEW server (notice bang character)
-sftp>   rm  *.gz      ## can be done in the sftp session!  or.....
+sftp>   rm  *.gz      ## can be done in the sftp session!  
+         .................or.....
 rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ;  ## on OLD server!
 
 
