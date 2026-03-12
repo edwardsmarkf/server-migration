@@ -159,7 +159,7 @@ bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/n
 #######################################################
 
 ## first get password from Google:   https://myaccount.google.com/apppasswords
-bash -vx   ~/server-migration/s-nail/s-nail-postfix.bsh         ~/server-migration/s-nail/s-nail-postfix.bsh.log   2>&1  ;
+bash -vx   ~/server-migration/s-nail/s-nail-postfix.bsh      >   ~/server-migration/s-nail/s-nail-postfix.bsh.log   2>&1  ;
 ### Alter  /usr/local/bash/serverUtilitzation because serverUtilization.bsh uses 'Content-type: type/html'
 
 
