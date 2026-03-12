@@ -43,8 +43,9 @@ if [ "${emailAddress}" != "${emailAddressTMP}" ]; then
    exit;
 fi
 
-grep  --files-with-matches DEFAULT_SMTP_PASSWD   /usr/local/lib/php/SMTPMailer.php   ;
-grep                       DEFAULT_SMTP_PASSWD   /usr/local/lib/php/SMTPMailer.php   ;
+echo 'php password:';
+grep   DEFAULT_SMTP_PASSWD   /usr/local/lib/php/SMTPMailer.php   | grep  define  | sed --expression="s/^.* '//; s/'.*$//"  ;
+echo '';
 echo 'Google secret password is ALSO contained in:  /usr/local/lib/php/SMTPMailer.php ';
 
 read -p 'Please enter crypted password: '       appPasswordInput    ;
