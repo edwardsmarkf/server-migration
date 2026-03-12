@@ -160,8 +160,8 @@ bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/n
 #######################################################
 
 ## first get password from Google:   https://myaccount.google.com/apppasswords
-           --or-------
- grep   DEFAULT_SMTP_PASSWD   /usr/local/lib/php/SMTPMailer.php   | grep  define  ;
+           --or probably better-------
+grep   DEFAULT_SMTP_PASSWD   /usr/local/lib/php/SMTPMailer.php   | grep  define  | sed --expression="s/^.* '//; s/'.*$//"  ;
 
 bash    ~/server-migration/s-nail/s-nail-postfix.bsh      2>   ~/server-migration/s-nail/s-nail-postfix.bsh.log   ;
 ### Alter  /usr/local/bash/serverUtilitzation because serverUtilization.bsh uses 'Content-type: type/html'
