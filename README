@@ -98,9 +98,8 @@ tar -xf     /tmp/old_server_data/letsencrypt.tar        ;
 tar -xf     /tmp/old_server_data/mariadb-databases.tar  ;
 tar -xf     /tmp/old_server_data/usr_local_bash.tar     ;
 tar -xf     /tmp/old_server_data/usr_local_lib_php.tar  ;
-tar -xf     /tmp/old_server_data/bash_history.tar       ;
 
-rm   /tmp/old_server_data/home.tar  ;   # we MAY need this for space!
+rm -f  /tmp/old_server_data/home.tar  ;   # we MAY need this for space!
 
      #####  NEW CLONE MADE !  so start here...
 
