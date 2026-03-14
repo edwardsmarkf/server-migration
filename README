@@ -67,7 +67,7 @@ nohup time bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## 
 
 on new server:  (30 minutes)
 
-dnf  --assumeyes  install sshpass  ;   
+dnf  --assumeyes  install sshpass  ;      ## this might not yet be done if this procedure is started too early.
 
 rm -Rf  /tmp/old_server_data   ;  mkdir  /tmp/old_server_data && cd  $_  ;
 
