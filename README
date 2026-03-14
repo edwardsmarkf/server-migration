@@ -162,7 +162,7 @@ bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/n
            --or probably better-------
 grep   DEFAULT_SMTP_PASSWD   /usr/local/lib/php/SMTPMailer.php   | grep  define  | sed --expression="s/^.* '//; s/'.*$//"  ;
 
-bash    ~/server-migration/s-nail/s-nail-postfix.bsh      2>   ~/server-migration/s-nail/s-nail-postfix.bsh.log   ;
+bash    ~/server-migration/s-nail/s-nail-postfix.bsh          ;
 
 php   /usr/local/lib/php/SMTPMailer-tester.php  ;   ## test the php mail sender
 
