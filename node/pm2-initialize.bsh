@@ -11,7 +11,7 @@
 #  2026-03-02  -- added the package.json change and npm update
 #  2026-03-05  -- added --user comptonpeslonline.com  to VoiceSpiceServer to get around the sudo problem (weird considering its running as root)
 #                 also changed /usr/bin/sudo to just /bin/sudo  and  /usr/bin/file to just  /bin/file
-#  2026-03-15  -- need to add the env variable LD_LIBRARY_PATH tio nodeWaveFormPlayer for some bizarre reason(??)
+#  2026-03-15  -- need to add the env variable LD_LIBRARY_PATH tio nodeWaveFormPlayer for some bizarre reason(??)  - i didnt need this earlier, why now??
 
 
 cd   /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer/  ;  ## 2026-03-02
@@ -24,7 +24,7 @@ sed   --in-place   --expression='s?/usr/bin/sudo?/bin/sudo?; s?/usr/bin/file?/bi
 
 /bin/pm2   delete  all   ;   ## just in case....
 
-
+                                           ### 2026-03-15 - added LD_LIBRARY_PATH as per:  https://pm2.io/docs/runtime/best-practices/environment-variables/
 LD_LIBRARY_PATH=/usr/local/lib                                                                                                     \
     /bin/pm2 start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                      \
                                          --name  'NodeWaveForm'                                                                    \
