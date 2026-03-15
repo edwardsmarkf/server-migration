@@ -11,6 +11,7 @@
 #  2026-03-02  -- added the package.json change and npm update
 #  2026-03-05  -- added --user comptonpeslonline.com  to VoiceSpiceServer to get around the sudo problem (weird considering its running as root)
 #                 also changed /usr/bin/sudo to just /bin/sudo  and  /usr/bin/file to just  /bin/file
+#  2026-03-15  -- need to add the env variable LD_LIBRARY_PATH tio nodeWaveFormPlayer for some bizarre reason(??)
 
 
 cd   /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer/  ;  ## 2026-03-02
@@ -21,28 +22,41 @@ cd    -                                                                         
   ##   2026-03-05 once again, the location has changed....  ;-(  
 sed   --in-place   --expression='s?/usr/bin/sudo?/bin/sudo?; s?/usr/bin/file?/bin/file?;'   /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   ;
 
-/usr/bin/pm2   delete  all   ;   ## just in case....
+/bin/pm2   delete  all   ;   ## just in case....
 
-/usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                    --name  'NodeWaveForm'          --   --port 20001 --proxy proxyPort20001                  ;
-#       sudo  --user=comptonpeslonline.com    ? ? ? ? ? ? ? ? 
-##        if this works, remove all the extra visudo commands
-/usr/bin/pm2  start    /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   --name  'VoiceSpiceServer'      --   --port 20002 --proxy proxyPort20002                  \
-                                                                                                                                                                                    --voiceSpiceURL  voicespice.com         \
-                                                                                                                                                                                    --domainURL      comptonpeslonline.com  ;
-#    
-/usr/bin/pm2  start   ./  --cwd  /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer        --name  'HomeworkAssignment'    --   --port 20003 --proxy proxyPort20003                  ;
-#
 
-/usr/bin/pm2  save   ;
+LD_LIBRARY_PATH=/usr/local/lib                                                                                                     \
+    /bin/pm2 start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                      \
+                                         --name  'NodeWaveForm'                                                                    \
+                                         --      --port           20001                                                            \
+                                                 --proxy          proxyPort20001                                                   \
+;
 
-/usr/bin/pm2  startup  systemd ;   ## 2026-02-11  reboot stuff
+   /bin/pm2  start    /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js     \
+                                         --name  'VoiceSpiceServer'                                                                \
+                                         --      --port           20002                                                            \
+                                                 --proxy          proxyPort20002                                                   \
+                                                 --voiceSpiceURL  voicespice.com                                                   \
+                                                 --domainURL      comptonpeslonline.com                                            \
+;
+   /bin/pm2  start   ./  --cwd  /home/comptonpeslonline.com/public_html/comptonPractice/homeworkAssignment/feathersServer          \
+                                         --name  'HomeworkAssignment'                                                              \
+                                         --      --port           20003                                                            \
+                                                 --proxy          proxyPort20003                                                   \
+;
 
+
+/bin/pm2  save   ;
+
+/bin/pm2  startup  systemd ;   ## 2026-02-11  reboot stuff
 
 exit 1;
 
-#
 
-
+##########################################################################################################################################################################################################################################################
+##########################################################################################################################################################################################################################################################
+##########################################################################################################################################################################################################################################################
+##########################################################################################################################################################################################################################################################
 
 
 
@@ -54,3 +68,4 @@ exit 1;
 
 
 
+/bin/pm2  start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                    --name  'NodeWaveForm'          --   --port 20001 --proxy proxyPort20001                  ;
