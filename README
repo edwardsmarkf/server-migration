@@ -132,7 +132,7 @@ nohup time bash -vx  -   >   ./current-server-tar-gz-move.log   2>&1  &   ## det
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
-
+head -30   ~/server-migration/mariadb/migration/create_db_and_users.bsh                                                                ;    ## inspect it
 bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh  >  /tmp/old_server_data/create_db_and_users.sql   ;
 mariadb     --verbose  <   /tmp/old_server_data/create_db_and_users.sql                                                   ;
 
@@ -141,7 +141,7 @@ bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh          
          | sed -e 's/.* ### //; s/ ## //;1i TEMP_SQL_LOCATION=/tmp/old_server_data/tmp/mariadb-tmp/;'   \
          > /tmp/old_server_data/load_sql_tables.bsh                                                     \
          ;                                                        ## create the 'load' script!
-    ## no longer necessary!   ##  find  /tmp/old_server_data/  -type f   -name  '*.sql'                                                            ;     ## get directory name for new  `load_sql_tables.bsh` and manually add it!
+cat   /tmp/old_server_data/load_sql_tables.bsh                                                                   ;     ## inspect it 
 bash  -vx  /tmp/old_server_data//load_sql_tables.bsh    >  /tmp/old_server_data/load_sql_tables.bsh.log    2>&1  ;     ## run the newly created bash script   approx 30 minutes run time
 du  --summarize  --human-readable  /var/lib/mysql/                                                               ;     ## check for total size   1.4 gigs
 
