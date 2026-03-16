@@ -122,7 +122,7 @@ cat  <<END_OF_MOVE |
 END_OF_MOVE
 nohup time bash -vx  -   >   ./current-server-tar-gz-move.log   2>&1  &   ## detach 
 
-
+#####  ??    cat /tmp/old_server_data/bash_history   >> ~/.bash_history     ???????????
 
 ###################################################
 #                                                 # 
