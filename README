@@ -52,7 +52,7 @@ cat  <<END_OF_CURRENT_SERVER |
      tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;   ## on OLD server! 
      tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;   ## on OLD server!
      tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;   ## on OLD server!
-     tar --create --gunzip   --file=/home/mark/bash_history               ~/.bash_history            ;   ## on old server
+     tar --create --gunzip   --file=/home/mark/bash_history.gz            ~/.bash_history            ;   ## on old server
      tar --create --gunzip   --file=/home/mark/home.tar.gz                /home/                     ;   ##  34 gig!  on OLD server!
 END_OF_CURRENT_SERVER
 nohup time bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach 
@@ -95,6 +95,7 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 cat  <<END_OF_UNPACK |
   gzip --decompress  /tmp/old_server_data/*.gz  ;     ### you MAY run into space issues on the new server!
   tar -xf     /tmp/old_server_data/home.tar               ; 
+  tar -xf     /tmp/old_server_data/bash_history.tar       ;
   tar -xf     /tmp/old_server_data/letsencrypt.tar        ;
   tar -xf     /tmp/old_server_data/mariadb-databases.tar  ;
   tar -xf     /tmp/old_server_data/usr_local_bash.tar     ;
