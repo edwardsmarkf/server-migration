@@ -42,8 +42,7 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
  find  .  -name   mariadbDumpAllDatabases.bsh                                        ;   ## optional
  vi  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                ;  ## change password  (or use sed)  
                ## --or--   ## CHANGE THE HARDCODED  PASSWORD !
- sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/NewPassWordGoesHere/;'  \\
-                  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
+ sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/NewPassWordGoesHere/;'  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
                         
 cat  <<END_OF_CURRENT_SERVER |
      bash -vx   ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
@@ -74,7 +73,7 @@ rm -Rf  /tmp/old_server_data   ;  mkdir  /tmp/old_server_data && cd  $_  ;
 
 ##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
                                                 ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
-sshpass -p  'MY-PASSWORD-FOR-ACCT-MARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
+sshpass -p  'MYpASSWORDfORaCCTmARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
 sftp>   ls -lh        ## human readable file size
 sftp>   mget  *.gz    ## fetch the gzips
 sftp>   !ls -lh       ## file sizes on NEW server (notice bang character)
