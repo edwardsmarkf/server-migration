@@ -132,7 +132,7 @@ nohup time bash -vx  -   >   ./current-server-tar-gz-move.log   2>&1  &   ## det
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
-head -30   ~/server-migration/mariadb/migration/create_db_and_users.bsh                                                                ;    ## inspect it
+grep  '^password='                                                     ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## inspect it
 bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh  >  /tmp/old_server_data/create_db_and_users.sql   ;
 mariadb     --verbose  <   /tmp/old_server_data/create_db_and_users.sql                                                   ;
 
