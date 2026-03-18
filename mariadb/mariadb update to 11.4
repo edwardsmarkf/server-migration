@@ -1,0 +1,17 @@
+
+
+
+###    https://kb.filewave.com/books/linux-tips-and-tricks/page/upgrading-or-updating-mariadb-on-almalinux-9 
+
+cat  <<END   >  /etc/yum.repos.d/MariaDB.repo;
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/11.4/rhel10-amd64
+module_hotfixes=1
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+END
+
+dnf  --assumeyes  install MariaDB-server ;
+systemctl  start  mariadb.service ;
+
