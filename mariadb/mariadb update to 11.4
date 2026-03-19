@@ -1,28 +1,7 @@
 
 
-you MAY need to remove previous installation:
 
 dnf --assumeyes  update ;
-
-
-
-
-mariadb
-mariadb-backup
-mariadb-client-utils.x86_64                 3:10.11.15-1.el10_1                   @appstream            
-mariadb-common
-mariadb-connector-c
-mariadb-connector-c-config
-mariadb-connector-c-devel
-mariadb-connector-c-doc.noarch              3.4.4-1.el10                          @crb                  
-mariadb-devel
-mariadb-errmsg.noarch                       3:10.11.15-1.el10_1                   @appstream            
-mariadb-gssapi-server.x86_64                3:10.11.15-1.el10_1                   @appstream            
-mariadb-server     
-mariadb-server-utils
-
-dnf   remove   mariadb   mariadb-connector-c-config  ;
-dnf  -y  remove  mariadb  mariadb-backup   mariadb-connector-c   mariadb-server  mariadb-common  mariadb-devel   mariadb-connector-c-config ;
 
 
 ###    https://kb.filewave.com/books/linux-tips-and-tricks/page/upgrading-or-updating-mariadb-on-almalinux-9 
@@ -44,10 +23,40 @@ dnf  list installed | grep --ignore-case  maria   ;   ## optional
 systemctl  enable    mariadb.service  ;
 systemctl  start     mariadb.service  ;
 
+echo  'SELECT VERSION() "Version:" ;' | mariadb     ;
+
+
 ####################################################################################################################
 ####################################################################################################################
 ####################################################################################################################
 ####################################################################################################################
+
+
+
+
+
+you MAY need to remove previous installation:
+
+mariadb
+mariadb-backup
+mariadb-client-utils.x86_64                 3:10.11.15-1.el10_1                   @appstream            
+mariadb-common
+mariadb-connector-c
+mariadb-connector-c-config
+mariadb-connector-c-devel
+mariadb-connector-c-doc.noarch              3.4.4-1.el10                          @crb                  
+mariadb-devel
+mariadb-errmsg.noarch                       3:10.11.15-1.el10_1                   @appstream            
+mariadb-gssapi-server.x86_64                3:10.11.15-1.el10_1                   @appstream            
+mariadb-server     
+mariadb-server-utils
+
+dnf   remove   mariadb   mariadb-connector-c-config  ;
+dnf  -y  remove  mariadb  mariadb-backup   mariadb-connector-c   mariadb-server  mariadb-common  mariadb-devel   mariadb-connector-c-config ;
+
+
+
+
 
 
 
