@@ -40,7 +40,9 @@ gpgcheck=1
 END
 
 dnf  --assumeyes  install MariaDB-server   MariaDB-devel;
-systemctl  start  mariadb.service ;
+dnf  list installed | grep --ignore-case  maria   ;   ## optional 
+systemctl  enable    mariadb.service  ;
+systemctl  start     mariadb.service  ;
 
 ####################################################################################################################
 ####################################################################################################################
