@@ -37,15 +37,16 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
    
 2)  on CURRENT server:  (NOTE LENGTH OF TIME!!)
 
- rm -Rf  /tmp/old_server_data  ;  mkdir  /tmp/old_server_data && cd  $_  ; 
+rm -Rf  /tmp/old_server_data  ;  mkdir  /tmp/old_server_data && cd  $_  ; 
 
- git clone  https://github.com/edwardsmarkf/server-migration                         ;
-  tar -z -czf   /kvm301/backup/github-server-migration.tar.gz   ./server-migration/  ;   ## optional save it
- find  .  -name   mariadbDumpAllDatabases.bsh                                        ;   ## optional
- vi  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                ;  ## change password  (or use sed)  
+git clone  https://github.com/edwardsmarkf/server-migration                         ;
+tar -z -czf   /kvm301/backup/github-server-migration.tar.gz   ./server-migration/  ;   ## optional save it
+find  .  -name   mariadbDumpAllDatabases.bsh                                        ;   ## optional
+vi  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                ;  ## change password  (or use sed)  
                ## --or--   ## CHANGE THE HARDCODED  PASSWORD !
- sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/NewPassWordGoesHere/;'  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
-                        
+sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/NewPassWordGoesHere/;'  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
+grep  '^MARIADB_PASSWORD='                                                         ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
+
 cat  <<END_OF_CURRENT_SERVER |
      bash -vx   ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
      ls  -lh  /home/mark ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
