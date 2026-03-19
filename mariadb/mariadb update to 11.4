@@ -4,6 +4,19 @@ you MAY need to remove previous installation:
 
 dnf  list installed | grep aria ;
 
+
+curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash ;
+
+dnf install MariaDB-server ;
+systemctl   enable  mariadb.service ;  systemctl  start  mariadb.service ;
+
+####################################################################################################################
+####################################################################################################################
+####################################################################################################################
+####################################################################################################################
+
+
+
 mariadb
 mariadb-backup
 mariadb-client-utils.x86_64                 3:10.11.15-1.el10_1                   @appstream            
