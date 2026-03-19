@@ -9,6 +9,7 @@ dnf  list installed | grep aria ;
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash ;  ## from https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum
 ls  -ltr  /etc/yum.repos.d   ;      ###  notice NEW rocky.repo!
 
+ yum clean all  ;    ## optional
 dnf install MariaDB-server ;
 systemctl   enable  mariadb.service ;  systemctl  start  mariadb.service ;
 
