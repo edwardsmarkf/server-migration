@@ -2,8 +2,9 @@
 
 you MAY need to remove previous installation:
 
-dnf  list installed | grep aria ;
+dnf --assumeyes  update ;
 
+dnf  list installed | grep aria ;
 
 curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash ;
 
