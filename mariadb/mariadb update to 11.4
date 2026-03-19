@@ -4,19 +4,6 @@ you MAY need to remove previous installation:
 
 dnf --assumeyes  update ;
 
-dnf  list installed | grep aria ;
-
-curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash ;  ## from https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum
-ls  -ltr  /etc/yum.repos.d   ;      ###
-
- yum clean all  ;    ## optional
-dnf install MariaDB-server ;
-systemctl   enable  mariadb.service ;  systemctl  start  mariadb.service ;
-
-####################################################################################################################
-####################################################################################################################
-####################################################################################################################
-####################################################################################################################
 
 
 
@@ -40,6 +27,9 @@ dnf  -y  remove  mariadb  mariadb-backup   mariadb-connector-c   mariadb-server 
 
 ###    https://kb.filewave.com/books/linux-tips-and-tricks/page/upgrading-or-updating-mariadb-on-almalinux-9 
 
+dnf  list installed | grep --ignore-case  maria   ;   ## optional 
+ls -l  /etc/yum.repos.d/MariaDB.repo              ;   ## optional
+
 cat  <<END   >  /etc/yum.repos.d/MariaDB.repo;
 [mariadb]
 name = MariaDB
@@ -52,3 +42,18 @@ END
 dnf  --assumeyes  install MariaDB-server   MariaDB-devel;
 systemctl  start  mariadb.service ;
 
+####################################################################################################################
+####################################################################################################################
+####################################################################################################################
+####################################################################################################################
+
+
+
+dnf  list installed | grep --ignore-case  maria ;
+
+curl -sS https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash ;  ## from https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/rpm/yum
+ls  -ltr  /etc/yum.repos.d   ;      ###
+
+ yum clean all  ;    ## optional
+dnf install MariaDB-server ;
+systemctl   enable  mariadb.service ;  systemctl  start  mariadb.service ;
