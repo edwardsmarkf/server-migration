@@ -18,7 +18,11 @@ gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 END
 
-dnf  --assumeyes  install MariaDB-server   MariaDB-devel;
+dnf  --assumeyes  install                     \
+                           MariaDB-backup     \
+                           MariaDB-devel      \
+                           MariaDB-server     \
+                           ;
 dnf  list installed | grep --ignore-case  maria   ;   ## optional 
 systemctl  enable    mariadb.service  ;
 systemctl  start     mariadb.service  ;
