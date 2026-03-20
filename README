@@ -57,7 +57,7 @@ cat  <<END_OF_CURRENT_SERVER |
      tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;
      tar --create --gunzip   --file=/home/mark/home.tar.gz                /home/                     ;   ##  34 gig!
      cp  --verbose           ~/.bash_history                              /home/mark/bash_history    ;   
-     chmod  --verbose  555                                                /home/mark/bash_history    ;  
+     chmod  --verbose  755                                                /home/mark/bash_history    ;  
      gzip                                                                 /home/mark/bash_history    ;
      ls  -lh   /home/mark/*.gz                                                                       ;
 END_OF_CURRENT_SERVER
