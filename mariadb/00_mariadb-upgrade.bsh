@@ -2,11 +2,52 @@
 
 ####  written entirely from:  https://mariadb.com/docs/deploy/upgrade-community-server-cs105-centos8/
 
-###  2021-05-28:   https://mariadb.com/kb/en/no-rocky-linux-support-yet/+comments/5249
-##  2021-08-15 - since we are now letting virtualmin install mariadb, there are "missing" installs!
-## 2025-02-19 -- added variable to indicate which version we are trying to install.
-## 2025-07-29 -- on Rocky Linux, its unwise to install from repo, better to let dnf package manager take care of things.
-##                so this script is being shortened. 
+##  2021-05-28 --  https://mariadb.com/kb/en/no-rocky-linux-support-yet/+comments/5249
+##  2021-08-15 -- since we are now letting virtualmin install mariadb, there are "missing" installs!
+##  2025-02-19 -- added variable to indicate which version we are trying to install.
+##  2025-07-29 -- on Rocky Linux, its unwise to install from repo, better to let dnf package manager take care of things.
+##                        so this script is being shortened. 
+##  2026-03-19 -- on RL10 we ran into problems with 
+
+MARIADB_VERSION=11.4;
+
+###    https://kb.filewave.com/books/linux-tips-and-tricks/page/upgrading-or-updating-mariadb-on-almalinux-9 
+
+dnf  list installed | grep --ignore-case  maria   ;   ## optional 
+
+ls -l  /etc/yum.repos.d/MariaDB.repo              ;   ## optional
+
+cat  <<END   >  /etc/yum.repos.d/MariaDB.repo;
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/${MARIADB_VERSION}/rhel10-amd64
+module_hotfixes=1
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+END
+
+dnf  --assumeyes  install                     \
+                           MariaDB-backup     \
+                           MariaDB-devel      \
+                           MariaDB-server     \
+                           ;
+
+dnf  list installed | grep --ignore-case  maria   ;   ## optional 
+
+systemctl  enable    mariadb.service  ;
+systemctl  start     mariadb.service  ;
+
+echo  'SELECT VERSION() "Version:" ;' | mariadb     ;
+
+exit;
+
+
+####################################################################################################################
+####################################################################################################################
+####################################################################################################################
+####################################################################################################################
+
+
 
 
                                  ###################dnf --disableplugin subscription-manager     clean all ;  ## 2016-12-31 - required for MariaDB  (???)
