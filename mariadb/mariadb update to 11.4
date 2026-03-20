@@ -7,6 +7,7 @@ dnf --assumeyes  update ;
 ###    https://kb.filewave.com/books/linux-tips-and-tricks/page/upgrading-or-updating-mariadb-on-almalinux-9 
 
 dnf  list installed | grep --ignore-case  maria   ;   ## optional 
+
 ls -l  /etc/yum.repos.d/MariaDB.repo              ;   ## optional
 
 cat  <<END   >  /etc/yum.repos.d/MariaDB.repo;
@@ -23,11 +24,15 @@ dnf  --assumeyes  install                     \
                            MariaDB-devel      \
                            MariaDB-server     \
                            ;
+
 dnf  list installed | grep --ignore-case  maria   ;   ## optional 
+
 systemctl  enable    mariadb.service  ;
 systemctl  start     mariadb.service  ;
 
 echo  'SELECT VERSION() "Version:" ;' | mariadb     ;
+
+exit;
 
 
 ####################################################################################################################
@@ -41,9 +46,9 @@ echo  'SELECT VERSION() "Version:" ;' | mariadb     ;
 
 you MAY need to remove previous installation:
 
-mariadb
-mariadb-backup
-mariadb-client-utils.x86_64                 3:10.11.15-1.el10_1                   @appstream            
+    mariadb
+    mariadb-backup
+    mariadb-client-utils.x86_64                 3:10.11.15-1.el10_1                   @appstream            
 mariadb-common
 mariadb-connector-c
 mariadb-connector-c-config
