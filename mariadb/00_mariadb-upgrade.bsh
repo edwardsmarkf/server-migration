@@ -7,7 +7,7 @@
 ##  2025-02-19 -- added variable to indicate which version we are trying to install.
 ##  2025-07-29 -- on Rocky Linux, its unwise to install from repo, better to let dnf package manager take care of things.
 ##                        so this script is being shortened. 
-##  2026-03-19 -- on RL10 we ran into problems with 
+##  2026-03-19 -- on RL10.x we ran into problems with 11.4 so we had to use an rhel10-amd64 rather than one specifically for RL.
 
 MARIADB_VERSION=11.4;
 
