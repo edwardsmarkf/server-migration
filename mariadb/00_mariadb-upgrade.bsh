@@ -26,6 +26,8 @@ gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 END
 
+cat          >  /etc/yum.repos.d/MariaDB.repo       ;  ## double check it.
+
 dnf  --assumeyes  install                     \
                            MariaDB-backup     \
                            MariaDB-devel      \
