@@ -44,6 +44,17 @@ bash -vx   ~/server-migration/bash-misc/create-log-directory.bsh  > ~/server-mig
 bash -vx   ~/server-migration/bash-misc/wkhtmltopdf.bsh           > ~/server-migration/bash-misc/wkhtmltopdf.bsh.log           2>&1   ;
 
 
+     ##########################
+     #                        #
+     #    m a r i a d b       #
+     #                        #
+     ##########################
+
+bash -vx  ~/server-migration/mariadb/00_mariadb-upgrade.bsh                 >  ~/server-migration/mariadb/00_mariadb-upgrade.bsh.log     2>&1 ;
+mariadb  --verbose     <    ~/server-migration/mariadb/05_create_db_test.sql  ;
+
+
+
      ###################
      #                 #
      #   w e b m i n   #
@@ -84,6 +95,17 @@ bash  -vx  ~/server-migration/perl/Master_Installer.bsh       >  ~/server-migrat
 
 
 
+     #########################################
+     #                                       #
+     #    m a r i a d b   t e s t i n g      #
+     #                                       #
+     #########################################
+
+perl  ~/server-migration/mariadb/05_test_perl_connection.pl  ;
+
+php   ~/server-migration/mariadb/05_test_php_connection.php  ;
+
+
 
 
      ##########################
@@ -116,20 +138,6 @@ bash -vx  ~/server-migration/httpd.conf/apache.bsh                          >  ~
      ##########################
 
 bash -vx  ~/server-migration/clamav/clamav.bsh                     >  ~/server-migration/clamav/clamav.bsh.log     2>&1 ;
-
-
-     ##########################
-     #                        #
-     #    m a r i a d b       #
-     #                        #
-     ##########################
-
-bash -vx  ~/server-migration/mariadb/00_mariadb-upgrade.bsh                 >  ~/server-migration/mariadb/00_mariadb-upgrade.bsh.log     2>&1 ;
-mariadb  --verbose     <    ~/server-migration/mariadb/05_create_db_test.sql  ;
-
-perl  ~/server-migration/mariadb/05_test_perl_connection.pl  ;
-
-php   ~/server-migration/mariadb/05_test_php_connection.php  ;
 
 
 
