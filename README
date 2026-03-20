@@ -79,7 +79,7 @@ rm -Rf  /tmp/old_server_data   ;  mkdir  /tmp/old_server_data && cd  $_  ;
 ##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
                                                 ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
 sshpass -p  'MYpASSWORDfORaCCTmARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
-sftp>   ls -lh        ## human readable file size
+sftp>   ls -lh        ## human readable file size  /home/ one is 34.x gigs
 sftp>   mget  *.gz    ## fetch the gzips
 sftp>   !ls -lh       ## file sizes on NEW server (notice bang character)
 sftp>   rm  *.gz      ## can be done in the sftp session!  
