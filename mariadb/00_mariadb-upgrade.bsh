@@ -17,16 +17,17 @@ dnf  list installed | grep --ignore-case  maria   ;   ## optional
 
 ls -l  /etc/yum.repos.d/MariaDB.repo              ;   ## optional
 
-cat  <<END   >  /etc/yum.repos.d/MariaDB.repo;
+cat  <<END_OF_MARIADB_REPO   >  /etc/yum.repos.d/MariaDB.repo;
 [mariadb]
 name = MariaDB
 baseurl = http://yum.mariadb.org/${MARIADB_VERSION}/rhel10-amd64
 module_hotfixes=1
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
-END
+END_OF_MARIADB_REPO
 
-cat          >  /etc/yum.repos.d/MariaDB.repo       ;  ## double check it.
+ls -l    /etc/yum.repos.d/MariaDB.repo              ;   ## optional
+cat      /etc/yum.repos.d/MariaDB.repo              ;  ## double check it.
 
 dnf  --assumeyes  install                     \
                            MariaDB-backup     \
