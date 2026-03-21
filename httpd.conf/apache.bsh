@@ -3,9 +3,23 @@
 #       apache-initialize.bsh               2026-02-18
 #
 #
+#     2026-03-21  -  added  httpd.service.d/override.conf
+
 
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");
+
+
+### added 2026-03-21
+cat  /etc/systemd/system/httpd.service.d/override.conf   ;
+[Service]
+ExecStart=
+ExecStart=/usr/sbin/httpd -DFOREGROUND
+END
+
+systemctl daemon-reload              ;
+systemctl  restart  httpd.service    ;
+### end added 2026-03-21
 
 
 /usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_COMPTONPESLONLINE  ;
