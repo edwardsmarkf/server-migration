@@ -5,7 +5,7 @@
 
 ## alternatively,  
 
-##  sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh)"  \
+##  sh -c "$(curl -fsSL  https://download.virtualmin.com/virtualmin-install; )"  \
                                              --                                  \
                                              --bundle LAMP                       \
                                              --branch   stable                   \
@@ -16,6 +16,7 @@
 ##  "--branch unstable" for a pre-release, may have a lot of UNTESTED options
 ##  "--branch stable"   2026-01-18
 ##  "--yes" assumes yes for all prompts
+##   https://software.virtualmin.dev/virtualmin-install.sh  for experimental releases!
 
 maybe do 'sed' here ?????
    SERIAL=GPL
