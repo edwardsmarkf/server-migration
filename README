@@ -111,7 +111,9 @@ nohup time bash -vx  -   >   ./current-server-tar-gz-unpack.log   2>&1  &   ## d
 
 rm --verbose --force  /tmp/old_server_data/home.tar  ;   # we MAY need this for space!
 
-     #####  NEW CLONE MADE !  so start here...
+
+
+     #####  put tar files into their proper places
 
 cat  <<END_OF_MOVE |
   mv      --verbose  /tmp/old_server_data/bash_history                  ~                   ;
