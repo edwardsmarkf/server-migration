@@ -233,16 +233,13 @@ ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:compto
 
 ##################################
 #                                #
-#   f i n a l    t w e a k s     #
+#   f i n a l    t e s t s       #
 #                                #
 ##################################
 
-these all need to have "Content-type: text/html" removed and replaced with -M "text/html":
+this need to be tested have "Content-type: text/html" removed and replaced with -M "text/html":
 
 /home/comptonpeslonline.com/cgi-bin/email_link.pl
-/home/comptonpeslonline.com/cgi-bin/formmail.pl
-/home/comptonpeslonline.com/cgi-bin/helloWorld.pl
-/home/comptonpeslonline.com/cgi-bin/mailx.pl
 
 
 
