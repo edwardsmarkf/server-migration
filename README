@@ -243,6 +243,13 @@ this need to be tested have "Content-type: text/html" removed and replaced with 
 
 /home/comptonpeslonline.com/cgi-bin/email_link.pl
 
+/ffmpeg/99-test.bsh
+test  at:              https://zzyzxzzyzx.com/phpinfo.php?#
+                       https://zzyzxzzyzx.com/imageMagickTest.php
+
+su fakeperluser --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '
+su - fakeperluser --command 'perl -W -MXML::Writer -e 1 ; '
+
 
 
 
