@@ -63,6 +63,7 @@ for installName in    \
      openssl          \
      openssl-devel    \
      popt.i686        \
+     postfix          \
      python3          \
      sendmail         \
      sendmail-cf      \
