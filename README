@@ -242,9 +242,10 @@ test  at:
     https://zzyzxzzyzx.com/imageMagickTest.php
 --or get the IP number since this domain name was NOT created using virtualmin.
 
-su fakeperluser --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '
-su - fakeperluser --command 'perl -W -MXML::Writer -e 1 ; '
+su fakeperluser --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $_  ;
+su - fakeperluser --command 'perl -W -MXML::Writer -e 1 ; '                     &&  echo  $_  ;
 
+echo  'SELECT VERSION() "Version:" ;' | mariadb                                 &&  echo  $_  ;
 
 
 
