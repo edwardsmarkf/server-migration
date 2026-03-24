@@ -119,6 +119,7 @@ cat  <<END_OF_MOVE |
   mv      --verbose  /tmp/old_server_data/bash_history                  ~                   ;
   mv      --verbose  /home/                                             /home-RENAMED/      ;
   mv      --verbose  /tmp/old_server_data/home/                         /home/              ;
+  bash    ~/server-migration/bash-misc/chmod-them-all.bsh                                   ;     ## tar keeps losing ownership
   mv      --verbose  /home-RENAMED/fakeperluser/                        /home/              ;
   mv      --verbose  /home-RENAMED/fakephpuser/                         /home/              ;
   rsync   --verbose  --archive /home-RENAMED/                           /home/              ;     ## check file owners
