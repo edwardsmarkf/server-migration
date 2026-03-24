@@ -247,8 +247,8 @@ su - fakeperluser --command 'perl -W -MXML::Writer -e 1 ; '                     
 
 echo  'SELECT VERSION() "Version:" ;' | mariadb                                 &&  echo  $_  ;
 
-
-
+bash      ./mariadb/05_test_perl_connection.bsh                                 &&  echo  $?  ;
+bash      ./mariadb/05_test_php_connection.bsh                                  &&  echo  $?  ;
 
 
 
