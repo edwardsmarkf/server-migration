@@ -99,10 +99,12 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 ############################################################################
 
 
-##########  ~/server-migration/perl/README
+more   ~/server-migration/ffmpeg/99-test.bsh    ### look for results
 
-/ffmpeg/99-test.bsh
-test  at:              
+more   ~/server-migration/perl/README    ## look for tests
+
+define zzyzxzzyzx.com using new IP ## and then test  at:              
+
     https://zzyzxzzyzx.com/phpinfo.php?#
     https://zzyzxzzyzx.com/imageMagickTest.php
 --or get the IP number since this domain name was NOT created using virtualmin.
