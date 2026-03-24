@@ -27,6 +27,8 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
 
 
+
+
 #####################################################################
 #                                                                   #
 #   c u r r e n t    s e r v e r   d a t a   e x t r a c t i o n    #
@@ -63,6 +65,8 @@ cat  <<END_OF_CURRENT_SERVER |
      ls  -lh   /home/mark/*.gz                                                                       ;
 END_OF_CURRENT_SERVER
 nohup time bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach 
+
+
 
 
 
@@ -140,7 +144,6 @@ END_OF_UNPACK
 nohup time bash -vx  -   >   ./current-server-tar-gz-unpack.log   2>&1  &   ## detach 
 
 rm --verbose --force  /tmp/old_server_data/home.tar  ;   # we MAY need this for space!
-
 
 
      #####  put tar files into their proper places
