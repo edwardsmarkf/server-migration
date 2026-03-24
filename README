@@ -232,20 +232,15 @@ find  /home/ -type f  -name  '*.php' -exec php -l  {}  \;   >  php-lint-test.txt
 ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:comptonpeslonline.com"                  ;    ## double-check correct ownership!
 
 
-
-##################################
-#                                #
-#   f i n a l    t e s t s       #
-#                                #
-##################################
-
-this need to be tested have "Content-type: text/html" removed and replaced with -M "text/html":
+                                                        ####   this need to be tested have "Content-type: text/html" removed and replaced with -M "text/html":
 
 /home/comptonpeslonline.com/cgi-bin/email_link.pl
 
 /ffmpeg/99-test.bsh
-test  at:              https://zzyzxzzyzx.com/phpinfo.php?#
-                       https://zzyzxzzyzx.com/imageMagickTest.php
+test  at:              
+    https://zzyzxzzyzx.com/phpinfo.php?#
+    https://zzyzxzzyzx.com/imageMagickTest.php
+--or get the IP number since this domain name was NOT created using virtualmin.
 
 su fakeperluser --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '
 su - fakeperluser --command 'perl -W -MXML::Writer -e 1 ; '
