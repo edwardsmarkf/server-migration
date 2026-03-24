@@ -89,9 +89,34 @@ sftp>   rm  *.gz      ## can be done in the sftp session!
 rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ;  ## on OLD server!
 
 
-###################################################################################################################################
-test cgi before proceeding   ~/server-migration/perl/README
-################################################################################
+
+
+
+############################################################################
+#                                                                          #
+#     p r e l i m i n a r y      t e s t i n g                             #
+#                                                                          #
+############################################################################
+
+
+##########  ~/server-migration/perl/README
+
+/ffmpeg/99-test.bsh
+test  at:              
+    https://zzyzxzzyzx.com/phpinfo.php?#
+    https://zzyzxzzyzx.com/imageMagickTest.php
+--or get the IP number since this domain name was NOT created using virtualmin.
+
+su fakeperluser --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $_  ;
+su - fakeperluser --command 'perl -W -MXML::Writer -e 1 ; '                     &&  echo  $_  ;
+
+echo  'SELECT VERSION() "Version:" ;' | mariadb                                 &&  echo  $_  ;
+
+bash      ./mariadb/05_test_perl_connection.bsh                                 &&  echo  $?  ;
+bash      ./mariadb/05_test_php_connection.bsh                                  &&  echo  $?  ;
+
+
+
 
 
 ######################################################################
@@ -239,22 +264,6 @@ ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:compto
                                                         ####   this need to be tested have "Content-type: text/html" removed and replaced with -M "text/html":
 
 /home/comptonpeslonline.com/cgi-bin/email_link.pl
-
-/ffmpeg/99-test.bsh
-test  at:              
-    https://zzyzxzzyzx.com/phpinfo.php?#
-    https://zzyzxzzyzx.com/imageMagickTest.php
---or get the IP number since this domain name was NOT created using virtualmin.
-
-su fakeperluser --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $_  ;
-su - fakeperluser --command 'perl -W -MXML::Writer -e 1 ; '                     &&  echo  $_  ;
-
-echo  'SELECT VERSION() "Version:" ;' | mariadb                                 &&  echo  $_  ;
-
-bash      ./mariadb/05_test_perl_connection.bsh                                 &&  echo  $?  ;
-bash      ./mariadb/05_test_php_connection.bsh                                  &&  echo  $?  ;
-
-
 
 
 
