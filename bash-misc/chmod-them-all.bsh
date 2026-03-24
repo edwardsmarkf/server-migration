@@ -6,7 +6,7 @@
 
 while  read -r   domain; do
         echo ${domain}                                                          ;
-        chmod ---recursive --silent  ${domain}:${domain}      ${domain} ;
+        chown  --recursive --silent  ${domain}:${domain}      ${domain} ;
 done  <<END_OF_DOMAINS
 accentreduction.online
 ajcomptonpesl.com
