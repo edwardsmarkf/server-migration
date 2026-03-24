@@ -68,6 +68,7 @@ for installName in    \
      sendmail-cf      \
      s-nail           \
      sshpass          \
+     telnet           \
      vim              \
      wget             \
      xz               \
