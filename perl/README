@@ -43,7 +43,9 @@ print '</html>';
 END_OF_PERL_SCRIPT
 
 chmod  --verbose  755                                          ../cgi-bin/perlCgiTestScript.pl  ;
-chown  --verbose  DOMAIN:DOMAIN    perlCgiTestScript.pl  ;
+chown  --verbose  DOMAIN:DOMAIN                                ../cgi-bin/perlCgiTestScript.pl  ;
+
+
 
 
 ## to create a simple image:  (THE IMAGE DOES  **NOT** DISPLAY...!)
@@ -75,18 +77,26 @@ EOF
 ls -l  /tmp/img.png  ;   ## get the results of the image creation test.
 
 
-??????????????????????????????????????????????????????????????????????????????
-perl <(cat <<'EOF'
+cat <<END_OF_PERL_WHO_AM_I_SCRIPT > ../cgi-bin/perlCgiWhoIsUser.pl ;
 #!/usr/bin/perl -w
+#
+print "Content-type:text/html\r\n\r\n";
 #
 use strict;
 use warnings;
+use Template::Stash::XS ;   ## a simple test to see if a 'use' statement is working.
+#
 my $username = getpwuid($>);
 print  '<br /><br />';
 print "CGI User: $username\n";
+
 1;
-EOF
-);
+END_OF_PERL_WHO_AM_I_SCRIPT
+
+chmod  --verbose  755                                          ../cgi-bin/perlCgiWhoIsUser.pl  ;
+chown  --verbose  DOMAIN:DOMAIN                                ../cgi-bin/perlCgiWhoIsUser.pl  ;
+
+
 
 
 exit;
