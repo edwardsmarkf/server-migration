@@ -107,8 +107,14 @@ more   ~/server-migration/ffmpeg/99-test.bsh    ### look for results
 
 more   ~/server-migration/perl/README    ## look for tests
 
-define zzyzxzzyzx.com using new IP ## and then test  at:              
 
+
+echo '<?php phpinfo(); ?>'                                            >  phpinfo.php ; 
+cp  --verbose  /root/server-migration/php/imageMagickTest.php   ./imageMagickTest.php ;
+chown   zzyzxzzyzx.com:zzyzxzzyzx.com   *  ;
+chmod   755         *  ;
+
+define zzyzxzzyzx.com using new IP ## and then test  at:              
     https://zzyzxzzyzx.com/phpinfo.php?#
     https://zzyzxzzyzx.com/imageMagickTest.php
 --or get the IP number since this domain name was NOT created using virtualmin.
