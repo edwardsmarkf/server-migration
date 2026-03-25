@@ -103,29 +103,27 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 ############################################################################
 
 
+## define/create domain (if it does not yet exist)  zzyzxzzyzx.com using new IP into local etc.hosts file
+
 more   ~/server-migration/ffmpeg/99-test.bsh    ### look for results
 
 more   ~/server-migration/perl/README    ## look for tests
 
+echo '<?php phpinfo(); ?>'                                            >  /home/zzyzxzzyzx.com/cgi-bin/phpinfo.php           ; 
+cp  --verbose  /root/server-migration/php/imageMagickTest.php            /home/zzyzxzzyzx.com/cgi-bin/imageMagickTest.php   ;
+chown   zzyzxzzyzx.com:zzyzxzzyzx.com                                    /home/zzyzxzzyzx.com/cgi-bin/*                     ;
+chmod   755                                                              /home/zzyzxzzyzx.com/cgi-bin/*                     ;
+          
+ ####      https://zzyzxzzyzx.com/phpinfo.php?#
+ ####      https://zzyzxzzyzx.com/imageMagickTest.php
 
+su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;
+su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  '     &&  echo  $?  ;   ## not sure what the first dash does...?
 
-echo '<?php phpinfo(); ?>'                                            >  phpinfo.php ; 
-cp  --verbose  /root/server-migration/php/imageMagickTest.php   ./imageMagickTest.php ;
-chown   zzyzxzzyzx.com:zzyzxzzyzx.com   *  ;
-chmod   755         *  ;
+echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
 
-define zzyzxzzyzx.com using new IP ## and then test  at:              
-    https://zzyzxzzyzx.com/phpinfo.php?#
-    https://zzyzxzzyzx.com/imageMagickTest.php
---or get the IP number since this domain name was NOT created using virtualmin.
-
-su fakeperluser --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;
-su - fakeperluser --command 'perl -W -MXML::Writer -e 1 ; '                     &&  echo  $?  ;   ## not sure what the first dash does...?
-
-echo  'SELECT VERSION() "Version:" ;' | mariadb                                 &&  echo  $?  ;
-
-bash      ~/server-migration/mariadb/05_test_perl_connection.bsh                                 &&  echo  $?  ;
-bash      ~/server-migration/mariadb/05_test_php_connection.bsh                                  &&  echo  $?  ;
+bash      ~/server-migration/mariadb/05_test_perl_connection.bsh                      &&  echo  $?  ;
+bash      ~/server-migration/mariadb/05_test_php_connection.bsh                       &&  echo  $?  ;
 
 
 
