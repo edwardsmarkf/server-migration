@@ -120,6 +120,8 @@ chmod   755                                                              /home/z
 su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;   ## test the perl 'use' command.
 su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  '     &&  echo  $?  ;   ## not sure what the first dash does...?
 
+userdel   fakeperluser ;
+
 echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
 
 bash      ~/server-migration/mariadb/05_test_perl_connection.bsh                      &&  echo  $?  ;
