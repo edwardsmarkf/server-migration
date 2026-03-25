@@ -120,7 +120,7 @@ define zzyzxzzyzx.com using new IP ## and then test  at:
 --or get the IP number since this domain name was NOT created using virtualmin.
 
 su fakeperluser --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;
-su - fakeperluser --command 'perl -W -MXML::Writer -e 1 ; '                     &&  echo  $?  ;
+su - fakeperluser --command 'perl -W -MXML::Writer -e 1 ; '                     &&  echo  $?  ;   ## not sure what the first dash does...?
 
 echo  'SELECT VERSION() "Version:" ;' | mariadb                                 &&  echo  $?  ;
 
