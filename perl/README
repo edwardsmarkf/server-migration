@@ -19,7 +19,8 @@ UPDATE
 cat  <<END_OF_SHELL > ../cgi-bin/cgiBinTest.sh ;
 #! /bin/sh
 printf "content-type: text/plain\n\n" ;
-date
+date;
+whoami;
 END_OF_SHELL
 
 chmod  --verbose  755                                          ../cgi-bin/cgiBinTest.sh  ;
