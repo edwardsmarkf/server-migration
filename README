@@ -119,13 +119,13 @@ define zzyzxzzyzx.com using new IP ## and then test  at:
     https://zzyzxzzyzx.com/imageMagickTest.php
 --or get the IP number since this domain name was NOT created using virtualmin.
 
-su fakeperluser --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $_  ;
-su - fakeperluser --command 'perl -W -MXML::Writer -e 1 ; '                     &&  echo  $_  ;
+su fakeperluser --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;
+su - fakeperluser --command 'perl -W -MXML::Writer -e 1 ; '                     &&  echo  $?  ;
 
-echo  'SELECT VERSION() "Version:" ;' | mariadb                                 &&  echo  $_  ;
+echo  'SELECT VERSION() "Version:" ;' | mariadb                                 &&  echo  $?  ;
 
-bash      ./mariadb/05_test_perl_connection.bsh                                 &&  echo  $?  ;
-bash      ./mariadb/05_test_php_connection.bsh                                  &&  echo  $?  ;
+bash      ~/server-migration/mariadb/05_test_perl_connection.bsh                                 &&  echo  $?  ;
+bash      ~/server-migration/mariadb/05_test_php_connection.bsh                                  &&  echo  $?  ;
 
 
 
