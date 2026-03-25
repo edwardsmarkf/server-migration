@@ -84,11 +84,8 @@ print "Content-type:text/html\r\n\r\n";
 #
 use strict;
 use warnings;
-use Template::Stash::XS ;   ## a simple test to see if a 'use' statement is working.
 #
-my $username = getpwuid($>);
-print  '<br /><br />';
-print "CGI User: $username\n";
+print 'CGI User: ' .  getpwuid($>) . "\n" ;
 
 1;
 END_OF_PERL_WHO_AM_I_SCRIPT
