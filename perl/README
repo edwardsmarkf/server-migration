@@ -35,7 +35,7 @@ print '<head>';
 print '<title>Hello World - First CGI Program</title>';
 print '</head>';
 print '<body>';
-print '<h2>Hello Word! This is my first CGI program</h2>';
+print '<h2>Hello Word! This is my first CGI program  -- and we loaded in Template::Stash:XS too.</h2>';
 print '</body>';
 print '</html>';
 
@@ -44,6 +44,26 @@ END_OF_PERL_SCRIPT
 
 chmod  --verbose  755                                          ../cgi-bin/perlCgiTestScript.pl  ;
 chown  --verbose  DOMAIN:DOMAIN                                ../cgi-bin/perlCgiTestScript.pl  ;
+
+
+
+### make sure we are the correct user:
+cat <<END_OF_PERL_WHO_AM_I_SCRIPT > ../cgi-bin/perlCgiWhoIsUser.pl ;
+#!/usr/bin/perl -w
+#
+print "Content-type:text/html\r\n\r\n";
+#
+use strict;
+use warnings;
+#
+print 'CGI User: ' .  getpwuid($>) . "\n" ;
+
+1;
+END_OF_PERL_WHO_AM_I_SCRIPT
+
+chmod  --verbose  755                                          ../cgi-bin/perlCgiWhoIsUser.pl  ;
+chown  --verbose  DOMAIN:DOMAIN                                ../cgi-bin/perlCgiWhoIsUser.pl  ;
+
 
 
 
@@ -76,23 +96,6 @@ EOF
 
 ls -l  /tmp/img.png  ;   ## get the results of the image creation test.
 
-
-### make sure we are the correct user:
-cat <<END_OF_PERL_WHO_AM_I_SCRIPT > ../cgi-bin/perlCgiWhoIsUser.pl ;
-#!/usr/bin/perl -w
-#
-print "Content-type:text/html\r\n\r\n";
-#
-use strict;
-use warnings;
-#
-print 'CGI User: ' .  getpwuid($>) . "\n" ;
-
-1;
-END_OF_PERL_WHO_AM_I_SCRIPT
-
-chmod  --verbose  755                                          ../cgi-bin/perlCgiWhoIsUser.pl  ;
-chown  --verbose  DOMAIN:DOMAIN                                ../cgi-bin/perlCgiWhoIsUser.pl  ;
 
 
 
