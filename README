@@ -125,7 +125,7 @@ su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  
 
 userdel   fakeperluser ;
 
-su fakephpuser --command "/usr/local/bin/composer --version ; "    ;
+su fakephpuser --command "/usr/local/bin/composer --version ; "                       &&  echo  $?  ;
 
 userdel  fakephpuser   ;
 
