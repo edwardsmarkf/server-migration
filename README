@@ -123,11 +123,14 @@ echo '<?php phpinfo(); ?>'                                            >  /home/$
 cp  --verbose  /root/server-migration/php/imageMagickTest.php            /home/${DOMAIN}/cgi-bin/imageMagickTest2.php  ;
 chown   ${DOMAIN}:${DOMAIN}                                              /home/${DOMAIN}/cgi-bin/*                     ;
 chmod   755                                                              /home/${DOMAIN}/cgi-bin/*                     ;
-          
-echo   "try   https://${DOMAIN}/phpinfo.php"                     ;
-echo   "try   https://${DOMAIN}/imageMagickTest.php"             ;
-echo   "try   https://${DOMAIN}/imageMagickTest2.php"            ;
 
+cat <<END_OF_LINKS;
+Try the following:
+   https://${DOMAIN}/
+   https://${DOMAIN}/phpinfo.php
+   https://${DOMAIN}/imageMagickTest.php
+   https://${DOMAIN}/imageMagickTest2.php
+END_OF_LINKS
 
 
            ################################
