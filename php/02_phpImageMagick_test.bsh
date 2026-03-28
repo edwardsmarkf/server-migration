@@ -12,7 +12,7 @@ chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/phpinfo.ph
 chmod  --verbose 755                      /home/${DOMAIN}/public_html/phpinfo.php ;  ##
 
 
-cat <<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTestOne.php ;   ##2025-08-13 - new location!
+cat <<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTest.php ;   ##2025-08-13 - new location!
 <?php
     \$image = new Imagick();
     \$image->newImage(100, 100, new ImagickPixel('red'));
@@ -22,8 +22,9 @@ cat <<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTestOne.php ;   ##2
 ?>
 END_OF_SCRIPT
 
-chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/imageMagickTestOne.php ;  ## 2025-08-13
-chmod  --verbose 755                      /home/${DOMAIN}/public_html/imageMagickTestOne.php ;  ## 2025-08-13
+chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/imageMagickTest.php ;  ## 2025-08-13
+chmod  --verbose 755                      /home/${DOMAIN}/public_html/imageMagickTest.php ;  ## 2025-08-13
+ls  -l                                     /home/${DOMAIN}/public_html/                   ;
 
 
 
