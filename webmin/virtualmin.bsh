@@ -14,8 +14,8 @@
 #  2026-02-05  -- disabled webalizer
 #  2026-03-03  -- added 'home_format=$DOM' to get around possible bug of ignoring 'longname=1'
 #  2026-03-05  -- added 'unixname=1' to have the unix name contain the domain-name suffix (hopefully)
-
-DOMAIN='zzyzxzzyzx.com'  ;  ## 2025-08-13
+#  2026-03-28  -- moved testing to new section
+                                                       #####  2026-03-28  DOMAIN='zzyzxzzyzx.com'  ;  ## 2025-08-13
 
 #####  this is REQUIRED because webmin might go ahead and run OUTSIDE of the sysctmctl command:
 /etc/webmin/stop ;  # this might not do anything?
@@ -40,9 +40,9 @@ echo  'home_format=$DOM'                                                        
 
 /usr/bin/sed  --in-place  --expression='s/^featurelimits=$/featurelimits=dns web/;'   /etc/webmin/virtual-server/plans/0   ;   ## 2025-02-19
 
-virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13  
+         #####    2026-03-28  virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13  
                                                                                                   ##  --dns and --web are the ONLY two options requested
-virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this ever be the default?
+         ######  2026-03-28  virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this ever be the default?
 
 
 cat <<END_OF_DISPLAY;
