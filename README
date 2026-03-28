@@ -158,11 +158,8 @@ bash      ~/server-migration/mariadb/05_test_perl_mariadb_connection.bsh        
 bash      ~/server-migration/mariadb/05_test_php_mariadb_connection.bsh               &&  echo  $?  ;
 
 
-
            #######################
-           #                     #
            #   c l e a n   u p   #
-           #                     #
            #######################
 
 virtualmin  delete-domain  --domain  ${DOMAIN}    ;
