@@ -139,7 +139,7 @@ echo  'SELECT VERSION() "Version:" ;' | mariadb                                 
 bash      ~/server-migration/mariadb/05_test_perl_connection.bsh                      &&  echo  $?  ;
 bash      ~/server-migration/mariadb/05_test_php_connection.bsh                       &&  echo  $?  ;
 
-
+virtualmin  delete-domain  --domain  ${DOMAIN}    ;
 
 
 
