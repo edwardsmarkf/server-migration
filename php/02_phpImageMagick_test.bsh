@@ -1,0 +1,51 @@
+#!  /bin/bash
+#
+#           02_phpImageMagick_test.bsh
+#
+#    2026-03-28  -- initial writing from 02_phpImageMagick.bsh
+
+DOMAIN=zzyzxzzyzx.com ;  
+
+echo '<?php phpinfo(); ?>'     >  /home/${DOMAIN}/public_html/phpinfo.php
+
+chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/phpinfo.php ;  ##
+chmod  --verbose 755                      /home/${DOMAIN}/public_html/phpinfo.php ;  ##
+
+
+cat <<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTestOne.php ;   ##2025-08-13 - new location!
+<?php
+    \$image = new Imagick();
+    \$image->newImage(100, 100, new ImagickPixel('red'));
+    \$image->setImageFormat('png');
+    header('Content-type: image/png');
+    echo \$image;
+?>
+END_OF_SCRIPT
+
+chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/imageMagickTestOne.php ;  ## 2025-08-13
+chmod  --verbose 755                      /home/${DOMAIN}/public_html/imageMagickTestOne.php ;  ## 2025-08-13
+
+
+
+echo 'please try  http://${DOMAIN}/phpinfo.php   in your browser';
+echo 'be sure to look for both the magick section AND the magicwand section near the bottom!!';
+echo 'and please try  http://${DOMAIN}/imageMagickTestOne.php.';
+
+exit 1;
+
+
+
+
+
+
+
+########################################################################################################
+########################################################################################################
+########################################################################################################
+########################################################################################################
+########################################################################################################
+
+
+#### cp --verbose  ./imageMagickTestTwo.php    /home/${DOMAIN}/public_html/imageMagickTestTwo.php  ;  ## 2025-10-31
+####  chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/imageMagickTestTwo.php ;  ## 2025-08-13
+####  chmod  --verbose 755                      /home/${DOMAIN}/public_html/imageMagickTestTwo.php ;  ## 2025-08-13
