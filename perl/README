@@ -48,7 +48,7 @@ chown  --verbose  zzyzxzzyzx.com:zzyzxzzyzx.com     /home/zzyzxzzyzx.com/cgi-bin
 
 
 ### make sure we are the correct user:
-cat <<END_OF_PERL_WHO_AM_I_SCRIPT > ../cgi-bin/perlCgiWhoIsUser.pl ;
+cat <<END_OF_PERL_WHO_AM_I_SCRIPT >   /home/zzyzxzzyzx.com/cgi-bin/perlCgiWhoIsUser.pl ;
 #!/usr/bin/perl -w
 #
 print "Content-type:text/html\r\n\r\n";
@@ -61,8 +61,8 @@ print 'CGI User: ' .  getpwuid($>) . "\n" ;
 1;
 END_OF_PERL_WHO_AM_I_SCRIPT
 
-chmod  --verbose  755                                          ../cgi-bin/perlCgiWhoIsUser.pl  ;
-chown  --verbose  DOMAIN:DOMAIN                                ../cgi-bin/perlCgiWhoIsUser.pl  ;
+chmod  --verbose  755                             /home/zzyzxzzyzx.com/cgi-bin/perlCgiWhoIsUser.pl  ;
+chown  --verbose  zzyzxzzyzx.com:zzyzxzzyzx.com   /home/zzyzxzzyzx.com/cgi-bin/perlCgiWhoIsUser.pl  ;
 
 
 
