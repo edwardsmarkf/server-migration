@@ -12,8 +12,9 @@
 #     2025-02-17  -- powertools became 'crb' and pecl might not work, replaced
 #     2025-08-13  -- added new variable and ran in RL-10
 #     2025-10-31  -- testing to imageMagicK scripts
+#     2026-03-28  -- moved testing to its own script
 
-DOMAIN=zzyzxzzyzx.com ;  ## 2025-08-13
+                             #####  2026-03-28  DOMAIN=zzyzxzzyzx.com ;  ## 2025-08-13
 
 
 ## MAKE SURE CORRECT PHP VERSION IS INSTALLED   F-I-R-S-T ! ! ! ! !
@@ -113,6 +114,19 @@ systemctl   restart  httpd.service  ;     ## turn on the php-magick interface in
 systemctl   restart php-fpm.service ;      ## 2025-02-17
 
 
+exit 1;
+
+
+
+
+###################################################################################################################
+###################################################################################################################
+###################################################################################################################
+###################################################################################################################
+###################################################################################################################
+###################################################################################################################
+
+
 cat <<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTestOne.php ;   ##2025-08-13 - new location!
 <?php
     \$image = new Imagick();
@@ -135,7 +149,6 @@ echo 'be sure to look for both the magick section AND the magicwand section near
 echo 'and please try  http://${DOMAIN}/imageMagickTestOne.php.';
 echo 'and please try  http://${DOMAIN}/imageMagickTestTwo.php.';
 
-exit 1;
 
 
 
