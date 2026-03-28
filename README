@@ -123,7 +123,7 @@ echo '<?php phpinfo(); ?>'                                            >  /home/$
 cp  --verbose  /root/server-migration/php/imageMagickTest.php            /home/${DOMAIN}/cgi-bin/imageMagickTest2.php  ;
 chown   ${DOMAIN}:${DOMAIN}                                              /home/${DOMAIN}/cgi-bin/*                     ;
 chmod   755                                                              /home/${DOMAIN}/cgi-bin/*                     ;
-
+ls -l                                                                    /home/${DOMAIN}/cgi-bin/                      ;
 cat <<END_OF_LINKS;
 Try the following:
    https://${DOMAIN}/
