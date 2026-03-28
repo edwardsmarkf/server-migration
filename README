@@ -109,7 +109,8 @@ more   /root/ffmpeg-install-logs/99-test.bsh.log   ### look for results
 
 ## define/create domain (if it does not yet exist) using new IP into local etc.hosts file
 
-DOMAIN='zzyzxzzyzx.com'  ; 
+export DOMAIN='zzyzxzzyzx.com'  ; 
+
 virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13                                                                                                    ##  --dns and --web are the ONLY two options requested
 virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this ever be the default?
 
@@ -144,7 +145,7 @@ su fakephpuser --command "/bin/composer --version ; "                       &&  
 su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;   ## test the perl 'use' command.
 su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  '     &&  echo  $?  ;   ## not sure what the first dash does...?
 
-bash -vx   ~/server-migration/perl/perl-cgi-testing.bsh     ~/server-migration/perl/perl-cgi-testing.bsh.log  2>&1  ;
+bash -vx   ~/server-migration/perl/perl-cgi-testing.bsh      ;       #################  ~/server-migration/perl/perl-cgi-testing.bsh.log  2>&1  ;
 
 
 userdel   fakeperluser ;
