@@ -119,11 +119,11 @@ virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this
 
 bash  -vx  ~/server-migration/php/02_phpImageMagick_test.bsh      >  ~/server-migration/php/02_phpImageMagick_test.bsh.log   2>&1  ;
 
-echo '<?php phpinfo(); ?>'                                            >  /home/${DOMAIN}/phpinfo.php           ; 
-###########################################cp  --verbose  /root/server-migration/php/imageMagickTest.php            /home/${DOMAIN}/imageMagickTest2.php  ;
-chown   ${DOMAIN}:${DOMAIN}                                              /home/${DOMAIN}/*                     ;
-chmod   755                                                              /home/${DOMAIN}/*                     ;
-ls -l                                                                    /home/${DOMAIN}/                      ;
+echo '<?php phpinfo(); ?>'                                            >  /home/publlic_html/${DOMAIN}/phpinfo.php           ; 
+###########################################cp  --verbose  /root/server-migration/php/imageMagickTest.php            /home/${DOMAIN}/public_html/imageMagickTest2.php  ;
+chown   ${DOMAIN}:${DOMAIN}                                              /home/public_html/${DOMAIN}/*                     ;
+chmod   755                                                              /home/public_html/${DOMAIN}/*                     ;
+ls -l                                                                    /home/public_html/${DOMAIN}/                      ;
 cat <<END_OF_LINKS;
 Try the following:
    http://${DOMAIN}/
