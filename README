@@ -112,17 +112,20 @@ DOMAIN='zzyzxzzyzx.com'  ;
 virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13                                                                                                    ##  --dns and --web are the ONLY two options requested
 virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this ever be the default?
 
+
+bash  -vx  ~/server-migration/php/02_phpImageMagick_test.bsh      >  ~/server-migration/php/02_phpImageMagick_test.bsh.log   2>&1  ;
+
 more   /root/ffmpeg-install-logs/99-test.bsh.log   ### look for results
 
 more   ~/server-migration/perl/README    ## look for tests
 
-echo '<?php phpinfo(); ?>'                                            >  /home/zzyzxzzyzx.com/cgi-bin/phpinfo.php           ; 
-cp  --verbose  /root/server-migration/php/imageMagickTest.php            /home/zzyzxzzyzx.com/cgi-bin/imageMagickTest.php   ;
-chown   zzyzxzzyzx.com:zzyzxzzyzx.com                                    /home/zzyzxzzyzx.com/cgi-bin/*                     ;
-chmod   755                                                              /home/zzyzxzzyzx.com/cgi-bin/*                     ;
+echo '<?php phpinfo(); ?>'                                            >  /home/${DOMAIN}/cgi-bin/phpinfo.php           ; 
+cp  --verbose  /root/server-migration/php/imageMagickTest.php            /home/${DOMAIN}/cgi-bin/imageMagickTest.php   ;
+chown   ${DOMAIN}:${DOMAIN}                                              /home/${DOMAIN}/cgi-bin/*                     ;
+chmod   755                                                              /home/${DOMAIN}/cgi-bin/*                     ;
           
- ####      https://zzyzxzzyzx.com/phpinfo.php?#
- ####      https://zzyzxzzyzx.com/imageMagickTest.php
+ ####      https://${DOMAIN}/phpinfo.php?#
+ ####      https://${DOMAIN}/imageMagickTest.php
 
 su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;   ## test the perl 'use' command.
 su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  '     &&  echo  $?  ;   ## not sure what the first dash does...?
@@ -136,8 +139,8 @@ userdel  fakephpuser   ;
 
 echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
 
-bash      ~/server-migration/mariadb/05_test_perl_connection.bsh                      &&  echo  $?  ;
-bash      ~/server-migration/mariadb/05_test_php_connection.bsh                       &&  echo  $?  ;
+bash      ~/server-migration/mariadb/05_test_perl_mariadb_connection.bsh              &&  echo  $?  ;
+bash      ~/server-migration/mariadb/05_test_php_mariaddb_connection.bsh              &&  echo  $?  ;
 
 virtualmin  delete-domain  --domain  ${DOMAIN}    ;
 
