@@ -1,6 +1,6 @@
 #!  /bin/bash
 #
-###  05_test_php_connection.bsh    2025-07-29
+###  05_test_php_mariadb_connection.bsh    2025-07-29
 #
 
 
