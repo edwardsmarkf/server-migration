@@ -120,7 +120,7 @@ virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this
 bash  -vx  ~/server-migration/php/02_phpImageMagick_test.bsh      >  ~/server-migration/php/02_phpImageMagick_test.bsh.log   2>&1  ;
 
 echo '<?php phpinfo(); ?>'                                            >  /home/${DOMAIN}/cgi-bin/phpinfo.php           ; 
-cp  --verbose  /root/server-migration/php/imageMagickTest.php            /home/${DOMAIN}/cgi-bin/imageMagickTest2.php  ;
+###########################################cp  --verbose  /root/server-migration/php/imageMagickTest.php            /home/${DOMAIN}/cgi-bin/imageMagickTest2.php  ;
 chown   ${DOMAIN}:${DOMAIN}                                              /home/${DOMAIN}/cgi-bin/*                     ;
 chmod   755                                                              /home/${DOMAIN}/cgi-bin/*                     ;
 ls -l                                                                    /home/${DOMAIN}/cgi-bin/                      ;
@@ -129,7 +129,6 @@ Try the following:
    https://${DOMAIN}/
    https://${DOMAIN}/phpinfo.php
    https://${DOMAIN}/imageMagickTest.php
-   https://${DOMAIN}/imageMagickTest2.php
 END_OF_LINKS
 
 
