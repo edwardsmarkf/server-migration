@@ -108,7 +108,7 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 
 ## define/create domain (if it does not yet exist)  zzyzxzzyzx.com using new IP into local etc.hosts file
 
-more   ~/server-migration/ffmpeg/99-test.bsh    ### look for results
+more   ~/server-migration/ffmpeg/99-test.bsh.log    ### look for results
 
 more   ~/server-migration/perl/README    ## look for tests
 
