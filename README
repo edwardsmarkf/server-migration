@@ -8,9 +8,9 @@
 ############################################################
 
 
-00)    echo "export KVM_NAME=THIS-SERVER-NAME-CHANGE-THIS-PLEASE-TO-NEW-SERVER-NAME;" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
+1)    echo "export KVM_NAME=THIS-SERVER-NAME-CHANGE-THIS-PLEASE-TO-NEW-SERVER-NAME;" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
 
-1)    (this step takes about 3.5 hours or 210 minutes!)
+2)    (this step takes about 3.5 hours or 210 minutes!)
 
 dnf  --assumeyes  install  time                                                                                          ;
 cat  <<END                                                                                                               |
@@ -35,7 +35,7 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 #                                                                   #
 #####################################################################
    
-2)  on CURRENT server:  (NOTE LENGTH OF TIME!!)
+1)  on CURRENT server:  (NOTE LENGTH OF TIME!!)
 
 rm -Rf  /tmp/old_server_data  ;  mkdir  /tmp/old_server_data && cd  $_  ; 
 
