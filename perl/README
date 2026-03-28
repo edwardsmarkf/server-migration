@@ -16,17 +16,17 @@ UPDATE
 
 
 
-cat  <<END_OF_SHELL > ../cgi-bin/cgiBinTest.sh ;
+cat  <<END_OF_SHELL > /home/zzyzx.com/cgi-bin/cgiBinTest.sh ;
 #! /bin/sh
 printf "content-type: text/plain\n\n" ;
 date;
 whoami;
 END_OF_SHELL
 
-chmod  --verbose  755                            ../cgi-bin/cgiBinTest.sh  ;
-chown  --verbose  zzyzxzzyzx.com:zzyzxzzyzx.com  ../cgi-bin/cgiBinTest.sh  ;
+chmod  --verbose  755                              /home/cgi-bin/cgiBinTest.sh  ;
+chown  --verbose  zzyzxzzyzx.com:zzyzxzzyzx.com    /home/cgi-bin/cgiBinTest.sh  ;
 
-cat <<END_OF_PERL_SCRIPT > ../cgi-bin/perlCgiTestScript.pl ;
+cat <<END_OF_PERL_SCRIPT >    /home/zzyzxzzyzx.com/cgi-bin/perlCgiTestScript.pl ;
 #!/usr/bin/perl -w
 use Template::Stash::XS ;   ## a simple test to see if a 'use' statement is working.
 print "Content-type:text/html\r\n\r\n";
@@ -42,8 +42,8 @@ print '</html>';
 1;
 END_OF_PERL_SCRIPT
 
-chmod  --verbose  755                                          ../cgi-bin/perlCgiTestScript.pl  ;
-chown  --verbose  DOMAIN:DOMAIN                                ../cgi-bin/perlCgiTestScript.pl  ;
+chmod  --verbose  755                               /home/zzyzxzzyzx.com/cgi-bin/perlCgiTestScript.pl  ;
+chown  --verbose  zzyzxzzyzx.com:zzyzxzzyzx.com     /home/zzyzxzzyzx.com/cgi-bin/perlCgiTestScript.pl  ;
 
 
 
