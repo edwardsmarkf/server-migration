@@ -145,11 +145,8 @@ su fakephpuser --command "/bin/composer --version ; "                       &&  
 su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;   ## test the perl 'use' command.
 su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  '     &&  echo  $?  ;   ## not sure what the first dash does...?
 
-bash -vx   ~/server-migration/perl/perl-cgi-testing.bsh      ;       #################  ~/server-migration/perl/perl-cgi-testing.bsh.log  2>&1  ;
+bash -vx   ~/server-migration/perl/perl-cgi-testing.bsh      ;    
 
-
-userdel  --remove  fakeperluser  ;
-userdel  --remove  fakephpuser   ;
 
 
            ######################################
@@ -157,12 +154,20 @@ userdel  --remove  fakephpuser   ;
            ######################################
 
 echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
-
 bash      ~/server-migration/mariadb/05_test_perl_mariadb_connection.bsh              &&  echo  $?  ;
 bash      ~/server-migration/mariadb/05_test_php_mariadb_connection.bsh               &&  echo  $?  ;
 
 
+
+           #######################
+           #                     #
+           #   c l e a n   u p   #
+           #                     #
+           #######################
+
 virtualmin  delete-domain  --domain  ${DOMAIN}    ;
+userdel  --remove  fakeperluser  ;
+userdel  --remove  fakephpuser   ;
 
 
 
