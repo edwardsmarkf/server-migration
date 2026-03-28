@@ -16,7 +16,7 @@ UPDATE
 
 
 
-cat  <<END_OF_SHELL > /home/zzyzx.com/cgi-bin/cgiBinTest.sh ;
+cat  <<END_OF_SHELL > /home/zzyzxzzyzx.com/cgi-bin/cgiBinTest.sh ;
 #! /bin/sh
 printf "content-type: text/plain\n\n" ;
 date;
