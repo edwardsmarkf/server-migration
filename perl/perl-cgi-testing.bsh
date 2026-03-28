@@ -1,0 +1,99 @@
+#!  /bin/bash  -w
+#
+#
+#    perl-cgi-testing.bsh      2026-03-28
+#
+#
+
+cat  <<END_OF_SHELL > /home/${DOMAIN}/cgi-bin/cgiBinTest.sh ;
+#! /bin/sh
+printf "content-type: text/plain\n\n" ;
+date;
+whoami;
+END_OF_SHELL
+
+chmod  --verbose  755                              /home/${DOMAIN}/cgi-bin/cgiBinTest.sh  ;
+chown  --verbose  zzyzxzzyzx.com:zzyzxzzyzx.com    /home/${DOMAIN}/cgi-bin/cgiBinTest.sh  ;
+
+
+
+
+cat <<END_OF_PERL_SCRIPT >    /home/${DOMAIN}/cgi-bin/perlCgiTestScript.pl ;
+#!/usr/bin/perl -w
+use Template::Stash::XS ;   ## a simple test to see if a 'use' statement is working.
+print "Content-type:text/html\r\n\r\n";
+print '<html>';
+print '<head>';
+print '<title>Hello World - First CGI Program</title>';
+print '</head>';
+print '<body>';
+print '<h2>Hello Word! This is my first CGI program  -- and we loaded in Template::Stash:XS too.</h2>';
+print '</body>';
+print '</html>';
+
+1;
+END_OF_PERL_SCRIPT
+
+chmod  --verbose  755                               /home/${DOMAIN}/cgi-bin/perlCgiTestScript.pl  ;
+chown  --verbose  zzyzxzzyzx.com:zzyzxzzyzx.com     /home/${DOMAIN}/cgi-bin/perlCgiTestScript.pl  ;
+
+
+
+### make sure we are the correct user:
+cat <<END_OF_PERL_WHO_AM_I_SCRIPT >   /home/${DOMAIN}/cgi-bin/perlCgiWhoIsUser.pl ;
+#!/usr/bin/perl -w
+#
+print "Content-type:text/html\r\n\r\n";
+#
+use strict;
+use warnings;
+#
+print 'CGI User: ' .  getpwuid($>) . "\n" ;
+
+1;
+END_OF_PERL_WHO_AM_I_SCRIPT
+
+chmod  --verbose  755                             /home/${DOMAIN}/cgi-bin/perlCgiWhoIsUser.pl  ;
+chown  --verbose  zzyzxzzyzx.com:zzyzxzzyzx.com   /home/${DOMAIN}/cgi-bin/perlCgiWhoIsUser.pl  ;
+
+
+
+## to create a simple image:  (THE IMAGE DOES  **NOT** DISPLAY...!)
+perl <(cat <<'EOF'
+#!/usr/bin/perl -w
+#
+use strict;
+use warnings;
+use GD::Simple;
+
+# create a new image (width, height)
+my $img = GD::Simple->new(200, 100);
+
+# draw a red rectangle with blue borders
+$img->bgcolor('red');
+$img->fgcolor('blue');
+$img->rectangle(10, 10, 50, 50); # (top_left_x, top_left_y, bottom_right_x, bottom_right_y)
+                                 # ($x1, $y1, $x2, $y2)
+
+# convert into png data
+open my $out, '>', '/tmp/img.png' or die;
+binmode $out;
+print $out $img->png;
+
+1;
+EOF
+);
+
+ls -l  /tmp/img.png  ;   ## get the results of the image creation test.
+
+cat  <<END_OF_LIST;
+  try:
+       http://${DOMAIN}/cgi-bin/cgiBinTest.sh
+       http://${DOMAIN}/cgi-bin/perlCgiTestScript.pl
+       http://${DOMAIN}/cgi-bin/perlCgiWhoIsUser.pl
+END_OF_LIST
+
+
+exit;
+
+
