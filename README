@@ -124,6 +124,7 @@ echo '<?php phpinfo(); ?>'                                            >  /home/$
 chown   ${DOMAIN}:${DOMAIN}                                              /home/${DOMAIN}/public_html/*                     ;
 chmod   755                                                              /home/${DOMAIN}/public_html/*                     ;
 ls -l                                                                    /home/${DOMAIN}/public_html                       ;
+
 cat <<END_OF_LINKS;
 Try the following:
    http://${DOMAIN}/
