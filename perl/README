@@ -23,8 +23,11 @@ date;
 whoami;
 END_OF_SHELL
 
-chmod  --verbose  755                              /home/cgi-bin/cgiBinTest.sh  ;
-chown  --verbose  zzyzxzzyzx.com:zzyzxzzyzx.com    /home/cgi-bin/cgiBinTest.sh  ;
+chmod  --verbose  755                              /home/zzyzxzzyzx.com/cgi-bin/cgiBinTest.sh  ;
+chown  --verbose  zzyzxzzyzx.com:zzyzxzzyzx.com    /home/zzyzxzzyzx.com/cgi-bin/cgiBinTest.sh  ;
+
+
+
 
 cat <<END_OF_PERL_SCRIPT >    /home/zzyzxzzyzx.com/cgi-bin/perlCgiTestScript.pl ;
 #!/usr/bin/perl -w
