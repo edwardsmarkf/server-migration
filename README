@@ -126,9 +126,9 @@ chmod   755                                                              /home/$
 ls -l                                                                    /home/${DOMAIN}/cgi-bin/                      ;
 cat <<END_OF_LINKS;
 Try the following:
-   https://${DOMAIN}/
-   https://${DOMAIN}/phpinfo.php
-   https://${DOMAIN}/imageMagickTest.php
+   http://${DOMAIN}/
+   http://${DOMAIN}/phpinfo.php
+   http://${DOMAIN}/imageMagickTest.php
 END_OF_LINKS
 
 
