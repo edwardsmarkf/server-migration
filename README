@@ -108,6 +108,10 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 
 ## define/create domain (if it does not yet exist)  zzyzxzzyzx.com using new IP into local etc.hosts file
 
+DOMAIN='zzyzxzzyzx.com'  ; 
+virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13                                                                                                    ##  --dns and --web are the ONLY two options requested
+virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this ever be the default?
+
 more   /root/ffmpeg-install-logs/99-test.bsh.log   ### look for results
 
 more   ~/server-migration/perl/README    ## look for tests
