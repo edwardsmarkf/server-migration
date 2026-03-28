@@ -1,6 +1,6 @@
 #!  /bin/bash  
 #
-#    05_test_perl_connection.pl   -- 2025-07-29 
+#    05_test_perl_mariadb_connection.pl   -- 2025-07-29 
 
 
 perl -  << END_OF_SCRIPT  ;
