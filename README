@@ -148,8 +148,8 @@ su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  
 bash -vx   ~/server-migration/perl/perl-cgi-testing.bsh      ;       #################  ~/server-migration/perl/perl-cgi-testing.bsh.log  2>&1  ;
 
 
-userdel   fakeperluser ;
-userdel  fakephpuser   ;
+userdel   fakeperluser  ;
+userdel   fakephpuser   ;
 
 
            ######################################
