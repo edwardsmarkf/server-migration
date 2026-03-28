@@ -139,11 +139,12 @@ su fakephpuser --command "/bin/composer --version ; "                       &&  
            #   p e r l    t e s t i n g   #
            ################################
 
-more   ~/server-migration/perl/README    ## look for tests
+###more   ~/server-migration/perl/README    ## look for tests
 
 su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;   ## test the perl 'use' command.
 su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  '     &&  echo  $?  ;   ## not sure what the first dash does...?
 
+bash -vx   ~/server-migration/perl/perl-cgi-testing.bsh     ~/server-migration/perl/perl-cgi-testing.bsh.log  2>&1  ;
 
 
 userdel   fakeperluser ;
