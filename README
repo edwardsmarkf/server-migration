@@ -67,7 +67,7 @@ cat  <<END_OF_CURRENT_SERVER |
      gzip                                                                 /home/mark/bash_history    ;
      ls  -lh   /home/mark/*.gz                                                                       ;
 END_OF_CURRENT_SERVER
-nohup time bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach 
+nohup time nice  bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach 
 
 
 
