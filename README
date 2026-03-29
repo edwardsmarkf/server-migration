@@ -200,12 +200,14 @@ rm --verbose --force  /tmp/old_server_data/home.tar  ;   # we MAY need this for 
 #                                                                    #
 ######################################################################
 
-bash  -vx  ~/server-migration/webmin/virtualmin-create-vm.bsh    >  ~/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
-bash  -vx  ~/server-migration/httpd.conf/apache.bsh              >  ~/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
+cat  <<CREATE_ALL_VIRTUAL_SERVERS |
+    bash  -vx  ~/server-migration/webmin/virtualmin-create-vm.bsh    >  ~/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
+    bash  -vx  ~/server-migration/httpd.conf/apache.bsh              >  ~/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
 
-systemctl  restart  httpd.service   ;    ##
-apachectl  status                   ;
-
+    systemctl  restart  httpd.service   ;    ##
+    apachectl  status                   ;
+CREATE_ALL_VIRTUAL_SERVERS
+nohup time bash -vx  -   >   ./create-all-virtual-servers.log   2>&1  &   ## detach 
 
 
 
@@ -258,7 +260,7 @@ bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh          
          > /tmp/old_server_data/load_sql_tables.bsh                                                     \
          ;                                                        ## generate our 'load' script!
 cat   /tmp/old_server_data/load_sql_tables.bsh                                                                   ;     ## inspect it 
-bash  -vx  /tmp/old_server_data//load_sql_tables.bsh    >  /tmp/old_server_data/load_sql_tables.bsh.log    2>&1  ;     ## run the newly created bash script   approx 30 minutes run time
+nohup bash  -vx  /tmp/old_server_data//load_sql_tables.bsh    >  /tmp/old_server_data/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
 du  --summarize  --human-readable  /var/lib/mysql/                                                               ;     ## check for total size   1.4 gigs
 
 mariadb-secure-installation;   ## IMPORTANT!
