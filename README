@@ -220,13 +220,10 @@ nohup time bash -vx  -   >   ./create-all-virtual-servers.log   2>&1  &   ## det
      #####  put tar files into their proper places
 
 cat  <<END_OF_MOVE |
-  cd           /tmp/old_server_data/                                                        ;
+  cd                 /tmp/old_server_data/                                                  ;
   mv      --verbose  /tmp/old_server_data/bash_history                  ~                   ;
   mv      --verbose  /home/                                             /home-RENAMED/      ;
   mv      --verbose  /tmp/old_server_data/home/                         /home/              ;
-                                    ####################################### bash    ~/server-migration/bash-misc/chmod-them-all.bsh                                   ;     ## tar keeps losing ownership
-  mv      --verbose  /home-RENAMED/fakeperluser/                        /home/              ;
-  mv      --verbose  /home-RENAMED/fakephpuser/                         /home/              ;
   rsync   --verbose  --archive /home-RENAMED/                           /home/              ;     ## check file owners
 
   ##  letsencrypt stuff
@@ -234,6 +231,7 @@ cat  <<END_OF_MOVE |
   mv      --verbose  /tmp/old_server_data/usr/local/bash/                  /usr/local/      ;
   mv      --verbose  /tmp/old_server_data/usr/local/lib/php/               /usr/local/lib/  ;
   cat /tmp/old_server_data/crontab.txt         |  crontab   -                               ;   #  quick way to load crontab from old server!
+  apachectl  restart  && apachectl status                                                   ;   #  have to restart apache since the ssl stuff was moved around.
 END_OF_MOVE
 nohup time bash -vx  -   >   ./current-server-tar-gz-move.log   2>&1  &   ## detach 
 
@@ -358,6 +356,11 @@ ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:compto
 
 
 
+
+
+####################################### bash    ~/server-migration/bash-misc/chmod-them-all.bsh                                   ;     ## tar keeps losing ownership
+########################################## mv      --verbose  /home-RENAMED/fakeperluser/                        /home/              ;
+########################################## mv      --verbose  /home-RENAMED/fakephpuser/                         /home/              ;
 
 ### Alter  /usr/local/bash/serverUtilitzation because serverUtilization.bsh uses 'Content-type: type/html'  --replace with  -M "text/html"
 
