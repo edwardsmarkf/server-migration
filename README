@@ -259,9 +259,9 @@ bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh          
          | sed -e 's/.* ### //; s/ ## //;1i TEMP_SQL_LOCATION=/tmp/old_server_data/tmp/mariadb-tmp/;'   \
          > /tmp/old_server_data/load_sql_tables.bsh                                                     \
          ;                                                        ## generate our 'load' script!
-cat   /tmp/old_server_data/load_sql_tables.bsh                                                                   ;     ## inspect it 
-nohup bash  -vx  /tmp/old_server_data//load_sql_tables.bsh    >  /tmp/old_server_data/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
-du  --summarize  --human-readable  /var/lib/mysql/                                                               ;     ## check for total size   1.4 gigs
+cat   /tmp/old_server_data/load_sql_tables.bsh                                                                            ;     ## inspect it 
+nohup time bash  -vx  /tmp/old_server_data//load_sql_tables.bsh  >  /tmp/old_server_data/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
+du  --summarize  --human-readable  /var/lib/mysql/                                                                        ;     ## check for total size   1.4 gigs
 
 mariadb-secure-installation;   ## IMPORTANT!
 
