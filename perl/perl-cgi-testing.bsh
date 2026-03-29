@@ -84,7 +84,8 @@ print $out $img->png;
 EOF
 );
 
-ls -l  /tmp/img.png  ;   ## get the results of the image creation test.
+ls -l     /tmp/img.png  ;   ## get the results of the image creation test.
+od -cx     /tmp/img.png ;
 
 cat  <<END_OF_LIST;
   try:
