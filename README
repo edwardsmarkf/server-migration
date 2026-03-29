@@ -114,9 +114,9 @@ export DOMAIN='zzyzxzzyzx.com'  ;
 virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13                                                                                                    ##  --dns and --web are the ONLY two options requested
 virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this ever be the default?
 
-           ##############################
-           #   p h p    t e s t i n g   #
-           ##############################
+                ##############################
+                #   p h p    t e s t i n g   #
+                ##############################
 
 bash  -vx  ~/server-migration/php/02_phpImageMagick_test.bsh        ;
 
@@ -136,9 +136,9 @@ END_OF_LINKS
 su fakephpuser --command "/bin/composer --version ; "                       &&  echo  $?  ;
 
 
-           ################################
-           #   p e r l    t e s t i n g   #
-           ################################
+                ################################
+                #   p e r l    t e s t i n g   #
+                ################################
 
 ###more   ~/server-migration/perl/README    ## look for tests
 
@@ -149,22 +149,24 @@ bash -vx   ~/server-migration/perl/perl-cgi-testing.bsh      ;
 
 
 
-           ######################################
-           #   m a r i a d b    t e s t i n g   #
-           ######################################
+                ######################################
+                #   m a r i a d b    t e s t i n g   #
+                ######################################
 
 echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
 bash      ~/server-migration/mariadb/05_test_perl_mariadb_connection.bsh              &&  echo  $?  ;
 bash      ~/server-migration/mariadb/05_test_php_mariadb_connection.bsh               &&  echo  $?  ;
 
 
-           #######################
-           #   c l e a n   u p   #
-           #######################
+                #######################
+                #   c l e a n   u p   #
+                #######################
 
 virtualmin  delete-domain  --domain  ${DOMAIN}    ;
 userdel  --remove  fakeperluser  ;
 userdel  --remove  fakephpuser   ;
+
+ls -l  /home/                     ;
 
 
 
