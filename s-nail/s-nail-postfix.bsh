@@ -131,7 +131,8 @@ echo 'test using -A gmailSMTP-noreply'                                     \\
     -s "Sent from mail command\$(echo -e "\\r\\nContent-type: text/html")" \\
     -c ${testReceivingCcEmailAddress}                                      \\
                 ${testReceivingEmailAddress}                               \\
-    ;                                                                      \\
+    ;                                                                       \
+                                                                            \
     php   /usr/local/lib/php/SMTPMailer-tester.php  ;  ## test php         \\
 
 END_OF_SCRIPT
