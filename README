@@ -180,6 +180,7 @@ ls -l  /home/                     ;
 # also on the new server:
 
 cat  <<END_OF_UNPACK |
+  cd           /tmp/old_server_data/                      ;
   gzip --decompress  /tmp/old_server_data/*.gz  ;     ### you MAY run into space issues on the new server!
   tar -xf     /tmp/old_server_data/home.tar               ; 
   tar -xf     /tmp/old_server_data/letsencrypt.tar        ;
@@ -217,6 +218,7 @@ apachectl  status                   ;
      #####  put tar files into their proper places
 
 cat  <<END_OF_MOVE |
+  cd           /tmp/old_server_data/                                                        ;
   mv      --verbose  /tmp/old_server_data/bash_history                  ~                   ;
   mv      --verbose  /home/                                             /home-RENAMED/      ;
   mv      --verbose  /tmp/old_server_data/home/                         /home/              ;
@@ -242,6 +244,7 @@ nohup time bash -vx  -   >   ./current-server-tar-gz-move.log   2>&1  &   ## det
 #                                                 #
 ###################################################
 
+  cd           /tmp/old_server_data/                      ;
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
 grep  '^password='                                                     ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## inspect it
