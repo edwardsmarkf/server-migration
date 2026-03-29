@@ -28,9 +28,12 @@ ls  -l                                     /home/${DOMAIN}/public_html/         
 
 
 
-echo 'please try  http://${DOMAIN}/phpinfo.php   in your browser';
-echo 'be sure to look for both the magick section AND the magicwand section near the bottom!!';
-echo 'and please try  http://${DOMAIN}/imageMagickTestOne.php.';
+cat  <<END  ;
+please try  http://${DOMAIN}/phpinfo.php   in your browser:
+be sure to look for both the magick section AND the magicwand section near the bottom!!
+and please try  http://${DOMAIN}/imageMagickTestOne.php
+END
+
 
 exit 1;
 
