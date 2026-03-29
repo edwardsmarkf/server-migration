@@ -118,7 +118,7 @@ virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this
            #   p h p    t e s t i n g   #
            ##############################
 
-bash  -vx  ~/server-migration/php/02_phpImageMagick_test.bsh      >  ~/server-migration/php/02_phpImageMagick_test.bsh.log   2>&1  ;
+bash  -vx  ~/server-migration/php/02_phpImageMagick_test.bsh        ;
 
 echo '<?php phpinfo(); ?>'                                            >  /home/${DOMAIN}/public_html/phpinfo.php           ; 
 ###########################################cp  --verbose  /root/server-migration/php/imageMagickTest.php            /home/${DOMAIN}/public_html/imageMagickTest2.php  ;
