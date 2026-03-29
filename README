@@ -171,7 +171,7 @@ userdel  --remove  fakephpuser   ;
 
 ######################################################################
 #                                                                    #
-#   m o v e   d a t a   t o   p r o p e r   l o c a t i o n s        #
+#      u n p a c k    a l l   t h e  c u r r e n t   d a t a         #
 #                                                                    #
 ######################################################################
 
@@ -189,6 +189,28 @@ nohup time bash -vx  -   >   ./current-server-tar-gz-unpack.log   2>&1  &   ## d
 
 rm --verbose --force  /tmp/old_server_data/home.tar  ;   # we MAY need this for space!
 
+
+
+######################################################################
+#                                                                    #
+#   c r e a t e     a l l   v i r t u a l   s e r v e r s            #
+#                                                                    #
+######################################################################
+
+bash  -vx  ~/server-migration/webmin/virtualmin-create-vm.bsh    >  ~/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
+bash  -vx  ~/server-migration/httpd.conf/apache.bsh              >  ~/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
+
+systemctl  restart  httpd.service   ;    ##
+apachectl  status                   ;
+
+
+
+
+######################################################################
+#                                                                    #
+#   m o v e   d a t a   t o   p r o p e r   l o c a t i o n s        #
+#                                                                    #
+######################################################################
 
      #####  put tar files into their proper places
 
@@ -209,12 +231,6 @@ cat  <<END_OF_MOVE |
 END_OF_MOVE
 nohup time bash -vx  -   >   ./current-server-tar-gz-move.log   2>&1  &   ## detach 
 
-
-bash  -vx  ~/server-migration/webmin/virtualmin-create-vm.bsh    >  ~/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
-bash  -vx  ~/server-migration/httpd.conf/apache.bsh              >  ~/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
-
-systemctl  restart  httpd.service   ;    ##
-apachectl  status                   ;
 
 
 
