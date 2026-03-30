@@ -6,6 +6,8 @@
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
+cp  --verbose    /etc/httpd/conf/httpd.conf     ~                             ;
+
 /usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT  ;
 
 /RewriteRule .* https:\/\/comptonpeslonline.com:10000\//{N;N;N;/SSLEngine on/a                                  \\
@@ -63,6 +65,8 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 }
 
 SED_SCRIPT
+
+diff  --verbose    /etc/httpd/conf/httpd.conf     ~                             ;
 
 apachectl configtest;
 
