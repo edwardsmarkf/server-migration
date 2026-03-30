@@ -22,12 +22,21 @@ cd    -                                                                         
   ##   2026-03-05 once again, the location has changed....  ;-(  
 sed   --in-place   --expression='s?/usr/bin/sudo?/bin/sudo?; s?/usr/bin/file?/bin/file?;'   /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   ;
 
+
 /bin/pm2   delete  all   ;   ## just in case....
+
+cd  /home/comptonpeslonline.com ;    ## 2026-03-30
+
+##   pm2. -u.  -hp  ????
+
+###### Visudo???
 
                                            ### 2026-03-15 - added LD_LIBRARY_PATH as per:  https://pm2.io/docs/runtime/best-practices/environment-variables/
 LD_LIBRARY_PATH=/usr/local/lib                                                                                                     \
                                                                                                                                    \
    /bin/pm2  start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                      \
+                                         -u      comptonpeslonline.com                                                             \
+                                         --hp    /home/comptonpeslonline.com                                                       \
                                          --cwd   /home/comptonpeslonline.com                                                       \
                                          --name  'NodeWaveForm'                                                                    \
                                          --      --port           20001                                                            \
