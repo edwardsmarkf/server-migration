@@ -279,6 +279,9 @@ tail -100  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log     ;
 
 nohup  bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  &
 
+bash -vx  ~/server-migration/node/visudo.bsh                    >  ~/server-migration/node/visudo.bsh.log           2>&1  ;
+
+
 
 
 #######################################################
