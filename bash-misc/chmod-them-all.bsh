@@ -5,8 +5,8 @@
 #
 
 while  read -r   domain; do
-        echo ${domain}                                                          ;
-        chown  --recursive --silent  ${domain}:${domain}      ${domain} ;
+        echo 'Processing: ' ${domain}                                           ;
+        chown  --recursive --silent  ${domain}:${domain}      /home/${domain}   ;
 done  <<END_OF_DOMAINS
 accentreduction.online
 ajcomptonpesl.com
