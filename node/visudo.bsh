@@ -14,12 +14,12 @@ thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 cat  <<END  | sudo EDITOR='tee --append' visudo ;
 
 ##  $(date;) --  Begin add by ${thisScript}
+comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/chown
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /sbin/csf
-comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/sh
-comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/sudo
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/file
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/mv
-comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/chown
+comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/sh
+comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/sudo
 ##  $(date;) --  End add by ${thisScript}
 END
 
