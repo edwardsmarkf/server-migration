@@ -19,8 +19,9 @@ sed  --in-place   --expression='s?"node": "^8.0.0",?"node": ">= 20",?'   ./packa
 npm   update                                                                                     ;  ## 2026-03-02
 cd    -                                                                                          ;  ## 2026-03-02
 
-  ##   2026-03-05 once again, the location has changed....  ;-(  
-sed   --in-place   --expression='s?/usr/bin/sudo?/bin/sudo?; s?/usr/bin/file?/bin/file?;'   /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   ;
+  ##   2026-03-05 once again, the sudo location has changed....  ;-(  
+sed   --in-place   --expression='s?/usr/bin/sudo?/bin/sudo?; s?/usr/bin/file?/bin/file?;'                               \
+             /home/comptonpeslonline.com/public_html/voiceSpiceNode/voiceSpiceNodeServer/voiceSpiceNodeServerProxy.js   ;
 
 
 /bin/pm2   delete  all   ;   ## just in case....
