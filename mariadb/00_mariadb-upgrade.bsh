@@ -25,12 +25,12 @@ cat  <<END_OF_MARIADB_REPO   >  /etc/yum.repos.d/MariaDB.repo;
 [mariadb]
 name = MariaDB
 baseurl = ${MARIADB_REPO_LOCATION}
-                        ##  2026-04-01    baseurl = http://yum.mariadb.org/${MARIADB_VERSION}/rhel10-amd64
 module_hotfixes=1
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 END_OF_MARIADB_REPO
 
+                        ##  2026-04-01    baseurl = http://yum.mariadb.org/${MARIADB_VERSION}/rhel10-amd64
 ls -l    /etc/yum.repos.d/MariaDB.repo              ;   ## optional
 cat      /etc/yum.repos.d/MariaDB.repo              ;  ## double check it.
 
