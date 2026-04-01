@@ -39,8 +39,9 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
 rm -Rf  /tmp/old_server_data  ;  mkdir  /tmp/old_server_data && cd  $_  ; 
 
-git clone  https://github.com/edwardsmarkf/server-migration                         ;
-tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save i
+git clone  https://github.com/edwardsmarkf/server-migration                                                         ;
+tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save
+ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;
 
             ######## find  .  -name   mariadbDumpAllDatabases.bsh                                        ;   ## optional
             ######## vi  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                ;  ## change password  (or use sed)  
