@@ -9,7 +9,10 @@
 ##                        so this script is being shortened. 
 ##  2026-03-19 -- on RL10.x we ran into problems with 11.4 so we had to use an rhel10-amd64 rather than one specifically for RL.
 
-MARIADB_VERSION=11.4;
+##   http://mirror.mariadb.org/yum/12.3.1/rocky/10/
+
+##MARIADB_VERSION=11.4;
+MARIADB_REPO_LOCATION='https://mirror.mariadb.org/yum/12.3.1/rocky/10/x86_64/'  ;
 
 ###    https://kb.filewave.com/books/linux-tips-and-tricks/page/upgrading-or-updating-mariadb-on-almalinux-9 
 
@@ -20,7 +23,8 @@ ls -l  /etc/yum.repos.d/MariaDB.repo              ;   ## optional
 cat  <<END_OF_MARIADB_REPO   >  /etc/yum.repos.d/MariaDB.repo;
 [mariadb]
 name = MariaDB
-baseurl = http://yum.mariadb.org/${MARIADB_VERSION}/rhel10-amd64
+baseurl = ${MARIADB_REPO_LOCATION}
+                        #baseurl = http://yum.mariadb.org/${MARIADB_VERSION}/rhel10-amd64
 module_hotfixes=1
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
