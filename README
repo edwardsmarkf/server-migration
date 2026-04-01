@@ -188,7 +188,7 @@ cat  <<END_OF_UNPACK |
   tar  --extract  --file     /tmp/old_server_data/usr_local_bash.tar     ;
   tar  --extract  --file     /tmp/old_server_data/usr_local_lib_php.tar  ;
 END_OF_UNPACK
-nohup time bash -vx  -   >   ./current-server-tar-gz-unpack.log   2>&1  &   ## detach 
+nohup time bash -vx  -   >   ~/current-server-tar-gz-unpack.log   2>&1  &   ## detach 
 
 rm --verbose --force  /tmp/old_server_data/home.tar  ;   # we MAY need this for space!
 
@@ -207,7 +207,7 @@ cat  <<CREATE_ALL_VIRTUAL_SERVERS |
     systemctl  restart  httpd.service   ;    ##
     apachectl  status                   ;
 CREATE_ALL_VIRTUAL_SERVERS
-nohup time bash -vx  -   >   ./create-all-virtual-servers.log   2>&1  &   ## detach 
+nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## detach 
 
 
 
@@ -237,7 +237,7 @@ cat  <<END_OF_MOVE |
 
     bash -vx  /root/server-migration/bash-misc/chmod-them-all.bsh        >  /root/server-migration/bash-misc/chmod-them-all.bsh  2>&1 ;
 END_OF_MOVE
-nohup time bash -vx  -   >   ./current-server-tar-gz-move.log   2>&1  &   ## detach 
+nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## detach 
 
 
 
@@ -262,7 +262,7 @@ bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh          
          > /tmp/old_server_data/load_sql_tables.bsh                                                     \
          ;                                                        ## generate our 'load' script!
 cat   /tmp/old_server_data/load_sql_tables.bsh                                                                            ;     ## inspect it 
-nohup time bash  -vx  /tmp/old_server_data//load_sql_tables.bsh  >  /tmp/old_server_data/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
+nohup time bash  -vx  /tmp/old_server_data//load_sql_tables.bsh  >  ~/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
 du  --summarize  --human-readable  /var/lib/mysql/                                                                        ;     ## check for total size   1.4 gigs
 
 mariadb-secure-installation;   ## IMPORTANT!
