@@ -43,10 +43,6 @@ git clone  https://github.com/edwardsmarkf/server-migration                     
 tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save
 ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;
 
-            ######## find  .  -name   mariadbDumpAllDatabases.bsh                                        ;   ## optional
-            ######## vi  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                ;  ## change password  (or use sed)  
-            ########                    ## --OR--   ## CHANGE THE HARDCODED  PASSWORD !
-
 sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/NewPassWordGoesHere/;'  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
 
 grep  '^MARIADB_PASSWORD='                                                        ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
@@ -735,5 +731,12 @@ sed --file=-  ./httpd.conf    <<END_OF_SLRH_ORG_SED > x.x ;
 }
 END_OF_SLRH_ORG_SED
 
+
+
+
+
+            ######## find  .  -name   mariadbDumpAllDatabases.bsh                                        ;   ## optional
+            ######## vi  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                ;  ## change password  (or use sed)  
+            ########                    ## --OR--   ## CHANGE THE HARDCODED  PASSWORD !
 
 
