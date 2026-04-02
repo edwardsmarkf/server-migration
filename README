@@ -223,8 +223,6 @@ cat  <<END_OF_MOVE |
   mv      --verbose  /tmp/old_server_data/home/                         /home/              ;
   rsync   --verbose  --archive /home-RENAMED/                           /home/              ;     ## check file owners
 
-
-
   ##  letsencrypt stuff
   rsync   --verbose  --archive   ./etc/letsencrypt/     /etc/letsencrypt/                   ;
   mv      --verbose  /tmp/old_server_data/usr/local/bash/                  /usr/local/      ;
