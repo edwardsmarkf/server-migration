@@ -82,6 +82,9 @@ dnf  --assumeyes  install sshpass  ;      ## this might not yet be done if this 
 
 export TMP_LOCATION=/home/mark/   ;     ##   2026-04-02  /tmp/ directory on new server is NOT very big....
 
+cd  ${TMP_LOCATION}   ;       ## 2026-04-02
+
+
 ####   2026-04-02  -- new server does not have a big /tmp/ directory    ## rm -Rf  /tmp/old_server_data   ;  mkdir  /tmp/old_server_data && cd  $_  ;
 
 ##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
