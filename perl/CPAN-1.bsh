@@ -3,8 +3,23 @@
 #       CPAN-1.bsh      2026-01-30
 #                        2026-02-23 -- suppress the "Would you like to configure" question
 #
+#        2026-04-02        - got some weird:   Perl site library directory "/usr/local/share/perl5/5.40" does not exist.
+#                                                
+
+ls  -l           /usr/local/share/perl5/5.40               ;   ## 2026-04-02 - check if its there or not
+mkdir --parent   /usr/local/share/perl5/5.40               ;   ## 2026-04-02
 
 export PERL_MM_USE_DEFAULT=1 ;   ## 2026-02-23 - suppress the 'Would you like to configure.... question
+
+
+
+#        2026-04-02 -- seeing this message (maybe it does not hurt anything???)
+#                invalid command name "to"
+#                    while executing
+#                "to"
+#                    invoked from within
+#                "expect  -re 'Would you like to configure as much as possible automatically'"
+#                    (file "/dev/fd/63" line 11)^M
 
 
 expect <(cat <<'END_OF_CPAN'
