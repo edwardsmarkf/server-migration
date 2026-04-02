@@ -176,18 +176,20 @@ ls -l  /home/                     ;
 
 # also on the new server:
 
+export TMP_LOCATION=/home/mark   ;     ##   2026-04-02  tmp directory on new server is NOT very big....
+
 cat  <<END_OF_UNPACK |
-  cd           /tmp/old_server_data/                      ;
-  gzip --decompress  /tmp/old_server_data/*.gz  ;     ### you MAY run into space issues on the new server!
-  tar  --extract  --file     /tmp/old_server_data/home.tar               ; 
-  tar  --extract  --file     /tmp/old_server_data/letsencrypt.tar        ;
-  tar  --extract  --file     /tmp/old_server_data/mariadb-databases.tar  ;
-  tar  --extract  --file     /tmp/old_server_data/usr_local_bash.tar     ;
-  tar  --extract  --file     /tmp/old_server_data/usr_local_lib_php.tar  ;
+  cd     ${TMP_LOCATION}                              ;
+  gzip --decompress          ./*.gz                   ;     ### you MAY run into space issues on the new server!
+  tar  --extract  --file     ./home.tar               ; 
+  tar  --extract  --file     ./letsencrypt.tar        ;
+  tar  --extract  --file     ./mariadb-databases.tar  ;
+  tar  --extract  --file     ./usr_local_bash.tar     ;
+  tar  --extract  --file     ./usr_local_lib_php.tar  ;
 END_OF_UNPACK
 nohup time bash -vx  -   >   ~/current-server-tar-gz-unpack.log   2>&1  &   ## detach 
 
-rm --verbose --force  /tmp/old_server_data/home.tar  ;   # we MAY need this for space!
+rm --verbose --force  ${TMP_LOCATION}/home.tar  ;   # we MAY need this for space!
 
 
 
