@@ -100,9 +100,9 @@ bash  -vx  ~/server-migration/perl/Master_Installer.bsh       >  ~/server-migrat
      #                                       #
      #########################################
 
-perl  ~/server-migration/mariadb/05_test_perl_connection.pl  ;
+perl  ~/server-migration/mariadb/05_test_perl_mariadb_connection.pl  ;
 
-php   ~/server-migration/mariadb/05_test_php_connection.php  ;
+php   ~/server-migration/mariadb/05_test_php_mariadb_connection.php  ;
 
 
 
