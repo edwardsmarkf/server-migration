@@ -80,7 +80,9 @@ on new server:  (30 minutes)
 
 dnf  --assumeyes  install sshpass  ;      ## this might not yet be done if this procedure is started too early.
 
-rm -Rf  /tmp/old_server_data   ;  mkdir  /tmp/old_server_data && cd  $_  ;
+export TMP_LOCATION=/home/mark/   ;     ##   2026-04-02  /tmp/ directory on new server is NOT very big....
+
+####   2026-04-02  -- new server does not have a big /tmp/ directory    ## rm -Rf  /tmp/old_server_data   ;  mkdir  /tmp/old_server_data && cd  $_  ;
 
 ##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
                                                 ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
@@ -176,7 +178,7 @@ ls -l  /home/                     ;
 
 # also on the new server:
 
-export TMP_LOCATION=/home/mark   ;     ##   2026-04-02  tmp directory on new server is NOT very big....
+export TMP_LOCATION=/home/mark/   ;     ##   2026-04-02  /tmp/ directory on new server is NOT very big....
 
 cat  <<END_OF_UNPACK |
   cd     ${TMP_LOCATION}                              ;
