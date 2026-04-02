@@ -36,7 +36,7 @@ cd  /home/comptonpeslonline.com ;    ## 2026-03-30
 LD_LIBRARY_PATH=/usr/local/lib                                                                                                     \
                                                                                                                                    \
    /bin/pm2  start    /home/comptonpeslonline.com/public_html/html5Audio/html5AudioNode/nodeWaveFormPlayer.js                      \
-                                         --cwd   /home/comptonpeslonline.com                                                       \ 
+                                         --cwd   /home/comptonpeslonline.com                                                       \
                                          --hp    /home/comptonpeslonline.com                                                       \
                                          --name  'NodeWaveForm'                                                                    \
                                          --user  comptonpeslonline.com                                                             \
