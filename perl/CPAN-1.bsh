@@ -4,11 +4,12 @@
 #                        2026-02-23 -- suppress the "Would you like to configure" question
 #
 #        2026-04-02        - got some weird:   Perl site library directory "/usr/local/share/perl5/5.40" does not exist.
-#                                                
+#                          - also found a MUCH better way to install cpan using all the defaults
 
-##  https://stackoverflow.com/questions/3462058/how-do-i-automate-cpan-configuration
-##  (echo y;echo o conf prerequisites_policy follow;echo o conf commit)|cpan
-##      echo | cpan
+                ##     2026-04-02:
+                ##        https://stackoverflow.com/questions/3462058/how-do-i-automate-cpan-configuration
+                ##         (echo y;echo o conf prerequisites_policy follow;echo o conf commit)|cpan
+                ##        echo | cpan
 
 ls  -l           /usr/local/share/perl5/5.40               ;   ## 2026-04-02 - check if its there or not
 
@@ -16,6 +17,24 @@ ls  -l           /usr/local/share/perl5/5.40               ;   ## 2026-04-02 - c
 
 export PERL_MM_USE_DEFAULT=1 ;   ## 2026-02-23 - suppress the 'Would you like to configure.... question
 
+echo | cpan  ;   ##  pass a default 'yes' answer to the question about "Would you like to configure as much as possible automatically"
+
+/usr/bin/cpan    -i   -f  Template::Stash::XS      ;
+
+perl -e  'use Template::Stash::XS ; '  && echo $?   ;      ## TEST TEST TEST TEST TEST TEST TEST ! ! 
+
+exit;
+
+
+
+
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
+#############################################################################################################
 
 
 #        2026-04-02 -- seeing this message (maybe it does not hurt anything???)
