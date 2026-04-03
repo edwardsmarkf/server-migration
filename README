@@ -123,8 +123,6 @@ virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this
 
 bash  -vx  ~/server-migration/php/02_phpImageMagick_test.bsh        ;
 
-echo '<?php   echo $_SERVER["USER"] ;  echo " Current script owner: " . get_current_user(); phpinfo(); ?>  '        >  /home/${DOMAIN}/public_html/phpinfo.php           ; 
-
 chown   ${DOMAIN}:${DOMAIN}                                              /home/${DOMAIN}/public_html/*                     ;
 chmod   755                                                              /home/${DOMAIN}/public_html/*                     ;
 ls -l                                                                    /home/${DOMAIN}/public_html                       ;
@@ -745,4 +743,7 @@ END_OF_SLRH_ORG_SED
             ######## vi  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                ;  ## change password  (or use sed)  
             ########                    ## --OR--   ## CHANGE THE HARDCODED  PASSWORD !
 
+
+
+echo '<?php   echo $_SERVER["USER"] ;  echo " Current script owner: " . get_current_user(); phpinfo(); ?>  '        >  /home/${DOMAIN}/public_html/phpinfo.php           ; 
 
