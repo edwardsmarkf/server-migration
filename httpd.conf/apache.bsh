@@ -10,7 +10,7 @@
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");
 
-cp  -verbose    /etc/httpd/conf/httpd.conf    ~        ;
+cp  --verbose    /etc/httpd/conf/httpd.conf    ~/httpd.conf        ;
 
 /usr/bin/sed --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<SED_SCRIPT_COMPTONPESLONLINE  ;
 
