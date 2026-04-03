@@ -6,7 +6,24 @@
 
 DOMAIN=zzyzxzzyzx.com ;  
 
-echo '<?php phpinfo(); ?>'     >  /home/${DOMAIN}/public_html/phpinfo.php
+cat <<END_OF_PHPINFO  >  /home/${DOMAIN}/public_html/phpinfo.php           ;
+<?php
+        echo    '<br />'
+        .       'Server User: '
+        .       \$_SERVER['USER']
+        .       '<br />'
+        .       'Current script owner: '
+        .       get_current_user()
+        .       '<br />'
+        .       'The current date and time is: '
+        .       date('Y-m-d H:i:s')
+        .       '<br />'
+        .       '<br />'
+        ;
+        phpinfo();
+?>
+END_OF_PHPINFO
+
 
 chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/phpinfo.php ;  ##
 chmod  --verbose 755                      /home/${DOMAIN}/public_html/phpinfo.php ;  ##
