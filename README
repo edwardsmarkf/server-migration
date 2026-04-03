@@ -57,7 +57,8 @@ cat  <<END_OF_CURRENT_SERVER |
      tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;
      tar --create --gunzip                                                                           \
                   --preserve-permissions                                                             \
-                  --same-owner                                                                       \
+                  --same-owne                                                                        \
+                  --exclude='*.opus'                                                                 \
                              --file=/home/mark/home.tar.gz                /home/                     ;   ##  34 gig!
      cp  --verbose           ~/.bash_history                              /home/mark/bash_history    ;   
      chmod  --verbose  755                                                /home/mark/bash_history    ;  
