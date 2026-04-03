@@ -178,7 +178,7 @@ ls -l  /home/                     ;
 
 # also on the new server:
 
-export TMP_LOCATION=/home/mark/   ;     ##   2026-04-02  /tmp/ directory on new server is NOT very big....
+export TMP_LOCATION=/tmp/old_server_data/   ;     ##  
 
 cat  <<END_OF_UNPACK |
   cd     ${TMP_LOCATION}                              ;
