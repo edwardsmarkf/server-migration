@@ -223,9 +223,19 @@ nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## 
 cat  <<END_OF_MOVE |
   cd                 /tmp/old_server_data/                                                  ;
   mv      --verbose  /tmp/old_server_data/bash_history                  ~                   ;
-  mv      --verbose  /home/                                             /home-RENAMED/      ;
-  mv      --verbose  /tmp/old_server_data/home/                         /home/              ;
-  rsync   --verbose  --archive /home-RENAMED/                           /home/              ;     ## check file owners
+
+##  [ -d "/usr/local/share/perl5/5.40" ] || mkdir --parent   /usr/local/share/perl5/5.40               ;   ## 2026-04-02
+
+  for DIR_NAME in $(ls  /tmp/old_server_data/home/ ) ;
+  do
+      echo "  processing:  ${DIR_NAME}"                                                              ;
+      [ -d /home/${DIR_NAME}/ ] &&  mv  --verbose   /home/${DIR_NAME}/   /home/${DIR_NAME}-RENAMED/  ;
+      mv  --verbose  /tmp/old_server_data/home/${DIR_NAME}/    /home/${DIR_NAME}/                    ;
+  done
+
+#  mv      --verbose  /home/                                             /home-RENAMED/      ;
+#  mv      --verbose  /tmp/old_server_data/home/                         /home/              ;
+#  rsync   --verbose  --archive /home-RENAMED/                           /home/              ;     ## check file owners
 
   ##  letsencrypt stuff
   rsync   --verbose  --archive   ./etc/letsencrypt/     /etc/letsencrypt/                   ;
