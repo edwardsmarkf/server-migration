@@ -193,7 +193,7 @@ cat  <<END_OF_UNPACK |
 END_OF_UNPACK
 nohup time bash -vx  -   >   ~/current-server-tar-gz-unpack.log   2>&1  &   ## detach 
 
-rm --verbose --force  ${TMP_LOCATION}/home.tar  ;   # we MAY need this for space!
+   ###   rm --verbose --force  ${TMP_LOCATION}/home.tar  ;   # we MAY need this for space!
 
 
 
