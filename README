@@ -224,8 +224,6 @@ cat  <<END_OF_MOVE |
   cd                 /tmp/old_server_data/                                                  ;
   mv      --verbose  /tmp/old_server_data/bash_history                  ~                   ;
 
-##  [ -d "/usr/local/share/perl5/5.40" ] || mkdir --parent   /usr/local/share/perl5/5.40               ;   ## 2026-04-02
-
   for DIR_NAME in $(ls  /tmp/old_server_data/home/ ) ;
   do
       echo "  processing:  ${DIR_NAME}"                                                              ;
@@ -233,22 +231,23 @@ cat  <<END_OF_MOVE |
       mv  --verbose  /tmp/old_server_data/home/${DIR_NAME}/    /home/${DIR_NAME}/                    ;
   done
 
-#  mv      --verbose  /home/                                             /home-RENAMED/      ;
-#  mv      --verbose  /tmp/old_server_data/home/                         /home/              ;
-#  rsync   --verbose  --archive /home-RENAMED/                           /home/              ;     ## check file owners
+  
+  rsync  --verbose  --archive   /tmp/old_server_data/etc/letsencrypt/          /etc/letsencrypt/       ;    ##  letsencrypt stuff
+  mv     --verbose              /tmp/old_server_data/usr/local/bash/           /usr/local/             ;
+  mv     --verbose             /tmp/old_server_data/usr/local/lib/php/         /usr/local/lib/         ;
+  cat                          /tmp/old_server_data/crontab.txt                |  crontab   -          ;   #  quick way to load crontab from old server!
 
-  ##  letsencrypt stuff
-  rsync   --verbose  --archive   ./etc/letsencrypt/     /etc/letsencrypt/                   ;
-  mv      --verbose  /tmp/old_server_data/usr/local/bash/                  /usr/local/      ;
-  mv      --verbose  /tmp/old_server_data/usr/local/lib/php/               /usr/local/lib/  ;
-  cat /tmp/old_server_data/crontab.txt         |  crontab   -                               ;   #  quick way to load crontab from old server!
   apachectl  restart  && apachectl status                                                   ;   #  have to restart apache since the ssl stuff was moved around.
 
-    bash -vx  ~/server-migration/bash-misc/chmod-them-all.bsh        >  ~/server-migration/bash-misc/chmod-them-all.bsh.log  2>&1 ;
+  bash -vx  ~/server-migration/bash-misc/chmod-them-all.bsh        >  ~/server-migration/bash-misc/chmod-them-all.bsh.log  2>&1 ;
 END_OF_MOVE
 nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## detach 
 
 
+            ##  [ -d "/usr/local/share/perl5/5.40" ] || mkdir --parent   /usr/local/share/perl5/5.40               ;   ## 2026-04-02
+            #  mv      --verbose  /home/                                             /home-RENAMED/      ;
+            #  mv      --verbose  /tmp/old_server_data/home/                         /home/              ;
+            #  rsync   --verbose  --archive /home-RENAMED/                           /home/              ;     ## check file owners
 
 
 ###################################################
