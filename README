@@ -180,9 +180,10 @@ ls -l  /home/                     ;
 
 export TMP_LOCATION=/tmp/old_server_data/   ;     ##
 
-cd  \${TMP_LOCATION}    ;
+cd  ${TMP_LOCATION}    ;
 
 cat  <<END_OF_UNPACK |
+  cd  \${TMP_LOCATION}                                               ;
   gzip --decompress          \${TMP_LOCATION}/*.gz                   ;     ### you MAY run into space issues on the new server!
   tar  --extract  --file     \${TMP_LOCATION}/home.tar               ; 
   tar  --extract  --file     \${TMP_LOCATION}/letsencrypt.tar        ;
