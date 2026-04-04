@@ -224,11 +224,11 @@ cat  <<END_OF_MOVE |
   cd                 /tmp/old_server_data/                                                  ;
   mv      --verbose  /tmp/old_server_data/bash_history                  ~                   ;
 
-  for DIR_NAME in $(ls  /tmp/old_server_data/home/ ) ;
+  for DIR_NAME in \$(ls  /tmp/old_server_data/home/ ) ;
   do
-      echo "  processing:  ${DIR_NAME}"                                                              ;
-      [ -d /home/${DIR_NAME}/ ] &&  mv  --verbose   /home/${DIR_NAME}/   /home/${DIR_NAME}-RENAMED/  ;
-      mv  --verbose  /tmp/old_server_data/home/${DIR_NAME}/    /home/${DIR_NAME}/                    ;
+      echo "  processing:  \${DIR_NAME}"                                                              ;
+      [ -d /home/\${DIR_NAME}/ ] &&  mv  --verbose   /home/\${DIR_NAME}/   /home/\${DIR_NAME}-RENAMED/  ;
+      mv  --verbose  /tmp/old_server_data/home/\${DIR_NAME}/    /home/\${DIR_NAME}/                    ;
   done
 
   
