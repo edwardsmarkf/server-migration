@@ -178,7 +178,9 @@ ls -l  /home/                     ;
 
 # also on the new server:
 
-export TMP_LOCATION=/tmp/old_server_data/   ;     ##  
+export TMP_LOCATION=/tmp/old_server_data/   ;     ##
+
+cd  \${TMP_LOCATION}    ;
 
 cat  <<END_OF_UNPACK |
   gzip --decompress          \${TMP_LOCATION}/*.gz                   ;     ### you MAY run into space issues on the new server!
