@@ -223,33 +223,29 @@ nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## 
      #####  put tar files into their proper places
 
 cat  <<END_OF_MOVE |
-  cd                 /tmp/old_server_data/                                                  ;
-  mv      --verbose  /tmp/old_server_data/bash_history                  ~                   ;
+  export TMP_LOCATION=/tmp/old_server_data/                  ;     ##
+  cd                 \${TMP_LOCATION}                        ;
+  mv      --verbose  \${TMP_LOCATION}/bash_history      ~    ;
 
-  for DIR_NAME in \$(ls  /tmp/old_server_data/home/ ) ;
+  for DIR_NAME in \$(ls  \${TMP_LOCATION}/home/ )            ;
   do
-      echo "  processing:  \${DIR_NAME}"                                                              ;
+      echo "  processing:  \${DIR_NAME}"                                                                ;
       [ -d /home/\${DIR_NAME}/ ] &&  mv  --verbose   /home/\${DIR_NAME}/   /home/\${DIR_NAME}-RENAMED/  ;
-      mv  --verbose  /tmp/old_server_data/home/\${DIR_NAME}/    /home/\${DIR_NAME}/                    ;
+      mv  --verbose  \${TMP_LOCATION}/home/\${DIR_NAME}/    /home/\${DIR_NAME}/                         ;
   done
-
   
-  rsync  --verbose  --archive   /tmp/old_server_data/etc/letsencrypt/          /etc/letsencrypt/       ;    ##  letsencrypt stuff
-  mv     --verbose              /tmp/old_server_data/usr/local/bash/           /usr/local/             ;
-  mv     --verbose             /tmp/old_server_data/usr/local/lib/php/         /usr/local/lib/         ;
-  cat                          /tmp/old_server_data/crontab.txt                |  crontab   -          ;   #  quick way to load crontab from old server!
-
-  apachectl  restart  && apachectl status                                                   ;   #  have to restart apache since the ssl stuff was moved around.
+  rsync  --verbose  --archive   \${TMP_LOCATION}/etc/letsencrypt/          /etc/letsencrypt/       ; 
+  mv     --verbose              \${TMP_LOCATION}/usr/local/bash/           /usr/local/             ;
+  mv     --verbose             \${TMP_LOCATION}/usr/local/lib/php/         /usr/local/lib/         ;
+  cat                          \${TMP_LOCATION}/crontab.txt                |  crontab   -          ;   
+                       #  quick way to load crontab from old server!
+  apachectl  restart  && apachectl status            ;   #  have to restart apache since the ssl stuff was moved around.
 
   bash -vx  ~/server-migration/bash-misc/chown-them-all.bsh        >  ~/server-migration/bash-misc/chown-them-all.bsh.log  2>&1 ;
 END_OF_MOVE
 nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## detach 
 
 
-            ##  [ -d "/usr/local/share/perl5/5.40" ] || mkdir --parent   /usr/local/share/perl5/5.40               ;   ## 2026-04-02
-            #  mv      --verbose  /home/                                             /home-RENAMED/      ;
-            #  mv      --verbose  /tmp/old_server_data/home/                         /home/              ;
-            #  rsync   --verbose  --archive /home-RENAMED/                           /home/              ;     ## check file owners
 
 
 ###################################################
@@ -388,6 +384,11 @@ ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:compto
 
 ### Alter  /usr/local/bash/serverUtilitzation because serverUtilization.bsh uses 'Content-type: type/html'  --replace with  -M "text/html"
 
+
+            ##  [ -d "/usr/local/share/perl5/5.40" ] || mkdir --parent   /usr/local/share/perl5/5.40               ;   ## 2026-04-02
+            #  mv      --verbose  /home/                                             /home-RENAMED/      ;
+            #  mv      --verbose  /tmp/old_server_data/home/                         /home/              ;
+            #  rsync   --verbose  --archive /home-RENAMED/                           /home/              ;     ## check file owners
 
 
 
