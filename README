@@ -335,12 +335,12 @@ sshpass -p   'PASSWoRd'                                                         
             comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   ;
 
 sshpass -p   'PASSWoRd'                                                                                                                \
-      sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh='ssh -o StrictHostKeyChecking=no'                           \
+      sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
             comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
             /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/                                         ;
 
 sshpass -p   'PASSWoRd'                                                                                                                \
-      sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh='ssh -o StrictHostKeyChecking=no'                           \
+      sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
             comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                  \
             /home/comptonpeslonline.com/public_html/comptonPractice/voicefiles/                                                        ;
 
