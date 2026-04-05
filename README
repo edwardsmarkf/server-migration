@@ -236,8 +236,8 @@ cat  <<END_OF_MOVE |
   
   rsync  --verbose  --archive   \${TMP_LOCATION}/etc/letsencrypt/          /etc/letsencrypt/       ; 
   mv     --verbose              \${TMP_LOCATION}/usr/local/bash/           /usr/local/             ;
-  mv     --verbose             \${TMP_LOCATION}/usr/local/lib/php/         /usr/local/lib/         ;
-  cat                          \${TMP_LOCATION}/crontab.txt                |  crontab   -          ;   
+  mv     --verbose              \${TMP_LOCATION}/usr/local/lib/php/        /usr/local/lib/         ;
+  cat                           \${TMP_LOCATION}/crontab.txt               |  crontab   -          ;   
                        #  quick way to load crontab from old server!
   apachectl  restart  && apachectl status            ;   #  have to restart apache since the ssl stuff was moved around.
 
