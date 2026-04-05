@@ -255,7 +255,7 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## det
 ###################################################
 
 export TMP_LOCATION=/tmp/old_server_data/                  ;     ##
-cd                 \${TMP_LOCATION}                        ;
+cd                  ${TMP_LOCATION}                        ;
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
