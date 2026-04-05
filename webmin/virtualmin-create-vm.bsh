@@ -1,15 +1,56 @@
 #! /bin/bash  -w
 #
 #    virtualmin-create-vm.bsh        2026-02-23
+#     
+#     2026-04-06     -- made into a loop, added "--acme-never" so we dont create certs
+#
+
+
+while  read -r   DOMAIN; do
+        echo 'Processing: ' ${DOMAIN}                                           ;
+        openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  ${DOMAIN}   --dir --unix  --dns  --web --ssl --acme-never  --pass {} '  ;
+done  <<END_OF_DOMAINS
+accentreduction.online
+ajcomptonpesl.com
+comptonpeslonline.com
+comptonpeslonline.info
+edwardsmark.com
+englishwithoutaccent.com
+gordonredwards.com
+slrh.org
+END_OF_DOMAINS
+
+openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  virtualaska.com           --dir --unix  --dns  --web       --pass {} '  ;   ## notice no ssl
+
+virtualmin modify-web   --domain  comptonpeslonline.com  --enable-fcgiwrap ;  ## can this ever be the default?
+                                             ## this could also be done individually at:
+                                             ##     Web-Configuration-->Website-Options 
+                                             ## and change the default:
+                                             ##    `cgi scripts disabled` 
+                                             ## to 
+                                             ##    `FCGIwrap server`
+
+
+exit;
+
+########################################################################################################################
+########################################################################################################################
+########################################################################################################################
+########################################################################################################################
+########################################################################################################################
+########################################################################################################################
+########################################################################################################################
+########################################################################################################################
+
 
 
 
 ###  ?????????  do we want to add    --letsencrypt-always     ???
 
-
+./bash-misc/chmod-them-all.bsh
 #####   openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  000-first.com             --dir --unix  --dns  --web       --pass {} '  ;
 
-openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  accentreduction.online    --dir --unix  --dns  --web --ssl --pass {} '  ;
+openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  accentreduction.online    --dir --unix  --dns  --web --ssl --acme-never  --pass {} '  ;
 
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  ajcomptonpesl.com         --dir --unix  --dns  --web --ssl --pass {} '  ;
 
@@ -25,32 +66,13 @@ openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  gordon
 
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  slrh.org                  --dir --unix  --dns  --web --ssl --pass {} '  ;
 
-openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  virtualaska.com           --dir --unix  --dns  --web       --pass {} '  ; 
+##openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  virtualaska.com           --dir --unix  --dns  --web       --pass {} '  ; 
 
      ### added 2026-03-25   - also removed  --all-domains  
-virtualmin modify-web   --domain  comptonpeslonline.com  --enable-fcgiwrap ;  ## can this ever be the default?
-                                             ## this could also be done individually at:
-                                             ##     Web-Configuration-->Website-Options 
-                                             ## and change the default:
-                                             ##    `cgi scripts disabled` 
-                                             ## to 
-                                             ##    `FCGIwrap server`
-
-
-exit;
 
 
 
 
-
-########################################################################################################################
-########################################################################################################################
-########################################################################################################################
-########################################################################################################################
-########################################################################################################################
-########################################################################################################################
-########################################################################################################################
-########################################################################################################################
 
 
 ##  we dont need comptonpeslonline.info fixed...
