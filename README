@@ -1,4 +1,7 @@
-
+## put all domain names into their own text file??
+##   while IFS= read -r line; do
+##       echo "Processing line: $line"
+##   done < filename.txt
 
 
 ############################################################
