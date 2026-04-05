@@ -7,7 +7,8 @@
 
 
 while  read -r   DOMAIN; do
-        echo 'Processing: ' ${DOMAIN}                                           ;
+        echo 'Processing: ' ${DOMAIN}                  ;
+        export DOMAIN=${DOMAIN}                        ;
         openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  ${DOMAIN}   --dir --unix  --dns  --web --ssl --acme-never  --pass {} '  ;
 done  <<END_OF_DOMAINS
 accentreduction.online
