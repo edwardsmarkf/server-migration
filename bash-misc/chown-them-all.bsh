@@ -13,7 +13,7 @@ for  DOMAIN in $( ls  ${HOME_DIR}  | grep  '\.'; ) ; do
         if [[ "${DOMAIN}" =~ "-RENAMED" ]]; then
                 echo "Skipping ${DOMAIN}"                                                   ;
         else
-                echo "Processing ${domain}"                                                 ;
+                echo "Processing ${DOMAIN}"                                                 ;
                 chown  --recursive --silent  ${DOMAIN}:${DOMAIN}      ${HOME_DIR}/${DOMAIN} ;
         fi
 done;
