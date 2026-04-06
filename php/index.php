@@ -4,8 +4,7 @@
 <h1>Server Migration Testing</h1>
 <hr />
 <h4>Php Testing</h4>
-<a href='/phpinfo.php' target='_blank' >/phpinfo.php</a>
-<br />
+
 <a href='/imageMagickTest.php' target='_blank' >/imageMagickTest.php</a>
 <br />
 <br />
