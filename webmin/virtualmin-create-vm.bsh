@@ -11,7 +11,7 @@ while IFS= read -r line; do
      echo "Processing domain: ${line}"   
      export line=${line}                        ;
      if  [[ ${line} == 'virtualaska.com' ]]; then
-         openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  ${line}   --dir --unix  --dns  --web                     --pass {} '  ;
+         openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  ${line}   --dir --unix  --dns  --web                     --pass {} '  ;   ## no ssh for this one
      else
          openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  ${line}   --dir --unix  --dns  --web --ssl --acme-never  --pass {} '  ;
      fi
