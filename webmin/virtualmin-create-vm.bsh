@@ -3,11 +3,7 @@
 #    virtualmin-create-vm.bsh        2026-02-23
 #     
 #     2026-04-06     -- made into a loop, added "--acme-never" so we dont create certs
-#
-
-
-
-HOME_DIR='/home/'                                                 ;
+#                        ;
 
 DOMAIN_NAME_FILE='/root/server-migration/domain_list.txt'        ;
 
