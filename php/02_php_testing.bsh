@@ -7,7 +7,32 @@
 
 DOMAIN=zzyzxzzyzx.com ;  
 
-cp  --verbose    /root/server-migration/php/index.php         /home/${DOMAIN}/public_html/   ;
+cp  --verbose    /root/server-migration/php/*.php         /home/${DOMAIN}/public_html/   ;
+
+
+chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/*.php ;  ## 2025-08-13
+chmod  --verbose 755                      /home/${DOMAIN}/public_html/*.php ;  ## 2025-08-13
+ls  -l                                     /home/${DOMAIN}/public_html/                   ;
+
+
+cat  <<END_OF_PHP_TEST  ;
+please try  http://${DOMAIN}/index.php   in your browser:
+be sure to look for both the magick section AND the magicwand section near the bottom!!
+and please try  http://${DOMAIN}/imageMagickTest.php
+END_OF_PHP_TEST
+
+
+exit 1;
+
+
+
+
+
+########################################################################################################
+########################################################################################################
+########################################################################################################
+########################################################################################################
+########################################################################################################
 
             #### chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/phpinfo.php ;  ##
             #### chmod  --verbose 755                      /home/${DOMAIN}/public_html/phpinfo.php ;  ##
@@ -21,33 +46,6 @@ cp  --verbose    /root/server-migration/php/index.php         /home/${DOMAIN}/pu
         #####        echo \$image;
         #####    ?>
         #####    END_OF_SCRIPT
-
-chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/*.php ;  ## 2025-08-13
-chmod  --verbose 755                      /home/${DOMAIN}/public_html/*.php ;  ## 2025-08-13
-ls  -l                                     /home/${DOMAIN}/public_html/                   ;
-
-
-
-cat  <<END  ;
-please try  http://${DOMAIN}/index.php   in your browser:
-be sure to look for both the magick section AND the magicwand section near the bottom!!
-and please try  http://${DOMAIN}/imageMagickTest.php
-END
-
-
-exit 1;
-
-
-
-
-
-
-
-########################################################################################################
-########################################################################################################
-########################################################################################################
-########################################################################################################
-########################################################################################################
 
 
 cat <<END_OF_PHPINFO  >  /home/${DOMAIN}/public_html/phpinfo.php           ;
