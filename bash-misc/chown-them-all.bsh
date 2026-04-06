@@ -9,7 +9,7 @@
 
 HOME_DIR='/home/'                                                 ;
 
-DOMAIN_NAME_FILE='/root/server-migration/domain_names.txt'        ;
+DOMAIN_NAME_FILE='/root/server-migration/domain_list.txt'        ;
 
 while IFS= read -r line; do
       echo "Processing domain: $line"
