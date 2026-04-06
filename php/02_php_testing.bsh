@@ -9,19 +9,18 @@ DOMAIN=zzyzxzzyzx.com ;
 
 cp  --verbose    /root/server-migration/php/index.php         /home/${DOMAIN}/public_html/   ;
 
-chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/phpinfo.php ;  ##
-chmod  --verbose 755                      /home/${DOMAIN}/public_html/phpinfo.php ;  ##
+            #### chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/phpinfo.php ;  ##
+            #### chmod  --verbose 755                      /home/${DOMAIN}/public_html/phpinfo.php ;  ##
 
-
-cat <<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTest.php ;   ##2025-08-13 - new location!
-<?php
-    \$image = new Imagick();
-    \$image->newImage(100, 100, new ImagickPixel('red'));
-    \$image->setImageFormat('png');
-    header('Content-type: image/png');
-    echo \$image;
-?>
-END_OF_SCRIPT
+        #####    cat <<END_OF_SCRIPT > /home/${DOMAIN}/public_html/imageMagickTest.php ;   ##2025-08-13 - new location!
+        #####    <?php
+        #####        \$image = new Imagick();
+        #####        \$image->newImage(100, 100, new ImagickPixel('red'));
+        #####        \$image->setImageFormat('png');
+        #####        header('Content-type: image/png');
+        #####        echo \$image;
+        #####    ?>
+        #####    END_OF_SCRIPT
 
 chown  --verbose ${DOMAIN}:${DOMAIN}      /home/${DOMAIN}/public_html/*.php ;  ## 2025-08-13
 chmod  --verbose 755                      /home/${DOMAIN}/public_html/*.php ;  ## 2025-08-13
