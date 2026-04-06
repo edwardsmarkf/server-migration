@@ -348,7 +348,7 @@ sshpass -p   'PASSWoRd'                                                         
 sshpass -p   'PASSWoRd'                                                                                                                \
       sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
             comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                  \
-                                                  /home/comptonpeslonline.com/public_html/comptonPractice/voicefiles/                  ;
+                                                  /home/comptonpeslonline.com/public_html/voicefiles/                                  ;
 
 
 
