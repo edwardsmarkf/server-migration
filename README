@@ -122,7 +122,6 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 
  bash  -vx  ~/server-migration/php/02_php_testing.bsh        ;
 
-
  su fakephpuser --command "/bin/composer --version ; "                       &&  echo  $?  ;
 
 
