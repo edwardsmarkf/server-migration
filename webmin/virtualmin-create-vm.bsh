@@ -6,20 +6,23 @@
 #
 
 
-while  read -r   DOMAIN; do
-        echo 'Processing: ' ${DOMAIN}                  ;
-        export DOMAIN=${DOMAIN}                        ;
-        openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  ${DOMAIN}   --dir --unix  --dns  --web --ssl --acme-never  --pass {} '  ;
-done  <<END_OF_DOMAINS
-accentreduction.online
-ajcomptonpesl.com
-comptonpeslonline.com
-comptonpeslonline.info
-edwardsmark.com
-englishwithoutaccent.com
-gordonredwards.com
-slrh.org
-END_OF_DOMAINS
+
+HOME_DIR='/home/'                                                 ;
+
+DOMAIN_NAME_FILE='/root/server-migration/domain_list.txt'        ;
+
+while IFS= read -r line; do
+     echo "Processing domain: ${line}"   
+     export line=${line}                        ;
+     if  [[ ${line} == 'virtualaska.com' ]]; then
+         openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  ${line}   --dir --unix  --dns  --web                     --pass {} '  ;
+     else
+         openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  ${line}   --dir --unix  --dns  --web --ssl --acme-never  --pass {} '  ;
+     fi
+
+done < ${DOMAIN_NAME_FILE}
+
+
 
 openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  virtualaska.com           --dir --unix  --dns  --web       --pass {} '  ;   ## notice no ssl
 
@@ -43,6 +46,24 @@ exit;
 ########################################################################################################################
 ########################################################################################################################
 
+
+
+
+
+while  read -r   DOMAIN; do
+        echo 'Processing: ' ${DOMAIN}                  ;
+        export DOMAIN=${DOMAIN}                        ;
+        openssl rand -hex 12 | xargs  sh -c 'virtualmin  create-domain  --domain  ${DOMAIN}   --dir --unix  --dns  --web --ssl --acme-never  --pass {} '  ;
+done  <<END_OF_DOMAINS
+a ccentreduction.online
+aj comptonpesl.com
+com ptonpeslonline.com
+comp tonpeslonline.info
+edwar dsmark.com
+englis hwithoutaccent.com
+g ordonredwards.com
+sl rh.org
+END_OF_DOMAINS
 
 
 
