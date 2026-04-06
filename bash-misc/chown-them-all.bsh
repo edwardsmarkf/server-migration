@@ -5,7 +5,7 @@
 #     for whatever reason i am not bothering to resolve, the user:group is getting lost along the way
 #
 #        2026-04-06 - renamed to chown-them-all.bsh
-#
+#        2026-04-06 - now reads domain names from a script
 
 HOME_DIR='/home/'                                                 ;
 
@@ -46,13 +46,13 @@ while  read -r   domain; do
         echo 'Processing: ' ${domain}                                           ;
         chown  --recursive --silent  ${domain}:${domain}      /home/${domain}   ;
 done  <<END_OF_DOMAINS
-accentreduction.online
-ajcomptonpesl.com
-comptonpeslonline.com
-comptonpeslonline.info
-edwardsmark.com
-englishwithoutaccent.com
-gordonredwards.com
-slrh.org
-virtualaska.com
-END_OF_DOMAINS
+ac centreduction.online
+ajc omptonpesl.com
+comp tonpeslonline.com
+compt onpeslonline.info
+edward smark.com
+english withoutaccent.com
+gordonre dwards.com
+s lrh.org
+vi rtualaska.com
+END _OF_DOMAINS
