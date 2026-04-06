@@ -193,7 +193,26 @@ cat  <<END_OF_UNPACK |
 END_OF_UNPACK
 nohup time bash -vx  -   >   ~/current-server-tar-gz-unpack.log   2>&1  &   ## detach 
 
-   ###   rm --verbose --force  ${TMP_LOCATION}/home.tar  ;   # we MAY need this for space!
+                        ###   rm --verbose --force  ${TMP_LOCATION}/home.tar  ;   # we MAY need this for space!
+
+
+
+
+######################################################################
+#                                                                    #
+#   c r e a t e     a l l   v i r t u a l   s e r v e r s            #
+#                                                                    #
+######################################################################
+
+cat  <<CREATE_ALL_VIRTUAL_SERVERS |
+    bash  -vx  ~/server-migration/webmin/virtualmin-create-vm.bsh    >  ~/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
+    bash  -vx  ~/server-migration/httpd.conf/apache.bsh              >  ~/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
+
+    systemctl  restart  httpd.service   ;    ##
+    apachectl  status                   ;
+CREATE_ALL_VIRTUAL_SERVERS
+nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## detach 
+
 
 
 ###################################################
@@ -201,6 +220,8 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-unpack.log   2>&1  &   ## d
 #   m a r i a d b     d a t a    i n s t a l l    #
 #                                                 #
 ###################################################
+
+## be SURE unpacking is done first.....!
 
 export TMP_LOCATION=/tmp/old_server_data/                  ;     ##
 cd                  ${TMP_LOCATION}                        ;
