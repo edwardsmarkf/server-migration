@@ -277,7 +277,9 @@ bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh          
          > ${TMP_LOCATION}/load_sql_tables.bsh                                                     \
          ;                                                        ## generate our 'load' script!
 cat   ${TMP_LOCATION}/load_sql_tables.bsh                                                                            ;     ## inspect it 
+
 nohup time bash  -vx  ${TMP_LOCATION}/load_sql_tables.bsh  >  ~/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
+
 du  --summarize  --human-readable  /var/lib/mysql/                                                                        ;     ## check for total size   1.4 gigs
 
 mariadb-secure-installation;   ## IMPORTANT!
