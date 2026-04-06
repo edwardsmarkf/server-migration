@@ -2,7 +2,9 @@
 ##   while IFS= read -r line; do
 ##       echo "Processing line: $line"
 ##   done < filename.txt
-
+##
+##   -- forget  --RENAMED, just gzip
+##   -- put URL links in the first phpinfo.php script
 
 ############################################################
 #                                                          #
@@ -262,7 +264,9 @@ cd                  ${TMP_LOCATION}                        ;
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
+
 grep  '^password='                                                     ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## inspect it
+
 bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh  >  ${TMP_LOCATION}/create_db_and_users.sql                ;
 cat                                                                        ${TMP_LOCATION}/create_db_and_users.sql                ;
 mariadb     --verbose                                                   <  ${TMP_LOCATION}/create_db_and_users.sql                ;
