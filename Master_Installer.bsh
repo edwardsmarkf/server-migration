@@ -153,8 +153,9 @@ which ffprobe;   ##  /usr/local/bin/ffprobe
 
  su fakeperluser --command "perl  -W  -e  'use File::Basename ; ' ;  "        ;
 
-bash -vx  ~/server-migration/mariadb/05_test_perl_connection.bsh  ;
-bash -vx  ~/server-migration/mariadb/05_test_php_connection.bsh  ;
+echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
+bash      ~/server-migration/mariadb/05_test_perl_mariadb_connection.bsh              &&  echo  $?  ;
+bash      ~/server-migration/mariadb/05_test_php_mariadb_connection.bsh               &&  echo  $?  ;
 
 echo <<END
 be sure to run or look at the following:
