@@ -124,7 +124,7 @@ virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this
                 #   p h p    t e s t i n g   #
                 ##############################
 
-bash  -vx  ~/server-migration/php/02_phpImageMagick_test.bsh        ;
+bash  -vx  ~/server-migration/php/02_php_testing.bsh        ;
 
 chown   ${DOMAIN}:${DOMAIN}                                              /home/${DOMAIN}/public_html/*                     ;
 chmod   755                                                              /home/${DOMAIN}/public_html/*                     ;
