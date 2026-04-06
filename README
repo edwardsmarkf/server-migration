@@ -8,21 +8,21 @@
 ############################################################
 
 
-1)    echo "export KVM_NAME=kvm502;" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
+echo "export KVM_NAME=kvm502;" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
 
-2)    (this step takes about 3.5 hours or 210 minutes!)
+##  (this step takes about 3.5 hours or 210 minutes!)
 
-dnf  --assumeyes  install  time                                                                                          ;
-cat  <<END                                                                                                               |
-   cd                                                                                                                    ;
-   dnf --assumeyes update                                                                                                ;
-   dnf  --assumeyes upgrade                                                                                              ;
-   dnf   clean all                                                                                                       ;
-   dnf  --assumeyes  install  time                                                                                       ;
-   dnf  --assumeyes  install git  && git clone  https://github.com/edwardsmarkf/server-migration                         ;
-   cd  ~/server-migration/                                                                                               ;
-   time bash -vx    ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log   2>&1     ;
-END
+ dnf  --assumeyes  install  time                                                                                          ;
+ cat  <<END_OF_INITIALIZATION                                                                                             |
+    cd                                                                                                                    ;
+    dnf --assumeyes update                                                                                                ;
+    dnf  --assumeyes upgrade                                                                                              ;
+    dnf   clean all                                                                                                       ;
+    dnf  --assumeyes  install  time                                                                                       ;
+    dnf  --assumeyes  install git  && git clone  https://github.com/edwardsmarkf/server-migration                         ;
+    cd  ~/server-migration/                                                                                               ;
+    time bash -vx    ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log   2>&1     ;
+END_OF_INITIALIZATION
 nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
 
@@ -35,35 +35,35 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 #                                                                   #
 #####################################################################
    
-1)  on CURRENT server:  (NOTE LENGTH OF TIME!!)
+##  on CURRENT server:  (NOTE LENGTH OF TIME!!)
 
-rm -Rf  /tmp/old_server_data  ;  mkdir  /tmp/old_server_data && cd  $_  ; 
+ rm -Rf  /tmp/old_server_data  ;  mkdir  /tmp/old_server_data && cd  $_  ; 
 
-git clone  https://github.com/edwardsmarkf/server-migration                                                         ;
-tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save
-ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;
+ git clone  https://github.com/edwardsmarkf/server-migration                                                         ;
+ tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save
+ ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;
 
  sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/NewPassWordGoesHere/;'  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
 
  grep  '^MARIADB_PASSWORD='                                                        ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
 
-cat  <<END_OF_CURRENT_SERVER |
-     bash -vx   ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
-     ls  -lh  /home/mark ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
+ cat  <<END_OF_CURRENT_SERVER |
+      bash -vx   ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
+      ls  -lh  /home/mark ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
 
-     crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                  ;
-     tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;
-     tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;
-     tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;
-     tar --create --gunzip                                                                           \
-                  --preserve-permissions                                                             \
-                  --same-owner                                                                       \
-                  --exclude='*.opus'                                                                 \
-                             --file=/home/mark/home.tar.gz                /home/                     ;   ##  34 gig!
-     cp  --verbose           ~/.bash_history                              /home/mark/bash_history    ;   
-     chmod  --verbose  755                                                /home/mark/bash_history    ;  
-     gzip                                                                 /home/mark/bash_history    ;
-     ls  -lh   /home/mark/*.gz                                                                       ;
+      crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                  ;
+      tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;
+      tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;
+      tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;
+      tar --create --gunzip                                                                           \
+                   --preserve-permissions                                                             \
+                   --same-owner                                                                       \
+                   --exclude='*.opus'                                                                 \
+                              --file=/home/mark/home.tar.gz                /home/                     ;   ##  34 gig!
+      cp  --verbose           ~/.bash_history                              /home/mark/bash_history    ;   
+      chmod  --verbose  755                                                /home/mark/bash_history    ;  
+      gzip                                                                 /home/mark/bash_history    ;
+      ls  -lh   /home/mark/*.gz                                                                       ;
 END_OF_CURRENT_SERVER
 nohup time nice  bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach 
 
@@ -77,18 +77,19 @@ nohup time nice  bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &
 #                                                      #
 ########################################################
 
-on new server:  (30 minutes)
+##  on new server:  (30 minutes)
 
-dnf  --assumeyes  install sshpass  ;      ## this might not yet be done if this procedure is started too early.
+ dnf  --assumeyes  install sshpass  ;      ## this might not yet be done if this procedure is started too early.
 
             ##################  export TMP_LOCATION=/tmp/          ;     ##   2026-04-02  /tmp/ directory on new server is NOT very big....\
             ##################  cd  ${TMP_LOCATION}   ;       ## 2026-04-02
 
-rm -Rf  /tmp/old_server_data   ;  mkdir  /tmp/old_server_data && cd  $_  ;
+ rm -Rf  /tmp/old_server_data   ;  mkdir  /tmp/old_server_data && cd  $_  ;
 
 ##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
                                                 ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
-sshpass -p  'MYpASSWORDfORaCCTmARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
+ sshpass -p  'MYpASSWORDfORaCCTmARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
+
 sftp>   ls -lh        ## human readable file size  /home/ one is 34.x gigs
 sftp>   mget  *.gz    ## fetch the gzips
 sftp>   !ls -lh       ## file sizes on NEW server (notice bang character)
@@ -106,33 +107,34 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 #                                                                          #
 ############################################################################
 
-more   ~/ffmpeg-install-logs/99-test.bsh.log   ;    ### look for results
+ more   ~/ffmpeg-install-logs/99-test.bsh.log   ;    ### look for results
 
 ## define/create domain (if it does not yet exist) using new IP into local etc.hosts file
 
-export DOMAIN='zzyzxzzyzx.com'  ; 
+ export DOMAIN='zzyzxzzyzx.com'  ; 
 
-virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13                                                                                                    ##  --dns and --web are the ONLY two options requested
-virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this ever be the default?
+ virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13                                                                                                    ##  --dns and --web are the ONLY two options requested
+ virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this ever be the default?
 
                 ##############################
                 #   p h p    t e s t i n g   #
                 ##############################
 
-bash  -vx  ~/server-migration/php/02_php_testing.bsh        ;
+ bash  -vx  ~/server-migration/php/02_php_testing.bsh        ;
 
-chown   ${DOMAIN}:${DOMAIN}                                              /home/${DOMAIN}/public_html/*                     ;
-chmod   755                                                              /home/${DOMAIN}/public_html/*                     ;
-ls -l                                                                    /home/${DOMAIN}/public_html                       ;
+ chown   ${DOMAIN}:${DOMAIN}                                              /home/${DOMAIN}/public_html/*                     ;
+ chmod   755                                                              /home/${DOMAIN}/public_html/*                     ;
+ ls -l                                                                    /home/${DOMAIN}/public_html                       ;
 
-cat <<END_OF_LINKS;
-Try the following:
-   http://${DOMAIN}/
-   http://${DOMAIN}/phpinfo.php
-   http://${DOMAIN}/imageMagickTest.php
-END_OF_LINKS
+ cat <<END_OF_LINKS;
+ Try the following:
+    http://${DOMAIN}/
+    http://${DOMAIN}/index.php
+    http://${DOMAIN}/phpinfo.php
+    http://${DOMAIN}/imageMagickTest.php
+ END_OF_LINKS
 
-su fakephpuser --command "/bin/composer --version ; "                       &&  echo  $?  ;
+ su fakephpuser --command "/bin/composer --version ; "                       &&  echo  $?  ;
 
 
                 ################################
@@ -141,10 +143,10 @@ su fakephpuser --command "/bin/composer --version ; "                       &&  
 
 ###more   ~/server-migration/perl/README    ## look for tests
 
-su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;   ## test the perl 'use' command.
-su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  '     &&  echo  $?  ;   ## not sure what the first dash does...?
+ su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;   ## test the perl 'use' command.
+ su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  '     &&  echo  $?  ;   ## not sure what the first dash does...?
 
-bash -vx   ~/server-migration/perl/perl-cgi-testing.bsh      ;    
+ bash -vx   ~/server-migration/perl/perl-cgi-testing.bsh      ;    
 
 
 
@@ -152,20 +154,20 @@ bash -vx   ~/server-migration/perl/perl-cgi-testing.bsh      ;
                 #   m a r i a d b    t e s t i n g   #
                 ######################################
 
-echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
-bash      ~/server-migration/mariadb/05_test_perl_mariadb_connection.bsh              &&  echo  $?  ;
-bash      ~/server-migration/mariadb/05_test_php_mariadb_connection.bsh               &&  echo  $?  ;
+ echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
+ bash      ~/server-migration/mariadb/05_test_perl_mariadb_connection.bsh              &&  echo  $?  ;
+ bash      ~/server-migration/mariadb/05_test_php_mariadb_connection.bsh               &&  echo  $?  ;
 
 
                 #######################
                 #   c l e a n   u p   #
                 #######################
 
-virtualmin  delete-domain  --domain  ${DOMAIN}    ;
-userdel  --remove  fakeperluser  ;
-userdel  --remove  fakephpuser   ;
+ virtualmin  delete-domain  --domain  ${DOMAIN}    ;
+ userdel  --remove  fakeperluser  ;
+ userdel  --remove  fakephpuser   ;
 
-ls -l  /home/                     ;
+ ls -l  /home/                     ;
 
 
 
@@ -178,18 +180,18 @@ ls -l  /home/                     ;
 
 # also on the new server:
 
-export TMP_LOCATION=/tmp/old_server_data/   ;     ##
+ export TMP_LOCATION=/tmp/old_server_data/   ;     ##
 
-cd  ${TMP_LOCATION}    ;
+ cd  ${TMP_LOCATION}    ;
 
-cat  <<END_OF_UNPACK |
-  cd  \${TMP_LOCATION}                                               ;
-  gzip --decompress          \${TMP_LOCATION}/*.gz                   ;     ### you MAY run into space issues on the new server!
-  tar  --extract  --file     \${TMP_LOCATION}/home.tar               ; 
-  tar  --extract  --file     \${TMP_LOCATION}/letsencrypt.tar        ;
-  tar  --extract  --file     \${TMP_LOCATION}/mariadb-databases.tar  ;
-  tar  --extract  --file     \${TMP_LOCATION}/usr_local_bash.tar     ;
-  tar  --extract  --file     \${TMP_LOCATION}/usr_local_lib_php.tar  ;
+ cat  <<END_OF_UNPACK |
+   cd  \${TMP_LOCATION}                                               ;
+   gzip --decompress          \${TMP_LOCATION}/*.gz                   ;     ### you MAY run into space issues on the new server!
+   tar  --extract  --file     \${TMP_LOCATION}/home.tar               ; 
+   tar  --extract  --file     \${TMP_LOCATION}/letsencrypt.tar        ;
+   tar  --extract  --file     \${TMP_LOCATION}/mariadb-databases.tar  ;
+   tar  --extract  --file     \${TMP_LOCATION}/usr_local_bash.tar     ;
+   tar  --extract  --file     \${TMP_LOCATION}/usr_local_lib_php.tar  ;
 END_OF_UNPACK
 nohup time bash -vx  -   >   ~/current-server-tar-gz-unpack.log   2>&1  &   ## detach 
 
@@ -204,12 +206,12 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-unpack.log   2>&1  &   ## d
 #                                                                    #
 ######################################################################
 
-cat  <<CREATE_ALL_VIRTUAL_SERVERS |
-    bash  -vx  ~/server-migration/webmin/virtualmin-create-vm.bsh    >  ~/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
-    bash  -vx  ~/server-migration/httpd.conf/apache.bsh              >  ~/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
+ cat  <<CREATE_ALL_VIRTUAL_SERVERS |
+     bash  -vx  ~/server-migration/webmin/virtualmin-create-vm.bsh    >  ~/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
+     bash  -vx  ~/server-migration/httpd.conf/apache.bsh              >  ~/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
 
-    systemctl  restart  httpd.service   ;    ##
-    apachectl  status                   ;
+     systemctl  restart  httpd.service   ;    ##
+     apachectl  status                   ;
 CREATE_ALL_VIRTUAL_SERVERS
 nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## detach 
 
@@ -223,30 +225,31 @@ nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## 
 
 ## be SURE unpacking is done first.....!
 
-export TMP_LOCATION=/tmp/old_server_data/                  ;     ##
-cd                  ${TMP_LOCATION}                        ;
+ export TMP_LOCATION=/tmp/old_server_data/                  ;     ##
+
+ cd                  ${TMP_LOCATION}                        ;
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
-sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
+ sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
 
-grep  '^password='                                                     ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## inspect it
+ grep  '^password='                                                     ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## inspect it
 
-bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh  >  ${TMP_LOCATION}/create_db_and_users.sql                ;
-cat                                                                        ${TMP_LOCATION}/create_db_and_users.sql                ;
-mariadb     --verbose                                                   <  ${TMP_LOCATION}/create_db_and_users.sql                ;
+ bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh  >  ${TMP_LOCATION}/create_db_and_users.sql                ;
+ cat                                                                        ${TMP_LOCATION}/create_db_and_users.sql                ;
+ mariadb     --verbose                                                   <  ${TMP_LOCATION}/create_db_and_users.sql                ;
 
-bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh                                  \
+ bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh                                  \
          | grep  TEMP_SQL_LOCATION                                                                      \
          | sed -e 's/.* ### //; s/ ## //;1i TEMP_SQL_LOCATION=${TMP_LOCATION}/tmp/mariadb-tmp/;'   \
          > ${TMP_LOCATION}/load_sql_tables.bsh                                                     \
          ;                                                        ## generate our 'load' script!
-cat   ${TMP_LOCATION}/load_sql_tables.bsh                                                                            ;     ## inspect it 
+ cat   ${TMP_LOCATION}/load_sql_tables.bsh                                                                            ;     ## inspect it 
 
-nohup time bash  -vx  ${TMP_LOCATION}/load_sql_tables.bsh  >  ~/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
+ nohup time bash  -vx  ${TMP_LOCATION}/load_sql_tables.bsh  >  ~/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
 
-du  --summarize  --human-readable  /var/lib/mysql/                                                                        ;     ## check for total size   1.4 gigs
+ du  --summarize  --human-readable  /var/lib/mysql/                                                                        ;     ## check for total size   1.4 gigs
 
-mariadb-secure-installation;   ## IMPORTANT!
+ mariadb-secure-installation;   ## IMPORTANT!
 
 
 
@@ -256,12 +259,12 @@ mariadb-secure-installation;   ## IMPORTANT!
 #                                                                    #
 ######################################################################
 
-cat  <<CREATE_ALL_VIRTUAL_SERVERS |
-    bash  -vx  ~/server-migration/webmin/virtualmin-create-vm.bsh    >  ~/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
-    bash  -vx  ~/server-migration/httpd.conf/apache.bsh              >  ~/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
+ cat  <<CREATE_ALL_VIRTUAL_SERVERS |
+     bash  -vx  ~/server-migration/webmin/virtualmin-create-vm.bsh    >  ~/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
+     bash  -vx  ~/server-migration/httpd.conf/apache.bsh              >  ~/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
 
-    systemctl  restart  httpd.service   ;    ##
-    apachectl  status                   ;
+     systemctl  restart  httpd.service   ;    ##
+     apachectl  status                   ;
 CREATE_ALL_VIRTUAL_SERVERS
 nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## detach 
 
@@ -275,29 +278,29 @@ nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## 
 
      #####  put tar files into their proper places
 
-cat  <<END_OF_MOVE |
-  export TMP_LOCATION=/tmp/old_server_data/                  ;     ##
-  cd                 \${TMP_LOCATION}                        ;
-  mv      --verbose  \${TMP_LOCATION}/bash_history      ~    ;
+ cat  <<END_OF_MOVE |
+   export TMP_LOCATION=/tmp/old_server_data/                  ;     ##
+   cd                 \${TMP_LOCATION}                        ;
+   mv      --verbose  \${TMP_LOCATION}/bash_history      ~    ;
 
-  for DIR_NAME in \$(ls  \${TMP_LOCATION}/home/ )                                         ;
-  do
-      echo "  processing:  \${DIR_NAME}"                                                  ;
-      if [[ -d /home/\${DIR_NAME}/ ]]; then
-          tar --gzip --create --file=/home/\${DIR_NAME}.gz   \${DIR_NAME}                 ;
-          rm  --force  --verbose   /home/\${DIR_NAME}/                                    ;
-          mv  --verbose  \${TMP_LOCATION}/home/\${DIR_NAME}/    /home/\${DIR_NAME}/       ;
-      fi
-  done
+   for DIR_NAME in \$(ls  \${TMP_LOCATION}/home/ )                                         ;
+   do
+       echo "  processing:  \${DIR_NAME}"                                                  ;
+       if [[ -d /home/\${DIR_NAME}/ ]]; then
+           tar --gzip --create --file=/home/\${DIR_NAME}.gz   \${DIR_NAME}                 ;
+           rm  --force  --verbose   /home/\${DIR_NAME}/                                    ;
+           mv  --verbose  \${TMP_LOCATION}/home/\${DIR_NAME}/    /home/\${DIR_NAME}/       ;
+       fi
+   done
   
-  rsync  --verbose  --archive   \${TMP_LOCATION}/etc/letsencrypt/          /etc/letsencrypt/       ; 
-  mv     --verbose              \${TMP_LOCATION}/usr/local/bash/           /usr/local/             ;
-  mv     --verbose              \${TMP_LOCATION}/usr/local/lib/php/        /usr/local/lib/         ;
-  cat                           \${TMP_LOCATION}/crontab.txt               |  crontab   -          ;   
+   rsync  --verbose  --archive   \${TMP_LOCATION}/etc/letsencrypt/          /etc/letsencrypt/       ; 
+   mv     --verbose              \${TMP_LOCATION}/usr/local/bash/           /usr/local/             ;
+   mv     --verbose              \${TMP_LOCATION}/usr/local/lib/php/        /usr/local/lib/         ;
+   cat                           \${TMP_LOCATION}/crontab.txt               |  crontab   -          ;   
                        #  quick way to load crontab from old server!
-  apachectl  restart  && apachectl status            ;   #  have to restart apache since the ssl stuff was moved around.
+   apachectl  restart  && apachectl status            ;   #  have to restart apache since the ssl stuff was moved around.
 
-  bash -vx  ~/server-migration/bash-misc/chown-them-all.bsh        >  ~/server-migration/bash-misc/chown-them-all.bsh.log  2>&1 ;
+   bash -vx  ~/server-migration/bash-misc/chown-them-all.bsh        >  ~/server-migration/bash-misc/chown-them-all.bsh.log  2>&1 ;
 END_OF_MOVE
 nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## detach 
 
@@ -313,17 +316,17 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## det
 
               ###  ? ? ? ? npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
 
-bash -vx  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh       >  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log   2>&1  ;
+ bash -vx  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh       >  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log   2>&1  ;
 
-tail -100  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log     ;
+ tail -100  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log     ;
 
-apachectl  status ;
+ apachectl  status ;
 
-nohup  bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  &
+ nohup  bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  &
 
-bash -vx  ~/server-migration/node/visudo.bsh                    >  ~/server-migration/node/visudo.bsh.log           2>&1  ;
+ bash -vx  ~/server-migration/node/visudo.bsh                    >  ~/server-migration/node/visudo.bsh.log           2>&1  ;
 
-apachectl  status  ;    ### or restart - not sure why this was required on 2026-04-02
+ apachectl  status  ;    ### or restart - not sure why this was required on 2026-04-02
 
 
 #######################################################
@@ -337,9 +340,9 @@ apachectl  status  ;    ### or restart - not sure why this was required on 2026-
                                          ###########  grep   DEFAULT_SMTP_PASSWD   /usr/local/lib/php/SMTPMailer.php   | grep  define  | sed --expression="s/^.* '//; s/'.*$//"  ;
                                          ###########   this is now displayed in the script.
 
-bash    ~/server-migration/s-nail/s-nail-postfix.bsh          ;
+ bash    ~/server-migration/s-nail/s-nail-postfix.bsh          ;
 
-php   /usr/local/lib/php/SMTPMailer-tester.php  ;   ## test the php mail sender
+ php   /usr/local/lib/php/SMTPMailer-tester.php  ;   ## test the php mail sender
 
 
 
@@ -350,21 +353,21 @@ php   /usr/local/lib/php/SMTPMailer-tester.php  ;   ## test the php mail sender
 ##########################
 
 ## TEST rsync  FIRST  !!
-sshpass -p  'PASSWORD'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## test to make sure this works!
+ sshpass -p  'PASSWORD'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## test to make sure this works!
 
 #  format: rsync  S-O-U-R-C-E     D-E-S-T-I-N-A-T-I-O-N
 
-sshpass -p   'PASSWoRd'                                                                                                                \
+ sshpass -p   'PASSWoRd'                                                                                                               \
       sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh='ssh -o StrictHostKeyChecking=no'                           \
                                                   /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
             comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   ;
 
-sshpass -p   'PASSWoRd'                                                                                                                \
+ sshpass -p   'PASSWoRd'                                                                                                               \
       sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
             comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
                                                   /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   ;
 
-sshpass -p   'PASSWoRd'                                                                                                                \
+ sshpass -p   'PASSWoRd'                                                                                                               \
       sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
             comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                  \
                                                   /home/comptonpeslonline.com/public_html/voicefiles/                                  ;
@@ -378,9 +381,9 @@ sshpass -p   'PASSWoRd'                                                         
 #                                #
 ##################################
 
-find  /home/ -type f  -name  '*.php' -exec php -l  {}  \;   >  php-lint-test.txt    2>  php-lint-test-errors.txt  ;    ## php lint test
+ find  /home/ -type f  -name  '*.php' -exec php -l  {}  \;   >  php-lint-test.txt    2>  php-lint-test-errors.txt  ;    ## php lint test
 
-ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:comptonpeslonline.com"                  ;    ## double-check correct ownership!
+ ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:comptonpeslonline.com"                  ;    ## double-check correct ownership!
 
 
                                                         ####   this need to be tested have "Content-type: text/html" removed and replaced with -M "text/html":
