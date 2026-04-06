@@ -25,8 +25,8 @@ dnf  --assumeyes   install  git  ;    ## this has probably already been done!
 
 echo 'hopefully you have checked for the latest version...???' ;
 
-#bash -vx     ~/server-migration/ffmpeg/00-run-master-install.bsh                   \
-#      >       ~/server-migration/ffmpeg/00-run-master-install.bsh.log     2>&1     ;
+bash -vx     ~/server-migration/ffmpeg/00-run-master-install.bsh                   \
+      >       ~/server-migration/ffmpeg/00-run-master-install.bsh.log     2>&1     ;
 
 
 
