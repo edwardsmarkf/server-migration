@@ -7,16 +7,14 @@
 #        2026-04-06 - renamed to chown-them-all.bsh
 #
 
-HOME_DIR='/home/'       ;
-for  DOMAIN in $( ls  ${HOME_DIR}  | grep  '\.'; ) ; do
+HOME_DIR='/home/'                                                 ;
 
-        if [[ "${DOMAIN}" =~ "-RENAMED" ]]; then
-                echo "Skipping ${DOMAIN}"                                                   ;
-        else
-                echo "Processing ${DOMAIN}"                                                 ;
-                chown  --recursive --silent  ${DOMAIN}:${DOMAIN}      ${HOME_DIR}/${DOMAIN} ;
-        fi
-done;
+DOMAIN_NAME_FILE='/root/server-migration/domain_names.txt'        ;
+
+while IFS= read -r line; do
+      echo "Processing domain: $line"
+      chown  --recursive --silent  ${line}:${line}      ${HOME_DIR}/${line} ;
+done < ${DOMAIN_NAME_FILE}
 
 
 exit;
@@ -30,6 +28,17 @@ exit;
 ##############################################################################################################
 ##############################################################################################################
 ##############################################################################################################
+
+
+for  DOMAIN in $( ls  ${HOME_DIR}  | grep  '\.'; ) ; do
+
+        if [[ "${DOMAIN}" =~ "-RENAMED" ]]; then
+                echo "Skipping ${DOMAIN}"                                                   ;
+        else
+                echo "Processing ${DOMAIN}"                                                 ;
+                chown  --recursive --silent  ${DOMAIN}:${DOMAIN}      ${HOME_DIR}/${DOMAIN} ;
+        fi
+done;
 
 
 
