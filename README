@@ -122,17 +122,6 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 
  bash  -vx  ~/server-migration/php/02_php_testing.bsh        ;
 
- chown   ${DOMAIN}:${DOMAIN}                                              /home/${DOMAIN}/public_html/*                     ;
- chmod   755                                                              /home/${DOMAIN}/public_html/*                     ;
- ls -l                                                                    /home/${DOMAIN}/public_html                       ;
-
- cat <<END_OF_LINKS;
- Try the following:
-    http://${DOMAIN}/
-    http://${DOMAIN}/index.php
-    http://${DOMAIN}/phpinfo.php
-    http://${DOMAIN}/imageMagickTest.php
- END_OF_LINKS
 
  su fakephpuser --command "/bin/composer --version ; "                       &&  echo  $?  ;
 
@@ -403,6 +392,21 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## det
 ##############################################################################################################################################################################################
 ##############################################################################################################################################################################################
 ##############################################################################################################################################################################################
+
+
+
+ chown   ${DOMAIN}:${DOMAIN}                                              /home/${DOMAIN}/public_html/*                     ;
+ chmod   755                                                              /home/${DOMAIN}/public_html/*                     ;
+ ls -l                                                                    /home/${DOMAIN}/public_html                       ;
+
+ cat <<END_OF_LINKS;
+ Try the following:
+    http://${DOMAIN}/
+    http://${DOMAIN}/index.php
+    http://${DOMAIN}/phpinfo.php
+    http://${DOMAIN}/imageMagickTest.php
+ END_OF_LINKS
+
 
 
          ################ mv  --verbose   /home/\${DIR_NAME}/   /home/\${DIR_NAME}-RENAMED/  ;
