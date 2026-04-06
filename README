@@ -196,6 +196,38 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-unpack.log   2>&1  &   ## d
    ###   rm --verbose --force  ${TMP_LOCATION}/home.tar  ;   # we MAY need this for space!
 
 
+###################################################
+#                                                 # 
+#   m a r i a d b     d a t a    i n s t a l l    #
+#                                                 #
+###################################################
+
+export TMP_LOCATION=/tmp/old_server_data/                  ;     ##
+cd                  ${TMP_LOCATION}                        ;
+
+      ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
+sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
+
+grep  '^password='                                                     ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## inspect it
+
+bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh  >  ${TMP_LOCATION}/create_db_and_users.sql                ;
+cat                                                                        ${TMP_LOCATION}/create_db_and_users.sql                ;
+mariadb     --verbose                                                   <  ${TMP_LOCATION}/create_db_and_users.sql                ;
+
+bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh                                  \
+         | grep  TEMP_SQL_LOCATION                                                                      \
+         | sed -e 's/.* ### //; s/ ## //;1i TEMP_SQL_LOCATION=${TMP_LOCATION}/tmp/mariadb-tmp/;'   \
+         > ${TMP_LOCATION}/load_sql_tables.bsh                                                     \
+         ;                                                        ## generate our 'load' script!
+cat   ${TMP_LOCATION}/load_sql_tables.bsh                                                                            ;     ## inspect it 
+
+nohup time bash  -vx  ${TMP_LOCATION}/load_sql_tables.bsh  >  ~/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
+
+du  --summarize  --human-readable  /var/lib/mysql/                                                                        ;     ## check for total size   1.4 gigs
+
+mariadb-secure-installation;   ## IMPORTANT!
+
+
 
 ######################################################################
 #                                                                    #
@@ -249,38 +281,6 @@ END_OF_MOVE
 nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## detach 
 
 
-
-
-###################################################
-#                                                 # 
-#   m a r i a d b     d a t a    i n s t a l l    #
-#                                                 #
-###################################################
-
-export TMP_LOCATION=/tmp/old_server_data/                  ;     ##
-cd                  ${TMP_LOCATION}                        ;
-
-      ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
-sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
-
-grep  '^password='                                                     ~/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## inspect it
-
-bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh  >  ${TMP_LOCATION}/create_db_and_users.sql                ;
-cat                                                                        ${TMP_LOCATION}/create_db_and_users.sql                ;
-mariadb     --verbose                                                   <  ${TMP_LOCATION}/create_db_and_users.sql                ;
-
-bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh                                  \
-         | grep  TEMP_SQL_LOCATION                                                                      \
-         | sed -e 's/.* ### //; s/ ## //;1i TEMP_SQL_LOCATION=${TMP_LOCATION}/tmp/mariadb-tmp/;'   \
-         > ${TMP_LOCATION}/load_sql_tables.bsh                                                     \
-         ;                                                        ## generate our 'load' script!
-cat   ${TMP_LOCATION}/load_sql_tables.bsh                                                                            ;     ## inspect it 
-
-nohup time bash  -vx  ${TMP_LOCATION}/load_sql_tables.bsh  >  ~/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
-
-du  --summarize  --human-readable  /var/lib/mysql/                                                                        ;     ## check for total size   1.4 gigs
-
-mariadb-secure-installation;   ## IMPORTANT!
 
 
 
