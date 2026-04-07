@@ -306,7 +306,7 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## det
 
  nohup  bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  &
 
- pm2 status  ;  
+ pm2 status  ;    ## look for all of them "status  online"
 
  bash -vx  ~/server-migration/node/visudo.bsh                    >  ~/server-migration/node/visudo.bsh.log           2>&1  ;
 
