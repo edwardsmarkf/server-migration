@@ -68,8 +68,8 @@ SED_SCRIPT
 
 diff       /etc/httpd/conf/httpd.conf     ~                             ;
 
-apachectl configtest;
+cd  ~  && apachectl configtest       ;
 
-apachectl restart;
+apachectl restart                    ;
 
 exit;
