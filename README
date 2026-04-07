@@ -306,6 +306,8 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## det
 
  nohup  bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  &
 
+ pm2 status  ;  
+
  bash -vx  ~/server-migration/node/visudo.bsh                    >  ~/server-migration/node/visudo.bsh.log           2>&1  ;
 
  apachectl  status  ;    ### or restart - not sure why this was required on 2026-04-02
