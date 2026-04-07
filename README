@@ -107,6 +107,10 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 #                                                                          #
 ############################################################################
 
+                 ######################################
+                 #   p r e l i m i n i a r y          #
+                 ######################################
+
  more   ~/ffmpeg-install-logs/99-test.bsh.log   ;    ### look for results
 
 ## define/create domain (if it does not yet exist) using new IP into local etc.hosts file
