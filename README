@@ -249,22 +249,6 @@ nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## 
 
 
 
-######################################################################
-#                                                                    #
-#   c r e a t e     a l l   v i r t u a l   s e r v e r s            #
-#                                                                    #
-######################################################################
-
- cat  <<CREATE_ALL_VIRTUAL_SERVERS |
-     bash  -vx  ~/server-migration/webmin/virtualmin-create-vm.bsh    >  ~/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
-     bash  -vx  ~/server-migration/httpd.conf/apache.bsh              >  ~/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
-
-     systemctl  restart  httpd.service   ;    ##
-     apachectl  status                   ;
-CREATE_ALL_VIRTUAL_SERVERS
-nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## detach 
-
-
 
 ######################################################################
 #                                                                    #
