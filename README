@@ -302,7 +302,7 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## det
 
  tail -100  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log     ;
 
- apachectl  status ;
+ apachectl  configtest  &&   apachectl  status ;
 
  nohup  bash -vx  ~/server-migration/node/pm2-initialize.bsh     >  ~/server-migration/node/pm2-initialize.bsh.log   2>&1  &
 
