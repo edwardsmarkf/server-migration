@@ -248,7 +248,7 @@ nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## 
 
  mariadb-secure-installation;   ## IMPORTANT!
 
-
+ mariadb-show --count ;   ## spot-check the number of rows!
 
 
 ######################################################################
