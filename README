@@ -187,6 +187,9 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
 END_OF_UNPACK
 nohup time bash -vx  -   >   ~/current-server-tar-gz-unpack.log   2>&1  &   ## detach 
 
+
+ls -lh  /tmp/old_server_data  ;
+
                         ###   rm --verbose --force  ${TMP_LOCATION}/home.tar  ;   # we MAY need this for space!
 
 
