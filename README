@@ -189,6 +189,7 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-unpack.log   2>&1  &   ## d
 
 
 ls -lh  /tmp/old_server_data  ;
+ls -lR  /tmp/old_server_data/   | wc  --lines  ;  ## 507000+
 
                         ###   rm --verbose --force  ${TMP_LOCATION}/home.tar  ;   # we MAY need this for space!
 
