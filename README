@@ -320,10 +320,8 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## det
 #######################################################
 
 ## first get password from Google:   https://myaccount.google.com/apppasswords
-           --or probably better-------
-                                         ###########  grep   DEFAULT_SMTP_PASSWD   /usr/local/lib/php/SMTPMailer.php   | grep  define  | sed --expression="s/^.* '//; s/'.*$//"  ;
-                                         ###########   this is now displayed in the script.
-
+##  or just use the one already in the php-mailer!
+                                         
  bash    ~/server-migration/s-nail/s-nail-postfix.bsh          ;
 
  php   /usr/local/lib/php/SMTPMailer-tester.php  ;   ## test the php mail sender
