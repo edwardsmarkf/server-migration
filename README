@@ -8,7 +8,7 @@
 ############################################################
 
 
-echo "export KVM_NAME=kvm502;" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
+cd  ;  echo "export KVM_NAME=kvm502;" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
 
 ##  (this step takes about 3.5 hours or 210 minutes!)
 
