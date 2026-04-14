@@ -377,7 +377,7 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## det
     ## there *MAY* be an issue with csf.conf TESTING equal one with google-vm, so that is why we are doing that here rather than the csf.bsh script
  sed  --in-place  --expression='s/TESTING = "1"/TESTING = "0"/'    /etc/csf/csf.conf   ;    
 
- timedatectl set-timezone America/New_York   ;   ## not sure why this is not the default...??
+ timedatectl set-timezone America/New_York   ;   timedatectl  ;    ## not sure why this is not the default...??
 
 
   test this was done:   mkdir  /var/www/html   ;   ### is this required  ????  should it be part of a script ???
