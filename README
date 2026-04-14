@@ -276,7 +276,7 @@ nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## 
            mv    --verbose  \${TMP_LOCATION}/home/\${DIR_NAME}/            /home/\${DIR_NAME}/              ;
            mv    --verbose  /home/\${DIR_NAME}/etc                         /home/\${DIR_NAME}/etc-RENAMED   ;   ## save OLD php 7.x stuff
            mv    --verbose  /tmp/etc.tar                                   /home/\${DIR_NAME}/              ;
-           tar   --extract  --strip-components=1         --file=/home/\${DIR_NAME}/etc.tar                  ;   ## restore new php 8.5  php.ini file
+           tar   --extract          --file=/home/\${DIR_NAME}/etc.tar   --strip-components=2                ;   ## restore new php 8.5  php.ini file
        fi
    done
   
