@@ -1,24 +1,33 @@
 #!/bin/bash
+#
+#       /etc/cron.daily/manual_clamscan
+#
 #       written from ‘initial setup’ 2016-02-19
 #
 #
 #       2021-01-17      - added server name and used gmailSMTP instead
 #       2021-08-26      - added kvmName.sh to execution
-#
+#       2026-03-12      - moved grep Infected files because its picking up the LAST runs value!
+
+
 .       /etc/profile.d/kvmName.sh;      ## 2021-08-26
 
 SCAN_DIR="/home/"                                               ;
 LOG_FILE="/var/log/clamav/manual_clamscan.log"                  ;
 LOG_FILE_TMP="/var/log/clamav/manual_clamscan_tmp.log"          ;
-VERSION=$(bash /usr/local/bash/getLinuxVersion.bsh)             ;       ## 2021-01-17
-RESULTS=$(grep 'Infected files:'  $LOG_FILE_TMP ;       )       ;
-EMAIL_SUBJECT="${VERSION} ${RESULTS}"                           ;
+
 echo 'Starting clam scan!'                                      ;
 date;
 /usr/bin/clamscan --infected --recursive $SCAN_DIR > $LOG_FILE_TMP      ;
+
+VERSION=$(bash /usr/local/bash/getLinuxVersion.bsh)             ;       ## 2021-01-17
+RESULTS=$(grep 'Infected files:'  $LOG_FILE_TMP ;       )       ;
+EMAIL_SUBJECT="${VERSION} ${RESULTS}"                           ;
+
 cat $LOG_FILE_TMP |  mailx -v   -A  gmailSMTP-noreply  -r 'noreply@comptonpeslonline.com'  -s "${EMAIL_SUBJECT}"  mark@edwardsmark.com  ;
 cat $LOG_FILE_TMP >> $LOG_FILE ;
 date;
-#       written from ‘initial setup’ 2016-02-19
 
-~
+exit;
+#       written from ‘initial setup’ 2016-02-19
+#
