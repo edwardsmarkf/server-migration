@@ -1,0 +1,40 @@
+#!  /bin/bash -w
+#
+#       version_check.bsh       2026-04-15
+#
+#
+#
+#
+echo -n webmin ; webmin         -version        ;
+fail2ban-client                 --version       ;
+/usr/bin/certbot                --version       ;
+/usr/local/bin/wkhtmltopdf      --version       ;   
+/usr/bin/clamscan               --version       ;
+
+php                             --version       |       grep PHP  | grep -v Copyright   ;
+magick                          --version       |       grep Version                    ;
+pear                            version         ;
+perl                            --version       |       grep version    ;
+mariadb                         -V              ;
+
+echo 'yes'  |  /usr/local/bin/composer --version 2> /dev/null   ;
+
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/  ;
+export LIBPATH=/usr/local/lib/                    ;
+export LD_LIBRARY_PATH=/usr/local/lib/            ;
+export PATH=$PATH:/usr/local/bin                  ;
+
+/usr/local/bin/ffmpeg           -version        |       grep version    ;
+/usr/local/bin/ffprobe          -version        |       grep version    ;  
+
+#/usr/local/bin/bzip2           --version       ;   
+/usr/local/bin/yasm             --version       |       grep yasm | grep -v  Run        ;
+/usr/local/bin/flac             --version       ;   
+/usr/local/bin/opusenc          --version       ;  
+/usr/local/bin/opusdec          --version       ;  
+#/usr/local/bin/lame            --version       |       grep  version  | grep LAME      ;
+## cant figure out how to get a "one-line" here and in bzip2
+
+exit;
+#
+##
