@@ -17,9 +17,19 @@ cp  --verbose    /etc/httpd/conf/httpd.conf    ~/httpd.conf        ;
 /RewriteRule .* https:\/\/comptonpeslonline.com:10000\//{N;N;N;/SSLEngine on/a                                  \\
                                                                                                                 \\
     ##  $(date;) --  begin add by ${thisScript}                                                                 \\
+                                                                                                                \\
+               ## 2021-09-20  https://tecadmin.net/disable-directory-listing-apache/                            \\
+    <Directory /home/comptonpeslonline.com/public_html/voicefiles>                                              \\
+        Options -Indexes                                                                                        \\
+    </Directory>                                                                                                \\
+    <Directory /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/>              \\
+        Options -Indexes                                                                                        \\
+    </Directory>                                                                                                \\
+               ## 2021-09-20                                                                                    \\
+                                                                                                                \\
     SetEnv  AUDIOFILES  voicefiles                                                                              \\
     SetEnv  AUDIOPRACTICE comptonPractice/user-recorded-audio-files                                             \\
-    ##  $(date;) --  end add by ${thisScript}                                                                   \\
+       ##  $(date;) --  end add by ${thisScript}                                                                \\
 
 }
 
@@ -174,12 +184,3 @@ exit;
 ##    </Directory>
 
 
-## REQUIRED!
-##    ## 2021-09-20  https://tecadmin.net/disable-directory-listing-apache/
-##    <Directory /home/comptonpeslonline.com/public_html/voicefiles>
-##        Options -Indexes
-##    </Directory>
-##    <Directory /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/>
-##        Options -Indexes
-##    </Directory>
-##    ## 2021-09-20
