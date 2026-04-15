@@ -27,6 +27,12 @@ cp  --verbose    /etc/httpd/conf/httpd.conf    ~/httpd.conf        ;
     </Directory>                                                                                                \\
                ## 2021-09-20                                                                                    \\
                                                                                                                 \\
+               ## 2026-04-15  -- not sure if these four are required anymore???                                 \\
+    SSLProxyEngine on                                                                                           \\
+    ProxyVia On                                                                                                 \\
+    ProxyRequests Off                                                                                           \\
+    ProxyPreserveHost on                                                                                        \\
+                                                                                                                \\
     SetEnv  AUDIOFILES  voicefiles                                                                              \\
     SetEnv  AUDIOPRACTICE comptonPractice/user-recorded-audio-files                                             \\
        ##  $(date;) --  end add by ${thisScript}                                                                \\
