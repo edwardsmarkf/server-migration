@@ -51,8 +51,10 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
       bash -vx   ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
       ls  -lh  /home/mark ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
 
+      cp   --verboase   /etc/httpd/conf/httpd.conf                         /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
+      gzip                                                                 /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
+
       crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                  ;
-      tar --create --gunzip   --file=/home/mark/httpd_conf.tar.gz          /etc/httpd/conf/httpd.conf ;
       tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;
       tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;
       tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;
@@ -180,6 +182,7 @@ rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ; 
  cat  <<END_OF_UNPACK |
    cd  \${TMP_LOCATION}                                               ;
    gzip --decompress          \${TMP_LOCATION}/*.gz                   ;     ### you MAY run into space issues on the new server!
+
    tar  --extract  --file     \${TMP_LOCATION}/home.tar               ; 
    tar  --extract  --file     \${TMP_LOCATION}/letsencrypt.tar        ;
    tar  --extract  --file     \${TMP_LOCATION}/mariadb-databases.tar  ;
@@ -263,10 +266,12 @@ nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## 
      #####  put tar files into their proper places
 
  cat  <<END_OF_MOVE |
-   export PHP_VERSION='php8.5'                                ;     ## the name of the etc directory
-   export TMP_LOCATION=/tmp/old_server_data/                  ;     ##
-   cd                 \${TMP_LOCATION}                        ;
-   mv      --verbose  \${TMP_LOCATION}/bash_history      ~    ;
+   export PHP_VERSION='php8.5'                                 ;     ## the name of the etc directory
+   export TMP_LOCATION=/tmp/old_server_data/                   ;     ##
+   cd                 \${TMP_LOCATION}                         ;
+   mv      --verbose  \${TMP_LOCATION}/bash_history       ~    ;
+   mv      --verbose  \${TMP_LOCATION}/kvm301_httpd_conf  ~    ;
+
 
    for DIR_NAME in \$(ls  \${TMP_LOCATION}/home/ )                                         ;
    do
@@ -290,6 +295,7 @@ nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## 
    mv     --verbose              \${TMP_LOCATION}/usr/local/lib/php/        /usr/local/lib/         ;
    cat                           \${TMP_LOCATION}/crontab.txt               |  crontab   -          ;   
                        #  quick way to load crontab from old server!
+   mv     --verbose             \${TMP_LOCATION}/kvm301_httpd_conf          ~                       ;
 
    apachectl  restart  && apachectl status            ;   #  have to restart apache since the ssl stuff was moved around.
 
