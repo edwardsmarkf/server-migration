@@ -10,7 +10,8 @@
 
 timedatectl set-timezone America/New_York   ;   timedatectl  ;       ## 2026-04-15 not sure why this is not the default...??
 
-cd  ;  echo "export KVM_NAME=kvm502;" > /etc/profile.d/kvmName.sh;   ## 2026-02-20
+cd  ;  echo "export KVM_NAME=kvm502;" > /etc/profile.d/kvmName.sh  ;   ## 2026-02-20
+mkdir  --verbose   /kvm501/                                        ;   ## 2026-04-15
 
 ##  (this step takes about 3.5 hours or 210 minutes!)
 
@@ -65,9 +66,11 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
                    --same-owner                                                                       \
                    --exclude='*.opus'                                                                 \
                               --file=/home/mark/home.tar.gz                /home/                     ;   ##  34 gig!
-      cp  --verbose           ~/.bash_history                              /home/mark/bash_history    ;   
+      #
+      history                                                          >   /home/mark/bash_history    ;   
       chmod  --verbose  755                                                /home/mark/bash_history    ;  
       gzip                                                                 /home/mark/bash_history    ;
+      #
       ls  -lh   /home/mark/*.gz                                                                       ;
 END_OF_CURRENT_SERVER
 nohup time nice  bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach 
