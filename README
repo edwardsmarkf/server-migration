@@ -53,7 +53,7 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
       bash -vx   ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
       ls  -lh  /home/mark ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
 
-      cp   --verboase   /etc/httpd/conf/httpd.conf                         /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
+      cp   --verbose    /etc/httpd/conf/httpd.conf                         /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
       gzip                                                                 /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
 
       crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                  ;
