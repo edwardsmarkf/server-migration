@@ -54,7 +54,7 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
       ls  -lh  /home/mark ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
 
       cp   --verbose    /etc/httpd/conf/httpd.conf                         /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
-      gzip                                                                 /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
+      gzip --verbose                                                       /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
 
       crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                  ;
       tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;
