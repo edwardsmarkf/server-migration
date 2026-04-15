@@ -270,6 +270,10 @@ nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## 
 
      #####  put tar files into their proper places
 
+move_data_to_proper_location.bsh
+
+
+
  cat  <<END_OF_MOVE |
    export PHP_VERSION='php8.5'                                 ;     ## the name of the etc directory
    export TMP_LOCATION=/tmp/old_server_data/                   ;     ##
