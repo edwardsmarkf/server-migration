@@ -32,9 +32,9 @@ export PATH=$PATH:/usr/local/bin                  ;
 #/usr/local/bin/bzip2           --version   3>&1 1>&2 2>&3   |       grep Version                     ;
 /usr/local/bin/yasm             --version                    |       grep yasm | grep -v  Run         ;
 /usr/local/bin/flac             --version                                                             ;   
-/usr/local/bin/opusenc          --version                                                             ;  
-/usr/local/bin/opusdec          --version                                                             ;
-#/usr/local/bin/lame            --version                    | grep LAME                              ;
+/usr/local/bin/opusenc          --version                    |       grep opusenc                     ;  
+/usr/local/bin/opusdec          --version                            grep opusenc                     ;
+#/usr/local/bin/lame            --version                    |       grep LAME                        ;
 
 exit;
 #
