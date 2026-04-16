@@ -5,20 +5,31 @@
 #
 #
 #
+echo -n '01 - ' ;
 echo -n webmin ; webmin         -version                                                              ;
+echo -n '02 - ' ;
 fail2ban-client                 --version                                                             ;
+echo -n '03 - ' ;
 /usr/bin/certbot                --version                                                             ;
+echo -n '04 - ' ;
 /usr/local/bin/wkhtmltopdf      --version                                                             ;
+echo -n '05 - ' ;
 /usr/bin/clamscan               --version                                                             ;
 
+echo -n '06 - ' ;
 php                             --version                    |       grep PHP  | grep -v Copyright    ;
 
+echo -n '07 - ' ;
 perl                            --version                    |       grep version                     ;
+echo -n '08 - ' ;
 mariadb                         --version                                                             ;
 
+echo -n '09 - ' ;
 /bin/magick                     --version                    |       grep Version                     ;
-/bin/pear                       version                                                               ;
+echo -n '10 - ' ;
+/bin/pear                       version                      |       grep 'PEAR Version'              ;
 
+echo -n '11 - ' ;
 echo 'yes'  |  /usr/local/bin/composer --version 2> /dev/null                                         ;
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/  ;
@@ -26,15 +37,23 @@ export LIBPATH=/usr/local/lib/                    ;
 export LD_LIBRARY_PATH=/usr/local/lib/            ;
 export PATH=$PATH:/usr/local/bin                  ;
 
+echo -n '12 - ' ;
 /usr/local/bin/ffmpeg           -version                     |       grep version                     ;
+echo -n '13 - ' ;
 /usr/local/bin/ffprobe          -version                     |       grep version                     ;
 
-#/usr/local/bin/bzip2           --version   3>&1 1>&2 2>&3   |       grep Version                     ;
+echo -n '14 - ' ;
+/usr/local/bin/bzip2           --version   3>&1 1>&2 2>&3    |       grep Version                     ;  # 'tango' redirection!
+echo -n '15 - ' ;
 /usr/local/bin/yasm             --version                    |       grep yasm | grep -v  Run         ;
+echo -n '16 - ' ;
 /usr/local/bin/flac             --version                                                             ;   
-/usr/local/bin/opusenc          --version                    |       grep opusenc                     ;  
-/usr/local/bin/opusdec          --version                            grep opusenc                     ;
-#/usr/local/bin/lame            --version                    |       grep LAME                        ;
+echo -n '17 - ' ;
+/usr/local/bin/opusenc          --version                    |       grep -v Copyright                ;  
+echo -n '18 - ' ;
+/usr/local/bin/opusdec          --version                    |       grep -v  Copyright               ;
+echo -n '19 - ' ;
+/usr/local/bin/lame            --version                     |       grep LAME | grep -v Copyright    ;
 
 exit;
 #
