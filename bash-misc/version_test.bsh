@@ -5,14 +5,18 @@
 #
 #
 #
-echo -n '01 - ' ;
-echo -n webmin ; webmin         -version                                                              ;
+echo -n '01 - Webmin: ' ;
+webmin                          -version                                                              ;
+
 echo -n '02 - ' ;
 fail2ban-client                 --version                                                             ;
+
 echo -n '03 - ' ;
 /usr/bin/certbot                --version                                                             ;
+
 echo -n '04 - ' ;
 /usr/local/bin/wkhtmltopdf      --version                                                             ;
+
 echo -n '05 - ' ;
 /usr/bin/clamscan               --version                                                             ;
 
@@ -21,11 +25,13 @@ php                             --version                    |       grep PHP  |
 
 echo -n '07 - ' ;
 perl                            --version                    |       grep version                     ;
+
 echo -n '08 - ' ;
 mariadb                         --version                                                             ;
 
 echo -n '09 - ' ;
 /bin/magick                     --version                    |       grep Version                     ;
+
 echo -n '10 - ' ;
 /bin/pear                       version                      |       grep 'PEAR Version'              ;
 
@@ -39,19 +45,25 @@ export PATH=$PATH:/usr/local/bin                  ;
 
 echo -n '12 - ' ;
 /usr/local/bin/ffmpeg           -version                     |       grep version                     ;
+
 echo -n '13 - ' ;
 /usr/local/bin/ffprobe          -version                     |       grep version                     ;
 
 echo -n '14 - ' ;
 /usr/local/bin/bzip2           --version   3>&1 1>&2 2>&3    |       grep Version                     ;  # 'tango' redirection!
+
 echo -n '15 - ' ;
 /usr/local/bin/yasm             --version                    |       grep yasm | grep -v  Run         ;
+
 echo -n '16 - ' ;
 /usr/local/bin/flac             --version                                                             ;   
+
 echo -n '17 - ' ;
 /usr/local/bin/opusenc          --version                    |       grep -v Copyright                ;  
+
 echo -n '18 - ' ;
 /usr/local/bin/opusdec          --version                    |       grep -v  Copyright               ;
+
 echo -n '19 - ' ;
 /usr/local/bin/lame            --version                     |       grep LAME | grep -v Copyright    ;
 
