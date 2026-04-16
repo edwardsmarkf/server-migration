@@ -12,12 +12,14 @@ fail2ban-client                 --version                                       
 /usr/bin/clamscan               --version                                                             ;
 
 php                             --version                    |       grep PHP  | grep -v Copyright    ;
-magick                          --version                    |       grep Version                     ;
-pear                            version                                                               ;
+
 perl                            --version                    |       grep version                     ;
 mariadb                         --version                                                             ;
 
-echo 'yes'  |  /usr/local/bin/composer --version 2> /dev/null   ;
+/bin/magick                     --version                    |       grep Version                     ;
+/bin/pear                       version                                                               ;
+
+echo 'yes'  |  /usr/local/bin/composer --version 2> /dev/null                                         ;
 
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/  ;
 export LIBPATH=/usr/local/lib/                    ;
