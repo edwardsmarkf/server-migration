@@ -300,6 +300,19 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
  apachectl  status  ;    ### or restart - not sure why this was required on 2026-04-02
 
 
+
+#######################################################
+#                                                     #
+#       t e s t   t h e    r e c o r d e r            #
+#                                                     #
+#######################################################
+
+
+## go to Cloudns and change the IP number of the comptonpeslonline.com's three places to the new iP number, and set TTL value to 1
+
+
+
+
 #######################################################
 #                                                     #
 #         s - n a i l - p o s t f i x . b s h         #
