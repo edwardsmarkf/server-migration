@@ -68,10 +68,10 @@ SED_SCRIPT
 
 diff       /etc/httpd/conf/httpd.conf     ~                             ;
 
-cd  /root/    ;   ## return 
+cd  /root/                 ;   ## return home  (~ did not work ???
 
 apachectl configtest       ;
 
-apachectl restart                    ;
+apachectl restart          ;
 
 exit;
