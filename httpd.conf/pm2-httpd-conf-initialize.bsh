@@ -20,14 +20,6 @@ cp  --verbose    /etc/httpd/conf/httpd.conf     ~                             ;
     ## changed from Off to On  2019-12-04                                                                       \\
     ProxyPreserveHost on                                                                                        \\
                                                                                                                 \\
-    ## 2021-09-20  https://tecadmin.net/disable-directory-listing-apache/                                       \\
-    <Directory /home/comptonpeslonline.com/public_html/voicefiles>                                              \\
-        Options -Indexes                                                                                        \\
-    </Directory>                                                                                                \\
-    <Directory /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/>              \\
-        Options -Indexes                                                                                        \\
-    </Directory>                                                                                                \\
-    ## 2021-09-20                                                                                               \\
                                                                                                                 \\
     ## messagePlayback player (port ## cross-referenced in pm2)                                                 \\
     <Location /proxyPort20001/>                                                                                 \\
