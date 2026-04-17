@@ -372,9 +372,9 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
     ## there *MAY* be an issue with csf.conf TESTING equal one with google-vm, so that is why we are doing that here rather than the csf.bsh script
  sed  --in-place  --expression='s/TESTING = "1"/TESTING = "0"/'    /etc/csf/csf.conf   ;    
 
+ bash  /usr/local/bash/allowIpAddress.bsh     71.223.133.89    Torguard  > result.txt  2>&1   ;   ###  open up NEW ip ##
 
-
-  test this was done:   mkdir  /var/www/html   ;   ### is this required  ????  should it be part of a script ???
+ #### test this was done:   mkdir  /var/www/html   ;   ### is this required  ????  should it be part of a script ???
 
  find  /home/ -type f  -name  '*.php' -exec php -l  {}  \;   >  php-lint-test.txt    2>  php-lint-test-errors.txt  ;    ## php lint test
 
@@ -383,7 +383,7 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 
                                                         ####   this need to be tested have "Content-type: text/html" removed and replaced with -M "text/html":
 
-/home/comptonpeslonline.com/cgi-bin/email_link.pl
+?????  working  ????    /home/comptonpeslonline.com/cgi-bin/email_link.pl
 
 
 
