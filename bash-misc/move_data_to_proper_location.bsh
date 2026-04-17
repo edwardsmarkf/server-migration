@@ -44,7 +44,7 @@
 
    bash -vx  ~/server-migration/bash-misc/chown-them-all.bsh        >  ~/server-migration/bash-misc/chown-them-all.bsh.log  2>&1 ;
 
-   rm  --verbose   /home/mark/*.gz    ;     ## just in case we ran the 'fetch' script while the first initialization script was still running!
+   rm  --verbose --force  /home/mark/*.gz    ;     ## just in case we ran the 'fetch' script while the first initialization script was still running!
 
    exit;
 
