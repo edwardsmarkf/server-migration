@@ -65,6 +65,7 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
                    --preserve-permissions                                                             \
                    --same-owner                                                                       \
                    --exclude='*.opus'                                                                 \
+                   --exclude='/home/mark'                                                             \ 
                               --file=/home/mark/home.tar.gz                /home/                     ;   ##  34 gig!
       #
       history                                                          >   /home/mark/bash_history    ;   
