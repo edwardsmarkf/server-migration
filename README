@@ -65,7 +65,6 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
                    --preserve-permissions                                                             \
                    --same-owner                                                                       \
                    --exclude='*.opus'                                                                 \
-                   --exclude='/home/mark/*.gz'                                                        \ 
                               --file=/home/mark/home.tar.gz                /home/                     ;   ##  34 gig!
       #
       history                                                          >   /home/mark/bash_history    ;   
@@ -77,7 +76,7 @@ END_OF_CURRENT_SERVER
 nohup time nice  bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach 
 
 
-
+                               ####                     --exclude='/home/mark/*.gz'                                                        \ 
 
 
 ########################################################
