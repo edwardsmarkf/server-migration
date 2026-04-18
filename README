@@ -61,11 +61,13 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
       tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;
       tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;
       tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;
-      tar --create --gunzip                                                                           \
-                   --preserve-permissions                                                             \
-                   --same-owner                                                                       \
+      tar --create --gunzip   --file=/home/mark/home.tar.gz                /home/                     \
+                   --exclude='/home/mark'                                                             \
                    --exclude='*.opus'                                                                 \
-                              --file=/home/mark/home.tar.gz                /home/                     ;   ##  34 gig!
+                   --preserve-permissions                                                             \
+                   --same-owner                                                                       ;
+         ## its very debatable if preserve-permissions and same-owner are necessary since somehow they end up getting changed on the new server.
+                              
       #
       history                                                          >   /home/mark/bash_history    ;   
       chmod  --verbose  755                                                /home/mark/bash_history    ;  
@@ -76,7 +78,6 @@ END_OF_CURRENT_SERVER
 nohup time nice  bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach 
 
 
-                               ####                     --exclude='/home/mark/*.gz'                                                        \ 
 
 
 ########################################################
