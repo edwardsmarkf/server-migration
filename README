@@ -61,11 +61,12 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
       tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;
       tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;
       tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;
-      tar --create --gunzip   --file=/home/mark/home.tar.gz                /home/                     \
+      tar --create --gunzip   
                    --exclude='/home/mark'                                                             \
                    --exclude='*.opus'                                                                 \
                    --preserve-permissions                                                             \
-                   --same-owner                                                                       ;
+                   --same-owner                                                                       \
+                              --file=/home/mark/home.tar.gz                /home/                     ;
          ## its very debatable if preserve-permissions and same-owner are necessary since somehow they end up getting changed on the new server.
                               
       #
