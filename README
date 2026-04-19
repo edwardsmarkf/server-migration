@@ -68,6 +68,7 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
                    --same-owner                                                                       \
                                                                            /home/                     ;
          ## its very debatable if preserve-permissions and same-owner are necessary since somehow they end up getting changed on the new server.
+         ##   is the two --exclude statements working together???  the overall size of  /home/ sure is smaller than before.
                               
       #
       history                                                          >   /home/mark/bash_history    ;   
