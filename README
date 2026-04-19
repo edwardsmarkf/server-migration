@@ -109,6 +109,7 @@ sftp>   rm  *.gz      ## can be done in the sftp session!
          .................or.....
 rm -Rf  /home/mark/crontab.txt.gz  /home/mark/*.tar.gz   /home/mark/*.sql.gz  ;  ## on OLD server!
 
+du  --human-readable  --summarize    ./*.gz    ;
 
 
 
