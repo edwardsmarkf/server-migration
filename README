@@ -81,6 +81,8 @@ END_OF_CURRENT_SERVER
 nohup time nice  bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach 
 
 
+du  --summarize  --human-readable   /home/mark/*.gz    ;
+
 
 
 ########################################################
