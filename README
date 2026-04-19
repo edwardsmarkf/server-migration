@@ -95,9 +95,6 @@ du  --summarize  --human-readable   /home/mark/*.gz    ;
 
  dnf  --assumeyes  install sshpass  ;      ## this might not yet be done if this procedure is started too early.
 
-            ##################  export TMP_LOCATION=/tmp/          ;     ##   2026-04-02  /tmp/ directory on new server is NOT very big....\
-            ##################  cd  ${TMP_LOCATION}   ;       ## 2026-04-02
-
  export TMP_LOCATION=/tmp/old_server_data/   ;     ##
 
  rm -Rf  ${TMP_LOCATION}   ;  mkdir  ${TMP_LOCATION}   && cd  $_  ;
