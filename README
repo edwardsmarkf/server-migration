@@ -391,6 +391,12 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 
 ?????  working  ????    /home/comptonpeslonline.com/cgi-bin/email_link.pl
 
+to modify phonetic transcription:
+  /home/comptonpeslonline.com/cgi-bin/evalAuth0.pl   line 376                                                                      
+		/home/comptonpeslonline.com/public_html/lib/perl5/ComptonAccessVariables  line  137 changed localhost to  162.220.165.228
+ /home/comptonpeslonline.com/public_html/php/phoneticTranscriptionLogin.php   line  61
+
+
 
 
 
