@@ -202,8 +202,9 @@ END_OF_UNPACK
 nohup time bash -vx  -   >   ~/current-server-tar-gz-unpack.log   2>&1  &   ## detach 
 
 
-ls -lh  /tmp/old_server_data  ;
-ls -lR  /tmp/old_server_data/   | wc  --lines  ;  ## 507000+
+ls  -lh  /tmp/old_server_data    ;
+du  -sh  /tmp/old_server_data    ;                 ## 21 gigs
+ls  -lR  /tmp/old_server_data/   | wc  --lines  ;  ## 507000+
 
                         ###   rm --verbose --force  ${TMP_LOCATION}/home.tar  ;   # we MAY need this for space!
 
