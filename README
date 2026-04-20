@@ -410,11 +410,9 @@ to modify phonetic transcription:
             sed --in-place --script='/\$ComptonAccessVariables::Port/a  \
             . ';mysql_ssl_verify_server_cert=0'             ## 2026-04-18
 
-'    /home/comptonpeslonline.com/cgi-bin/evalAuth0.pl   ;
-
 
   /home/comptonpeslonline.com/public_html/lib/perl5/ComptonAccessVariables.pm     ##    line  137 changed localhost to  162.220.165.228
- /home/comptonpeslonline.com/public_html/php/phoneticTranscriptionLogin.php   line  61
+  /home/comptonpeslonline.com/public_html/php/phoneticTranscriptionLogin.php      ##    line  61  changed localhost to  162.220.165.228
 
 
 
