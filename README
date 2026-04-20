@@ -374,6 +374,14 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 
 bash -vx  /root/server-migration/idrive/idriveInstall.bsh
 
+/opt/IDriveForLinux/bin/idrive;
+   1) Edit backup set and add /kvm###/
+   e  ## exit
+
+mkdir    /${KVM_NAME}/backup/  ; 
+echo 'tester'  >  /${KVM_NAME}/backup/tester.txt   ;
+/bin/bash  -v     /usr/local/bash/iDriveBackup/idrivePython.bsh   ;
+
 add  ./server-migration/idrive/crontab   to  crontab manually
 
 
