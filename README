@@ -366,6 +366,15 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 
 
 
+#####################################
+#                                   #
+#   i d r i v e     i n s t a l l   #
+#                                   #
+#####################################
+
+./server-migration/idrive/idriveInstall.bsh
+
+
 
 
 ##################################
