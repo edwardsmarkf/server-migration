@@ -372,8 +372,9 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 #                                   #
 #####################################
 
-./server-migration/idrive/idriveInstall.bsh
+bash -vx  /root/server-migration/idrive/idriveInstall.bsh
 
+add  ./server-migration/idrive/crontab   to  crontab manually
 
 
 
