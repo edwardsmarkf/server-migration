@@ -402,7 +402,7 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 vi  /etc/csf/csf.conf  -- open ports 3306   in TCP_OUT (or do it in the GUI interface under "Temporary Allow/Deny"
 
 to test:
-/usr/bin/mariadb  --verbose  -A  --no-auto-rehash  --skip-ssl-verify-server-cert   --host=162.220.165.228  --user=comptonTrnsAnls  --password='XX' ;
+/usr/bin/mariadb  --verbose  -A  --no-auto-rehash  --skip-ssl-verify-server-cert   --host=162.220.165.228  --user=comptonTrnsAnls  --password='XX'   comptonTransAnlys   ;
 
 
 to modify phonetic transcription:
