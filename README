@@ -230,10 +230,10 @@ nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## 
 
  mariadb     --verbose                                                   <  ${TMP_LOCATION}/create_db_and_users.sql                ;
 
- bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh                                  \
-         | grep  TEMP_SQL_LOCATION                                                                      \
-         | sed -e 's/.* ### //; s/ ## //;1i TEMP_SQL_LOCATION=${TMP_LOCATION}/tmp/mariadb-tmp/;'   \
-         > ${TMP_LOCATION}/load_sql_tables.bsh                                                     \
+ bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh                                   \
+         | grep  TEMP_SQL_LOCATION                                                                        \
+         | sed -e 's/.* ### //; s/ ## //;1i export TEMP_SQL_LOCATION=${TMP_LOCATION}/tmp/mariadb-tmp/;'   \
+         > ${TMP_LOCATION}/load_sql_tables.bsh                                                            \
          ;                                                        ## generate our 'load' script!
  cat   ${TMP_LOCATION}/load_sql_tables.bsh                                                                            ;     ## inspect it 
 
