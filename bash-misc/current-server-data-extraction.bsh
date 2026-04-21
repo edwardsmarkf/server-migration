@@ -14,7 +14,11 @@ crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt  
 tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;
 tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;
 
-tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;
+                       #  https://community.letsencrypt.org/t/how-do-i-clear-the-old-data-from-the-etc-letsencrypt-directory/146667
+tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz                                    \
+             --exclude='/etc/letsencrypt/csr'                                                   \
+             --exclude='/etc/letsencrypt/keys'                                                  \
+                                                                     /etc/letsencrypt           ;
 
 tar --create --gunzip   --file=/home/mark/home.tar.gz                                           \
              --exclude='/home/mark'                                                             \
