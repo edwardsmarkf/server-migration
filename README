@@ -40,47 +40,19 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
    
 ##  on CURRENT server:  (NOTE LENGTH OF TIME!!)
 
- rm -Rf  /tmp/old_server_data  ;  mkdir  /tmp/old_server_data && cd  $_  ; 
+rm -Rf  /tmp/old_server_data  ;  mkdir  /tmp/old_server_data && cd  $_  ; 
 
- git clone  https://github.com/edwardsmarkf/server-migration                                                         ;
- tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save
- ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;
+git clone  https://github.com/edwardsmarkf/server-migration                                                         ;
+tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save
+ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;
 
- sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/NewPassWordGoesHere/;'  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
+sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/NewPassWordGoesHere/;'  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
 
- grep  '^MARIADB_PASSWORD='                                                        ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
+grep  '^MARIADB_PASSWORD='                                                        ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
 
- cat  <<END_OF_CURRENT_SERVER |
-      bash -vx   ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
+bash -vx   /root/server-migration/bash-misc/current-server-data-extraction.bsh      ;
 
-
-      cp   --verbose    /etc/httpd/conf/httpd.conf                         /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
-      gzip --verbose                                                       /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
-
-      crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                  ;
-      tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;
-      tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;
-      tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;
-certbot certificates 2>/dev/null  | grep -v 'edwardsmark.com-0001'  | grep  ' Path: /etc/letsencrypt' | sed --expression='s/^.*Path: //' | sort | tee list-of-certs.txt |  xargs  ls -l  | sed --expression='s?^.*archive?/etc/letsencrypt/archive?'  >> list-of-certs.txt  && tar -vcf test.tar --files-from=list-of-certs.txt ;
-      tar --create --gunzip   --file=/home/mark/home.tar.gz                                           \
-                   --exclude='/home/mark'                                                             \
-                   --exclude='*.opus'                                                                 \
-                   --preserve-permissions                                                             \
-                   --same-owner                                                                       \
-                                                                           /home/                     ;
-         ## its very debatable if preserve-permissions and same-owner are necessary since somehow they end up getting changed on the new server.
-         ##   is the two --exclude statements working together???  the overall size of  /home/ sure is smaller than before.
-                              
-      #
-      history                                                          >   /home/mark/bash_history    ;   
-      chmod  --verbose  755                                                /home/mark/bash_history    ;  
-      gzip                                                                 /home/mark/bash_history    ;
-      #
-      ls  -lh   /home/mark/*.gz                                                                       ;
-      du  -hs   /home/mark/*.gz ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
-END_OF_CURRENT_SERVER
 nohup time nice  bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach 
-
 
 du  --summarize  --human-readable   /home/mark/*.gz    ;
 
@@ -914,4 +886,32 @@ nohup time bash -vx  -   >   ~/current-server-tar-gz-move.log   2>&1  &   ## det
 ##              mv   --verbose  /tmp/etc-\${DIR_NAME}.tar                     ls  -l    /home/\${DIR_NAME}/              ;
 
 
+ cat  <<END_OF_CURRENT_SERVER |
+      bash -vx   ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
 
+
+      cp   --verbose    /etc/httpd/conf/httpd.conf                         /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
+      gzip --verbose                                                       /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
+
+      crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                  ;
+      tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;
+      tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;
+      tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;
+certbot certificates 2>/dev/null  | grep -v 'edwardsmark.com-0001'  | grep  ' Path: /etc/letsencrypt' | sed --expression='s/^.*Path: //' | sort | tee list-of-certs.txt |  xargs  ls -l  | sed --expression='s?^.*archive?/etc/letsencrypt/archive?'  >> list-of-certs.txt  && tar -vcf test.tar --files-from=list-of-certs.txt ;
+      tar --create --gunzip   --file=/home/mark/home.tar.gz                                           \
+                   --exclude='/home/mark'                                                             \
+                   --exclude='*.opus'                                                                 \
+                   --preserve-permissions                                                             \
+                   --same-owner                                                                       \
+                                                                           /home/                     ;
+         ## its very debatable if preserve-permissions and same-owner are necessary since somehow they end up getting changed on the new server.
+         ##   is the two --exclude statements working together???  the overall size of  /home/ sure is smaller than before.
+                              
+      #
+      history                                                          >   /home/mark/bash_history    ;   
+      chmod  --verbose  755                                                /home/mark/bash_history    ;  
+      gzip                                                                 /home/mark/bash_history    ;
+      #
+      ls  -lh   /home/mark/*.gz                                                                       ;
+      du  -hs   /home/mark/*.gz ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
+END_OF_CURRENT_SERVER
