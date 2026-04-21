@@ -1,0 +1,66 @@
+#! /bin/bash -w
+#
+#          current-server-data-extraction.bsh    2026-04-21
+#
+#
+     bash -vx   ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh                     ;   ## on OLD server!
+
+
+      cp   --verbose    /etc/httpd/conf/httpd.conf                         /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
+      gzip --verbose                                                       /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
+
+      crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                  ;
+      tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;
+      tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;
+
+      tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;
+
+      tar --create --gunzip   --file=/home/mark/home.tar.gz                                           \
+                   --exclude='/home/mark'                                                             \
+                   --exclude='*.opus'                                                                 \
+                   --preserve-permissions                                                             \
+                   --same-owner                                            /home/                     ;
+                   
+         ## its very debatable if preserve-permissions and same-owner are necessary since somehow they end up getting changed on the new server.
+         ##   is the two --exclude statements working together???  the overall size of  /home/ sure is smaller than before.
+                              
+      #
+      history                                                          >   /home/mark/bash_history    ;   
+      chmod  --verbose  755                                                /home/mark/bash_history    ;  
+      gzip                                                                 /home/mark/bash_history    ;
+      #
+      ls  -lh   /home/mark/*.gz                                                                       ;
+      du  -hs   /home/mark/*.gz ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
+
+      exit;
+
+
+
+
+
+
+
+
+
+############################################################################################################################
+############################################################################################################################
+############################################################################################################################
+############################################################################################################################
+############################################################################################################################
+############################################################################################################################
+############################################################################################################################
+############################################################################################################################
+############################################################################################################################
+
+
+                    
+#      certbot certificates 2>/dev/null                                                                     \
+#                        | grep -v 'edwardsmark.com-0001'                                                   \
+#                        | grep  ' Path: /etc/letsencrypt'                                                  \
+#                        | sed --expression='s/^.*Path: //'                                                 \
+#                        | sort                                                                             \
+#                        | tee list-of-certs.txt                                                            \
+#                        |  xargs  ls -l                                                                    \
+#                        | sed --expression='s?^.*archive?/etc/letsencrypt/archive?'  >> list-of-certs.txt  \
+#                        && tar --create  --file=/home/mark/letsencrypt.tar.gz                              \
+#                                         --files-from=list-of-certs.txt                                    ;
