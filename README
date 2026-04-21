@@ -48,9 +48,11 @@ git clone  https://github.com/edwardsmarkf/server-migration                     
 tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save
 ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;
 
-sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/MaRiAPaSsWoRd/;'  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
+sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/MaRiAPaSsWoRd/;'  \
+                                ${TMP_LOCATION}/server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
 
-grep  '^MARIADB_PASSWORD='                                                        ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
+grep  '^MARIADB_PASSWORD='                                                   \
+                                ${TMP_LOCATION}/server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
 
 nohup  time  nice bash -vx  ${TMP_LOCATION}/server-migration/bash-misc/current-server-data-extraction.bsh      \
                          >  ${TMP_LOCATION}/server-migration/bash-misc/current-server-data-extraction.bsh.log  &   ## run detached
