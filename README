@@ -40,7 +40,9 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
    
 ##  on CURRENT server:  (NOTE LENGTH OF TIME!!)
 
-rm -Rf  /tmp/old_server_data  ;  mkdir  /tmp/old_server_data && cd  $_  ; 
+export TMP_LOCATION=/tmp/old_server_data/   ;     ##
+
+ rm -Rf  ${TMP_LOCATION}   ;  mkdir  ${TMP_LOCATION}   && cd  $_  ;
 
 git clone  https://github.com/edwardsmarkf/server-migration                                                         ;
 tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save
@@ -50,9 +52,10 @@ sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/NewPassWordGoesHere/;'
 
 grep  '^MARIADB_PASSWORD='                                                        ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
 
-bash -vx   /root/server-migration/bash-misc/current-server-data-extraction.bsh      ;
+nohup  time  nice bash -vx  ${TMP_LOCATION}/server-migration/bash-misc/current-server-data-extraction.bsh      \
+                         >  ${TMP_LOCATION}/server-migration/bash-misc/current-server-data-extraction.bsh.log  ;
 
-nohup time nice  bash -vx  -   >   ./current-server-tar-gz-creates.log   2>&1  &   ## detach 
+##################   nohup time nice  bash -vx  -   >   ${TMP_LOCATION}/current-server-tar-gz-creates.log   2>&1  &   ## detach 
 
 du  --summarize  --human-readable   /home/mark/*.gz    ;
 
