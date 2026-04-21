@@ -17,7 +17,7 @@ tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/
                        #  https://community.letsencrypt.org/t/how-do-i-clear-the-old-data-from-the-etc-letsencrypt-directory/146667
 tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz                                    \
              --exclude='/etc/letsencrypt/csr/*_csr-certbot.pem'                                 \
-             --exclude='/etc/letsencrypt/key/*_keys-certbot.pem'                                \
+             --exclude='/etc/letsencrypt/key/*_key-certbot.pem'                                 \
                                                                      /etc/letsencrypt           ;
 
 tar --create --gunzip   --file=/home/mark/home.tar.gz                                           \
