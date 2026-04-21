@@ -61,6 +61,7 @@ nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
       tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;
       tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;
       tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz         /etc/letsencrypt           ;
+certbot certificates 2>/dev/null  | grep -v 'edwardsmark.com-0001'  | grep  ' Path: /etc/letsencrypt' | sed --expression='s/^.*Path: //' | sort | tee list-of-certs.txt |  xargs  ls -l  | sed --expression='s?^.*archive?/etc/letsencrypt/archive?'  >> list-of-certs.txt  && tar -vcf test.tar --files-from=list-of-certs.txt ;
       tar --create --gunzip   --file=/home/mark/home.tar.gz                                           \
                    --exclude='/home/mark'                                                             \
                    --exclude='*.opus'                                                                 \
