@@ -48,7 +48,7 @@ git clone  https://github.com/edwardsmarkf/server-migration                     
 tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save
 ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;
 
-sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/NewPassWordGoesHere/;'  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
+sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/MaRiAPaSsWoRd/;'  ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
 
 grep  '^MARIADB_PASSWORD='                                                        ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;
 
