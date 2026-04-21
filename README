@@ -57,8 +57,9 @@ nohup  time  nice bash -vx  ${TMP_LOCATION}/server-migration/bash-misc/current-s
 
                        ##################   nohup time nice  bash -vx  -   >   ${TMP_LOCATION}/current-server-tar-gz-creates.log   2>&1  &   ## detach 
 
-du  --summarize  --human-readable   /home/mark/*.gz    ;
-
+ls  -l   --human   /home/mark/*.gz                     ;
+du  --summarize  --human-readable   /home/mark/*.gz    ;   ## 3.4 gigs
+  
 
 
 ########################################################
