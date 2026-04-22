@@ -263,7 +263,7 @@ ls  -l         /home/      ;
 nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_location.bsh  >  /root/server-migration/bash-misc/move_data_to_proper_location.bsh.log  2>&1  &
 
  du   --summarize  --human-readable     /home/                ;   ## 6.5 gigs
- ls -lR      /home/  |  wc  --lines                            ;   499920
+ ls -lR      /home/  |  wc  --lines                           ;   ## count: 499920
 
 
 #######################################################
