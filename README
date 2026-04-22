@@ -284,7 +284,7 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 
  pm2 status  ;    ## look for all of them "status  online"
 
- bash -vx  ~/server-migration/node/visudo.bsh                                   >  /root/server-migration/node/visudo.bsh.log           2>&1  ;
+ bash -vx  /root/server-migration/node/visudo.bsh                                >  /root/server-migration/node/visudo.bsh.log           2>&1  ;
 
  apachectl  status  ;    ### or restart - not sure why this was required on 2026-04-02
 
