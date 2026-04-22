@@ -67,6 +67,8 @@ echo -n '18 - ' ;
 echo -n '19 - ' ;
 /usr/local/bin/lame            --version                     |       grep LAME | grep -v Copyright    ;
 
+/usr/local/node                --version                     ;
+npm --version
 exit;
 #
 ##
