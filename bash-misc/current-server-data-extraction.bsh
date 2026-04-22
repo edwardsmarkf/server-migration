@@ -18,6 +18,7 @@ tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/
 tar --create --gunzip   --file=/home/mark/letsencrypt.tar.gz                                    \
              --exclude='/etc/letsencrypt/csr/*_csr-certbot.pem'                                 \
              --exclude='/etc/letsencrypt/keys/*_key-certbot.pem'                                \
+             --newer-mtime '1 year ago'                                                         \
                                                                      /etc/letsencrypt           ;
 
 tar --create --gunzip   --file=/home/mark/home.tar.gz                                           \
