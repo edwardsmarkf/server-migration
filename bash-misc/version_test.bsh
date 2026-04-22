@@ -73,6 +73,8 @@ echo -n '20 - ' ;
 echo -n '21 - ' ;
 /usr/bin/npm                    --version   ;
 
+echo -n '22 - ' ;
+/usr/bin/pm2                    --version  ;
 
 exit;
 #
