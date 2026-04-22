@@ -67,13 +67,13 @@ echo -n '18 - ' ;
 echo -n '19 - ' ;
 /usr/local/bin/lame             --version                    |       grep LAME | grep -v Copyright    ;
 
-echo -n '20 - ' ;
+echo -n '20 - node: ' ;
 /usr/bin/node                   --version                     ;
 
-echo -n '21 - ' ;
+echo -n '21 - npm: ' ;
 /usr/bin/npm                    --version   ;
 
-echo -n '22 - ' ;
+echo -n '22 - pm2: ' ;
 /usr/bin/pm2                    --version  ;
 
 exit;
