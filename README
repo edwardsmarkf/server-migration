@@ -188,7 +188,7 @@ ls  -lh                             ${TMP_LOCATION}                  ;
 du  --summarize  --human-readable   ${TMP_LOCATION}                  ;                 ## 13 gigs
 ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 504000+
 
-                        ###   rm --verbose --force  ${TMP_LOCATION}/home.tar  ;   # we MAY need this for space!
+
 
 
 
