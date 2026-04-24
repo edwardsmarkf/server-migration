@@ -1,3 +1,7 @@
+
+
+MAY NOT BE NECESSARY, do     /usr/bin/mariadb-show --count   --user=root  --password='!zzyzx15zzyzx!'   ;   instead!
+
 #!  /bin/bash  -w
 #
 #         mariadbTableCount.bsh    2026-04-24
