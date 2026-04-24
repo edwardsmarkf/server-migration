@@ -370,7 +370,7 @@ ls  -l            /${KVM_NAME}/backup/tester.txt   ;
 
 /bin/bash  -v     /usr/local/bash/iDriveBackup/idrivePython.bsh   ;
 
-add  ./server-migration/idrive/crontab   to  crontab manually
+add  /root/server-migration/idrive/crontab   to  crontab manually
 
 
 
