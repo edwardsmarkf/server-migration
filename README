@@ -11,7 +11,7 @@
 timedatectl set-timezone America/New_York   ;   timedatectl  ;       ## 2026-04-15 not sure why this is not the default...??
 
 cd  ;  echo "export KVM_NAME=kvm502;" > /etc/profile.d/kvmName.sh  ;   ## 2026-02-20
-mkdir  --verbose   /kvm501/                                        ;   ## 2026-04-15
+mkdir  --verbose   /kvm502/                                        ;   ## 2026-04-15
 
 ##  (this step takes about 3.5 hours or 210 minutes!)
 
