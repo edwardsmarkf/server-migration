@@ -311,7 +311,7 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 ## first get password from Google:   https://myaccount.google.com/apppasswords
 ##  or just use the one already in the php-mailer!
                                          
- bash    ~/server-migration/s-nail/s-nail-postfix.bsh          ;
+ bash    /root/server-migration/s-nail/s-nail-postfix.bsh          ;
 
  php   /usr/local/lib/php/SMTPMailer-tester.php  ;   ## test the php mail sender
 
