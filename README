@@ -363,6 +363,8 @@ bash -vx  /root/server-migration/idrive/idriveInstall.bsh
 
 mkdir    /${KVM_NAME}/backup/  ; 
 echo 'tester'  >  /${KVM_NAME}/backup/tester.txt   ;
+ls  -l            /${KVM_NAME}/backup/tester.txt   ;
+
 /bin/bash  -v     /usr/local/bash/iDriveBackup/idrivePython.bsh   ;
 
 add  ./server-migration/idrive/crontab   to  crontab manually
