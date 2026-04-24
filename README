@@ -26,7 +26,7 @@ mkdir  --verbose   /kvm502/                                        ;   ## 2026-0
     cd   /root/server-migration/                                                                                          ;
     time bash -vx  /root/server-migration/Master_Installer.bsh > /root/server-migration/Master_Installer.bsh.log   2>&1   ;
 END_OF_INITIALIZATION
-nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
+nohup  time  bash -vx  -   >  /root/do-all-the-work.bsh.log  2>&1  &
 
 
 
