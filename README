@@ -24,7 +24,7 @@ mkdir  --verbose   /kvm502/                                        ;   ## 2026-0
     dnf  --assumeyes  install  time                                                                                       ;
     dnf  --assumeyes  install git  && git clone  https://github.com/edwardsmarkf/server-migration                         ;
     cd   /root/server-migration/                                                                                          ;
-    time bash -vx    ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log   2>&1     ;
+    time bash -vx    ~/server-migration/Master_Installer.bsh   > /root/server-migration/Master_Installer.bsh.log   2>&1   ;
 END_OF_INITIALIZATION
 nohup  time  bash -vx  -   >  ~/do-all-the-work.bsh.log  2>&1  &
 
