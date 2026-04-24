@@ -104,7 +104,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
                  #   p r e l i m i n i a r y          #
                  ######################################
 
- more   ~/ffmpeg-install-logs/99-test.bsh.log   ;    ### look for results
+ more   /root/ffmpeg-install-logs/99-test.bsh.log   ;    ### look for results
 
  bash    /root/server-migration/bash-misc/version_test.bsh    ;    ## notice no dash-v-x switches!
 
@@ -119,7 +119,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
                 #   p h p    t e s t i n g   #
                 ##############################
 
- bash  -vx  ~/server-migration/php/02_php_testing.bsh        ;
+ bash  -vx  /root/server-migration/php/02_php_testing.bsh        ;
 
  su fakephpuser --command "/bin/composer --version ; "                       &&  echo  $?  ;
 
@@ -133,7 +133,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
  su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;   ## test the perl 'use' command.
  su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  '     &&  echo  $?  ;   ## not sure what the first dash does...?
 
- bash -vx   ~/server-migration/perl/perl-cgi-testing.bsh      ;    
+ bash -vx   /root/server-migration/perl/perl-cgi-testing.bsh      ;    
 
 
 
@@ -142,8 +142,8 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
                 ######################################
 
  echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
- bash      ~/server-migration/mariadb/05_test_perl_mariadb_connection.bsh              &&  echo  $?  ;
- bash      ~/server-migration/mariadb/05_test_php_mariadb_connection.bsh               &&  echo  $?  ;
+ bash     /root/server-migration/mariadb/05_test_perl_mariadb_connection.bsh           &&  echo  $?  ;
+ bash     /root/server-migration/mariadb/05_test_php_mariadb_connection.bsh            &&  echo  $?  ;
 
 
                 #######################
