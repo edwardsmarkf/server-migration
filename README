@@ -382,8 +382,10 @@ this **MAY** have already been done, double-check:  add  /root/server-migration/
 
     ## there *MAY* be an issue with csf.conf TESTING equal one with google-vm, so that is why we are doing that here rather than the csf.bsh script
  sed  --in-place  --expression='s/TESTING = "1"/TESTING = "0"/'    /etc/csf/csf.conf   ;    
+ /bin/systemctl restart  lfd.service   ;
+ /bin/systemctl restart  csf.service   ;
 
- bash  /usr/local/bash/allowIpAddress.bsh     71.223.133.89    Torguard  > result.txt  2>&1   ;   ###  open up NEW ip ##
+bash  /usr/local/bash/allowIpAddress.bsh     71.223.133.89    Torguard  > result.txt  2>&1   ;   ###  open up NEW ip ##
 
  #### test this was done:   mkdir  /var/www/html   ;   ### is this required  ????  should it be part of a script ???
 
