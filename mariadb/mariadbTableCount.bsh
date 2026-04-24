@@ -1,0 +1,31 @@
+#!  /bin/bash  -w
+#
+#         mariadbTableCount.bsh    2026-04-24
+#
+#
+
+
+cat << END_OF_SCRIPT  | /usr/bin/mariadb  -A  --no-auto-rehash  --silent  --user=root  --password='!zzyzx15zzyzx!'  | sed --expression='s/[[:blank:]]\+/`.`/; s/$/`\;/; s/^/SELECT COUNT(*) FROM `/;' > countScript.sql;
+SELECT  \`table_schema\`                                        \
+,       \`table_name\`                                          \
+FROM    \`information_schema\`.\`tables\`                       \
+WHERE   1                                                       \
+AND     \`table_type\` = 'BASE TABLE'                           \
+AND     \`table_schema\` NOT IN                                 \
+                (       'information_schema'                    \
+                ,       'mysql'                                 \
+                ,       'performance_schema'                    \
+                ,       'sys'                                   \
+                )                                               \
+ORDER BY        \`table_schema\`                                \
+        ,       \`table_name\`                                  \
+;
+
+END_OF_SCRIPT
+
+ /usr/bin/mariadb  -A  --no-auto-rehash  --silent  --user=root  --password='!zzyzx15zzyzx!'  < countScript.sql  ;
+
+#
+##
+exit;
+##
