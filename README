@@ -1,5 +1,4 @@
-
-
+## FUTURE:  put all log files in their own directory  like  /root/server-migration-logs/
 
 ############################################################
 #                                                          #
@@ -230,12 +229,12 @@ ls  -l         /home/      ;
 
  grep  '^password='                                                     /root/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## inspect it
 
- bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh  >  ${TMP_LOCATION}/create_db_and_users.sql                ;
- cat                                                                        ${TMP_LOCATION}/create_db_and_users.sql                ;
+ bash   /root/server-migration/mariadb/migration/create_db_and_users.bsh  >  ${TMP_LOCATION}/create_db_and_users.sql                ;
+ cat                                                                         ${TMP_LOCATION}/create_db_and_users.sql                ;
 
- mariadb     --verbose                                                   <  ${TMP_LOCATION}/create_db_and_users.sql                ;
+ mariadb      --verbose                                                   <  ${TMP_LOCATION}/create_db_and_users.sql                ;
 
- bash      ~/server-migration/mariadb/migration/create_db_and_users.bsh                                   \
+ bash      /root/server-migration/mariadb/migration/create_db_and_users.bsh                               \
          | grep  TEMP_SQL_LOCATION                                                                        \
          | sed -e 's/.* ### //; s/ ## //;1i export TEMP_SQL_LOCATION=${TMP_LOCATION}/tmp/mariadb-tmp/;'   \
          > ${TMP_LOCATION}/load_sql_tables.bsh                                                            \
