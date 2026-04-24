@@ -200,15 +200,15 @@ ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
 ######################################################################
 
  cat  <<CREATE_ALL_VIRTUAL_SERVERS |
-     bash  -vx  ~/server-migration/webmin/virtualmin-create-vm.bsh    >  ~/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
-     bash  -vx  ~/server-migration/httpd.conf/apache.bsh              >  ~/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
+     bash  -vx  /root/server-migration/webmin/virtualmin-create-vm.bsh    >  /root/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
+     bash  -vx  /root/server-migration/httpd.conf/apache.bsh              >  /root/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
 
      [ ! -d "/var/www/html/" ] && mkdir  /var/www/html/                ;   ## 2026-04-13
 
      systemctl  restart  httpd.service   ;    ##
      apachectl  status                   ;
 CREATE_ALL_VIRTUAL_SERVERS
-nohup time bash -vx  -   >      ~/create-all-virtual-servers.log   2>&1  &   ## detach 
+nohup time bash -vx  -   >      /root/create-all-virtual-servers.log   2>&1  &   ## detach 
 
 ls  -l         /home/      ;
 
