@@ -348,6 +348,9 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
  &  ## run in background the first time...
 
 
+ du  --summarize  --human-readable  /home/comptonpeslonline.com/   ;
+
+
 
 #####################################
 #                                   #
