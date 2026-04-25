@@ -331,19 +331,20 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
                                                   /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
             comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   ;
 
- nohup                                                                                                                                 \
-   sshpass -p   'PASSWoRd'                                                                                                             \
-      sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
-            comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
-                                                  /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
- &  ## run in background the first time...
 
- nohup                                                                                                                                 \
-   sshpass -p   'PASSWoRd'                                                                                                             \
-      sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
-            comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                  \
-                                                  /home/comptonpeslonline.com/public_html/voicefiles/                                  \
- &  ## run in background the first time...
+nohup                                                                                                                                \
+ sshpass -p   'PASSWoRd'                                                                                                             \
+    sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
+          comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
+                                                /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
+&  ## run in background the first time...
+
+nohup                                                                                                                                \
+ sshpass -p   'PASSWoRd'                                                                                                             \
+    sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
+          comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                  \
+                                                /home/comptonpeslonline.com/public_html/voicefiles/                                  \
+&  ## run in background the first time...
 
 
  du  --summarize  --human-readable  /home/comptonpeslonline.com/   ;
