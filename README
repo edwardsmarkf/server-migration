@@ -313,7 +313,8 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 
  php   /usr/local/lib/php/SMTPMailer-tester.php  ;   ## test the php mail sender
 
-
+ perl       ./cgi-bin/mailx.pl  ;   ## 2026-04-25   run as comptonpeslonline.com
+   
 
 ##########################
 #                        #
