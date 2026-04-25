@@ -22,6 +22,9 @@ cp  --verbose    /etc/httpd/conf/httpd.conf    ~/httpd.conf        ;
     <Directory /home/comptonpeslonline.com/public_html/voicefiles>                                              \\
         Options -Indexes                                                                                        \\
     </Directory>                                                                                                \\
+    <Directory /home/comptonpeslonline.com/public_html/comptonPractice/mediaFiles/>                             \\
+        Options -Indexes                                                                                        \\
+    </Directory>                                                                                                \\
     <Directory /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/>              \\
         Options -Indexes                                                                                        \\
     </Directory>                                                                                                \\
