@@ -203,6 +203,7 @@ ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
      bash  -vx  /root/server-migration/httpd.conf/apache.bsh              >  /root/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
 
      [ ! -d "/var/www/html/" ] && mkdir  --verbose  --parents   /var/www/html/                ;   ## 2026-04-13
+     ls -l  /var/www  | grep html                                                             ;   ## 2026-04-25
 
      systemctl  restart  httpd.service   ;    ##
      apachectl  status                   ;
