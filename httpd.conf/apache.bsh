@@ -62,8 +62,8 @@ sed  --in-place  --file=-   /etc/httpd/conf/httpd.conf  <<END_OF_SED    ;
 
 ##  $(date;) --  start add by ${thisScript}                                                               \\
 
-s?^    SSLCertificateFile /?    #### $(date;) &?;
-s?^    SSLCertificateKeyFile /?    #### $(date;)  &?;
+s?^    SSLCertificateFile /?    #### $(date;) commented out by  ${thisScript}  ### &?;
+s?^    SSLCertificateKeyFile /?    #### $(date;)  commented out by  ${thisScript} ### &?;
 
 /RewriteRule .*well-known).* https:\/\/accentreduction.online:10000\//,/VirtualHost/{   \
 /SSLCertificateKeyFile \/etc\//a\
