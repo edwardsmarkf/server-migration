@@ -6,6 +6,8 @@
 #                                                          #
 ############################################################
 
+curl  https://ftp2.osuosl.org/pub/blfs/conglomeration/lame/lame-3.100.tar.gz   |  wc  --lines   ;   ## make sure lame exists!
+
 
 timedatectl set-timezone America/New_York   ;   timedatectl  ;       ## 2026-04-15 not sure why this is not the default...??
 
