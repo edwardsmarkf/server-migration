@@ -1,15 +1,15 @@
 \## FUTURE:  put all log files in their own directory  like  /root/server-migration-logs/
 
-############################################################
-#                                                          #
-#    n e w   s e r v e r    i n i t i a l i z a t i o n    #
-#                                                          #
-############################################################
+\############################################################
+\#                                                          #
+\#    n e w   s e r v e r    i n i t i a l i z a t i o n    #
+\#                                                          #
+\############################################################
 
 ```
 curl  https://ftp2.osuosl.org/pub/blfs/conglomeration/lame/lame-3.100.tar.gz   |  wc  --lines   ;   ## make sure lame exists!
 ```
-
+```
 timedatectl set-timezone America/New_York   ;   timedatectl  ;       ## 2026-04-15 not sure why this is not the default...??
 
 cd  ;  echo "export KVM_NAME=kvm502;" > /etc/profile.d/kvmName.sh  ;   ## 2026-02-20
@@ -29,19 +29,19 @@ mkdir  --verbose   /kvm502/                                        ;   ## 2026-0
     time bash -vx  /root/server-migration/Master_Installer.bsh > /root/server-migration/Master_Installer.bsh.log   2>&1   ;
 END_OF_INITIALIZATION
 nohup  time  bash -vx  -   >  /root/do-all-the-work.bsh.log  2>&1  &
+```
 
 
 
 
-
-#####################################################################
-#                                                                   #
-#   c u r r e n t    s e r v e r   d a t a   e x t r a c t i o n    #
-#                                                                   #
-#####################################################################
+\#####################################################################
+\#                                                                   #
+\#   c u r r e n t    s e r v e r   d a t a   e x t r a c t i o n    #
+\#                                                                   #
+\#####################################################################
    
-##  on CURRENT server:  (NOTE LENGTH OF TIME!!)
-
+\##  on CURRENT server:  (NOTE LENGTH OF TIME!!)
+```
 export TMP_LOCATION=/tmp/old_server_data/   ;     ##
 
 rm -Rf  ${TMP_LOCATION}   ;  mkdir  ${TMP_LOCATION}   && cd  $_  ;
@@ -49,29 +49,32 @@ rm -Rf  ${TMP_LOCATION}   ;  mkdir  ${TMP_LOCATION}   && cd  $_  ;
 git clone  https://github.com/edwardsmarkf/server-migration                                                         ;
 tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save
 ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;
-
+```
+```
 sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/MaRiAPaSsWoRd/;'  ${TMP_LOCATION}/server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
-
+```
+```
 grep  '^MARIADB_PASSWORD='                                                  ${TMP_LOCATION}/server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
-
+```
+```
 nohup  time  nice bash -vx  ${TMP_LOCATION}/server-migration/bash-misc/current-server-data-extraction.bsh      \
                          >  ${TMP_LOCATION}/server-migration/bash-misc/current-server-data-extraction.bsh.log  &   ## run detached
-
-
+```
+```
 ls  -l   --human   /home/mark/*.gz                     ;
 du  --human-readable  --summarize   /home/mark/*.gz    ;
 du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 3.4 gigs
+```
 
 
 
+\########################################################
+\#                                                      #
+\#    f e t c h   d a t a  t o   n e w   s e r v e r    #
+\#                                                      #
+\########################################################
 
-########################################################
-#                                                      #
-#    f e t c h   d a t a  t o   n e w   s e r v e r    #
-#                                                      #
-########################################################
-
-##  on new server:  (30 minutes)
+\##  on new server:  (30 minutes)
 ```
  dnf  --assumeyes  install sshpass  ;      ## this might not yet be done if this procedure is started too early.
 
@@ -79,7 +82,7 @@ du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 
 
  rm -Rf  ${TMP_LOCATION}   ;  mkdir  ${TMP_LOCATION}   && cd  $_  ;
 ```
-##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
+\##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
                                                 ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
 ```
  sshpass -p  'MYpASSWORDfORaCCTmARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
@@ -98,11 +101,11 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 
 
 
-############################################################################
-#                                                                          #
-#     p r e l i m i n a r y      t e s t i n g                             #
-#                                                                          #
-############################################################################
+\############################################################################
+\#                                                                          #
+\#     p r e l i m i n a r y      t e s t i n g                             #
+\#                                                                          #
+\############################################################################
 
                  ######################################
                  #   p r e l i m i n i a r y          #
