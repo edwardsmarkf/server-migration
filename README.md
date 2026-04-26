@@ -72,26 +72,29 @@ du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 
 ########################################################
 
 ##  on new server:  (30 minutes)
-
+```
  dnf  --assumeyes  install sshpass  ;      ## this might not yet be done if this procedure is started too early.
 
  export TMP_LOCATION=/tmp/old_server_data/   ;     ##
 
  rm -Rf  ${TMP_LOCATION}   ;  mkdir  ${TMP_LOCATION}   && cd  $_  ;
-
+```
 ##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
                                                 ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
+```
  sshpass -p  'MYpASSWORDfORaCCTmARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
+```
 
 sftp>   ls -lh        ## human readable file size  /home/ one is 3.3 gigs
 sftp>   mget  *.gz    ## fetch the gzips
 sftp>   !ls -lh       ## file sizes on NEW server (notice bang character)
 sftp>   rm  *.gz      ## can be done in the sftp session!  
 
+```
 ls -lh                               ${TMP_LOCATION}/*.gz    ;
 du  --human-readable  --summarize    ${TMP_LOCATION}/*.gz    ;
 du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
-
+```
 
 
 
