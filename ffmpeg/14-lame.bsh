@@ -1,7 +1,7 @@
 #! /bin/bash -w
 
 ##  2025-02-12  -- look for lame version
-##  2026-04-26  -- switched from configure-make to dnf
+
 
 #############################
 #                           #
