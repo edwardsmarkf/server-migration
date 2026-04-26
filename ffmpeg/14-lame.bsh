@@ -11,19 +11,12 @@
 
 ##  2018-02-18  --  v3.99.5 to v3.100
 
-####    2026-04-25  ##    cd   ~/INSTALL_FFmpeg/INSTALL_lame/  ;
-####    2026-04-25  ##    gzip -d   ./lame-*.tar.gz  ;
-####    2026-04-25  ##    tar -x -f   ./lame-*.tar       ;
-####    2026-04-25  ##    cd          ./lame-*/            ;
-####    2026-04-25  ##    ./configure;
-####    2026-04-25  ##    make  && make check && make install ;
-
-dnf  --assumeyes  install  epel-release  ;   ## added 2026-04-26
-dnf  --assumeyes  install  lame          ;   ## added 2026-04-26
-dnf  --assumeyes  install  lame-libs     ;   ## added 2026-04-26
-dnf  --assumeyes  install  lame-devel    ;   ## added 2026-04-26
-dnf  --assumeyes  install  lame-devel
-
+cd   ~/INSTALL_FFmpeg/INSTALL_lame/  ;
+gzip -d   ./lame-*.tar.gz  ;
+tar -x -f   ./lame-*.tar       ;
+cd          ./lame-*/            ;
+./configure;
+make  && make check && make install ;
 
 
 which lame                ;   ## 2026-02-26
@@ -34,3 +27,20 @@ which lame                ;   ## 2026-02-26
 # END:     l a m e    #
 #                     #
 #######################
+
+
+
+
+
+
+
+
+
+
+## cant seem to install library this way ???
+##  dnf  --assumeyes  install  epel-release  ;   ## added 2026-04-26
+##  dnf  --assumeyes  install  lame          ;   ## added 2026-04-26
+##  dnf  --assumeyes  install  lame-libs     ;   ## added 2026-04-26
+##  dnf  --assumeyes  install  lame-devel    ;   ## added 2026-04-26
+
+
