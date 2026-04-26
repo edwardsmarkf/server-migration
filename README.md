@@ -29,14 +29,9 @@ nohup  time  bash -vx  -   >  /root/do-all-the-work.bsh.log  2>&1  &
 
 
 
-
-\#####################################################################
-\#                                                                   #
-\#   c u r r e n t    s e r v e r   d a t a   e x t r a c t i o n    #
-\#                                                                   #
-\#####################################################################
+#   current    server   data   extraction
    
-\##  on CURRENT server:  (NOTE LENGTH OF TIME!!)
+###  on CURRENT server:  (NOTE LENGTH OF TIME!!)
 ```
 export TMP_LOCATION=/tmp/old_server_data/   ;     ##
 
@@ -46,9 +41,11 @@ git clone  https://github.com/edwardsmarkf/server-migration                     
 tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save
 ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;
 ```
+
 ```
 sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/MaRiAPaSsWoRd/;'  ${TMP_LOCATION}/server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
 ```
+
 ```
 grep  '^MARIADB_PASSWORD='                                                  ${TMP_LOCATION}/server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
 ```
@@ -64,13 +61,9 @@ du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 
 
 
 
-\########################################################
-\#                                                      #
-\#    f e t c h   d a t a  t o   n e w   s e r v e r    #
-\#                                                      #
-\########################################################
+#    fetch   data  to   new   server
 
-\##  on new server:  (30 minutes)
+##  on new server:  (30 minutes)
 ```
  dnf  --assumeyes  install sshpass  ;      ## this might not yet be done if this procedure is started too early.
 
