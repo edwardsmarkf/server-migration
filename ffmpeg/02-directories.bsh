@@ -6,7 +6,7 @@
 #                               #
 #################################
 
-2026-04-26 - we now get lame from dnf
+
 
 rm -Rf               ~/INSTALL_FFmpeg/  ;
 mkdir --verbose  --parent  ~/INSTALL_FFmpeg/INSTALL_bzip/         ;
@@ -18,7 +18,7 @@ mkdir  --verbose            ~/INSTALL_FFmpeg/INSTALL_opus/        ;
 mkdir  --verbose            ~/INSTALL_FFmpeg/INSTALL_libopusenc/  ;
 mkdir  --verbose            ~/INSTALL_FFmpeg/INSTALL_opusfile/    ;
 mkdir  --verbose            ~/INSTALL_FFmpeg/INSTALL_opustool/    ;
-    ####  2026-04-26    ##  mkdir  --verbose            ~/INSTALL_FFmpeg/INSTALL_lame         ;
+mkdir  --verbose            ~/INSTALL_FFmpeg/INSTALL_lame         ;
 mkdir  --verbose            ~/INSTALL_FFmpeg/INSTALL_x264/        ;
 mkdir  --verbose            ~/INSTALL_FFmpeg/INSTALL_FFmpeg/      ; 
 mkdir  --verbose            ~/INSTALL_FFmpeg/test/              ; 
