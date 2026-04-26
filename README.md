@@ -1,10 +1,10 @@
-. ## FUTURE:  put all log files in their own directory  like  /root/server-migration-logs/
+ ## FUTURE:  put all log files in their own directory  like  /root/server-migration-logs/
 
-. ############################################################
-. #                                                          #
-. #    n e w   s e r v e r    i n i t i a l i z a t i o n    #
-. #                                                          #
-.` ############################################################
+ ############################################################
+ #                                                          #
+ #    n e w   s e r v e r    i n i t i a l i z a t i o n    #
+ #                                                          #
+ ############################################################
 
 ```
 curl  https://ftp2.osuosl.org/pub/blfs/conglomeration/lame/lame-3.100.tar.gz   |  wc  --lines   ;   ## make sure lame exists!
