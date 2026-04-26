@@ -18,13 +18,14 @@
 ####    2026-04-25  ##    ./configure;
 ####    2026-04-25  ##    make  && make check && make install ;
 
-dnf  --assumeyes  install epel-release  ;   ## added 2026-04-26
-dnf  --assumeyes  install lame          ;   ## added 2026-04-26
-dnf  --assumeyes  install  lame-libs    ;   ## added 2026-04-26
-dnf  --assumeyes  install  lame-devel   ;   ## added 2026-04-26
+dnf  --assumeyes  install  epel-release  ;   ## added 2026-04-26
+dnf  --assumeyes  install  lame          ;   ## added 2026-04-26
+dnf  --assumeyes  install  lame-libs     ;   ## added 2026-04-26
+dnf  --assumeyes  install  lame-devel    ;   ## added 2026-04-26
 
 
 
+which lame                ;   ## 2026-02-26
 /usr/bin/lame   --version ;   ## 2025-02-12
 
 #######################
