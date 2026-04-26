@@ -1,6 +1,7 @@
 #! /bin/bash -w
 
 ##  2025-02-12  -- look for lame version
+##  2026-04-26  -- switched from configure-make to dnf
 
 #############################
 #                           #
@@ -10,12 +11,15 @@
 
 ##  2018-02-18  --  v3.99.5 to v3.100
 
-cd   ~/INSTALL_FFmpeg/INSTALL_lame/  ;
-gzip -d   ./lame-*.tar.gz  ;
-tar -x -f   ./lame-*.tar       ;
-cd          ./lame-*/            ;
-./configure;
-make  && make check && make install ;
+####    2026-04-25  ##    cd   ~/INSTALL_FFmpeg/INSTALL_lame/  ;
+####    2026-04-25  ##    gzip -d   ./lame-*.tar.gz  ;
+####    2026-04-25  ##    tar -x -f   ./lame-*.tar       ;
+####    2026-04-25  ##    cd          ./lame-*/            ;
+####    2026-04-25  ##    ./configure;
+####    2026-04-25  ##    make  && make check && make install ;
+
+dnf  --assumeyes install epel-release ;   ## added 2026-04-26
+dnf  --assumeyes  install lame        ;   ## added 2026-04-26
 
 /usr/local/bin/lame   --version ;   ## 2025-02-12
 
