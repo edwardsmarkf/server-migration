@@ -22,6 +22,7 @@ dnf  --assumeyes  install  epel-release  ;   ## added 2026-04-26
 dnf  --assumeyes  install  lame          ;   ## added 2026-04-26
 dnf  --assumeyes  install  lame-libs     ;   ## added 2026-04-26
 dnf  --assumeyes  install  lame-devel    ;   ## added 2026-04-26
+dnf  --assumeyes  install  lame-devel
 
 
 
