@@ -64,8 +64,9 @@ ls  -l   --human   /home/mark/*.gz                     ;
 du  --human-readable  --summarize   /home/mark/*.gz    ;
 du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 3.4 gigs
 ```
-
-
+#
+#
+#
 **********************************************
 ##    fetch   data  to   new   server
 **********************************************
@@ -94,8 +95,9 @@ ls -lh                               ${TMP_LOCATION}/*.gz    ;
 du  --human-readable  --summarize    ${TMP_LOCATION}/*.gz    ;
 du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 ```
-
-
+#
+#
+#
 ********************************
 ##     preliminary testing  
 ***************************************
@@ -148,8 +150,9 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 
  ls -l  /home/                     ;
 ```
-
-
+#
+#
+#
 ******************************************
 ##      unpack    all   the  current   data
 *******************************************
@@ -176,10 +179,9 @@ ls  -lh                             ${TMP_LOCATION}                  ;
 du  --summarize  --human-readable   ${TMP_LOCATION}                  ;                 ## 13 gigs
 ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
 ```
-
-
-
-
+#
+#
+#
 ********************************
 ##   create     all   virtual   servers 
 ************************************
@@ -199,7 +201,9 @@ nohup time bash -vx  -   >      /root/create-all-virtual-servers.log   2>&1  &  
 ```
 ls  -l         /home/      ;
 ```
-
+#
+#
+#
 **********************************
 ##   mariadb     data    install 
 *********************************
@@ -248,7 +252,9 @@ ls  -l         /home/      ;
 ```
  mariadb-show --count ;   ## spot-check the number of rows!
 ```
-
+#
+#
+#
 *********************************
 ##   move   data   to   proper   location
 ************************************
@@ -284,16 +290,17 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 ```
  apachectl  status  ;    ### or restart - not sure why this was required on 2026-04-02
 ```
-
+#
+#
+#
 **************************************
 ##       test   the    recorder 
 ********************************************
 
       ## go to Cloudns and change the IP number of the comptonpeslonline.com's three places to the new iP number, and set TTL value to 1
-
-
-
-
+#
+#
+#
 **********************************
 ##         s-nail-postfix.bsh 
 ***********************************
@@ -310,9 +317,9 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 ```
  perl       ./cgi-bin/mailx.pl  ;   ## 2026-04-25   run as comptonpeslonline.com
 ```   
-
-
-
+#
+#
+#
 ***************************************************
 ##         r s y n c
 **************************************************
@@ -321,7 +328,7 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 ```     
  sshpass -p  'PASSWORD'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## test to make sure this works!
 ```
-                ##  format: rsync  S-O-U-R-C-E     D-E-S-T-I-N-A-T-I-O-N
+##  format: rsync  S-O-U-R-C-E     D-E-S-T-I-N-A-T-I-O-N
 ```
  sshpass -p   'PASSWoRd'                                                                                                               \
       sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh='ssh -o StrictHostKeyChecking=no'                           \
@@ -347,9 +354,9 @@ nohup                                                                           
 ```
  du  --summarize  --human-readable  /home/comptonpeslonline.com/   ;
 ```
-
-
-
+#
+#
+#
 ********************************************
 ##   idrive     install
 ********************************************
@@ -371,9 +378,9 @@ ls  -l            /${KVM_NAME}/backup/tester.txt   ;
 /bin/bash  -v     /usr/local/bash/iDriveBackup/idrivePython.bsh   ;
 ```
 this **MAY** have already been done, double-check:  add  /root/server-migration/idrive/crontab   to  crontab manually
-
-
-
+#
+#
+#
 ******************************************
 ##   final    testing  
 *****************************************
@@ -397,12 +404,12 @@ bash  /usr/local/bash/allowIpAddress.bsh     71.223.133.89    Torguard  > result
                                                         ####   this need to be tested have "Content-type: text/html" removed and replaced with -M "text/html":
 
 ?????  working  ????    /home/comptonpeslonline.com/cgi-bin/email_link.pl
-
-
-
-
+#
+#
+#
+******************************************
 #   run   phonetic    transcription    remotely
-
+******************************************
 
 vi  /etc/csf/csf.conf  -- open ports 3306   in TCP_OUT (or do it in the GUI interface under "Temporary Allow/Deny"
 
@@ -418,13 +425,13 @@ to modify phonetic transcription:
 
   /home/comptonpeslonline.com/public_html/lib/perl5/ComptonAccessVariables.pm     ##    line  137 changed localhost to  162.220.165.228
   /home/comptonpeslonline.com/public_html/php/phoneticTranscriptionLogin.php      ##    line  61  changed localhost to  162.220.165.228
-
-
-
-
-
-
-
+#
+#
+#
+#
+#
+#
+#
 
 ##############################################################################################################################################################################################
 ##############################################################################################################################################################################################
