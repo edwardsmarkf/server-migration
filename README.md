@@ -389,7 +389,7 @@ this **MAY** have already been done, double-check:  add  /root/server-migration/
 ##   final    testing  
 *****************************************
 
-    ## there *MAY* be an issue with csf.conf TESTING equal one with google-vm, so that is why we are doing that here rather than the csf.bsh script
+\## there *MAY* be an issue with csf.conf TESTING equal one with google-vm, so that is why we are doing that here rather than the csf.bsh script
 ```    
  sed  --in-place  --expression='s/TESTING = "1"/TESTING = "0"/'    /etc/csf/csf.conf   ;    
  /bin/systemctl restart  lfd.service   ;
