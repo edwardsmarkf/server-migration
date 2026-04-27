@@ -13,8 +13,8 @@
 ##   2019-02-20  -- for whatever reason, /usr/local/bin/ is no longer in PATH
 
     # (optional)
-    ####yum  --assumeyes install flac  ;  ## installs 1.3.0, but i think we need 1.3.+ (??)
-    ####yum  --assumeyes  remove flac  ;  ## in case yum has already installed it
+    #### dnf  --assumeyes install flac  ;  ## installs 1.3.0, but i think we need 1.3.+ (??)
+    #### dnf  --assumeyes  remove flac  ;  ## in case yum has already installed it
 
 export PATH=$PATH:/usr/local/bin; 
 
