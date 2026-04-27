@@ -1,8 +1,8 @@
 \ ## FUTURE:  put all log files in their own directory  like  /root/server-migration-logs/
 
-#    # # ##############################
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #       new server initialization
-#    # # ##############################
+#    # # # # # # # # # # # # # # # # # # # # # # # #########
 
 ```
 curl  https://ftp2.osuosl.org/pub/blfs/conglomeration/lame/lame-3.100.tar.gz                        |  wc  --lines   ;   ## make sure lame exists!
