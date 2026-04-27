@@ -1,7 +1,7 @@
 \ ## FUTURE:  put all log files in their own directory  like  /root/server-migration-logs/
 
 ********************************************
-*       new server initialization
+##     new server initialization
 **************************************************
 
 ```
