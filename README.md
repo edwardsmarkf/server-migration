@@ -5,7 +5,7 @@
 #    # # # # # # # # # # # # # # # # # # # # # # # #########
 
 ```
-##   determine which lame is working first.
+                   ##   determine which lame is working first.
 curl  https://ftp2.osuosl.org/pub/blfs/conglomeration/lame/lame-3.100.tar.gz                        |  wc  --lines   ;   ## make sure lame exists!
  curl   https://cytranet-dal.dl.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz?viasf=1   |  wc  --lines   ;   ## find lame's source (at least for this week)
 ```
@@ -33,9 +33,9 @@ nohup  time  bash -vx  -   >  /root/do-all-the-work.bsh.log  2>&1  &
 ```
 
 
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #   current    server   data   extraction
-   
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########   
 on CURRENT server:  (NOTE LENGTH OF TIME!!)
 ```
 export TMP_LOCATION=/tmp/old_server_data/   ;     ##
@@ -65,8 +65,9 @@ du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 
 ```
 
 
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #    fetch   data  to   new   server
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 
 on new server:  (30 minutes)
 ```
@@ -94,8 +95,9 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 ```
 
 
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #     preliminary      testing  
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 
         ####   preliminary  
 
@@ -147,8 +149,9 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 ```
 
 
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #      unpack    all   the  current   data
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 
             \### also on the new server:
 ```
@@ -177,8 +180,9 @@ ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
 
 
 
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #   create     all   virtual   servers 
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 ```
  cat  <<CREATE_ALL_VIRTUAL_SERVERS |
      bash  -vx  /root/server-migration/webmin/virtualmin-create-vm.bsh    >  /root/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
@@ -196,9 +200,9 @@ nohup time bash -vx  -   >      /root/create-all-virtual-servers.log   2>&1  &  
 ls  -l         /home/      ;
 ```
 
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #   mariadb     data    install 
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
     \### be SURE unpacking is done first.....!
 
 ```
@@ -245,9 +249,9 @@ ls  -l         /home/      ;
  mariadb-show --count ;   ## spot-check the number of rows!
 ```
 
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #   move   data   to   proper   location
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
      #####  put tar files into their proper places  (turned into its own script   2026-04-15
 ```
 nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_location.bsh  >  /root/server-migration/bash-misc/move_data_to_proper_location.bsh.log  2>&1  &
@@ -281,17 +285,18 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
  apachectl  status  ;    ### or restart - not sure why this was required on 2026-04-02
 ```
 
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #       test   the    recorder 
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 
       ## go to Cloudns and change the IP number of the comptonpeslonline.com's three places to the new iP number, and set TTL value to 1
 
 
 
 
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #         s-nail-postfix.bsh 
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 
     ### first get password from Google:   https://myaccount.google.com/apppasswords
     ###  or just use the one already in the php-mailer!
@@ -306,7 +311,10 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
  perl       ./cgi-bin/mailx.pl  ;   ## 2026-04-25   run as comptonpeslonline.com
 ```   
 
+
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #         r s y n c
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 
      #### TEST rsync  FIRST  !!
 ```     
@@ -341,7 +349,10 @@ nohup                                                                           
 
 
 
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #   idrive     install
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
+
 ```
 bash -vx  /root/server-migration/idrive/idriveInstall.bsh
 ```
@@ -362,9 +373,9 @@ this **MAY** have already been done, double-check:  add  /root/server-migration/
 
 
 
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 #   final    testing  
-
+#    # # # # # # # # # # # # # # # # # # # # # #  ##########
 
     ## there *MAY* be an issue with csf.conf TESTING equal one with google-vm, so that is why we are doing that here rather than the csf.bsh script
 ```    
