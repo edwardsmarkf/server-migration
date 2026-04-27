@@ -56,7 +56,7 @@ print 'CGI User: ' .  getpwuid($>) . "\n" ;
 ##    my \$url = 'http://localhost/';
 ##    my \$file = 'localfile2.txt';
 ##    ##
-##    # Downloads the URL content and saves it to $file
+##    # Downloads the URL content and saves it to \$file
 ##    my \$status = getstore(\$url, \$file);
 ##    ##
 ##    if (is_success(\$status)) {
