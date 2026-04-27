@@ -65,7 +65,7 @@ echo -n '18 - ' ;
 /usr/local/bin/opusdec          --version                    |       grep -v  Copyright               ;
 
 echo -n '19 - ' ;
-/usr/bin/lame                   --version                    |       grep LAME | grep -v Copyright    ;
+/usr/local/bin/lame             --version                    |       grep LAME | grep -v Copyright    ;
 
 echo -n '20 - node: ' ;
 /usr/bin/node                   --version                     ;
