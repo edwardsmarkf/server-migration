@@ -100,7 +100,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 ##     preliminary testing  
 ***************************************
 
-        ####   preliminary  
+####   preliminary  
 
 ```
  more   /root/ffmpeg-install-logs/99-test.bsh.log   ;    ### look for results
