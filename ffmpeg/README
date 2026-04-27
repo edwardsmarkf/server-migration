@@ -11,6 +11,7 @@
 2025-11-29  --  had some difficulty on virtualbox, probably either disk size or ## of processors  or even memory.  not a problem with the servers but
                 minor inconvenience with virtualbox.
 2026-04-26  --  lame CONTINUES to be an issue.   consider switching over to 'dnf  --assumeyes  install lame  lame-lib ;'
+
 2026-04-027 --  the problem with using `dnf` is that the versions might not be recent enough.  the following have a dnf reference:
         bzip2-libs.x86_64
         bzip2.x86_64
@@ -19,6 +20,7 @@
         ??? opus.x86_64
         lame-libs.x86_64  -- this one DEFINITELY had issues with version
 
+reminder:   configure-make installs to /usr/local/bin/ while dnf installs to /usr/bin/
 
 
 ##   to run in batch mode:  
