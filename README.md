@@ -31,7 +31,7 @@ nohup  time  bash -vx  -   >  /root/do-all-the-work.bsh.log  2>&1  &
 
 #   current    server   data   extraction
    
-              ###  on CURRENT server:  (NOTE LENGTH OF TIME!!)
+              #  on CURRENT server:  (NOTE LENGTH OF TIME!!)
 ```
 export TMP_LOCATION=/tmp/old_server_data/   ;     ##
 
