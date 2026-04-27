@@ -31,9 +31,9 @@ mkdir  --verbose   /kvm502/                                        ;   ## 2026-0
 END_OF_INITIALIZATION
 nohup  time  bash -vx  -   >  /root/do-all-the-work.bsh.log  2>&1  &
 ```
-*
-*
-*
+=
+=
+=
 ******************************************
 ##   current    server   data   extraction
 **********************************************
