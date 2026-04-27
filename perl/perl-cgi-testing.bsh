@@ -52,17 +52,17 @@ print 'CGI User: ' .  getpwuid($>) . "\n" ;
 
 ##  use LWP::Simple;
 
-##    #my $url = 'http://zzyzxzzyzx.com/';
-##    my $url = 'http://localhost/';
-##    my $file = 'localfile2.txt';
+##    #my \$url = 'http://zzyzxzzyzx.com/';
+##    my \$url = 'http://localhost/';
+##    my \$file = 'localfile2.txt';
 ##    ##
 ##    # Downloads the URL content and saves it to $file
-##    my $status = getstore($url, $file);
+##    my \$status = getstore(\$url, \$file);
 ##    ##
-##    if (is_success($status)) {
+##    if (is_success(\$status)) {
 ##            print "File downloaded successfully!\n";
 ##    } else {
-##            print "Failed to download file. HTTP Status: $status\n";
+##            print "Failed to download file. HTTP Status: \$status\n";
 ##    }
 ##    ##
 
