@@ -1,10 +1,14 @@
 \ ## FUTURE:  put all log files in their own directory  like  /root/server-migration-logs/
 
-#    new   server    initialization
+#    ################################
+#       new server initialization
+#    ################################
 
 ```
-curl  https://ftp2.osuosl.org/pub/blfs/conglomeration/lame/lame-3.100.tar.gz   |  wc  --lines   ;   ## make sure lame exists!
+curl  https://ftp2.osuosl.org/pub/blfs/conglomeration/lame/lame-3.100.tar.gz                        |  wc  --lines   ;   ## make sure lame exists!
+ curl   https://cytranet-dal.dl.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz?viasf=1   |  wc  --lines   ;   ## find lame's source (at least for this week)
 ```
+
 ```
 timedatectl set-timezone America/New_York   ;   timedatectl  ;       ## 2026-04-15 not sure why this is not the default...??
 
