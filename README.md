@@ -110,7 +110,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 ```
  bash    /root/server-migration/bash-misc/version_test.bsh    ;    ## notice no dash-v-x switches!
 ```
-        \### define/create domain (if it does not yet exist) using new IP into local etc.hosts file
+      ### define/create domain (if it does not yet exist) using new IP into local etc.hosts file
 ```
  export DOMAIN='zzyzxzzyzx.com'  ; 
 
