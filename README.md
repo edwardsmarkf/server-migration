@@ -1,4 +1,4 @@
-` ## FUTURE:  put all log files in their own directory  like  /root/server-migration-logs/
+\ ## FUTURE:  put all log files in their own directory  like  /root/server-migration-logs/
 
 #    new   server    initialization
 
@@ -63,7 +63,7 @@ du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 
 
 #    fetch   data  to   new   server
 
-###  on new server:  (30 minutes)
+on new server:  (30 minutes)
 ```
  dnf  --assumeyes  install sshpass  ;      ## this might not yet be done if this procedure is started too early.
 
