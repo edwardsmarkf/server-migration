@@ -11,7 +11,7 @@ timedatectl set-timezone America/New_York   ;   timedatectl  ;       ## 2026-04-
 cd  ;  echo "export KVM_NAME=kvm502;" > /etc/profile.d/kvmName.sh  ;   ## 2026-02-20
 mkdir  --verbose   /kvm502/                                        ;   ## 2026-04-15
 
-##  (this step takes about 3.5 hours or 210 minutes!)
+###  (this step takes about 3.5 hours or 210 minutes!)
 
  dnf  --assumeyes  install  time                                                                                          ;
  cat  <<END_OF_INITIALIZATION                                                                                             |
@@ -63,7 +63,7 @@ du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 
 
 #    fetch   data  to   new   server
 
-##  on new server:  (30 minutes)
+###  on new server:  (30 minutes)
 ```
  dnf  --assumeyes  install sshpass  ;      ## this might not yet be done if this procedure is started too early.
 
@@ -90,79 +90,71 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 
 
 
-\############################################################################
-\#                                                                          #
-\#     p r e l i m i n a r y      t e s t i n g                             #
-\#                                                                          #
-\############################################################################
+#     preliminary      testing  
 
                  ######################################
                  #   p r e l i m i n i a r y          #
                  ######################################
 
+```
  more   /root/ffmpeg-install-logs/99-test.bsh.log   ;    ### look for results
-
+```
+```
  bash    /root/server-migration/bash-misc/version_test.bsh    ;    ## notice no dash-v-x switches!
-
-## define/create domain (if it does not yet exist) using new IP into local etc.hosts file
-
+```
+        ### define/create domain (if it does not yet exist) using new IP into local etc.hosts file
+```
  export DOMAIN='zzyzxzzyzx.com'  ; 
 
  virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13                                                                                                    ##  --dns and --web are the ONLY two options requested
  virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this ever be the default?
-
+```
                 ##############################
                 #   p h p    t e s t i n g   #
                 ##############################
-
+```
  bash  -vx  /root/server-migration/php/02_php_testing.bsh        ;
-
- su fakephpuser --command "/bin/composer --version ; "                       &&  echo  $?  ;
+```
 
 
                 ################################
                 #   p e r l    t e s t i n g   #
                 ################################
 
-###more   ~/server-migration/perl/README    ## look for tests
-
+```
  su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;   ## test the perl 'use' command.
  su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  '     &&  echo  $?  ;   ## not sure what the first dash does...?
 
  bash -vx   /root/server-migration/perl/perl-cgi-testing.bsh      ;    
-
+```
 
 
                 ######################################
                 #   m a r i a d b    t e s t i n g   #
                 ######################################
-
+```
  echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
  bash     /root/server-migration/mariadb/05_test_perl_mariadb_connection.bsh           &&  echo  $?  ;
  bash     /root/server-migration/mariadb/05_test_php_mariadb_connection.bsh            &&  echo  $?  ;
-
+```
 
                 #######################
                 #   c l e a n   u p   #
                 #######################
-
+```
  virtualmin  delete-domain  --domain  ${DOMAIN}    ;
  userdel  --remove  fakeperluser  ;
  userdel  --remove  fakephpuser   ;
 
  ls -l  /home/                     ;
+```
 
 
 
+#      unpack    all   the  current   data
 
-######################################################################
-#                                                                    #
-#      u n p a c k    a l l   t h e  c u r r e n t   d a t a         #
-#                                                                    #
-######################################################################
-
-# also on the new server:
-
+            ### also on the new server:
+```
  export TMP_LOCATION=/tmp/old_server_data/   ;     ##
 
  cd  ${TMP_LOCATION}    ;
@@ -178,23 +170,19 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
    tar  --extract  --file     \${TMP_LOCATION}/usr_local_lib_php.tar  ;
 END_OF_UNPACK
 nohup time bash -vx  -   >   /root/current-server-tar-gz-unpack.log   2>&1  &   ## detach 
-
-
+```
+```
 ls  -lh                             ${TMP_LOCATION}                  ;
 du  --summarize  --human-readable   ${TMP_LOCATION}                  ;                 ## 13 gigs
 ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
+```
 
 
 
 
 
-
-######################################################################
-#                                                                    #
-#   c r e a t e     a l l   v i r t u a l   s e r v e r s            #
-#                                                                    #
-######################################################################
-
+#   create     all   virtual   servers 
+```
  cat  <<CREATE_ALL_VIRTUAL_SERVERS |
      bash  -vx  /root/server-migration/webmin/virtualmin-create-vm.bsh    >  /root/server-migration/webmin/virtualmin-create-vm.bsh.log   2>&1  ;
      bash  -vx  /root/server-migration/httpd.conf/apache.bsh              >  /root/server-migration/httpd.conf/apache.bsh.log             2>&1  ;
@@ -206,193 +194,196 @@ ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
      apachectl  status                   ;
 CREATE_ALL_VIRTUAL_SERVERS
 nohup time bash -vx  -   >      /root/create-all-virtual-servers.log   2>&1  &   ## detach 
-
+```
+```
 ls  -l         /home/      ;
+```
 
 
-###################################################
-#                                                 # 
-#   m a r i a d b     d a t a    i n s t a l l    #
-#                                                 #
-###################################################
+#   mariadb     data    install 
 
-## be SURE unpacking is done first.....!
+    ### be SURE unpacking is done first.....!
 
+```
  export TMP_LOCATION=/tmp/old_server_data/                  ;     ##
-
  cd                  ${TMP_LOCATION}                        ;
+```
 
       ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
+```
  sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   /root/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
-
+```
+```
  grep  '^password='                                                     /root/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## inspect it
-
+```
+```
  bash   /root/server-migration/mariadb/migration/create_db_and_users.bsh  >  ${TMP_LOCATION}/create_db_and_users.sql                ;
  cat                                                                         ${TMP_LOCATION}/create_db_and_users.sql                ;
-
+```
+```
  mariadb      --verbose                                                   <  ${TMP_LOCATION}/create_db_and_users.sql                ;
-
+```
+```
  bash      /root/server-migration/mariadb/migration/create_db_and_users.bsh                               \
          | grep  TEMP_SQL_LOCATION                                                                        \
          | sed -e 's/.* ### //; s/ ## //;1i export TEMP_SQL_LOCATION=${TMP_LOCATION}/tmp/mariadb-tmp/;'   \
          > ${TMP_LOCATION}/load_sql_tables.bsh                                                            \
          ;                                                        ## generate our 'load' script!
  cat   ${TMP_LOCATION}/load_sql_tables.bsh                                                                            ;     ## inspect it 
+```
 
+```
  nohup time bash  -vx  ${TMP_LOCATION}/load_sql_tables.bsh  >  /root/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
+```
 
+```
  du  --summarize  --human-readable  /var/lib/mysql/                                                                        ;     ## check for total size   1.4 gigs
+```
 
+```
  mariadb-secure-installation;   ## IMPORTANT!
+```
 
+```
  mariadb-show --count ;   ## spot-check the number of rows!
+```
 
 
-
-######################################################################
-#                                                                    #
-#   m o v e   d a t a   t o   p r o p e r   l o c a t i o n s        #
-#                                                                    #
-######################################################################
+#   move   data   to   proper   location
 
      #####  put tar files into their proper places  (turned into its own script   2026-04-15
-
+```
 nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_location.bsh  >  /root/server-migration/bash-misc/move_data_to_proper_location.bsh.log  2>&1  &
-
+```
+```
  du   --summarize  --human-readable     /home/                ;   ## 6.5 gigs
  ls -lR      /home/  |  wc  --lines                           ;   ## count: 499920
+```
 
-
-#######################################################
-#                                                     #
-#         p m 2 . i n i t i a l i z e . b s h         #
-#                                                     #
-#######################################################
+#         pm2 . initialize . bsh 
 
               ###  ? ? ? ? npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
-
+```
  bash -vx  /root/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh       >  /root/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log   2>&1  ;
 
  tail -100                                                                          /root/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log         ;
-
+```
+```
  apachectl  configtest  &&   apachectl  status ;
-
+```
+```
  nohup  bash -vx  /root/server-migration/node/pm2-initialize.bsh                 >  /root/server-migration/node/pm2-initialize.bsh.log   2>&1  &
-
+```
+```
  pm2 status  ;    ## look for all of them "status  online"
-
+```
+```
  bash -vx  /root/server-migration/node/visudo.bsh                                >  /root/server-migration/node/visudo.bsh.log           2>&1  ;
-
+```
+```
  apachectl  status  ;    ### or restart - not sure why this was required on 2026-04-02
+```
 
 
-
-#######################################################
-#                                                     #
-#       t e s t   t h e    r e c o r d e r            #
-#                                                     #
-#######################################################
+#       test   the    recorder 
 
 
-## go to Cloudns and change the IP number of the comptonpeslonline.com's three places to the new iP number, and set TTL value to 1
+      ## go to Cloudns and change the IP number of the comptonpeslonline.com's three places to the new iP number, and set TTL value to 1
 
 
 
 
-#######################################################
-#                                                     #
-#         s - n a i l - p o s t f i x . b s h         #
-#                                                     #
-#######################################################
 
-## first get password from Google:   https://myaccount.google.com/apppasswords
-##  or just use the one already in the php-mailer!
-                                         
+#         s-nail-postfix.bsh 
+
+    ### first get password from Google:   https://myaccount.google.com/apppasswords
+    ###  or just use the one already in the php-mailer!
+    
+```                                         
  bash    /root/server-migration/s-nail/s-nail-postfix.bsh          ;
-
+```
+```
  php   /usr/local/lib/php/SMTPMailer-tester.php  ;   ## test the php mail sender
-
+```
+```
  perl       ./cgi-bin/mailx.pl  ;   ## 2026-04-25   run as comptonpeslonline.com
-   
+```   
 
-##########################
-#                        #
-#         r s y n c      #
-#                        #
-##########################
+#         r s y n c
 
-## TEST rsync  FIRST  !!
+     #### TEST rsync  FIRST  !!
+```     
  sshpass -p  'PASSWORD'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## test to make sure this works!
-
-#  format: rsync  S-O-U-R-C-E     D-E-S-T-I-N-A-T-I-O-N
-
+```
+                ##  format: rsync  S-O-U-R-C-E     D-E-S-T-I-N-A-T-I-O-N
+```
  sshpass -p   'PASSWoRd'                                                                                                               \
       sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh='ssh -o StrictHostKeyChecking=no'                           \
                                                   /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
             comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   ;
-
-
+```
+```
 nohup                                                                                                                                \
  sshpass -p   'PASSWoRd'                                                                                                             \
     sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
           comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
                                                 /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
 &  ## run in background the first time...
-
+```
+```
 nohup                                                                                                                                \
  sshpass -p   'PASSWoRd'                                                                                                             \
     sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
           comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                  \
                                                 /home/comptonpeslonline.com/public_html/voicefiles/                                  \
 &  ## run in background the first time...
-
-
+```
+```
  du  --summarize  --human-readable  /home/comptonpeslonline.com/   ;
+```
 
 
 
-#####################################
-#                                   #
-#   i d r i v e     i n s t a l l   #
-#                                   #
-#####################################
-
+#   idrive     install
+```
 bash -vx  /root/server-migration/idrive/idriveInstall.bsh
-
+```
+```
 /opt/IDriveForLinux/bin/idrive;
+```
    1) Edit backup set and add /kvm###/
    e  ## exit
-
+```
 mkdir    /${KVM_NAME}/backup/  ; 
 echo 'tester'  >  /${KVM_NAME}/backup/tester.txt   ;
 ls  -l            /${KVM_NAME}/backup/tester.txt   ;
-
+```
+```
 /bin/bash  -v     /usr/local/bash/iDriveBackup/idrivePython.bsh   ;
-
+```
 this **MAY** have already been done, double-check:  add  /root/server-migration/idrive/crontab   to  crontab manually
 
 
 
-##################################
-#                                #
-#   f i n a l    t e s t i n g   #
-#                                #
-##################################
+
+#   final    testing  
 
 
     ## there *MAY* be an issue with csf.conf TESTING equal one with google-vm, so that is why we are doing that here rather than the csf.bsh script
+```    
  sed  --in-place  --expression='s/TESTING = "1"/TESTING = "0"/'    /etc/csf/csf.conf   ;    
  /bin/systemctl restart  lfd.service   ;
  /bin/systemctl restart  csf.service   ;
+```
 
 bash  /usr/local/bash/allowIpAddress.bsh     71.223.133.89    Torguard  > result.txt  2>&1   ;   ###  open up NEW ip ##
 
  #### test this was done:   mkdir  /var/www/html   ;   ### is this required  ????  should it be part of a script ???
 
  find  /home/ -type f  -name  '*.php' -exec php -l  {}  \;   >  php-lint-test.txt    2>  php-lint-test-errors.txt  ;    ## php lint test
-
+```
  ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:comptonpeslonline.com"                  ;    ## double-check correct ownership!
-
+```
 
                                                         ####   this need to be tested have "Content-type: text/html" removed and replaced with -M "text/html":
 
@@ -400,11 +391,9 @@ bash  /usr/local/bash/allowIpAddress.bsh     71.223.133.89    Torguard  > result
 
 
 
-##############################################################################
-#                                                                            #
-#   r u n   p h o n e t i c    t r a n s c r i p t i o n    r e m o t e l y  #
-#                                                                            #
-##############################################################################
+
+#   run   phonetic    transcription    remotely
+
 
 vi  /etc/csf/csf.conf  -- open ports 3306   in TCP_OUT (or do it in the GUI interface under "Temporary Allow/Deny"
 
