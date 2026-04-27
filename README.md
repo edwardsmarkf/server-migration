@@ -92,9 +92,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 
 #     preliminary      testing  
 
-                 ######################################
-                 #   p r e l i m i n i a r y          #
-                 ######################################
+###   p r e l i m i n i a r y 
 
 ```
  more   /root/ffmpeg-install-logs/99-test.bsh.log   ;    ### look for results
@@ -102,24 +100,21 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 ```
  bash    /root/server-migration/bash-misc/version_test.bsh    ;    ## notice no dash-v-x switches!
 ```
-        ### define/create domain (if it does not yet exist) using new IP into local etc.hosts file
+        \### define/create domain (if it does not yet exist) using new IP into local etc.hosts file
 ```
  export DOMAIN='zzyzxzzyzx.com'  ; 
 
  virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13                                                                                                    ##  --dns and --web are the ONLY two options requested
  virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this ever be the default?
 ```
-                ##############################
-                #   p h p    t e s t i n g   #
-                ##############################
+
+####   php    testin
 ```
  bash  -vx  /root/server-migration/php/02_php_testing.bsh        ;
 ```
 
 
-                ################################
-                #   p e r l    t e s t i n g   #
-                ################################
+####   perl    testing
 
 ```
  su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;   ## test the perl 'use' command.
@@ -129,18 +124,15 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 ```
 
 
-                ######################################
-                #   m a r i a d b    t e s t i n g   #
-                ######################################
+####   mariadb    testing
+
 ```
  echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
  bash     /root/server-migration/mariadb/05_test_perl_mariadb_connection.bsh           &&  echo  $?  ;
  bash     /root/server-migration/mariadb/05_test_php_mariadb_connection.bsh            &&  echo  $?  ;
 ```
 
-                #######################
-                #   c l e a n   u p   #
-                #######################
+ ####   clean   up 
 ```
  virtualmin  delete-domain  --domain  ${DOMAIN}    ;
  userdel  --remove  fakeperluser  ;
@@ -153,7 +145,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 
 #      unpack    all   the  current   data
 
-            ### also on the new server:
+            \### also on the new server:
 ```
  export TMP_LOCATION=/tmp/old_server_data/   ;     ##
 
@@ -202,7 +194,7 @@ ls  -l         /home/      ;
 
 #   mariadb     data    install 
 
-    ### be SURE unpacking is done first.....!
+    \### be SURE unpacking is done first.....!
 
 ```
  export TMP_LOCATION=/tmp/old_server_data/                  ;     ##
