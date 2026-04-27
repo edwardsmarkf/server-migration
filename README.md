@@ -102,7 +102,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 ##     preliminary testing  
 ***************************************
 
-####  #  preliminary  
+####  *  preliminary  *
 
 ```
  more   /root/ffmpeg-install-logs/99-test.bsh.log   ;    ### look for results
@@ -118,13 +118,13 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
  virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this ever be the default?
 ```
 
-       ####   php    testing
+####  *  php    testing  *
 ```
  bash  -vx  /root/server-migration/php/02_php_testing.bsh        ;
 ```
 
 
-####   perl    testing
+####  * perl    testing *
 
 ```
  su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;   ## test the perl 'use' command.
@@ -134,7 +134,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 ```
 
 
-####   mariadb    testing
+####  *  mariadb    testing *
 
 ```
  echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
@@ -142,7 +142,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
  bash     /root/server-migration/mariadb/05_test_php_mariadb_connection.bsh            &&  echo  $?  ;
 ```
 
-####   clean   up 
+#### *  clean   up *
 ```
  virtualmin  delete-domain  --domain  ${DOMAIN}    ;
  userdel  --remove  fakeperluser  ;
