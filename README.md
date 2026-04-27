@@ -156,7 +156,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 ******************************************
 ##      unpack    all   the  current   data
 *******************************************
-            \### also on the new server:
+\### also on the new server:
 ```
  export TMP_LOCATION=/tmp/old_server_data/   ;     ##
 
@@ -214,7 +214,7 @@ ls  -l         /home/      ;
  cd                  ${TMP_LOCATION}                        ;
 ```
 
-      ## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
+\## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 ```
  sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   /root/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
 ```
@@ -258,7 +258,7 @@ ls  -l         /home/      ;
 *********************************
 ##   move   data   to   proper   location
 ************************************
-#####  put tar files into their proper places  (turned into its own script   2026-04-15
+\#####  put tar files into their proper places  (turned into its own script   2026-04-15
 ```
 nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_location.bsh  >  /root/server-migration/bash-misc/move_data_to_proper_location.bsh.log  2>&1  &
 ```
@@ -266,10 +266,14 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
  du   --summarize  --human-readable     /home/                ;   ## 6.5 gigs
  ls -lR      /home/  |  wc  --lines                           ;   ## count: 499920
 ```
-
+#
+#
+#
+*********************************
 #         pm2 . initialize . bsh 
+*********************************
 
-              ###  ? ? ? ? npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
+\###  ? ? ? ? npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
 ```
  bash -vx  /root/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh       >  /root/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log   2>&1  ;
 
@@ -297,7 +301,7 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 ##       test   the    recorder 
 ********************************************
 
-      ## go to Cloudns and change the IP number of the comptonpeslonline.com's three places to the new iP number, and set TTL value to 1
+\## go to Cloudns and change the IP number of the comptonpeslonline.com's three places to the new iP number, and set TTL value to 1
 #
 #
 #
@@ -305,8 +309,8 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 ##         s-nail-postfix.bsh 
 ***********************************
 
-    ### first get password from Google:   https://myaccount.google.com/apppasswords
-    ###  or just use the one already in the php-mailer!
+\### first get password from Google:   https://myaccount.google.com/apppasswords
+\###  or just use the one already in the php-mailer!
     
 ```                                         
  bash    /root/server-migration/s-nail/s-nail-postfix.bsh          ;
@@ -324,11 +328,11 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 ##         r s y n c
 **************************************************
 
-     #### TEST rsync  FIRST  !!
+\#### TEST rsync  FIRST  !!
 ```     
  sshpass -p  'PASSWORD'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## test to make sure this works!
 ```
-##  format: rsync  S-O-U-R-C-E     D-E-S-T-I-N-A-T-I-O-N
+\##  format: rsync  S-O-U-R-C-E     D-E-S-T-I-N-A-T-I-O-N
 ```
  sshpass -p   'PASSWoRd'                                                                                                               \
       sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh='ssh -o StrictHostKeyChecking=no'                           \
