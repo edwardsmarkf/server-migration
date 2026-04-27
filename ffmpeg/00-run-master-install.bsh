@@ -1,6 +1,7 @@
 #!  /bin/bash  -w
 
 ##    2025-12-30   copied right out of README!
+#     this was necessary to "force" 00-master.bsh to run by sending a 'y' into it.
 
  nohup echo 'y' | bash -vx   ~/server-migration/ffmpeg/00-master.bsh y              \
                          >   ~/server-migration/ffmpeg/00-master.bsh.log     2>&1   ;
