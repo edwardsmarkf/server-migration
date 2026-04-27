@@ -1,6 +1,9 @@
 #! /bin/bash -w
 
 ##  2025-02-12  -- look for lame version
+##  2926-04-25  -- it MAY be possible to use the `dnf install lame-libs;` but the library "libmp3lame.so.X" gets installed 
+#                  in a different library location.  and installing using configure-make-install installs lame in /usr/bin/local 
+#                  while doing the dnf installs lame in /usr/bin
 
 
 #############################
@@ -27,11 +30,6 @@ which lame                ;   ## 2026-02-26
 # END:     l a m e    #
 #                     #
 #######################
-
-
-
-
-
 
 
 
