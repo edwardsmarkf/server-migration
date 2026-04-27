@@ -412,7 +412,7 @@ bash  /usr/local/bash/allowIpAddress.bsh     71.223.133.89    Torguard  > result
 #
 #
 ******************************************
-#   run   phonetic    transcription    remotely
+##   run   phonetic    transcription    remotely
 ******************************************
 
 vi  /etc/csf/csf.conf  -- open ports 3306   in TCP_OUT (or do it in the GUI interface under "Temporary Allow/Deny"
