@@ -20,7 +20,7 @@ make  && make check && make install ;
 
 
 which lame                ;   ## 2026-02-26
-/usr/bin/lame   --version ;   ## 2025-02-12
+/usr/local/bin/lame   --version ;   ## 2025-02-12
 
 #######################
 #                     #
