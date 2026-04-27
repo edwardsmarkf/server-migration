@@ -5,6 +5,7 @@
 #    # # # # # # # # # # # # # # # # # # # # # # # #########
 
 ```
+##   determine which lame is working first.
 curl  https://ftp2.osuosl.org/pub/blfs/conglomeration/lame/lame-3.100.tar.gz                        |  wc  --lines   ;   ## make sure lame exists!
  curl   https://cytranet-dal.dl.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz?viasf=1   |  wc  --lines   ;   ## find lame's source (at least for this week)
 ```
