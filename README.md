@@ -114,7 +114,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 ```
  export DOMAIN='zzyzxzzyzx.com'  ; 
 
- virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;    ## 2025-08-13                                                                                                    ##  --dns and --web are the ONLY two options requested
+ virtualmin  create-domain  --domain  ${DOMAIN}  --pass  abcdefg --dir  --unix  --dns  --web  ;  ## 2025-08-13  --dns and --web are the ONLY two options requested
  virtualmin  modify-web     --domain  ${DOMAIN}  --enable-fcgiwrap ;  ## can this ever be the default?
 ```
 
