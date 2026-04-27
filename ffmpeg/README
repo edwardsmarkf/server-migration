@@ -10,7 +10,7 @@
 2025-10-28  --  check for latest releases (now in list form)
 2025-11-29  --  had some difficulty on virtualbox, probably either disk size or ## of processors  or even memory.  not a problem with the servers but
                 minor inconvenience with virtualbox.
-
+2026-04-26  --  lame CONTINUES to be an issue.   consider switching over to 'dnf  --assumeyes  install lame  lame-lib ;'
 
 ##   to run in batch mode:  
 ##   nohup echo 'y' | bash -vx 00-master.bsh y > 00-master.bsh.log 2>&1 &
