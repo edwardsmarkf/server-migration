@@ -71,7 +71,7 @@ du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 
 ##    fetch   data  to   new   server
 **********************************************
 
-on new server:  (30 minutes)
+on new server:  (15 minutes)
 ```
  dnf  --assumeyes  install sshpass  ;      ## this might not yet be done if this procedure is started too early.
 
