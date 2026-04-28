@@ -1,4 +1,4 @@
-sed on top!
+
 \## FUTURE:  put all log files in their own directory  like  /root/server-migration-logs/
 
 ********************************************
@@ -46,7 +46,7 @@ ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz         
 
 \# change to the mariadb password
 ```
-sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/MaRiAPaSsWoRd/;'  ${TMP_LOCATION}/server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
+sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/MariaDatabasePassword/;'  ${TMP_LOCATION}/server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
 ```
 
 \# optional to make sure password is correct
@@ -221,7 +221,7 @@ ls  -l         /home/      ;
 
 \## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 ```
- sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   /root/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
+ sed --in-place --expression="s/^password=''/password='camelCasePassword'/"   /root/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
 ```
 
 \#double-check the password:
