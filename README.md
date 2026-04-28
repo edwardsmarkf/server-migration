@@ -12,7 +12,7 @@ sed --in-place --expression="s/^password=''/password='decryptionCamelCasePasswor
 
 pre-set the current server sftp:
 ```
-echo  'echo   camelCasePasswordGoesHere    ;  '  >  /root/echoPassword.bsh ;
+echo  'echo   ssh-login-password    ;  '  >  /root/echoPassword.bsh ;
 ```
 #
 #
