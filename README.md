@@ -4,11 +4,6 @@
 ##     new server initialization
 **************************************************
 
-```
-                   ##   determine which lame is working first.
-curl  https://ftp2.osuosl.org/pub/blfs/conglomeration/lame/lame-3.100.tar.gz                        |  wc  --lines   ;   ## make sure lame exists!
- curl   https://cytranet-dal.dl.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz?viasf=1   |  wc  --lines   ;   ## find lame's source (at least for this week)
-```
 
 ```
 timedatectl set-timezone America/New_York   ;   timedatectl  ;       ## 2026-04-15 not sure why this is not the default...??
@@ -48,17 +43,22 @@ tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m
 ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;
 ```
 
+change to the mariadb password
 ```
 sed --in-place --expression='1,/CHANGE-THIS/s/CHANGE-THIS/MaRiAPaSsWoRd/;'  ${TMP_LOCATION}/server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
 ```
 
+optional to make sure password is correct
 ```
 grep  '^MARIADB_PASSWORD='                                                  ${TMP_LOCATION}/server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh  ;   ## dont copy/paste past here!
 ```
+
 ```
 nohup  time  nice bash -vx  ${TMP_LOCATION}/server-migration/bash-misc/current-server-data-extraction.bsh      \
                          >  ${TMP_LOCATION}/server-migration/bash-misc/current-server-data-extraction.bsh.log  &   ## run detached
 ```
+
+test results:
 ```
 ls  -l   --human   /home/mark/*.gz                     ;
 du  --human-readable  --summarize   /home/mark/*.gz    ;
@@ -84,12 +84,12 @@ on new server:  (30 minutes)
 ```
  sshpass -p  'MYpASSWORDfORaCCTmARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
 ```
+  -sftp>   ls -lh        ## human readable file size  /home/ one is 3.3 gigs
+  -sftp>   mget  *.gz    ## fetch the gzips
+  -sftp>   !ls -lh`      ## file sizes on NEW server (notice bang character)
+  -sftp>   rm  *.gz`     ## can be done in the sftp session!  
 
-    sftp>   ls -lh        ## human readable file size  /home/ one is 3.3 gigs
-    sftp>   mget  *.gz    ## fetch the gzips
-    sftp>   !ls -lh`      ## file sizes on NEW server (notice bang character)
-    sftp>   rm  *.gz`     ## can be done in the sftp session!  
-
+test the results:
 ```
 ls -lh                               ${TMP_LOCATION}/*.gz    ;
 du  --human-readable  --summarize    ${TMP_LOCATION}/*.gz    ;
@@ -104,12 +104,16 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 
 ####  *  preliminary  *
 
+check the ffmpeg install:
 ```
  more   /root/ffmpeg-install-logs/99-test.bsh.log   ;    ### look for results
 ```
+
+check all installations for version numbers:  (this may need to be ran TWICE)
 ```
  bash    /root/server-migration/bash-misc/version_test.bsh    ;    ## notice no dash-v-x switches!
 ```
+
 \### define/create domain (if it does not yet exist) using new IP into local etc.hosts file
 ```
  export DOMAIN='zzyzxzzyzx.com'  ; 
@@ -174,6 +178,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 END_OF_UNPACK
 nohup time bash -vx  -   >   /root/current-server-tar-gz-unpack.log   2>&1  &   ## detach 
 ```
+check the results:
 ```
 ls  -lh                             ${TMP_LOCATION}                  ;
 du  --summarize  --human-readable   ${TMP_LOCATION}                  ;                 ## 13 gigs
@@ -198,6 +203,7 @@ ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
 CREATE_ALL_VIRTUAL_SERVERS
 nohup time bash -vx  -   >      /root/create-all-virtual-servers.log   2>&1  &   ## detach 
 ```
+check the results:
 ```
 ls  -l         /home/      ;
 ```
@@ -218,16 +224,24 @@ ls  -l         /home/      ;
 ```
  sed --in-place --expression="s/^password=''/password='CHANGE-THIS'/"   /root/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
 ```
+
+double-check the password:
 ```
  grep  '^password='                                                     /root/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## inspect it
 ```
+
+create and inspect script to create the empty db's and the users:
 ```
  bash   /root/server-migration/mariadb/migration/create_db_and_users.bsh  >  ${TMP_LOCATION}/create_db_and_users.sql                ;
  cat                                                                         ${TMP_LOCATION}/create_db_and_users.sql                ;
 ```
+
+create the empty db's and users:
 ```
  mariadb      --verbose                                                   <  ${TMP_LOCATION}/create_db_and_users.sql                ;
 ```
+
+create and inspect script to load the data:
 ```
  bash      /root/server-migration/mariadb/migration/create_db_and_users.bsh                               \
          | grep  TEMP_SQL_LOCATION                                                                        \
@@ -237,20 +251,20 @@ ls  -l         /home/      ;
  cat   ${TMP_LOCATION}/load_sql_tables.bsh                                                                            ;     ## inspect it 
 ```
 
+load the data into the tables
 ```
  nohup time bash  -vx  ${TMP_LOCATION}/load_sql_tables.bsh  >  /root/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
 ```
 
+check the results
 ```
  du  --summarize  --human-readable  /var/lib/mysql/                                                                        ;     ## check for total size   1.4 gigs
+ mariadb-show --count ;   ## spot-check the number of rows!
 ```
 
+secure mariadb
 ```
  mariadb-secure-installation;   ## IMPORTANT!
-```
-
-```
- mariadb-show --count ;   ## spot-check the number of rows!
 ```
 #
 #
@@ -262,6 +276,8 @@ ls  -l         /home/      ;
 ```
 nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_location.bsh  >  /root/server-migration/bash-misc/move_data_to_proper_location.bsh.log  2>&1  &
 ```
+
+check the results
 ```
  du   --summarize  --human-readable     /home/                ;   ## 6.5 gigs
  ls -lR      /home/  |  wc  --lines                           ;   ## count: 499920
@@ -279,18 +295,28 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 
  tail -100                                                                          /root/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log         ;
 ```
+
+check apache is ok
 ```
  apachectl  configtest  &&   apachectl  status ;
 ```
+
+create the pm2 jobs:
 ```
  nohup  bash -vx  /root/server-migration/node/pm2-initialize.bsh                 >  /root/server-migration/node/pm2-initialize.bsh.log   2>&1  &
 ```
+
+check the results
 ```
  pm2 status  ;    ## look for all of them "status  online"
 ```
+
+load the visudo permission file
 ```
  bash -vx  /root/server-migration/node/visudo.bsh                                >  /root/server-migration/node/visudo.bsh.log           2>&1  ;
 ```
+
+double-check apache
 ```
  apachectl  status  ;    ### or restart - not sure why this was required on 2026-04-02
 ```
@@ -315,9 +341,13 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 ```                                         
  bash    /root/server-migration/s-nail/s-nail-postfix.bsh          ;
 ```
+
+test php outgoing mail
 ```
  php   /usr/local/lib/php/SMTPMailer-tester.php  ;   ## test the php mail sender
 ```
+
+check perl outgoing mail
 ```
  perl       ./cgi-bin/mailx.pl  ;   ## 2026-04-25   run as comptonpeslonline.com
 ```   
@@ -339,6 +369,8 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
                                                   /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
             comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   ;
 ```
+
+pass data from /user-recorded-audio-files/ from CURRENT server to NEW server
 ```
 nohup                                                                                                                                \
  sshpass -p   'PASSWoRd'                                                                                                             \
@@ -347,6 +379,8 @@ nohup                                                                           
                                                 /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
 &  ## run in background the first time...
 ```
+
+get data from /voicefiles/ from CURRENT server to NEW server
 ```
 nohup                                                                                                                                \
  sshpass -p   'PASSWoRd'                                                                                                             \
@@ -355,6 +389,8 @@ nohup                                                                           
                                                 /home/comptonpeslonline.com/public_html/voicefiles/                                  \
 &  ## run in background the first time...
 ```
+
+check total size:
 ```
  du  --summarize  --human-readable  /home/comptonpeslonline.com/   ;
 ```
@@ -368,16 +404,22 @@ nohup                                                                           
 ```
 bash -vx  /root/server-migration/idrive/idriveInstall.bsh
 ```
+
+run the first time to initialize
 ```
 /opt/IDriveForLinux/bin/idrive;
 ```
-   1) Edit backup set and add /kvm###/
-   e  ## exit
+  -1) Edit backup set and add /kvm###/
+  -e  ## exit
+
+create idrive backup location and try out a test file
 ```
 mkdir    /${KVM_NAME}/backup/  ; 
 echo 'tester'  >  /${KVM_NAME}/backup/tester.txt   ;
 ls  -l            /${KVM_NAME}/backup/tester.txt   ;
 ```
+
+now run idrive to see if it backs up
 ```
 /bin/bash  -v     /usr/local/bash/iDriveBackup/idrivePython.bsh   ;
 ```
