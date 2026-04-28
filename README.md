@@ -84,10 +84,10 @@ on new server:  (15 minutes)
 ```
  sshpass -p  'MYpASSWORDfORaCCTmARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
 ```
-  -sftp>   ls -lh        ## human readable file size  /home/ one is 3.3 gigs
-  -sftp>   mget  *.gz    ## fetch the gzips
-  -sftp>   !ls -lh`      ## file sizes on NEW server (notice bang character)
-  -sftp>   rm  *.gz`     ## can be done in the sftp session!  
+  - sftp>   ls -lh        ## human readable file size  /home/ one is 3.3 gigs
+  - sftp>   mget  *.gz    ## fetch the gzips
+  - sftp>   !ls -lh`      ## file sizes on NEW server (notice bang character)
+  - sftp>   rm  *.gz`     ## can be done in the sftp session!  
 
 test the results:
 ```
