@@ -1,6 +1,23 @@
 
 \## FUTURE:  put all log files in their own directory  like  /root/server-migration-logs/
 
+*****
+###  pre-set passwords  (optional)
+*****
+
+pre-set the decryption password:
+```
+sed --in-place --expression="s/^password=''/password='decryptionCamelCasePassword'/"   /root/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
+```
+
+pre-set the old server login:
+```
+export sshPassWord='camelCasePasswordGoesHere!' ;  ## this will be used for the sshpass command in the fetch step.
+echo ${sshPassWord};
+```
+#
+#
+#
 ********************************************
 ##     new server initialization
 **************************************************
@@ -83,7 +100,7 @@ du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 
 \##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
                                                 ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
 ```
- sshpass -p  'MYpASSWORDfORaCCTmARK'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
+ sshpass -p  "${sshPassWord}"  sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
 ```
   - sftp>   ls -lh        ## human readable file size  /home/ one is 3.3 gigs
   - sftp>   mget  *.gz    ## fetch the gzips
