@@ -236,7 +236,7 @@ ls  -l         /home/      ;
 
 \## the childs last name (lowercase) and the childs first name (camelCase) and the special one from 1974-1991 (camelCamelCase) no spaces
 ```
- sed --in-place --expression="s/^password=''/password='$(bash /root/camel-case-decrypt-password ;)'/"   /root/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
+ sed --in-place --expression="s/^password=''/password='$(bash /root/camel-case-decrypt-password.bsh ;)'/"   /root/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
 ```
 
 \#double-check the password:
