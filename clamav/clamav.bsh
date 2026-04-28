@@ -3,9 +3,10 @@
 #####       clamav.bsh  #######   -- 2016-02-06  -- moved from README 2019-06-19
 
 #    2026-03-08  -- misc changes, no --parent in mv, manual_clamscan is NOT a directory (removed trailing slash) , etc.
+#    2026-04-28  -- added in "systemctl enable --now"
 
 
-dnf install --assumeyes  clamav clamd clamav-update ;
+dnf install --assumeyes  clamav   clamd   clamav-update ;
 
 ## make SURE clamav is installed:
                                          
@@ -26,6 +27,9 @@ DatabaseCustomURL http://sigs.interserver.net/whitelist.fp
 END_OF_FRESHCLAM
 
 tail -10   /etc/freshclam.conf ;
+
+systemctl enable  clamd@scan.service  clamav-freshclam.service    --now ;     ## 2026-04-28
+
 
 #####end clamav ###############
 
