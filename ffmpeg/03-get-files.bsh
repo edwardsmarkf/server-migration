@@ -25,55 +25,52 @@
 #                             #
 ###############################
 
-curl  https://sourceware.org/pub/bzip2/bzip2-latest.tar.gz                          \
-      >           ~/INSTALL_FFmpeg/INSTALL_bzip/bzip2-latest.tar.gz                 ;
 
-git clone https://github.com/yasm/yasm.git                                          \
-    ~/INSTALL_FFmpeg/INSTALL_yasm/yasm                                              ;  
+git clone https://github.com/yasm/yasm.git             /root/INSTALL_FFmpeg/INSTALL_yasm/yasm      ;  
+git clone https://code.videolan.org/videolan/x264.git  /root/INSTALL_FFmpeg/INSTALL_x264/          ;  ## 2020-01-07
 
 
-curl  https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.5.0.tar.xz               \
-        >           ~/INSTALL_FFmpeg/INSTALL_flac/flac-1.5.0.tar.xz                 ;
+curl  --location  https://sourceware.org/pub/bzip2/bzip2-latest.tar.gz                       \
+      --output    /root/INSTALL_FFmpeg/INSTALL_bzip/bzip2-latest.tar.gz                      ;
 
+curl  --location  https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.5.0.tar.xz            \
+      --output    /root/INSTALL_FFmpeg/INSTALL_flac/flac-1.5.0.tar.xz                        ;
 
-curl  https://ftp.osuosl.org/pub/xiph/releases/ogg/libogg-1.3.6.tar.gz              \
-        >         ~/INSTALL_FFmpeg/INSTALL_libogg/libogg-1.3.6.tar.gz               ;
+curl  --location  https://ftp.osuosl.org/pub/xiph/releases/ogg/libogg-1.3.6.tar.gz           \
+      --output    /root/INSTALL_FFmpeg/INSTALL_libogg/libogg-1.3.6.tar.gz                    ;
 
-curl  https://ftp.osuosl.org/pub/xiph/releases/vorbis/libvorbis-1.3.7.tar.xz        \
-    >              ~/INSTALL_FFmpeg/INSTALL_vorbis/libvorbis-1.3.7.tar.xz           ;
+curl  --location  https://ftp.osuosl.org/pub/xiph/releases/vorbis/libvorbis-1.3.7.tar.xz     \
+      --output    /root/INSTALL_FFmpeg/INSTALL_vorbis/libvorbis-1.3.7.tar.xz                 ;
 
-curl  https://ftp.osuosl.org/pub/xiph/releases/opus/opus-1.6.1.tar.gz               \
-     > ~/INSTALL_FFmpeg/INSTALL_opus/opus-1.6.1.tar.gz                              ;
+curl  --location  https://ftp.osuosl.org/pub/xiph/releases/opus/opus-1.6.1.tar.gz            \
+      --output    /root/INSTALL_FFmpeg/INSTALL_opus/opus-1.6.1.tar.gz                        ;
 
-curl   https://ftp.osuosl.org/pub/xiph/releases/opus/libopusenc-0.3.tar.gz          \
-   >  ~/INSTALL_FFmpeg/INSTALL_libopusenc/libopusenc-0.3.tar.gz                     ;
+curl  --location  https://ftp.osuosl.org/pub/xiph/releases/opus/libopusenc-0.3.tar.gz        \
+      --output    /root/INSTALL_FFmpeg/INSTALL_libopusenc/libopusenc-0.3.tar.gz              ;
 
-curl  https://ftp.osuosl.org/pub/xiph/releases/opus/opusfile-0.12.tar.gz            \
-        > ~/INSTALL_FFmpeg/INSTALL_opusfile/opusfile-0.12.tar.gz                    ;
+curl  --location  https://ftp.osuosl.org/pub/xiph/releases/opus/opusfile-0.12.tar.gz         \
+      --output    /root/INSTALL_FFmpeg/INSTALL_opusfile/opusfile-0.12.tar.gz                 ;
 
-curl   https://ftp.osuosl.org/pub/xiph/releases/opus/opus-tools-0.2.tar.gz          \
-    >  ~/INSTALL_FFmpeg/INSTALL_opustool/opus-tools-0.2.tar.gz                      ;
+curl  --location  https://ftp.osuosl.org/pub/xiph/releases/opus/opus-tools-0.2.tar.gz        \
+      --output    /root/INSTALL_FFmpeg/INSTALL_opustool/opus-tools-0.2.tar.gz                ;
 
+curl  --location  https://sourceforge.net/projects/lame/files/lame/3.100/lame-3.100.tar.gz   \
+      --output    /root/INSTALL_FFmpeg/INSTALL_lame/lame-latest.tar.gz                       ;
 
-curl  --location  "https://sourceforge.net/projects/lame/files/lame/3.100/lame-3.100.tar.gz"   \
-    --output ~/INSTALL_FFmpeg/INSTALL_lame/lame-latest.tar.gz                                  ;
- 
-git clone https://code.videolan.org/videolan/x264.git  ~/INSTALL_FFmpeg/INSTALL_x264/ ;  ## 2020-01-07
+curl  --location  https://www.ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2                    \
+      --output    /root/INSTALL_FFmpeg/INSTALL_FFmpeg/ffmpeg-snapshot.tar.bz2                ;
 
-curl  https://www.ffmpeg.org/releases/ffmpeg-snapshot.tar.bz2                       \
-      > ~/INSTALL_FFmpeg/INSTALL_FFmpeg/ffmpeg-snapshot.tar.bz2                     ;
+curl  --location  https://dl.espressif.com/dl/audio/ff-16b-2c-44100hz.wav                    \
+      --output    /root/INSTALL_FFmpeg/test/bat-guano.wav                                    ;
 
-curl  https://dl.espressif.com/dl/audio/ff-16b-2c-44100hz.wav                       \
-    >    ~/INSTALL_FFmpeg/test/bat-guano.wav                                        ;
+curl  --location  https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg            \
+      --output    /root/INSTALL_FFmpeg/test/example.ogg                                      ;
 
-curl  https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg               \
-   >     ~/INSTALL_FFmpeg/test/example.ogg                                          ;
+curl  --location  https://opus-codec.org/static/examples/ehren-paper_lights-96.opus          \
+      --output    /root/INSTALL_FFmpeg/test/detodos.opus                                     ;
 
-curl  https://opus-codec.org/static/examples/ehren-paper_lights-96.opus             \
-   > ~/INSTALL_FFmpeg/test/detodos.opus                                             ;
-
-curl  https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.opus                      \
-   > ~/INSTALL_FFmpeg/test/detodos2.opus                                            ;
+curl  --location  https://dl.espressif.com/dl/audio/ff-16b-1c-44100hz.opus                   \
+      --output    /root/INSTALL_FFmpeg/test/detodos2.opus                                    ;
 
 
 ###############################
