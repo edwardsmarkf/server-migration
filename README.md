@@ -213,9 +213,6 @@ ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
 
      [ ! -d "/var/www/html/" ] && mkdir  --verbose  --parents   /var/www/html/                ;   ## 2026-04-13
      ls -l  /var/www  | grep html                                                             ;   ## 2026-04-25
-
-     ##  no sense in doing this now since the SSL's are missing until the 'move' step is completed....    ##systemctl  restart  httpd.service   ;    ##
-     ##                                                                                                   ##apachectl  status                   ;
 CREATE_ALL_VIRTUAL_SERVERS
 nohup time bash -vx  -   >      /root/create-all-virtual-servers.log   2>&1  &   ## detach 
 ```
