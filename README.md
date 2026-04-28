@@ -10,7 +10,7 @@ pre-set the decryption password:
 sed --in-place --expression="s/^password=''/password='decryptionCamelCasePassword'/"   /root/server-migration/mariadb/migration/create_db_and_users.bsh    ;    ## edit and add password!
 ```
 
-pre-set the old server login:
+pre-set the old server sftp:
 ```
 export sshPassWord='camelCasePasswordGoesHere!' ;  ## this will be used for the sshpass command in the fetch step.
 echo ${sshPassWord};
