@@ -55,8 +55,8 @@ curl   https://ftp.osuosl.org/pub/xiph/releases/opus/opus-tools-0.2.tar.gz      
     >  ~/INSTALL_FFmpeg/INSTALL_opustool/opus-tools-0.2.tar.gz                      ;
 
 
-curl  --location  "https://sourceforge.net/projects/lame/files/lame/3.100/lame-3.100.tar.gz/"   \
-    --output ~/lame-latest.tar.gz  ~/INSTALL_FFmpeg/INSTALL_lame/lame-latest.tar.gz             ;
+curl  --location  "https://sourceforge.net/projects/lame/files/lame/3.100/lame-3.100.tar.gz"   \
+    --output ~/INSTALL_FFmpeg/INSTALL_lame/lame-latest.tar.gz                                  ;
  
 git clone https://code.videolan.org/videolan/x264.git  ~/INSTALL_FFmpeg/INSTALL_x264/ ;  ## 2020-01-07
 
