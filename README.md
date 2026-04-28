@@ -8,13 +8,17 @@
 pre-set the decryption password:
 ```
 echo  'echo   camel-case-decrypt-password    ;  '  >  /root/camel-case-decrypt-password.bsh ;
-bash -vx                                              /root/camel-case-decrypt-password.bsh ;
 ```
 
 pre-set the current server sftp:
 ```
-echo  'echo   ssh-login-password    ;  '  >  /root/ssh-login-password.bsh ;
-bash -vx                                     /root/ssh-login-password.bsh ;
+echo  'echo   ssh-login-password    ;  '           >  /root/ssh-login-password.bsh ;
+```
+test:
+```
+bash -vx                                              /root/camel-case-decrypt-password.bsh ;
+bash -vx                                              /root/ssh-login-password.bsh ;
+
 ```
 #
 #
