@@ -16,6 +16,7 @@
 ## 2025-12-30 - old wav file gone, found new one
 ## 2026-01-18 - moved away from mozilla since it does not seem to keep current
 ## 2026-04-26 - got lame from a different source  (YET YET YET AGAIN)
+## 2026-04-27 - added  "--location"  to lame to deal with the "redirect" issue
 
 
 ###############################
@@ -54,8 +55,8 @@ curl   https://ftp.osuosl.org/pub/xiph/releases/opus/opus-tools-0.2.tar.gz      
     >  ~/INSTALL_FFmpeg/INSTALL_opustool/opus-tools-0.2.tar.gz                      ;
 
 
-curl  https://ftp2.osuosl.org/pub/blfs/conglomeration/lame/lame-3.100.tar.gz        \
-    > ~/INSTALL_FFmpeg/INSTALL_lame/lame-latest.tar.gz                              ;
+curl  --location  https://sourceforge.net/projects/lame/files/lame/3.100/lame-3.100.tar.gz/download   \
+    --output ~/lame-latest.tar.gz  ~/INSTALL_FFmpeg/INSTALL_lame/lame-latest.tar.gz                   ;
  
 git clone https://code.videolan.org/videolan/x264.git  ~/INSTALL_FFmpeg/INSTALL_x264/ ;  ## 2020-01-07
 
@@ -86,6 +87,7 @@ exit;
 
 
 ##################  2026-04-26 curl   https://cytranet-dal.dl.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz?viasf=1   
+###################  https://ftp2.osuosl.org/pub/blfs/conglomeration/lame/lame-3.100.tar.gz        \
 
 
         ##curl https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.4.3.tar.xz  \  ## 2025-07-24
