@@ -11,7 +11,7 @@ maybe osuosl and mozilla archive can be used interchangeably?  NO mozilla arcxiv
 
 [libvorbis 1.3.7](https://ftp.osuosl.org/pub/xiph/releases/vorbis/)                -- 2020-07-04 06:29	1.1M	 
 
-[libopusenc 0.3}](https://ftp.osuosl.org/pub/xiph/releases/opus/)                  -- 2026-01-02 23:31	399K	 
+[libopusenc 0.3](https://ftp.osuosl.org/pub/xiph/releases/opus/)                  -- 2026-01-02 23:31	399K	 
 
 [opus 1.6.1](https://ftp.osuosl.org/pub/xiph/releases/opus/)                   -- 2026-01-15 00:31	10M
 
