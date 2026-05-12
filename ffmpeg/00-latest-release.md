@@ -17,7 +17,7 @@ maybe osuosl and mozilla archive can be used interchangeably?  NO mozilla arcxiv
 
 [opus-tools 0.2](https://ftp.osuosl.org/pub/xiph/releases/opus/)                 -- 2018-09-18 19:04	-- 447K	 
 
-[lame 3.100](https://cytranet-dal.dl.sourceforge.net/project/lame/lame/)      --  2017-10-13
+[lame 3.100](https://cytranet-dal.dl.sourceforge.net/project/lame/lame/)      --  2017-10-13  --  1.488K
 
 
 
