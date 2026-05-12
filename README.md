@@ -47,7 +47,7 @@ mkdir  --verbose   /kvm502/                                        ;   ## 2026-0
     cd   /root/server-migration/                                                                                          ;
     time bash -vx  /root/server-migration/Master_Installer.bsh &> /root/server-migration/Master_Installer.bsh.log   #2>&1   ;
 END_OF_INITIALIZATION
-nohup  time  bash -vx  -   &>  /root/do-all-the-work.bsh.log  #2>&1  &
+nohup  time  bash -vx  -   &>  /root/do-all-the-work.bsh.log   &      #2>&1
 ```
 #
 #
@@ -197,7 +197,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
    tar  --extract  --file     \${TMP_LOCATION}/usr_local_bash.tar     ;
    tar  --extract  --file     \${TMP_LOCATION}/usr_local_lib_php.tar  ;
 END_OF_UNPACK
-nohup time bash -vx  -   >   /root/current-server-tar-gz-unpack.log   2>&1  &   ## detach 
+nohup time bash -vx  -   &>   /root/current-server-tar-gz-unpack.log     &   ## detach   2>&1
 ```
 \#check the results:
 ```
