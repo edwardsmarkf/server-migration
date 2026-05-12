@@ -1,6 +1,6 @@
 look for LATEST releases of the following & modify 03-get-files.bsh accordingly:
 
-# maybe osuosl and mozilla archive can be used interchangeably?  NO mozilla arcxive does not seem to have the latest
+maybe osuosl and mozilla archive can be used interchangeably?  NO mozilla arcxive does not seem to have the latest
 
 2026-01-18 - removed mozilla archive
 
