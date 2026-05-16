@@ -20,6 +20,10 @@ bash -vx                                              /root/camel-case-decrypt-p
 bash -vx                                              /root/ssh-login-password.bsh ;
 
 ```
+fix the bootup issue from dynamic dhcp to fixed:
+```
+ bash    /root/server-migration/bash-misc/nmcli.bsh    ;    ## interserver dhcp to static fix
+```
 #
 #
 #
