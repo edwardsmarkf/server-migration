@@ -20,10 +20,7 @@ bash -vx                                              /root/camel-case-decrypt-p
 bash -vx                                              /root/ssh-login-password.bsh ;
 
 ```
-fix the bootup issue from dynamic dhcp to fixed:
-```
- bash    /root/server-migration/bash-misc/nmcli.bsh    ;    ## interserver dhcp to static fix
-```
+
 #
 #
 #
@@ -31,6 +28,10 @@ fix the bootup issue from dynamic dhcp to fixed:
 ##     new server initialization
 **************************************************
 
+fix the bootup issue from dynamic dhcp to fixed:
+```
+ bash    /root/server-migration/bash-misc/nmcli.bsh    ;    ## interserver dhcp to static fix
+```
 
 ```
 timedatectl set-timezone America/New_York   ;   timedatectl  ;       ## 2026-04-15 not sure why this is not the default...??
