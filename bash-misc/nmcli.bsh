@@ -1,0 +1,16 @@
+#! /bin/bash  -w
+#
+#    nmcli.bsh  --2026-05-16
+#
+#    this is/was necessary for clean reboot at interserver  - supposedly dhcp was causing boot issues, 
+#    so john q switch over to static IP.
+#
+nmcli connection up     ens3                                               ;
+nmcli connection modify ens3 ipv4.method    manual                         ;
+nmcli connection modify ens3 ipv4.addresses 163.245.222.4/24               ;
+nmcli connection modify ens3 ipv4.gateway   163.245.222.1                  ;
+nmcli connection modify ens3 ipv4.dns       "69.10.54.252,66.45.251.218"   ; 
+nmcli connection up     ens3                                               ;
+
+exit;
+
