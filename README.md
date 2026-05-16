@@ -30,7 +30,8 @@ bash -vx                                              /root/ssh-login-password.b
 
 fix the bootup issue from dynamic dhcp to fixed:
 ```
- bash    /root/server-migration/bash-misc/nmcli.bsh    ;    ## interserver dhcp to static fix
+bash  -vx  /root/server-migration/bash-misc/nmcli.bsh  &>  /root/server-migration/bash-misc/nmcli.bsh.log ;    ## interserver dhcp to static fix
+cat   /root/server-migration/bash-misc/nmcli.bsh.log ; 
 ```
 
 ```
