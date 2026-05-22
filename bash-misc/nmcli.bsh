@@ -5,6 +5,8 @@
 #    this is/was necessary for clean reboot at interserver  - supposedly dhcp was causing boot issues, 
 #    so john q switch over to static IP.
 #
+#  The config is technically in /etc/NetworkManager/system-connections/* but generally not edited directly instead nmcli is used to edit it.
+#
 nmcli connection up     ens3                                               ;
 nmcli connection modify ens3 ipv4.method    manual                         ;
 nmcli connection modify ens3 ipv4.addresses 163.245.222.4/24               ;
