@@ -20,7 +20,7 @@ done
 
 mkdir  --verbose   ~/ffmpeg-install-logs/       ;
 
-bash -vx   ~/server-migration/ffmpeg/01-initial.bsh	   &>  ~/ffmpeg-install-logs/01-initial.bsh.log          ;
+bash -vx   ~/server-migration/ffmpeg/01-initial.bsh        &>  ~/ffmpeg-install-logs/01-initial.bsh.log          ;
 bash -vx   ~/server-migration/ffmpeg/02-directories.bsh	   &>  ~/ffmpeg-install-logs/02-directories.bsh.log      ;
 bash -vx   ~/server-migration/ffmpeg/03-get-files.bsh	   &>  ~/ffmpeg-install-logs/03-get-files.bsh.log        ;
 bash -vx   ~/server-migration/ffmpeg/04-file-sizes.bsh	   &>  ~/ffmpeg-install-logs/04-file-sizes.bsh.log       ;
