@@ -19,3 +19,27 @@ nmcli connection up     ens3                                               ;
 
 exit;
 
+
+
+ more   /etc/NetworkManager/system-connections/ens3.nmconnection
+[connection]
+id=ens3
+uuid=f2972f6a-1c46-369c-825c-f552de7d9d18
+type=ethernet
+autoconnect-priority=-999
+interface-name=ens3
+timestamp=1778861655
+
+[ethernet]
+
+[ipv4]
+address1=163.245.222.4/24
+dns=69.10.54.252;66.45.251.218;
+gateway=163.245.222.1
+method=manual
+
+[ipv6]
+addr-gen-mode=eui64
+method=auto
+
+[proxy]
