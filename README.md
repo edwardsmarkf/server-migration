@@ -27,12 +27,6 @@ bash -vx                                              /root/ssh-login-password.b
 ##     new server initialization
 **************************************************
 
-fix the bootup issue from dynamic dhcp to fixed:
-```
-bash  -vx  /root/server-migration/bash-misc/nmcli.bsh  &>  /root/server-migration/bash-misc/nmcli.bsh.log ;    ## interserver dhcp to static fix
-cat   /root/server-migration/bash-misc/nmcli.bsh.log ; 
-```
-
 ```
 timedatectl set-timezone America/New_York   ;   timedatectl  ;       ## 2026-04-15 not sure why this is not the default...??
 
