@@ -6,6 +6,7 @@
 #
 #    nohup  bash -vx   ~/server-migration/Master_Installer.bsh   >   ~/server-migration/Master_Installer.bsh.log  2>&1  &
 #
+#   2026-05-26 - added nmcli.bsh
 
 echo "Start date/time is $(date;)" ;
 
@@ -37,12 +38,12 @@ echo 'hopefully you have checked for the latest version...???' ;
      ###################
 
 
-bash -vx   ~/server-migration/bash-misc/dnf-yum.bsh               > ~/server-migration/bash-misc/dnf-yum.bsh.log               2>&1   ;
-bash -vx   ~/server-migration/bash-misc/root-init.bsh             > ~/server-migration/bash-misc/root-init.bsh.log             2>&1   ;
-bash -vx   ~/server-migration/bash-misc/certbot.bsh               > ~/server-migration/bash-misc/certbot.bsh.log               2>&1   ;
-bash -vx   ~/server-migration/bash-misc/create-log-directory.bsh  > ~/server-migration/bash-misc/create-log-directory.bsh.log  2>&1   ;
-bash -vx   ~/server-migration/bash-misc/wkhtmltopdf.bsh           > ~/server-migration/bash-misc/wkhtmltopdf.bsh.log           2>&1   ;
-
+bash -vx   ~/server-migration/bash-misc/dnf-yum.bsh               &> /root/server-migration/bash-misc/dnf-yum.bsh.log               ;
+bash -vx   ~/server-migration/bash-misc/root-init.bsh             &> /root/server-migration/bash-misc/root-init.bsh.log             ;
+bash -vx   ~/server-migration/bash-misc/certbot.bsh               &> /root/server-migration/bash-misc/certbot.bsh.log               ;
+bash -vx   ~/server-migration/bash-misc/create-log-directory.bsh  &> /root/server-migration/bash-misc/create-log-directory.bsh.log  ;
+bash -vx   ~/server-migration/bash-misc/wkhtmltopdf.bsh           &> /root/server-migration/bash-misc/wkhtmltopdf.bsh.log           ;
+bash  -vx  /root/server-migration/bash-misc/nmcli.bsh             &> /root/server-migration/bash-misc/nmcli.bsh.log                 ;    ## interserver dhcp to static fix
 
      ##########################
      #                        #
