@@ -18,7 +18,6 @@ test:
 ```
 bash -vx                                              /root/camel-case-decrypt-password.bsh ;
 bash -vx                                              /root/ssh-login-password.bsh ;
-
 ```
 
 #
