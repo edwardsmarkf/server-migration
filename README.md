@@ -5,7 +5,8 @@
 ###  pre-set passwords  (optional)
 *****
 
-pre-set the decryption password:
+pre-set the decryption password:   -- the childs last name (lowercase) and the childs first name (camelCase) 
+and the special one from 1974-1991 (camelCamelCase) no spaces
 ```
 echo  'echo   camel-case-decrypt-password    ;  '  >  /root/camel-case-decrypt-password.bsh ;
 ```
