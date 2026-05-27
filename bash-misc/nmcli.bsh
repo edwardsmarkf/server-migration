@@ -12,6 +12,22 @@ export NETWORK_ID=$(ip -brief link | grep -v UNKNOWN | cut -f1 -d' '; ) ;   ##  
 #
 cp --verbose  /etc/NetworkManager/system-connections/${NETWORK_ID}.nmconnection   ~      ;
 #
+nmcli connection modify ${NETWORK_ID}        \
+      ipv4.method manual                     \
+      ipv4.addresses 163.245.222.4/24        \
+      ipv4.gateway 163.245.222.1             \
+      ipv4.dns "69.10.54.252, 66.45.251.210" \
+&& nmcli device reapply ${NETWORK_ID}        \
+&& echo -e "\n--- VERIFICATION ---"          \
+&& nmcli -f ipv4.method,ipv4.addresses,ipv4.gateway connection show ${NETWORK_ID} \
+&& ip -4 addr show ${NETWORK_ID} | grep inet ;
+
+#
+diff  /etc/NetworkManager/system-connections/${NETWORK_ID}.nmconnection   ~          ;
+#
+exit;
+
+
 nmcli connection up     ${NETWORK_ID}                                                ;
 nmcli connection modify ${NETWORK_ID} ipv4.method    manual                          ;
 nmcli connection modify ${NETWORK_ID} ipv4.addresses 163.245.222.4/24                ;
