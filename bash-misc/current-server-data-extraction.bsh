@@ -31,11 +31,11 @@ tar --create --gunzip   --file=/home/mark/home.tar.gz                           
    ##   is the two --exclude statements working together???  the overall size of  /home/ sure is smaller than before.
                               
 #
-history                                                          >   /home/mark/bash_history    ;   
-ls -l                                                                /home/mark/bash_history    ;
-chmod  --verbose  755                                                /home/mark/bash_history    ;  
-gzip                                                                 /home/mark/bash_history    ;
-ls -l                                                                /home/mark/bash_history*   ;
+history                                                          >   /home/mark/bash_history.txt    ;   
+ls -l                                                                /home/mark/bash_history.txt    ;
+chmod  --verbose  755                                                /home/mark/bash_history.txt    ;  
+gzip                                                                 /home/mark/bash_history.txt    ;
+ls -l                                                                /home/mark/bash_history.txt.gz ;
 #
 ls  -lh   /home/mark/*.gz                                                                       ;
 du  -hs   /home/mark/*.gz ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
