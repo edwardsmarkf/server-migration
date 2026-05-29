@@ -32,8 +32,10 @@ tar --create --gunzip   --file=/home/mark/home.tar.gz                           
                               
 #
 history                                                          >   /home/mark/bash_history    ;   
+ls -l                                                                /home/mark/bash_history    ;
 chmod  --verbose  755                                                /home/mark/bash_history    ;  
 gzip                                                                 /home/mark/bash_history    ;
+ls -l                                                                /home/mark/bash_history*   ;
 #
 ls  -lh   /home/mark/*.gz                                                                       ;
 du  -hs   /home/mark/*.gz ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
