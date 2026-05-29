@@ -10,7 +10,8 @@ bash -vx   ./server-migration/mariadb/migration/mariadbDumpAllDatabases.bsh     
 cp   --verbose    /etc/httpd/conf/httpd.conf                         /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
 gzip --verbose                                                       /home/mark/kvm301_httpd_conf  ;  ## 2026-04-15
 
-crontab  -l         >  /home/mark/crontab.txt  ;  gzip  /home/mark/crontab.txt                  ;
+crontab  -l         >  /home/mark/crontab.txt  ;  gzip --force   /home/mark/crontab.txt         ;
+
 tar --create --gunzip   --file=/home/mark/usr_local_bash.tar.gz      /usr/local/bash/           ;
 tar --create --gunzip   --file=/home/mark/usr_local_lib_php.tar.gz   /usr/local/lib/php/        ;
 
