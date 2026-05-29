@@ -36,7 +36,7 @@ tar --create --gunzip   --file=/home/mark/home.tar.gz                           
 cat /root/.bash_history   > /home/mark/bash_history.txt     ;
 ls -l                       /home/mark/bash_history.txt     ;
 chmod  --verbose  755       /home/mark/bash_history.txt     ;
-gzip                        /home/mark/bash_history.txt     ;
+gzip  --force               /home/mark/bash_history.txt     ;
 ls -l                       /home/mark/bash_history.txt.gz  ;
 #
 #
