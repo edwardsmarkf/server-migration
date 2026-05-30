@@ -135,11 +135,13 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
 \# check the ffmpeg install:
 ```
  more   /root/ffmpeg-install-logs/99-test.bsh.log   ;    ### look for results
+ 
 ```
 
 \# check all installations for version numbers:  (this may need to be ran TWICE)
 ```
  bash    /root/server-migration/bash-misc/version_test.bsh    ;    ## notice no dash-v-x switches!
+ 
 ```
 
 \### define/create domain (if it does not yet exist) using new IP into local etc.hosts file
