@@ -103,11 +103,13 @@ du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 
  export TMP_LOCATION=/tmp/old_server_data/   ;     ##
 
  rm -Rf  ${TMP_LOCATION}   ;  mkdir  ${TMP_LOCATION}   && cd  $_  ;
+  
 ```
 \##   get IP number from NEW server and temporarily add it to old server csf firewall  port 22   ##
                                                 ###  https://stackoverflow.com/questions/28461713/how-to-ignore-or-pass-yes-when-the-authenticity-of-host-cant-be-established-i
 ```
  sshpass -p  "$(bash /root/ssh-login-password.bsh ;)"  sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## grab stuff from OLD server!
+   
 ```
   - sftp>   ls -lh        ## human readable file size  /home/ one is 3.3 gigs
   - sftp>   mget  *.gz    ## fetch the gzips
@@ -119,6 +121,7 @@ du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 
 ls -lh                               ${TMP_LOCATION}/*.gz    ;
 du  --human-readable  --summarize    ${TMP_LOCATION}/*.gz    ;
 du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
+   
 ```
 #
 #
