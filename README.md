@@ -163,7 +163,8 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
  su    fakeperluser    --command 'perl  -W  -e  '\''use File::Basename ; '\'' ;  '     &&  echo  $?  ;   ## test the perl 'use' command.
  su -  fakeperluser    --command 'perl -W -MXML::Writer -e 1                  ;  '     &&  echo  $?  ;   ## not sure what the first dash does...?
 
- bash -vx   /root/server-migration/perl/perl-cgi-testing.bsh      ;    
+ bash -vx   /root/server-migration/perl/perl-cgi-testing.bsh      ;
+  
 ```
 
 ####  *  mariadb    testing *
@@ -172,6 +173,7 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
  echo  'SELECT VERSION() "Version:" ;' | mariadb                                       &&  echo  $?  ;
  bash     /root/server-migration/mariadb/05_test_perl_mariadb_connection.bsh           &&  echo  $?  ;
  bash     /root/server-migration/mariadb/05_test_php_mariadb_connection.bsh            &&  echo  $?  ;
+  
 ```
 
 #### *  clean   up *
@@ -180,7 +182,8 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
  userdel  --remove  fakeperluser  ;
  userdel  --remove  fakephpuser   ;
 
- ls -l  /home/                     ;
+ ls -l  /home/                    ;
+  
 ```
 #
 #
@@ -204,13 +207,15 @@ du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
    tar  --extract  --file     \${TMP_LOCATION}/usr_local_bash.tar     ;
    tar  --extract  --file     \${TMP_LOCATION}/usr_local_lib_php.tar  ;
 END_OF_UNPACK
-nohup time bash -vx  -   &>   /root/current-server-tar-gz-unpack.log     &   ## detach   2>&1
+nohup time bash -vx  -   &>   /root/current-server-tar-gz-unpack.log     &   ## detach
+  
 ```
 \#check the results:
 ```
 ls  -lh                             ${TMP_LOCATION}                  ;
 du  --summarize  --human-readable   ${TMP_LOCATION}                  ;                 ## 13 gigs
 ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
+  
 ```
 #
 #
