@@ -304,7 +304,8 @@ secure mariadb
 ************************************
 \#####  put tar files into their proper places  (turned into its own script   2026-04-15
 ```
-nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_location.bsh  >  /root/server-migration/bash-misc/move_data_to_proper_location.bsh.log  2>&1  &
+nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_location.bsh     \
+                   &>  /root/server-migration/bash-misc/move_data_to_proper_location.bsh.log &
 ```
 
 \# check the results
