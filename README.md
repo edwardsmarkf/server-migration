@@ -231,7 +231,7 @@ ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
      [ ! -d "/var/www/html/" ] && mkdir  --verbose  --parents   /var/www/html/                ;   ## 2026-04-13
      ls -l  /var/www  | grep html                                                             ;   ## 2026-04-25
 CREATE_ALL_VIRTUAL_SERVERS
-nohup time bash -vx  -   &>      /root/create-all-virtual-servers.log   &   ## detach      2>&1 
+nohup time bash -vx  -   &>      /root/create-all-virtual-servers.log   &   ## detach 
 ```
 \#check the results:
 ```
@@ -283,7 +283,7 @@ ls  -l         /home/      ;
 
 \# load the data into the tables
 ```
- nohup time bash  -vx  ${TMP_LOCATION}/load_sql_tables.bsh  >  /root/load_sql_tables.bsh.log    2>&1  &     ## run the newly created bash script   approx 30 minutes run time
+ nohup time bash  -vx  ${TMP_LOCATION}/load_sql_tables.bsh  &>  /root/load_sql_tables.bsh.log     &     ## run the newly created bash script   approx 30 minutes run time
 ```
 
 \# check the results
