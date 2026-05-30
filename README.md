@@ -86,8 +86,7 @@ nohup  time  nice bash -vx  ${TMP_LOCATION}/server-migration/bash-misc/current-s
 ```
 ls  -l   --human   /home/mark/*.gz                     ;
 du  --human-readable  --summarize   /home/mark/*.gz    ;
-du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 3.4 gigs
-  
+du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 3.4 gigs  \
 ```
 #
 #
