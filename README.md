@@ -225,8 +225,8 @@ ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
 ************************************
 ```
  cat  <<CREATE_ALL_VIRTUAL_SERVERS |
-     bash  -vx  /root/server-migration/webmin/virtualmin-create-vm.bsh    &>  /root/server-migration/webmin/virtualmin-create-vm.bsh.log    ;   #   2>&1
-     bash  -vx  /root/server-migration/httpd.conf/apache.bsh              &>  /root/server-migration/httpd.conf/apache.bsh.log              ;  #  2>&1 
+     bash  -vx  /root/server-migration/webmin/virtualmin-create-vm.bsh    &>  /root/server-migration/webmin/virtualmin-create-vm.bsh.log    ;   # 
+     bash  -vx  /root/server-migration/httpd.conf/apache.bsh              &>  /root/server-migration/httpd.conf/apache.bsh.log              ;  # 
 
      [ ! -d "/var/www/html/" ] && mkdir  --verbose  --parents   /var/www/html/                ;   ## 2026-04-13
      ls -l  /var/www  | grep html                                                             ;   ## 2026-04-25
