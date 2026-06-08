@@ -6,7 +6,7 @@
 #
 PHP_LATEST_RELEASE=8.5.7    ;   ##  2026-06-08
 
-bash -vx  ~/server-migration/php/00_php_install_after_webmin.bsh ${PHP_VERSION_VARIABLE} \
+bash -vx  ~/server-migration/php/00_php_install_after_webmin.bsh ${PHP_LATEST_RELEASE}                                           \
                                                               &> ~/server-migration/php/00_php_install_after_webmin.bsh.log      ;
 tail                                                             ~/server-migration/php/00_php_install_after_webmin.bsh.log      ;
 
