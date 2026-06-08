@@ -5,7 +5,7 @@ maybe osuosl and mozilla archive can be used interchangeably?  NO mozilla arcxiv
 2026-01-18 - removed mozilla archive
 
 
-[flac 1.5](https://github.com/xiph/flac/archive/refs/tags/1.5.0.tar.gz )      -- 2025-02-10 14:31--	1.0M	 
+[flac 1.5](https://ftp.osuosl.org/pub/xiph/releases/flac/flac-1.5.0.tar.xz )      -- 2025-02-10 14:31--	1.0M	 
 
 [libogg 1.3.6](https://ftp.osuosl.org/pub/xiph/releases/ogg/)                   --	2025-06-16 16:02--	590K
 
