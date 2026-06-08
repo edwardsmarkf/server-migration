@@ -1,4 +1,10 @@
 
+
+
+
+ALL OF THIS BELOW IS NOW HANDLED BY   "Master_installer"
+
+
 2025-11-05 - WARNING!  modules go away soon, probably with epel-11.  so research will be necessary to determine
                          what to replace 'module enable'  and  'module reset'  with 
                          in 00_php_install_after_webmin.bsh!
@@ -10,7 +16,6 @@ UPDATE  --  create a new final step that does something like
              find  /usr/local/lib/php/    -type f  -name  '*.php' -exec php -l  {}  \;   ;
 UPDATE
 
-PHP_RELEASE_NBR=8.5.7  ;   ##   2026-06-08
 
 ### 2025-08-20 -- made release ## a parm.  
 
