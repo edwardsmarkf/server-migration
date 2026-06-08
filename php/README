@@ -10,22 +10,22 @@ UPDATE  --  create a new final step that does something like
              find  /usr/local/lib/php/    -type f  -name  '*.php' -exec php -l  {}  \;   ;
 UPDATE
 
-
+PHP_RELEASE_NBR=8.5.7  ;   ##   2026-06-08
 
 ### 2025-08-20 -- made release ## a parm.  
 
-bash -vx  00_php_install_after_webmin.bsh 8.4   >  00_php_install_after_webmin.bsh.log    2>&1   ;
-more                                               00_php_install_after_webmin.bsh.log           ;
+bash -vx  00_php_install_after_webmin.bsh ${PHP_RELEASE_NBR} &> 00_php_install_after_webmin.bsh.log      ;
+more                                                            00_php_install_after_webmin.bsh.log      ;
 
-bash  -vx  01_php_install_RL.bsh                >  01_php_install_RL.bsh.log              2>&1   ;
-more                                               01_php_install_RL.bsh.log                     ;
+bash  -vx  01_php_install_RL.bsh                             &> 01_php_install_RL.bsh.log                ;
+more                                                            01_php_install_RL.bsh.log                ;
 
-bash  -vx  02_phpImageMagick.bsh                >  02_phpImageMagick.bsh.log              2>&1   ;
-more                                               02_phpImageMagick.bsh.log                     ;
+bash  -vx  02_phpImageMagick.bsh                             &> 02_phpImageMagick.bsh.log                ;
+more                                                            02_phpImageMagick.bsh.log                ;
 
 
-bash  -vx  03_php_composer.bsh                  >  03_php_composer.bsh.log                2>&1   ;
-more                                               03_php_composer.bsh.log                       ;
+bash  -vx  03_php_composer.bsh                               &> 03_php_composer.bsh.log                  ;
+more                                                            03_php_composer.bsh.log                  ;
 
 
 test  at:              https://zzyzxzzyzx.com/phpinfo.php?#
