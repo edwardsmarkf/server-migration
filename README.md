@@ -59,9 +59,9 @@ nohup  time  bash -vx  -   &>  /root/do-all-the-work.bsh.log   &      #2>&1
 ```
 bash  -vx  /root/server-migration/webmin/etc_resolv_conf.bsh    &>  ~/server-migration/webmin/etc_resolv_conf.bsh.log   ;
 ```
-switch over to static IP's
+switch over to static IP's   ## interserver dhcp to static fix
 ```
-bash  -vx  /root/server-migration/bash-misc/nmcli.bsh                 &> /root/server-migration/bash-misc/nmcli.bsh.log                 ;    ## interserver dhcp to static fix
+bash  -vx  /root/server-migration/bash-misc/nmcli.bsh           &> /root/server-migration/bash-misc/nmcli.bsh.log       ;   
 ```
 #
 #
