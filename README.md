@@ -52,6 +52,20 @@ nohup  time  bash -vx  -   &>  /root/do-all-the-work.bsh.log   &      #2>&1
 #
 #
 #
+********************************
+##      interserver specific adjustments
+********************************
+
+```
+bash  -vx  /root/server-migration/webmin/etc_resolv_conf.bsh    &>  ~/server-migration/webmin/etc_resolv_conf.bsh.log   ;
+```
+switch over to static IP's
+```
+bash  -vx  /root/server-migration/bash-misc/nmcli.bsh                 &> /root/server-migration/bash-misc/nmcli.bsh.log                 ;    ## interserver dhcp to static fix
+```
+#
+#
+#
 ******************************************
 ##   current    server   data   extraction
 **********************************************
@@ -382,20 +396,6 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 ```
  perl       ./cgi-bin/mailx.pl  ;   ## 2026-04-25   run as comptonpeslonline.com
 ```   
-#
-#
-#
-********************************
-##      interserver specific adjustments
-********************************
-
-```
-bash  -vx  /root/server-migration/webmin/etc_resolv_conf.bsh    &>  ~/server-migration/webmin/etc_resolv_conf.bsh.log   ;
-```
-switch over to static IP's
-```
-bash  -vx  /root/server-migration/bash-misc/nmcli.bsh                 &> /root/server-migration/bash-misc/nmcli.bsh.log                 ;    ## interserver dhcp to static fix
-```
 #
 #
 #
