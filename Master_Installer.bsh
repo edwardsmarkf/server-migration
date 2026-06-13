@@ -26,8 +26,8 @@ dnf  --assumeyes   install  git  ;    ## this has probably already been done!
 
 echo 'hopefully you have checked for the latest version...???' ;
 
-## bash -vx     ~/server-migration/ffmpeg/00-run-master-install.bsh           \
-##       &>     ~/server-migration/ffmpeg/00-run-master-install.bsh.log       ;
+## bash -vx     /root/server-migration/ffmpeg/00-run-master-install.bsh           \
+##       &>     /root/server-migration/ffmpeg/00-run-master-install.bsh.log       ;
 
 
 
@@ -38,12 +38,12 @@ echo 'hopefully you have checked for the latest version...???' ;
      ###################
 
 
-bash -vx   ~/server-migration/bash-misc/dnf-yum.bsh               &> /root/server-migration/bash-misc/dnf-yum.bsh.log               ;
-bash -vx   ~/server-migration/bash-misc/root-init.bsh             &> /root/server-migration/bash-misc/root-init.bsh.log             ;
-bash -vx   ~/server-migration/bash-misc/certbot.bsh               &> /root/server-migration/bash-misc/certbot.bsh.log               ;
-bash -vx   ~/server-migration/bash-misc/create-log-directory.bsh  &> /root/server-migration/bash-misc/create-log-directory.bsh.log  ;
-bash -vx   ~/server-migration/bash-misc/wkhtmltopdf.bsh           &> /root/server-migration/bash-misc/wkhtmltopdf.bsh.log           ;
-bash  -vx  /root/server-migration/bash-misc/nmcli.bsh             &> /root/server-migration/bash-misc/nmcli.bsh.log                 ;    ## interserver dhcp to static fix
+bash -vx   /root/server-migration/bash-misc/dnf-yum.bsh               &> /root/server-migration/bash-misc/dnf-yum.bsh.log               ;
+bash -vx   /root/server-migration/bash-misc/root-init.bsh             &> /root/server-migration/bash-misc/root-init.bsh.log             ;
+bash -vx   /root/server-migration/bash-misc/certbot.bsh               &> /root/server-migration/bash-misc/certbot.bsh.log               ;
+bash -vx   /root/server-migration/bash-misc/create-log-directory.bsh  &> /root/server-migration/bash-misc/create-log-directory.bsh.log  ;
+bash -vx   /root/server-migration/bash-misc/wkhtmltopdf.bsh           &> /root/server-migration/bash-misc/wkhtmltopdf.bsh.log           ;
+bash  -vx  /root/server-migration/bash-misc/nmcli.bsh                 &> /root/server-migration/bash-misc/nmcli.bsh.log                 ;    ## interserver dhcp to static fix
 
      ##########################
      #                        #
@@ -51,8 +51,8 @@ bash  -vx  /root/server-migration/bash-misc/nmcli.bsh             &> /root/serve
      #                        #
      ##########################
 
-bash -vx  ~/server-migration/mariadb/00_mariadb-upgrade.bsh  &>  ~/server-migration/mariadb/00_mariadb-upgrade.bsh.log   ;
-mariadb  --verbose     <    ~/server-migration/mariadb/05_create_db_test.sql  ;
+bash -vx  /root/server-migration/mariadb/00_mariadb-upgrade.bsh  &>  /root/server-migration/mariadb/00_mariadb-upgrade.bsh.log   ;
+mariadb  --verbose     <    /root/server-migration/mariadb/05_create_db_test.sql  ;
 
 
 
@@ -74,9 +74,9 @@ sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh)"  \
                                          --hostname  host.edwardsmark.info   \
                                                                              ;
 
-bash  -vx   ~/server-migration/webmin/virtualmin.bsh         &>  ~/server-migration/webmin/virtualmin.bsh.log            ;
-bash  -vx  ~/server-migration/webmin/csf.bsh                 &>  ~/server-migration/webmin/csf.bsh.log                   ;
-bash  -vx  ~/server-migration/webmin/etc_resolv_conf.bsh     &>  ~/server-migration/webmin/etc_resolv_conf.bsh.log       ;
+bash  -vx  /root/server-migration/webmin/virtualmin.bsh         &>  ~/server-migration/webmin/virtualmin.bsh.log        ;
+bash  -vx  /root/server-migration/webmin/csf.bsh                &>  ~/server-migration/webmin/csf.bsh.log               ;
+bash  -vx  /root/server-migration/webmin/etc_resolv_conf.bsh    &>  ~/server-migration/webmin/etc_resolv_conf.bsh.log   ;
 
 
 
@@ -86,7 +86,7 @@ bash  -vx  ~/server-migration/webmin/etc_resolv_conf.bsh     &>  ~/server-migrat
      #                 #
      ################### 
 
-bash  -vx  ~/server-migration/php/Master_Installer.bsh       &>  ~/server-migration/php/Master_Installer.bsh.log    ;
+bash  -vx   /root/server-migration/php/Master_Installer.bsh     &>  /root/server-migration/php/Master_Installer.bsh.log    ;
 
 
      ####################
@@ -95,7 +95,7 @@ bash  -vx  ~/server-migration/php/Master_Installer.bsh       &>  ~/server-migrat
      #                  #
      #################### 
 
-bash  -vx  ~/server-migration/perl/Master_Installer.bsh       &>  ~/server-migration/perl/Master_Installer.bsh.log   ;
+bash  -vx  /root/server-migration/perl/Master_Installer.bsh     &>  /root/server-migration/perl/Master_Installer.bsh.log   ;
 
 
 
@@ -105,9 +105,9 @@ bash  -vx  ~/server-migration/perl/Master_Installer.bsh       &>  ~/server-migra
      #                                       #
      #########################################
 
-perl  ~/server-migration/mariadb/05_test_perl_mariadb_connection.pl  ;
+perl  /root/server-migration/mariadb/05_test_perl_mariadb_connection.pl  ;
 
-php   ~/server-migration/mariadb/05_test_php_mariadb_connection.php  ;
+php   /root/server-migration/mariadb/05_test_php_mariadb_connection.php  ;
 
 
 
