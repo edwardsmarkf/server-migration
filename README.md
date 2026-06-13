@@ -386,9 +386,13 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 #
 #
 ********************************
-##      fix nmcmi
+##      interserver specific adjustments
 ********************************
 
+```
+bash  -vx  /root/server-migration/webmin/etc_resolv_conf.bsh    &>  ~/server-migration/webmin/etc_resolv_conf.bsh.log   ;
+```
+switch over to static IP's
 ```
 bash  -vx  /root/server-migration/bash-misc/nmcli.bsh                 &> /root/server-migration/bash-misc/nmcli.bsh.log                 ;    ## interserver dhcp to static fix
 ```
