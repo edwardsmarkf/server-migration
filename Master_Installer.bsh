@@ -43,7 +43,6 @@ bash -vx   /root/server-migration/bash-misc/root-init.bsh             &> /root/s
 bash -vx   /root/server-migration/bash-misc/certbot.bsh               &> /root/server-migration/bash-misc/certbot.bsh.log               ;
 bash -vx   /root/server-migration/bash-misc/create-log-directory.bsh  &> /root/server-migration/bash-misc/create-log-directory.bsh.log  ;
 bash -vx   /root/server-migration/bash-misc/wkhtmltopdf.bsh           &> /root/server-migration/bash-misc/wkhtmltopdf.bsh.log           ;
-bash  -vx  /root/server-migration/bash-misc/nmcli.bsh                 &> /root/server-migration/bash-misc/nmcli.bsh.log                 ;    ## interserver dhcp to static fix
 
      ##########################
      #                        #
@@ -197,6 +196,7 @@ exit;
 
 bash -vx  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh       >  ~/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log   2>&1  ;
 
+bash  -vx  /root/server-migration/bash-misc/nmcli.bsh                 &> /root/server-migration/bash-misc/nmcli.bsh.log                 ;    ## interserver dhcp to static fix
 
 
 
