@@ -26,8 +26,8 @@ dnf  --assumeyes   install  git  ;    ## this has probably already been done!
 
 echo 'hopefully you have checked for the latest version...???' ;
 
- bash -vx     ~/server-migration/ffmpeg/00-run-master-install.bsh           \
-       &>     ~/server-migration/ffmpeg/00-run-master-install.bsh.log       ;
+## bash -vx     ~/server-migration/ffmpeg/00-run-master-install.bsh           \
+##       &>     ~/server-migration/ffmpeg/00-run-master-install.bsh.log       ;
 
 
 
@@ -53,6 +53,10 @@ bash  -vx  /root/server-migration/bash-misc/nmcli.bsh             &> /root/serve
 
 bash -vx  ~/server-migration/mariadb/00_mariadb-upgrade.bsh  &>  ~/server-migration/mariadb/00_mariadb-upgrade.bsh.log   ;
 mariadb  --verbose     <    ~/server-migration/mariadb/05_create_db_test.sql  ;
+
+
+
+exit ; ###############################################
 
 
 
