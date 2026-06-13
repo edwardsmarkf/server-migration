@@ -385,6 +385,17 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 #
 #
 #
+********************************
+##      fix nmcmi
+********************************
+
+```
+bash  -vx  /root/server-migration/bash-misc/nmcli.bsh                 &> /root/server-migration/bash-misc/nmcli.bsh.log                 ;    ## interserver dhcp to static fix
+```
+#
+#
+#
+######################################################
 ***************************************************
 ##         r s y n c
 **************************************************
