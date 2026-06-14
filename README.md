@@ -57,11 +57,12 @@ nohup  time  bash -vx  -   &>  /root/do-all-the-work.bsh.log   &
 ********************************
 
 ```
-bash  -vx  /root/server-migration/webmin/etc_resolv_conf.bsh    &>  ~/server-migration/webmin/etc_resolv_conf.bsh.log   ;
-```
-switch over to static IP's   ## interserver dhcp to static fix
-```
-bash  -vx  /root/server-migration/bash-misc/nmcli.bsh           &> /root/server-migration/bash-misc/nmcli.bsh.log       ;   
+bash  -vx  /root/server-migration/webmin/etc_resolv_conf.bsh    &> /root/server-migration/webmin/etc_resolv_conf.bsh.log   ;
+cat                                                                /root/server-migration/webmin/etc_resolv_conf.bsh.log   ;
+#
+##  switch over to static IP's   ## interserver dhcp to static fix
+bash  -vx  /root/server-migration/bash-misc/nmcli.bsh           &> /root/server-migration/bash-misc/nmcli.bsh.log          ;
+cat                                                                /root/server-migration/bash-misc/nmcli.bsh.log          ;
 ```
 #
 #
