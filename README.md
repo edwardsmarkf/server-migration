@@ -331,14 +331,14 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 #
 #
 *********************************
-##         pm2 . initialize . bsh 
+##   pm2 . initialize . bsh 
 *********************************
 
 \###  ? ? ? ? npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
 ```
- bash -vx  /root/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh       >  /root/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log   2>&1  ;
+ bash -vx  /root/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh  &>  /root/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log ;
 
- tail -100                                                                          /root/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log         ;
+ tail -100                                                                      /root/server-migration/httpd.conf/pm2-httpd-conf-initialize.bsh.log ;
 ```
 
 \# check apache is ok
@@ -348,7 +348,7 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 
 \# create the pm2 jobs:
 ```
- nohup  bash -vx  /root/server-migration/node/pm2-initialize.bsh                 >  /root/server-migration/node/pm2-initialize.bsh.log   2>&1  &
+ nohup  bash -vx  /root/server-migration/node/pm2-initialize.bsh             &>  /root/server-migration/node/pm2-initialize.bsh.log    ;
 ```
 
 \# check the results
@@ -358,7 +358,7 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 
 \# load the visudo permission file
 ```
- bash -vx  /root/server-migration/node/visudo.bsh                                >  /root/server-migration/node/visudo.bsh.log           2>&1  ;
+ bash -vx  /root/server-migration/node/visudo.bsh                             &>  /root/server-migration/node/visudo.bsh.log           ;
 ```
 
 \# double-check apache
