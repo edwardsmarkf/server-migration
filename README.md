@@ -484,7 +484,7 @@ ls  -l            /${KVM_NAME}/backup/tester.txt   ;
  /bin/systemctl restart  csf.service   ;
 ```
 
-bash  /usr/local/bash/allowIpAddress.bsh     71.223.133.89    Torguard  > result.txt  2>&1   ;   ###  open up NEW ip ##
+bash  /usr/local/bash/allowIpAddress.bsh     71.223.133.89    Torguard  &> result.txt   ;   ###  open up NEW ip ##
 
 \# #### test this was done:   mkdir  /var/www/html   ;   ### is this required  ????  should it be part of a script ???
 
