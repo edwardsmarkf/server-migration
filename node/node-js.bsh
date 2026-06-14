@@ -13,8 +13,9 @@
 #   2025-02-24  -- install using just dnf
 #   2025-11-01  -- rewritten as per    https://nodejs.org/en/download/current
 #   2025-11-01a -- rewritten as per    https://www.atlantic.net/dedicated-server-hosting/how-to-install-node-js-and-npm-on-rocky-linux-10/
+#   2026-06-14  -- v 25 -> 26
 
-LATEST_VERSION=25;  ## added 2025-10-31
+LATEST_VERSION=26;  ## added variable 2025-10-31
 
 curl --silent --location https://rpm.nodesource.com/setup_${LATEST_VERSION}.x | bash - ;
 dnf --assumeyes install nodejs ;
