@@ -65,7 +65,7 @@ mariadb  --verbose     <    /root/server-migration/mariadb/05_create_db_test.sql
      ###################
 
 ###sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh
-sh -c "$(curl -fsSL https://software.virtualmin.com/gpl/scripts/vm8-install.sh)"  \
+sh -c "$(curl -fsSL https://github.com/virtualmin/virtualmin-install/raw/refs/heads/master/virtualmin-install.sh;)"  \
                                          --                                  \
                                          --yes                               \
                                          --bundle    LAMP                    \
