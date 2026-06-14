@@ -93,7 +93,7 @@ grep  '^MARIADB_PASSWORD='                                                  ${TM
 
 ```
 nohup  time  nice bash -vx  ${TMP_LOCATION}/server-migration/bash-misc/current-server-data-extraction.bsh      \
-                         >  ${TMP_LOCATION}/server-migration/bash-misc/current-server-data-extraction.bsh.log  &   ## run detached
+                        &>  ${TMP_LOCATION}/server-migration/bash-misc/current-server-data-extraction.bsh.log  &   ## run detached
 ```
 
 \# test results:
