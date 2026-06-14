@@ -6,7 +6,7 @@
 #
 #
 echo -n '01 - Webmin: ' ;
-webmin                          -version                                                              ;
+webmin                          -version                     ||  echo 'Could not find webmin!'        ;
 
 echo -n '02 - ' ;
 fail2ban-client                 --version                                                             ;
