@@ -78,7 +78,7 @@ dnf  --assumeyes   install      \
           telnet                \
           ;
 
-cat  <<END_OF_DOT_MAILRC >>  /etc/s-nail.rc  ;
+cat  <<END_OF_DOT_MAILRC >>  /etc/s-nail.rc  ;    ## 2026-06-15 - changed from (DOT)mailrc  to appending /etc/s-nail.rc
 
     ####   $(date;) --  added by ${thisScript}
     set v15-compat
