@@ -489,9 +489,14 @@ bash  /usr/local/bash/allowIpAddress.bsh     71.223.133.89    Torguard  &> resul
 
 \# #### test this was done:   mkdir  /var/www/html   ;   ### is this required  ????  should it be part of a script ???
 
- find  /home/ -type f  -name  '*.php' -exec php -l  {}  \;   >  php-lint-test.txt    2>  php-lint-test-errors.txt  ;    ## php lint test
+php lint test:
 ```
- ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:comptonpeslonline.com"                  ;    ## double-check correct ownership!
+ find  /home/ -type f  -name  '*.php' -exec php -l  {}  \\;   >  php-lint-test.txt    2>  php-lint-test-errors.txt  ;    ## php lint test
+```
+
+ownership test:
+```
+ ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:comptonpeslonline.com"                  ;    ## ?? double-check correct ownership!
 ```
 
                                                         ####   this need to be tested have "Content-type: text/html" removed and replaced with -M "text/html":
