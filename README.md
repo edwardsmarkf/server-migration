@@ -491,12 +491,12 @@ bash  /usr/local/bash/allowIpAddress.bsh     71.223.133.89    Torguard  &> resul
 
 php lint test:
 ```
- find  /home/ -type f  -name  '*.php' -exec php -l  {}  \\;   >  php-lint-test.txt    2>  php-lint-test-errors.txt  ;    ## php lint test
+ find  /home/ -type f  -name  '*.php' -exec php -l  {}  \;   >  php-lint-test.txt    2>  php-lint-test-errors.txt  ;    ## php lint test
 ```
 
 ownership test:
 ```
- ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:comptonpeslonline.com"                  ;    ## ?? double-check correct ownership!
+##? ls  -lR   /home/comptonpeslonline.com/ | grep  -u  "comptonpeslonline.com:comptonpeslonline.com"                  ;    ## ?? double-check correct ownership!
 ```
 
                                                         ####   this need to be tested have "Content-type: text/html" removed and replaced with -M "text/html":
