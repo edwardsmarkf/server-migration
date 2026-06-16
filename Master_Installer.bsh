@@ -64,17 +64,9 @@ mariadb  --verbose     <    /root/server-migration/mariadb/05_create_db_test.sql
      #                 #
      ###################
 
-        ###   2026-06-14  sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh
-sh -c "$(curl -fsSL https://download.virtualmin.dev/virtualmin-install.sh;)"  \
-                                         --                                   \
-                                         --yes                                \
-                                         --bundle    LAMP                     \
-                                         --branch    stable                   \
-                                         --hostname  host.edwardsmark.info    \
-                                                                              ;
-
-bash  -vx  /root/server-migration/webmin/virtualmin.bsh         &>  ~/server-migration/webmin/virtualmin.bsh.log        ;
-bash  -vx  /root/server-migration/webmin/csf.bsh                &>  ~/server-migration/webmin/csf.bsh.log               ;
+bash -vx  /root/server-migration/webmin/00_virtualmin_from_scratch.bsh  &> /root/server-migation/webmin/00_virtualmin_from_scratch.bsh.log  ;
+bash -vx  /root/server-migration/webmin/virtualmin.bsh                  &> /root/server-migration/webmin/virtualmin.bsh.log                 ;
+bash -vx  /root/server-migration/webmin/csf.bsh                         &> /root/server-migration/webmin/csf.bsh.log                        ;
 
 
 
@@ -209,3 +201,12 @@ bash  -vx  /root/server-migration/bash-misc/nmcli.bsh                 &> /root/s
         ########        bash -vx  ~/server-migration/bash-misc/s-nail-postfix.bsh      >  ~/server-migration/bash-misc/s-nail-postfix.bsh.log  2>&1 ;
 
 
+
+        ###   2026-06-14  sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh
+sh -c "$(curl -fsSL https://download.virtualmin.dev/virtualmin-install.sh;)"  \
+                                         --                                   \
+                                         --yes                                \
+                                         --bundle    LAMP                     \
+                                         --branch    stable                   \
+                                         --hostname  host.edwardsmark.info    \
+                                                                              ;
