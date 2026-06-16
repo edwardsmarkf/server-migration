@@ -1,0 +1,16 @@
+#!  /bin/bash -w
+#
+#  00_virtualmin_from_scratch.bsh   -- 2026-06-16
+#
+#
+
+        ###   2026-06-14  sh -c "$(curl -fsSL https://software.virtualmin.dev/virtualmin-install.sh
+sh -c "$(curl -fsSL https://download.virtualmin.dev/virtualmin-install.sh;)"  \
+                                         --                                   \
+                                         --yes                                \
+                                         --bundle    LAMP                     \
+                                         --branch    stable                   \
+                                         --hostname  host.edwardsmark.info    \
+     
+                                                                              ;
+exit;
