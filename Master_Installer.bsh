@@ -1,4 +1,4 @@
-#!  /bin/bash  -w
+/webmin#!  /bin/bash  -w
 
 ##	2026-01-29		--  Master_Installer.bsh
 
@@ -64,7 +64,7 @@ mariadb  --verbose     <    /root/server-migration/mariadb/05_create_db_test.sql
      #                 #
      ###################
 
-bash -vx  /root/server-migration/webmin/00_virtualmin_from_scratch.bsh  &> /root/server-migation/webmin/00_virtualmin_from_scratch.bsh.log  ;
+bash -vx  /root/server-migration/webmin/00_virtualmin_from_scratch.bsh  &> /root/server-migration/webmin/00_virtualmin_from_scratch.bsh.log  ;
 bash -vx  /root/server-migration/webmin/virtualmin.bsh                  &> /root/server-migration/webmin/virtualmin.bsh.log                 ;
 bash -vx  /root/server-migration/webmin/csf.bsh                         &> /root/server-migration/webmin/csf.bsh.log                        ;
 
