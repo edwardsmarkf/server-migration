@@ -10,7 +10,7 @@ sh -c "$(curl -fsSL https://download.virtualmin.dev/virtualmin-install.sh;)"  \
                                          --yes                                \
                                          --bundle    LAMP                     \
                                          --branch    stable                   \
-                                         --hostname  host.edwardsmark.info    \     
+                                         --hostname  host.edwardsmark.info    \
                                                                               ;
 
 
