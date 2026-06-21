@@ -409,6 +409,12 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 ```     
  sshpass -p  "$(bash /root/ssh-login-password.bsh ;)"   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## test to make sure this works!
 ```
+
+double-check ownership:
+```
+chown --recursive  comptonpeslonline.com:comptonpeslonline.com   /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/  ;
+```
+
 \##  format: rsync  S-O-U-R-C-E     D-E-S-T-I-N-A-T-I-O-N
 ```
  sshpass -p   "$(bash /root/ssh-login-password.bsh ;)"                                                                                 \
