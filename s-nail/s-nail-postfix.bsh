@@ -101,6 +101,9 @@ cat  <<END_OF_DOT_MAILRC >>  /etc/s-nail.rc  ;    ## 2026-06-15 - changed from (
     }
 END_OF_DOT_MAILRC
 
+ln  --symbolic  --verbose  /etc/s-nail.rc    ~/.mailrc  ;   ## 2026-06-21
+
+
 systemctl enable      postfix.service       ;
 systemctl start       postfix.service       ;
 
