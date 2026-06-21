@@ -239,7 +239,7 @@ ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
 ##   create     all   virtual   servers 
 ************************************
 ```
- cat  <<CREATE_ALL_VIRTUAL_SERVERS |
+cat  <<CREATE_ALL_VIRTUAL_SERVERS |
      bash  -vx  /root/server-migration/webmin/virtualmin-create-vm.bsh    &>  /root/server-migration/webmin/virtualmin-create-vm.bsh.log    ;   # 
      bash  -vx  /root/server-migration/httpd.conf/apache.bsh              &>  /root/server-migration/httpd.conf/apache.bsh.log              ;  # 
 
