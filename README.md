@@ -443,6 +443,16 @@ nohup                                                                           
 &  ## run in background the first time...
 ```
 
+\# fetch data from /php/comptonCommunicate/ from CURRENT server to NEW server  -- 2026-06-21
+```
+nohup                                                                                                                                \
+ sshpass -p   "$(bash /root/ssh-login-password.bsh ;)"                                                                               \
+    sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
+          comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/php/comptonCommunicate/                      \
+                                                /home/comptonpeslonline.com/public_html/php/comptonCommunicate/                      \
+&  ## run in background the first time...
+```
+
 \# check total size:
 ```
  du  --summarize  --human-readable  /home/comptonpeslonline.com/   ;
