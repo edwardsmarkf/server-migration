@@ -407,11 +407,11 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 
 \#### TEST rsync  FIRST  !!
 ```     
- sshpass -p  'PASSWORD'   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## test to make sure this works!
+ sshpass -p  "$(bash /root/ssh-login-password.bsh ;)"   sftp  -o StrictHostKeyChecking=no   mark@162.220.165.228  ;   ## test to make sure this works!
 ```
 \##  format: rsync  S-O-U-R-C-E     D-E-S-T-I-N-A-T-I-O-N
 ```
- sshpass -p   'PASSWoRd'                                                                                                               \
+ sshpass -p   "$(bash /root/ssh-login-password.bsh ;)"                                                                                 \
       sudo  --user=comptonpeslonline.com  rsync --verbose --archive  --rsh='ssh -o StrictHostKeyChecking=no'                           \
                                                   /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
             comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   ;
@@ -420,7 +420,7 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 \# fetch data from /user-recorded-audio-files/ from CURRENT server to NEW server
 ```
 nohup                                                                                                                                \
- sshpass -p   'PASSWoRd'                                                                                                             \
+ sshpass -p   "$(bash /root/ssh-login-password.bsh ;)"                                                                               \
     sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
           comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
                                                 /home/comptonpeslonline.com/public_html/comptonPractice/user-recorded-audio-files/   \
@@ -430,7 +430,7 @@ nohup                                                                           
 \# fetch data from /voicefiles/ from CURRENT server to NEW server
 ```
 nohup                                                                                                                                \
- sshpass -p   'PASSWoRd'                                                                                                             \
+ sshpass -p   "$(bash /root/ssh-login-password.bsh ;)"                                                                               \
     sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'                             \
           comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/voicefiles/                                  \
                                                 /home/comptonpeslonline.com/public_html/voicefiles/                                  \
