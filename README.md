@@ -460,6 +460,20 @@ nohup                                                                           
 #
 #
 #
+#
+```
+for DIR in comptonPractice/user-recorded-audio-files  voicefiles  php/comptonCommunicate ;
+do
+nohup                                                                                                        \
+   sshpass -p   "$(bash /root/ssh-login-password.bsh ;)"                                                     \
+    sudo  --user=comptonpeslonline.com  rsync --stats --archive  --rsh='ssh -o StrictHostKeyChecking=no'     \
+          comptonpeslonline.com@162.220.165.228:/home/comptonpeslonline.com/public_html/${DIR}/              \
+                                                /home/comptonpeslonline.com/public_html/${DIR}/              ;
+done;
+```
+#
+#
+#
 ********************************************
 ##   idrive     install
 ********************************************
