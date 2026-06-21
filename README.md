@@ -332,7 +332,7 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 #
 #
 *********************************
-##   pm2 . initialize . bsh 
+##   Apache and pm2 . initialize . bsh 
 *********************************
 
 \###  ? ? ? ? npm install uuid@latest  ;  ###  ? ? ? ? ? https://stackoverflow.com/questions/68170853/npm-warn-deprecated-uuid3-4-0-please-upgrade-to-version-7-or-higher
