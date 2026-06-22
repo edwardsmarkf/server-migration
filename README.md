@@ -478,6 +478,10 @@ done;
 ##   idrive     install
 ********************************************
 
+## try:  
+echo  '{"/kvm502/"}' >   /opt/IDriveForLinux/idriveIt/user_profile/root/mark@edwardsmark.com/Backup/DefaultBackupSet/BackupsetFile.enc.json  ;
+
+
 ```
 bash -vx  /root/server-migration/idrive/idriveInstall.bsh
 ```
