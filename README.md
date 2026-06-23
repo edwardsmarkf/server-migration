@@ -129,6 +129,7 @@ du  --human-readable  --summarize   /home/mark/        ;   ## grand total    ## 
   - sftp>   ls -lh        ## human readable file size  /home/ one is 3.3 gigs
   - sftp>   mget  *.gz    ## fetch the gzips
   - sftp>   !ls -lh       ## file sizes on NEW server (notice bang character)
+  - sftp>   !du    --human-readable  --summarize    .
   - sftp>   rm  *.gz      ## can be done in the sftp session!  
 
 \# test the results:
