@@ -78,10 +78,14 @@ rm -Rf  ${TMP_LOCATION}   ;  mkdir  ${TMP_LOCATION}   && cd  $_  ;
 
 git clone  https://github.com/edwardsmarkf/server-migration                                                         ;
 tar --gzip  --create --file=/kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   ./server-migration/  ;   ## optional save
-ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;
-/bin/bash /usr/local/bash/iDriveBackup/idrivePython.bsh                                                             ;  ## 2026-06-24  - back up to idrive  
-   
+ls -l  /kvm301/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                             ;   
 ```
+
+Optionally back it up to iDrive now
+```
+/bin/bash /usr/local/bash/iDriveBackup/idrivePython.bsh                                                            &  ## 2026-06-24  - back up to idrive
+```
+
 
 \# change to the mariadb password
 ```
