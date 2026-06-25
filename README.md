@@ -484,31 +484,28 @@ done;
 ##   idrive     install
 ********************************************
 
-## try:  
-echo  '{"/kvm502/"}' >   /opt/IDriveForLinux/idriveIt/user_profile/root/mark@edwardsmark.com/Backup/DefaultBackupSet/BackupsetFile.enc.json  ;
-
-
 ```
-bash -vx  /root/server-migration/idrive/idriveInstall.bsh
+bash -vx  /root/server-migration/idrive/idriveInstall.bsh  ;
 ```
 
-\# run the first time to initialize
+\# Run for the first time to initialize
 ```
 /opt/IDriveForLinux/bin/idrive;
 ```
   -1) Edit backup set and add /kvm###/
   -e  ## exit
 
-\# create idrive backup location and try out a test file
+
+\# Gzip migration script to idrive directory:
 ```
-mkdir    /${KVM_NAME}/backup/  ; 
-echo 'tester'  >  /${KVM_NAME}/backup/tester.txt   ;
-ls  -l            /${KVM_NAME}/backup/tester.txt   ;
+mkdir  --verbose    /${KVM_NAME}/backup/  ; 
+tar --gzip  --create --file=/${KVM_NAME}/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   /root/server-migration/  ;   ## optional save
+ls -l  /${KVM_NAME}/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                                 ;   
 ```
 
-\# now run idrive to see if it backs up
+Optionally back it up to iDrive now:
 ```
-/bin/bash  -v     /usr/local/bash/iDriveBackup/idrivePython.bsh   ;
+/bin/bash  -v     /usr/local/bash/iDriveBackup/idrivePython.bsh                                                            &  ## 2026-06-24  - back up to idrive
 ```
 \# this **MAY** have already been done, double-check:  add  /root/server-migration/idrive/crontab   to  crontab manually
 #
@@ -1074,3 +1071,11 @@ certbot certificates 2>/dev/null  | grep -v 'edwardsmark.com-0001'  | grep  ' Pa
       ls  -lh   /home/mark/*.gz                                                                       ;
       du  -hs   /home/mark/*.gz ;   ##  confirm 63 megabyte size for mariadb-database-tar.gz
 END_OF_CURRENT_SERVER
+
+
+
+\# create idrive backup location and try out a test file
+```
+echo 'tester'  >  /${KVM_NAME}/backup/tester.txt   ;
+ls  -l            /${KVM_NAME}/backup/tester.txt   ;
+```
