@@ -105,10 +105,10 @@ nohup  time  nice bash -vx  ${TMP_LOCATION}/server-migration/bash-misc/current-s
 \# test results:
 ```
 ls  -l   --human   /home/mark/*.gz                                            ;
-ls  -l   --human   /home/mark/mariadb-databases.tar.gz                        ;  ## double-check size!
+ls  -l   --human   /home/mark/mariadb-databases.tar.gz                        ;  ## double-check size!  59M
 du  --human-readable  --summarize   /home/mark/*.gz                           ;
-du  --human-readable  --summarize   /home/mark/mariadb-databases.tar.gz       ;  ## double-check size!
-du  --human-readable  --summarize   /home/mark/                               ;   ## grand total    ## 3.4 gigs
+du  --human-readable  --summarize   /home/mark/mariadb-databases.tar.gz       ;  ## double-check size!   59M
+du  --human-readable  --summarize   /home/mark/                               ;  ## grand total    ## 3.4 gigs
   
 ```
 #
