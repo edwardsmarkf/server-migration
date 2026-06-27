@@ -32,7 +32,7 @@ bash -vx                                              /root/ssh-login-password.b
 timedatectl set-timezone America/New_York   ;   timedatectl  ;       ## 2026-04-15 not sure why this is not the default...??
 
 cd  ;  echo "export KVM_NAME=kvm502;" > /etc/profile.d/kvmName.sh  ;   ## 2026-02-20
-mkdir  --verbose   /kvm502/                                        ;   ## 2026-04-15
+                 #########  2026-06-26 do this in the idrive section now    mkdir  --verbose   /kvm502/    ;   ## 2026-04-15
 
 ###  (this step takes about 3.5 hours or 210 minutes!)
 
