@@ -143,7 +143,7 @@ du  --human-readable  --summarize   /home/mark/                               ; 
 ```
 ls -lh                               ${TMP_LOCATION}/*.gz    ;
 du  --human-readable  --summarize    ${TMP_LOCATION}/*.gz    ;
-du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total
+du  --human-readable  --summarize    ${TMP_LOCATION}/        ;   ## grand total  3.4G
    
 ```
 #
