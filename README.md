@@ -235,9 +235,11 @@ nohup time bash -vx  -   &>   /root/current-server-tar-gz-unpack.log     &   ## 
 ```
 \#check the results:
 ```
-ls  -lh                             ${TMP_LOCATION}                  ;
-du  --summarize  --human-readable   ${TMP_LOCATION}                  ;                 ## 13 gigs
-ls  -lR                             ${TMP_LOCATION}   | wc  --lines  ;  ## 502k+
+ls  -l --human-readable             ${TMP_LOCATION}                   ;
+ls  -l --human-readable             ${TMP_LOCATION}/tmp/mariadb-tmp   ;
+du  --summarize  --human-readable   ${TMP_LOCATION}                   ;     ## 13 gigs
+du  --summarize  --human-readable   ${TMP_LOCATION}/tmp/mariadb-tmp/  ;     ## 542M
+ls  -lR                             ${TMP_LOCATION}   | wc  --lines   ;     ## 502k+
   
 ```
 #
