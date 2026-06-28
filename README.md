@@ -488,6 +488,12 @@ done;
 ##   idrive     install
 ********************************************
 
+FIRST create backup directory at the root folder
+```
+mkdir  --verbose --parent   /${KVM_NAME}/backup/  ;
+```
+
+isntall iDrive:
 ```
 bash -vx  /root/server-migration/idrive/idriveInstall.bsh  ;
 ```
@@ -502,7 +508,6 @@ bash -vx  /root/server-migration/idrive/idriveInstall.bsh  ;
 
 \# Gzip migration script to idrive directory:
 ```
-mkdir  --verbose --parent   /${KVM_NAME}/backup/  ; 
 tar --gzip  --create --file=/${KVM_NAME}/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz   /root/server-migration/  ;   ## optional save
 ls -l  /${KVM_NAME}/backup/github-server-migration-$(date +%Y-%m-%d;).tar.gz                                                 ;   
 ```
