@@ -7,13 +7,20 @@
 ####################################
 
 #   2020-01-15 - initial writing, moved from README
-#   2026-002-24 -- created /etc/bashrc appends and added better script documentation
-
+#   2026-02-24 -- created /etc/bashrc appends and added better script documentation
+#   2026-06-28 -- added sha256 manual kickoff stuff
 
 
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}")  ;  ## this will be included in comments in every edited script
 
+mkdir  --verbose   ~/sha256Sum/   ;                                  ## 2026-06-28
+echo <<END_OF_SCRIPT  >/root/sha256Sum/crontabSha256Sum.bsh ;        ## 2026-06-28
+#! /bin/bash
+#
+nohup    /bin/nice       /bin/bash       -l      /usr/local/bash/sha256Sum.bsh                                   >> /var/log/mark/sha256Sum.bsh.log              2>&1  &
+#
+END_OF_SCRIPT
 
 
 ###################
