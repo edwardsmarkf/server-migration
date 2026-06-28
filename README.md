@@ -405,7 +405,7 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 
 \# check perl outgoing mail
 ```
- perl       ./cgi-bin/mailx.pl  ;   ## 2026-04-25   run as comptonpeslonline.com
+  sudo --user=comptonpeslonline.com perl  /home/comptonpeslonline.com/cgi-bin/mailx.pl ; ## 2026-06-28   run as comptonpeslonline.com
 ```   
 #
 #
