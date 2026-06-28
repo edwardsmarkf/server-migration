@@ -14,6 +14,15 @@
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}")  ;  ## this will be included in comments in every edited script
 
+
+
+
+#########################
+#                       #
+#  s h a 2 5 6 B s h    #
+#                       #
+#########################
+
 mkdir  --verbose   ~/sha256Sum/   ;                                  ## 2026-06-28
 echo <<END_OF_SCRIPT  >/root/sha256Sum/crontabSha256Sum.bsh ;        ## 2026-06-28
 #! /bin/bash
