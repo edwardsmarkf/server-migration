@@ -12,9 +12,9 @@
    export PHP_VERSION='php8.5'                                 ;     ## the name of the etc directory
    export TMP_LOCATION=/tmp/old_server_data/                   ;     ##
    
-   cd                 ${TMP_LOCATION}                         ;
-   mv      --verbose  ${TMP_LOCATION}/bash_history       ~    ;
-   mv      --verbose  ${TMP_LOCATION}/kvm301_httpd_conf  ~    ;
+   cd                 ${TMP_LOCATION}                             ;
+   mv      --verbose  ${TMP_LOCATION}/bash_history.txt       ~    ;
+   mv      --verbose  ${TMP_LOCATION}/kvm301_httpd_conf      ~    ;
 
 
    for DIR_NAME in $(ls  ${TMP_LOCATION}/home/ )                                         ;
