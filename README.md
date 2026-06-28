@@ -248,6 +248,9 @@ ls  -lR                             ${TMP_LOCATION}   | wc  --lines   ;     ## 5
 ********************************
 ##   create     all   virtual   servers 
 ************************************
+
+WARNING --  comptonpeslonline.com has to include "unlimited" disk space!
+
 ```
 cat  <<CREATE_ALL_VIRTUAL_SERVERS |
      bash  -vx  /root/server-migration/webmin/virtualmin-create-vm.bsh    &>  /root/server-migration/webmin/virtualmin-create-vm.bsh.log    ;   # 
