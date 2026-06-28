@@ -317,7 +317,9 @@ ls  -l         /home/      ;
  mariadb-show --count ;   ## spot-check the number of rows!
 ```
 
-secure mariadb
+secure mariadb  -- MAKE SURE new root password is set, for some reason it didnt seem to work here   
+     ALTER USER 'root'@'localhost' IDENTIFIED BY 'nEwMaRiADbPasSwOrD';
+
 ```
  mariadb-secure-installation;   ## IMPORTANT!
 ```
