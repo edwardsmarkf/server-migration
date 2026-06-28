@@ -329,6 +329,9 @@ secure mariadb  -- MAKE SURE new root password is set, for some reason it didnt 
 *********************************
 ##   move   data   to   proper   location
 ************************************
+
+### WHY ARE WE LOSING time-stamps  ? ? ? ? ? ? ? ? ? ? ? ? ?
+
 \#####  put tar files into their proper places  (turned into its own script   2026-04-15
 ```
 nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_location.bsh     \
