@@ -1,0 +1,8 @@
+
+stuff to fix on next transtition:
+
+(optional) - upgrade textpattern
+
+comptonpeslonine needed to have its quota set from the default
+
+during the move, files all appears to loose their correct timestamps and was replaced with TODAYS date-time
