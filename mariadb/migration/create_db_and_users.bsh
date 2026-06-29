@@ -95,10 +95,10 @@ process_db  U2FsdGVkX1+/DNlRl3OqWtr2w88W1Tf9/v8apDygn28=                      \
             U2FsdGVkX19sL+bMyaZWyVMQaGqnoG6RELySS62ZikQ=                      \
             U2FsdGVkX18n3jCBt3mxwkI3UDgvme1C5K8/KR/3o3A=                      ;
 ##
-##      ## text patterns
-process_db  U2FsdGVkX18mUJmL2MaReD3DfDkwm12oJAxD0OSh/lA=                      \
-            U2FsdGVkX18wPSdnGQHrgB50b2A7siuCwy1slwCJFYM=                      \
-            U2FsdGVkX18FBdnNy0dlan9DLi2PmYNaTpd9LHHWa+Y=                      ;
+##      ## text pattern  4.9.1
+process_db  U2FsdGVkX1+p3Y2j/rXC1gGGziquOeDNjKP3h5/LuDO2qpEGuGlv6QyNxgl24y5u  \
+            U2FsdGVkX18RV31FRqvU+4hIHxriuiBLORWH04wqv04=                      \
+            U2FsdGVkX1+p3Y2j/rXC1gGGziquOeDNjKP3h5/LuDO2qpEGuGlv6QyNxgl24y5u  ;
 
 
 echo  'SHOW DATABASES;              '  ;
