@@ -141,6 +141,9 @@ echo 'test using -A gmailSMTP-noreply'                                     \\
 
 END_OF_SCRIPT
 
+echo 'be SURE to add a php test....! code is included in the s-nail directory' ;
+
+
 exit 1;
 
 
