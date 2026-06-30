@@ -1,0 +1,10 @@
+
+stuff to fix on next transtition:
+
+(optional) - upgrade textpattern
+
+1 - comptonpeslonine needed to have its quota set from the default
+
+2 - during the move, files all appears to loose their correct timestamps and was replaced with TODAYS date-time
+
+3 - test php outgoing mail in s-nail
