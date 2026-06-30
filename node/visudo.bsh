@@ -7,6 +7,7 @@
 
 ##  2021-02-12  this step is CRITICAL to getting the node.js voiceSpiceNodeServerProxy program to work properly!
 ##  2026-03-05 -- change /usr/sbin/csf  to just csf  (note to do  "which csf" in the future..!)
+##  2026-06-30 -- forgot   /bin/mkdir  ;-O
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");      
 
@@ -17,6 +18,7 @@ cat  <<END  | sudo EDITOR='tee --append' visudo ;
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/chown
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /sbin/csf
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/file
+comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/mkdir
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/mv
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/sh
 comptonpeslonline.com   ALL=(ALL:ALL)   NOPASSWD:       /bin/sudo
