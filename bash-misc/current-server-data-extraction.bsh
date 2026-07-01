@@ -31,8 +31,6 @@ tar --create --gunzip   --file=/home/mark/home.tar.gz                           
    ## its very debatable if preserve-permissions and same-owner are necessary since somehow they end up getting changed on the new server.
    ##   is the two --exclude statements working together???  the overall size of  /home/ sure is smaller than before.
                               
-#  set -o history history -r history > my_history.txt
-#  cat ~/.bash_history > my_history.txt
 
 cat /root/.bash_history   > /home/mark/bash_history.txt     ;
 ls -l                       /home/mark/bash_history.txt     ;
