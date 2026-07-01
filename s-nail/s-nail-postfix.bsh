@@ -91,7 +91,8 @@ cat  <<END_OF_DOT_MAILRC >>  /etc/s-nail.rc  ;    ## 2026-06-15 - changed from (
 
     account gmailSMTP-noreply {
             set v15-compat
-                      ###  password is also contained in:  /usr/local/lib/php/SMTPMailer.php
+                      ###   username/password is also contained in:  /usr/local/lib/php/SMTPMailer.php
+                      ###       also contained in wordpress plugin WP Mail SMTP Plugin
             set mta=smtps://${emailAddress/@/%40}:${applicationPassword}@smtp.gmail.com:465
             set smtp-auth=login
             set from="NoReply <${emailAddress}>"
