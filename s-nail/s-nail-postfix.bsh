@@ -8,6 +8,7 @@
 
 #       2026-02-14  -- this replaces mailx-postfix.bsh
 #       2026-06-15  -- move mail.rc from hidden (dot-prefix) name to APPENDING into /etc/s-nail.rc
+#       2026-07-02  -- changed mailx to  s-nail for new linux
 #
 #  first step is to 'obtain' the 'two-factor-authorization Generated app password' value.  normally this is just a matter
 #  of authorizating two-factor sign-in in 'security',  but with the google g-suite accounts, the following is necessary:
@@ -119,18 +120,18 @@ cat << END_OF_SCRIPT ;
 
 ## please try these:
 
-echo "This is a test from ${thisScript} -- $(date;)."                      \\
-   | mailx  -v  -s "test message"                                          \\
-         ${testReceivingEmailAddress}                                      \\
+echo "This is a test from ${thisScript} -- $(date;)."                               \\
+   | /usr/bin/s-nail  -v  -s "test message"                                         \\
+         ${testReceivingEmailAddress}                                               \\
   ;
 
-echo 'Include the sender name - test from ${thisScript}-- $(date;).'       \\
-   | mailx -v -s 'Subject!' -r '${testReceivingName}<${emailAddress}>'     \\
-          ${testReceivingEmailAddress}                                     \\
+echo 'Include the sender name - test from ${thisScript}-- $(date;).'                \\
+   | /usr/bin/s-nail -v -s 'Subject!' -r '${testReceivingName}<${emailAddress}>'    \\
+          ${testReceivingEmailAddress}                                              \\
   ;
         
 echo 'test using -A gmailSMTP-noreply'                                     \\
-   |  /usr/bin/mailx                                                       \\
+   |  /usr/bin/s-nail                                                      \\
     -v                                                                     \\
     -A  gmailSMTP-noreply                                                  \\
     -s "Sent from mail command\$(echo -e "\\r\\nContent-type: text/html")" \\
