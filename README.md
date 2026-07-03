@@ -511,7 +511,12 @@ bash -vx  /root/server-migration/idrive/idriveInstall.bsh  ;
 ```
 /opt/IDriveForLinux/bin/idrive;
 ```
-  -1) Edit backup set and add /kvm###/
+Option 1) Edit backup set and add /kvm###/
+  
+    ####  2026-07-03 from iDrive:  In the menu options, select Backup Settings -> Online Backup Location -> Change the backup location to exactly how you have on the web (kvm502).
+option 12) - "Backup settings"
+option 1)  - Backup location
+
   -e  ## exit
 
 
