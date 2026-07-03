@@ -409,6 +409,7 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
 \# test php outgoing mail
 ```
  php   /usr/local/lib/php/SMTPMailer-tester.php  ;   ## test the php mail sender
+ php -r 'mail("mark@mark.com", "Test Subject", "this is a test line");'  ;  ## test php.ini sendmail line  2026-07-03
 ```
 
 \# check perl outgoing mail
