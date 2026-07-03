@@ -17,6 +17,7 @@
 #   2025-02-18 - renamed to 01_
 #   2025-07-28 - powertools no longer seems to be required.....(??)
 #   2026-01-29 - removed PowerTools replaced with crb  -- https://forums.rockylinux.org/t/how-do-i-install-powertools-on-rocky-linux-9/7427
+#   2026-07-03 - added sendmail-to-s-nail fix
 
 ##   DONT EVER USE WEBTATIC!  use remi/epel instead   ! ! ! 
 
@@ -63,12 +64,13 @@ dnf --assumeyes update ;     ## required to eliminate   PHP Warning:  PHP Startu
                                 ## 2021-07-17
 
 
-sed    --in-place  --file=-  /etc/php.ini  <<END_OF_PHP_DOT_INI         ;
-s?;date.timezone =?date.timezone ='America/New_York'                    ;    $(date;) --  added time-zone                          ?;
-s/upload_max_filesize = 2M/upload_max_filesize = 128M                   ;    $(date;) --  changed from 2M                          /;
-s/short_open_tag = Off/short_open_tag = On                              ;    $(date;) --  now allows  <?   ?>                      /;
-s/memory_limit = 128M/memory_limit = 512M                               ;    $(date;) --  changed from 128                         /;
-s?;include_path = ".:/php/includes"?include_path = "/usr/local/lib/php" ;    $(date;) --  2019-04-03 from github php.txt           ?;
+sed    --in-place  --file=-  /etc/php.ini  <<END_OF_PHP_DOT_INI                 ;
+s?;date.timezone =?date.timezone ='America/New_York'                            ;    $(date;) --  added time-zone                          ?;
+s/upload_max_filesize = 2M/upload_max_filesize = 128M                           ;    $(date;) --  changed from 2M                          /;
+s/short_open_tag = Off/short_open_tag = On                                      ;    $(date;) --  now allows  <?   ?>                      /;
+s/memory_limit = 128M/memory_limit = 512M                                       ;    $(date;) --  changed from 128                         /;
+s?;include_path = ".:/php/includes"?include_path = "/usr/local/lib/php"         ;    $(date;) --  2019-04-03 from github php.txt           ?;
+s?sendmail_path = .*$?sendmail_path = "tr --delete '\\r' | /usr/bin/s-nail -t"  ;    $(date;) --  2026-07-03 force sendmail to use s-nail  ?;
 END_OF_PHP_DOT_INI
 
 which php;
