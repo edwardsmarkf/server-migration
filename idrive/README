@@ -8,3 +8,9 @@ If you are a new user,
     Provide an appropriate permission (executable permission) to the scripts.Example: chmod a+x *.pl.
     Execute 'account_setting.pl' to setup your account and follow the instructions.
     ????? Execute 'login.pl' to login to your account, if you have not logged in while setting up your account using 'account_setting.pl'.
+
+2026-07-03 from iDrive:  In the menu options, select Backup Settings -> Online Backup Location -> Change the backup location to exactly how you have on the web (kvm502).
+
+idrive ;
+option 12 - "Backup settings"
+option 1  - Backup location
