@@ -13,6 +13,10 @@
 ##        for keyname in $( find /home/  -type f  -name "ssl.ca" -o -name "ssl.cert" -o -name "ssl.key" )   ; 
 ##            do   gzip --verbose $keyname;  
 ##        done  ;
+##    --OR--
+##    gzip    /home/accentreduction.online/ssl.ca ;  ln -s   /etc/letsencrypt/live/accentreduction.online/chain.pem    /home/accentreduction.online/ssl.ca
+##    gzip    /home/englishwithoutaccent.com/ssl.ca ;  ln -s   /etc/letsencrypt/live/englishwithoutaccent.com/chain.pem    /home/englishwithoutaccent.com/ssl.ca
+
 
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");
