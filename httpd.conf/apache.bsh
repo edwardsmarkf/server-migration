@@ -8,7 +8,11 @@
 #     2026-07-04  -  added  "SSLCertificateChainFile /home/ajcomptonpesl.com/ssl.ca"  -- NOT YET TESTED!
 
 ##   does the SSLCerticationChainFile part need to be in a bash for-next loop???
-
+##   gzip all the ssl.ca  ssl.cert  ssl.key   ????
+##    INCLUDE THIS!
+##        for keyname in $( find /home/  -type f  -name "ssl.ca" -o -name "ssl.cert" -o -name "ssl.key" )   ; 
+##            do   gzip --verbose $keyname;  
+##        done  ;
 
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");
