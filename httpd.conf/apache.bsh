@@ -5,7 +5,7 @@
 #
 #     2026-03-21  -  added  httpd.service.d/override.conf
 #     2026-03-23  -  removed above
-#     2026-07-04  -  added  "SSLCertificateChainFile /home/ajcomptonpesl.com/ssl.ca"
+#     2026-07-04  -  added  "SSLCertificateChainFile /home/ajcomptonpesl.com/ssl.ca"  -- NOT YET TESTED!
 
 ##   does the SSLCerticationChainFile part need to be in a bash for-next loop???
 
