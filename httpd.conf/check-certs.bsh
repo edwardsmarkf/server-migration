@@ -8,9 +8,12 @@ PORT='443'                                                        ; ## note echo
 
 DOMAIN_NAME_FILE='/root/server-migration/domain_list.txt'        ;
 
+#  openssl s_client -connect ajcomptonpesl.com:443 -servername ajcomptonpesl.com </dev/null | openssl x509 -text -noout
+
+
 while IFS= read -r line; do
       echo "Processing domain: ${line}"
-      echo -n Q | openssl s_client -servername ${line} -connect ${line}:$PORT \ | openssl x509 -noout -dates
+      echo -n Q | openssl s_client    -connect ${line}:$PORT    -servername ${line} \ | openssl x509 -noout -dates
 done < ${DOMAIN_NAME_FILE}
 
 exit;
