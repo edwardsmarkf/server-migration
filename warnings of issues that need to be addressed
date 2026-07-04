@@ -10,3 +10,5 @@ stuff to fix on next transtition:
 
 3 - test php outgoing mail in s-nail
 3a  - also test the /etc/php.ini change of sendmail  with the one-liner php script to test mail()
+
+4- BIG ISSUE with certs.... had to enter   `ln -s   /etc/letsencrypt/live/ajcomptonpesl.com/fullchain.pem    /home/ajcomptonpesl.com/ssl.ca`
