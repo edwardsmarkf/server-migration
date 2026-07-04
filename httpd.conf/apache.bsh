@@ -14,8 +14,8 @@
 ##            do   gzip --verbose $keyname;  
 ##        done  ;
 ##    --OR--
-##    gzip    /home/accentreduction.online/ssl.ca ;  ln -s   /etc/letsencrypt/live/accentreduction.online/chain.pem    /home/accentreduction.online/ssl.ca
-##    gzip    /home/englishwithoutaccent.com/ssl.ca ;  ln -s   /etc/letsencrypt/live/englishwithoutaccent.com/chain.pem    /home/englishwithoutaccent.com/ssl.ca
+##    gzip    /home/accentreduction.online/ssl.ca ;  ln --symbolic   /etc/letsencrypt/live/accentreduction.online/chain.pem    /home/accentreduction.online/ssl.ca
+##    gzip    /home/englishwithoutaccent.com/ssl.ca ;  ln --symbolic   /etc/letsencrypt/live/englishwithoutaccent.com/chain.pem    /home/englishwithoutaccent.com/ssl.ca
 
 
 
