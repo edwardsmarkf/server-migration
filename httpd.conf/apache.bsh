@@ -16,7 +16,9 @@
 ##    --OR--
 ##    gzip    /home/accentreduction.online/ssl.ca ;  ln --symbolic   /etc/letsencrypt/live/accentreduction.online/chain.pem    /home/accentreduction.online/ssl.ca
 ##    gzip    /home/englishwithoutaccent.com/ssl.ca ;  ln --symbolic   /etc/letsencrypt/live/englishwithoutaccent.com/chain.pem    /home/englishwithoutaccent.com/ssl.ca
-
+#
+#   https://www.sslshopper.com/ssl-checker.html#hostname=ajcomptonpesl.com
+#   https://www.ssllabs.com/ssltest/analyze.html?d=ajcomptonpesl.com
 
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}");
