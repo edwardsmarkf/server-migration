@@ -12,6 +12,9 @@ stuff to fix on next transtition:
 3a  - also test the /etc/php.ini change of sendmail  with the one-liner php script to test mail()
 
 4- BIG ISSUE with STRIPE and certs.... had to enter:
-            `ln -s   /etc/letsencrypt/live/ajcomptonpesl.com/fullchain.pem    /home/ajcomptonpesl.com/ssl.ca`
+            `ln -s   /etc/letsencrypt/live/ajcomptonpesl.com/chain.pem    /home/ajcomptonpesl.com/ssl.ca  ;  `
+                           ##  not fullchain.pem but chain.pem  ???
              https://www.ssllabs.com/ssltest/
              https://www.sslshopper.com/ssl-checker.html#hostname=ajcomptonpesl.com
+
+    also lets gzip the leftover ssl.ca  ssl.cert  ssl.key  files to avoid confusion
