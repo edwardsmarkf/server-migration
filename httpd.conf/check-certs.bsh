@@ -1,0 +1,17 @@
+#!  /bin/bash
+#
+#    check-certs.bsh    2026-07-04
+
+
+HOME_DIR='/home/'                                                 ;
+PORT='443'                                                        ; ## note echo added to close openssl s_client ##
+
+DOMAIN_NAME_FILE='/root/server-migration/domain_list.txt'        ;
+
+while IFS= read -r line; do
+      echo "Processing domain: ${line}"
+      echo -n Q | openssl s_client -servername ${line} -connect ${line}:$PORT \ | openssl x509 -noout -dates
+done < ${DOMAIN_NAME_FILE}
+
+exit;
+
