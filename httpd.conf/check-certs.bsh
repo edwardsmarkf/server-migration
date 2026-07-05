@@ -14,7 +14,7 @@ DOMAIN_NAME_FILE='/root/server-migration/domain_list.txt'        ;
 
 while IFS= read -r line; do
       echo "Processing domain: ${line}"                                                                                                ;
-      echo -n Q | openssl s_client    -connect ${line}:$PORT    -servername ${line}  </dev/null | openssl x509 -noout  -text  -dates   ;
+      echo -n Q | openssl s_client    -connect ${line}:$PORT    -servername ${line}  </dev/null | openssl x509 -noout         -dates   ;
 done < ${DOMAIN_NAME_FILE}
 
 exit;
