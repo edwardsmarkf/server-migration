@@ -1,6 +1,8 @@
 #!  /bin/bash
 #
 #    check-certs.bsh    2026-07-04
+#
+#      trouble with slrh.org - processing stops!
 
 
 HOME_DIR='/home/'                                                 ;
@@ -13,9 +15,12 @@ DOMAIN_NAME_FILE='/root/server-migration/domain_list.txt'        ;
 
 
 while IFS= read -r line; do
-      echo "Processing domain: ${line}"                                                                                                ;
-      echo -n Q | openssl s_client    -connect ${line}:$PORT    -servername ${line}  </dev/null | openssl x509 -noout         -dates   ;
-done < ${DOMAIN_NAME_FILE}
+      if [[ "${line}" != 'slrh.org' ]]; then
+              echo "Processing domain: ${line}"                                                                                                ;
+              echo -n Q | openssl s_client    -connect ${line}:$PORT    -servername ${line}  </dev/null | openssl x509 -noout         -dates   ;
+      fi
+done < ${DOMAIN_NAME_FILE} ;
 
 exit;
-
+#
+#
