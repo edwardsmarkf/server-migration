@@ -365,6 +365,11 @@ nohup time  bash -vx   /root/server-migration/bash-misc/move_data_to_proper_loca
  apachectl  configtest  &&   apachectl  status ;
 ```
 
+\# verify all the certificates:
+```
+/root/server-migration/httpd.conf/check-certs.bsh                           &> /root/server-migration/httpd.conf/check-certs.bsh.log  ;
+```
+
 \# create the pm2 jobs:
 ```
  nohup  bash -vx  /root/server-migration/node/pm2-initialize.bsh             &>  /root/server-migration/node/pm2-initialize.bsh.log    ;
