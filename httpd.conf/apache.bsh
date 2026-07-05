@@ -10,7 +10,7 @@
 ##   does the SSLCerticationChainFile part need to be in a bash for-next loop???
 ##   gzip all the ssl.ca  ssl.cert  ssl.key   ????
 ##    INCLUDE THIS!
-##        for keyname in $( find /home/  -type f  -name "ssl.ca" -o -name "ssl.cert" -o -name "ssl.key" )   ; 
+##        for keyname in $( find /home/  -type f  -name "ssl.ca" -o -name "ssl.cert" -o -name "ssl.key" -maxdepth 1 )   ; 
 ##            do   gzip --verbose $keyname;  
 ##        done  ;
 ##    --OR--
