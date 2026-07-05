@@ -7,6 +7,7 @@
 
 HOME_DIR='/home/'                                                 ;
 PORT='443'                                                        ; ## note echo added to close openssl s_client ##
+STUCK_DOMAIN='slrh.org'                                           ; ## this one gets stuck for some reason
 
 DOMAIN_NAME_FILE='/root/server-migration/domain_list.txt'        ;
 
@@ -15,9 +16,11 @@ DOMAIN_NAME_FILE='/root/server-migration/domain_list.txt'        ;
 
 
 while IFS= read -r line; do
-      if [[ "${line}" != 'slrh.org' ]]; then
+      if [[ "${line}" != "${STUCK_DOMAIN}" ]]; then
               echo "Processing domain: ${line}"                                                                                                ;
               echo -n Q | openssl s_client    -connect ${line}:$PORT    -servername ${line}  </dev/null | openssl x509 -noout         -dates   ;
+      else
+              echo 'Skipping troublesome one' ${STUCK_DOMAIN}  ;
       fi
 done < ${DOMAIN_NAME_FILE} ;
 
