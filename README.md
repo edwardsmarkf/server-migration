@@ -544,6 +544,7 @@ Optionally back it up to iDrive now:
 ##    Stripe IP ## setup  2026-07-06
 *****************************************
 
+for CarouselHouse, we need to limit access from our NEW server IP ## (why just CH and not AJC??)
 https://www.edwardsmark.com/textpattern/articles/265/associate-stripe-api-key-with-specific-ip-number
 #
 #
