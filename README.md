@@ -539,6 +539,18 @@ Optionally back it up to iDrive now:
 #
 #
 #
+#
+******************************************
+##    Stripe IP ## setup  2026-07-06
+*****************************************
+
+https://www.edwardsmark.com/textpattern/articles/265/associate-stripe-api-key-with-specific-ip-number
+#
+#
+#
+#
+#
+#
 ******************************************
 ##   final    testing  
 *****************************************
