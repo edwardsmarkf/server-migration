@@ -20,7 +20,7 @@ stuff to fix on next transition:
 
     also lets gzip the leftover ssl.ca  ssl.cert  ssl.key  files to avoid confusion
 
-5 -    touch    /var/www/html   ;   ## i had to do this because of a reboot/apache issue
+5 -    mkdir    /var/www/html   ;   ## i had to do this because of a reboot/apache issue
 
     Warning!  (on webmin dashboard!)
     The Apache configuration on your system has errors! This will prevent any new domains from being fully added by Virtualmin until the errors are fixed.
