@@ -1,5 +1,5 @@
 
-stuff to fix on next transtition:
+stuff to fix on next transition:
 
 (optional) - upgrade textpattern
 (optional) - upgrade virtualmin to pro
@@ -10,6 +10,7 @@ stuff to fix on next transtition:
 
 3 - test php outgoing mail in s-nail
 3a  - also test the /etc/php.ini change of sendmail  with the one-liner php script to test mail()
+3b  - SMTPMailer php function seemed to have a 'deprecate' warning - maybe switch everything over to s-nail
 
 4- BIG ISSUE with STRIPE and certs.... had to enter:
             `ln -s   /etc/letsencrypt/live/ajcomptonpesl.com/chain.pem    /home/ajcomptonpesl.com/ssl.ca  ;  `
