@@ -143,6 +143,11 @@ echo 'test using -A gmailSMTP-noreply'                                     \\
                                                                             \
     php   /usr/local/lib/php/SMTPMailer-tester.php  ;  ## test php         \\
 
+    ##   test ajcomptonpesl.com receiving/sending email:
+sudo  --user    ajcomptonpesl.com  echo "This is a test from ajcomptonpesl"       \\
+     | s-nail  -v   -s "test message"   mark@edwardsmark.com                      \\
+;
+
 END_OF_SCRIPT
 
 echo 'be SURE to add a php test....! code is included in the s-nail directory   ' ;
@@ -250,9 +255,7 @@ echo 'test using -A gmailSMTP-noreply'                                          
                 ${testReceivingEmailAddress}                                                                \\
     ;
 
-sudo  --user    ajcomptonpesl.com  echo "This is a test from ajcomptonpesl"                                 \\
-    \| s-nail  -v  -c /root/s-nail.rc   -s "test message"   mark@edwardsmark.com                            \\
-;
+
 
 if any problems, try:    telnet  smtp.gmail.com    465  ;   ## make sure we can connect in case of firewall issue.
 END_OF_SCRIPT
