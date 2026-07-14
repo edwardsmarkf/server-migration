@@ -10,6 +10,7 @@
 #       2026-06-15  -- move mail.rc from hidden (dot-prefix) name to APPENDING into /etc/s-nail.rc
 #       2026-07-02  -- changed mailx to  s-nail for new linux
 #       2026-07-14  -- added the ln command for ajcomptonpesl.com
+#       2026-07-14  -- does the PHP one need to be REWORKED to use s-nail ????? ? ? ? ?
 #
 #  first step is to 'obtain' the 'two-factor-authorization Generated app password' value.  normally this is just a matter
 #  of authorizating two-factor sign-in in 'security',  but with the google g-suite accounts, the following is necessary:
