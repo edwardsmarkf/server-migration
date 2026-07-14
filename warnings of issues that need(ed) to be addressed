@@ -26,3 +26,5 @@ stuff to fix on next transition:
     The Apache configuration on your system has errors! This will prevent any new domains from being fully added by Virtualmin until the errors are fixed.
     AH00526: Syntax error on line 124 of /etc/httpd/conf/httpd.conf:
     DocumentRoot '/var/www/html' is not a directory, or is not readable
+
+6 - s-nail did NOT work for ajcomptonpesl.com until we added a new 'ln' command.
