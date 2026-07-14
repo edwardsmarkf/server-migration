@@ -9,6 +9,7 @@
 #       2026-02-14  -- this replaces mailx-postfix.bsh
 #       2026-06-15  -- move mail.rc from hidden (dot-prefix) name to APPENDING into /etc/s-nail.rc
 #       2026-07-02  -- changed mailx to  s-nail for new linux
+#       2026-07-14  -- added the ln command for ajcomptonpesl.com
 #
 #  first step is to 'obtain' the 'two-factor-authorization Generated app password' value.  normally this is just a matter
 #  of authorizating two-factor sign-in in 'security',  but with the google g-suite accounts, the following is necessary:
@@ -103,7 +104,8 @@ cat  <<END_OF_DOT_MAILRC >>  /etc/s-nail.rc  ;    ## 2026-06-15 - changed from (
     }
 END_OF_DOT_MAILRC
 
-ln  --symbolic  --verbose  /etc/s-nail.rc    ~/.mailrc  ;   ## 2026-06-21
+ln  --symbolic  --verbose   /etc/s-nail.rc    ~/.mailrc                             ;   ## 2026-06-21
+ln  --symbolic  --verbose   /etc/s-nail.rc    /home/ajcomptonpesl.com/.mailrc       ;   ## 2026-07-14
 
 
 systemctl enable      postfix.service       ;
@@ -247,6 +249,10 @@ echo 'test using -A gmailSMTP-noreply'                                          
     -c ${testReceivingCcEmailAddress}                                                                       \\
                 ${testReceivingEmailAddress}                                                                \\
     ;
+
+sudo  --user    ajcomptonpesl.com  echo "This is a test from ajcomptonpesl"                                 \\
+    \| s-nail  -v  -c /root/s-nail.rc   -s "test message"   mark@edwardsmark.com                            \\
+;
 
 if any problems, try:    telnet  smtp.gmail.com    465  ;   ## make sure we can connect in case of firewall issue.
 END_OF_SCRIPT
