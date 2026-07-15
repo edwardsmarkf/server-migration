@@ -108,7 +108,9 @@ END_OF_DOT_MAILRC
 ln  --symbolic  --verbose   /etc/s-nail.rc    ~/.mailrc                                     ;   ## 2026-06-21
 ln  --symbolic  --verbose   /etc/s-nail.rc    /home/ajcomptonpesl.com/.mailrc               ;   ## 2026-07-14
 ln  --symbolic  --verbose   /etc/s-nail.rc    /home/englishwithoutaccent.com/.mailrc        ;   ## 2026-07-15
-ln  --symbolic  --verbose   /etc/s-nail.rc    /home/accentreduction.online/.mailrc          ;   ## 2026-07-15
+ln  --symbolic  --verbose   /etc/s-nail.rc    /home/accentreduction.online/.mailrc          ;   ## 2026-07-15 
+ln  --symbolic  --verbose   /etc/s-nail.rc    /home/comptonpeslonline.com/.mailrc           ;   ## 2026-07-15
+
 
 
 systemctl enable      postfix.service       ;
