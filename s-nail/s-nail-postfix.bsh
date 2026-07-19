@@ -260,6 +260,7 @@ echo 'test using -A gmailSMTP-noreply'                                          
                 ${testReceivingEmailAddress}                                                                \\
     ;
 
+php -r    " echo(mail('mark@edwardsmark.com', 'test subject', 'test message'));"  ;
 
 
 if any problems, try:    telnet  smtp.gmail.com    465  ;   ## make sure we can connect in case of firewall issue.
