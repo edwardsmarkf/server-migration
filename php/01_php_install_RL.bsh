@@ -17,7 +17,7 @@
 #   2025-02-18 - renamed to 01_
 #   2025-07-28 - powertools no longer seems to be required.....(??)
 #   2026-01-29 - removed PowerTools replaced with crb  -- https://forums.rockylinux.org/t/how-do-i-install-powertools-on-rocky-linux-9/7427
-#   2026-07-03 - added sendmail-to-s-nail fix
+#   2026-07-18 - added sendmail-to-s-nail bash shell fix
 
 ##   DONT EVER USE WEBTATIC!  use remi/epel instead   ! ! ! 
 
@@ -69,8 +69,8 @@ s?;date.timezone =?date.timezone ='America/New_York'                            
 s/upload_max_filesize = 2M/upload_max_filesize = 128M                           ;    $(date;) --  changed from 2M                              /;
 s/short_open_tag = Off/short_open_tag = On                                      ;    $(date;) --  now allows  <?   ?>                          /;
 s/memory_limit = 128M/memory_limit = 512M                                       ;    $(date;) --  changed from 128                             /;
-s?;include_path = ".:/php/includes"?include_path = "/usr/local/lib/php"         ;    $(date;) --  2019-04-03 from github php.txt               ?;
-s?sendmail_path = .*$?sendmail_path = '/usr/local/bash/wordpressMailer.bsh'     ;    $(date;) --  2026-07-18 force sendmail to use bash script  ?;
+s?;include_path = ".:/php/includes"?include_path = '/usr/local/lib/php'         ;    $(date;) --  2019-04-03 from github php.txt               ?;
+s?sendmail_path = .*$?sendmail_path = '/usr/local/bash/wordpressMailer.bsh'     ;    $(date;) --  2026-07-18 force sendmail to use bash script ?;
 END_OF_PHP_DOT_INI
 
 which php;
