@@ -27,4 +27,6 @@ stuff to fix on next transition:
     AH00526: Syntax error on line 124 of /etc/httpd/conf/httpd.conf:
     DocumentRoot '/var/www/html' is not a directory, or is not readable
 
-6 - s-nail did NOT work for ajcomptonpesl.com until we added a new 'ln' command.
+6 - s-nail did NOT work for ajcomptonpesl.com until we added a new 'ln' command.  THIS SEEMED TO BE THE SAME ISSUE ON ALL VS's...!
+
+7 - change SELECT VERSION;  to include  SELECT NOW();
