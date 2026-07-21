@@ -21,7 +21,7 @@ try {
         \$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         /*** prepare the SQL statement ***/
-        \$stmt = \$dbh->prepare("SELECT VERSION();");
+        \$stmt = \$dbh->prepare("SELECT VERSION(); NOW()");
 
         \$stmt->execute();
         echo  'php mariadb version: ' . implode(' ', \$stmt->fetch()) . "\n"       ;
