@@ -29,4 +29,6 @@ stuff to fix on next transition:
 
 6 - s-nail did NOT work for ajcomptonpesl.com until we added a new 'ln' command.  THIS SEEMED TO BE THE SAME ISSUE ON ALL VS's...!
 
-7 - change SELECT VERSION;  to include  SELECT NOW();
+7 - mariadb tests  -  change SELECT VERSION;  to include  SELECT NOW();
+
+8 - manual clamscan was not working because of an invalid user or directories...??   changed directiory to  777  (for now)
