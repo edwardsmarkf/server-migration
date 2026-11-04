@@ -4,7 +4,8 @@
 
 ##   etc_resolv_conf.bsh      2026-02-26
 
-##  2026-11-03   added nmcli commands because we could not reach any nameservers, including interserver.net
+##  2026-11-03   added nmcli commands because we could not reach any nameservers, including interserver.net  
+##               using  "ping -c 4 interserver.net;"
 
 
 
