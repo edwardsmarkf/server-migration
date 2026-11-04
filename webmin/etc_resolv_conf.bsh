@@ -1,19 +1,23 @@
 #!  /bin/bash
 
-  ##
-
 ##   etc_resolv_conf.bsh      2026-02-26
+
+## NOTE!   en3 may have changed!   use  "nmcli connection show ;"   to find out
 
 ##  2026-11-03   added nmcli commands because we could not reach any nameservers, including interserver.net  
 ##               using  "ping -c 4 interserver.net;"
+## 2026-11-04    replaced fixed name with variable
 
 
+NETWORK_NAME=$( /usr/bin/nmcli connection show  | grep ethernet  | sed --expression='s/ * / /;' | cut -d ' ' -f 6   ;  );  ## 2026-11-04
+
+echo ${NETWORK_NAME) ;
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}")  ;  ## this will be included in comments in every edited script
 
 
 
-cat  <<END  >>  /etc/resolv.conf ;
+cat  <<END  >>  /etc/resolv.conf ;   ## initially create resolv.conf
 #
 #  ##  $(date;) --  added by ${thisScript} 
 #
@@ -25,13 +29,14 @@ END
 
 cat   /etc/resolv.conf ;
 
-###  2026-11-03:   added because server could not reach anybody including interserver.net
+###  2026-11-03:   added because the server could not reach anybody, including interserver.net
 
-/usr/bin/nmcli connection modify "ens3" ipv4.dns "8.8.8.8 1.1.1.1 66.45.251.218"   ;    ## added 2026-11-03
-/usr/bin/nmcli connection modify "ens3" ipv4.ignore-auto-dns yes                   ;    ## added 2026-11-03
-/usr/bin/nmcli connection up "ens3"                                                ;    ## added 2026-11-03
-#                                                                                       ## added 2026-11-03
-cat /etc/resolv.conf                                                               ;    ## added 2026-11-03  ## verify resolv.conf file!
+/usr/bin/nmcli connection modify "${NETWORK_NAME}" ipv4.dns "8.8.8.8     1.1.1.1     66.45.251.218"   ;    ## added 2026-11-03
+/usr/bin/nmcli connection modify "${NETWORK_NAME}" ipv4.ignore-auto-dns yes                           ;    ## added 2026-11-03
+/usr/bin/nmcli connection up "${NETWORK_NAME}"                                                        ;    ## added 2026-11-03
+#                                                                                                          ## added 2026-11-03
+
+cat /etc/resolv.conf  ;    ## added 2026-11-03  ## verify resolv.conf file!
 
 
 exit;
