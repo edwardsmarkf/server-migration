@@ -4,6 +4,8 @@
 
 ##   etc_resolv_conf.bsh      2026-02-26
 
+##  2026-11-03   added nmcli commands because we could not reach any nameservers, including interserver.net
+
 
 
 thisScript=$(readlink -f "${BASH_SOURCE[0]}")  ;  ## this will be included in comments in every edited script
@@ -21,6 +23,14 @@ nameserver 8.8.8.8
 END
 
 cat   /etc/resolv.conf ;
+
+###  2026-11-03:   added because server could not reach anybody including interserver.net
+
+/usr/bin/nmcli connection modify "ens3" ipv4.dns "8.8.8.8 1.1.1.1 66.45.251.218"   ;    ## added 2026-11-03
+/usr/bin/nmcli connection modify "ens3" ipv4.ignore-auto-dns yes                   ;    ## added 2026-11-03
+/usr/bin/nmcli connection up "ens3"                                                ;    ## added 2026-11-03
+#                                                                                       ## added 2026-11-03
+cat /etc/resolv.conf                                                               ;    ## added 2026-11-03  ## verify resolv.conf file!
 
 
 exit;
