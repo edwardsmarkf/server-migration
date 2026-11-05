@@ -9,7 +9,8 @@
 ## 2026-11-04    replaced fixed name with variable
 
 
-NETWORK_NAME=$( /usr/bin/nmcli connection show  | grep ethernet  | sed --expression='s/ * / /;' | cut --delimiter=' ' --field=6   ;  );  ## 2026-11-04
+    ##  NETWORK_NAME=$( /usr/bin/nmcli connection show  | grep ethernet  | sed --expression='s/ * / /;' | cut --delimiter=' ' --field=6   ;  );  ## 2026-11-04
+NETWORK_NAME=$(  /usr/bin/nmcli -t -f NAME,TYPE connection show --active | grep '802-3-ethernet' |   cut  --delimiter=':'  --fields=1  );  ## 2026-11-04
 
 echo ${NETWORK_NAME} ;
 
